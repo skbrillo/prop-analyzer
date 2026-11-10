@@ -22,15 +22,21 @@ jobs:
         with:
           python-version: "3.11"
 
+      - name: Install NBA API
+        run: pip install nba_api pandas
+
+      - name: Download real NBA statistics
+        run: python update_nba_stats.py
+
       - name: Run prediction engine
         run: python engine.py
 
-      - name: Save updated results
+      - name: Save updated data and results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/results.json
+          git add data/game_logs.csv docs/results.json
           if ! git diff --cached --quiet; then
-            git commit -m "Update daily prop projections"
+            git commit -m "Update NBA statistics and projections"
             git push
           fi
