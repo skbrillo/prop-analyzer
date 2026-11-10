@@ -399,6 +399,28 @@ def run():
     defense_applied = 0
     defense_fallback = 0
 
+    # Count each rejected prop once, at the first failing check.
+    rejection_counts = {
+        "invalid_market_or_date": 0,
+        "insufficient_history": 0,
+        "team_mismatch": 0,
+        "confirmed_out": 0,
+        "insufficient_stats": 0,
+        "invalid_odds": 0,
+    }
+    rejected_props = []
+
+    def reject(reason, bet):
+        rejection_counts[reason] += 1
+        rejected_props.append({
+            "game_date": bet.get("game_date", ""),
+            "player": bet.get("player", ""),
+            "market": bet.get("market", ""),
+            "line": bet.get("line", ""),
+            "matchup": bet.get("matchup", ""),
+            "reason": reason,
+        })
+
     for bet in odds:
 
         player = bet.get("player", "")
@@ -412,6 +434,7 @@ def run():
         )
 
         if market not in MARKETS or not date:
+            reject("invalid_market_or_date", bet)
             continue
 
         # Never use games played on or
@@ -426,6 +449,7 @@ def run():
         ]
 
         if len(games) < 10:
+            reject("insufficient_history", bet)
             continue
 
         identified = identify_team(
@@ -435,6 +459,7 @@ def run():
 
         if identified is None:
             unmatched.add(player)
+            reject("team_mismatch", bet)
             continue
 
         team, abbr, opponent, team_id = identified
@@ -453,6 +478,7 @@ def run():
         ) in ("out", "inactive"):
 
             skipped_out += 1
+            reject("confirmed_out", bet)
             continue
 
         usable = [
@@ -475,6 +501,7 @@ def run():
         ]
 
         if len(values) < 10:
+            reject("insufficient_stats", bet)
             continue
 
         baseline = weighted(
@@ -600,6 +627,7 @@ def run():
             or over_odds == 0
             or under_odds == 0
         ):
+            reject("invalid_odds", bet)
             continue
 
         over_odds = int(over_odds)
@@ -609,6 +637,7 @@ def run():
             -10000 < over_odds < 10000
             and -10000 < under_odds < 10000
         ):
+            reject("invalid_odds", bet)
             continue
 
         residuals = values[-30:]
@@ -932,6 +961,37 @@ def run():
         "Injury-confirmed out props skipped:",
         skipped_out
     )
+
+    analyzed_props = len(output) // 2
+    total_rejected = sum(rejection_counts.values())
+
+    print("Props analyzed:", analyzed_props)
+    print("Props rejected:", total_rejected)
+
+    for reason, count in rejection_counts.items():
+        print(f"Skipped - {reason}: {count}")
+
+    print(
+        "Prop accounting check:",
+        f"{analyzed_props} analyzed + {total_rejected} rejected"
+        f" = {analyzed_props + total_rejected} / {len(odds)}"
+    )
+
+    diagnostics_path = DATA / "rejected_props.csv"
+    with diagnostics_path.open(
+        "w", newline="", encoding="utf-8"
+    ) as file:
+        writer = csv.DictWriter(
+            file,
+            fieldnames=[
+                "game_date", "player", "market",
+                "line", "matchup", "reason"
+            ]
+        )
+        writer.writeheader()
+        writer.writerows(rejected_props)
+
+    print("Rejected prop details saved:", diagnostics_path)
 
     if unmatched:
         print(
