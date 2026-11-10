@@ -31,23 +31,19 @@ jobs:
         with:
           python-version: "3.11"
 
-      # Download latest completed NBA game statistics.
-      # Uses ESPN, not The Odds API.
+      # Download completed NBA game statistics.
+      # ESPN data does not consume Odds API credits.
 
       - name: Download real NBA statistics
         run: python update_nba_stats.py
 
       # Build historical team defensive statistics.
-      # Includes points, rebounds, and assists allowed.
-      # Uses existing ESPN game logs.
-      # Does not consume Odds API credits.
 
       - name: Build NBA team defense statistics
         run: python build_team_defense.py
 
-      # Download DraftKings player prop odds.
-      # Only runs during morning or manual workflows.
-      # This is the step that uses Odds API credits.
+      # Download DraftKings odds only in the morning
+      # or when manually triggered.
 
       - name: Download real DraftKings odds
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
@@ -55,34 +51,38 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python update_odds.py
 
-      # Generate current NBA player prop projections.
-      # Runs during morning or manual workflows.
+      # Generate current NBA prop predictions.
 
       - name: Run prediction engine
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         run: python engine.py
 
-      # Save pregame predictions for later grading.
+      # Preserve the existing prediction history system.
 
       - name: Save pregame predictions
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         run: python save_predictions.py
 
-      # Grade completed games.
-      # Runs in both morning and late-night workflows.
-      # Does not consume Odds API credits.
+      # NEW: Record pregame predictions and grade
+      # completed games using ESPN statistics.
+      # No Odds API requests.
+
+      - name: Update automatic prop tracking
+        run: python track_results.py
+
+      # Preserve the existing grading system.
 
       - name: Grade completed predictions
         run: python grade_predictions.py
 
-      # Run historical prediction backtesting.
-      # Does not consume Odds API credits.
+      # Preserve the existing backtesting system.
 
       - name: Backtest historical NBA projections
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         run: python backtest.py
 
-      # Commit all updated data and results.
+      # Commit updated statistics, predictions,
+      # grading, backtesting, and tracking history.
 
       - name: Save updated data and results
         run: |
@@ -98,7 +98,10 @@ jobs:
           git add docs/graded_predictions.json
           git add docs/backtest.json
 
+          # New automatic tracking history.
+          git add docs/tracking.json
+
           if ! git diff --cached --quiet; then
-            git commit -m "Update NBA props, defense, and graded predictions"
+            git commit -m "Update NBA props, defense, and performance tracking"
             git push
           fi
