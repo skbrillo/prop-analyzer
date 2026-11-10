@@ -11,7 +11,7 @@ ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "data"
 SITE = ROOT / "docs"
 
-VERSION = "v4-smarter-minutes-experimental"
+VERSION = "v5-probability-audit-experimental"
 
 MARKETS = {"points", "rebounds", "assists"}
 
@@ -42,6 +42,36 @@ def number(value, default=None):
 
 def normal_cdf(value):
     return (1 + math.erf(value / math.sqrt(2))) / 2
+
+
+def outcome_probabilities(projection, sigma, line):
+    """Approximate integer box-score outcomes, including whole-line pushes."""
+    if float(line).is_integer():
+        under_cutoff = line - 0.5
+        over_cutoff = line + 0.5
+    else:
+        under_cutoff = math.floor(line) + 0.5
+        over_cutoff = under_cutoff
+
+    under = normal_cdf((under_cutoff - projection) / sigma)
+    over = 1.0 - normal_cdf((over_cutoff - projection) / sigma)
+    push = max(0.0, 1.0 - over - under)
+    return over, under, push
+
+
+def estimate_sigma(values, valid_minutes, projected_minutes, market):
+    """Use historical spread plus a cautious allowance for minute variability."""
+    recent = values[-30:]
+    observed = statistics.stdev(recent) if len(recent) > 1 else 0.0
+    floor = {"points": 3.5, "rebounds": 1.8, "assists": 1.4}[market]
+    minute_uncertainty = 0.0
+    if len(valid_minutes) >= 10 and projected_minutes is not None:
+        recent_minutes = [m for _, m in valid_minutes[-20:]]
+        minute_sd = statistics.stdev(recent_minutes)
+        rate = mean([v / m for v, m in valid_minutes[-20:]])
+        minute_uncertainty = minute_sd * rate
+    # This is an experimental heuristic, not a fitted or calibrated variance model.
+    return math.sqrt(max(floor, observed) ** 2 + minute_uncertainty ** 2)
 
 
 def profit_per_dollar(odds):
@@ -567,46 +597,29 @@ def run():
             reject("invalid_odds", bet)
             continue
 
-        residuals = values[-30:]
-
-        observed_sigma = (
-            statistics.stdev(residuals)
-            if len(residuals) > 1
-            else 2.0
-        )
-
-        floor = {
-            "points": 3.5,
-            "rebounds": 1.8,
-            "assists": 1.4,
-        }[market]
-
-        sigma = max(floor, observed_sigma)
-
-        model_over = max(
-            0.01,
-            min(
-                0.99,
-                1 - normal_cdf(
-                    (line + 0.5 - projection) / sigma
-                ),
-            ),
+        sigma = estimate_sigma(values, valid_minutes, minutes_projection, market)
+        model_over, model_under, model_push = outcome_probabilities(
+            projection, sigma, line
         )
 
         raw_over = implied(over_odds)
         raw_under = implied(under_odds)
+        market_over = raw_over / (raw_over + raw_under)
+        market_under = 1.0 - market_over
 
-        market_over = (
-            raw_over / (raw_over + raw_under)
+        # Shrink toward the sportsbook until enough completed games permit calibration.
+        # Market probabilities are conditional on a non-push result.
+        market_weight = 0.50
+        model_nonpush = max(1e-12, model_over + model_under)
+        model_over_conditional = model_over / model_nonpush
+        adjusted_over_conditional = (
+            (1.0 - market_weight) * model_over_conditional
+            + market_weight * market_over
         )
-
-        # Existing experimental probability blend.
-        over = (
-            0.75 * model_over
-            + 0.25 * market_over
-        )
-
-        under = 1 - over
+        # Keep the model's estimated push probability separate.
+        push = model_push
+        over = (1.0 - push) * adjusted_over_conditional
+        under = (1.0 - push) * (1.0 - adjusted_over_conditional)
 
         for side, probability, price in [
             ("Over", over, over_odds),
@@ -623,7 +636,7 @@ def run():
 
             ev = (
                 probability * profit_per_dollar(price)
-                - (1 - probability)
+                - (1 - probability - push)
             )
 
             output.append({
@@ -657,6 +670,14 @@ def run():
 
                 "projection": round(projection, 2),
                 "probability": round(probability, 4),
+                "push_probability": round(push, 4),
+                "model_probability_raw": round(
+                    model_over if side == "Over" else model_under, 4
+                ),
+                "market_probability_no_vig": round(
+                    market_over if side == "Over" else market_under, 4
+                ),
+                "sigma_estimate": round(sigma, 3),
                 "implied_probability": round(
                     implied(price), 4
                 ),
@@ -783,16 +804,13 @@ def run():
         ),
 
         "mode": (
-            "REAL DATA. Experimental Version 4. "
-            "Smarter minutes projections use recent "
-            "playing time, historical averages, "
-            "trend adjustments, and outlier limits. "
-            "Opponent defense uses recent historical "
-            "points, rebounds, and assists allowed "
-            "relative to league averages. "
-            "Injury and lineup information require "
-            "verified input. Probabilities and EV "
-            "are not validated betting advantages."
+            "REAL DATA. Experimental Version 5. "
+            "Version 4 minutes and defense projections retained. "
+            "Probabilities use uncertainty-adjusted normal approximations, "
+            "50% shrinkage toward no-vig DraftKings market probabilities, "
+            "and push handling for whole-number lines. "
+            "Injuries and lineup changes require verified input. "
+            "Probabilities are not calibrated and EV is not a validated edge."
         ),
 
         "results": output,
