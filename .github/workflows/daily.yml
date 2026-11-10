@@ -33,6 +33,9 @@ jobs:
       - name: Run prediction engine
         run: python engine.py
 
+      - name: Backtest historical NBA projections
+        run: python backtest.py
+
       - name: Save updated data and results
         run: |
           git config user.name "github-actions[bot]"
@@ -41,8 +44,9 @@ jobs:
           git add data/game_logs.csv
           git add data/sample_odds.csv
           git add docs/results.json
+          git add docs/backtest.json
 
           if ! git diff --cached --quiet; then
-            git commit -m "Update NBA stats, DraftKings odds and projections"
+            git commit -m "Update NBA props and model backtest"
             git push
           fi
