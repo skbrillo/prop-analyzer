@@ -1,45 +1,11 @@
 
-.game-lines-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 12px;
-  margin: 16px 0;
-}
-
-.game-line-card {
-  background: #172338;
-  border: 1px solid #293a52;
-  border-radius: 12px;
-  padding: 16px;
-}
-
-.game-line-card h3 {
-  font-size: 16px;
-  margin: 0 0 8px;
-}
-
-.game-line-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 8px 0;
-  border-top: 1px solid #293a52;
-}
-
-.game-line-row span {
-  color: #a6b5c9;
-}
-
-.game-line-row strong {
-  font-variant-numeric: tabular-nums;
-}
-
 <!doctype html>
 <html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prop Analyzer | NBA Player Props</title>
+
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#0b1220;color:#e8edf6;font:14px system-ui,sans-serif}
@@ -102,33 +68,64 @@ th:nth-child(15),td:nth-child(15){width:6%;font-weight:700}
 .live-performance-grid .stat{min-width:0}
 .live-breakdowns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
 .live-breakdowns .performance-card{padding:16px}
+
+.game-lines-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:12px;
+  margin:16px 0;
+}
+.game-line-card{
+  background:#172338;
+  border:1px solid #293a52;
+  border-radius:12px;
+  padding:16px;
+}
+.game-line-card h3{
+  font-size:16px;
+  margin:0 0 8px;
+}
+.game-line-row{
+  display:flex;
+  justify-content:space-between;
+  gap:12px;
+  padding:8px 0;
+  border-top:1px solid #293a52;
+}
+.game-line-row span{color:#a6b5c9}
+.game-line-row strong{font-variant-numeric:tabular-nums}
+
 @media(max-width:1100px){table{min-width:1200px}}
 @media(max-width:900px){
-.live-performance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-.live-breakdowns{grid-template-columns:1fr}
+  .live-performance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .live-breakdowns{grid-template-columns:1fr}
 }
-@media(max-width:850px){.performance-grid{grid-template-columns:1fr}}
+@media(max-width:850px){
+  .performance-grid{grid-template-columns:1fr}
+}
 @media(max-width:600px){
-h1{font-size:29px}
-.stat{min-width:140px}
-input,select,button{width:100%}
+  h1{font-size:29px}
+  .stat{min-width:140px}
+  input,select,button{width:100%}
 }
 @media(max-width:480px){
-.live-performance-grid{grid-template-columns:1fr 1fr}
-.live-performance-grid .stat{padding:12px}
-.live-performance-grid .stat b{font-size:20px}
+  .live-performance-grid{grid-template-columns:1fr 1fr}
+  .live-performance-grid .stat{padding:12px}
+  .live-performance-grid .stat b{font-size:20px}
 }
 </style>
 </head>
+
 <body>
 <main>
+
 <h1>Prop Analyzer</h1>
 <div class="muted">NBA Player Props | ESPN Statistics + DraftKings Odds</div>
 
 <div class="warn">
-<strong>REAL NBA DATA — EXPERIMENTAL VERSION 3 MODEL.</strong>
+<strong>REAL NBA DATA — EXPERIMENTAL MODEL.</strong>
 Player statistics come from ESPN and odds from DraftKings via The Odds API.
-Version 3 incorporates projected minutes, per-minute production,
+The model incorporates projected minutes, per-minute production,
 opponent team defense adjustments, and sportsbook probability comparisons.
 Team assignments are based on historical ESPN box scores and scheduled
 matchups, not live roster verification. Injury information is not
@@ -137,110 +134,139 @@ not yet been validated against sufficient completed games.
 </div>
 
 <div class="stats">
-<div class="stat">Analyzed Outcomes<b id="count">--</b></div>
-<div class="stat">Positive Model EV<b id="positive">--</b></div>
-<div class="stat">Games Analyzed<b id="games">--</b></div>
-<div class="stat">Total Wins<b id="total-wins" class="result-win">--</b></div>
-<div class="stat">Total Losses<b id="total-losses" class="result-loss">--</b></div>
-<div class="stat">Last Updated<b id="updated" style="font-size:17px">--</b></div>
+  <div class="stat">Analyzed Outcomes<b id="count">--</b></div>
+  <div class="stat">Positive Model EV<b id="positive">--</b></div>
+  <div class="stat">Games Analyzed<b id="games">--</b></div>
+  <div class="stat">Total Wins<b id="total-wins" class="result-win">--</b></div>
+  <div class="stat">Total Losses<b id="total-losses" class="result-loss">--</b></div>
+  <div class="stat">Last Updated<b id="updated" style="font-size:17px">--</b></div>
 </div>
 
+<section class="section" id="game-lines" style="margin-top:24px;padding-top:16px">
+  <h2>NBA Game Lines</h2>
+  <div class="muted">DraftKings pregame spreads, totals, and implied team points.</div>
+  <div id="game-lines-status" class="muted" style="margin-top:12px">
+    Loading game lines...
+  </div>
+  <div id="game-lines-grid" class="game-lines-grid"></div>
+</section>
+
 <div class="controls">
-<input id="search" type="search" placeholder="Search player, team or opponent" aria-label="Search player, team or opponent">
-<select id="game" aria-label="Game filter"><option value="">All Games</option></select>
-<select id="market" aria-label="Market filter">
-<option value="">PRA</option>
-<option value="Points">Points</option>
-<option value="Rebounds">Rebounds</option>
-<option value="Assists">Assists</option>
-</select>
-<select id="side" aria-label="Side filter">
-<option value="">Totals</option>
-<option value="Over">Over</option>
-<option value="Under">Under</option>
-</select>
-<button id="refresh" type="button">Refresh Data</button>
+  <input id="search" type="search"
+    placeholder="Search player, team or opponent"
+    aria-label="Search player, team or opponent">
+
+  <select id="game" aria-label="Game filter">
+    <option value="">All Games</option>
+  </select>
+
+  <select id="market" aria-label="Market filter">
+    <option value="">PRA</option>
+    <option value="Points">Points</option>
+    <option value="Rebounds">Rebounds</option>
+    <option value="Assists">Assists</option>
+  </select>
+
+  <select id="side" aria-label="Side filter">
+    <option value="">Totals</option>
+    <option value="Over">Over</option>
+    <option value="Under">Under</option>
+  </select>
+
+  <button id="refresh" type="button">Refresh Data</button>
 </div>
 
 <div id="status" role="status">Loading latest results...</div>
+
 <div class="tablewrap">
 <table>
-<thead><tr>
-<th data-sort="date">Date</th>
-<th data-sort="matchup">Matchup</th>
-<th data-sort="game_time">Tipoff</th>
-<th data-sort="player">Player</th>
-<th data-sort="team_abbr">Team</th>
-<th data-sort="opponent">Opp</th>
-<th data-sort="market">Market</th>
-<th data-sort="side">Side</th>
-<th data-sort="line">Line</th>
-<th data-sort="odds">Odds</th>
-<th data-sort="projection">Proj.</th>
-<th data-sort="probability">Prob.</th>
-<th data-sort="ev">Model EV</th>
-<th data-sort="last10">Last 10</th>
-<th data-sort="result">Result</th>
-</tr></thead>
+<thead>
+<tr>
+  <th data-sort="date">Date</th>
+  <th data-sort="matchup">Matchup</th>
+  <th data-sort="game_time">Tipoff</th>
+  <th data-sort="player">Player</th>
+  <th data-sort="team_abbr">Team</th>
+  <th data-sort="opponent">Opp</th>
+  <th data-sort="market">Market</th>
+  <th data-sort="side">Side</th>
+  <th data-sort="line">Line</th>
+  <th data-sort="odds">Odds</th>
+  <th data-sort="projection">Proj.</th>
+  <th data-sort="probability">Prob.</th>
+  <th data-sort="ev">Model EV</th>
+  <th data-sort="last10">Last 10</th>
+  <th data-sort="result">Result</th>
+</tr>
+</thead>
 <tbody id="rows"></tbody>
 </table>
 </div>
 
 <section class="section" id="live-performance">
-<h2>Live Betting Performance</h2>
-<div class="muted">
-Actual outcomes from saved pregame predictions, graded against ESPN box scores.
-Each Over and Under is counted separately. These are tracked model outcomes,
-not a record of bets placed.
-</div>
-<div id="tracking-status" role="status" style="margin-top:12px">
-Loading tracked results...
-</div>
-<div class="live-performance-grid">
-<div class="stat">Win Rate<b id="track-winrate">--</b></div>
-<div class="stat">ROI<b id="track-roi">--</b></div>
-<div class="stat">Profit / Loss<b id="track-profit">--</b></div>
-<div class="stat">Settled Outcomes<b id="track-settled">--</b></div>
-</div>
-<div id="tracking-details" class="muted" style="margin-bottom:18px"></div>
-<div class="live-breakdowns" id="tracking-breakdowns"></div>
-<div class="info">
-<strong>How to interpret these results</strong>
-<p>Results use a hypothetical flat 1-unit stake at the saved odds.
-Win rate and ROI exclude pushes from their denominators.</p>
-<p>Both sides of a line are tracked independently, so the combined
-profit and ROI do not represent a realizable betting strategy.</p>
-<p>Positive EV means the model estimated an advantage at prediction time;
-it is not evidence of a profitable edge until validated on settled results.</p>
-</div>
+  <h2>Live Betting Performance</h2>
+
+  <div class="muted">
+    Actual outcomes from saved pregame predictions, graded against ESPN box scores.
+    Each Over and Under is counted separately. These are tracked model outcomes,
+    not a record of bets placed.
+  </div>
+
+  <div id="tracking-status" role="status" style="margin-top:12px">
+    Loading tracked results...
+  </div>
+
+  <div class="live-performance-grid">
+    <div class="stat">Win Rate<b id="track-winrate">--</b></div>
+    <div class="stat">ROI<b id="track-roi">--</b></div>
+    <div class="stat">Profit / Loss<b id="track-profit">--</b></div>
+    <div class="stat">Settled Outcomes<b id="track-settled">--</b></div>
+  </div>
+
+  <div id="tracking-details" class="muted" style="margin-bottom:18px"></div>
+  <div class="live-breakdowns" id="tracking-breakdowns"></div>
+
+  <div class="info">
+    <strong>How to interpret these results</strong>
+    <p>Results use a hypothetical flat 1-unit stake at the saved odds.
+    Win rate and ROI exclude pushes from their denominators.</p>
+    <p>Both sides of a line are tracked independently, so the combined
+    profit and ROI do not represent a realizable betting strategy.</p>
+    <p>Positive EV means the model estimated an advantage at prediction time;
+    it is not evidence of a profitable edge until validated on settled results.</p>
+  </div>
 </section>
 
 <section class="section" id="model-performance">
-<h2>Model Performance</h2>
-<div class="muted">
-Historical walk-forward backtesting using ESPN NBA player game logs.
-Lower prediction error is better.
-</div>
-<div id="backtest-status" role="status">Loading backtest results...</div>
-<div class="performance-grid" id="performance-grid"></div>
-<div class="info">
-<strong>Understanding the results</strong>
-<p><strong>Predictions:</strong> Number of historical player-game predictions evaluated in each market.</p>
-<p><strong>MAE:</strong> Mean Absolute Error. The average difference between projected and actual points, rebounds, or assists.</p>
-<p><strong>RMSE:</strong> Root Mean Squared Error. Gives greater weight to large prediction misses.</p>
-<p><strong>Bias:</strong> Average projected value minus actual value. Negative means the model tends to underestimate.</p>
-<p><strong>Method:</strong> Historical predictions use prior game data. A minimum of 10 previous games is required.</p>
-<p><strong>Important:</strong> The historical backtest may evaluate a different model version than current live predictions. Backtest projection accuracy does not establish profitable betting performance.</p>
-</div>
+  <h2>Model Performance</h2>
+
+  <div class="muted">
+    Historical walk-forward backtesting using ESPN NBA player game logs.
+    Lower prediction error is better.
+  </div>
+
+  <div id="backtest-status" role="status">Loading backtest results...</div>
+  <div class="performance-grid" id="performance-grid"></div>
+
+  <div class="info">
+    <strong>Understanding the results</strong>
+    <p><strong>Predictions:</strong> Number of historical player-game predictions evaluated in each market.</p>
+    <p><strong>MAE:</strong> Mean Absolute Error. The average difference between projected and actual points, rebounds, or assists.</p>
+    <p><strong>RMSE:</strong> Root Mean Squared Error. Gives greater weight to large prediction misses.</p>
+    <p><strong>Bias:</strong> Average projected value minus actual value. Negative means the model tends to underestimate.</p>
+    <p><strong>Method:</strong> Historical predictions use prior game data. A minimum of 10 previous games is required.</p>
+    <p><strong>Important:</strong> The historical backtest may evaluate a different model version than current live predictions. Backtest projection accuracy does not establish profitable betting performance.</p>
+  </div>
 </section>
 
 <div class="footer">
-<strong>Data:</strong> ESPN NBA game logs and DraftKings odds via The Odds API.
-<p><strong>Model:</strong> <span id="model-version">Version 3 (experimental)</span>.</p>
-<p>Current predictions are displayed separately from historical graded predictions.</p>
-<p>Game times are Eastern Time. Refresh Data reloads published results, not live sportsbook odds.</p>
-<p>Model EV is a theoretical estimate, not a verified betting advantage. For informational purposes only.</p>
+  <strong>Data:</strong> ESPN NBA game logs and DraftKings odds via The Odds API.
+  <p><strong>Model:</strong> <span id="model-version">Experimental model</span>.</p>
+  <p>Current predictions are displayed separately from historical graded predictions.</p>
+  <p>Game times are Eastern Time. Refresh Data reloads published results, not live sportsbook odds.</p>
+  <p>Model EV is a theoretical estimate, not a verified betting advantage. For informational purposes only.</p>
 </div>
+
 </main>
 
 <script>
@@ -322,7 +348,8 @@ function formatNumber(value, decimals = 1) {
 }
 
 function gameKey(row) {
-  return row.event_id || ((row.date || "") + "|" + (row.matchup || ""));
+  return row.event_id ||
+    ((row.date || row.game_date || "") + "|" + (row.matchup || ""));
 }
 
 function normalizeMarket(value) {
@@ -362,9 +389,13 @@ function populateGames() {
   select.appendChild(all);
 
   const games = new Map();
+
   data.forEach(row => {
     if (row.matchup) {
-      games.set(gameKey(row), formatDate(row.date) + " " + row.matchup);
+      games.set(
+        gameKey(row),
+        formatDate(row.date) + " " + row.matchup
+      );
     }
   });
 
@@ -392,8 +423,13 @@ function draw() {
 
   const filtered = data.filter(row => {
     const searchText = [
-      row.player, row.team, row.team_abbr,
-      row.opponent, row.matchup, row.home_team, row.away_team
+      row.player,
+      row.team,
+      row.team_abbr,
+      row.opponent,
+      row.matchup,
+      row.home_team,
+      row.away_team
     ].filter(Boolean).join(" ").toLowerCase();
 
     return (
@@ -428,8 +464,10 @@ function draw() {
     td.textContent = data.length
       ? "No results match your filters."
       : "No player props available in the latest results.";
+
     tr.appendChild(td);
     tbody.appendChild(tr);
+
     el("status").textContent =
       "0 of " + data.length + " outcomes displayed.";
     return;
@@ -478,13 +516,20 @@ function draw() {
       if (index === 3) td.className = "player";
       if (index === 4) td.className = "team";
       if (index === 5) td.className = "opponent";
+
       if (index === 7) {
-        td.className = row.side === "Over" ? "side-over" : "side-under";
+        td.className = row.side === "Over"
+          ? "side-over" : "side-under";
       }
+
       if (index === 12) {
-        td.className = Number(row.ev) > 0 ? "positive" : "negative";
+        td.className = Number(row.ev) > 0
+          ? "positive" : "negative";
       }
-      if (index === 14) td.className = "result-" + result;
+
+      if (index === 14) {
+        td.className = "result-" + result;
+      }
 
       tr.appendChild(td);
     });
@@ -493,13 +538,16 @@ function draw() {
   }
 
   el("status").textContent =
-    filtered.length + " of " + data.length + " model outcomes displayed.";
+    filtered.length + " of " + data.length +
+    " model outcomes displayed.";
 }
 
 function addText(parent, tag, value, className) {
   const node = document.createElement(tag);
   node.textContent = value;
+
   if (className) node.className = className;
+
   parent.appendChild(node);
   return node;
 }
@@ -507,8 +555,10 @@ function addText(parent, tag, value, className) {
 function metric(card, label, value) {
   const line = document.createElement("div");
   line.className = "metric";
+
   addText(line, "span", label);
   addText(line, "strong", value);
+
   card.appendChild(line);
 }
 
@@ -521,6 +571,7 @@ function metricNumber(value) {
 
 async function loadBacktest() {
   el("backtest-status").textContent = "Loading backtest results...";
+
   const grid = el("performance-grid");
   grid.replaceChildren();
 
@@ -529,10 +580,16 @@ async function loadBacktest() {
       "./backtest.json?t=" + Date.now(),
       { cache: "no-store" }
     );
-    if (!response.ok) throw new Error("HTTP " + response.status);
+
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
 
     const json = await response.json();
-    if (!json.markets) throw new Error("Invalid backtest format");
+
+    if (!json.markets) {
+      throw new Error("Invalid backtest format");
+    }
 
     for (const [key, label] of [
       ["points", "Points"],
@@ -545,20 +602,37 @@ async function loadBacktest() {
 
       addText(card, "h3", label);
       addText(card, "div", "Average Prediction Error", "label");
+
       addText(
-        card, "div",
+        card,
+        "div",
         metricNumber(stats.mean_absolute_error),
         "number"
       );
 
-      metric(card, "Predictions tested",
-        String(stats.predictions_tested ?? "--"));
-      metric(card, "MAE",
-        metricNumber(stats.mean_absolute_error));
-      metric(card, "RMSE",
-        metricNumber(stats.root_mean_squared_error));
-      metric(card, "Bias",
-        metricNumber(stats.mean_signed_error));
+      metric(
+        card,
+        "Predictions tested",
+        String(stats.predictions_tested ?? "--")
+      );
+
+      metric(
+        card,
+        "MAE",
+        metricNumber(stats.mean_absolute_error)
+      );
+
+      metric(
+        card,
+        "RMSE",
+        metricNumber(stats.root_mean_squared_error)
+      );
+
+      metric(
+        card,
+        "Bias",
+        metricNumber(stats.mean_signed_error)
+      );
 
       grid.appendChild(card);
     }
@@ -571,6 +645,7 @@ async function loadBacktest() {
 
   } catch (error) {
     console.error(error);
+
     el("backtest-status").textContent =
       "Could not load backtest results: " + error.message;
   }
@@ -589,7 +664,8 @@ function convertHistoryRow(row) {
       status === "graded" &&
       ["win", "loss", "push"].includes(outcome)
         ? outcome
-        : status === "invalid" ? "invalid" : "pending"
+        : status === "invalid"
+          ? "invalid" : "pending"
   };
 }
 
@@ -599,9 +675,11 @@ async function loadGradedPredictions() {
       "./graded_predictions.json?t=" + Date.now(),
       { cache: "no-store" }
     );
+
     if (!response.ok) return [];
 
     const json = await response.json();
+
     const predictions = Array.isArray(json.predictions)
       ? json.predictions : [];
 
@@ -618,18 +696,25 @@ async function loadData() {
 
   try {
     const [response, history] = await Promise.all([
-      fetch("./results.json?t=" + Date.now(), { cache: "no-store" }),
+      fetch(
+        "./results.json?t=" + Date.now(),
+        { cache: "no-store" }
+      ),
       loadGradedPredictions()
     ]);
 
-    if (!response.ok) throw new Error("HTTP " + response.status);
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
 
     const json = await response.json();
+
     if (!Array.isArray(json.results)) {
       throw new Error("Invalid results format");
     }
 
     const historyByKey = new Map();
+
     for (const row of history) {
       historyByKey.set(predictionKey(row), row);
     }
@@ -644,7 +729,10 @@ async function loadData() {
       };
 
       const previous = historyByKey.get(predictionKey(current));
-      if (previous) current.result = previous.result;
+
+      if (previous) {
+        current.result = previous.result;
+      }
 
       return current;
     });
@@ -653,19 +741,29 @@ async function loadData() {
       json.results[0]?.model || "Experimental model";
 
     el("count").textContent = data.length;
+
     el("positive").textContent =
       data.filter(row => Number(row.ev) > 0).length;
 
     const games = new Set(
       data.filter(row => row.matchup).map(gameKey)
     );
+
     el("games").textContent = games.size;
 
-    const wins = history.filter(row => row.result === "win").length;
-    const losses = history.filter(row => row.result === "loss").length;
+    const wins = history.filter(
+      row => row.result === "win"
+    ).length;
 
-    el("total-wins").textContent = history.length ? wins : "--";
-    el("total-losses").textContent = history.length ? losses : "--";
+    const losses = history.filter(
+      row => row.result === "loss"
+    ).length;
+
+    el("total-wins").textContent =
+      history.length ? wins : "--";
+
+    el("total-losses").textContent =
+      history.length ? losses : "--";
 
     el("updated").textContent = json.generated_at
       ? new Date(json.generated_at).toLocaleString()
@@ -673,19 +771,33 @@ async function loadData() {
 
     populateGames();
     draw();
+    displayGameLines(data);
 
   } catch (error) {
     console.error(error);
     data = [];
-    for (const id of ["count", "positive", "games"]) {
+
+    for (const id of [
+      "count",
+      "positive",
+      "games"
+    ]) {
       el(id).textContent = "0";
     }
-    for (const id of ["total-wins", "total-losses", "updated"]) {
+
+    for (const id of [
+      "total-wins",
+      "total-losses",
+      "updated"
+    ]) {
       el(id).textContent = "--";
     }
+
     el("status").textContent =
       "Could not load results: " + error.message;
+
     el("rows").replaceChildren();
+    displayGameLines([]);
   }
 }
 
@@ -697,32 +809,65 @@ function trackPercent(value) {
 }
 
 function trackUnits(value) {
-  if (value === null ||
-      value === undefined ||
-      !Number.isFinite(Number(value))) return "--";
+  if (
+    value === null ||
+    value === undefined ||
+    !Number.isFinite(Number(value))
+  ) {
+    return "--";
+  }
 
   const n = Number(value);
-  return (n > 0 ? "+" : "") + n.toFixed(2) + " units";
+
+  return (n > 0 ? "+" : "") +
+    n.toFixed(2) + " units";
 }
 
 function addTrackingCard(container, title, stats) {
   const card = document.createElement("div");
   card.className = "performance-card";
+
   addText(card, "h3", title);
-  metric(card, "Settled", String(stats?.settled ?? 0));
+
   metric(
-    card, "Wins / Losses / Pushes",
-    `${stats?.wins ?? 0} / ${stats?.losses ?? 0} / ${stats?.pushes ?? 0}`
+    card,
+    "Settled",
+    String(stats?.settled ?? 0)
   );
-  metric(card, "Win rate", trackPercent(stats?.win_rate));
-  metric(card, "ROI", trackPercent(stats?.roi));
-  metric(card, "Profit / Loss", trackUnits(stats?.profit_units));
+
+  metric(
+    card,
+    "Wins / Losses / Pushes",
+    `${stats?.wins ?? 0} / ` +
+    `${stats?.losses ?? 0} / ` +
+    `${stats?.pushes ?? 0}`
+  );
+
+  metric(
+    card,
+    "Win rate",
+    trackPercent(stats?.win_rate)
+  );
+
+  metric(
+    card,
+    "ROI",
+    trackPercent(stats?.roi)
+  );
+
+  metric(
+    card,
+    "Profit / Loss",
+    trackUnits(stats?.profit_units)
+  );
+
   container.appendChild(card);
 }
 
 async function loadTracking() {
   const status = el("tracking-status");
   const breakdowns = el("tracking-breakdowns");
+
   status.textContent = "Loading tracked results...";
   breakdowns.replaceChildren();
 
@@ -731,36 +876,62 @@ async function loadTracking() {
       "./tracking.json?t=" + Date.now(),
       { cache: "no-store" }
     );
-    if (!response.ok) throw new Error("HTTP " + response.status);
+
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
 
     const json = await response.json();
-    if (!json.summary || !json.by_market || !json.by_side) {
+
+    if (
+      !json.summary ||
+      !json.by_market ||
+      !json.by_side
+    ) {
       throw new Error("Invalid tracking format");
     }
 
     const summary = json.summary;
-    el("track-winrate").textContent = trackPercent(summary.win_rate);
-    el("track-roi").textContent = trackPercent(summary.roi);
-    el("track-profit").textContent = trackUnits(summary.profit_units);
-    el("track-settled").textContent = String(summary.settled ?? 0);
+
+    el("track-winrate").textContent =
+      trackPercent(summary.win_rate);
+
+    el("track-roi").textContent =
+      trackPercent(summary.roi);
+
+    el("track-profit").textContent =
+      trackUnits(summary.profit_units);
+
+    el("track-settled").textContent =
+      String(summary.settled ?? 0);
 
     el("tracking-details").textContent =
-      `${summary.wins ?? 0} wins · ${summary.losses ?? 0} losses · ` +
-      `${summary.pushes ?? 0} pushes · ${summary.pending ?? 0} pending`;
+      `${summary.wins ?? 0} wins · ` +
+      `${summary.losses ?? 0} losses · ` +
+      `${summary.pushes ?? 0} pushes · ` +
+      `${summary.pending ?? 0} pending`;
 
     for (const [key, label] of [
       ["points", "Points"],
       ["rebounds", "Rebounds"],
       ["assists", "Assists"]
     ]) {
-      addTrackingCard(breakdowns, label, json.by_market[key] || {});
+      addTrackingCard(
+        breakdowns,
+        label,
+        json.by_market[key] || {}
+      );
     }
 
     for (const [key, label] of [
       ["over", "Overs"],
       ["under", "Unders"]
     ]) {
-      addTrackingCard(breakdowns, label, json.by_side[key] || {});
+      addTrackingCard(
+        breakdowns,
+        label,
+        json.by_side[key] || {}
+      );
     }
 
     addTrackingCard(
@@ -789,10 +960,132 @@ async function loadTracking() {
     }
 
     el("tracking-details").textContent = "";
+
     status.textContent =
-      "Live tracking is not available yet (tracking.json may not have been generated). " +
+      "Live tracking is not available yet " +
+      "(tracking.json may not have been generated). " +
       error.message;
   }
+}
+
+function displayGameLines(rows) {
+  const grid = el("game-lines-grid");
+  const status = el("game-lines-status");
+
+  grid.replaceChildren();
+
+  const games = new Map();
+
+  for (const row of rows) {
+    const key = gameKey(row);
+    const existing = games.get(key);
+
+    if (
+      !existing ||
+      (
+        existing.game_total == null &&
+        row.game_total != null
+      )
+    ) {
+      games.set(key, row);
+    }
+  }
+
+  function num(value, signed = false) {
+    if (
+      value === null ||
+      value === undefined ||
+      value === ""
+    ) {
+      return "--";
+    }
+
+    const n = Number(value);
+
+    if (!Number.isFinite(n)) return "--";
+
+    return (signed && n > 0 ? "+" : "") +
+      n.toFixed(1);
+  }
+
+  function addLine(card, label, value) {
+    const line = document.createElement("div");
+    line.className = "game-line-row";
+
+    const caption = document.createElement("span");
+    caption.textContent = label;
+
+    const figure = document.createElement("strong");
+    figure.textContent = value;
+
+    line.append(caption, figure);
+    card.appendChild(line);
+  }
+
+  let available = 0;
+
+  for (const game of games.values()) {
+    const card = document.createElement("div");
+    card.className = "game-line-card";
+
+    const heading = document.createElement("h3");
+    heading.textContent = shortMatchup(game);
+    card.appendChild(heading);
+
+    const tipoff = document.createElement("div");
+    tipoff.className = "muted";
+
+    tipoff.textContent =
+      `${formatDate(game.date || game.game_date)} · ` +
+      `${game.game_time || "Tipoff unavailable"}`;
+
+    card.appendChild(tipoff);
+
+    addLine(
+      card,
+      `${shortTeam(game.away_team)} Spread`,
+      num(game.away_spread, true)
+    );
+
+    addLine(
+      card,
+      `${shortTeam(game.home_team)} Spread`,
+      num(game.home_spread, true)
+    );
+
+    addLine(
+      card,
+      "Game Total",
+      num(game.game_total)
+    );
+
+    addLine(
+      card,
+      `${shortTeam(game.away_team)} Implied Points`,
+      num(game.away_implied_total)
+    );
+
+    addLine(
+      card,
+      `${shortTeam(game.home_team)} Implied Points`,
+      num(game.home_implied_total)
+    );
+
+    if (
+      game.game_total !== null &&
+      game.game_total !== undefined &&
+      game.game_total !== "" &&
+      Number.isFinite(Number(game.game_total))
+    ) {
+      available++;
+    }
+
+    grid.appendChild(card);
+  }
+
+  status.textContent = games.size
+    ? `${available} of ${games.size} games have lines available.`
+    : "No games available in the latest predictions.";
 }
 
 // Search and filter controls.
@@ -810,8 +1103,14 @@ document.querySelectorAll("th[data-sort]").forEach(th => {
     } else {
       sortKey = key;
       sortAscending = [
-        "date", "matchup", "game_time", "player",
-        "team_abbr", "opponent", "market", "side"
+        "date",
+        "matchup",
+        "game_time",
+        "player",
+        "team_abbr",
+        "opponent",
+        "market",
+        "side"
       ].includes(key);
     }
 
@@ -831,5 +1130,6 @@ loadData();
 loadBacktest();
 loadTracking();
 </script>
+
 </body>
 </html>
