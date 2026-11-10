@@ -22,13 +22,13 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install NBA API
-        run: pip install nba_api pandas
-
-      
       - name: Download real NBA statistics
         run: python update_nba_stats.py
 
+      - name: Download real DraftKings odds
+        env:
+          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+        run: python update_odds.py
 
       - name: Run prediction engine
         run: python engine.py
@@ -37,8 +37,12 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/game_logs.csv docs/results.json
+
+          git add data/game_logs.csv
+          git add data/sample_odds.csv
+          git add docs/results.json
+
           if ! git diff --cached --quiet; then
-            git commit -m "Update NBA statistics and projections"
+            git commit -m "Update NBA stats, DraftKings odds and projections"
             git push
           fi
