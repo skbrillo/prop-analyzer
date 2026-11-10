@@ -30,7 +30,7 @@ def main():
             season=season,
             season_type_all_star="Regular Season",
             player_or_team_abbreviation="P",
-            timeout=60,
+            timeout=120,
         )
 
         games = response.get_data_frames()[0]
