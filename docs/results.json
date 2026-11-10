@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-11-10T15:15:04.429433+00:00",
-  "mode": "DEMO \u2014 synthetic player logs and sample odds; not betting recommendations",
+  "generated_at": "2026-11-10T15:21:23.479384+00:00",
+  "mode": "REAL DATA - ESPN NBA statistics and DraftKings odds. Experimental, unvalidated model. Probabilities and expected values are estimates, not verified betting advantages.",
   "results": [
     {
       "player": "Mikal Bridges",
@@ -17,8 +17,8 @@
       "ev": 0.5696,
       "last10": 7,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jayson Tatum",
@@ -35,26 +35,8 @@
       "ev": 0.4845,
       "last10": 7,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Josh Hart",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 7.5,
-      "odds": -118,
-      "projection": 6.16,
-      "probability": 0.7278,
-      "implied_probability": 0.5413,
-      "ev": 0.3446,
-      "last10": 7,
-      "sample_size": 10,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Brayden Burries",
@@ -71,8 +53,26 @@
       "ev": 0.314,
       "last10": 8,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Josh Hart",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 7.5,
+      "odds": -126,
+      "projection": 6.16,
+      "probability": 0.7278,
+      "implied_probability": 0.5575,
+      "ev": 0.3055,
+      "last10": 7,
+      "sample_size": 10,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "OG Anunoby",
@@ -89,8 +89,8 @@
       "ev": 0.2842,
       "last10": 5,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Josh Hart",
@@ -100,33 +100,33 @@
       "market": "Points",
       "side": "Under",
       "line": 9.5,
-      "odds": -127,
+      "odds": -125,
       "projection": 7.6,
       "probability": 0.6937,
-      "implied_probability": 0.5595,
-      "ev": 0.24,
+      "implied_probability": 0.5556,
+      "ev": 0.2487,
       "last10": 6,
       "sample_size": 10,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "LeBron James",
+      "player": "Jalen Brunson",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
-      "market": "Assists",
+      "market": "Rebounds",
       "side": "Under",
-      "line": 7.5,
-      "odds": -150,
-      "projection": 6.63,
-      "probability": 0.7409,
-      "implied_probability": 0.6,
-      "ev": 0.2348,
-      "last10": 6,
-      "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "line": 3.5,
+      "odds": -123,
+      "projection": 3.04,
+      "probability": 0.6844,
+      "implied_probability": 0.5516,
+      "ev": 0.2408,
+      "last10": 7,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Myles Turner",
@@ -143,8 +143,8 @@
       "ev": 0.2297,
       "last10": 5,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Mikal Bridges",
@@ -161,8 +161,62 @@
       "ev": 0.2286,
       "last10": 6,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "OG Anunoby",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 5.5,
+      "odds": -108,
+      "projection": 5.32,
+      "probability": 0.6332,
+      "implied_probability": 0.5192,
+      "ev": 0.2195,
+      "last10": 6,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Mikal Bridges",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 3.5,
+      "odds": -116,
+      "projection": 3.23,
+      "probability": 0.6499,
+      "implied_probability": 0.537,
+      "ev": 0.2101,
+      "last10": 5,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Tyrese Maxey",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 3.5,
+      "odds": 103,
+      "projection": 3.54,
+      "probability": 0.591,
+      "implied_probability": 0.4926,
+      "ev": 0.1996,
+      "last10": 3,
+      "sample_size": 14,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Neemias Queta",
@@ -172,33 +226,15 @@
       "market": "Rebounds",
       "side": "Under",
       "line": 7.5,
-      "odds": -128,
+      "odds": -134,
       "projection": 6.45,
       "probability": 0.6863,
-      "implied_probability": 0.5614,
-      "ev": 0.2224,
+      "implied_probability": 0.5726,
+      "ev": 0.1984,
       "last10": 7,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Jalen Brunson",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 3.5,
-      "odds": -134,
-      "projection": 3.04,
-      "probability": 0.6844,
-      "implied_probability": 0.5726,
-      "ev": 0.1951,
-      "last10": 7,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Karl-Anthony Towns",
@@ -215,8 +251,8 @@
       "ev": 0.1758,
       "last10": 5,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jalen Brunson",
@@ -233,44 +269,8 @@
       "ev": 0.1705,
       "last10": 4,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Tyrese Maxey",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Assists",
-      "side": "Under",
-      "line": 5.5,
-      "odds": 105,
-      "projection": 5.61,
-      "probability": 0.5705,
-      "implied_probability": 0.4878,
-      "ev": 0.1696,
-      "last10": 6,
-      "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Mikal Bridges",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 3.5,
-      "odds": -126,
-      "projection": 3.23,
-      "probability": 0.6499,
-      "implied_probability": 0.5575,
-      "ev": 0.1657,
-      "last10": 5,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Derrick White",
@@ -287,44 +287,8 @@
       "ev": 0.159,
       "last10": 5,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "OG Anunoby",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 5.5,
-      "odds": -121,
-      "projection": 5.32,
-      "probability": 0.6332,
-      "implied_probability": 0.5475,
-      "ev": 0.1565,
-      "last10": 6,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Tyrese Maxey",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 3.5,
-      "odds": -106,
-      "projection": 3.54,
-      "probability": 0.591,
-      "implied_probability": 0.5146,
-      "ev": 0.1485,
-      "last10": 3,
-      "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Joel Embiid",
@@ -341,26 +305,8 @@
       "ev": 0.1417,
       "last10": 5,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "VJ Edgecombe",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Assists",
-      "side": "Under",
-      "line": 2.5,
-      "odds": 129,
-      "projection": 3.04,
-      "probability": 0.4928,
-      "implied_probability": 0.4367,
-      "ev": 0.1285,
-      "last10": 5,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "LeBron James",
@@ -377,8 +323,26 @@
       "ev": 0.1259,
       "last10": 6,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "LeBron James",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Assists",
+      "side": "Under",
+      "line": 6.5,
+      "odds": -104,
+      "projection": 6.63,
+      "probability": 0.5688,
+      "implied_probability": 0.5098,
+      "ev": 0.1157,
+      "last10": 4,
+      "sample_size": 11,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Paul George",
@@ -395,8 +359,26 @@
       "ev": 0.1076,
       "last10": 5,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Brayden Burries",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Points",
+      "side": "Under",
+      "line": 11.5,
+      "odds": 100,
+      "projection": 11.34,
+      "probability": 0.5508,
+      "implied_probability": 0.5,
+      "ev": 0.1016,
+      "last10": 6,
+      "sample_size": 14,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Anfernee Simons",
@@ -413,8 +395,26 @@
       "ev": 0.1014,
       "last10": 3,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Sam Hauser",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 2.5,
+      "odds": -102,
+      "projection": 2.73,
+      "probability": 0.5537,
+      "implied_probability": 0.505,
+      "ev": 0.0965,
+      "last10": 4,
+      "sample_size": 12,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Mitchell Robinson",
@@ -431,26 +431,8 @@
       "ev": 0.096,
       "last10": 6,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Jaylen Brown",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Assists",
-      "side": "Under",
-      "line": 3.5,
-      "odds": 105,
-      "projection": 3.84,
-      "probability": 0.531,
-      "implied_probability": 0.4878,
-      "ev": 0.0885,
-      "last10": 2,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Tyrese Maxey",
@@ -467,26 +449,8 @@
       "ev": 0.0831,
       "last10": 8,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Brayden Burries",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Points",
-      "side": "Under",
-      "line": 11.5,
-      "odds": -104,
-      "projection": 11.34,
-      "probability": 0.5508,
-      "implied_probability": 0.5098,
-      "ev": 0.0804,
-      "last10": 6,
-      "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Sam Hauser",
@@ -503,8 +467,8 @@
       "ev": 0.0792,
       "last10": 6,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Josh Hart",
@@ -521,8 +485,26 @@
       "ev": 0.0756,
       "last10": 7,
       "sample_size": 10,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Tyrese Maxey",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Assists",
+      "side": "Under",
+      "line": 5.5,
+      "odds": -114,
+      "projection": 5.61,
+      "probability": 0.5705,
+      "implied_probability": 0.5327,
+      "ev": 0.071,
+      "last10": 6,
+      "sample_size": 14,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jayson Tatum",
@@ -539,44 +521,8 @@
       "ev": 0.0708,
       "last10": 7,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Karl-Anthony Towns",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 13.5,
-      "odds": -121,
-      "projection": 12.97,
-      "probability": 0.5854,
-      "implied_probability": 0.5475,
-      "ev": 0.0692,
-      "last10": 6,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Joel Embiid",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 8.5,
-      "odds": -102,
-      "projection": 9.3,
-      "probability": 0.5383,
-      "implied_probability": 0.505,
-      "ev": 0.0661,
-      "last10": 5,
-      "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Myles Turner",
@@ -593,8 +539,8 @@
       "ev": 0.0639,
       "last10": 4,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Tyler Herro",
@@ -604,51 +550,33 @@
       "market": "Rebounds",
       "side": "Under",
       "line": 4.5,
-      "odds": -129,
+      "odds": -128,
       "projection": 4.43,
       "probability": 0.5963,
-      "implied_probability": 0.5633,
-      "ev": 0.0585,
+      "implied_probability": 0.5614,
+      "ev": 0.0622,
       "last10": 4,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Sam Hauser",
+      "player": "VJ Edgecombe",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
-      "market": "Rebounds",
+      "market": "Assists",
       "side": "Under",
       "line": 2.5,
-      "odds": -110,
-      "projection": 2.73,
-      "probability": 0.5537,
-      "implied_probability": 0.5238,
-      "ev": 0.0571,
-      "last10": 4,
-      "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Landry Shamet",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Points",
-      "side": "Over",
-      "line": 8.5,
-      "odds": -110,
-      "projection": 9.75,
-      "probability": 0.5513,
-      "implied_probability": 0.5238,
-      "ev": 0.0525,
+      "odds": 115,
+      "projection": 3.04,
+      "probability": 0.4928,
+      "implied_probability": 0.4651,
+      "ev": 0.0595,
       "last10": 5,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Tyler Herro",
@@ -665,8 +593,44 @@
       "ev": 0.0515,
       "last10": 7,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Landry Shamet",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Points",
+      "side": "Over",
+      "line": 8.5,
+      "odds": -111,
+      "projection": 9.75,
+      "probability": 0.5513,
+      "implied_probability": 0.5261,
+      "ev": 0.048,
+      "last10": 5,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Jaylen Brown",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 6.5,
+      "odds": -116,
+      "projection": 6.53,
+      "probability": 0.5627,
+      "implied_probability": 0.537,
+      "ev": 0.0479,
+      "last10": 4,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Mitchell Robinson",
@@ -683,8 +647,8 @@
       "ev": 0.0344,
       "last10": 5,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "VJ Edgecombe",
@@ -701,8 +665,8 @@
       "ev": 0.0201,
       "last10": 5,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jayson Tatum",
@@ -719,8 +683,26 @@
       "ev": 0.0155,
       "last10": 6,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Brayden Burries",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 5.5,
+      "odds": -110,
+      "projection": 5.78,
+      "probability": 0.5318,
+      "implied_probability": 0.5238,
+      "ev": 0.0152,
+      "last10": 6,
+      "sample_size": 14,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Paul George",
@@ -737,8 +719,62 @@
       "ev": 0.0147,
       "last10": 2,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Joel Embiid",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 8.5,
+      "odds": -114,
+      "projection": 9.3,
+      "probability": 0.5383,
+      "implied_probability": 0.5327,
+      "ev": 0.0106,
+      "last10": 5,
+      "sample_size": 11,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Jaylen Brown",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Assists",
+      "side": "Under",
+      "line": 3.5,
+      "odds": -111,
+      "projection": 3.84,
+      "probability": 0.531,
+      "implied_probability": 0.5261,
+      "ev": 0.0093,
+      "last10": 2,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Joel Embiid",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Assists",
+      "side": "Over",
+      "line": 3.5,
+      "odds": -101,
+      "projection": 4.05,
+      "probability": 0.5067,
+      "implied_probability": 0.5025,
+      "ev": 0.0084,
+      "last10": 5,
+      "sample_size": 11,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Neemias Queta",
@@ -755,26 +791,8 @@
       "ev": 0.0077,
       "last10": 6,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Jaylen Brown",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 6.5,
-      "odds": -127,
-      "projection": 6.53,
-      "probability": 0.5627,
-      "implied_probability": 0.5595,
-      "ev": 0.0058,
-      "last10": 4,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jaylen Brown",
@@ -791,8 +809,8 @@
       "ev": 0.0025,
       "last10": 6,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jalen Brunson",
@@ -809,26 +827,8 @@
       "ev": 0.0001,
       "last10": 6,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Brayden Burries",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 5.5,
-      "odds": -114,
-      "projection": 5.78,
-      "probability": 0.5318,
-      "implied_probability": 0.5327,
-      "ev": -0.0018,
-      "last10": 6,
-      "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Karl-Anthony Towns",
@@ -845,8 +845,26 @@
       "ev": -0.0056,
       "last10": 6,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Karl-Anthony Towns",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 12.5,
+      "odds": -102,
+      "projection": 12.97,
+      "probability": 0.5021,
+      "implied_probability": 0.505,
+      "ev": -0.0056,
+      "last10": 4,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Derrick White",
@@ -863,26 +881,8 @@
       "ev": -0.0077,
       "last10": 6,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "LeBron James",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 6.5,
-      "odds": -116,
-      "projection": 7.19,
-      "probability": 0.5293,
-      "implied_probability": 0.537,
-      "ev": -0.0145,
-      "last10": 7,
-      "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Payton Pritchard",
@@ -899,8 +899,26 @@
       "ev": -0.0154,
       "last10": 6,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Tyler Herro",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Points",
+      "side": "Over",
+      "line": 19.5,
+      "odds": -121,
+      "projection": 20.6,
+      "probability": 0.5369,
+      "implied_probability": 0.5475,
+      "ev": -0.0193,
+      "last10": 7,
+      "sample_size": 14,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Kyle Kuzma",
@@ -917,26 +935,44 @@
       "ev": -0.0199,
       "last10": 6,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Tyler Herro",
+      "player": "VJ Edgecombe",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 5.5,
+      "odds": -101,
+      "projection": 6.07,
+      "probability": 0.4905,
+      "implied_probability": 0.5025,
+      "ev": -0.0238,
+      "last10": 3,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Paul George",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
       "market": "Points",
       "side": "Over",
-      "line": 19.5,
-      "odds": -123,
-      "projection": 20.6,
-      "probability": 0.5369,
-      "implied_probability": 0.5516,
+      "line": 17.5,
+      "odds": -121,
+      "projection": 18.76,
+      "probability": 0.533,
+      "implied_probability": 0.5475,
       "ev": -0.0265,
-      "last10": 7,
-      "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "last10": 5,
+      "sample_size": 11,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Payton Pritchard",
@@ -953,8 +989,8 @@
       "ev": -0.0269,
       "last10": 6,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "OG Anunoby",
@@ -971,8 +1007,8 @@
       "ev": -0.0273,
       "last10": 2,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Payton Pritchard",
@@ -989,44 +1025,8 @@
       "ev": -0.0328,
       "last10": 7,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Paul George",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Points",
-      "side": "Over",
-      "line": 17.5,
-      "odds": -126,
-      "projection": 18.76,
-      "probability": 0.533,
-      "implied_probability": 0.5575,
-      "ev": -0.044,
-      "last10": 5,
-      "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Kyle Kuzma",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Points",
-      "side": "Over",
-      "line": 10.5,
-      "odds": -124,
-      "projection": 11.51,
-      "probability": 0.5285,
-      "implied_probability": 0.5536,
-      "ev": -0.0454,
-      "last10": 6,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Derrick White",
@@ -1043,62 +1043,44 @@
       "ev": -0.0457,
       "last10": 6,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Joel Embiid",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Assists",
-      "side": "Under",
-      "line": 3.5,
-      "odds": -110,
-      "projection": 4.05,
-      "probability": 0.4933,
-      "implied_probability": 0.5238,
-      "ev": -0.0583,
-      "last10": 5,
-      "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "VJ Edgecombe",
+      "player": "LeBron James",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
       "market": "Rebounds",
       "side": "Under",
-      "line": 5.5,
-      "odds": -109,
-      "projection": 6.07,
-      "probability": 0.4905,
-      "implied_probability": 0.5215,
-      "ev": -0.0595,
+      "line": 6.5,
+      "odds": 101,
+      "projection": 7.19,
+      "probability": 0.4707,
+      "implied_probability": 0.4975,
+      "ev": -0.0538,
       "last10": 3,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "sample_size": 11,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "VJ Edgecombe",
+      "player": "Kyle Kuzma",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
-      "market": "Rebounds",
+      "market": "Points",
       "side": "Over",
-      "line": 5.5,
-      "odds": -120,
-      "projection": 6.07,
-      "probability": 0.5095,
-      "implied_probability": 0.5455,
-      "ev": -0.0659,
-      "last10": 7,
+      "line": 11.5,
+      "odds": 100,
+      "projection": 11.51,
+      "probability": 0.4727,
+      "implied_probability": 0.5,
+      "ev": -0.0545,
+      "last10": 6,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Kyle Kuzma",
@@ -1107,52 +1089,34 @@
       "date": "2026-11-11",
       "market": "Points",
       "side": "Under",
-      "line": 10.5,
-      "odds": -103,
+      "line": 11.5,
+      "odds": -127,
       "projection": 11.51,
-      "probability": 0.4715,
-      "implied_probability": 0.5074,
-      "ev": -0.0706,
+      "probability": 0.5273,
+      "implied_probability": 0.5595,
+      "ev": -0.0576,
       "last10": 4,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Joel Embiid",
+      "player": "LeBron James",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
-      "market": "Assists",
+      "market": "Rebounds",
       "side": "Over",
-      "line": 3.5,
-      "odds": -120,
-      "projection": 4.05,
-      "probability": 0.5067,
-      "implied_probability": 0.5455,
-      "ev": -0.071,
-      "last10": 5,
+      "line": 6.5,
+      "odds": -132,
+      "projection": 7.19,
+      "probability": 0.5293,
+      "implied_probability": 0.569,
+      "ev": -0.0698,
+      "last10": 7,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Paul George",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Points",
-      "side": "Under",
-      "line": 17.5,
-      "odds": -102,
-      "projection": 18.76,
-      "probability": 0.467,
-      "implied_probability": 0.505,
-      "ev": -0.0751,
-      "last10": 5,
-      "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Payton Pritchard",
@@ -1169,8 +1133,8 @@
       "ev": -0.0805,
       "last10": 3,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Derrick White",
@@ -1187,8 +1151,26 @@
       "ev": -0.0843,
       "last10": 4,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Paul George",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Points",
+      "side": "Under",
+      "line": 17.5,
+      "odds": -105,
+      "projection": 18.76,
+      "probability": 0.467,
+      "implied_probability": 0.5122,
+      "ev": -0.0882,
+      "last10": 5,
+      "sample_size": 11,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "OG Anunoby",
@@ -1205,8 +1187,26 @@
       "ev": -0.0889,
       "last10": 8,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "VJ Edgecombe",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 5.5,
+      "odds": -130,
+      "projection": 6.07,
+      "probability": 0.5095,
+      "implied_probability": 0.5652,
+      "ev": -0.0986,
+      "last10": 7,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Tyler Herro",
@@ -1216,15 +1216,15 @@
       "market": "Points",
       "side": "Under",
       "line": 19.5,
-      "odds": -104,
+      "odds": -106,
       "projection": 20.6,
       "probability": 0.4631,
-      "implied_probability": 0.5098,
-      "ev": -0.0917,
+      "implied_probability": 0.5146,
+      "ev": -0.1001,
       "last10": 3,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jalen Brunson",
@@ -1241,8 +1241,8 @@
       "ev": -0.1098,
       "last10": 4,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Derrick White",
@@ -1259,8 +1259,8 @@
       "ev": -0.1109,
       "last10": 4,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Kyle Kuzma",
@@ -1277,8 +1277,8 @@
       "ev": -0.111,
       "last10": 4,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Payton Pritchard",
@@ -1295,26 +1295,8 @@
       "ev": -0.1122,
       "last10": 4,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "LeBron James",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 6.5,
-      "odds": -113,
-      "projection": 7.19,
-      "probability": 0.4707,
-      "implied_probability": 0.5305,
-      "ev": -0.1127,
-      "last10": 3,
-      "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Payton Pritchard",
@@ -1331,8 +1313,26 @@
       "ev": -0.1141,
       "last10": 4,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Karl-Anthony Towns",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 12.5,
+      "odds": -129,
+      "projection": 12.97,
+      "probability": 0.4979,
+      "implied_probability": 0.5633,
+      "ev": -0.1162,
+      "last10": 6,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jaylen Brown",
@@ -1349,8 +1349,8 @@
       "ev": -0.1192,
       "last10": 4,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Neemias Queta",
@@ -1367,8 +1367,8 @@
       "ev": -0.1208,
       "last10": 4,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Paul George",
@@ -1385,26 +1385,8 @@
       "ev": -0.1232,
       "last10": 8,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Brayden Burries",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 5.5,
-      "odds": -115,
-      "projection": 5.78,
-      "probability": 0.4682,
-      "implied_probability": 0.5349,
-      "ev": -0.1246,
-      "last10": 4,
-      "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jayson Tatum",
@@ -1421,8 +1403,44 @@
       "ev": -0.1299,
       "last10": 4,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Joel Embiid",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Assists",
+      "side": "Under",
+      "line": 3.5,
+      "odds": -131,
+      "projection": 4.05,
+      "probability": 0.4933,
+      "implied_probability": 0.5671,
+      "ev": -0.1302,
+      "last10": 5,
+      "sample_size": 11,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Jaylen Brown",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Assists",
+      "side": "Over",
+      "line": 3.5,
+      "odds": -118,
+      "projection": 3.84,
+      "probability": 0.469,
+      "implied_probability": 0.5413,
+      "ev": -0.1335,
+      "last10": 8,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Karl-Anthony Towns",
@@ -1439,8 +1457,26 @@
       "ev": -0.1356,
       "last10": 4,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Joel Embiid",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 8.5,
+      "odds": -115,
+      "projection": 9.3,
+      "probability": 0.4617,
+      "implied_probability": 0.5349,
+      "ev": -0.1369,
+      "last10": 5,
+      "sample_size": 11,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "VJ Edgecombe",
@@ -1457,26 +1493,26 @@
       "ev": -0.1378,
       "last10": 5,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Jaylen Brown",
+      "player": "Brayden Burries",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
       "market": "Rebounds",
       "side": "Over",
-      "line": 6.5,
-      "odds": -103,
-      "projection": 6.53,
-      "probability": 0.4373,
-      "implied_probability": 0.5074,
-      "ev": -0.1382,
-      "last10": 6,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "line": 5.5,
+      "odds": -119,
+      "projection": 5.78,
+      "probability": 0.4682,
+      "implied_probability": 0.5434,
+      "ev": -0.1383,
+      "last10": 4,
+      "sample_size": 14,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Mitchell Robinson",
@@ -1493,8 +1529,26 @@
       "ev": -0.1532,
       "last10": 5,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "VJ Edgecombe",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Assists",
+      "side": "Over",
+      "line": 2.5,
+      "odds": -151,
+      "projection": 3.04,
+      "probability": 0.5072,
+      "implied_probability": 0.6016,
+      "ev": -0.1569,
+      "last10": 5,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Myles Turner",
@@ -1511,8 +1565,8 @@
       "ev": -0.1593,
       "last10": 6,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Landry Shamet",
@@ -1522,69 +1576,33 @@
       "market": "Points",
       "side": "Under",
       "line": 8.5,
-      "odds": -116,
+      "odds": -115,
       "projection": 9.75,
       "probability": 0.4487,
-      "implied_probability": 0.537,
-      "ev": -0.1645,
+      "implied_probability": 0.5349,
+      "ev": -0.1611,
       "last10": 5,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Sam Hauser",
+      "player": "Jaylen Brown",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
       "market": "Rebounds",
       "side": "Over",
-      "line": 2.5,
-      "odds": -119,
-      "projection": 2.73,
-      "probability": 0.4463,
-      "implied_probability": 0.5434,
-      "ev": -0.1786,
+      "line": 6.5,
+      "odds": -113,
+      "projection": 6.53,
+      "probability": 0.4373,
+      "implied_probability": 0.5305,
+      "ev": -0.1758,
       "last10": 6,
-      "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Joel Embiid",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 8.5,
-      "odds": -129,
-      "projection": 9.3,
-      "probability": 0.4617,
-      "implied_probability": 0.5633,
-      "ev": -0.1805,
-      "last10": 5,
-      "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Brayden Burries",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Points",
-      "side": "Over",
-      "line": 11.5,
-      "odds": -122,
-      "projection": 11.34,
-      "probability": 0.4492,
-      "implied_probability": 0.5495,
-      "ev": -0.1826,
-      "last10": 4,
-      "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Sam Hauser",
@@ -1601,62 +1619,44 @@
       "ev": -0.1863,
       "last10": 4,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Jaylen Brown",
+      "player": "Brayden Burries",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
-      "market": "Assists",
+      "market": "Points",
       "side": "Over",
-      "line": 3.5,
-      "odds": -138,
-      "projection": 3.84,
-      "probability": 0.469,
-      "implied_probability": 0.5798,
-      "ev": -0.1911,
-      "last10": 8,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "VJ Edgecombe",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Assists",
-      "side": "Over",
-      "line": 2.5,
-      "odds": -170,
-      "projection": 3.04,
-      "probability": 0.5072,
-      "implied_probability": 0.6296,
-      "ev": -0.1944,
-      "last10": 5,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Tyler Herro",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 4.5,
-      "odds": -102,
-      "projection": 4.43,
-      "probability": 0.4037,
-      "implied_probability": 0.505,
-      "ev": -0.2005,
-      "last10": 6,
+      "line": 11.5,
+      "odds": -127,
+      "projection": 11.34,
+      "probability": 0.4492,
+      "implied_probability": 0.5595,
+      "ev": -0.1971,
+      "last10": 4,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Tyrese Maxey",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Assists",
+      "side": "Over",
+      "line": 5.5,
+      "odds": -116,
+      "projection": 5.61,
+      "probability": 0.4295,
+      "implied_probability": 0.537,
+      "ev": -0.2003,
+      "last10": 4,
+      "sample_size": 14,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Paul George",
@@ -1673,26 +1673,26 @@
       "ev": -0.2012,
       "last10": 5,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Karl-Anthony Towns",
+      "player": "Tyler Herro",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
       "market": "Rebounds",
       "side": "Over",
-      "line": 13.5,
-      "odds": -109,
-      "projection": 12.97,
-      "probability": 0.4146,
-      "implied_probability": 0.5215,
-      "ev": -0.205,
-      "last10": 4,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "line": 4.5,
+      "odds": -103,
+      "projection": 4.43,
+      "probability": 0.4037,
+      "implied_probability": 0.5074,
+      "ev": -0.2044,
+      "last10": 6,
+      "sample_size": 14,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Tyler Herro",
@@ -1709,8 +1709,8 @@
       "ev": -0.2067,
       "last10": 3,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Anfernee Simons",
@@ -1727,8 +1727,26 @@
       "ev": -0.2074,
       "last10": 7,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "Sam Hauser",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 2.5,
+      "odds": -129,
+      "projection": 2.73,
+      "probability": 0.4463,
+      "implied_probability": 0.5633,
+      "ev": -0.2077,
+      "last10": 6,
+      "sample_size": 12,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Tyrese Maxey",
@@ -1745,8 +1763,8 @@
       "ev": -0.2084,
       "last10": 2,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jayson Tatum",
@@ -1763,8 +1781,8 @@
       "ev": -0.2098,
       "last10": 3,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Josh Hart",
@@ -1781,8 +1799,26 @@
       "ev": -0.2282,
       "last10": 3,
       "sample_size": 10,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "LeBron James",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Assists",
+      "side": "Over",
+      "line": 6.5,
+      "odds": -127,
+      "projection": 6.63,
+      "probability": 0.4312,
+      "implied_probability": 0.5595,
+      "ev": -0.2292,
+      "last10": 6,
+      "sample_size": 11,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Mitchell Robinson",
@@ -1799,8 +1835,8 @@
       "ev": -0.2313,
       "last10": 4,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "LeBron James",
@@ -1817,8 +1853,8 @@
       "ev": -0.2392,
       "last10": 4,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jalen Brunson",
@@ -1835,8 +1871,8 @@
       "ev": -0.2598,
       "last10": 6,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Joel Embiid",
@@ -1853,44 +1889,8 @@
       "ev": -0.26,
       "last10": 5,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Tyrese Maxey",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Assists",
-      "side": "Over",
-      "line": 5.5,
-      "odds": -139,
-      "projection": 5.61,
-      "probability": 0.4295,
-      "implied_probability": 0.5816,
-      "ev": -0.2615,
-      "last10": 4,
-      "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "Tyrese Maxey",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 3.5,
-      "odds": -125,
-      "projection": 3.54,
-      "probability": 0.409,
-      "implied_probability": 0.5556,
-      "ev": -0.2637,
-      "last10": 7,
-      "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Karl-Anthony Towns",
@@ -1907,26 +1907,26 @@
       "ev": -0.2738,
       "last10": 5,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "OG Anunoby",
+      "player": "Tyrese Maxey",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
       "market": "Rebounds",
       "side": "Over",
-      "line": 5.5,
-      "odds": -108,
-      "projection": 5.32,
-      "probability": 0.3668,
-      "implied_probability": 0.5192,
-      "ev": -0.2936,
-      "last10": 4,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "line": 3.5,
+      "odds": -136,
+      "projection": 3.54,
+      "probability": 0.409,
+      "implied_probability": 0.5763,
+      "ev": -0.2902,
+      "last10": 7,
+      "sample_size": 14,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Derrick White",
@@ -1943,8 +1943,26 @@
       "ev": -0.3092,
       "last10": 5,
       "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
+    },
+    {
+      "player": "OG Anunoby",
+      "team": "",
+      "opponent": "",
+      "date": "2026-11-11",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 5.5,
+      "odds": -122,
+      "projection": 5.32,
+      "probability": 0.3668,
+      "implied_probability": 0.5495,
+      "ev": -0.3326,
+      "last10": 4,
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Mikal Bridges",
@@ -1954,33 +1972,33 @@
       "market": "Rebounds",
       "side": "Over",
       "line": 3.5,
-      "odds": -104,
+      "odds": -113,
       "projection": 3.23,
       "probability": 0.3501,
-      "implied_probability": 0.5098,
-      "ev": -0.3132,
+      "implied_probability": 0.5305,
+      "ev": -0.34,
       "last10": 5,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Jalen Brunson",
+      "player": "Neemias Queta",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
       "market": "Rebounds",
       "side": "Over",
-      "line": 3.5,
+      "line": 7.5,
       "odds": 102,
-      "projection": 3.04,
-      "probability": 0.3156,
+      "projection": 6.45,
+      "probability": 0.3137,
       "implied_probability": 0.495,
-      "ev": -0.3625,
+      "ev": -0.3663,
       "last10": 3,
-      "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "sample_size": 12,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Mikal Bridges",
@@ -1997,8 +2015,8 @@
       "ev": -0.3703,
       "last10": 4,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Myles Turner",
@@ -2015,26 +2033,26 @@
       "ev": -0.3743,
       "last10": 5,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
-      "player": "Neemias Queta",
+      "player": "Jalen Brunson",
       "team": "",
       "opponent": "",
       "date": "2026-11-11",
       "market": "Rebounds",
       "side": "Over",
-      "line": 7.5,
-      "odds": -103,
-      "projection": 6.45,
-      "probability": 0.3137,
-      "implied_probability": 0.5074,
-      "ev": -0.3817,
+      "line": 3.5,
+      "odds": -107,
+      "projection": 3.04,
+      "probability": 0.3156,
+      "implied_probability": 0.5169,
+      "ev": -0.3894,
       "last10": 3,
-      "sample_size": 12,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "sample_size": 13,
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Josh Hart",
@@ -2044,15 +2062,15 @@
       "market": "Points",
       "side": "Over",
       "line": 9.5,
-      "odds": 100,
+      "odds": -102,
       "projection": 7.6,
       "probability": 0.3063,
-      "implied_probability": 0.5,
-      "ev": -0.3875,
+      "implied_probability": 0.505,
+      "ev": -0.3935,
       "last10": 4,
       "sample_size": 10,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "OG Anunoby",
@@ -2069,26 +2087,8 @@
       "ev": -0.4048,
       "last10": 5,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
-    },
-    {
-      "player": "LeBron James",
-      "team": "",
-      "opponent": "",
-      "date": "2026-11-11",
-      "market": "Assists",
-      "side": "Over",
-      "line": 7.5,
-      "odds": 114,
-      "projection": 6.63,
-      "probability": 0.2591,
-      "implied_probability": 0.4673,
-      "ev": -0.4455,
-      "last10": 4,
-      "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Josh Hart",
@@ -2098,15 +2098,15 @@
       "market": "Rebounds",
       "side": "Over",
       "line": 7.5,
-      "odds": -112,
+      "odds": -105,
       "projection": 6.16,
       "probability": 0.2722,
-      "implied_probability": 0.5283,
-      "ev": -0.4848,
+      "implied_probability": 0.5122,
+      "ev": -0.4686,
       "last10": 3,
       "sample_size": 10,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Brayden Burries",
@@ -2123,8 +2123,8 @@
       "ev": -0.5331,
       "last10": 2,
       "sample_size": 14,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Mikal Bridges",
@@ -2141,8 +2141,8 @@
       "ev": -0.6582,
       "last10": 3,
       "sample_size": 13,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     },
     {
       "player": "Jayson Tatum",
@@ -2159,8 +2159,8 @@
       "ev": -0.6676,
       "last10": 3,
       "sample_size": 11,
-      "data_source": "SYNTHETIC DEMO",
-      "model": "baseline-normal-v1"
+      "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+      "model": "baseline-normal-v1-unvalidated"
     }
   ]
 }
