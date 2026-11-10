@@ -10,22 +10,34 @@ ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "data"
 SITE = ROOT / "docs"
 
+
 def normal_cdf(x):
     return (1 + math.erf(x / math.sqrt(2))) / 2
+
 
 def american_profit(odds):
     if odds < 0:
         return 100 / abs(odds)
     return odds / 100
 
+
 def implied(odds):
     return 1 / (1 + american_profit(odds))
 
+
 def run():
-    with open(DATA / "game_logs.csv", newline="", encoding="utf-8") as f:
+    with open(
+        DATA / "game_logs.csv",
+        newline="",
+        encoding="utf-8"
+    ) as f:
         logs = list(csv.DictReader(f))
 
-    with open(DATA / "sample_odds.csv", newline="", encoding="utf-8") as f:
+    with open(
+        DATA / "sample_odds.csv",
+        newline="",
+        encoding="utf-8"
+    ) as f:
         odds = list(csv.DictReader(f))
 
     output = []
@@ -35,12 +47,27 @@ def run():
         market = bet["market"]
         game_date = bet["game_date"]
 
-        # Match ESPN player history to DraftKings player props.
+        # New matchup information
+        home_team = bet.get("home_team", "")
+        away_team = bet.get("away_team", "")
+        matchup = bet.get("matchup", "")
+        game_time = bet.get("game_time", "")
+        commence_time = bet.get("commence_time", "")
+        event_id = bet.get("event_id", "")
+
+        # Player team remains blank until verified.
+        team = bet.get("team", "")
+        opponent = bet.get("opponent", "")
+
+        # Match ESPN player history to DraftKings props.
         games = sorted(
             (
                 g for g in logs
-                if g["player"].strip().casefold() == player.strip().casefold()
-                and g["date"] < game_date
+                if (
+                    g["player"].strip().casefold()
+                    == player.strip().casefold()
+                    and g["date"] < game_date
+                )
             ),
             key=lambda g: g["date"]
         )
@@ -48,12 +75,15 @@ def run():
         if len(games) < 10:
             continue
 
-        values = [float(g[market]) for g in games]
+        values = [
+            float(g[market])
+            for g in games
+        ]
 
         recent = values[-10:]
         last5 = values[-5:]
 
-        # Existing baseline projection formula.
+        # Preserve the existing baseline projection.
         projection = (
             0.5 * statistics.mean(recent)
             + 0.3 * statistics.mean(values)
@@ -64,7 +94,9 @@ def run():
 
         sigma = max(
             2.0,
-            statistics.stdev(sample) if len(sample) > 1 else 2.0
+            statistics.stdev(sample)
+            if len(sample) > 1
+            else 2.0
         )
 
         line = float(bet["line"])
@@ -73,7 +105,9 @@ def run():
             0.01,
             min(
                 0.99,
-                1 - normal_cdf((line + 0.5 - projection) / sigma)
+                1 - normal_cdf(
+                    (line + 0.5 - projection) / sigma
+                )
             )
         )
 
@@ -90,30 +124,51 @@ def run():
             )
 
             profit = american_profit(odds_value)
-
             ev = probability * profit - (1 - probability)
 
             hits = sum(
-                (v > line if side == "Over" else v < line)
+                (
+                    v > line
+                    if side == "Over"
+                    else v < line
+                )
                 for v in recent
             )
 
             output.append({
                 "player": player,
-                "team": bet.get("team", ""),
-                "opponent": bet.get("opponent", ""),
+                "team": team,
+                "opponent": opponent,
+
                 "date": game_date,
+                "game_date": game_date,
+                "game_time": game_time,
+                "commence_time": commence_time,
+                "event_id": event_id,
+
+                "home_team": home_team,
+                "away_team": away_team,
+                "matchup": matchup,
+
                 "market": market.title(),
                 "side": side,
                 "line": line,
                 "odds": odds_value,
+
                 "projection": round(projection, 2),
                 "probability": round(probability, 4),
-                "implied_probability": round(implied(odds_value), 4),
+                "implied_probability": round(
+                    implied(odds_value), 4
+                ),
                 "ev": round(ev, 4),
+
                 "last10": hits,
                 "sample_size": len(values),
-                "data_source": "ESPN game logs / DraftKings odds via The Odds API",
+
+                "data_source": (
+                    "ESPN game logs / DraftKings odds "
+                    "via The Odds API"
+                ),
                 "model": "baseline-normal-v1-unvalidated"
             })
 
@@ -128,12 +183,15 @@ def run():
         "generated_at": datetime.datetime.now(
             datetime.timezone.utc
         ).isoformat(),
+
         "mode": (
-            "REAL DATA - ESPN NBA statistics and DraftKings odds. "
-            "Experimental, unvalidated model. "
-            "Probabilities and expected values are estimates, "
-            "not verified betting advantages."
+            "REAL DATA - ESPN NBA statistics and "
+            "DraftKings odds. Experimental, "
+            "unvalidated statistical model. "
+            "Estimated probabilities and expected "
+            "values are not verified betting advantages."
         ),
+
         "results": output
     }
 
@@ -146,5 +204,18 @@ def run():
     print("DraftKings player prop lines:", len(odds))
     print("Generated prediction outcomes:", len(output))
 
+    matchups = sorted({
+        row["matchup"]
+        for row in output
+        if row["matchup"]
+    })
+
+    print("Matchups included:", len(matchups))
+
+    for matchup in matchups:
+        print(" -", matchup)
+
+
 if __name__ == "__main__":
     run()
+
