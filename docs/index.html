@@ -5,610 +5,210 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prop Analyzer | NBA Player Props</title>
-
 <style>
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  background: #0b1220;
-  color: #e8edf6;
-  font: 14px system-ui, sans-serif;
-}
-
-main {
-  width: 100%;
-  margin: auto;
-  padding: 22px 12px;
-}
-
-h1 {
-  font-size: 34px;
-  margin: 0 0 5px;
-}
-
-h2 {
-  font-size: 24px;
-  margin: 0 0 8px;
-}
-
-.muted {
-  color: #9ba9be;
-}
-
-.warn {
-  background: #332c19;
-  color: #ffda8c;
-  padding: 14px;
-  border-radius: 10px;
-  margin: 18px 0;
-  line-height: 1.5;
-}
-
-.stats {
-  display: flex;
-  gap: 12px;
-  flex-wrap: wrap;
-  margin: 18px 0;
-}
-
-.stat {
-  background: #172338;
-  border: 1px solid #293a52;
-  border-radius: 12px;
-  padding: 16px;
-  flex: 1;
-  min-width: 160px;
-}
-
-.stat b {
-  font-size: 25px;
-  display: block;
-  margin-top: 7px;
-}
-
-.controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 20px 0 12px;
-}
-
-select,
-input,
-button {
-  background: #18273d;
-  color: white;
-  border: 1px solid #41516b;
-  border-radius: 8px;
-  padding: 10px;
-  font: inherit;
-}
-
-input {
-  min-width: 230px;
-}
-
-button {
-  cursor: pointer;
-  background: #256c46;
-  border-color: #348b59;
-}
-
-button:hover {
-  background: #318a5b;
-}
-
-.tablewrap {
-  width: 100%;
-  overflow-x: auto;
-  border: 1px solid #293a52;
-  border-radius: 12px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  table-layout: fixed;
-}
-
-th,
-td {
-  padding: 9px 5px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  font-size: 12px;
-  font-variant-numeric: tabular-nums;
-  text-align: left;
-  border-bottom: 1px solid #2b3a50;
-  white-space: nowrap;
-}
-
-th {
-  color: #a6b5c9;
-  cursor: pointer;
-  user-select: none;
-  background: #172338;
-  position: sticky;
-  top: 0;
-  z-index: 2;
-  font-size: 11px;
-}
-
-tr:hover {
-  background: #18273d;
-}
-
-.player {
-  font-weight: 600;
-}
-
-.team {
-  color: #75e3a5;
-  font-weight: 700;
-}
-
-.opponent {
-  color: #b9cafa;
-}
-
-.matchup {
-  color: #a9c8ff;
-}
-
-.game-info {
-  color: #b5c5d9;
-  font-size: 12px;
-}
-
-.positive {
-  color: #75e3a5;
-}
-
-.negative {
-  color: #f2a7a7;
-}
-
-.side-over {
-  color: #75e3a5;
-}
-
-.side-under {
-  color: #f8c477;
-}
-
-.result-win {
-  color: #75e3a5;
-  font-weight: 700;
-}
-
-.result-loss {
-  color: #f2a7a7;
-  font-weight: 700;
-}
-
-.result-push {
-  color: #b9cafa;
-  font-weight: 700;
-}
-
-.result-pending {
-  color: #f8c477;
-}
-
-.result-invalid {
-  color: #9ba9be;
-}
-
-th:nth-child(1),
-td:nth-child(1) {
-  width: 4%;
-}
-
-th:nth-child(2),
-td:nth-child(2) {
-  width: 9%;
-}
-
-th:nth-child(3),
-td:nth-child(3) {
-  width: 6%;
-}
-
-th:nth-child(4),
-td:nth-child(4) {
-  width: 12%;
-}
-
-th:nth-child(5),
-td:nth-child(5) {
-  width: 5%;
-}
-
-th:nth-child(6),
-td:nth-child(6) {
-  width: 7%;
-}
-
-th:nth-child(7),
-td:nth-child(7) {
-  width: 7%;
-}
-
-th:nth-child(8),
-td:nth-child(8) {
-  width: 5%;
-}
-
-th:nth-child(9),
-td:nth-child(9) {
-  width: 5%;
-}
-
-th:nth-child(10),
-td:nth-child(10) {
-  width: 6%;
-}
-
-th:nth-child(11),
-td:nth-child(11) {
-  width: 8%;
-}
-
-th:nth-child(12),
-td:nth-child(12) {
-  width: 9%;
-}
-
-th:nth-child(13),
-td:nth-child(13) {
-  width: 8%;
-}
-
-th:nth-child(14),
-td:nth-child(14) {
-  width: 6%;
-}
-
-th:nth-child(15),
-td:nth-child(15) {
-  width: 6%;
-  font-weight: 700;
-}
-
-.section {
-  margin-top: 45px;
-  padding-top: 25px;
-  border-top: 1px solid #293a52;
-}
-
-.performance-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 15px;
-  margin-top: 22px;
-}
-
-.performance-card {
-  background: #172338;
-  border: 1px solid #293a52;
-  border-radius: 12px;
-  padding: 22px;
-}
-
-.performance-card h3 {
-  margin: 0 0 16px;
-  font-size: 19px;
-}
-
-.performance-card .number {
-  font-size: 32px;
-  font-weight: 700;
-  color: #75e3a5;
-  margin: 7px 0 16px;
-}
-
-.performance-card .label {
-  color: #9ba9be;
-  font-size: 13px;
-}
-
-.metric {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  padding: 10px 0;
-  border-top: 1px solid #2b3a50;
-}
-
-.metric span {
-  color: #a6b5c9;
-}
-
-.metric strong {
-  font-variant-numeric: tabular-nums;
-}
-
-.info {
-  margin-top: 20px;
-  padding: 20px;
-  border: 1px solid #293a52;
-  border-radius: 12px;
-  line-height: 1.8;
-  color: #b9c5d5;
-}
-
-.info p {
-  margin: 6px 0;
-}
-
-.footer {
-  color: #9ba9be;
-  margin-top: 25px;
-  line-height: 1.7;
-  font-size: 13px;
-}
-
-#status,
-#backtest-status {
-  color: #9ba9be;
-  margin: 10px 0;
-}
-
-@media (max-width: 1100px) {
-  table {
-    min-width: 1200px;
-  }
-}
-
-@media (max-width: 850px) {
-  .performance-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-@media (max-width: 600px) {
-  h1 {
-    font-size: 29px;
-  }
-
-  .stat {
-    min-width: 140px;
-  }
-
-  input,
-  select,
-  button {
-    width: 100%;
-  }
+*{box-sizing:border-box}
+body{margin:0;background:#0b1220;color:#e8edf6;font:14px system-ui,sans-serif}
+main{width:100%;margin:auto;padding:22px 12px}
+h1{font-size:34px;margin:0 0 5px}
+h2{font-size:24px;margin:0 0 8px}
+.muted,#status,#backtest-status,#tracking-status{color:#9ba9be}
+.warn{background:#332c19;color:#ffda8c;padding:14px;border-radius:10px;margin:18px 0;line-height:1.6}
+.stats{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
+.stat{background:#172338;border:1px solid #293a52;border-radius:12px;padding:16px;flex:1;min-width:160px}
+.stat b{font-size:25px;display:block;margin-top:7px}
+.controls{display:flex;flex-wrap:wrap;gap:10px;margin:20px 0 12px}
+select,input,button{background:#18273d;color:white;border:1px solid #41516b;border-radius:8px;padding:10px;font:inherit}
+input{min-width:230px}
+button{cursor:pointer;background:#256c46;border-color:#348b59}
+button:hover{background:#318a5b}
+.tablewrap{width:100%;overflow-x:auto;border:1px solid #293a52;border-radius:12px}
+table{border-collapse:collapse;width:100%;table-layout:fixed}
+th,td{padding:9px 5px;overflow:hidden;text-overflow:ellipsis;font-size:12px;font-variant-numeric:tabular-nums;text-align:left;border-bottom:1px solid #2b3a50;white-space:nowrap}
+th{color:#a6b5c9;cursor:pointer;user-select:none;background:#172338;position:sticky;top:0;z-index:2;font-size:11px}
+tr:hover{background:#18273d}
+.player{font-weight:600}
+.team,.positive,.side-over,.result-win{color:#75e3a5}
+.team,.result-win,.result-loss,.result-push{font-weight:700}
+.opponent,.result-push{color:#b9cafa}
+.matchup{color:#a9c8ff}
+.game-info{color:#b5c5d9;font-size:12px}
+.negative,.result-loss{color:#f2a7a7}
+.side-under,.result-pending{color:#f8c477}
+.result-invalid{color:#9ba9be}
+th:nth-child(1),td:nth-child(1){width:4%}
+th:nth-child(2),td:nth-child(2){width:9%}
+th:nth-child(3),td:nth-child(3){width:6%}
+th:nth-child(4),td:nth-child(4){width:12%}
+th:nth-child(5),td:nth-child(5){width:5%}
+th:nth-child(6),td:nth-child(6){width:7%}
+th:nth-child(7),td:nth-child(7){width:7%}
+th:nth-child(8),td:nth-child(8){width:5%}
+th:nth-child(9),td:nth-child(9){width:5%}
+th:nth-child(10),td:nth-child(10){width:6%}
+th:nth-child(11),td:nth-child(11){width:8%}
+th:nth-child(12),td:nth-child(12){width:9%}
+th:nth-child(13),td:nth-child(13){width:8%}
+th:nth-child(14),td:nth-child(14){width:6%}
+th:nth-child(15),td:nth-child(15){width:6%;font-weight:700}
+.section{margin-top:45px;padding-top:25px;border-top:1px solid #293a52}
+.performance-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:15px;margin-top:22px}
+.performance-card{background:#172338;border:1px solid #293a52;border-radius:12px;padding:22px}
+.performance-card h3{margin:0 0 16px;font-size:19px}
+.performance-card .number{font-size:32px;font-weight:700;color:#75e3a5;margin:7px 0 16px}
+.performance-card .label{color:#9ba9be;font-size:13px}
+.metric{display:flex;justify-content:space-between;gap:12px;padding:10px 0;border-top:1px solid #2b3a50}
+.metric span{color:#a6b5c9}
+.metric strong{font-variant-numeric:tabular-nums}
+.info{margin-top:20px;padding:20px;border:1px solid #293a52;border-radius:12px;line-height:1.8;color:#b9c5d5}
+.info p{margin:6px 0}
+.footer{color:#9ba9be;margin-top:25px;line-height:1.7;font-size:13px}
+#status,#backtest-status{margin:10px 0}
+.live-performance-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:18px 0}
+.live-performance-grid .stat{min-width:0}
+.live-breakdowns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.live-breakdowns .performance-card{padding:16px}
+@media(max-width:1100px){table{min-width:1200px}}
+@media(max-width:900px){
+.live-performance-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+.live-breakdowns{grid-template-columns:1fr}
+}
+@media(max-width:850px){.performance-grid{grid-template-columns:1fr}}
+@media(max-width:600px){
+h1{font-size:29px}
+.stat{min-width:140px}
+input,select,button{width:100%}
+}
+@media(max-width:480px){
+.live-performance-grid{grid-template-columns:1fr 1fr}
+.live-performance-grid .stat{padding:12px}
+.live-performance-grid .stat b{font-size:20px}
 }
 </style>
 </head>
-
 <body>
 <main>
-
 <h1>Prop Analyzer</h1>
-
-<div class="muted">
-  NBA Player Props | ESPN Statistics + DraftKings Odds
-</div>
+<div class="muted">NBA Player Props | ESPN Statistics + DraftKings Odds</div>
 
 <div class="warn">
-  <strong>REAL NBA DATA — EXPERIMENTAL VERSION 2 MODEL.</strong>
-  Player statistics come from ESPN and odds from
-  DraftKings via The Odds API.
-
-  Version 2 incorporates projected minutes,
-  per-minute production, historical matchup adjustments,
-  and sportsbook probability comparisons.
-
-  Team assignments are based on historical ESPN box scores
-  and scheduled matchups, not live roster verification.
-
-  Injury information is not automatically verified.
-  Model probabilities and expected values have not yet
-  been validated against sufficient completed games.
+<strong>REAL NBA DATA — EXPERIMENTAL VERSION 3 MODEL.</strong>
+Player statistics come from ESPN and odds from DraftKings via The Odds API.
+Version 3 incorporates projected minutes, per-minute production,
+opponent team defense adjustments, and sportsbook probability comparisons.
+Team assignments are based on historical ESPN box scores and scheduled
+matchups, not live roster verification. Injury information is not
+automatically verified. Model probabilities and expected values have
+not yet been validated against sufficient completed games.
 </div>
 
 <div class="stats">
-
-  <div class="stat">
-    Analyzed Outcomes
-    <b id="count">--</b>
-  </div>
-
-  <div class="stat">
-    Positive Model EV
-    <b id="positive">--</b>
-  </div>
-
-  <div class="stat">
-    Games Analyzed
-    <b id="games">--</b>
-  </div>
-
-  <div class="stat">
-    Total Wins
-    <b id="total-wins" class="result-win">--</b>
-  </div>
-
-  <div class="stat">
-    Total Losses
-    <b id="total-losses" class="result-loss">--</b>
-  </div>
-
-  <div class="stat">
-    Last Updated
-    <b id="updated" style="font-size:17px">--</b>
-  </div>
-
+<div class="stat">Analyzed Outcomes<b id="count">--</b></div>
+<div class="stat">Positive Model EV<b id="positive">--</b></div>
+<div class="stat">Games Analyzed<b id="games">--</b></div>
+<div class="stat">Total Wins<b id="total-wins" class="result-win">--</b></div>
+<div class="stat">Total Losses<b id="total-losses" class="result-loss">--</b></div>
+<div class="stat">Last Updated<b id="updated" style="font-size:17px">--</b></div>
 </div>
 
 <div class="controls">
-
-  <input
-    id="search"
-    type="search"
-    placeholder="Search player, team or opponent"
-    aria-label="Search player, team or opponent"
-  >
-
-  <select id="game" aria-label="Game filter">
-    <option value="">All Games</option>
-  </select>
-
-  <select id="market" aria-label="Market filter">
-    <option value="">PRA</option>
-    <option value="Points">Points</option>
-    <option value="Rebounds">Rebounds</option>
-    <option value="Assists">Assists</option>
-  </select>
-
-  <select id="side" aria-label="Side filter">
-    <option value="">Totals</option>
-    <option value="Over">Over</option>
-    <option value="Under">Under</option>
-  </select>
-
-  <button id="refresh" type="button">
-    Refresh Data
-  </button>
-
+<input id="search" type="search" placeholder="Search player, team or opponent" aria-label="Search player, team or opponent">
+<select id="game" aria-label="Game filter"><option value="">All Games</option></select>
+<select id="market" aria-label="Market filter">
+<option value="">PRA</option>
+<option value="Points">Points</option>
+<option value="Rebounds">Rebounds</option>
+<option value="Assists">Assists</option>
+</select>
+<select id="side" aria-label="Side filter">
+<option value="">Totals</option>
+<option value="Over">Over</option>
+<option value="Under">Under</option>
+</select>
+<button id="refresh" type="button">Refresh Data</button>
 </div>
 
-<div id="status" role="status">
-  Loading latest results...
-</div>
-
+<div id="status" role="status">Loading latest results...</div>
 <div class="tablewrap">
 <table>
-
-<thead>
-<tr>
-  <th data-sort="date">Date</th>
-  <th data-sort="matchup">Matchup</th>
-  <th data-sort="game_time">Tipoff</th>
-  <th data-sort="player">Player</th>
-  <th data-sort="team_abbr">Team</th>
-  <th data-sort="opponent">Opp</th>
-  <th data-sort="market">Market</th>
-  <th data-sort="side">Side</th>
-  <th data-sort="line">Line</th>
-  <th data-sort="odds">Odds</th>
-  <th data-sort="projection">Proj.</th>
-  <th data-sort="probability">Prob.</th>
-  <th data-sort="ev">Model EV</th>
-  <th data-sort="last10">Last 10</th>
-  <th data-sort="result">Result</th>
-</tr>
-</thead>
-
+<thead><tr>
+<th data-sort="date">Date</th>
+<th data-sort="matchup">Matchup</th>
+<th data-sort="game_time">Tipoff</th>
+<th data-sort="player">Player</th>
+<th data-sort="team_abbr">Team</th>
+<th data-sort="opponent">Opp</th>
+<th data-sort="market">Market</th>
+<th data-sort="side">Side</th>
+<th data-sort="line">Line</th>
+<th data-sort="odds">Odds</th>
+<th data-sort="projection">Proj.</th>
+<th data-sort="probability">Prob.</th>
+<th data-sort="ev">Model EV</th>
+<th data-sort="last10">Last 10</th>
+<th data-sort="result">Result</th>
+</tr></thead>
 <tbody id="rows"></tbody>
-
 </table>
 </div>
 
-<section class="section" id="model-performance">
-
-<h2>Model Performance</h2>
-
+<section class="section" id="live-performance">
+<h2>Live Betting Performance</h2>
 <div class="muted">
-  Historical walk-forward backtesting using ESPN NBA
-  player game logs. Lower prediction error is better.
+Actual outcomes from saved pregame predictions, graded against ESPN box scores.
+Each Over and Under is counted separately. These are tracked model outcomes,
+not a record of bets placed.
 </div>
-
-<div id="backtest-status" role="status">
-  Loading backtest results...
+<div id="tracking-status" role="status" style="margin-top:12px">
+Loading tracked results...
 </div>
-
-<div class="performance-grid" id="performance-grid">
+<div class="live-performance-grid">
+<div class="stat">Win Rate<b id="track-winrate">--</b></div>
+<div class="stat">ROI<b id="track-roi">--</b></div>
+<div class="stat">Profit / Loss<b id="track-profit">--</b></div>
+<div class="stat">Settled Outcomes<b id="track-settled">--</b></div>
 </div>
-
+<div id="tracking-details" class="muted" style="margin-bottom:18px"></div>
+<div class="live-breakdowns" id="tracking-breakdowns"></div>
 <div class="info">
-
-  <strong>Understanding the results</strong>
-
-  <p>
-    <strong>Predictions:</strong>
-    Number of historical player-game predictions
-    evaluated in each market.
-  </p>
-
-  <p>
-    <strong>MAE:</strong>
-    Mean Absolute Error. The average difference
-    between projected and actual points,
-    rebounds, or assists.
-  </p>
-
-  <p>
-    <strong>RMSE:</strong>
-    Root Mean Squared Error. Gives greater
-    weight to large prediction misses.
-  </p>
-
-  <p>
-    <strong>Bias:</strong>
-    Average projected value minus actual value.
-    Negative means the model tends to underestimate.
-  </p>
-
-  <p>
-    <strong>Method:</strong>
-    Historical predictions use prior game data.
-    A minimum of 10 previous games is required.
-  </p>
-
-  <p>
-    <strong>Important:</strong>
-    The historical backtest may evaluate a different
-    model version than the current live predictions.
-    Backtest projection accuracy does not establish
-    profitable betting performance.
-  </p>
-
+<strong>How to interpret these results</strong>
+<p>Results use a hypothetical flat 1-unit stake at the saved odds.
+Win rate and ROI exclude pushes from their denominators.</p>
+<p>Both sides of a line are tracked independently, so the combined
+profit and ROI do not represent a realizable betting strategy.</p>
+<p>Positive EV means the model estimated an advantage at prediction time;
+it is not evidence of a profitable edge until validated on settled results.</p>
 </div>
+</section>
 
+<section class="section" id="model-performance">
+<h2>Model Performance</h2>
+<div class="muted">
+Historical walk-forward backtesting using ESPN NBA player game logs.
+Lower prediction error is better.
+</div>
+<div id="backtest-status" role="status">Loading backtest results...</div>
+<div class="performance-grid" id="performance-grid"></div>
+<div class="info">
+<strong>Understanding the results</strong>
+<p><strong>Predictions:</strong> Number of historical player-game predictions evaluated in each market.</p>
+<p><strong>MAE:</strong> Mean Absolute Error. The average difference between projected and actual points, rebounds, or assists.</p>
+<p><strong>RMSE:</strong> Root Mean Squared Error. Gives greater weight to large prediction misses.</p>
+<p><strong>Bias:</strong> Average projected value minus actual value. Negative means the model tends to underestimate.</p>
+<p><strong>Method:</strong> Historical predictions use prior game data. A minimum of 10 previous games is required.</p>
+<p><strong>Important:</strong> The historical backtest may evaluate a different model version than current live predictions. Backtest projection accuracy does not establish profitable betting performance.</p>
+</div>
 </section>
 
 <div class="footer">
-
-  <strong>Data:</strong>
-  ESPN NBA game logs and DraftKings odds via The Odds API.
-
-  <p>
-    <strong>Model:</strong>
-    <span id="model-version">
-      Version 2 (experimental)
-    </span>.
-  </p>
-
-  <p>
-    Current predictions are displayed separately from
-    historical graded predictions.
-  </p>
-
-  <p>
-    Game times are Eastern Time.
-    Refresh Data reloads published results,
-    not live sportsbook odds.
-  </p>
-
-  <p>
-    Model EV is a theoretical estimate, not a
-    verified betting advantage.
-    For informational purposes only.
-  </p>
-
+<strong>Data:</strong> ESPN NBA game logs and DraftKings odds via The Odds API.
+<p><strong>Model:</strong> <span id="model-version">Version 3 (experimental)</span>.</p>
+<p>Current predictions are displayed separately from historical graded predictions.</p>
+<p>Game times are Eastern Time. Refresh Data reloads published results, not live sportsbook odds.</p>
+<p>Model EV is a theoretical estimate, not a verified betting advantage. For informational purposes only.</p>
 </div>
-
 </main>
 
 <script>
-
 const el = id => document.getElementById(id);
 
 let data = [];
@@ -656,81 +256,52 @@ function shortTeam(name) {
 
 function shortMatchup(row) {
   if (row.away_team && row.home_team) {
-    return shortTeam(row.away_team) +
-      " @ " + shortTeam(row.home_team);
+    return shortTeam(row.away_team) + " @ " + shortTeam(row.home_team);
   }
-
   return row.matchup || "--";
 }
 
 function formatOdds(value) {
-  if (value === null || value === undefined || value === "") {
-    return "--";
-  }
-
+  if (value === null || value === undefined || value === "") return "--";
   const n = Number(value);
-
   if (!Number.isFinite(n)) return "--";
-
   return n > 0 ? "+" + n : String(n);
 }
 
 function formatPercent(value) {
-  if (value === null || value === undefined || value === "") {
-    return "--";
-  }
-
+  if (value === null || value === undefined || value === "") return "--";
   const n = Number(value);
-
-  if (!Number.isFinite(n)) return "--";
-
-  return (n * 100).toFixed(1) + "%";
+  return Number.isFinite(n) ? (n * 100).toFixed(1) + "%" : "--";
 }
 
 function formatDate(value) {
   if (!value) return "--";
-
   const parts = String(value).split("-");
-
-  if (parts.length !== 3) return value;
-
-  return parts[1] + "/" + parts[2];
+  return parts.length === 3 ? parts[1] + "/" + parts[2] : value;
 }
 
 function formatNumber(value, decimals = 1) {
-  if (value === null || value === undefined || value === "") {
-    return "--";
-  }
-
+  if (value === null || value === undefined || value === "") return "--";
   const n = Number(value);
-
-  return Number.isFinite(n)
-    ? n.toFixed(decimals)
-    : "--";
+  return Number.isFinite(n) ? n.toFixed(decimals) : "--";
 }
 
 function gameKey(row) {
-  return row.event_id || (
-    (row.date || "") + "|" + (row.matchup || "")
-  );
+  return row.event_id || ((row.date || "") + "|" + (row.matchup || ""));
 }
 
 function normalizeMarket(value) {
   const text = String(value || "").toLowerCase();
-
   if (text.includes("point")) return "Points";
   if (text.includes("rebound")) return "Rebounds";
   if (text.includes("assist")) return "Assists";
-
   return value || "";
 }
 
 function normalizeSide(value) {
   const text = String(value || "").toLowerCase();
-
   if (text === "over") return "Over";
   if (text === "under") return "Under";
-
   return value || "";
 }
 
@@ -746,10 +317,8 @@ function predictionKey(row) {
 }
 
 function populateGames() {
-
   const select = el("game");
   const previous = select.value;
-
   select.replaceChildren();
 
   const all = document.createElement("option");
@@ -758,13 +327,9 @@ function populateGames() {
   select.appendChild(all);
 
   const games = new Map();
-
   data.forEach(row => {
     if (row.matchup) {
-      games.set(
-        gameKey(row),
-        formatDate(row.date) + " " + row.matchup
-      );
+      games.set(gameKey(row), formatDate(row.date) + " " + row.matchup);
     }
   });
 
@@ -779,30 +344,21 @@ function populateGames() {
     select.appendChild(option);
   }
 
-  if ([...select.options].some(
-    option => option.value === previous
-  )) {
+  if ([...select.options].some(option => option.value === previous)) {
     select.value = previous;
   }
 }
 
 function draw() {
-
   const query = el("search").value.toLowerCase().trim();
   const game = el("game").value;
   const market = el("market").value;
   const side = el("side").value;
 
   const filtered = data.filter(row => {
-
     const searchText = [
-      row.player,
-      row.team,
-      row.team_abbr,
-      row.opponent,
-      row.matchup,
-      row.home_team,
-      row.away_team
+      row.player, row.team, row.team_abbr,
+      row.opponent, row.matchup, row.home_team, row.away_team
     ].filter(Boolean).join(" ").toLowerCase();
 
     return (
@@ -814,21 +370,14 @@ function draw() {
   });
 
   filtered.sort((a, b) => {
-
     const av = a[sortKey];
     const bv = b[sortKey];
-
     let result;
 
-    if (
-      typeof av === "number" &&
-      typeof bv === "number"
-    ) {
+    if (typeof av === "number" && typeof bv === "number") {
       result = av - bv;
     } else {
-      result = String(av ?? "").localeCompare(
-        String(bv ?? "")
-      );
+      result = String(av ?? "").localeCompare(String(bv ?? ""));
     }
 
     return sortAscending ? result : -result;
@@ -838,39 +387,28 @@ function draw() {
   tbody.replaceChildren();
 
   if (!filtered.length) {
-
     const tr = document.createElement("tr");
     const td = document.createElement("td");
-
     td.colSpan = 15;
-
     td.textContent = data.length
       ? "No results match your filters."
       : "No player props available in the latest results.";
-
     tr.appendChild(td);
     tbody.appendChild(tr);
-
     el("status").textContent =
       "0 of " + data.length + " outcomes displayed.";
-
     return;
   }
 
   for (const row of filtered) {
-
     const tr = document.createElement("tr");
-
-    const result = String(
-      row.result || "pending"
-    ).toLowerCase();
+    const result = String(row.result || "pending").toLowerCase();
 
     const resultLabel =
       result === "win" ? "WIN" :
       result === "loss" ? "LOSS" :
       result === "push" ? "PUSH" :
-      result === "invalid" ? "INVALID" :
-      "PENDING";
+      result === "invalid" ? "INVALID" : "PENDING";
 
     const values = [
       formatDate(row.date),
@@ -886,52 +424,32 @@ function draw() {
       formatNumber(row.projection, 2),
       formatPercent(row.probability),
       formatPercent(row.ev),
-      row.last10 === null ||
-      row.last10 === undefined
-        ? "--"
-        : String(row.last10) + "/10",
+      row.last10 === null || row.last10 === undefined
+        ? "--" : String(row.last10) + "/10",
       resultLabel
     ];
 
     values.forEach((value, index) => {
-
       const td = document.createElement("td");
       td.textContent = value;
 
-      if (index === 1) {
-        td.title = row.matchup || value;
-      } else if (index === 4) {
-        td.title = row.team || value;
-      } else if (index === 5) {
-        td.title = row.opponent || value;
-      } else {
-        td.title = String(value);
-      }
+      if (index === 1) td.title = row.matchup || value;
+      else if (index === 4) td.title = row.team || value;
+      else if (index === 5) td.title = row.opponent || value;
+      else td.title = String(value);
 
-      if (index === 0 || index === 2) {
-        td.className = "game-info";
-      }
-
+      if (index === 0 || index === 2) td.className = "game-info";
       if (index === 1) td.className = "matchup";
       if (index === 3) td.className = "player";
       if (index === 4) td.className = "team";
       if (index === 5) td.className = "opponent";
-
       if (index === 7) {
-        td.className = row.side === "Over"
-          ? "side-over"
-          : "side-under";
+        td.className = row.side === "Over" ? "side-over" : "side-under";
       }
-
       if (index === 12) {
-        td.className = Number(row.ev) > 0
-          ? "positive"
-          : "negative";
+        td.className = Number(row.ev) > 0 ? "positive" : "negative";
       }
-
-      if (index === 14) {
-        td.className = "result-" + result;
-      }
+      if (index === 14) td.className = "result-" + result;
 
       tr.appendChild(td);
     });
@@ -940,149 +458,92 @@ function draw() {
   }
 
   el("status").textContent =
-    filtered.length + " of " + data.length +
-    " model outcomes displayed.";
+    filtered.length + " of " + data.length + " model outcomes displayed.";
 }
 
 function addText(parent, tag, value, className) {
-
   const node = document.createElement(tag);
   node.textContent = value;
-
   if (className) node.className = className;
-
   parent.appendChild(node);
-
   return node;
 }
 
 function metric(card, label, value) {
-
   const line = document.createElement("div");
   line.className = "metric";
-
   addText(line, "span", label);
   addText(line, "strong", value);
-
   card.appendChild(line);
 }
 
 function metricNumber(value) {
-  return (
-    value === null ||
+  return value === null ||
     value === undefined ||
     !Number.isFinite(Number(value))
-  ) ? "--" : Number(value).toFixed(3);
+      ? "--" : Number(value).toFixed(3);
 }
 
 async function loadBacktest() {
-
-  el("backtest-status").textContent =
-    "Loading backtest results...";
-
+  el("backtest-status").textContent = "Loading backtest results...";
   const grid = el("performance-grid");
   grid.replaceChildren();
 
   try {
-
     const response = await fetch(
       "./backtest.json?t=" + Date.now(),
       { cache: "no-store" }
     );
-
-    if (!response.ok) {
-      throw new Error("HTTP " + response.status);
-    }
+    if (!response.ok) throw new Error("HTTP " + response.status);
 
     const json = await response.json();
+    if (!json.markets) throw new Error("Invalid backtest format");
 
-    if (!json.markets) {
-      throw new Error("Invalid backtest format");
-    }
-
-    const markets = [
+    for (const [key, label] of [
       ["points", "Points"],
       ["rebounds", "Rebounds"],
       ["assists", "Assists"]
-    ];
-
-    for (const [key, label] of markets) {
-
+    ]) {
       const stats = json.markets[key] || {};
-
       const card = document.createElement("div");
       card.className = "performance-card";
 
       addText(card, "h3", label);
-
+      addText(card, "div", "Average Prediction Error", "label");
       addText(
-        card,
-        "div",
-        "Average Prediction Error",
-        "label"
-      );
-
-      addText(
-        card,
-        "div",
+        card, "div",
         metricNumber(stats.mean_absolute_error),
         "number"
       );
 
-      metric(
-        card,
-        "Predictions tested",
-        String(stats.predictions_tested ?? "--")
-      );
-
-      metric(
-        card,
-        "MAE",
-        metricNumber(stats.mean_absolute_error)
-      );
-
-      metric(
-        card,
-        "RMSE",
-        metricNumber(stats.root_mean_squared_error)
-      );
-
-      metric(
-        card,
-        "Bias",
-        metricNumber(stats.mean_signed_error)
-      );
+      metric(card, "Predictions tested",
+        String(stats.predictions_tested ?? "--"));
+      metric(card, "MAE",
+        metricNumber(stats.mean_absolute_error));
+      metric(card, "RMSE",
+        metricNumber(stats.root_mean_squared_error));
+      metric(card, "Bias",
+        metricNumber(stats.mean_signed_error));
 
       grid.appendChild(card);
     }
 
     el("backtest-status").textContent =
       "Backtest updated: " +
-      (
-        json.generated_at
-          ? new Date(json.generated_at).toLocaleString()
-          : "Unknown"
-      );
+      (json.generated_at
+        ? new Date(json.generated_at).toLocaleString()
+        : "Unknown");
 
   } catch (error) {
-
     console.error(error);
-
     el("backtest-status").textContent =
-      "Could not load backtest results: " +
-      error.message;
+      "Could not load backtest results: " + error.message;
   }
 }
 
 function convertHistoryRow(row) {
-
-  const outcome = String(
-    row.outcome || ""
-  ).toLowerCase();
-
-  const status = String(
-    row.status || ""
-  ).toLowerCase();
+  const outcome = String(row.outcome || "").toLowerCase();
+  const status = String(row.status || "").toLowerCase();
 
   return {
     ...row,
@@ -1093,79 +554,52 @@ function convertHistoryRow(row) {
       status === "graded" &&
       ["win", "loss", "push"].includes(outcome)
         ? outcome
-        : status === "invalid"
-          ? "invalid"
-          : "pending"
+        : status === "invalid" ? "invalid" : "pending"
   };
 }
 
 async function loadGradedPredictions() {
-
   try {
-
     const response = await fetch(
       "./graded_predictions.json?t=" + Date.now(),
       { cache: "no-store" }
     );
-
     if (!response.ok) return [];
 
     const json = await response.json();
-
     const predictions = Array.isArray(json.predictions)
-      ? json.predictions
-      : [];
+      ? json.predictions : [];
 
     return predictions.map(convertHistoryRow);
 
   } catch (error) {
-
-    console.warn(
-      "Graded predictions unavailable:",
-      error
-    );
-
+    console.warn("Graded predictions unavailable:", error);
     return [];
   }
 }
 
 async function loadData() {
-
-  el("status").textContent =
-    "Loading latest results...";
+  el("status").textContent = "Loading latest results...";
 
   try {
-
     const [response, history] = await Promise.all([
-      fetch(
-        "./results.json?t=" + Date.now(),
-        { cache: "no-store" }
-      ),
+      fetch("./results.json?t=" + Date.now(), { cache: "no-store" }),
       loadGradedPredictions()
     ]);
 
-    if (!response.ok) {
-      throw new Error("HTTP " + response.status);
-    }
+    if (!response.ok) throw new Error("HTTP " + response.status);
 
     const json = await response.json();
-
     if (!Array.isArray(json.results)) {
       throw new Error("Invalid results format");
     }
 
-    // IMPORTANT:
-    // Current predictions come ONLY from results.json.
-    // Historical predictions are NOT added to this table.
-
     const historyByKey = new Map();
-
     for (const row of history) {
       historyByKey.set(predictionKey(row), row);
     }
 
     data = json.results.map(row => {
-
       const current = {
         ...row,
         date: row.game_date || row.date || "",
@@ -1174,62 +608,29 @@ async function loadData() {
         result: "pending"
       };
 
-      const previous = historyByKey.get(
-        predictionKey(current)
-      );
-
-      if (previous) {
-        current.result = previous.result;
-      }
+      const previous = historyByKey.get(predictionKey(current));
+      if (previous) current.result = previous.result;
 
       return current;
     });
 
-    // Display the actual model version from the JSON.
-
-    const currentModel = json.results[0]?.model;
-
     el("model-version").textContent =
-      currentModel || "Experimental model";
-
-    // Current Version 2 outcome count.
+      json.results[0]?.model || "Experimental model";
 
     el("count").textContent = data.length;
-
-    // Current Version 2 positive EV count.
-
-    el("positive").textContent = data.filter(
-      row => Number(row.ev) > 0
-    ).length;
-
-    // Count current games only.
+    el("positive").textContent =
+      data.filter(row => Number(row.ev) > 0).length;
 
     const games = new Set(
       data.filter(row => row.matchup).map(gameKey)
     );
-
     el("games").textContent = games.size;
 
-    // Historical wins and losses are counted
-    // separately from current predictions.
+    const wins = history.filter(row => row.result === "win").length;
+    const losses = history.filter(row => row.result === "loss").length;
 
-    const wins = history.filter(
-      row => row.result === "win"
-    ).length;
-
-    const losses = history.filter(
-      row => row.result === "loss"
-    ).length;
-
-    el("total-wins").textContent = history.length
-      ? wins
-      : "--";
-
-    el("total-losses").textContent = history.length
-      ? losses
-      : "--";
-
-    // Timestamp comes from current results.json.
+    el("total-wins").textContent = history.length ? wins : "--";
+    el("total-losses").textContent = history.length ? losses : "--";
 
     el("updated").textContent = json.generated_at
       ? new Date(json.generated_at).toLocaleString()
@@ -1239,54 +640,143 @@ async function loadData() {
     draw();
 
   } catch (error) {
-
     console.error(error);
-
     data = [];
-
-    el("count").textContent = "0";
-    el("positive").textContent = "0";
-    el("games").textContent = "0";
-    el("total-wins").textContent = "--";
-    el("total-losses").textContent = "--";
-    el("updated").textContent = "--";
-
+    for (const id of ["count", "positive", "games"]) {
+      el(id).textContent = "0";
+    }
+    for (const id of ["total-wins", "total-losses", "updated"]) {
+      el(id).textContent = "--";
+    }
     el("status").textContent =
       "Could not load results: " + error.message;
-
     el("rows").replaceChildren();
   }
 }
 
-// Search and filter controls.
+function trackPercent(value) {
+  return value === null ||
+    value === undefined ||
+    !Number.isFinite(Number(value))
+      ? "--" : (Number(value) * 100).toFixed(1) + "%";
+}
 
+function trackUnits(value) {
+  if (value === null ||
+      value === undefined ||
+      !Number.isFinite(Number(value))) return "--";
+
+  const n = Number(value);
+  return (n > 0 ? "+" : "") + n.toFixed(2) + " units";
+}
+
+function addTrackingCard(container, title, stats) {
+  const card = document.createElement("div");
+  card.className = "performance-card";
+  addText(card, "h3", title);
+  metric(card, "Settled", String(stats?.settled ?? 0));
+  metric(
+    card, "Wins / Losses / Pushes",
+    `${stats?.wins ?? 0} / ${stats?.losses ?? 0} / ${stats?.pushes ?? 0}`
+  );
+  metric(card, "Win rate", trackPercent(stats?.win_rate));
+  metric(card, "ROI", trackPercent(stats?.roi));
+  metric(card, "Profit / Loss", trackUnits(stats?.profit_units));
+  container.appendChild(card);
+}
+
+async function loadTracking() {
+  const status = el("tracking-status");
+  const breakdowns = el("tracking-breakdowns");
+  status.textContent = "Loading tracked results...";
+  breakdowns.replaceChildren();
+
+  try {
+    const response = await fetch(
+      "./tracking.json?t=" + Date.now(),
+      { cache: "no-store" }
+    );
+    if (!response.ok) throw new Error("HTTP " + response.status);
+
+    const json = await response.json();
+    if (!json.summary || !json.by_market || !json.by_side) {
+      throw new Error("Invalid tracking format");
+    }
+
+    const summary = json.summary;
+    el("track-winrate").textContent = trackPercent(summary.win_rate);
+    el("track-roi").textContent = trackPercent(summary.roi);
+    el("track-profit").textContent = trackUnits(summary.profit_units);
+    el("track-settled").textContent = String(summary.settled ?? 0);
+
+    el("tracking-details").textContent =
+      `${summary.wins ?? 0} wins · ${summary.losses ?? 0} losses · ` +
+      `${summary.pushes ?? 0} pushes · ${summary.pending ?? 0} pending`;
+
+    for (const [key, label] of [
+      ["points", "Points"],
+      ["rebounds", "Rebounds"],
+      ["assists", "Assists"]
+    ]) {
+      addTrackingCard(breakdowns, label, json.by_market[key] || {});
+    }
+
+    for (const [key, label] of [
+      ["over", "Overs"],
+      ["under", "Unders"]
+    ]) {
+      addTrackingCard(breakdowns, label, json.by_side[key] || {});
+    }
+
+    addTrackingCard(
+      breakdowns,
+      "Positive Model EV",
+      json.positive_ev || {}
+    );
+
+    status.textContent = summary.settled
+      ? "Tracking updated: " +
+        (json.updated_at
+          ? new Date(json.updated_at).toLocaleString()
+          : "Unknown")
+      : "Tracking is active. Waiting for completed games to be graded.";
+
+  } catch (error) {
+    console.warn("Live tracking unavailable:", error);
+
+    for (const id of [
+      "track-winrate",
+      "track-roi",
+      "track-profit",
+      "track-settled"
+    ]) {
+      el(id).textContent = "--";
+    }
+
+    el("tracking-details").textContent = "";
+    status.textContent =
+      "Live tracking is not available yet (tracking.json may not have been generated). " +
+      error.message;
+  }
+}
+
+// Search and filter controls.
 ["search", "game", "market", "side"].forEach(id => {
   el(id).addEventListener("input", draw);
 });
 
 // Column sorting.
-
 document.querySelectorAll("th[data-sort]").forEach(th => {
-
   th.addEventListener("click", () => {
-
     const key = th.dataset.sort;
 
     if (sortKey === key) {
       sortAscending = !sortAscending;
     } else {
-
       sortKey = key;
-
       sortAscending = [
-        "date",
-        "matchup",
-        "game_time",
-        "player",
-        "team_abbr",
-        "opponent",
-        "market",
-        "side"
+        "date", "matchup", "game_time", "player",
+        "team_abbr", "opponent", "market", "side"
       ].includes(key);
     }
 
@@ -1294,18 +784,17 @@ document.querySelectorAll("th[data-sort]").forEach(th => {
   });
 });
 
-// Refresh button.
-
+// Refresh published data without requesting new sportsbook odds.
 el("refresh").addEventListener("click", () => {
   loadData();
   loadBacktest();
+  loadTracking();
 });
 
 // Initial page load.
-
 loadData();
 loadBacktest();
-
+loadTracking();
 </script>
 </body>
 </html>
