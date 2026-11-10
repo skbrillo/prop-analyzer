@@ -1,1 +1,406 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Prop Analyzer — Demo</title><style>body{background:#0b1220;color:#e8edf6;font:15px system-ui;margin:0}main{max-width:1150px;margin:auto;padding:30px 18px}h1{margin-bottom:4px}.muted{color:#9ba9be}.warn{background:#453018;color:#ffda8c;padding:14px;border-radius:10px;margin:18px 0}.stats{display:flex;gap:12px;flex-wrap:wrap;margin:20px 0}.stat{background:#172338;border:1px solid #293a52;border-radius:12px;padding:18px;flex:1;min-width:150px}.stat b{font-size:25px;display:block}select,input{background:#18273d;color:white;border:1px solid #41516b;border-radius:7px;padding:10px;margin:8px 8px 12px 0}table{border-collapse:collapse;width:100%;min-width:850px}th,td{padding:12px;text-align:left;border-bottom:1px solid #2b3a50}th{color:#a6b5c9}tr:hover{background:#18273d}.tablewrap{overflow:auto}.positive{color:#75e3a5}.negative{color:#f2a7a7}</style></head><body><main><h1>Prop Analyzer</h1><div class="muted">NBA player props · automated model prototype</div><div class="warn"><strong>DEMONSTRATION ONLY.</strong> All player names, historical logs and odds are synthetic. Results are not live, validated predictions or betting advice.</div><div class="stats"><div class="stat">Analyzed outcomes<b id="count">—</b></div><div class="stat">Positive model EV<b id="positive">—</b></div><div class="stat">Last update<b id="updated" style="font-size:15px">—</b></div></div><div><input id="search" placeholder="Search player or team"><select id="market"><option>All markets</option><option>Points</option><option>Rebounds</option><option>Assists</option></select><select id="side"><option>Both sides</option><option>Over</option><option>Under</option></select></div><div class="tablewrap"><table><thead><tr><th>Player</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>Projection</th><th>Probability</th><th>EV</th><th>Last 10</th></tr></thead><tbody id="rows"></tbody></table></div><p class="muted">Baseline model: weighted recent/season mean with normal approximation. This model is intentionally unvalidated. Refresh the page to see the latest generated file.</p></main><script>let data=[];const el=id=>document.getElementById(id);function draw(){let q=el('search').value.toLowerCase(),m=el('market').value,s=el('side').value;let shown=data.filter(x=>(x.player+' '+x.team).toLowerCase().includes(q)&&(m==='All markets'||x.market===m)&&(s==='Both sides'||x.side===s));el('rows').innerHTML=shown.map(x=>`<tr><td>${x.player}<div class="muted">${x.team} vs ${x.opponent}</div></td><td>${x.market}</td><td>${x.side}</td><td>${x.line}</td><td>${x.odds>0?'+':''}${x.odds}</td><td>${x.projection.toFixed(2)}</td><td>${(x.probability*100).toFixed(1)}%</td><td class="${x.ev>=0?'positive':'negative'}">${x.ev>=0?'+':''}${(x.ev*100).toFixed(1)}%</td><td>${x.last10}/10</td></tr>`).join('');}fetch('./results.json').then(r=>r.json()).then(j=>{data=j.results;el('count').textContent=data.length;el('positive').textContent=data.filter(x=>x.ev>0).length;el('updated').textContent=new Date(j.generated_at).toLocaleString();draw()}).catch(()=>{el('rows').innerHTML='<tr><td colspan="9">Could not load results.json. Run the generator and serve the site over HTTP.</td></tr>'});['search','market','side'].forEach(id=>el(id).addEventListener('input',draw));</script></body></html>
+
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Prop Analyzer | NBA Player Props</title>
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      background: #0b1220;
+      color: #e8edf6;
+      font: 15px system-ui, sans-serif;
+      margin: 0;
+    }
+
+    main {
+      max-width: 1350px;
+      margin: auto;
+      padding: 30px 18px;
+    }
+
+    h1 {
+      font-size: 36px;
+      margin: 0 0 5px;
+    }
+
+    .muted { color: #9ba9be; }
+
+    .warn {
+      background: #332c19;
+      color: #ffda8c;
+      padding: 15px;
+      border-radius: 10px;
+      margin: 22px 0;
+      line-height: 1.6;
+    }
+
+    .stats {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      margin: 22px 0;
+    }
+
+    .stat {
+      background: #172338;
+      border: 1px solid #293a52;
+      border-radius: 12px;
+      padding: 20px;
+      flex: 1;
+      min-width: 190px;
+    }
+
+    .stat b {
+      font-size: 26px;
+      display: block;
+      margin-top: 7px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin: 25px 0 15px;
+    }
+
+    select, input, button {
+      background: #18273d;
+      color: white;
+      border: 1px solid #41516b;
+      border-radius: 8px;
+      padding: 11px;
+      font: inherit;
+    }
+
+    input { min-width: 230px; }
+
+    button {
+      cursor: pointer;
+      background: #256c46;
+      border-color: #348b59;
+    }
+
+    button:hover { background: #318a5b; }
+
+    .tablewrap { overflow-x: auto; }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      min-width: 950px;
+    }
+
+    th, td {
+      padding: 13px 12px;
+      text-align: left;
+      border-bottom: 1px solid #2b3a50;
+      white-space: nowrap;
+    }
+
+    th {
+      color: #a6b5c9;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    tr:hover { background: #18273d; }
+
+    .positive { color: #75e3a5; }
+    .negative { color: #f2a7a7; }
+
+    .footer {
+      color: #9ba9be;
+      margin-top: 25px;
+      line-height: 1.7;
+      font-size: 13px;
+    }
+
+    #status {
+      color: #9ba9be;
+      margin: 10px 0;
+    }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 29px; }
+      .stat { min-width: 140px; }
+      .controls { align-items: stretch; }
+      input, select, button { width: 100%; }
+    }
+  </style>
+</head>
+
+<body>
+<main>
+
+  <h1>Prop Analyzer</h1>
+  <div class="muted">
+    NBA player props | ESPN statistics + DraftKings odds
+  </div>
+
+  <div class="warn">
+    <strong>REAL NBA DATA — EXPERIMENTAL MODEL.</strong>
+    Player statistics are sourced from ESPN and betting odds from
+    DraftKings via The Odds API. Predictions use an unvalidated
+    statistical model. Odds may change, and estimated probabilities
+    and expected values are not guaranteed betting advantages.
+    Results are for informational purposes only.
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      Analyzed outcomes
+      <b id="count">--</b>
+    </div>
+
+    <div class="stat">
+      Positive model EV
+      <b id="positive">--</b>
+    </div>
+
+    <div class="stat">
+      Last update
+      <b id="updated" style="font-size:17px">--</b>
+    </div>
+  </div>
+
+  <div class="controls">
+    <input
+      id="search"
+      type="search"
+      placeholder="Search player or team"
+      aria-label="Search player or team"
+    >
+
+    <select id="market" aria-label="Market filter">
+      <option value="">All markets</option>
+      <option value="Points">Points</option>
+      <option value="Rebounds">Rebounds</option>
+      <option value="Assists">Assists</option>
+    </select>
+
+    <select id="side" aria-label="Bet side filter">
+      <option value="">Both sides</option>
+      <option value="Over">Over</option>
+      <option value="Under">Under</option>
+    </select>
+
+    <button id="refresh" type="button">
+      Refresh Data
+    </button>
+  </div>
+
+  <div id="status" role="status">Loading latest results...</div>
+
+  <div class="tablewrap">
+    <table>
+      <thead>
+        <tr>
+          <th data-sort="player">Player</th>
+          <th data-sort="market">Market</th>
+          <th data-sort="side">Side</th>
+          <th data-sort="line">Line</th>
+          <th data-sort="odds">Odds</th>
+          <th data-sort="projection">Projection</th>
+          <th data-sort="probability">Probability</th>
+          <th data-sort="ev">EV</th>
+          <th data-sort="last10">Last 10</th>
+        </tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+
+  <div class="footer">
+    Model: baseline-normal-v1-unvalidated.
+    Projections use weighted historical averages and a normal
+    distribution approximation. The model has not been backtested
+    or calibrated. A positive estimated EV does not establish
+    a profitable betting opportunity.
+    Data is refreshed by GitHub Actions when the scheduled workflow
+    runs successfully. The Refresh Data button reloads the most
+    recently published results; it does not request new sportsbook odds.
+  </div>
+
+</main>
+
+<script>
+  const el = id => document.getElementById(id);
+
+  let data = [];
+  let sortKey = "ev";
+  let sortAscending = false;
+
+  function formatOdds(value) {
+    const n = Number(value);
+    return n > 0 ? "+" + n : String(n);
+  }
+
+  function formatPercent(value) {
+    return (Number(value) * 100).toFixed(1) + "%";
+  }
+
+  function draw() {
+    const query = el("search").value.toLowerCase().trim();
+    const market = el("market").value;
+    const side = el("side").value;
+
+    let filtered = data.filter(row => {
+      const searchText = (
+        (row.player || "") + " " + (row.team || "")
+      ).toLowerCase();
+
+      return (
+        searchText.includes(query) &&
+        (!market || row.market === market) &&
+        (!side || row.side === side)
+      );
+    });
+
+    filtered.sort((a, b) => {
+      const av = a[sortKey];
+      const bv = b[sortKey];
+
+      let result;
+
+      if (typeof av === "number" && typeof bv === "number") {
+        result = av - bv;
+      } else {
+        result = String(av ?? "").localeCompare(String(bv ?? ""));
+      }
+
+      return sortAscending ? result : -result;
+    });
+
+    const tbody = el("rows");
+    tbody.replaceChildren();
+
+    if (!filtered.length) {
+      const tr = document.createElement("tr");
+      const td = document.createElement("td");
+      td.colSpan = 9;
+      td.textContent = data.length
+        ? "No results match your filters."
+        : "No player props available in the latest published results.";
+      tr.appendChild(td);
+      tbody.appendChild(tr);
+      return;
+    }
+
+    for (const row of filtered) {
+      const tr = document.createElement("tr");
+
+      const values = [
+        row.player || "",
+        row.market || "",
+        row.side || "",
+        Number(row.line).toFixed(1),
+        formatOdds(row.odds),
+        Number(row.projection).toFixed(2),
+        formatPercent(row.probability),
+        formatPercent(row.ev),
+        String(row.last10) + "/10"
+      ];
+
+      values.forEach((value, index) => {
+        const td = document.createElement("td");
+        td.textContent = value;
+
+        if (index === 7) {
+          td.className = Number(row.ev) > 0
+            ? "positive"
+            : "negative";
+        }
+
+        tr.appendChild(td);
+      });
+
+      tbody.appendChild(tr);
+    }
+  }
+
+  async function loadData() {
+    el("status").textContent = "Loading latest results...";
+
+    try {
+      const response = await fetch(
+        "./results.json?t=" + Date.now(),
+        { cache: "no-store" }
+      );
+
+      if (!response.ok) {
+        throw new Error("HTTP " + response.status);
+      }
+
+      const json = await response.json();
+
+      if (!Array.isArray(json.results)) {
+        throw new Error("Invalid results format");
+      }
+
+      data = json.results;
+
+      el("count").textContent = data.length;
+
+      el("positive").textContent = data.filter(
+        row => Number(row.ev) > 0
+      ).length;
+
+      el("updated").textContent = json.generated_at
+        ? new Date(json.generated_at).toLocaleString()
+        : "Unknown";
+
+      el("status").textContent =
+        data.length + " model outcomes loaded.";
+
+      draw();
+
+    } catch (error) {
+      console.error(error);
+
+      data = [];
+      el("count").textContent = "0";
+      el("positive").textContent = "0";
+      el("updated").textContent = "--";
+
+      el("status").textContent =
+        "Could not load results.json: " + error.message;
+
+      draw();
+    }
+  }
+
+  ["search", "market", "side"].forEach(id => {
+    el(id).addEventListener("input", draw);
+  });
+
+  document.querySelectorAll("th[data-sort]").forEach(th => {
+    th.addEventListener("click", () => {
+      const key = th.dataset.sort;
+
+      if (sortKey === key) {
+        sortAscending = !sortAscending;
+      } else {
+        sortKey = key;
+        sortAscending = (
+          key === "player" ||
+          key === "market" ||
+          key === "side"
+        );
+      }
+
+      draw();
+    });
+  });
+
+  el("refresh").addEventListener("click", loadData);
+
+  loadData();
+</script>
+
+</body>
+</html>
