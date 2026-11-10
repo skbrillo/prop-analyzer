@@ -1,4 +1,39 @@
 
+.game-lines-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  margin: 16px 0;
+}
+
+.game-line-card {
+  background: #172338;
+  border: 1px solid #293a52;
+  border-radius: 12px;
+  padding: 16px;
+}
+
+.game-line-card h3 {
+  font-size: 16px;
+  margin: 0 0 8px;
+}
+
+.game-line-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 8px 0;
+  border-top: 1px solid #293a52;
+}
+
+.game-line-row span {
+  color: #a6b5c9;
+}
+
+.game-line-row strong {
+  font-variant-numeric: tabular-nums;
+}
+
 <!doctype html>
 <html lang="en">
 <head>
