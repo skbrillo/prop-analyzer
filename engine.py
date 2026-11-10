@@ -1,95 +1,108 @@
-import csv
-import json
-import math
-import statistics
-import pathlib
-import datetime
-from collections import defaultdict
-
-ROOT = pathlib.Path(__file__).parent
-DATA = ROOT / "data"
-SITE = ROOT / "docs"
-
-VERSION = "v2-probability-audit-experimental"
-
-MARKETS = {"points", "rebounds", "assists"}
-
-DEFENSE_COLUMNS = {
-    "points": "points_allowed",
-    "rebounds": "rebounds_allowed",
-    "assists": "assists_allowed",
-}
-
-MIN_DEFENSE_GAMES = 5
-DEFENSE_WINDOW = 15
-DEFENSE_SHRINKAGE = 12
-DEFENSE_MIN_FACTOR = 0.90
-DEFENSE_MAX_FACTOR = 1.10
-
-
-def norm(value):
-    return " ".join(str(value or "").casefold().split())
-
-
-def number(value, default=None):
-    try:
-        result = float(value)
-        return result if math.isfinite(result) else default
-    except (ValueError, TypeError):
-        return default
-
-
-def normal_cdf(value):
-    return (1 + math.erf(value / math.sqrt(2))) / 2
-
-
-def outcome_probabilities(projection, sigma, line):
-    """Normal approximation with continuity correction for integer box-score stats.
-
-    Whole-number lines can push. Half-number lines cannot push.
-    These probabilities are uncalibrated estimates, not proven hit rates.
-    """
-    if float(line).is_integer():
-        under_cutoff = line - 0.5
-        over_cutoff = line + 0.5
-    else:
-        cutoff = math.floor(line) + 0.5
-        under_cutoff = cutoff
-        over_cutoff = cutoff
-
-    under = normal_cdf((under_cutoff - projection) / sigma)
-    over = 1 - normal_cdf((over_cutoff - projection) / sigma)
-    push = max(0.0, 1 - over - under)
-    return over, under, push
-
-
-def profit_per_dollar(odds):
-    return 100 / abs(odds) if odds < 0 else odds / 100
-
-
-def implied(odds):
-    return 1 / (1 + profit_per_dollar(odds))
-
-
-def mean(values):
-    return statistics.mean(values) if values else 0.0
-
-
-def weighted(values):
-    if not values:
-        return 0.0
-
-    return (
-        0.5 * mean(values[-10:])
-        + 0.3 * mean(values)
-        + 0.2 * mean(values[-5:])
+reverse=True
     )
 
+    SITE.mkdir(exist_ok=True)
 
-# VERSION 4: SMARTER MINUTES PROJECTION
+    payload = {
+        "generated_at": (
+            datetime.datetime.now(
+                datetime.timezone.utc
+            ).isoformat()
+        ),
 
-def project_minutes(minutes):
-    """
-    Forecast minutes using historical games only.
+        "mode": (
+            "REAL DATA. Experimental probability audit. "
+            "Probabilities blend an uncertainty-adjusted normal approximation "
+            "with no-vig DraftKings market probabilities. Whole-number lines "
+            "include estimated push probability. Injury and lineup changes "
+            "require verified inputs. These probabilities are NOT calibrated "
+            "and EV is NOT a validated betting advantage."
+        ),
 
-    Features:
+        "results": output,
+    }
+
+    (SITE / "results.json").write_text(
+        json.dumps(payload, indent=2),
+        encoding="utf-8",
+    )
+
+    print("ESPN player game logs:", len(logs))
+    print("DraftKings player prop lines:", len(odds))
+    print("Team defense game records:", len(defense))
+    print("Generated prediction outcomes:", len(output))
+    print("Players matched to teams:", len(matched))
+    print("Players without verified teams:", len(unmatched))
+
+    print(
+        "Props using baseline because minutes unavailable:",
+        no_minutes,
+    )
+
+    print(
+        "Props with team defense applied:",
+        defense_applied,
+    )
+
+    print(
+        "Props with neutral defense fallback:",
+        defense_fallback,
+    )
+
+    print(
+        "Injury-confirmed out props skipped:",
+        skipped_out,
+    )
+
+    analyzed_props = len(output) // 2
+    total_rejected = sum(rejection_counts.values())
+
+    print("Props analyzed:", analyzed_props)
+    print("Props rejected:", total_rejected)
+
+    for reason, count in rejection_counts.items():
+        print(f"Skipped - {reason}: {count}")
+
+    print(
+        "Prop accounting check:",
+        f"{analyzed_props} analyzed + "
+        f"{total_rejected} rejected = "
+        f"{analyzed_props + total_rejected} / {len(odds)}",
+    )
+
+    diagnostics_path = DATA / "rejected_props.csv"
+
+    with diagnostics_path.open(
+        "w",
+        newline="",
+        encoding="utf-8",
+    ) as file:
+        writer = csv.DictWriter(
+            file,
+            fieldnames=[
+                "game_date",
+                "player",
+                "market",
+                "line",
+                "matchup",
+                "reason",
+            ],
+        )
+
+        writer.writeheader()
+        writer.writerows(rejected_props)
+
+    print(
+        "Rejected prop details saved:",
+        diagnostics_path,
+    )
+
+    if unmatched:
+        print(
+            "Unmatched players:",
+            ", ".join(sorted(unmatched)),
+        )
+
+
+if __name__ == "__main__":
+    run()
