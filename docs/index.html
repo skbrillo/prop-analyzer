@@ -131,7 +131,6 @@ tr:hover { background: #18273d; }
 .side-over { color: #75e3a5; }
 .side-under { color: #f8c477; }
 
-/* All 14 columns fit across a desktop screen. */
 th:nth-child(1), td:nth-child(1) { width: 4%; }
 th:nth-child(2), td:nth-child(2) { width: 9%; }
 th:nth-child(3), td:nth-child(3) { width: 6%; }
@@ -145,14 +144,20 @@ th:nth-child(10), td:nth-child(10) { width: 6%; }
 th:nth-child(11), td:nth-child(11) { width: 8%; }
 th:nth-child(12), td:nth-child(12) { width: 9%; }
 th:nth-child(13), td:nth-child(13) { width: 8%; }
-th:nth-child(14), td:nth-child(14) {
-  width: 9%;
+th:nth-child(14), td:nth-child(14) { width: 6%; }
+th:nth-child(15), td:nth-child(15) {
+  width: 6%;
   font-weight: 700;
 }
 
-/* Smaller screens may scroll horizontally. */
+.result-win { color: #75e3a5; font-weight: 700; }
+.result-loss { color: #f2a7a7; font-weight: 700; }
+.result-push { color: #b9cafa; font-weight: 700; }
+.result-pending { color: #f8c477; }
+.result-invalid { color: #9ba9be; }
+
 @media (max-width: 1100px) {
-  table { min-width: 1050px; }
+  table { min-width: 1200px; }
 }
 
 .section {
@@ -269,6 +274,14 @@ th:nth-child(14), td:nth-child(14) {
     <b id="games">--</b>
   </div>
   <div class="stat">
+    Total Wins
+    <b id="total-wins" class="result-win">--</b>
+  </div>
+  <div class="stat">
+    Total Losses
+    <b id="total-losses" class="result-loss">--</b>
+  </div>
+  <div class="stat">
     Last Updated
     <b id="updated" style="font-size:17px">--</b>
   </div>
@@ -323,6 +336,7 @@ th:nth-child(14), td:nth-child(14) {
   <th data-sort="probability">Prob.</th>
   <th data-sort="ev">Model EV</th>
   <th data-sort="last10">Last 10</th>
+  <th data-sort="result">Result</th>
 </tr>
 </thead>
 <tbody id="rows"></tbody>
@@ -569,7 +583,7 @@ function draw() {
   if (!filtered.length) {
     const tr = document.createElement("tr");
     const td = document.createElement("td");
-    td.colSpan = 14;
+    td.colSpan = 15;
     td.textContent = data.length
       ? "No results match your filters."
       : "No player props available in the latest results.";
@@ -583,6 +597,13 @@ function draw() {
 
   for (const row of filtered) {
     const tr = document.createElement("tr");
+
+    const result = String(row.result || "pending").toLowerCase();
+    const resultLabel = result === "win" ? "WIN"
+      : result === "loss" ? "LOSS"
+      : result === "push" ? "PUSH"
+      : result === "invalid" ? "INVALID"
+      : "PENDING";
 
     const values = [
       formatDate(row.date),
@@ -601,7 +622,8 @@ function draw() {
       row.last10 === null ||
       row.last10 === undefined
         ? "--"
-        : String(row.last10) + "/10"
+        : String(row.last10) + "/10",
+      resultLabel
     ];
 
     values.forEach((value, index) => {
@@ -637,6 +659,10 @@ function draw() {
         td.className = Number(row.ev) > 0
           ? "positive"
           : "negative";
+      }
+
+      if (index === 14) {
+        td.className = "result-" + result;
       }
 
       tr.appendChild(td);
@@ -770,15 +796,84 @@ async function loadBacktest() {
   }
 }
 
+function normalizeMarket(value) {
+  const text = String(value || "").toLowerCase();
+  if (text.includes("point")) return "Points";
+  if (text.includes("rebound")) return "Rebounds";
+  if (text.includes("assist")) return "Assists";
+  return value || "";
+}
+
+function normalizeSide(value) {
+  const text = String(value || "").toLowerCase();
+  if (text === "over") return "Over";
+  if (text === "under") return "Under";
+  return value || "";
+}
+
+function predictionKey(row) {
+  return [
+    row.event_id || "",
+    row.game_date || row.date || "",
+    String(row.player || "").trim().toLowerCase(),
+    normalizeMarket(row.market),
+    normalizeSide(row.side)
+  ].join("|");
+}
+
+function convertHistoryRow(row) {
+  const outcome = String(row.outcome || "").toLowerCase();
+  const status = String(row.status || "").toLowerCase();
+
+  return {
+    ...row,
+    date: row.game_date || row.date || "",
+    team_abbr: row.team_abbr || row.team || "",
+    market: normalizeMarket(row.market),
+    side: normalizeSide(row.side),
+    ev: row.model_ev ?? row.ev,
+    result: status === "graded" && ["win", "loss", "push"].includes(outcome)
+      ? outcome
+      : status === "invalid"
+        ? "invalid"
+        : "pending",
+    game_time: row.game_time || "--"
+  };
+}
+
+async function loadGradedPredictions() {
+  try {
+    const response = await fetch(
+      "./graded_predictions.json?t=" + Date.now(),
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) return [];
+
+    const json = await response.json();
+    const predictions = Array.isArray(json.predictions)
+      ? json.predictions
+      : [];
+
+    return predictions.map(convertHistoryRow);
+  } catch (error) {
+    console.warn("Graded predictions unavailable:", error);
+    return [];
+  }
+}
+
 async function loadData() {
   el("status").textContent =
     "Loading latest results...";
 
   try {
-    const response = await fetch(
-      "./results.json?t=" + Date.now(),
-      { cache: "no-store" }
-    );
+    const [response, history] = await Promise.all([
+      fetch(
+        "./results.json?t=" + Date.now(),
+        { cache: "no-store" }
+      ),
+      loadGradedPredictions()
+    ]);
 
     if (!response.ok) {
       throw new Error("HTTP " + response.status);
@@ -790,7 +885,31 @@ async function loadData() {
       throw new Error("Invalid results format");
     }
 
-    data = json.results;
+    const combined = new Map();
+
+    for (const row of history) {
+      combined.set(predictionKey(row), row);
+    }
+
+    for (const row of json.results) {
+      const current = {
+        ...row,
+        result: "pending"
+      };
+      const key = predictionKey(current);
+
+      if (combined.has(key)) {
+        const previous = combined.get(key);
+        combined.set(key, {
+          ...current,
+          result: previous.result
+        });
+      } else {
+        combined.set(key, current);
+      }
+    }
+
+    data = [...combined.values()];
 
     el("count").textContent = data.length;
 
@@ -803,6 +922,22 @@ async function loadData() {
     );
 
     el("games").textContent = games.size;
+
+    const wins = history.filter(
+      row => row.result === "win"
+    ).length;
+
+    const losses = history.filter(
+      row => row.result === "loss"
+    ).length;
+
+    el("total-wins").textContent = history.length
+      ? wins
+      : "--";
+
+    el("total-losses").textContent = history.length
+      ? losses
+      : "--";
 
     el("updated").textContent = json.generated_at
       ? new Date(json.generated_at).toLocaleString()
@@ -818,6 +953,8 @@ async function loadData() {
     el("count").textContent = "0";
     el("positive").textContent = "0";
     el("games").textContent = "0";
+    el("total-wins").textContent = "--";
+    el("total-losses").textContent = "--";
     el("updated").textContent = "--";
 
     el("status").textContent =
