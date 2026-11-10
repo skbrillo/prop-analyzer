@@ -5,79 +5,55 @@ import math
 import statistics
 import pathlib
 import datetime
-
 from collections import defaultdict
 
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "data"
 SITE = ROOT / "docs"
 
-VERSION = "v3-team-defense-experimental"
+VERSION = "v4-smarter-minutes-experimental"
 
-MARKETS = {
-    "points",
-    "rebounds",
-    "assists"
-}
+MARKETS = {"points", "rebounds", "assists"}
 
 DEFENSE_COLUMNS = {
     "points": "points_allowed",
     "rebounds": "rebounds_allowed",
-    "assists": "assists_allowed"
+    "assists": "assists_allowed",
 }
 
 MIN_DEFENSE_GAMES = 5
 DEFENSE_WINDOW = 15
 DEFENSE_SHRINKAGE = 12
-
-# Maximum defensive adjustment is +/- 10%.
 DEFENSE_MIN_FACTOR = 0.90
 DEFENSE_MAX_FACTOR = 1.10
 
 
 def norm(value):
-    return " ".join(
-        str(value or "").casefold().split()
-    )
+    return " ".join(str(value or "").casefold().split())
 
 
 def number(value, default=None):
     try:
         result = float(value)
-
-        if math.isfinite(result):
-            return result
-
-        return default
-
+        return result if math.isfinite(result) else default
     except (ValueError, TypeError):
         return default
 
 
 def normal_cdf(value):
-    return (
-        1 + math.erf(value / math.sqrt(2))
-    ) / 2
+    return (1 + math.erf(value / math.sqrt(2))) / 2
 
 
 def profit_per_dollar(odds):
-    if odds < 0:
-        return 100 / abs(odds)
-
-    return odds / 100
+    return 100 / abs(odds) if odds < 0 else odds / 100
 
 
 def implied(odds):
-    return 1 / (
-        1 + profit_per_dollar(odds)
-    )
+    return 1 / (1 + profit_per_dollar(odds))
 
 
 def mean(values):
-    if not values:
-        return 0.0
-
-    return statistics.mean(values)
+    return statistics.mean(values) if values else 0.0
 
 
 def weighted(values):
@@ -89,6 +65,80 @@ def weighted(values):
         + 0.3 * mean(values)
         + 0.2 * mean(values[-5:])
     )
+
+
+# VERSION 4: SMARTER MINUTES PROJECTION
+
+def project_minutes(minutes):
+    """
+    Forecast minutes using historical games only.
+
+    Features:
+    - Last 5 games
+    - Last 10 games
+    - Longer-term baseline
+    - Playing-time trend
+    - Outlier protection
+    - Conservative projection limits
+    """
+
+    recent = [
+        m for m in minutes
+        if m is not None and 5 <= m <= 55
+    ]
+
+    if len(recent) < 10:
+        return None
+
+    history = recent[-30:]
+
+    # Use the recent median to identify unusual minutes.
+    center = statistics.median(history[-10:])
+
+    lower = max(5.0, center - 12.0)
+    upper = min(48.0, center + 12.0)
+
+    cleaned = [
+        max(lower, min(upper, m))
+        for m in history
+    ]
+
+    last5 = mean(cleaned[-5:])
+    last10 = mean(cleaned[-10:])
+    long_term = mean(cleaned)
+
+    # Recent playing time receives more weight.
+    baseline = (
+        0.45 * last5
+        + 0.35 * last10
+        + 0.20 * long_term
+    )
+
+    # Detect increasing or decreasing minutes.
+    trend = 0.30 * (last5 - last10)
+
+    # Limit trend adjustment to +/- 2 minutes.
+    trend = max(-2.0, min(2.0, trend))
+
+    forecast = baseline + trend
+
+    # Limit abrupt changes from recent playing time.
+    forecast = max(
+        last10 - 5.0,
+        min(last10 + 5.0, forecast)
+    )
+
+    # Final conservative NBA minutes range.
+    forecast = max(5.0, min(44.0, forecast))
+
+    return {
+        "projection": forecast,
+        "last5": mean(recent[-5:]),
+        "last10": mean(recent[-10:]),
+        "long_term": mean(recent[-30:]),
+        "trend_adjustment": trend,
+        "sample_size": len(recent),
+    }
 
 
 def read_csv(path):
@@ -103,7 +153,6 @@ def read_csv(path):
 
 
 def identify_team(games, bet):
-
     latest = games[-1]
 
     team = latest.get("team", "")
@@ -118,7 +167,7 @@ def identify_team(games, bet):
             team,
             latest.get("team_abbr", ""),
             away,
-            latest.get("team_id", "")
+            latest.get("team_id", ""),
         )
 
     if norm(team) == norm(away):
@@ -126,26 +175,22 @@ def identify_team(games, bet):
             team,
             latest.get("team_abbr", ""),
             home,
-            latest.get("team_id", "")
+            latest.get("team_id", ""),
         )
 
     return None
 
 
 def load_injuries():
-
     injuries = {}
 
-    for row in read_csv(
-        DATA / "verified_injuries.csv"
-    ):
-
+    for row in read_csv(DATA / "verified_injuries.csv"):
         if not row.get("source", "").strip():
             continue
 
         key = (
             row.get("game_date", ""),
-            norm(row.get("player", ""))
+            norm(row.get("player", "")),
         )
 
         if key[0] and key[1]:
@@ -155,49 +200,29 @@ def load_injuries():
 
 
 def load_defense():
-
-    rows = read_csv(
-        DATA / "team_defense.csv"
-    )
+    rows = read_csv(DATA / "team_defense.csv")
 
     defense = []
-
     seen = set()
 
     for row in rows:
-
-        game_id = row.get(
-            "game_id", ""
-        ).strip()
-
-        date = row.get(
-            "date", ""
-        ).strip()
-
-        team = row.get(
-            "defense_team", ""
-        ).strip()
+        game_id = row.get("game_id", "").strip()
+        date = row.get("date", "").strip()
+        team = row.get("defense_team", "").strip()
 
         if not game_id or not date or not team:
             continue
 
-        key = (
-            game_id,
-            norm(team)
-        )
+        key = (game_id, norm(team))
 
         if key in seen:
             continue
 
         values = {}
-
         valid = True
 
         for market, column in DEFENSE_COLUMNS.items():
-
-            value = number(
-                row.get(column)
-            )
+            value = number(row.get(column))
 
             if value is None or value < 0:
                 valid = False
@@ -215,13 +240,13 @@ def load_defense():
             "date": date,
             "team": team,
             "team_key": norm(team),
-            **values
+            **values,
         })
 
     defense.sort(
         key=lambda row: (
             row["date"],
-            row["game_id"]
+            row["game_id"],
         )
     )
 
@@ -234,13 +259,9 @@ def defense_adjustment(
     market,
     before_date
 ):
-
-    # Only use games completed before
-    # the game being predicted.
-
+    # Never use future games in the prediction.
     historical = [
-        row
-        for row in defense
+        row for row in defense
         if row["date"] < before_date
     ]
 
@@ -250,14 +271,13 @@ def defense_adjustment(
             "games": 0,
             "opponent_average": None,
             "league_average": None,
-            "status": "no_defense_data"
+            "status": "no_defense_data",
         }
 
     opponent_key = norm(opponent)
 
     opponent_games = [
-        row
-        for row in historical
+        row for row in historical
         if row["team_key"] == opponent_key
     ]
 
@@ -267,47 +287,29 @@ def defense_adjustment(
             "games": len(opponent_games),
             "opponent_average": None,
             "league_average": None,
-            "status": "insufficient_defense_games"
+            "status": "insufficient_defense_games",
         }
 
-    # Use the most recent opponent games.
-
-    recent_opponent = opponent_games[
-        -DEFENSE_WINDOW:
-    ]
+    recent_opponent = opponent_games[-DEFENSE_WINDOW:]
 
     opponent_values = [
-        row[market]
-        for row in recent_opponent
+        row[market] for row in recent_opponent
     ]
 
-    opponent_average = mean(
-        opponent_values
-    )
-
-    # Calculate league average from the
-    # same historical period.
-    #
-    # Restrict the league sample to the
-    # dates covered by the opponent's
-    # recent defensive window.
+    opponent_average = mean(opponent_values)
 
     window_start = recent_opponent[0]["date"]
 
     league_games = [
-        row
-        for row in historical
+        row for row in historical
         if row["date"] >= window_start
     ]
 
     league_values = [
-        row[market]
-        for row in league_games
+        row[market] for row in league_games
     ]
 
-    league_average = mean(
-        league_values
-    )
+    league_average = mean(league_values)
 
     if league_average <= 0:
         return {
@@ -315,20 +317,10 @@ def defense_adjustment(
             "games": len(recent_opponent),
             "opponent_average": opponent_average,
             "league_average": None,
-            "status": "invalid_league_average"
+            "status": "invalid_league_average",
         }
 
-    # More stats allowed than league average
-    # means a potentially easier matchup.
-    #
-    # Fewer stats allowed means a potentially
-    # more difficult matchup.
-
-    raw_factor = (
-        opponent_average / league_average
-    )
-
-    # Shrink small samples toward neutral.
+    raw_factor = opponent_average / league_average
 
     sample_size = len(recent_opponent)
 
@@ -342,15 +334,9 @@ def defense_adjustment(
         + reliability * (raw_factor - 1.0)
     )
 
-    # Cap adjustment to avoid allowing
-    # defense to dominate the projection.
-
     adjusted_factor = max(
         DEFENSE_MIN_FACTOR,
-        min(
-            DEFENSE_MAX_FACTOR,
-            adjusted_factor
-        )
+        min(DEFENSE_MAX_FACTOR, adjusted_factor)
     )
 
     return {
@@ -358,35 +344,24 @@ def defense_adjustment(
         "games": sample_size,
         "opponent_average": opponent_average,
         "league_average": league_average,
-        "status": "applied"
+        "status": "applied",
     }
 
 
 def run():
-
-    logs = read_csv(
-        DATA / "game_logs.csv"
-    )
-
-    odds = read_csv(
-        DATA / "sample_odds.csv"
-    )
+    logs = read_csv(DATA / "game_logs.csv")
+    odds = read_csv(DATA / "sample_odds.csv")
 
     injuries = load_injuries()
-
     defense = load_defense()
 
     by_player = defaultdict(list)
 
     for row in logs:
-        by_player[
-            norm(row.get("player"))
-        ].append(row)
+        by_player[norm(row.get("player"))].append(row)
 
     for games in by_player.values():
-        games.sort(
-            key=lambda row: row.get("date", "")
-        )
+        games.sort(key=lambda row: row.get("date", ""))
 
     output = []
 
@@ -399,7 +374,6 @@ def run():
     defense_applied = 0
     defense_fallback = 0
 
-    # Count each rejected prop once, at the first failing check.
     rejection_counts = {
         "invalid_market_or_date": 0,
         "insufficient_history": 0,
@@ -408,10 +382,12 @@ def run():
         "insufficient_stats": 0,
         "invalid_odds": 0,
     }
+
     rejected_props = []
 
     def reject(reason, bet):
         rejection_counts[reason] += 1
+
         rejected_props.append({
             "game_date": bet.get("game_date", ""),
             "player": bet.get("player", ""),
@@ -422,29 +398,18 @@ def run():
         })
 
     for bet in odds:
-
         player = bet.get("player", "")
-
-        market = norm(
-            bet.get("market", "")
-        )
-
-        date = bet.get(
-            "game_date", ""
-        )
+        market = norm(bet.get("market", ""))
+        date = bet.get("game_date", "")
 
         if market not in MARKETS or not date:
             reject("invalid_market_or_date", bet)
             continue
 
-        # Never use games played on or
-        # after the prediction date.
-
+        # Historical games must precede the prediction.
         games = [
             game
-            for game in by_player.get(
-                norm(player), []
-            )
+            for game in by_player.get(norm(player), [])
             if game.get("date", "") < date
         ]
 
@@ -452,10 +417,7 @@ def run():
             reject("insufficient_history", bet)
             continue
 
-        identified = identify_team(
-            games,
-            bet
-        )
+        identified = identify_team(games, bet)
 
         if identified is None:
             unmatched.add(player)
@@ -463,20 +425,15 @@ def run():
             continue
 
         team, abbr, opponent, team_id = identified
-
         matched.add(player)
 
         injury = injuries.get(
-            (
-                date,
-                norm(player)
-            )
+            (date, norm(player))
         )
 
         if injury and norm(
             injury.get("status")
         ) in ("out", "inactive"):
-
             skipped_out += 1
             reject("confirmed_out", bet)
             continue
@@ -484,7 +441,7 @@ def run():
         usable = [
             (
                 number(game.get(market)),
-                number(game.get("minutes"))
+                number(game.get("minutes")),
             )
             for game in games
         ]
@@ -496,17 +453,14 @@ def run():
         ]
 
         values = [
-            value
-            for value, minutes in usable
+            value for value, minutes in usable
         ]
 
         if len(values) < 10:
             reject("insufficient_stats", bet)
             continue
 
-        baseline = weighted(
-            values
-        )
+        baseline = weighted(values)
 
         valid_minutes = [
             (value, minutes)
@@ -519,9 +473,9 @@ def run():
 
         minutes_projection = None
         per_minute_projection = None
+        minutes_info = None
 
         if len(valid_minutes) >= 10:
-
             minutes = [
                 minutes
                 for value, minutes in valid_minutes
@@ -532,50 +486,38 @@ def run():
                 for value, minutes in valid_minutes
             ]
 
-            minutes_projection = max(
-                5.0,
-                min(
-                    48.0,
-                    weighted(minutes)
-                )
-            )
+            # VERSION 4 MINUTES MODEL
+            minutes_info = project_minutes(minutes)
 
-            per_minute_projection = weighted(
-                rates
-            )
+            minutes_projection = minutes_info["projection"]
+
+            per_minute_projection = weighted(rates)
 
             projection = (
                 minutes_projection
                 * per_minute_projection
             )
 
-            # Blend per-minute projection
-            # with historical baseline.
-
+            # Blend minutes-based projection with
+            # historical statistical production.
             projection = (
                 0.75 * projection
                 + 0.25 * baseline
             )
 
         else:
-
             no_minutes += 1
             projection = baseline
 
-        # NEW VERSION 3:
-        # Apply actual opponent defensive
-        # performance relative to league.
-
+        # Opponent defensive adjustment.
         defense_info = defense_adjustment(
             defense,
             opponent,
             market,
-            date
+            date,
         )
 
-        defense_factor = defense_info[
-            "factor"
-        ]
+        defense_factor = defense_info["factor"]
 
         if defense_info["status"] == "applied":
             defense_applied += 1
@@ -584,41 +526,26 @@ def run():
 
         projection *= defense_factor
 
-        # Apply manually verified injury
-        # adjustment when available.
-
+        # Apply manually verified injury information.
         injury_multiplier = 1.0
 
         if injury and minutes_projection is not None:
-
             multiplier = number(
-                injury.get(
-                    "minutes_multiplier"
-                )
+                injury.get("minutes_multiplier")
             )
 
             if (
                 multiplier is not None
                 and 0.5 <= multiplier <= 1.2
             ):
-
                 injury_multiplier = multiplier
 
                 projection *= multiplier
-
                 minutes_projection *= multiplier
 
-        line = number(
-            bet.get("line")
-        )
-
-        over_odds = number(
-            bet.get("over_odds")
-        )
-
-        under_odds = number(
-            bet.get("under_odds")
-        )
+        line = number(bet.get("line"))
+        over_odds = number(bet.get("over_odds"))
+        under_odds = number(bet.get("under_odds"))
 
         if (
             line is None
@@ -651,42 +578,29 @@ def run():
         floor = {
             "points": 3.5,
             "rebounds": 1.8,
-            "assists": 1.4
+            "assists": 1.4,
         }[market]
 
-        sigma = max(
-            floor,
-            observed_sigma
-        )
+        sigma = max(floor, observed_sigma)
 
         model_over = max(
             0.01,
             min(
                 0.99,
                 1 - normal_cdf(
-                    (
-                        line + 0.5 - projection
-                    ) / sigma
-                )
-            )
+                    (line + 0.5 - projection) / sigma
+                ),
+            ),
         )
 
-        raw_over = implied(
-            over_odds
-        )
-
-        raw_under = implied(
-            under_odds
-        )
+        raw_over = implied(over_odds)
+        raw_under = implied(under_odds)
 
         market_over = (
-            raw_over
-            / (raw_over + raw_under)
+            raw_over / (raw_over + raw_under)
         )
 
-        # Preserve Version 2's
-        # experimental probability blend.
-
+        # Existing experimental probability blend.
         over = (
             0.75 * model_over
             + 0.25 * market_over
@@ -696,9 +610,8 @@ def run():
 
         for side, probability, price in [
             ("Over", over, over_odds),
-            ("Under", under, under_odds)
+            ("Under", under, under_odds),
         ]:
-
             hits = sum(
                 (
                     value > line
@@ -709,69 +622,39 @@ def run():
             )
 
             ev = (
-                probability
-                * profit_per_dollar(price)
+                probability * profit_per_dollar(price)
                 - (1 - probability)
             )
 
             output.append({
-
                 "player": player,
-
                 "team": team,
                 "team_abbr": abbr,
                 "team_id": team_id,
-
                 "opponent": opponent,
 
                 "date": date,
                 "game_date": date,
-
-                "game_time": bet.get(
-                    "game_time", ""
-                ),
-
+                "game_time": bet.get("game_time", ""),
                 "commence_time": bet.get(
                     "commence_time", ""
                 ),
-
-                "event_id": bet.get(
-                    "event_id", ""
-                ),
-
-                "home_team": bet.get(
-                    "home_team", ""
-                ),
-
-                "away_team": bet.get(
-                    "away_team", ""
-                ),
-
-                "matchup": bet.get(
-                    "matchup", ""
-                ),
+                "event_id": bet.get("event_id", ""),
+                "home_team": bet.get("home_team", ""),
+                "away_team": bet.get("away_team", ""),
+                "matchup": bet.get("matchup", ""),
 
                 "market": market.title(),
                 "side": side,
-
                 "line": line,
                 "odds": price,
 
-                "projection": round(
-                    projection, 2
-                ),
-
-                "probability": round(
-                    probability, 4
-                ),
-
+                "projection": round(projection, 2),
+                "probability": round(probability, 4),
                 "implied_probability": round(
                     implied(price), 4
                 ),
-
-                "ev": round(
-                    ev, 4
-                ),
+                "ev": round(ev, 4),
 
                 "last10": hits,
                 "sample_size": len(values),
@@ -788,7 +671,28 @@ def run():
                     else None
                 ),
 
-                # New team defense information.
+                # VERSION 4 MINUTES DIAGNOSTICS
+                "minutes_last5": (
+                    round(minutes_info["last5"], 1)
+                    if minutes_info else None
+                ),
+
+                "minutes_last10": (
+                    round(minutes_info["last10"], 1)
+                    if minutes_info else None
+                ),
+
+                "minutes_long_term": (
+                    round(minutes_info["long_term"], 1)
+                    if minutes_info else None
+                ),
+
+                "minutes_trend_adjustment": (
+                    round(
+                        minutes_info["trend_adjustment"], 2
+                    )
+                    if minutes_info else None
+                ),
 
                 "opponent_factor": round(
                     defense_factor, 4
@@ -808,38 +712,27 @@ def run():
 
                 "opponent_defense_average": (
                     round(
-                        defense_info[
-                            "opponent_average"
-                        ],
-                        2
+                        defense_info["opponent_average"], 2
                     )
-                    if defense_info[
-                        "opponent_average"
-                    ] is not None
+                    if defense_info["opponent_average"]
+                    is not None
                     else None
                 ),
 
                 "league_defense_average": (
                     round(
-                        defense_info[
-                            "league_average"
-                        ],
-                        2
+                        defense_info["league_average"], 2
                     )
-                    if defense_info[
-                        "league_average"
-                    ] is not None
+                    if defense_info["league_average"]
+                    is not None
                     else None
                 ),
 
-                "defense_status": (
-                    defense_info["status"]
-                ),
+                "defense_status": defense_info["status"],
 
                 "injury_status": (
                     injury.get("status", "")
-                    if injury
-                    else "unverified"
+                    if injury else "unverified"
                 ),
 
                 "injury_minutes_multiplier": (
@@ -847,12 +740,10 @@ def run():
                 ),
 
                 "market_no_vig_probability": round(
-                    (
-                        market_over
-                        if side == "Over"
-                        else 1 - market_over
-                    ),
-                    4
+                    market_over
+                    if side == "Over"
+                    else 1 - market_over,
+                    4,
                 ),
 
                 "model_market_gap": round(
@@ -868,7 +759,7 @@ def run():
                 "data_source": (
                     "ESPN player and team game logs "
                     "/ DraftKings odds via The Odds API"
-                )
+                ),
             })
 
     output.sort(
@@ -879,7 +770,6 @@ def run():
     SITE.mkdir(exist_ok=True)
 
     payload = {
-
         "generated_at": (
             datetime.datetime.now(
                 datetime.timezone.utc
@@ -887,79 +777,51 @@ def run():
         ),
 
         "mode": (
-            "REAL DATA. Experimental Version 3. "
-            "Team defense uses recent historical "
-            "points, player rebounds, and assists "
-            "allowed relative to league averages. "
-            "This is not a pace-adjusted defensive "
-            "rating or position-specific matchup. "
+            "REAL DATA. Experimental Version 4. "
+            "Smarter minutes projections use recent "
+            "playing time, historical averages, "
+            "trend adjustments, and outlier limits. "
+            "Opponent defense uses recent historical "
+            "points, rebounds, and assists allowed "
+            "relative to league averages. "
             "Injury and lineup information require "
             "verified input. Probabilities and EV "
             "are not validated betting advantages."
         ),
 
-        "results": output
+        "results": output,
     }
 
-    (
-        SITE / "results.json"
-    ).write_text(
-        json.dumps(
-            payload,
-            indent=2
-        ),
-        encoding="utf-8"
+    (SITE / "results.json").write_text(
+        json.dumps(payload, indent=2),
+        encoding="utf-8",
     )
 
-    print(
-        "ESPN player game logs:",
-        len(logs)
-    )
+    print("ESPN player game logs:", len(logs))
+    print("DraftKings player prop lines:", len(odds))
+    print("Team defense game records:", len(defense))
+    print("Generated prediction outcomes:", len(output))
+    print("Players matched to teams:", len(matched))
+    print("Players without verified teams:", len(unmatched))
 
     print(
-        "DraftKings player prop lines:",
-        len(odds)
-    )
-
-    print(
-        "Team defense game records:",
-        len(defense)
-    )
-
-    print(
-        "Generated prediction outcomes:",
-        len(output)
-    )
-
-    print(
-        "Players matched to teams:",
-        len(matched)
-    )
-
-    print(
-        "Players without verified teams:",
-        len(unmatched)
-    )
-
-    print(
-        "Props using baseline because "
-        "minutes unavailable:",
-        no_minutes
+        "Props using baseline because minutes unavailable:",
+        no_minutes,
     )
 
     print(
         "Props with team defense applied:",
-        defense_applied
+        defense_applied,
     )
 
     print(
         "Props with neutral defense fallback:",
-        defense_fallback
+        defense_fallback,
     )
 
     print(
         "Injury-confirmed out props skipped:",
-        skipped_out
+        skipped_out,
     )
 
     analyzed_props = len(output) // 2
@@ -973,30 +835,42 @@ def run():
 
     print(
         "Prop accounting check:",
-        f"{analyzed_props} analyzed + {total_rejected} rejected"
-        f" = {analyzed_props + total_rejected} / {len(odds)}"
+        f"{analyzed_props} analyzed + "
+        f"{total_rejected} rejected = "
+        f"{analyzed_props + total_rejected} / {len(odds)}",
     )
 
     diagnostics_path = DATA / "rejected_props.csv"
+
     with diagnostics_path.open(
-        "w", newline="", encoding="utf-8"
+        "w",
+        newline="",
+        encoding="utf-8",
     ) as file:
         writer = csv.DictWriter(
             file,
             fieldnames=[
-                "game_date", "player", "market",
-                "line", "matchup", "reason"
-            ]
+                "game_date",
+                "player",
+                "market",
+                "line",
+                "matchup",
+                "reason",
+            ],
         )
+
         writer.writeheader()
         writer.writerows(rejected_props)
 
-    print("Rejected prop details saved:", diagnostics_path)
+    print(
+        "Rejected prop details saved:",
+        diagnostics_path,
+    )
 
     if unmatched:
         print(
             "Unmatched players:",
-            ", ".join(sorted(unmatched))
+            ", ".join(sorted(unmatched)),
         )
 
 
