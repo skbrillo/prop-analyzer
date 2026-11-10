@@ -644,6 +644,12 @@ def run():
                 "away_team": bet.get("away_team", ""),
                 "matchup": bet.get("matchup", ""),
 
+"home_spread": number(bet.get("home_spread")),
+"away_spread": number(bet.get("away_spread")),
+"game_total": number(bet.get("game_total")),
+"home_implied_total": number(bet.get("home_implied_total")),
+"away_implied_total": number(bet.get("away_implied_total")),
+
                 "market": market.title(),
                 "side": side,
                 "line": line,
