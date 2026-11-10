@@ -1,27 +1,104 @@
 {
-  "generated_at": "2026-11-10T19:32:15.457593+00:00",
-  "method": "Walk-forward historical evaluation. Each prediction uses at least 10 earlier player games. No historical sportsbook odds are used.",
+  "generated_at": "2026-11-10T20:08:00.627914+00:00",
+  "model": "Version 4 - Smarter Minutes",
+  "method": "Paired historical walk-forward comparison of Version 3 and Version 4 minutes projections. Both versions use identical earlier-game data.",
   "markets": {
     "points": {
-      "predictions_tested": 952,
-      "mean_absolute_error": 4.692,
-      "root_mean_squared_error": 6.085,
-      "mean_signed_error": -0.328
+      "predictions_tested": 882,
+      "mean_absolute_error": 4.772,
+      "root_mean_squared_error": 6.155,
+      "mean_signed_error": -0.002
     },
     "rebounds": {
-      "predictions_tested": 952,
-      "mean_absolute_error": 1.932,
-      "root_mean_squared_error": 2.574,
-      "mean_signed_error": -0.129
+      "predictions_tested": 882,
+      "mean_absolute_error": 1.977,
+      "root_mean_squared_error": 2.62,
+      "mean_signed_error": 0.0
     },
     "assists": {
-      "predictions_tested": 952,
-      "mean_absolute_error": 1.417,
-      "root_mean_squared_error": 1.933,
-      "mean_signed_error": -0.136
+      "predictions_tested": 882,
+      "mean_absolute_error": 1.442,
+      "root_mean_squared_error": 1.949,
+      "mean_signed_error": -0.043
     }
+  },
+  "comparison": {
+    "points": {
+      "version3": {
+        "predictions_tested": 882,
+        "mean_absolute_error": 4.78,
+        "root_mean_squared_error": 6.203,
+        "mean_signed_error": -0.352
+      },
+      "version4": {
+        "predictions_tested": 882,
+        "mean_absolute_error": 4.772,
+        "root_mean_squared_error": 6.155,
+        "mean_signed_error": -0.002
+      },
+      "winner": "Version 4",
+      "mae_improvement": 0.008,
+      "mae_improvement_percent": 0.17
+    },
+    "rebounds": {
+      "version3": {
+        "predictions_tested": 882,
+        "mean_absolute_error": 1.977,
+        "root_mean_squared_error": 2.628,
+        "mean_signed_error": -0.114
+      },
+      "version4": {
+        "predictions_tested": 882,
+        "mean_absolute_error": 1.977,
+        "root_mean_squared_error": 2.62,
+        "mean_signed_error": 0.0
+      },
+      "winner": "Tie",
+      "mae_improvement": 0.0,
+      "mae_improvement_percent": 0.0
+    },
+    "assists": {
+      "version3": {
+        "predictions_tested": 882,
+        "mean_absolute_error": 1.44,
+        "root_mean_squared_error": 1.96,
+        "mean_signed_error": -0.126
+      },
+      "version4": {
+        "predictions_tested": 882,
+        "mean_absolute_error": 1.442,
+        "root_mean_squared_error": 1.949,
+        "mean_signed_error": -0.043
+      },
+      "winner": "Version 3",
+      "mae_improvement": -0.002,
+      "mae_improvement_percent": -0.14
+    }
+  },
+  "minutes_comparison": {
+    "version3": {
+      "predictions_tested": 882,
+      "mean_absolute_error": 4.729,
+      "root_mean_squared_error": 5.988,
+      "mean_signed_error": -0.908
+    },
+    "version4": {
+      "predictions_tested": 882,
+      "mean_absolute_error": 4.558,
+      "root_mean_squared_error": 5.773,
+      "mean_signed_error": -0.039
+    },
+    "winner": "Version 4",
+    "mae_improvement": 0.171,
+    "mae_improvement_percent": 3.62
+  },
+  "skipped": {
+    "insufficient_history": 0,
+    "insufficient_minutes": 70,
+    "invalid_current_minutes": 0,
+    "invalid_market_values": 0
   },
   "verified_betting_roi": null,
   "probability_calibration": null,
-  "limitations": "Measures projection error, not betting profitability. Does not yet account for opponent, injuries, playing time, or roster changes."
+  "limitations": "Evaluates minutes and player-stat projection accuracy, not betting profitability. Excludes live opponent defense and injury multipliers. No historical sportsbook odds are used. Model weights have not been independently optimized or validated on a holdout set."
 }
