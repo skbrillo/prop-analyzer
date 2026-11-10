@@ -40,6 +40,9 @@ jobs:
       - name: Save pregame predictions
         run: python save_predictions.py
 
+      - name: Grade completed predictions
+        run: python grade_predictions.py
+
       - name: Backtest historical NBA projections
         run: python backtest.py
 
@@ -52,9 +55,10 @@ jobs:
           git add data/sample_odds.csv
           git add data/prediction_history.csv
           git add docs/results.json
+          git add docs/graded_predictions.json
           git add docs/backtest.json
 
           if ! git diff --cached --quiet; then
-            git commit -m "Update NBA props and prediction history"
+            git commit -m "Update NBA props and graded predictions"
             git push
           fi
