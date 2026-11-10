@@ -7,131 +7,191 @@
 <title>Prop Analyzer | NBA Player Props</title>
 <style>
 * { box-sizing: border-box; }
+
 body {
   margin: 0;
   background: #0b1220;
   color: #e8edf6;
-  font: 15px system-ui, sans-serif;
+  font: 14px system-ui, sans-serif;
 }
+
 main {
-  max-width: 1600px;
+  width: 100%;
+  max-width: none;
   margin: auto;
-  padding: 30px 18px;
+  padding: 22px 12px;
 }
-h1 { font-size: 36px; margin: 0 0 5px; }
-h2 { font-size: 25px; margin: 0 0 8px; }
+
+h1 { font-size: 34px; margin: 0 0 5px; }
+h2 { font-size: 24px; margin: 0 0 8px; }
 .muted { color: #9ba9be; }
+
 .warn {
   background: #332c19;
   color: #ffda8c;
-  padding: 15px;
+  padding: 14px;
   border-radius: 10px;
-  margin: 22px 0;
-  line-height: 1.6;
+  margin: 18px 0;
+  line-height: 1.5;
 }
+
 .stats {
   display: flex;
-  gap: 15px;
+  gap: 12px;
   flex-wrap: wrap;
-  margin: 22px 0;
+  margin: 18px 0;
 }
+
 .stat {
   background: #172338;
   border: 1px solid #293a52;
   border-radius: 12px;
-  padding: 20px;
+  padding: 16px;
   flex: 1;
-  min-width: 180px;
+  min-width: 160px;
 }
+
 .stat b {
-  font-size: 26px;
+  font-size: 25px;
   display: block;
   margin-top: 7px;
 }
+
 .controls {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin: 25px 0 15px;
+  margin: 20px 0 12px;
 }
+
 select, input, button {
   background: #18273d;
   color: white;
   border: 1px solid #41516b;
   border-radius: 8px;
-  padding: 11px;
+  padding: 10px;
   font: inherit;
 }
+
 input { min-width: 230px; }
+
 button {
   cursor: pointer;
   background: #256c46;
   border-color: #348b59;
 }
+
 button:hover { background: #318a5b; }
+
 .tablewrap {
+  width: 100%;
   overflow-x: auto;
   border: 1px solid #293a52;
   border-radius: 12px;
 }
+
 table {
   border-collapse: collapse;
   width: 100%;
-  min-width: 1450px;
+  min-width: 0;
+  table-layout: fixed;
 }
+
 th, td {
-  padding: 13px 12px;
+  padding: 9px 5px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
   text-align: left;
   border-bottom: 1px solid #2b3a50;
   white-space: nowrap;
 }
+
 th {
   color: #a6b5c9;
   cursor: pointer;
   user-select: none;
   background: #172338;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  font-size: 11px;
 }
+
 tr:hover { background: #18273d; }
+
 .player { font-weight: 600; }
 .team { color: #75e3a5; font-weight: 700; }
 .opponent { color: #b9cafa; }
 .matchup { color: #a9c8ff; }
-.game-info { color: #b5c5d9; font-size: 13px; }
+.game-info { color: #b5c5d9; font-size: 12px; }
 .positive { color: #75e3a5; }
 .negative { color: #f2a7a7; }
 .side-over { color: #75e3a5; }
 .side-under { color: #f8c477; }
+
+/* All 14 columns fit across a desktop screen. */
+th:nth-child(1), td:nth-child(1) { width: 4%; }
+th:nth-child(2), td:nth-child(2) { width: 9%; }
+th:nth-child(3), td:nth-child(3) { width: 6%; }
+th:nth-child(4), td:nth-child(4) { width: 12%; }
+th:nth-child(5), td:nth-child(5) { width: 5%; }
+th:nth-child(6), td:nth-child(6) { width: 7%; }
+th:nth-child(7), td:nth-child(7) { width: 7%; }
+th:nth-child(8), td:nth-child(8) { width: 5%; }
+th:nth-child(9), td:nth-child(9) { width: 5%; }
+th:nth-child(10), td:nth-child(10) { width: 6%; }
+th:nth-child(11), td:nth-child(11) { width: 8%; }
+th:nth-child(12), td:nth-child(12) { width: 9%; }
+th:nth-child(13), td:nth-child(13) { width: 8%; }
+th:nth-child(14), td:nth-child(14) {
+  width: 9%;
+  font-weight: 700;
+}
+
+/* Smaller screens may scroll horizontally. */
+@media (max-width: 1100px) {
+  table { min-width: 1050px; }
+}
+
 .section {
   margin-top: 45px;
   padding-top: 25px;
   border-top: 1px solid #293a52;
 }
+
 .performance-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 15px;
   margin-top: 22px;
 }
+
 .performance-card {
   background: #172338;
   border: 1px solid #293a52;
   border-radius: 12px;
   padding: 22px;
 }
+
 .performance-card h3 {
   margin: 0 0 16px;
   font-size: 19px;
 }
+
 .performance-card .number {
   font-size: 32px;
   font-weight: 700;
   color: #75e3a5;
   margin: 7px 0 16px;
 }
+
 .performance-card .label {
   color: #9ba9be;
   font-size: 13px;
 }
+
 .metric {
   display: flex;
   justify-content: space-between;
@@ -139,8 +199,10 @@ tr:hover { background: #18273d; }
   padding: 10px 0;
   border-top: 1px solid #2b3a50;
 }
+
 .metric span { color: #a6b5c9; }
 .metric strong { font-variant-numeric: tabular-nums; }
+
 .info {
   margin-top: 20px;
   padding: 20px;
@@ -149,20 +211,25 @@ tr:hover { background: #18273d; }
   line-height: 1.8;
   color: #b9c5d5;
 }
+
 .info p { margin: 6px 0; }
+
 .footer {
   color: #9ba9be;
   margin-top: 25px;
   line-height: 1.7;
   font-size: 13px;
 }
+
 #status, #backtest-status {
   color: #9ba9be;
   margin: 10px 0;
 }
+
 @media (max-width: 850px) {
   .performance-grid { grid-template-columns: 1fr; }
 }
+
 @media (max-width: 600px) {
   h1 { font-size: 29px; }
   .stat { min-width: 140px; }
@@ -172,6 +239,7 @@ tr:hover { background: #18273d; }
 </head>
 <body>
 <main>
+
 <h1>Prop Analyzer</h1>
 <div class="muted">
   NBA Player Props | ESPN Statistics + DraftKings Odds
@@ -246,13 +314,13 @@ tr:hover { background: #18273d; }
   <th data-sort="game_time">Tipoff</th>
   <th data-sort="player">Player</th>
   <th data-sort="team_abbr">Team</th>
-  <th data-sort="opponent">Opponent</th>
+  <th data-sort="opponent">Opp</th>
   <th data-sort="market">Market</th>
   <th data-sort="side">Side</th>
   <th data-sort="line">Line</th>
   <th data-sort="odds">Odds</th>
-  <th data-sort="projection">Projection</th>
-  <th data-sort="probability">Probability</th>
+  <th data-sort="projection">Proj.</th>
+  <th data-sort="probability">Prob.</th>
   <th data-sort="ev">Model EV</th>
   <th data-sort="last10">Last 10</th>
 </tr>
@@ -329,6 +397,7 @@ tr:hover { background: #18273d; }
     performance. For informational purposes only.
   </p>
 </div>
+
 </main>
 
 <script>
@@ -338,13 +407,63 @@ let data = [];
 let sortKey = "ev";
 let sortAscending = false;
 
+const TEAM_CODES = {
+  "Atlanta Hawks": "ATL",
+  "Boston Celtics": "BOS",
+  "Brooklyn Nets": "BKN",
+  "Charlotte Hornets": "CHA",
+  "Chicago Bulls": "CHI",
+  "Cleveland Cavaliers": "CLE",
+  "Dallas Mavericks": "DAL",
+  "Denver Nuggets": "DEN",
+  "Detroit Pistons": "DET",
+  "Golden State Warriors": "GSW",
+  "Houston Rockets": "HOU",
+  "Indiana Pacers": "IND",
+  "Los Angeles Clippers": "LAC",
+  "LA Clippers": "LAC",
+  "Los Angeles Lakers": "LAL",
+  "Memphis Grizzlies": "MEM",
+  "Miami Heat": "MIA",
+  "Milwaukee Bucks": "MIL",
+  "Minnesota Timberwolves": "MIN",
+  "New Orleans Pelicans": "NOP",
+  "New York Knicks": "NYK",
+  "Oklahoma City Thunder": "OKC",
+  "Orlando Magic": "ORL",
+  "Philadelphia 76ers": "PHI",
+  "Phoenix Suns": "PHX",
+  "Portland Trail Blazers": "POR",
+  "Sacramento Kings": "SAC",
+  "San Antonio Spurs": "SAS",
+  "Toronto Raptors": "TOR",
+  "Utah Jazz": "UTA",
+  "Washington Wizards": "WAS"
+};
+
+function shortTeam(name) {
+  if (!name) return "--";
+  return TEAM_CODES[name] || name;
+}
+
+function shortMatchup(row) {
+  if (row.away_team && row.home_team) {
+    return shortTeam(row.away_team) +
+      " @ " + shortTeam(row.home_team);
+  }
+  return row.matchup || "--";
+}
+
 function formatOdds(value) {
   const n = Number(value);
+  if (!Number.isFinite(n)) return "--";
   return n > 0 ? "+" + n : String(n);
 }
 
 function formatPercent(value) {
-  return (Number(value) * 100).toFixed(1) + "%";
+  const n = Number(value);
+  if (!Number.isFinite(n)) return "--";
+  return (n * 100).toFixed(1) + "%";
 }
 
 function formatDate(value) {
@@ -467,11 +586,11 @@ function draw() {
 
     const values = [
       formatDate(row.date),
-      row.matchup || "--",
+      shortMatchup(row),
       row.game_time || "--",
       row.player || "",
-      row.team_abbr || row.team || "--",
-      row.opponent || "--",
+      shortTeam(row.team_abbr || row.team),
+      shortTeam(row.opponent),
       row.market || "",
       row.side || "",
       Number(row.line).toFixed(1),
@@ -479,16 +598,30 @@ function draw() {
       Number(row.projection).toFixed(2),
       formatPercent(row.probability),
       formatPercent(row.ev),
-      String(row.last10) + "/10"
+      row.last10 === null ||
+      row.last10 === undefined
+        ? "--"
+        : String(row.last10) + "/10"
     ];
 
     values.forEach((value, index) => {
       const td = document.createElement("td");
       td.textContent = value;
 
+      if (index === 1) {
+        td.title = row.matchup || value;
+      } else if (index === 4) {
+        td.title = row.team || value;
+      } else if (index === 5) {
+        td.title = row.opponent || value;
+      } else {
+        td.title = String(value);
+      }
+
       if (index === 0 || index === 2) {
         td.className = "game-info";
       }
+
       if (index === 1) td.className = "matchup";
       if (index === 3) td.className = "player";
       if (index === 4) td.className = "team";
@@ -579,8 +712,12 @@ async function loadBacktest() {
       card.className = "performance-card";
 
       addText(card, "h3", label);
-      addText(card, "div", "Average Prediction Error",
-        "label");
+      addText(
+        card,
+        "div",
+        "Average Prediction Error",
+        "label"
+      );
 
       addText(
         card,
