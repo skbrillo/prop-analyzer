@@ -5,8 +5,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prop Analyzer | NBA Player Props</title>
+
 <style>
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   margin: 0;
@@ -17,14 +20,23 @@ body {
 
 main {
   width: 100%;
-  max-width: none;
   margin: auto;
   padding: 22px 12px;
 }
 
-h1 { font-size: 34px; margin: 0 0 5px; }
-h2 { font-size: 24px; margin: 0 0 8px; }
-.muted { color: #9ba9be; }
+h1 {
+  font-size: 34px;
+  margin: 0 0 5px;
+}
+
+h2 {
+  font-size: 24px;
+  margin: 0 0 8px;
+}
+
+.muted {
+  color: #9ba9be;
+}
 
 .warn {
   background: #332c19;
@@ -64,7 +76,9 @@ h2 { font-size: 24px; margin: 0 0 8px; }
   margin: 20px 0 12px;
 }
 
-select, input, button {
+select,
+input,
+button {
   background: #18273d;
   color: white;
   border: 1px solid #41516b;
@@ -73,7 +87,9 @@ select, input, button {
   font: inherit;
 }
 
-input { min-width: 230px; }
+input {
+  min-width: 230px;
+}
 
 button {
   cursor: pointer;
@@ -81,7 +97,9 @@ button {
   border-color: #348b59;
 }
 
-button:hover { background: #318a5b; }
+button:hover {
+  background: #318a5b;
+}
 
 .tablewrap {
   width: 100%;
@@ -93,11 +111,11 @@ button:hover { background: #318a5b; }
 table {
   border-collapse: collapse;
   width: 100%;
-  min-width: 0;
   table-layout: fixed;
 }
 
-th, td {
+th,
+td {
   padding: 9px 5px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -119,45 +137,145 @@ th {
   font-size: 11px;
 }
 
-tr:hover { background: #18273d; }
+tr:hover {
+  background: #18273d;
+}
 
-.player { font-weight: 600; }
-.team { color: #75e3a5; font-weight: 700; }
-.opponent { color: #b9cafa; }
-.matchup { color: #a9c8ff; }
-.game-info { color: #b5c5d9; font-size: 12px; }
-.positive { color: #75e3a5; }
-.negative { color: #f2a7a7; }
-.side-over { color: #75e3a5; }
-.side-under { color: #f8c477; }
+.player {
+  font-weight: 600;
+}
 
-th:nth-child(1), td:nth-child(1) { width: 4%; }
-th:nth-child(2), td:nth-child(2) { width: 9%; }
-th:nth-child(3), td:nth-child(3) { width: 6%; }
-th:nth-child(4), td:nth-child(4) { width: 12%; }
-th:nth-child(5), td:nth-child(5) { width: 5%; }
-th:nth-child(6), td:nth-child(6) { width: 7%; }
-th:nth-child(7), td:nth-child(7) { width: 7%; }
-th:nth-child(8), td:nth-child(8) { width: 5%; }
-th:nth-child(9), td:nth-child(9) { width: 5%; }
-th:nth-child(10), td:nth-child(10) { width: 6%; }
-th:nth-child(11), td:nth-child(11) { width: 8%; }
-th:nth-child(12), td:nth-child(12) { width: 9%; }
-th:nth-child(13), td:nth-child(13) { width: 8%; }
-th:nth-child(14), td:nth-child(14) { width: 6%; }
-th:nth-child(15), td:nth-child(15) {
-  width: 6%;
+.team {
+  color: #75e3a5;
   font-weight: 700;
 }
 
-.result-win { color: #75e3a5; font-weight: 700; }
-.result-loss { color: #f2a7a7; font-weight: 700; }
-.result-push { color: #b9cafa; font-weight: 700; }
-.result-pending { color: #f8c477; }
-.result-invalid { color: #9ba9be; }
+.opponent {
+  color: #b9cafa;
+}
 
-@media (max-width: 1100px) {
-  table { min-width: 1200px; }
+.matchup {
+  color: #a9c8ff;
+}
+
+.game-info {
+  color: #b5c5d9;
+  font-size: 12px;
+}
+
+.positive {
+  color: #75e3a5;
+}
+
+.negative {
+  color: #f2a7a7;
+}
+
+.side-over {
+  color: #75e3a5;
+}
+
+.side-under {
+  color: #f8c477;
+}
+
+.result-win {
+  color: #75e3a5;
+  font-weight: 700;
+}
+
+.result-loss {
+  color: #f2a7a7;
+  font-weight: 700;
+}
+
+.result-push {
+  color: #b9cafa;
+  font-weight: 700;
+}
+
+.result-pending {
+  color: #f8c477;
+}
+
+.result-invalid {
+  color: #9ba9be;
+}
+
+th:nth-child(1),
+td:nth-child(1) {
+  width: 4%;
+}
+
+th:nth-child(2),
+td:nth-child(2) {
+  width: 9%;
+}
+
+th:nth-child(3),
+td:nth-child(3) {
+  width: 6%;
+}
+
+th:nth-child(4),
+td:nth-child(4) {
+  width: 12%;
+}
+
+th:nth-child(5),
+td:nth-child(5) {
+  width: 5%;
+}
+
+th:nth-child(6),
+td:nth-child(6) {
+  width: 7%;
+}
+
+th:nth-child(7),
+td:nth-child(7) {
+  width: 7%;
+}
+
+th:nth-child(8),
+td:nth-child(8) {
+  width: 5%;
+}
+
+th:nth-child(9),
+td:nth-child(9) {
+  width: 5%;
+}
+
+th:nth-child(10),
+td:nth-child(10) {
+  width: 6%;
+}
+
+th:nth-child(11),
+td:nth-child(11) {
+  width: 8%;
+}
+
+th:nth-child(12),
+td:nth-child(12) {
+  width: 9%;
+}
+
+th:nth-child(13),
+td:nth-child(13) {
+  width: 8%;
+}
+
+th:nth-child(14),
+td:nth-child(14) {
+  width: 6%;
+}
+
+th:nth-child(15),
+td:nth-child(15) {
+  width: 6%;
+  font-weight: 700;
 }
 
 .section {
@@ -205,8 +323,13 @@ th:nth-child(15), td:nth-child(15) {
   border-top: 1px solid #2b3a50;
 }
 
-.metric span { color: #a6b5c9; }
-.metric strong { font-variant-numeric: tabular-nums; }
+.metric span {
+  color: #a6b5c9;
+}
+
+.metric strong {
+  font-variant-numeric: tabular-nums;
+}
 
 .info {
   margin-top: 20px;
@@ -217,7 +340,9 @@ th:nth-child(15), td:nth-child(15) {
   color: #b9c5d5;
 }
 
-.info p { margin: 6px 0; }
+.info p {
+  margin: 6px 0;
+}
 
 .footer {
   color: #9ba9be;
@@ -226,71 +351,110 @@ th:nth-child(15), td:nth-child(15) {
   font-size: 13px;
 }
 
-#status, #backtest-status {
+#status,
+#backtest-status {
   color: #9ba9be;
   margin: 10px 0;
 }
 
+@media (max-width: 1100px) {
+  table {
+    min-width: 1200px;
+  }
+}
+
 @media (max-width: 850px) {
-  .performance-grid { grid-template-columns: 1fr; }
+  .performance-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 @media (max-width: 600px) {
-  h1 { font-size: 29px; }
-  .stat { min-width: 140px; }
-  input, select, button { width: 100%; }
+  h1 {
+    font-size: 29px;
+  }
+
+  .stat {
+    min-width: 140px;
+  }
+
+  input,
+  select,
+  button {
+    width: 100%;
+  }
 }
 </style>
 </head>
+
 <body>
 <main>
 
 <h1>Prop Analyzer</h1>
+
 <div class="muted">
   NBA Player Props | ESPN Statistics + DraftKings Odds
 </div>
 
 <div class="warn">
-  <strong>REAL NBA DATA — EXPERIMENTAL MODEL.</strong>
+  <strong>REAL NBA DATA — EXPERIMENTAL VERSION 2 MODEL.</strong>
   Player statistics come from ESPN and odds from
-  DraftKings via The Odds API. Team assignments use
-  historical ESPN box scores and scheduled matchups,
-  not live roster verification. The model's projection
-  errors are being backtested, but betting probabilities
-  and expected values are not yet validated.
+  DraftKings via The Odds API.
+
+  Version 2 incorporates projected minutes,
+  per-minute production, historical matchup adjustments,
+  and sportsbook probability comparisons.
+
+  Team assignments are based on historical ESPN box scores
+  and scheduled matchups, not live roster verification.
+
+  Injury information is not automatically verified.
+  Model probabilities and expected values have not yet
+  been validated against sufficient completed games.
 </div>
 
 <div class="stats">
+
   <div class="stat">
     Analyzed Outcomes
     <b id="count">--</b>
   </div>
+
   <div class="stat">
     Positive Model EV
     <b id="positive">--</b>
   </div>
+
   <div class="stat">
     Games Analyzed
     <b id="games">--</b>
   </div>
+
   <div class="stat">
     Total Wins
     <b id="total-wins" class="result-win">--</b>
   </div>
+
   <div class="stat">
     Total Losses
     <b id="total-losses" class="result-loss">--</b>
   </div>
+
   <div class="stat">
     Last Updated
     <b id="updated" style="font-size:17px">--</b>
   </div>
+
 </div>
 
 <div class="controls">
-  <input id="search" type="search"
+
+  <input
+    id="search"
+    type="search"
     placeholder="Search player, team or opponent"
-    aria-label="Search player, team or opponent">
+    aria-label="Search player, team or opponent"
+  >
 
   <select id="game" aria-label="Game filter">
     <option value="">All Games</option>
@@ -312,6 +476,7 @@ th:nth-child(15), td:nth-child(15) {
   <button id="refresh" type="button">
     Refresh Data
   </button>
+
 </div>
 
 <div id="status" role="status">
@@ -320,6 +485,7 @@ th:nth-child(15), td:nth-child(15) {
 
 <div class="tablewrap">
 <table>
+
 <thead>
 <tr>
   <th data-sort="date">Date</th>
@@ -339,82 +505,110 @@ th:nth-child(15), td:nth-child(15) {
   <th data-sort="result">Result</th>
 </tr>
 </thead>
+
 <tbody id="rows"></tbody>
+
 </table>
 </div>
 
 <section class="section" id="model-performance">
-  <h2>Model Performance</h2>
-  <div class="muted">
-    Historical walk-forward backtesting using ESPN NBA
-    player game logs. Lower prediction error is better.
-  </div>
 
-  <div id="backtest-status" role="status">
-    Loading backtest results...
-  </div>
+<h2>Model Performance</h2>
 
-  <div class="performance-grid" id="performance-grid">
-  </div>
+<div class="muted">
+  Historical walk-forward backtesting using ESPN NBA
+  player game logs. Lower prediction error is better.
+</div>
 
-  <div class="info">
-    <strong>Understanding the results</strong>
-    <p>
-      <strong>Predictions:</strong> Number of historical
-      player-game predictions evaluated in each market.
-    </p>
-    <p>
-      <strong>MAE:</strong> Mean Absolute Error. The
-      average difference between projected and actual
-      points, rebounds, or assists.
-    </p>
-    <p>
-      <strong>RMSE:</strong> Root Mean Squared Error.
-      Gives greater weight to large prediction misses.
-    </p>
-    <p>
-      <strong>Bias:</strong> Average projected value
-      minus actual value. Negative means the model
-      tends to underestimate results.
-    </p>
-    <p>
-      <strong>Method:</strong> Each historical prediction
-      uses only games played before the game being tested.
-      A minimum of 10 previous games is required.
-    </p>
-    <p>
-      <strong>Not yet measured:</strong> Historical
-      betting win rate, probability calibration,
-      and verified sportsbook ROI. These require
-      recorded betting lines and odds.
-    </p>
-  </div>
+<div id="backtest-status" role="status">
+  Loading backtest results...
+</div>
+
+<div class="performance-grid" id="performance-grid">
+</div>
+
+<div class="info">
+
+  <strong>Understanding the results</strong>
+
+  <p>
+    <strong>Predictions:</strong>
+    Number of historical player-game predictions
+    evaluated in each market.
+  </p>
+
+  <p>
+    <strong>MAE:</strong>
+    Mean Absolute Error. The average difference
+    between projected and actual points,
+    rebounds, or assists.
+  </p>
+
+  <p>
+    <strong>RMSE:</strong>
+    Root Mean Squared Error. Gives greater
+    weight to large prediction misses.
+  </p>
+
+  <p>
+    <strong>Bias:</strong>
+    Average projected value minus actual value.
+    Negative means the model tends to underestimate.
+  </p>
+
+  <p>
+    <strong>Method:</strong>
+    Historical predictions use prior game data.
+    A minimum of 10 previous games is required.
+  </p>
+
+  <p>
+    <strong>Important:</strong>
+    The historical backtest may evaluate a different
+    model version than the current live predictions.
+    Backtest projection accuracy does not establish
+    profitable betting performance.
+  </p>
+
+</div>
+
 </section>
 
 <div class="footer">
-  <strong>Data:</strong> ESPN NBA game logs and
-  DraftKings odds via The Odds API.
+
+  <strong>Data:</strong>
+  ESPN NBA game logs and DraftKings odds via The Odds API.
+
   <p>
     <strong>Model:</strong>
-    baseline-normal-v1-unvalidated.
-    Projections use weighted historical averages
-    and a normal distribution approximation.
+    <span id="model-version">
+      Version 2 (experimental)
+    </span>.
   </p>
+
   <p>
-    Game times are Eastern Time. Refresh Data
-    reloads published predictions and backtests,
+    Current predictions are displayed separately from
+    historical graded predictions.
+  </p>
+
+  <p>
+    Game times are Eastern Time.
+    Refresh Data reloads published results,
     not live sportsbook odds.
   </p>
+
   <p>
-    Backtest results measure historical projection
-    error and do not establish profitable betting
-    performance. For informational purposes only.
+    Model EV is a theoretical estimate, not a
+    verified betting advantage.
+    For informational purposes only.
   </p>
+
 </div>
 
 </main>
 
 <script>
+
 const el = id => document.getElementById(id);
 
 let data = [];
@@ -465,26 +659,54 @@ function shortMatchup(row) {
     return shortTeam(row.away_team) +
       " @ " + shortTeam(row.home_team);
   }
+
   return row.matchup || "--";
 }
 
 function formatOdds(value) {
+  if (value === null || value === undefined || value === "") {
+    return "--";
+  }
+
   const n = Number(value);
+
   if (!Number.isFinite(n)) return "--";
+
   return n > 0 ? "+" + n : String(n);
 }
 
 function formatPercent(value) {
+  if (value === null || value === undefined || value === "") {
+    return "--";
+  }
+
   const n = Number(value);
+
   if (!Number.isFinite(n)) return "--";
+
   return (n * 100).toFixed(1) + "%";
 }
 
 function formatDate(value) {
   if (!value) return "--";
-  const parts = value.split("-");
+
+  const parts = String(value).split("-");
+
   if (parts.length !== 3) return value;
+
   return parts[1] + "/" + parts[2];
+}
+
+function formatNumber(value, decimals = 1) {
+  if (value === null || value === undefined || value === "") {
+    return "--";
+  }
+
+  const n = Number(value);
+
+  return Number.isFinite(n)
+    ? n.toFixed(decimals)
+    : "--";
 }
 
 function gameKey(row) {
@@ -493,7 +715,38 @@ function gameKey(row) {
   );
 }
 
+function normalizeMarket(value) {
+  const text = String(value || "").toLowerCase();
+
+  if (text.includes("point")) return "Points";
+  if (text.includes("rebound")) return "Rebounds";
+  if (text.includes("assist")) return "Assists";
+
+  return value || "";
+}
+
+function normalizeSide(value) {
+  const text = String(value || "").toLowerCase();
+
+  if (text === "over") return "Over";
+  if (text === "under") return "Under";
+
+  return value || "";
+}
+
+function predictionKey(row) {
+  return [
+    row.event_id || "",
+    row.game_date || row.date || "",
+    String(row.player || "").trim().toLowerCase(),
+    normalizeMarket(row.market),
+    normalizeSide(row.side),
+    String(row.line ?? "")
+  ].join("|");
+}
+
 function populateGames() {
+
   const select = el("game");
   const previous = select.value;
 
@@ -534,12 +787,14 @@ function populateGames() {
 }
 
 function draw() {
+
   const query = el("search").value.toLowerCase().trim();
   const game = el("game").value;
   const market = el("market").value;
   const side = el("side").value;
 
   const filtered = data.filter(row => {
+
     const searchText = [
       row.player,
       row.team,
@@ -559,8 +814,10 @@ function draw() {
   });
 
   filtered.sort((a, b) => {
+
     const av = a[sortKey];
     const bv = b[sortKey];
+
     let result;
 
     if (
@@ -581,29 +838,39 @@ function draw() {
   tbody.replaceChildren();
 
   if (!filtered.length) {
+
     const tr = document.createElement("tr");
     const td = document.createElement("td");
+
     td.colSpan = 15;
+
     td.textContent = data.length
       ? "No results match your filters."
       : "No player props available in the latest results.";
+
     tr.appendChild(td);
     tbody.appendChild(tr);
 
     el("status").textContent =
       "0 of " + data.length + " outcomes displayed.";
+
     return;
   }
 
   for (const row of filtered) {
+
     const tr = document.createElement("tr");
 
-    const result = String(row.result || "pending").toLowerCase();
-    const resultLabel = result === "win" ? "WIN"
-      : result === "loss" ? "LOSS"
-      : result === "push" ? "PUSH"
-      : result === "invalid" ? "INVALID"
-      : "PENDING";
+    const result = String(
+      row.result || "pending"
+    ).toLowerCase();
+
+    const resultLabel =
+      result === "win" ? "WIN" :
+      result === "loss" ? "LOSS" :
+      result === "push" ? "PUSH" :
+      result === "invalid" ? "INVALID" :
+      "PENDING";
 
     const values = [
       formatDate(row.date),
@@ -614,9 +881,9 @@ function draw() {
       shortTeam(row.opponent),
       row.market || "",
       row.side || "",
-      Number(row.line).toFixed(1),
+      formatNumber(row.line, 1),
       formatOdds(row.odds),
-      Number(row.projection).toFixed(2),
+      formatNumber(row.projection, 2),
       formatPercent(row.probability),
       formatPercent(row.ev),
       row.last10 === null ||
@@ -627,6 +894,7 @@ function draw() {
     ];
 
     values.forEach((value, index) => {
+
       const td = document.createElement("td");
       td.textContent = value;
 
@@ -677,14 +945,19 @@ function draw() {
 }
 
 function addText(parent, tag, value, className) {
+
   const node = document.createElement(tag);
   node.textContent = value;
+
   if (className) node.className = className;
+
   parent.appendChild(node);
+
   return node;
 }
 
 function metric(card, label, value) {
+
   const line = document.createElement("div");
   line.className = "metric";
 
@@ -703,6 +976,7 @@ function metricNumber(value) {
 }
 
 async function loadBacktest() {
+
   el("backtest-status").textContent =
     "Loading backtest results...";
 
@@ -710,6 +984,7 @@ async function loadBacktest() {
   grid.replaceChildren();
 
   try {
+
     const response = await fetch(
       "./backtest.json?t=" + Date.now(),
       { cache: "no-store" }
@@ -732,12 +1007,14 @@ async function loadBacktest() {
     ];
 
     for (const [key, label] of markets) {
+
       const stats = json.markets[key] || {};
 
       const card = document.createElement("div");
       card.className = "performance-card";
 
       addText(card, "h3", label);
+
       addText(
         card,
         "div",
@@ -788,6 +1065,7 @@ async function loadBacktest() {
       );
 
   } catch (error) {
+
     console.error(error);
 
     el("backtest-status").textContent =
@@ -796,53 +1074,35 @@ async function loadBacktest() {
   }
 }
 
-function normalizeMarket(value) {
-  const text = String(value || "").toLowerCase();
-  if (text.includes("point")) return "Points";
-  if (text.includes("rebound")) return "Rebounds";
-  if (text.includes("assist")) return "Assists";
-  return value || "";
-}
-
-function normalizeSide(value) {
-  const text = String(value || "").toLowerCase();
-  if (text === "over") return "Over";
-  if (text === "under") return "Under";
-  return value || "";
-}
-
-function predictionKey(row) {
-  return [
-    row.event_id || "",
-    row.game_date || row.date || "",
-    String(row.player || "").trim().toLowerCase(),
-    normalizeMarket(row.market),
-    normalizeSide(row.side)
-  ].join("|");
-}
-
 function convertHistoryRow(row) {
-  const outcome = String(row.outcome || "").toLowerCase();
-  const status = String(row.status || "").toLowerCase();
+
+  const outcome = String(
+    row.outcome || ""
+  ).toLowerCase();
+
+  const status = String(
+    row.status || ""
+  ).toLowerCase();
 
   return {
     ...row,
     date: row.game_date || row.date || "",
-    team_abbr: row.team_abbr || row.team || "",
     market: normalizeMarket(row.market),
     side: normalizeSide(row.side),
-    ev: row.model_ev ?? row.ev,
-    result: status === "graded" && ["win", "loss", "push"].includes(outcome)
-      ? outcome
-      : status === "invalid"
-        ? "invalid"
-        : "pending",
-    game_time: row.game_time || "--"
+    result:
+      status === "graded" &&
+      ["win", "loss", "push"].includes(outcome)
+        ? outcome
+        : status === "invalid"
+          ? "invalid"
+          : "pending"
   };
 }
 
 async function loadGradedPredictions() {
+
   try {
+
     const response = await fetch(
       "./graded_predictions.json?t=" + Date.now(),
       { cache: "no-store" }
@@ -851,22 +1111,31 @@ async function loadGradedPredictions() {
     if (!response.ok) return [];
 
     const json = await response.json();
+
     const predictions = Array.isArray(json.predictions)
       ? json.predictions
       : [];
 
     return predictions.map(convertHistoryRow);
+
   } catch (error) {
-    console.warn("Graded predictions unavailable:", error);
+
+    console.warn(
+      "Graded predictions unavailable:",
+      error
+    );
+
     return [];
   }
 }
 
 async function loadData() {
+
   el("status").textContent =
     "Loading latest results...";
 
   try {
+
     const [response, history] = await Promise.all([
       fetch(
         "./results.json?t=" + Date.now(),
@@ -885,43 +1154,64 @@ async function loadData() {
       throw new Error("Invalid results format");
     }
 
-    const combined = new Map();
+    // IMPORTANT:
+    // Current predictions come ONLY from results.json.
+    // Historical predictions are NOT added to this table.
+
+    const historyByKey = new Map();
 
     for (const row of history) {
-      combined.set(predictionKey(row), row);
+      historyByKey.set(predictionKey(row), row);
     }
 
-    for (const row of json.results) {
+    data = json.results.map(row => {
+
       const current = {
         ...row,
+        date: row.game_date || row.date || "",
+        market: normalizeMarket(row.market),
+        side: normalizeSide(row.side),
         result: "pending"
       };
-      const key = predictionKey(current);
 
-      if (combined.has(key)) {
-        const previous = combined.get(key);
-        combined.set(key, {
-          ...current,
-          result: previous.result
-        });
-      } else {
-        combined.set(key, current);
+      const previous = historyByKey.get(
+        predictionKey(current)
+      );
+
+      if (previous) {
+        current.result = previous.result;
       }
-    }
 
-    data = [...combined.values()];
+      return current;
+    });
+
+    // Display the actual model version from the JSON.
+
+    const currentModel = json.results[0]?.model;
+
+    el("model-version").textContent =
+      currentModel || "Experimental model";
+
+    // Current Version 2 outcome count.
 
     el("count").textContent = data.length;
+
+    // Current Version 2 positive EV count.
 
     el("positive").textContent = data.filter(
       row => Number(row.ev) > 0
     ).length;
+
+    // Count current games only.
 
     const games = new Set(
       data.filter(row => row.matchup).map(gameKey)
     );
 
     el("games").textContent = games.size;
+
+    // Historical wins and losses are counted
+    // separately from current predictions.
 
     const wins = history.filter(
       row => row.result === "win"
@@ -939,6 +1229,8 @@ async function loadData() {
       ? losses
       : "--";
 
+    // Timestamp comes from current results.json.
+
     el("updated").textContent = json.generated_at
       ? new Date(json.generated_at).toLocaleString()
       : "Unknown";
@@ -947,7 +1239,9 @@ async function loadData() {
     draw();
 
   } catch (error) {
+
     console.error(error);
+
     data = [];
 
     el("count").textContent = "0";
@@ -964,22 +1258,35 @@ async function loadData() {
   }
 }
 
+// Search and filter controls.
+
 ["search", "game", "market", "side"].forEach(id => {
   el(id).addEventListener("input", draw);
 });
 
+// Column sorting.
+
 document.querySelectorAll("th[data-sort]").forEach(th => {
+
   th.addEventListener("click", () => {
+
     const key = th.dataset.sort;
 
     if (sortKey === key) {
       sortAscending = !sortAscending;
     } else {
+
       sortKey = key;
+
       sortAscending = [
-        "date", "matchup", "game_time",
-        "player", "team_abbr",
-        "opponent", "market", "side"
+        "date",
+        "matchup",
+        "game_time",
+        "player",
+        "team_abbr",
+        "opponent",
+        "market",
+        "side"
       ].includes(key);
     }
 
@@ -987,13 +1294,18 @@ document.querySelectorAll("th[data-sort]").forEach(th => {
   });
 });
 
+// Refresh button.
+
 el("refresh").addEventListener("click", () => {
   loadData();
   loadBacktest();
 });
 
+// Initial page load.
+
 loadData();
 loadBacktest();
+
 </script>
 </body>
 </html>
