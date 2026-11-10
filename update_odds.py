@@ -1,60 +1,125 @@
 
-import os
+import csv
 import json
+import os
+import pathlib
 import urllib.parse
 import urllib.request
 import urllib.error
+from datetime import datetime, timezone
 
 API_KEY = os.environ["ODDS_API_KEY"]
 BASE = "https://api.the-odds-api.com/v4"
+OUTPUT = pathlib.Path(__file__).parent / "data" / "sample_odds.csv"
 
-def get(path, params):
+# Keep API usage low while testing.
+MAX_GAMES = 2
+
+MARKETS = {
+    "player_points": "points",
+    "player_rebounds": "rebounds",
+    "player_assists": "assists",
+}
+
+def fetch(path, params):
+    params = dict(params)
     params["apiKey"] = API_KEY
     url = BASE + path + "?" + urllib.parse.urlencode(params)
 
-    try:
-        with urllib.request.urlopen(url, timeout=30) as response:
-            data = json.load(response)
-            print("Credits remaining:",
-                  response.headers.get("x-requests-remaining", "Unknown"))
-            return data
-    except urllib.error.HTTPError as error:
-        print("HTTP status:", error.code)
-        print(error.read().decode()[:1000])
-        raise
+    request = urllib.request.Request(
+        url, headers={"User-Agent": "PropAnalyzer/1.0"}
+    )
 
-print("Checking NBA games...")
+    with urllib.request.urlopen(request, timeout=30) as response:
+        result = json.load(response)
+        print("Credits remaining:",
+              response.headers.get("x-requests-remaining", "Unknown"))
+        return result
 
-games = get("/sports/basketball_nba/events", {})
+def main():
+    games = fetch("/sports/basketball_nba/events", {})
+    print("Upcoming NBA games:", len(games))
 
-print("Upcoming NBA games:", len(games))
+    rows = []
+    for game in games[:MAX_GAMES]:
+        game_id = game["id"]
+        game_date = datetime.fromisoformat(
+            game["commence_time"].replace("Z", "+00:00")
+        ).date().isoformat()
 
-if not games:
-    print("No upcoming games available.")
-    raise SystemExit(0)
+        print("Checking:", game["away_team"], "vs", game["home_team"])
 
-game = games[0]
-print("Testing matchup:",
-      game.get("away_team"), "vs", game.get("home_team"))
+        odds = fetch(
+            f"/sports/basketball_nba/events/{game_id}/odds",
+            {
+                "regions": "us",
+                "bookmakers": "draftkings",
+                "markets": ",".join(MARKETS),
+                "oddsFormat": "american",
+            },
+        )
 
-print("Checking DraftKings player props...")
+        for bookmaker in odds.get("bookmakers", []):
+            if bookmaker.get("key") != "draftkings":
+                continue
 
-odds = get(
-    "/sports/basketball_nba/events/" + game["id"] + "/odds",
-    {
-        "regions": "us",
-        "markets": "player_points,player_rebounds,player_assists",
-        "bookmakers": "draftkings",
-        "oddsFormat": "american"
-    }
-)
+            for market in bookmaker.get("markets", []):
+                market_name = MARKETS.get(market.get("key"))
+                if not market_name:
+                    continue
 
-for bookmaker in odds.get("bookmakers", []):
-    print("Sportsbook:", bookmaker.get("title"))
-    for market in bookmaker.get("markets", []):
-        print("Market:", market.get("key"))
-        print("Outcomes returned:", len(market.get("outcomes", [])))
+                paired = {}
 
-if not odds.get("bookmakers"):
-    print("No DraftKings player props returned for this game.")
+                for outcome in market.get("outcomes", []):
+                    player = outcome.get("description")
+                    side = outcome.get("name")
+                    line = outcome.get("point")
+                    price = outcome.get("price")
+
+                    if not player or side not in ("Over", "Under"):
+                        continue
+                    if line is None or price is None:
+                        continue
+
+                    key = (player, market_name, float(line))
+                    paired.setdefault(key, {})[side] = int(price)
+
+                for (player, name, line), prices in paired.items():
+                    if "Over" not in prices or "Under" not in prices:
+                        continue
+
+                    rows.append({
+                        "game_date": game_date,
+                        "player": player,
+                        "team": "",
+                        "opponent": "",
+                        "market": name,
+                        "line": line,
+                        "over_odds": prices["Over"],
+                        "under_odds": prices["Under"],
+                    })
+
+    if not rows:
+        raise RuntimeError(
+            "No complete DraftKings player-prop lines returned. "
+            "Existing odds file was not changed."
+        )
+
+    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+
+    with OUTPUT.open("w", newline="", encoding="utf-8") as file:
+        writer = csv.DictWriter(
+            file,
+            fieldnames=[
+                "game_date", "player", "team", "opponent",
+                "market", "line", "over_odds", "under_odds"
+            ],
+        )
+        writer.writeheader()
+        writer.writerows(rows)
+
+    print(f"Saved {len(rows)} real DraftKings player props")
+
+if __name__ == "__main__":
+    main()
 
