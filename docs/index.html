@@ -19,6 +19,7 @@ main {
   padding: 30px 18px;
 }
 h1 { font-size: 36px; margin: 0 0 5px; }
+h2 { font-size: 25px; margin: 0 0 8px; }
 .muted { color: #9ba9be; }
 .warn {
   background: #332c19;
@@ -100,13 +101,68 @@ tr:hover { background: #18273d; }
 .negative { color: #f2a7a7; }
 .side-over { color: #75e3a5; }
 .side-under { color: #f8c477; }
+.section {
+  margin-top: 45px;
+  padding-top: 25px;
+  border-top: 1px solid #293a52;
+}
+.performance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+  margin-top: 22px;
+}
+.performance-card {
+  background: #172338;
+  border: 1px solid #293a52;
+  border-radius: 12px;
+  padding: 22px;
+}
+.performance-card h3 {
+  margin: 0 0 16px;
+  font-size: 19px;
+}
+.performance-card .number {
+  font-size: 32px;
+  font-weight: 700;
+  color: #75e3a5;
+  margin: 7px 0 16px;
+}
+.performance-card .label {
+  color: #9ba9be;
+  font-size: 13px;
+}
+.metric {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid #2b3a50;
+}
+.metric span { color: #a6b5c9; }
+.metric strong { font-variant-numeric: tabular-nums; }
+.info {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #293a52;
+  border-radius: 12px;
+  line-height: 1.8;
+  color: #b9c5d5;
+}
+.info p { margin: 6px 0; }
 .footer {
   color: #9ba9be;
   margin-top: 25px;
   line-height: 1.7;
   font-size: 13px;
 }
-#status { color: #9ba9be; margin: 10px 0; }
+#status, #backtest-status {
+  color: #9ba9be;
+  margin: 10px 0;
+}
+@media (max-width: 850px) {
+  .performance-grid { grid-template-columns: 1fr; }
+}
 @media (max-width: 600px) {
   h1 { font-size: 29px; }
   .stat { min-width: 140px; }
@@ -124,12 +180,11 @@ tr:hover { background: #18273d; }
 <div class="warn">
   <strong>REAL NBA DATA — EXPERIMENTAL MODEL.</strong>
   Player statistics come from ESPN and odds from
-  DraftKings via The Odds API. Team assignments are
-  matched using historical ESPN box scores and the
-  scheduled matchup. This does not confirm active
-  roster status or availability. The model has not
-  been backtested or calibrated. Model EV is an
-  estimate, not a verified betting advantage.
+  DraftKings via The Odds API. Team assignments use
+  historical ESPN box scores and scheduled matchups,
+  not live roster verification. The model's projection
+  errors are being backtested, but betting probabilities
+  and expected values are not yet validated.
 </div>
 
 <div class="stats">
@@ -206,6 +261,54 @@ tr:hover { background: #18273d; }
 </table>
 </div>
 
+<section class="section" id="model-performance">
+  <h2>Model Performance</h2>
+  <div class="muted">
+    Historical walk-forward backtesting using ESPN NBA
+    player game logs. Lower prediction error is better.
+  </div>
+
+  <div id="backtest-status" role="status">
+    Loading backtest results...
+  </div>
+
+  <div class="performance-grid" id="performance-grid">
+  </div>
+
+  <div class="info">
+    <strong>Understanding the results</strong>
+    <p>
+      <strong>Predictions:</strong> Number of historical
+      player-game predictions evaluated in each market.
+    </p>
+    <p>
+      <strong>MAE:</strong> Mean Absolute Error. The
+      average difference between projected and actual
+      points, rebounds, or assists.
+    </p>
+    <p>
+      <strong>RMSE:</strong> Root Mean Squared Error.
+      Gives greater weight to large prediction misses.
+    </p>
+    <p>
+      <strong>Bias:</strong> Average projected value
+      minus actual value. Negative means the model
+      tends to underestimate results.
+    </p>
+    <p>
+      <strong>Method:</strong> Each historical prediction
+      uses only games played before the game being tested.
+      A minimum of 10 previous games is required.
+    </p>
+    <p>
+      <strong>Not yet measured:</strong> Historical
+      betting win rate, probability calibration,
+      and verified sportsbook ROI. These require
+      recorded betting lines and odds.
+    </p>
+  </div>
+</section>
+
 <div class="footer">
   <strong>Data:</strong> ESPN NBA game logs and
   DraftKings odds via The Odds API.
@@ -216,14 +319,14 @@ tr:hover { background: #18273d; }
     and a normal distribution approximation.
   </p>
   <p>
-    Game times are Eastern Time. The Refresh Data
-    button reloads published results, not new odds.
-    New statistics and odds are collected by the
-    scheduled GitHub Actions workflow.
+    Game times are Eastern Time. Refresh Data
+    reloads published predictions and backtests,
+    not live sportsbook odds.
   </p>
   <p>
-    Positive model EV does not establish a profitable
-    betting opportunity. For informational purposes.
+    Backtest results measure historical projection
+    error and do not establish profitable betting
+    performance. For informational purposes only.
   </p>
 </div>
 </main>
@@ -353,6 +456,7 @@ function draw() {
       : "No player props available in the latest results.";
     tr.appendChild(td);
     tbody.appendChild(tr);
+
     el("status").textContent =
       "0 of " + data.length + " outcomes displayed.";
     return;
@@ -413,8 +517,125 @@ function draw() {
     " model outcomes displayed.";
 }
 
+function addText(parent, tag, value, className) {
+  const node = document.createElement(tag);
+  node.textContent = value;
+  if (className) node.className = className;
+  parent.appendChild(node);
+  return node;
+}
+
+function metric(card, label, value) {
+  const line = document.createElement("div");
+  line.className = "metric";
+
+  addText(line, "span", label);
+  addText(line, "strong", value);
+
+  card.appendChild(line);
+}
+
+function metricNumber(value) {
+  return (
+    value === null ||
+    value === undefined ||
+    !Number.isFinite(Number(value))
+  ) ? "--" : Number(value).toFixed(3);
+}
+
+async function loadBacktest() {
+  el("backtest-status").textContent =
+    "Loading backtest results...";
+
+  const grid = el("performance-grid");
+  grid.replaceChildren();
+
+  try {
+    const response = await fetch(
+      "./backtest.json?t=" + Date.now(),
+      { cache: "no-store" }
+    );
+
+    if (!response.ok) {
+      throw new Error("HTTP " + response.status);
+    }
+
+    const json = await response.json();
+
+    if (!json.markets) {
+      throw new Error("Invalid backtest format");
+    }
+
+    const markets = [
+      ["points", "Points"],
+      ["rebounds", "Rebounds"],
+      ["assists", "Assists"]
+    ];
+
+    for (const [key, label] of markets) {
+      const stats = json.markets[key] || {};
+
+      const card = document.createElement("div");
+      card.className = "performance-card";
+
+      addText(card, "h3", label);
+      addText(card, "div", "Average Prediction Error",
+        "label");
+
+      addText(
+        card,
+        "div",
+        metricNumber(stats.mean_absolute_error),
+        "number"
+      );
+
+      metric(
+        card,
+        "Predictions tested",
+        String(stats.predictions_tested ?? "--")
+      );
+
+      metric(
+        card,
+        "MAE",
+        metricNumber(stats.mean_absolute_error)
+      );
+
+      metric(
+        card,
+        "RMSE",
+        metricNumber(stats.root_mean_squared_error)
+      );
+
+      metric(
+        card,
+        "Bias",
+        metricNumber(stats.mean_signed_error)
+      );
+
+      grid.appendChild(card);
+    }
+
+    el("backtest-status").textContent =
+      "Backtest updated: " +
+      (
+        json.generated_at
+          ? new Date(json.generated_at).toLocaleString()
+          : "Unknown"
+      );
+
+  } catch (error) {
+    console.error(error);
+
+    el("backtest-status").textContent =
+      "Could not load backtest results: " +
+      error.message;
+  }
+}
+
 async function loadData() {
-  el("status").textContent = "Loading latest results...";
+  el("status").textContent =
+    "Loading latest results...";
 
   try {
     const response = await fetch(
@@ -492,9 +713,13 @@ document.querySelectorAll("th[data-sort]").forEach(th => {
   });
 });
 
-el("refresh").addEventListener("click", loadData);
+el("refresh").addEventListener("click", () => {
+  loadData();
+  loadBacktest();
+});
+
 loadData();
+loadBacktest();
 </script>
 </body>
 </html>
-
