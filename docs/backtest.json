@@ -1,0 +1,27 @@
+{
+  "generated_at": "2026-11-10T16:11:59.724249+00:00",
+  "method": "Walk-forward historical evaluation. Each prediction uses at least 10 earlier player games. No historical sportsbook odds are used.",
+  "markets": {
+    "points": {
+      "predictions_tested": 952,
+      "mean_absolute_error": 4.692,
+      "root_mean_squared_error": 6.085,
+      "mean_signed_error": -0.328
+    },
+    "rebounds": {
+      "predictions_tested": 952,
+      "mean_absolute_error": 1.932,
+      "root_mean_squared_error": 2.574,
+      "mean_signed_error": -0.129
+    },
+    "assists": {
+      "predictions_tested": 952,
+      "mean_absolute_error": 1.417,
+      "root_mean_squared_error": 1.933,
+      "mean_signed_error": -0.136
+    }
+  },
+  "verified_betting_roi": null,
+  "probability_calibration": null,
+  "limitations": "Measures projection error, not betting profitability. Does not yet account for opponent, injuries, playing time, or roster changes."
+}
