@@ -11,7 +11,7 @@ ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "data"
 SITE = ROOT / "docs"
 
-VERSION = "v5-probability-audit-experimental"
+VERSION = "v6-minutes-reliability-experimental"
 
 MARKETS = {"points", "rebounds", "assists"}
 
@@ -168,6 +168,34 @@ def project_minutes(minutes):
         "long_term": mean(recent[-30:]),
         "trend_adjustment": trend,
         "sample_size": len(recent),
+    }
+
+
+
+def minutes_reliability(games):
+    """Historical last-10 minutes variability, no future-game information.
+
+    Categories use sample standard deviation of actual minutes, not range.
+    Missing/insufficient data is Unknown rather than incorrectly Stable.
+    """
+    recent = [
+        number(game.get("minutes")) for game in games
+    ]
+    recent = [m for m in recent if m is not None and 0 <= m <= 55][-10:]
+    if len(recent) < 5:
+        return {
+            "label": "Unknown", "score": None, "sd": None,
+            "min": None, "max": None, "average": None,
+            "sample_size": len(recent),
+        }
+    sd = statistics.stdev(recent)
+    # Descriptive 0-100 index, not a calibrated probability.
+    score = round(max(0, min(100, 100 * (1 - sd / 12))))
+    label = "Stable" if sd <= 4 else "Moderate" if sd <= 7 else "Volatile"
+    return {
+        "label": label, "score": score, "sd": round(sd, 2),
+        "min": round(min(recent), 1), "max": round(max(recent), 1),
+        "average": round(mean(recent), 1), "sample_size": len(recent),
     }
 
 
@@ -447,6 +475,8 @@ def run():
             reject("insufficient_history", bet)
             continue
 
+        minutes_risk = minutes_reliability(games)
+
         identified = identify_team(games, bet)
 
         if identified is None:
@@ -683,6 +713,13 @@ def run():
                 ),
                 "ev": round(ev, 4),
 
+                "minutes_reliability": minutes_risk["label"],
+                "minutes_reliability_score": minutes_risk["score"],
+                "minutes_sd_last10": minutes_risk["sd"],
+                "minutes_min_last10": minutes_risk["min"],
+                "minutes_max_last10": minutes_risk["max"],
+                "minutes_average_last10": minutes_risk["average"],
+                "minutes_sample_last10": minutes_risk["sample_size"],
                 "last10": hits,
                 "sample_size": len(values),
 
