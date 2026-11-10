@@ -10,14 +10,14 @@
     * { box-sizing: border-box; }
 
     body {
+      margin: 0;
       background: #0b1220;
       color: #e8edf6;
       font: 15px system-ui, sans-serif;
-      margin: 0;
     }
 
     main {
-      max-width: 1350px;
+      max-width: 1500px;
       margin: auto;
       padding: 30px 18px;
     }
@@ -63,7 +63,6 @@
     .controls {
       display: flex;
       flex-wrap: wrap;
-      align-items: center;
       gap: 10px;
       margin: 25px 0 15px;
     }
@@ -87,12 +86,16 @@
 
     button:hover { background: #318a5b; }
 
-    .tablewrap { overflow-x: auto; }
+    .tablewrap {
+      overflow-x: auto;
+      border: 1px solid #293a52;
+      border-radius: 12px;
+    }
 
     table {
       border-collapse: collapse;
       width: 100%;
-      min-width: 950px;
+      min-width: 1250px;
     }
 
     th, td {
@@ -106,12 +109,26 @@
       color: #a6b5c9;
       cursor: pointer;
       user-select: none;
+      background: #172338;
     }
 
     tr:hover { background: #18273d; }
 
     .positive { color: #75e3a5; }
     .negative { color: #f2a7a7; }
+
+    .matchup {
+      font-weight: 600;
+      color: #a9c8ff;
+    }
+
+    .game-info {
+      color: #b5c5d9;
+      font-size: 13px;
+    }
+
+    .side-over { color: #75e3a5; }
+    .side-under { color: #f8c477; }
 
     .footer {
       color: #9ba9be;
@@ -128,7 +145,6 @@
     @media (max-width: 600px) {
       h1 { font-size: 29px; }
       .stat { min-width: 140px; }
-      .controls { align-items: stretch; }
       input, select, button { width: 100%; }
     }
   </style>
@@ -138,32 +154,38 @@
 <main>
 
   <h1>Prop Analyzer</h1>
+
   <div class="muted">
-    NBA player props | ESPN statistics + DraftKings odds
+    NBA Player Props | ESPN Statistics + DraftKings Odds
   </div>
 
   <div class="warn">
     <strong>REAL NBA DATA — EXPERIMENTAL MODEL.</strong>
-    Player statistics are sourced from ESPN and betting odds from
-    DraftKings via The Odds API. Predictions use an unvalidated
-    statistical model. Odds may change, and estimated probabilities
-    and expected values are not guaranteed betting advantages.
-    Results are for informational purposes only.
+    Player statistics are sourced from ESPN and odds from
+    DraftKings via The Odds API. The statistical model is
+    not yet validated or backtested. Odds may change,
+    and estimated probabilities and expected values
+    are not verified betting advantages.
   </div>
 
   <div class="stats">
     <div class="stat">
-      Analyzed outcomes
+      Analyzed Outcomes
       <b id="count">--</b>
     </div>
 
     <div class="stat">
-      Positive model EV
+      Positive Model EV
       <b id="positive">--</b>
     </div>
 
     <div class="stat">
-      Last update
+      Games Analyzed
+      <b id="games">--</b>
+    </div>
+
+    <div class="stat">
+      Last Updated
       <b id="updated" style="font-size:17px">--</b>
     </div>
   </div>
@@ -172,19 +194,23 @@
     <input
       id="search"
       type="search"
-      placeholder="Search player or team"
-      aria-label="Search player or team"
+      placeholder="Search player or matchup"
+      aria-label="Search player or matchup"
     >
 
+    <select id="game" aria-label="Game filter">
+      <option value="">All Games</option>
+    </select>
+
     <select id="market" aria-label="Market filter">
-      <option value="">All markets</option>
+      <option value="">All Markets</option>
       <option value="Points">Points</option>
       <option value="Rebounds">Rebounds</option>
       <option value="Assists">Assists</option>
     </select>
 
-    <select id="side" aria-label="Bet side filter">
-      <option value="">Both sides</option>
+    <select id="side" aria-label="Side filter">
+      <option value="">Both Sides</option>
       <option value="Over">Over</option>
       <option value="Under">Under</option>
     </select>
@@ -194,12 +220,17 @@
     </button>
   </div>
 
-  <div id="status" role="status">Loading latest results...</div>
+  <div id="status" role="status">
+    Loading latest results...
+  </div>
 
   <div class="tablewrap">
     <table>
       <thead>
         <tr>
+          <th data-sort="date">Date</th>
+          <th data-sort="matchup">Matchup</th>
+          <th data-sort="game_time">Tipoff</th>
           <th data-sort="player">Player</th>
           <th data-sort="market">Market</th>
           <th data-sort="side">Side</th>
@@ -207,7 +238,7 @@
           <th data-sort="odds">Odds</th>
           <th data-sort="projection">Projection</th>
           <th data-sort="probability">Probability</th>
-          <th data-sort="ev">EV</th>
+          <th data-sort="ev">Model EV</th>
           <th data-sort="last10">Last 10</th>
         </tr>
       </thead>
@@ -216,14 +247,27 @@
   </div>
 
   <div class="footer">
-    Model: baseline-normal-v1-unvalidated.
-    Projections use weighted historical averages and a normal
-    distribution approximation. The model has not been backtested
-    or calibrated. A positive estimated EV does not establish
-    a profitable betting opportunity.
-    Data is refreshed by GitHub Actions when the scheduled workflow
-    runs successfully. The Refresh Data button reloads the most
-    recently published results; it does not request new sportsbook odds.
+    <strong>Data:</strong> ESPN NBA game logs and
+    DraftKings odds via The Odds API.
+
+    <p>
+      <strong>Model:</strong> baseline-normal-v1-unvalidated.
+      Projections use weighted historical averages and
+      a normal distribution approximation.
+      The model has not been backtested or calibrated.
+    </p>
+
+    <p>
+      All game times are Eastern Time.
+      The Refresh Data button reloads the latest
+      published results; it does not fetch new sportsbook odds.
+      The scheduled GitHub Actions workflow generates new data.
+    </p>
+
+    <p>
+      For informational purposes only.
+      Positive model EV does not establish a profitable bet.
+    </p>
   </div>
 
 </main>
@@ -244,18 +288,77 @@
     return (Number(value) * 100).toFixed(1) + "%";
   }
 
+  function formatDate(value) {
+    if (!value) return "--";
+
+    const parts = value.split("-");
+
+    if (parts.length !== 3) return value;
+
+    return parts[1] + "/" + parts[2];
+  }
+
+  function gameKey(row) {
+    return row.event_id || (
+      (row.date || "") + "|" + (row.matchup || "")
+    );
+  }
+
+  function populateGames() {
+    const select = el("game");
+    const previous = select.value;
+
+    select.replaceChildren();
+
+    const all = document.createElement("option");
+    all.value = "";
+    all.textContent = "All Games";
+    select.appendChild(all);
+
+    const games = new Map();
+
+    data.forEach(row => {
+      if (row.matchup) {
+        games.set(
+          gameKey(row),
+          formatDate(row.date) + " " + row.matchup
+        );
+      }
+    });
+
+    for (const [key, label] of [...games.entries()].sort(
+      (a, b) => a[1].localeCompare(b[1])
+    )) {
+      const option = document.createElement("option");
+      option.value = key;
+      option.textContent = label;
+      select.appendChild(option);
+    }
+
+    if ([...select.options].some(o => o.value === previous)) {
+      select.value = previous;
+    }
+  }
+
   function draw() {
     const query = el("search").value.toLowerCase().trim();
+    const game = el("game").value;
     const market = el("market").value;
     const side = el("side").value;
 
-    let filtered = data.filter(row => {
-      const searchText = (
-        (row.player || "") + " " + (row.team || "")
-      ).toLowerCase();
+    const filtered = data.filter(row => {
+      const searchText = [
+        row.player,
+        row.team,
+        row.opponent,
+        row.matchup,
+        row.home_team,
+        row.away_team
+      ].filter(Boolean).join(" ").toLowerCase();
 
       return (
         searchText.includes(query) &&
+        (!game || gameKey(row) === game) &&
         (!market || row.market === market) &&
         (!side || row.side === side)
       );
@@ -270,7 +373,9 @@
       if (typeof av === "number" && typeof bv === "number") {
         result = av - bv;
       } else {
-        result = String(av ?? "").localeCompare(String(bv ?? ""));
+        result = String(av ?? "").localeCompare(
+          String(bv ?? "")
+        );
       }
 
       return sortAscending ? result : -result;
@@ -282,10 +387,12 @@
     if (!filtered.length) {
       const tr = document.createElement("tr");
       const td = document.createElement("td");
-      td.colSpan = 9;
+
+      td.colSpan = 12;
       td.textContent = data.length
         ? "No results match your filters."
-        : "No player props available in the latest published results.";
+        : "No player props available in the latest results.";
+
       tr.appendChild(td);
       tbody.appendChild(tr);
       return;
@@ -295,6 +402,9 @@
       const tr = document.createElement("tr");
 
       const values = [
+        formatDate(row.date),
+        row.matchup || "--",
+        row.game_time || "--",
         row.player || "",
         row.market || "",
         row.side || "",
@@ -310,7 +420,18 @@
         const td = document.createElement("td");
         td.textContent = value;
 
-        if (index === 7) {
+        if (index === 1) td.className = "matchup";
+        if (index === 0 || index === 2) {
+          td.className = "game-info";
+        }
+
+        if (index === 5) {
+          td.className = row.side === "Over"
+            ? "side-over"
+            : "side-under";
+        }
+
+        if (index === 10) {
           td.className = Number(row.ev) > 0
             ? "positive"
             : "negative";
@@ -321,6 +442,10 @@
 
       tbody.appendChild(tr);
     }
+
+    el("status").textContent =
+      filtered.length + " of " + data.length +
+      " model outcomes displayed.";
   }
 
   async function loadData() {
@@ -350,31 +475,37 @@
         row => Number(row.ev) > 0
       ).length;
 
+      const games = new Set(
+        data.filter(row => row.matchup).map(gameKey)
+      );
+
+      el("games").textContent = games.size;
+
       el("updated").textContent = json.generated_at
         ? new Date(json.generated_at).toLocaleString()
         : "Unknown";
 
-      el("status").textContent =
-        data.length + " model outcomes loaded.";
-
+      populateGames();
       draw();
 
     } catch (error) {
       console.error(error);
 
       data = [];
+
       el("count").textContent = "0";
       el("positive").textContent = "0";
+      el("games").textContent = "0";
       el("updated").textContent = "--";
 
       el("status").textContent =
-        "Could not load results.json: " + error.message;
+        "Could not load results: " + error.message;
 
-      draw();
+      el("rows").replaceChildren();
     }
   }
 
-  ["search", "market", "side"].forEach(id => {
+  ["search", "game", "market", "side"].forEach(id => {
     el(id).addEventListener("input", draw);
   });
 
@@ -386,11 +517,10 @@
         sortAscending = !sortAscending;
       } else {
         sortKey = key;
-        sortAscending = (
-          key === "player" ||
-          key === "market" ||
-          key === "side"
-        );
+        sortAscending = [
+          "date", "matchup", "game_time",
+          "player", "market", "side"
+        ].includes(key);
       }
 
       draw();
@@ -404,3 +534,4 @@
 
 </body>
 </html>
+
