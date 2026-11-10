@@ -25,6 +25,43 @@ def implied(odds):
     return 1 / (1 + american_profit(odds))
 
 
+def normalize(value):
+    return " ".join(str(value or "").casefold().split())
+
+
+def identify_teams(games, bet):
+    """
+    Use the player's latest ESPN game log to
+    identify their team and upcoming opponent.
+
+    Only accept the team when it matches
+    one of the two scheduled NBA teams.
+    """
+
+    if not games:
+        return "", "", "", ""
+
+    latest = games[-1]
+
+    team = latest.get("team", "")
+    team_abbr = latest.get("team_abbr", "")
+
+    home_team = bet.get("home_team", "")
+    away_team = bet.get("away_team", "")
+
+    if not team or not home_team or not away_team:
+        return "", "", "", ""
+
+    if normalize(team) == normalize(home_team):
+        opponent = away_team
+    elif normalize(team) == normalize(away_team):
+        opponent = home_team
+    else:
+        return "", "", "", ""
+
+    return team, team_abbr, opponent, latest.get("team_id", "")
+
+
 def run():
     with open(
         DATA / "game_logs.csv",
@@ -41,31 +78,20 @@ def run():
         odds = list(csv.DictReader(f))
 
     output = []
+    matched_players = set()
+    unmatched_players = set()
 
     for bet in odds:
         player = bet["player"]
         market = bet["market"]
         game_date = bet["game_date"]
 
-        # New matchup information
-        home_team = bet.get("home_team", "")
-        away_team = bet.get("away_team", "")
-        matchup = bet.get("matchup", "")
-        game_time = bet.get("game_time", "")
-        commence_time = bet.get("commence_time", "")
-        event_id = bet.get("event_id", "")
-
-        # Player team remains blank until verified.
-        team = bet.get("team", "")
-        opponent = bet.get("opponent", "")
-
-        # Match ESPN player history to DraftKings props.
         games = sorted(
             (
                 g for g in logs
                 if (
-                    g["player"].strip().casefold()
-                    == player.strip().casefold()
+                    normalize(g["player"])
+                    == normalize(player)
                     and g["date"] < game_date
                 )
             ),
@@ -75,6 +101,15 @@ def run():
         if len(games) < 10:
             continue
 
+        team, team_abbr, opponent, team_id = (
+            identify_teams(games, bet)
+        )
+
+        if team:
+            matched_players.add(player)
+        else:
+            unmatched_players.add(player)
+
         values = [
             float(g[market])
             for g in games
@@ -83,7 +118,6 @@ def run():
         recent = values[-10:]
         last5 = values[-5:]
 
-        # Preserve the existing baseline projection.
         projection = (
             0.5 * statistics.mean(recent)
             + 0.3 * statistics.mean(values)
@@ -137,18 +171,23 @@ def run():
 
             output.append({
                 "player": player,
+
                 "team": team,
+                "team_abbr": team_abbr,
+                "team_id": team_id,
                 "opponent": opponent,
 
                 "date": game_date,
                 "game_date": game_date,
-                "game_time": game_time,
-                "commence_time": commence_time,
-                "event_id": event_id,
+                "game_time": bet.get("game_time", ""),
+                "commence_time": bet.get(
+                    "commence_time", ""
+                ),
+                "event_id": bet.get("event_id", ""),
 
-                "home_team": home_team,
-                "away_team": away_team,
-                "matchup": matchup,
+                "home_team": bet.get("home_team", ""),
+                "away_team": bet.get("away_team", ""),
+                "matchup": bet.get("matchup", ""),
 
                 "market": market.title(),
                 "side": side,
@@ -203,17 +242,13 @@ def run():
     print("ESPN player game logs:", len(logs))
     print("DraftKings player prop lines:", len(odds))
     print("Generated prediction outcomes:", len(output))
+    print("Players matched to teams:", len(matched_players))
+    print("Players without verified teams:", len(unmatched_players))
 
-    matchups = sorted({
-        row["matchup"]
-        for row in output
-        if row["matchup"]
-    })
-
-    print("Matchups included:", len(matchups))
-
-    for matchup in matchups:
-        print(" -", matchup)
+    if unmatched_players:
+        print("Unmatched players:")
+        for player in sorted(unmatched_players):
+            print(" -", player)
 
 
 if __name__ == "__main__":
