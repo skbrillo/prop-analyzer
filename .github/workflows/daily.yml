@@ -6,7 +6,7 @@ on:
     # Morning predictions: 6:15 AM Central Standard Time
     - cron: "15 12 * * *"
 
-    # Late-night results: 11:30 PM Central Standard Time
+    # Late-night grading: 11:30 PM Central Standard Time
     - cron: "30 5 * * *"
 
   workflow_dispatch:
@@ -31,8 +31,23 @@ jobs:
         with:
           python-version: "3.11"
 
+      # Download latest completed NBA game statistics.
+      # Uses ESPN, not The Odds API.
+
       - name: Download real NBA statistics
         run: python update_nba_stats.py
+
+      # Build historical team defensive statistics.
+      # Includes points, rebounds, and assists allowed.
+      # Uses existing ESPN game logs.
+      # Does not consume Odds API credits.
+
+      - name: Build NBA team defense statistics
+        run: python build_team_defense.py
+
+      # Download DraftKings player prop odds.
+      # Only runs during morning or manual workflows.
+      # This is the step that uses Odds API credits.
 
       - name: Download real DraftKings odds
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
@@ -40,20 +55,34 @@ jobs:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python update_odds.py
 
+      # Generate current NBA player prop projections.
+      # Runs during morning or manual workflows.
+
       - name: Run prediction engine
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         run: python engine.py
+
+      # Save pregame predictions for later grading.
 
       - name: Save pregame predictions
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         run: python save_predictions.py
 
+      # Grade completed games.
+      # Runs in both morning and late-night workflows.
+      # Does not consume Odds API credits.
+
       - name: Grade completed predictions
         run: python grade_predictions.py
+
+      # Run historical prediction backtesting.
+      # Does not consume Odds API credits.
 
       - name: Backtest historical NBA projections
         if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         run: python backtest.py
+
+      # Commit all updated data and results.
 
       - name: Save updated data and results
         run: |
@@ -61,13 +90,15 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
           git add data/game_logs.csv
+          git add data/team_defense.csv
           git add data/sample_odds.csv
           git add data/prediction_history.csv
+
           git add docs/results.json
           git add docs/graded_predictions.json
           git add docs/backtest.json
 
           if ! git diff --cached --quiet; then
-            git commit -m "Update NBA props and graded predictions"
+            git commit -m "Update NBA props, defense, and graded predictions"
             git push
           fi
