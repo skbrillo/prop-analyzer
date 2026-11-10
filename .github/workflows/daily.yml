@@ -3,7 +3,12 @@ name: Daily Prop Analyzer
 
 on:
   schedule:
+    # Morning predictions: 6:15 AM Central Standard Time
     - cron: "15 12 * * *"
+
+    # Late-night results: 11:30 PM Central Standard Time
+    - cron: "30 5 * * *"
+
   workflow_dispatch:
 
 permissions:
@@ -30,20 +35,24 @@ jobs:
         run: python update_nba_stats.py
 
       - name: Download real DraftKings odds
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python update_odds.py
 
       - name: Run prediction engine
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         run: python engine.py
 
       - name: Save pregame predictions
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         run: python save_predictions.py
 
       - name: Grade completed predictions
         run: python grade_predictions.py
 
       - name: Backtest historical NBA projections
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
         run: python backtest.py
 
       - name: Save updated data and results
