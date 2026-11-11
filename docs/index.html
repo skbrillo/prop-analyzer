@@ -3,150 +3,37 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Prop Analyzer | NBA Player Props</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NBA Prop Analyzer</title>
+
+<script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 
 <style>
 *{box-sizing:border-box}
-
-body{
-margin:0;
-background:#0b1220;
-color:#e8edf6;
-font:13px system-ui,Arial,sans-serif;
-}
-
-main{
-width:100%;
-max-width:none;
-margin:0 auto;
-padding:18px 12px;
-}
-
+body{margin:0;background:#0b1220;color:#e8edf6;font:13px system-ui,Arial,sans-serif}
+main{width:100%;padding:18px 12px}
 h1{font-size:32px;margin:0 0 5px}
 h2{font-size:22px;margin:0 0 9px}
-h3{font-size:16px;margin:0 0 12px}
-
-.muted,.note{
-color:#a6b5c9;
-line-height:1.6;
-}
-
-.warn{
-background:#332c19;
-color:#ffda8c;
-padding:13px;
-border-radius:10px;
-margin:16px 0;
-line-height:1.6;
-}
-
-.stats{
-display:grid;
-grid-template-columns:repeat(6,minmax(0,1fr));
-gap:9px;
-margin:16px 0;
-}
-
-.stat,.card{
-background:#172338;
-border:1px solid #293a52;
-border-radius:12px;
-padding:13px;
-min-width:0;
-}
-
-.stat b{
-font-size:23px;
-display:block;
-margin-top:8px;
-overflow-wrap:anywhere;
-}
-
-.section{
-margin-top:32px;
-padding-top:20px;
-border-top:1px solid #293a52;
-}
-
-.tabs{
-display:flex;
-gap:10px;
-margin:22px 0 10px;
-}
-
-.tabs button{
-min-width:140px;
-font-weight:700;
-background:#172338;
-}
-
-.tabs button.active{
-background:#267a4b;
-border-color:#56bc82;
-}
-
-.controls{
-display:flex;
-flex-wrap:wrap;
-gap:8px;
-margin:15px 0;
-}
-
-input,select,button{
-background:#18273d;
-color:white;
-border:1px solid #41516b;
-border-radius:8px;
-padding:9px;
-font:inherit;
-}
-
+h3{font-size:16px}
+.muted,.note{color:#a6b5c9;line-height:1.6}
+.warn{background:#332c19;color:#ffda8c;padding:13px;border-radius:10px;margin:16px 0;line-height:1.6}
+.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:9px;margin:16px 0}
+.stat,.card{background:#172338;border:1px solid #293a52;border-radius:12px;padding:13px;min-width:0}
+.stat b{font-size:23px;display:block;margin-top:8px}
+.section{margin-top:32px;padding-top:20px;border-top:1px solid #293a52}
+.tabs,.controls{display:flex;flex-wrap:wrap;gap:8px;margin:15px 0}
+input,select,button{background:#18273d;color:white;border:1px solid #41516b;border-radius:8px;padding:9px;font:inherit}
 input{min-width:190px;flex:1}
-
 button{cursor:pointer}
 button:hover{border-color:#75e3a5}
-#refresh{background:#256c46}
-
-/* Main prediction table fits available desktop width */
-.tablewrap{
-width:100%;
-overflow-x:hidden;
-border:1px solid #293a52;
-border-radius:10px;
-}
-
-table{
-width:100%;
-min-width:0;
-border-collapse:collapse;
-table-layout:fixed;
-}
-
-th,td{
-padding:9px 3px;
-border-bottom:1px solid #2b3a50;
-text-align:left;
-font-size:clamp(9px,.69vw,12px);
-white-space:nowrap;
-overflow:hidden;
-text-overflow:clip;
-font-variant-numeric:tabular-nums;
-}
-
-th{
-background:#172338;
-color:#a6b5c9;
-cursor:pointer;
-position:sticky;
-top:0;
-z-index:1;
-font-weight:700;
-}
-
+button.active,#refresh{background:#256c46}
+#download-excel{background:#2e7d32;border-color:#5cad65;font-weight:700}
+#download-excel:disabled{opacity:.55;cursor:wait}
+.tablewrap{width:100%;overflow-x:hidden;border:1px solid #293a52;border-radius:10px}
+table{width:100%;border-collapse:collapse;table-layout:fixed}
+th,td{padding:9px 3px;border-bottom:1px solid #2b3a50;text-align:left;font-size:clamp(9px,.69vw,12px);white-space:nowrap;overflow:hidden;text-overflow:clip;font-variant-numeric:tabular-nums}
+th{background:#172338;color:#a6b5c9;cursor:pointer}
 tr:hover{background:#18273d}
-
-/* Percentages total 100% */
 th:nth-child(1){width:4.5%}
 th:nth-child(2){width:7%}
 th:nth-child(3){width:6%}
@@ -165,121 +52,36 @@ th:nth-child(15){width:6%}
 th:nth-child(16){width:5%}
 th:nth-child(17){width:4.5%}
 th:nth-child(18){width:5%}
-
-.player{
-font-weight:700;
-}
-
+.player{font-weight:700}
 .green,.win,.over{color:#75e3a5}
 .red,.loss{color:#f2a7a7}
 .under,.pending{color:#f8c477}
 .dnp,.push{color:#b9cafa}
 .not_selected{color:#8c9bb0}
-
-.pill{
-display:inline-block;
-padding:2px 3px;
-border-radius:4px;
-font-size:10px;
-font-weight:700;
-max-width:100%;
-}
-
+.pill{display:inline-block;padding:2px 3px;border-radius:4px;font-size:10px;font-weight:700}
 .Stable{background:#123f2b;color:#8ef0b4}
 .Moderate{background:#493914;color:#ffe099}
 .Volatile{background:#512626;color:#ffb0b0}
 .NA{background:#29384c;color:#a6b5c9}
-
-.cards{
-display:grid;
-grid-template-columns:repeat(3,minmax(0,1fr));
-gap:12px;
-margin-top:16px;
-}
-
-.gamecards{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
-gap:12px;
-margin-top:16px;
-}
-
-.metric{
-display:flex;
-justify-content:space-between;
-gap:12px;
-border-top:1px solid #2b3a50;
-padding:9px 0;
-}
-
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
+.gamecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px;margin-top:16px}
+.metric{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #2b3a50;padding:9px 0}
 .metric span{color:#a6b5c9}
 .metric strong{text-align:right}
-
-.big{
-font-size:27px;
-font-weight:700;
-color:#75e3a5;
-margin:10px 0;
-}
-
-.info{
-border:1px solid #293a52;
-border-radius:12px;
-padding:17px;
-margin-top:18px;
-color:#b9c5d5;
-line-height:1.7;
-}
-
-.footer{
-color:#9ba9be;
-font-size:12px;
-margin:28px 0;
-line-height:1.8;
-}
-
-/* Performance table uses its own layout */
-.daily-wrap{
-width:100%;
-overflow-x:auto;
-border:1px solid #293a52;
-border-radius:10px;
-}
-
-.daily-table{
-min-width:900px;
-table-layout:auto;
-}
-
-.daily-table th,
-.daily-table td{
-width:auto;
-padding:11px 8px;
-font-size:12px;
-}
-
+.big{font-size:27px;font-weight:700;color:#75e3a5;margin:10px 0}
+.info{border:1px solid #293a52;border-radius:12px;padding:17px;margin-top:18px;color:#b9c5d5;line-height:1.7}
+.footer{color:#9ba9be;font-size:12px;margin:28px 0;line-height:1.8}
+.daily-wrap{width:100%;overflow-x:auto;border:1px solid #293a52;border-radius:10px}
+.daily-table{min-width:900px;table-layout:auto}
+.daily-table th,.daily-table td{width:auto;padding:11px 8px;font-size:12px}
 @media(max-width:1100px){
-.stats{
-grid-template-columns:repeat(3,minmax(0,1fr));
+.stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+th,td{font-size:9px;padding:8px 2px}
 }
-th,td{
-font-size:9px;
-padding:8px 2px;
-}
-}
-
 @media(max-width:750px){
-.stats{
-grid-template-columns:repeat(2,minmax(0,1fr));
-}
+.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
 .cards{grid-template-columns:1fr}
-.tabs button{flex:1;min-width:0}
-.controls input,
-.controls select,
-.controls button{
-width:100%;
-flex:auto;
-}
+.controls input,.controls select,.controls button{width:100%;flex:auto}
 .tablewrap{overflow-x:auto}
 table{min-width:1100px}
 }
@@ -290,18 +92,12 @@ table{min-width:1100px}
 <main>
 
 <h1>Prop Analyzer</h1>
-
-<div class="muted">
-NBA Player Props | ESPN Statistics + DraftKings Odds
-</div>
+<div class="muted">NBA Player Props | ESPN Statistics + DraftKings Odds</div>
 
 <div class="warn">
 <strong>REAL NBA DATA — EXPERIMENTAL MODEL.</strong>
-Player statistics come from ESPN and odds from DraftKings via The Odds API.
-The model uses projected minutes, per-minute production, opponent defense,
-and sportsbook probability comparisons. Historical team assignments and
-injury information may be inaccurate. Model probabilities and expected
-values have not been sufficiently validated.
+Model probabilities and expected values are estimates, not validated betting edges.
+Historical results are hypothetical and do not represent wagers placed.
 </div>
 
 <div class="stats">
@@ -313,32 +109,26 @@ values have not been sufficiently validated.
 <div class="stat">Last Updated<b id="updated" style="font-size:15px">--</b></div>
 </div>
 
-<div class="tabs" role="tablist" aria-label="Prediction date">
-<button id="tab-today" class="active" type="button" aria-pressed="true">Today</button>
-<button id="tab-yesterday" type="button" aria-pressed="false">Yesterday</button>
+<div class="tabs">
+<button id="tab-today" class="active">Today</button>
+<button id="tab-yesterday">Yesterday</button>
+<button id="download-excel">Download Excel — All History</button>
 </div>
 
-<div id="day-description" class="muted">
-Today's current predictions.
-</div>
+<div id="export-status" class="muted" role="status"></div>
+<div id="day-description" class="muted">Loading predictions...</div>
 
-<section class="section" id="game-lines">
+<section class="section">
 <h2>NBA Game Lines</h2>
-<div class="muted">
-DraftKings pregame spreads, totals, and implied team points.
-</div>
-<div id="game-lines-status" class="muted">Loading game lines...</div>
+<div class="muted">Saved DraftKings spreads, totals, and implied points.</div>
+<div id="game-lines-status" class="muted"></div>
 <div id="game-lines-grid" class="gamecards"></div>
 </section>
 
 <div class="controls">
+<input id="search" type="search" placeholder="Search player, team or opponent">
 
-<input id="search" type="search"
-placeholder="Search player, team or opponent">
-
-<select id="game">
-<option value="">All Games</option>
-</select>
+<select id="game"><option value="">All Games</option></select>
 
 <select id="market">
 <option value="">PRA — All Markets</option>
@@ -354,7 +144,7 @@ placeholder="Search player, team or opponent">
 </select>
 
 <select id="odds-filter">
-<option value="" selected>All Odds</option>
+<option value="">All Odds</option>
 <option value="-120">Odds -120 or Better</option>
 <option value="-110">Odds -110 or Better</option>
 <option value="100">Plus Money Only</option>
@@ -369,7 +159,7 @@ placeholder="Search player, team or opponent">
 </select>
 
 <select id="selection-filter">
-<option value="" selected>All Predictions</option>
+<option value="">All Predictions</option>
 <option value="selected">Model Picks</option>
 <option value="not_selected">Not Selected</option>
 </select>
@@ -385,18 +175,15 @@ placeholder="Search player, team or opponent">
 <option value="not_selected">Not Picked</option>
 </select>
 
-<button id="refresh" type="button">Refresh Data</button>
+<button id="refresh">Refresh Data</button>
 </div>
 
 <div class="note">
-Minutes reliability: Stable = standard deviation ≤4 minutes;
-Moderate = above 4 through 7; Volatile = above 7.
-Historical predictions without saved minutes diagnostics display N/A.
+Minutes reliability: Stable ≤4 minutes standard deviation;
+Moderate above 4 through 7; Volatile above 7.
 </div>
 
-<div id="status" class="muted" role="status">
-Loading predictions...
-</div>
+<div id="status" class="muted">Loading predictions...</div>
 
 <div class="tablewrap">
 <table>
@@ -427,19 +214,13 @@ Loading predictions...
 </div>
 
 <section class="section">
-
 <h2>Live Betting Performance</h2>
-
 <div class="muted">
-Actual outcomes from saved pregame predictions graded against ESPN box scores.
-These are hypothetical model selections, not bets placed.
-Only one highest-positive-EV side per player, game, and market is counted.
-DNP and unselected predictions are excluded from returns.
+Saved pregame model selections graded against ESPN.
+Returns are hypothetical using $100 per selected graded outcome.
 </div>
 
-<div id="tracking-status" class="muted">
-Loading grading results...
-</div>
+<div id="tracking-status" class="muted"></div>
 
 <div class="stats" style="grid-template-columns:repeat(4,minmax(0,1fr))">
 <div class="stat">Win Rate<b id="track-winrate">--</b></div>
@@ -450,29 +231,21 @@ Loading grading results...
 
 <div id="tracking-details" class="muted"></div>
 
-<h3 style="margin-top:24px">Performance by Market</h3>
+<h3>Performance by Market</h3>
 <div id="tracking-breakdowns" class="cards"></div>
 
-<h3 style="margin-top:26px">Over vs. Under</h3>
+<h3>Over vs. Under</h3>
 <div id="side-breakdowns" class="cards"></div>
 
-<h3 style="margin-top:26px">Daily Results</h3>
-
+<h3>Daily Results</h3>
 <div class="daily-wrap">
 <table class="daily-table">
 <thead>
 <tr>
-<th>Date</th>
-<th>Selections</th>
-<th>Graded</th>
-<th>W</th>
-<th>L</th>
-<th>Push</th>
-<th>DNP</th>
-<th>Pending</th>
-<th>Win Rate</th>
-<th>ROI</th>
-<th>Profit</th>
+<th>Date</th><th>Selections</th><th>Graded</th>
+<th>W</th><th>L</th><th>Push</th>
+<th>DNP</th><th>Pending</th>
+<th>Win Rate</th><th>ROI</th><th>Profit</th>
 </tr>
 </thead>
 <tbody id="daily-results"></tbody>
@@ -482,60 +255,29 @@ Loading grading results...
 <div id="selection-audit" class="note" style="margin-top:14px"></div>
 
 <div class="info">
-<strong>How to interpret these results</strong>
-<p>
-Results use a hypothetical flat $100 stake per graded selection,
-with profit calculated using the saved American odds.
-</p>
-<p>
-Only selected, graded predictions contribute to win rate,
-profit, and ROI. Pushes are excluded from win rate.
-DNP and unselected predictions do not count as wagers.
-</p>
-<p>
-Positive EV is an unvalidated model estimate,
-not proof of a betting edge.
-</p>
+<strong>Performance methodology</strong>
+<p>Only selected and graded outcomes count toward win rate and ROI.
+Pushes return the original stake. DNP and unselected predictions
+are excluded from returns.</p>
+<p>Positive estimated EV does not establish a profitable betting edge.</p>
 </div>
-
 </section>
 
 <section class="section">
 <h2>Model Performance</h2>
-<div class="muted">
-Historical walk-forward backtesting using ESPN NBA player game logs.
-Lower prediction error is better.
-</div>
-
-<div id="backtest-status" class="muted">
-Loading backtest...
-</div>
-
+<div class="muted">Historical prediction accuracy using ESPN game logs.</div>
+<div id="backtest-status" class="muted"></div>
 <div id="performance-grid" class="cards"></div>
-
 <div class="info">
-<strong>Understanding the results</strong>
-<p><strong>MAE:</strong> Mean absolute prediction error.</p>
-<p><strong>RMSE:</strong> Root mean squared prediction error.</p>
-<p><strong>Bias:</strong> Average projected minus actual value.</p>
-<p>
-Historical backtests may evaluate a different model version than
-current live predictions. Projection accuracy does not establish
-profitable betting performance.
-</p>
+MAE is mean absolute error. RMSE is root mean squared error.
+Bias is average projection minus actual.
 </div>
 </section>
 
 <div class="footer">
-<strong>Data:</strong> ESPN NBA game logs and DraftKings via The Odds API.
-<p><strong>Model:</strong> <span id="model-version">Experimental</span></p>
-<p>
-Today shows current published predictions. Yesterday uses saved
-historical predictions, not recalculated lines or odds.
-</p>
-<p>
-Refresh reloads published files, not live sportsbook prices.
-</p>
+Data: ESPN and DraftKings via The Odds API.
+<p>Model: <span id="model-version">Experimental</span></p>
+<p>Excel downloads use saved files only and do not request new sportsbook odds.</p>
 </div>
 
 </main>
@@ -543,19 +285,19 @@ Refresh reloads published files, not live sportsbook prices.
 <script>
 "use strict";
 
-const el = id => document.getElementById(id);
+const el=id=>document.getElementById(id);
 
-let todayData = [];
-let historyData = [];
-let data = [];
-let gradedReport = null;
-let activeDay = "today";
-let sortKey = "ev";
-let sortAscending = false;
-let todayDate = "";
-let yesterdayDate = "";
+let todayData=[];
+let historyData=[];
+let data=[];
+let gradedReport=null;
+let activeDay="today";
+let sortKey="ev";
+let sortAscending=false;
+let todayDate="";
+let yesterdayDate="";
 
-const TEAM_CODES = {
+const TEAM_CODES={
 "Atlanta Hawks":"ATL",
 "Boston Celtics":"BOS",
 "Brooklyn Nets":"BKN",
@@ -589,1162 +331,1004 @@ const TEAM_CODES = {
 "Washington Wizards":"WAS"
 };
 
-const TEAM_ALIASES = {
-"GS":"GSW",
-"NY":"NYK",
-"NO":"NOP",
-"UTAH":"UTA",
-"SA":"SAS",
-"WSH":"WAS",
-"PHO":"PHX",
-"BRK":"BKN"
+const TEAM_ALIASES={
+GS:"GSW",NY:"NYK",NO:"NOP",
+UTAH:"UTA",SA:"SAS",WSH:"WAS",
+PHO:"PHX",BRK:"BKN"
 };
 
-function shortTeam(value) {
-const raw = String(value || "").trim();
-return TEAM_CODES[raw] || TEAM_ALIASES[raw] || raw || "--";
+function shortTeam(value){
+const s=String(value||"").trim();
+return TEAM_CODES[s]||TEAM_ALIASES[s]||s||"--";
 }
 
-function shortMatchup(row) {
-if (row.away_team && row.home_team) {
-return shortTeam(row.away_team) + " @ " + shortTeam(row.home_team);
-}
-return row.matchup || "--";
-}
-
-function formatDate(value) {
-if (!value) return "--";
-const parts = String(value).split("-");
-return parts.length === 3
-? parts[1] + "/" + parts[2]
-: String(value);
+function shortMatchup(r){
+if(r.away_team&&r.home_team)
+return shortTeam(r.away_team)+" @ "+shortTeam(r.home_team);
+return r.matchup||"--";
 }
 
-function formatTipoff(value) {
-if (!value) return "--";
+function formatDate(v){
+if(!v)return "--";
+const p=String(v).split("-");
+return p.length===3?p[1]+"/"+p[2]:String(v);
+}
 
-const raw = String(value).trim();
-const parsed = new Date(raw);
-
-if (!Number.isNaN(parsed.getTime())) {
+function formatTipoff(v){
+if(!v)return "--";
+const d=new Date(v);
+if(!Number.isNaN(d.getTime()))
 return new Intl.DateTimeFormat("en-US",{
 timeZone:"America/New_York",
-hour:"numeric",
-minute:"2-digit",
-hour12:true
-}).format(parsed);
+hour:"numeric",minute:"2-digit",hour12:true
+}).format(d);
+return String(v);
 }
 
-if (/^\d{1,2}:\d{2}\s*(AM|PM)$/i.test(raw)) {
-return raw;
+function num(v,n=1){
+if(v===null||v===undefined||v==="")return "--";
+const x=Number(v);
+return Number.isFinite(x)?x.toFixed(n):"--";
 }
 
-return raw;
+function pct(v){
+if(v===null||v===undefined||v==="")return "--";
+const x=Number(v);
+return Number.isFinite(x)?(x*100).toFixed(1)+"%":"--";
 }
 
-function num(value, decimals=1) {
-if (value === null || value === undefined || value === "") {
-return "--";
-}
-const n = Number(value);
-return Number.isFinite(n) ? n.toFixed(decimals) : "--";
+function odds(v){
+if(v===null||v===undefined||v==="")return "--";
+const x=Number(v);
+return Number.isFinite(x)?(x>0?"+":"")+x:"--";
 }
 
-function pct(value) {
-if (value === null || value === undefined || value === "") {
-return "--";
-}
-const n = Number(value);
-return Number.isFinite(n)
-? (n * 100).toFixed(1) + "%"
-: "--";
+function normalizeMarket(v){
+const s=String(v||"").toLowerCase();
+if(s.includes("point"))return "Points";
+if(s.includes("rebound"))return "Rebounds";
+if(s.includes("assist"))return "Assists";
+return v||"";
 }
 
-function odds(value) {
-if (value === null || value === undefined || value === "") {
-return "--";
-}
-const n = Number(value);
-return Number.isFinite(n)
-? (n > 0 ? "+" : "") + n
-: "--";
+function normalizeSide(v){
+const s=String(v||"").toLowerCase();
+if(s==="over")return "Over";
+if(s==="under")return "Under";
+return v||"";
 }
 
-function gameKey(row) {
-return String(
-row.event_id ||
-((row.date || row.game_date || "") + "|" + (row.matchup || ""))
-);
+function shortMarket(v){
+return {Points:"PTS",Rebounds:"REB",Assists:"AST"}[
+normalizeMarket(v)]||v||"--";
 }
 
-function normalizeMarket(value) {
-const s = String(value || "").toLowerCase();
-if (s.includes("point")) return "Points";
-if (s.includes("rebound")) return "Rebounds";
-if (s.includes("assist")) return "Assists";
-return value || "";
-}
-
-function normalizeSide(value) {
-const s = String(value || "").toLowerCase();
-if (s === "over") return "Over";
-if (s === "under") return "Under";
-return value || "";
-}
-
-function shortMarket(value) {
-const market = normalizeMarket(value);
-if (market === "Points") return "PTS";
-if (market === "Rebounds") return "REB";
-if (market === "Assists") return "AST";
-return market || "--";
-}
-
-function predictionKey(row) {
-return [
-row.event_id || "",
-row.game_date || row.date || "",
-String(row.player || "").trim().toLowerCase(),
-normalizeMarket(row.market),
-normalizeSide(row.side),
-String(row.line ?? "")
-].join("|");
-}
-
-function present(row, keys) {
-for (const key of keys) {
-if (
-row[key] !== null &&
-row[key] !== undefined &&
-row[key] !== ""
-) {
-return row[key];
-}
-}
+function present(r,keys){
+for(const k of keys)
+if(r[k]!==null&&r[k]!==undefined&&r[k]!=="")
+return r[k];
 return null;
 }
 
-function numeric(row, keys) {
-const value = present(row, keys);
-if (value === null) return null;
-const n = Number(value);
-return Number.isFinite(n) ? n : null;
+function numeric(r,keys){
+const v=present(r,keys);
+if(v===null)return null;
+const n=Number(v);
+return Number.isFinite(n)?n:null;
 }
 
-function minutesDetails(row) {
-const sd = numeric(row, [
-"minutes_stddev",
-"minutes_std_dev",
+function minutesDetails(r){
+const sd=numeric(r,[
+"minutes_stddev","minutes_std_dev",
 "minutes_standard_deviation",
 "minutes_last10_stddev",
 "minutes_last10_std",
-"minutes_volatility",
-"minutes_sd"
+"minutes_volatility","minutes_sd"
 ]);
 
-const raw = present(row, [
+const raw=present(r,[
 "minutes_reliability",
 "minutes_reliability_label",
 "minutes_reliability_category",
-"minutes_risk",
-"minutes_risk_label",
-"minutes_stability",
-"minutes_rating"
+"minutes_risk","minutes_risk_label",
+"minutes_stability","minutes_rating"
 ]);
 
-let label = null;
+let label=null;
 
-if (raw !== null) {
-const s = String(raw).toLowerCase();
-
-if (s.includes("volatile") || s.includes("high risk")) {
-label = "Volatile";
-} else if (s.includes("moderate") || s.includes("medium")) {
-label = "Moderate";
-} else if (s.includes("stable") || s.includes("reliable")) {
-label = "Stable";
-}
+if(raw!==null){
+const s=String(raw).toLowerCase();
+if(s.includes("volatile")||s.includes("high risk"))
+label="Volatile";
+else if(s.includes("moderate")||s.includes("medium"))
+label="Moderate";
+else if(s.includes("stable")||s.includes("reliable"))
+label="Stable";
 }
 
-if (!label && sd !== null) {
-label = sd <= 4
-? "Stable"
-: sd <= 7
-? "Moderate"
-: "Volatile";
-}
+if(!label&&sd!==null)
+label=sd<=4?"Stable":sd<=7?"Moderate":"Volatile";
 
 return {
-label:label || "N/A",
-sd:sd,
-projection:numeric(row,["minutes_projection"])
+label:label||"N/A",
+sd,
+projection:numeric(r,["minutes_projection"])
 };
 }
 
-function historyRow(row) {
-const outcome = String(row.outcome || "").toLowerCase();
-const status = String(row.status || "").toLowerCase();
+function historyRow(r){
+const outcome=String(r.outcome||"").toLowerCase();
+const status=String(r.status||"").toLowerCase();
 
 return {
-...row,
-date:row.game_date || row.date || "",
-market:normalizeMarket(row.market),
-side:normalizeSide(row.side),
-ev:row.model_ev ?? row.ev ?? null,
-result:
-status === "graded" &&
+...r,
+date:r.game_date||r.date||"",
+market:normalizeMarket(r.market),
+side:normalizeSide(r.side),
+ev:r.model_ev??r.ev??null,
+result:status==="graded"&&
 ["win","loss","push"].includes(outcome)
-? outcome
-: ["invalid","dnp","not_selected"].includes(status)
-? status
-: "pending",
-selection_status:
-status === "not_selected" ? "not_selected" : "selected",
+?outcome:
+["invalid","dnp","not_selected"].includes(status)
+?status:"pending",
+selection_status:status==="not_selected"
+?"not_selected":"selected",
 historical:true
 };
 }
 
-function currentRow(row) {
+function currentRow(r){
 return {
-...row,
-date:row.game_date || row.date || "",
-market:normalizeMarket(row.market),
-side:normalizeSide(row.side),
-ev:row.ev ?? row.model_ev ?? null,
+...r,
+date:r.game_date||r.date||"",
+market:normalizeMarket(r.market),
+side:normalizeSide(r.side),
+ev:r.ev??r.model_ev??null,
 result:"pending",
 selection_status:"unverified",
 historical:false
 };
 }
 
-function markCurrentSelections(rows) {
-const groups = new Map();
-
-rows.forEach((row,index) => {
-const key = [
-row.date,
-row.event_id || row.matchup || "",
-String(row.player || "").trim().toLowerCase(),
-String(row.market || "").toLowerCase()
+function selectionGroupKey(r){
+return [
+r.date,
+r.event_id||r.matchup||"",
+String(r.player||"").trim().toLowerCase(),
+String(r.market||"").toLowerCase()
 ].join("|");
+}
 
-if (!groups.has(key)) groups.set(key,[]);
-groups.get(key).push(index);
+function markCurrentSelections(rows){
+const groups=new Map();
+
+rows.forEach((r,i)=>{
+const k=selectionGroupKey(r);
+if(!groups.has(k))groups.set(k,[]);
+groups.get(k).push(i);
 });
 
-for (const indices of groups.values()) {
-let best = -1;
-let bestEv = -Infinity;
-let bestProb = -Infinity;
+for(const indices of groups.values()){
+let best=-1,bestEv=-Infinity,bestProb=-Infinity;
 
-for (const index of indices) {
-const row = rows[index];
-const ev = numeric(row,["ev"]);
-const prob = numeric(row,["probability"]);
+for(const i of indices){
+const r=rows[i];
+const ev=numeric(r,["ev"]);
+const prob=numeric(r,["probability"]);
 
-if (
-ev === null ||
-ev <= 0 ||
-!["Over","Under"].includes(row.side)
-) continue;
+if(ev===null||ev<=0||
+!["Over","Under"].includes(r.side))continue;
 
-const pr = prob === null ? -1 : prob;
+const p=prob===null?-1:prob;
 
-if (
-ev > bestEv ||
-(ev === bestEv && pr > bestProb)
-) {
-best = index;
-bestEv = ev;
-bestProb = pr;
+if(ev>bestEv||(ev===bestEv&&p>bestProb)){
+best=i;
+bestEv=ev;
+bestProb=p;
 }
 }
 
-for (const index of indices) {
-rows[index].selection_status =
-index === best ? "selected" : "not_selected";
-
-if (index !== best) {
-rows[index].result = "not_selected";
-}
+for(const i of indices){
+rows[i].selection_status=i===best
+?"selected":"not_selected";
+if(i!==best)rows[i].result="not_selected";
 }
 }
 }
 
-function isoDay(date) {
+function predictionKey(r){
 return [
-date.getFullYear(),
-String(date.getMonth()+1).padStart(2,"0"),
-String(date.getDate()).padStart(2,"0")
+r.event_id||"",
+r.game_date||r.date||"",
+String(r.player||"").trim().toLowerCase(),
+normalizeMarket(r.market),
+normalizeSide(r.side),
+String(r.line??"")
+].join("|");
+}
+
+function gameKey(r){
+return String(r.event_id||
+((r.date||r.game_date||"")+"|"+(r.matchup||"")));
+}
+
+function isoDay(d){
+return [
+d.getFullYear(),
+String(d.getMonth()+1).padStart(2,"0"),
+String(d.getDate()).padStart(2,"0")
 ].join("-");
 }
 
-function dateMinusOne(value) {
-if (!value) return "";
-const d = new Date(value + "T12:00:00Z");
-if (Number.isNaN(d.getTime())) return "";
+function dateMinusOne(s){
+if(!s)return "";
+const d=new Date(s+"T12:00:00Z");
+if(Number.isNaN(d.getTime()))return "";
 d.setUTCDate(d.getUTCDate()-1);
 return d.toISOString().slice(0,10);
 }
 
-function chooseDates(json) {
-const dates = todayData
-.map(row => row.date)
-.filter(Boolean)
-.sort();
-
-todayDate = dates[dates.length-1] || "";
-
-if (!todayDate && json.generated_at) {
-todayDate = String(json.generated_at).slice(0,10);
+function chooseDates(json){
+const dates=todayData.map(r=>r.date).filter(Boolean).sort();
+todayDate=dates.at(-1)||
+String(json.generated_at||"").slice(0,10)||
+isoDay(new Date());
+yesterdayDate=dateMinusOne(todayDate);
 }
 
-if (!todayDate) {
-todayDate = isoDay(new Date());
+function displayResult(r){
+return {
+win:"WIN",loss:"LOSS",push:"PUSH",
+pending:"PEND",dnp:"DNP",
+invalid:"INVALID",not_selected:"SKIP"
+}[String(r||"pending").toLowerCase()]||
+String(r).toUpperCase();
 }
 
-yesterdayDate = dateMinusOne(todayDate);
+function populateGames(){
+const s=el("game"),old=s.value;
+s.replaceChildren(new Option("All Games",""));
+
+const games=new Map();
+for(const r of data)
+games.set(gameKey(r),formatDate(r.date)+" "+shortMatchup(r));
+
+for(const [key,label] of [...games].sort((a,b)=>
+a[1].localeCompare(b[1])))
+s.add(new Option(label,key));
+
+if([...s.options].some(o=>o.value===old))s.value=old;
 }
 
-function populateGames() {
-const select = el("game");
-const old = select.value;
-
-select.replaceChildren();
-
-const all = document.createElement("option");
-all.value = "";
-all.textContent = "All Games";
-select.appendChild(all);
-
-const games = new Map();
-
-for (const row of data) {
-games.set(
-gameKey(row),
-formatDate(row.date) + " " + shortMatchup(row)
-);
-}
-
-for (const [key,label] of
-[...games].sort((a,b)=>a[1].localeCompare(b[1]))) {
-const option = document.createElement("option");
-option.value = key;
-option.textContent = label;
-select.appendChild(option);
-}
-
-if ([...select.options].some(o => o.value === old)) {
-select.value = old;
-}
-}
-
-function switchDay(day) {
-activeDay = day;
+function switchDay(day){
+activeDay=day;
 
 el("tab-today").classList.toggle("active",day==="today");
 el("tab-yesterday").classList.toggle("active",day==="yesterday");
 
-el("tab-today").setAttribute(
-"aria-pressed",String(day==="today")
-);
+data=day==="today"
+?todayData.filter(r=>r.date===todayDate)
+:historyData.filter(r=>r.date===yesterdayDate);
 
-el("tab-yesterday").setAttribute(
-"aria-pressed",String(day==="yesterday")
-);
+el("day-description").textContent=
+(day==="today"?"Today — "+todayDate:
+"Yesterday — "+yesterdayDate)+
+" | "+(day==="today"?"Current predictions":"Saved historical predictions");
 
-if (day === "today") {
-data = todayData.filter(row => row.date === todayDate);
-
-el("day-description").textContent =
-"Today — " + todayDate +
-" | Current model predictions";
-} else {
-data = historyData.filter(row => row.date === yesterdayDate);
-
-el("day-description").textContent =
-"Yesterday — " + yesterdayDate +
-" | Saved pregame predictions and graded results";
-}
-
-el("game").value = "";
-
+el("game").value="";
 populateGames();
 updateSummary();
 displayGameLines(data);
 draw();
 }
 
-function updateSummary() {
-el("count").textContent = data.length;
-
-el("positive").textContent =
-data.filter(row => row.selection_status === "selected").length;
-
-el("games").textContent =
-new Set(data.map(gameKey)).size;
-
-const summary = gradedReport?.summary;
-
-el("total-wins").textContent =
-summary ? summary.wins : "--";
-
-el("total-losses").textContent =
-summary ? summary.losses : "--";
+function updateSummary(){
+el("count").textContent=data.length;
+el("positive").textContent=
+data.filter(r=>r.selection_status==="selected").length;
+el("games").textContent=new Set(data.map(gameKey)).size;
+el("total-wins").textContent=gradedReport?.summary?.wins??"--";
+el("total-losses").textContent=gradedReport?.summary?.losses??"--";
 }
 
-function sortValue(row) {
-if (sortKey === "minutes_reliability") {
-return {
-Stable:3,
-Moderate:2,
-Volatile:1
-}[minutesDetails(row).label] ?? 0;
+function sortValue(r){
+if(sortKey==="minutes_reliability")
+return {Stable:3,Moderate:2,Volatile:1}[
+minutesDetails(r).label]??0;
+if(sortKey==="minutes_projection")
+return minutesDetails(r).projection;
+if(sortKey==="team")return r.team_abbr||r.team;
+return r[sortKey];
 }
 
-if (sortKey === "minutes_projection") {
-return minutesDetails(row).projection;
-}
+function draw(){
+const query=el("search").value.trim().toLowerCase();
+const game=el("game").value;
+const market=el("market").value;
+const side=el("side").value;
+const oddsLimit=el("odds-filter").value;
+const minFilter=el("minutes-filter").value;
+const selection=el("selection-filter").value;
+const result=el("result-filter").value;
 
-if (sortKey === "team") {
-return row.team_abbr || row.team;
-}
-
-return row[sortKey];
-}
-
-function displayResult(result) {
-const r = String(result || "pending").toLowerCase();
-
-const labels = {
-win:"WIN",
-loss:"LOSS",
-push:"PUSH",
-pending:"PEND",
-dnp:"DNP",
-invalid:"INVALID",
-not_selected:"SKIP"
-};
-
-return labels[r] || r.toUpperCase();
-}
-
-function draw() {
-const query = el("search").value.trim().toLowerCase();
-const game = el("game").value;
-const market = el("market").value;
-const side = el("side").value;
-const oddsLimit = el("odds-filter").value;
-const minFilter = el("minutes-filter").value;
-const selectionFilter = el("selection-filter").value;
-const resultFilter = el("result-filter").value;
-
-const filtered = data.filter(row => {
-const searchText = [
-row.player,
-row.team,
-row.team_abbr,
-row.opponent,
-row.matchup,
-row.away_team,
-row.home_team
+const filtered=data.filter(r=>{
+const text=[
+r.player,r.team,r.team_abbr,r.opponent,
+r.matchup,r.away_team,r.home_team
 ].filter(Boolean).join(" ").toLowerCase();
 
-const risk = minutesDetails(row).label;
+const risk=minutesDetails(r).label;
 
-const minutesMatch = !minFilter ||
-(minFilter === "exclude-volatile"
-? risk !== "Volatile"
-: risk === minFilter);
-
-const oddsMatch = oddsLimit === "" ||
-(
-row.odds !== null &&
-row.odds !== undefined &&
-Number.isFinite(Number(row.odds)) &&
-Number(row.odds) >= Number(oddsLimit)
-);
-
-return (
-searchText.includes(query) &&
-(!game || gameKey(row) === game) &&
-(!market || row.market === market) &&
-(!side || row.side === side) &&
-oddsMatch &&
-minutesMatch &&
-(!selectionFilter || row.selection_status === selectionFilter) &&
-(!resultFilter || row.result === resultFilter)
-);
+return text.includes(query)&&
+(!game||gameKey(r)===game)&&
+(!market||r.market===market)&&
+(!side||r.side===side)&&
+(!selection||r.selection_status===selection)&&
+(!result||r.result===result)&&
+(!minFilter||
+(minFilter==="exclude-volatile"
+?risk!=="Volatile":risk===minFilter))&&
+(!oddsLimit||
+(r.odds!=null&&Number.isFinite(Number(r.odds))&&
+Number(r.odds)>=Number(oddsLimit)));
 });
 
-filtered.sort((a,b) => {
-const av = sortValue(a);
-const bv = sortValue(b);
-let compare;
+filtered.sort((a,b)=>{
+const av=sortValue(a),bv=sortValue(b);
+let c=0;
 
-if (av === null || av === undefined) {
-compare = 1;
-} else if (bv === null || bv === undefined) {
-compare = -1;
-} else if (
-Number.isFinite(Number(av)) &&
-Number.isFinite(Number(bv)) &&
-String(av).trim() !== "" &&
-String(bv).trim() !== ""
-) {
-compare = Number(av) - Number(bv);
-} else {
-compare = String(av).localeCompare(String(bv));
-}
+if(av==null)c=1;
+else if(bv==null)c=-1;
+else if(Number.isFinite(Number(av))&&
+Number.isFinite(Number(bv))&&
+String(av).trim()!==""&&String(bv).trim()!=="")
+c=Number(av)-Number(bv);
+else c=String(av).localeCompare(String(bv));
 
-return sortAscending ? compare : -compare;
+return sortAscending?c:-c;
 });
 
-const tbody = el("rows");
+const tbody=el("rows");
 tbody.replaceChildren();
 
-if (!filtered.length) {
-const tr = document.createElement("tr");
-const td = document.createElement("td");
-td.colSpan = 18;
+for(const r of filtered){
+const tr=document.createElement("tr");
+const m=minutesDetails(r);
+const result=String(r.result||"pending").toLowerCase();
 
-td.textContent = data.length
-? "No predictions match these filters."
-: "No saved predictions available for this date.";
-
-tr.appendChild(td);
-tbody.appendChild(tr);
-}
-
-for (const row of filtered) {
-const tr = document.createElement("tr");
-const minutes = minutesDetails(row);
-const result = String(row.result || "pending").toLowerCase();
-
-const values = [
-formatDate(row.date),
-shortMatchup(row),
-formatTipoff(row.game_time),
-row.player || "--",
-shortTeam(row.team_abbr || row.team),
-shortTeam(row.opponent),
-shortMarket(row.market),
-row.side || "--",
-num(row.line,1),
-odds(row.odds),
-num(row.projection,1),
-pct(row.probability),
-pct(row.ev),
-row.last10 === null || row.last10 === undefined
-? "--"
-: String(row.last10) + "/10",
-minutes.label,
-num(minutes.projection,1),
-num(row.actual,1),
-displayResult(result)
+const values=[
+formatDate(r.date),shortMatchup(r),
+formatTipoff(r.game_time),r.player||"--",
+shortTeam(r.team_abbr||r.team),
+shortTeam(r.opponent),shortMarket(r.market),
+r.side||"--",num(r.line),odds(r.odds),
+num(r.projection),pct(r.probability),
+pct(r.ev),
+r.last10==null?"--":r.last10+"/10",
+m.label,num(m.projection),
+num(r.actual),displayResult(result)
 ];
 
-values.forEach((value,index) => {
-const td = document.createElement("td");
-td.textContent = value;
-td.title = String(value);
+values.forEach((v,i)=>{
+const td=document.createElement("td");
+td.textContent=v;
+td.title=String(v);
 
-if (index === 3) td.className = "player";
+if(i===3)td.className="player";
+if(i===7)td.className=r.side==="Over"?"over":"under";
+if(i===12)td.className=Number(r.ev)>0?"green":"red";
+if(i===17)td.className=result;
 
-if (index === 7) {
-td.className = row.side === "Over" ? "over" : "under";
-}
-
-if (index === 12) {
-td.className = Number(row.ev) > 0 ? "green" : "red";
-}
-
-if (index === 17) {
-td.className = result;
-}
-
-if (index === 14) {
-const pill = document.createElement("span");
-pill.className = "pill " +
-(minutes.label === "N/A" ? "NA" : minutes.label);
-
-pill.textContent = minutes.label;
-
-pill.title = minutes.sd === null
-? "Minutes diagnostics unavailable"
-: "Minutes standard deviation: " + num(minutes.sd,1);
-
+if(i===14){
+const pill=document.createElement("span");
+pill.className="pill "+(m.label==="N/A"?"NA":m.label);
+pill.textContent=m.label;
+pill.title=m.sd==null?"Minutes diagnostics unavailable":
+"Minutes SD: "+num(m.sd);
 td.replaceChildren(pill);
 }
 
-if (index === 16 && row.actual == null) {
-td.textContent = "--";
-}
-
 tr.appendChild(td);
 });
-
 tbody.appendChild(tr);
 }
 
-const wins = filtered.filter(r => r.result === "win").length;
-const losses = filtered.filter(r => r.result === "loss").length;
-const pending = filtered.filter(r => r.result === "pending").length;
-
-el("status").textContent =
-filtered.length + " of " + data.length +
-" outcomes displayed" +
-(activeDay === "yesterday"
-? " | " + wins + " wins · " +
-losses + " losses · " + pending + " pending"
-: "") + ".";
+if(!filtered.length){
+const tr=document.createElement("tr");
+const td=document.createElement("td");
+td.colSpan=18;
+td.textContent="No predictions match the current filters.";
+tr.appendChild(td);
+tbody.appendChild(tr);
 }
 
-function addText(parent,tag,value,className="") {
-const node = document.createElement(tag);
-node.textContent = value;
-if (className) node.className = className;
-parent.appendChild(node);
-return node;
+el("status").textContent=
+filtered.length+" of "+data.length+" predictions displayed.";
 }
 
-function metric(parent,label,value) {
-const line = addText(parent,"div","","metric");
+function addText(parent,tag,value,cls=""){
+const n=document.createElement(tag);
+n.textContent=value;
+if(cls)n.className=cls;
+parent.appendChild(n);
+return n;
+}
+
+function addCard(container,title,items,big=null){
+const c=addText(container,"div","","card");
+addText(c,"h3",title);
+if(big!==null)addText(c,"div",big,"big");
+
+for(const [label,value] of items){
+const line=addText(c,"div","","metric");
 addText(line,"span",label);
 addText(line,"strong",String(value));
 }
-
-function addCard(container,title,items,bigValue=null) {
-const card = addText(container,"div","","card");
-addText(card,"h3",title);
-
-if (bigValue !== null) {
-addText(card,"div",bigValue,"big");
+return c;
 }
 
-for (const [label,value] of items) {
-metric(card,label,value);
-}
-
-return card;
-}
-
-function displayGameLines(rows) {
-const grid = el("game-lines-grid");
+function displayGameLines(rows){
+const grid=el("game-lines-grid");
 grid.replaceChildren();
+const games=new Map();
 
-const games = new Map();
-
-for (const row of rows) {
-const key = gameKey(row);
-const previous = games.get(key);
-
-if (
-!previous ||
-(previous.game_total == null && row.game_total != null)
-) {
-games.set(key,row);
-}
+for(const r of rows){
+const k=gameKey(r),prev=games.get(k);
+if(!prev||(prev.game_total==null&&r.game_total!=null))
+games.set(k,r);
 }
 
-let available = 0;
+let available=0;
 
-for (const row of games.values()) {
-if (
-row.game_total != null &&
-Number.isFinite(Number(row.game_total))
-) {
-available++;
-}
+for(const r of games.values()){
+if(r.game_total!=null)available++;
 
-addCard(grid,shortMatchup(row),[
-["Tipoff (ET)",formatDate(row.date)+" "+formatTipoff(row.game_time)],
-[shortTeam(row.away_team)+" Spread",num(row.away_spread)],
-[shortTeam(row.home_team)+" Spread",num(row.home_spread)],
-["Game Total",num(row.game_total)],
-[shortTeam(row.away_team)+" Implied",num(row.away_implied_total)],
-[shortTeam(row.home_team)+" Implied",num(row.home_implied_total)]
+addCard(grid,shortMatchup(r),[
+["Tipoff (ET)",formatDate(r.date)+" "+formatTipoff(r.game_time)],
+[shortTeam(r.away_team)+" Spread",num(r.away_spread)],
+[shortTeam(r.home_team)+" Spread",num(r.home_spread)],
+["Game Total",num(r.game_total)],
+[shortTeam(r.away_team)+" Implied",num(r.away_implied_total)],
+[shortTeam(r.home_team)+" Implied",num(r.home_implied_total)]
 ]);
 }
 
-el("game-lines-status").textContent = games.size
-? available + " of " + games.size +
-" games have saved lines available."
-: "No saved game lines available for this date.";
+el("game-lines-status").textContent=
+games.size?available+" of "+games.size+" games have saved lines.":
+"No saved game lines for this date.";
 }
 
-async function fetchJson(filename) {
-const response = await fetch(
-"./" + filename + "?t=" + Date.now(),
-{cache:"no-store"}
-);
-
-if (!response.ok) {
-throw new Error(filename + ": HTTP " + response.status);
-}
-
+async function fetchJson(filename){
+const response=await fetch("./"+filename+"?t="+Date.now(),
+{cache:"no-store"});
+if(!response.ok)
+throw new Error(filename+": HTTP "+response.status);
 return response.json();
 }
 
-async function loadData() {
-el("status").textContent = "Loading predictions...";
+async function loadData(){
+el("status").textContent="Loading predictions...";
 
-try {
-const [currentResult,historyResult] =
-await Promise.allSettled([
+try{
+const [currentResult,historyResult]=await Promise.allSettled([
 fetchJson("results.json"),
 fetchJson("graded_predictions.json")
 ]);
 
-if (currentResult.status !== "fulfilled") {
+if(currentResult.status!=="fulfilled")
 throw currentResult.reason;
-}
 
-const json = currentResult.value;
-
-if (!Array.isArray(json.results)) {
+const json=currentResult.value;
+if(!Array.isArray(json.results))
 throw new Error("results.json has no results array");
-}
 
-todayData = json.results.map(currentRow);
+todayData=json.results.map(currentRow);
 markCurrentSelections(todayData);
 
-gradedReport =
-historyResult.status === "fulfilled"
-? historyResult.value
-: null;
+gradedReport=historyResult.status==="fulfilled"
+?historyResult.value:null;
 
-historyData =
-historyResult.status === "fulfilled" &&
-Array.isArray(historyResult.value.predictions)
-? historyResult.value.predictions.map(historyRow)
-: [];
+historyData=Array.isArray(gradedReport?.predictions)
+?gradedReport.predictions.map(historyRow):[];
 
-const historicalByKey = new Map();
+const saved=new Map();
+for(const r of historyData)saved.set(predictionKey(r),r);
 
-for (const row of historyData) {
-historicalByKey.set(predictionKey(row),row);
-}
-
-for (const row of todayData) {
-const saved = historicalByKey.get(predictionKey(row));
-
-if (saved) {
-row.result = saved.result;
-row.actual = saved.actual;
-row.selection_status = saved.selection_status;
+for(const r of todayData){
+const match=saved.get(predictionKey(r));
+if(match){
+r.result=match.result;
+r.actual=match.actual;
+r.selection_status=match.selection_status;
 }
 }
 
 chooseDates(json);
 
-el("updated").textContent = json.generated_at
-? new Date(json.generated_at).toLocaleString()
-: "Unknown";
+el("updated").textContent=json.generated_at
+?new Date(json.generated_at).toLocaleString():"Unknown";
 
-el("model-version").textContent =
-json.results[0]?.model ||
-json.results[0]?.model_version ||
+el("model-version").textContent=
+json.results[0]?.model||
+json.results[0]?.model_version||
 "Experimental model";
 
 switchDay(activeDay);
 
-if (historyResult.status !== "fulfilled") {
-el("day-description").textContent +=
-" | Historical grading file could not be loaded.";
-}
-
-} catch(error) {
-console.error(error);
-
-todayData = [];
-historyData = [];
-data = [];
-gradedReport = null;
-
-el("status").textContent =
-"Could not load predictions: " + error.message;
-
-el("rows").replaceChildren();
-updateSummary();
-displayGameLines([]);
+}catch(e){
+console.error(e);
+el("status").textContent="Data loading failed: "+e.message;
 }
 }
 
-function trackUnits(value) {
-if (
-value === null ||
-value === undefined ||
-!Number.isFinite(Number(value))
-) {
-return "--";
+function trackUnits(v){
+if(v==null||!Number.isFinite(Number(v)))return "--";
+const n=Number(v)/100;
+return (n>0?"+":"")+n.toFixed(2)+" units";
 }
 
-const units = Number(value) / 100;
-
-return (units > 0 ? "+" : "") +
-units.toFixed(2) + " units";
-}
-
-function trackingCard(container,title,summary) {
-const s = summary || {};
-
-addCard(container,title,[
-["Graded",s.graded ?? 0],
-["Wins / Losses / Pushes",
-(s.wins ?? 0) + " / " +
-(s.losses ?? 0) + " / " +
-(s.pushes ?? 0)],
-["Win Rate",
-s.win_rate == null
-? "--"
-: Number(s.win_rate).toFixed(1) + "%"],
-["ROI",
-s.hypothetical_roi == null
-? "--"
-: Number(s.hypothetical_roi).toFixed(1) + "%"],
-["Profit / Loss",trackUnits(s.hypothetical_profit)],
-["DNP / Pending",
-(s.dnp ?? 0) + " / " + (s.pending ?? 0)]
-]);
-}
-
-function summarizeSelected(rows) {
-const graded = rows.filter(row =>
-row.status === "graded" &&
+function summarizeSelected(rows){
+const graded=rows.filter(r=>
+r.status==="graded"&&
 ["win","loss","push"].includes(
-String(row.outcome || "").toLowerCase()
-)
-);
+String(r.outcome||"").toLowerCase()));
 
-const wins = graded.filter(
-row => row.outcome === "win"
-).length;
-
-const losses = graded.filter(
-row => row.outcome === "loss"
-).length;
-
-const pushes = graded.filter(
-row => row.outcome === "push"
-).length;
-
-const stake = graded.reduce(
-(sum,row) => sum + (Number(row.stake) || 0),
-0
-);
-
-const profit = graded.reduce(
-(sum,row) => sum + (Number(row.profit) || 0),
-0
-);
+const wins=graded.filter(r=>r.outcome==="win").length;
+const losses=graded.filter(r=>r.outcome==="loss").length;
+const pushes=graded.filter(r=>r.outcome==="push").length;
+const stake=graded.reduce((s,r)=>s+(Number(r.stake)||0),0);
+const profit=graded.reduce((s,r)=>s+(Number(r.profit)||0),0);
 
 return {
 selected:rows.length,
-graded:graded.length,
-wins,
-losses,
-pushes,
-dnp:rows.filter(row => row.status === "dnp").length,
-pending:rows.filter(row => row.status === "pending").length,
-win_rate:
-wins + losses
-? 100 * wins / (wins + losses)
-: null,
-hypothetical_roi:
-stake
-? 100 * profit / stake
-: null,
+graded:graded.length,wins,losses,pushes,
+dnp:rows.filter(r=>r.status==="dnp").length,
+pending:rows.filter(r=>r.status==="pending").length,
+win_rate:wins+losses?100*wins/(wins+losses):null,
+hypothetical_roi:stake?100*profit/stake:null,
 hypothetical_profit:profit
 };
 }
 
-function selectionAudit(rows) {
-const groups = new Map();
-
-for (const row of rows.filter(
-r => r.status !== "not_selected"
-)) {
-const key = [
-row.game_date,
-row.event_id || row.matchup,
-String(row.player || "").trim().toLowerCase(),
-String(row.market || "").trim().toLowerCase()
-].join("|");
-
-if (!groups.has(key)) {
-groups.set(key,[]);
+function trackingCard(container,title,s={}){
+addCard(container,title,[
+["Graded",s.graded??0],
+["Wins / Losses / Pushes",
+(s.wins??0)+" / "+(s.losses??0)+" / "+(s.pushes??0)],
+["Win Rate",s.win_rate==null?"--":num(s.win_rate)+"%"],
+["ROI",s.hypothetical_roi==null?"--":
+num(s.hypothetical_roi)+"%"],
+["Profit",trackUnits(s.hypothetical_profit)],
+["DNP / Pending",(s.dnp??0)+" / "+(s.pending??0)]
+]);
 }
 
-groups.get(key).push(row);
+function displayDaily(rows){
+const groups=new Map();
+
+for(const r of rows){
+const date=r.game_date||r.date||"Unknown";
+if(!groups.has(date))groups.set(date,[]);
+groups.get(date).push(r);
 }
 
-const duplicates = [...groups.values()]
-.filter(group => group.length > 1);
-
-const audit = el("selection-audit");
-
-audit.textContent = duplicates.length
-? "WARNING: " + duplicates.length +
-" player/game/market groups have multiple selected predictions. " +
-"Review the grader before trusting ROI."
-: "Selection audit passed: " + groups.size +
-" player/game/market groups with no duplicate selected sides.";
-
-audit.className = duplicates.length ? "warn" : "note";
-}
-
-function displayDaily(rows) {
-const groups = new Map();
-
-for (const row of rows) {
-const date = row.game_date || "Unknown";
-
-if (!groups.has(date)) {
-groups.set(date,[]);
-}
-
-groups.get(date).push(row);
-}
-
-const tbody = el("daily-results");
+const tbody=el("daily-results");
 tbody.replaceChildren();
 
-for (const [date,dayRows] of
-[...groups].sort((a,b)=>b[0].localeCompare(a[0]))) {
+for(const [date,items] of
+[...groups].sort((a,b)=>b[0].localeCompare(a[0]))){
+const s=summarizeSelected(items);
+const tr=document.createElement("tr");
 
-const s = summarizeSelected(dayRows);
-const tr = document.createElement("tr");
-
-const values = [
-date,
-s.selected,
-s.graded,
-s.wins,
-s.losses,
-s.pushes,
-s.dnp,
-s.pending,
-s.win_rate == null
-? "--"
-: s.win_rate.toFixed(1) + "%",
-s.hypothetical_roi == null
-? "--"
-: s.hypothetical_roi.toFixed(1) + "%",
+[
+date,s.selected,s.graded,s.wins,s.losses,
+s.pushes,s.dnp,s.pending,
+s.win_rate==null?"--":num(s.win_rate)+"%",
+s.hypothetical_roi==null?"--":num(s.hypothetical_roi)+"%",
 trackUnits(s.hypothetical_profit)
-];
-
-for (const value of values) {
-const td = document.createElement("td");
-td.textContent = String(value);
+].forEach(v=>{
+const td=document.createElement("td");
+td.textContent=v;
 tr.appendChild(td);
-}
-
-tbody.appendChild(tr);
-}
-
-if (!groups.size) {
-const tr = document.createElement("tr");
-const td = document.createElement("td");
-
-td.colSpan = 11;
-td.textContent = "No selected predictions available.";
-
-tr.appendChild(td);
+});
 tbody.appendChild(tr);
 }
 }
 
-async function loadTracking() {
-const status = el("tracking-status");
-const marketGrid = el("tracking-breakdowns");
-const sideGrid = el("side-breakdowns");
+function selectionAudit(rows){
+const groups=new Map();
 
-status.textContent = "Loading selected prediction results...";
+for(const r of rows.filter(r=>r.status!=="not_selected")){
+const k=[
+r.game_date,r.event_id||r.matchup,
+String(r.player||"").toLowerCase(),
+String(r.market||"").toLowerCase()
+].join("|");
 
+groups.set(k,(groups.get(k)||0)+1);
+}
+
+const duplicates=[...groups.values()].filter(n=>n>1).length;
+el("selection-audit").textContent=duplicates
+?"WARNING: "+duplicates+" groups contain duplicate selected sides."
+:"Selection audit passed: no duplicate selected sides.";
+}
+
+async function loadTracking(){
+try{
+const json=await fetchJson("graded_predictions.json");
+if(!json.summary||!Array.isArray(json.predictions))
+throw new Error("Invalid grading report");
+
+gradedReport=json;
+const s=json.summary;
+
+el("track-winrate").textContent=num(s.win_rate)+"%";
+el("track-roi").textContent=num(s.hypothetical_roi)+"%";
+el("track-profit").textContent=trackUnits(s.hypothetical_profit);
+el("track-settled").textContent=s.graded??0;
+
+el("tracking-details").textContent=
+(s.wins??0)+" wins · "+(s.losses??0)+" losses · "+
+(s.pushes??0)+" pushes · "+(s.dnp??0)+" DNP · "+
+(s.pending??0)+" pending · "+
+(s.not_selected??0)+" not selected";
+
+const selected=json.predictions.filter(
+r=>r.status!=="not_selected");
+
+const marketGrid=el("tracking-breakdowns");
+const sideGrid=el("side-breakdowns");
 marketGrid.replaceChildren();
 sideGrid.replaceChildren();
 
-try {
-const json = await fetchJson("graded_predictions.json");
-
-if (
-!json.summary ||
-!Array.isArray(json.predictions)
-) {
-throw new Error("Invalid grading report");
-}
-
-gradedReport = json;
-const s = json.summary;
-
-el("track-winrate").textContent =
-s.win_rate == null
-? "--"
-: Number(s.win_rate).toFixed(1) + "%";
-
-el("track-roi").textContent =
-s.hypothetical_roi == null
-? "--"
-: Number(s.hypothetical_roi).toFixed(1) + "%";
-
-el("track-profit").textContent =
-trackUnits(s.hypothetical_profit);
-
-el("track-settled").textContent =
-String(s.graded ?? 0);
-
-el("tracking-details").textContent =
-(s.wins ?? 0) + " wins · " +
-(s.losses ?? 0) + " losses · " +
-(s.pushes ?? 0) + " pushes · " +
-(s.dnp ?? 0) + " DNP · " +
-(s.pending ?? 0) + " pending · " +
-(s.not_selected ?? 0) + " not selected";
-
-const selected = json.predictions.filter(
-row => row.status !== "not_selected"
-);
-
-for (const [key,label] of [
-["points","Points"],
-["rebounds","Rebounds"],
+for(const [key,label] of [
+["points","Points"],["rebounds","Rebounds"],
 ["assists","Assists"]
-]) {
-const saved = json.markets?.[key];
+]){
+const subset=selected.filter(r=>
+String(r.market||"").toLowerCase()===key);
 
-const fallback = summarizeSelected(
-selected.filter(
-row => String(row.market || "").toLowerCase() === key
-)
-);
-
-trackingCard(
-marketGrid,
-label,
-saved || fallback
-);
+trackingCard(marketGrid,label,
+json.markets?.[key]||summarizeSelected(subset));
 }
 
-for (const [key,label] of [
-["over","Overs"],
-["under","Unders"]
-]) {
-const subset = selected.filter(
-row => String(row.side || "").toLowerCase() === key
-);
-
-trackingCard(
-sideGrid,
-label,
-summarizeSelected(subset)
-);
+for(const [key,label] of [
+["over","Overs"],["under","Unders"]
+]){
+trackingCard(sideGrid,label,summarizeSelected(
+selected.filter(r=>
+String(r.side||"").toLowerCase()===key)
+));
 }
 
 displayDaily(selected);
 selectionAudit(json.predictions);
-
-status.textContent =
-"Official grader summaries by market · Updated: " +
-(json.generated_at
-? new Date(json.generated_at).toLocaleString()
-: "Unknown");
-
 updateSummary();
 
-} catch(error) {
-console.warn(error);
+el("tracking-status").textContent=
+"Graded results updated: "+
+(json.generated_at?
+new Date(json.generated_at).toLocaleString():"Unknown");
 
-status.textContent =
-"Grading unavailable: " + error.message;
+}catch(e){
+el("tracking-status").textContent=
+"Grading unavailable: "+e.message;
 }
 }
 
-async function loadBacktest() {
-const status = el("backtest-status");
-const grid = el("performance-grid");
+async function loadBacktest(){
+try{
+const json=await fetchJson("backtest.json");
+if(!json.markets)throw new Error("Invalid backtest");
 
+const grid=el("performance-grid");
 grid.replaceChildren();
-status.textContent = "Loading backtest...";
 
-try {
-const json = await fetchJson("backtest.json");
-
-if (!json.markets) {
-throw new Error("Invalid backtest data");
-}
-
-for (const [key,label] of [
-["points","Points"],
-["rebounds","Rebounds"],
+for(const [key,label] of [
+["points","Points"],["rebounds","Rebounds"],
 ["assists","Assists"]
-]) {
-const s = json.markets[key] || {};
+]){
+const s=json.markets[key]||{};
 
 addCard(grid,label,[
-["Predictions Tested",s.predictions_tested ?? "--"],
+["Predictions Tested",s.predictions_tested??"--"],
 ["MAE",num(s.mean_absolute_error,3)],
 ["RMSE",num(s.root_mean_squared_error,3)],
 ["Bias",num(s.mean_signed_error,3)]
 ],num(s.mean_absolute_error,3));
 }
 
-status.textContent =
-"Backtest updated: " +
-(json.generated_at
-? new Date(json.generated_at).toLocaleString()
-: "Unknown");
+el("backtest-status").textContent="Backtest loaded.";
 
-} catch(error) {
-console.warn(error);
-
-status.textContent =
-"Backtest unavailable: " + error.message;
+}catch(e){
+el("backtest-status").textContent=
+"Backtest unavailable: "+e.message;
 }
 }
 
-el("tab-today").addEventListener(
-"click",
-()=>switchDay("today")
+/* ==================================================
+   EXCEL EXPORT
+   One workbook, Summary + one sheet per saved date.
+   Uses saved JSON only. No Odds API calls.
+   ================================================== */
+
+function excelNumber(v){
+if(v===null||v===undefined||v==="")return null;
+const n=Number(v);
+return Number.isFinite(n)?n:null;
+}
+
+function exportRow(r){
+const m=minutesDetails(r);
+
+return {
+"Date":r.date||"",
+"Matchup":shortMatchup(r),
+"Tipoff (ET)":formatTipoff(r.game_time),
+"Player":r.player||"",
+"Team":shortTeam(r.team_abbr||r.team),
+"Opponent":shortTeam(r.opponent),
+"Market":normalizeMarket(r.market),
+"Side":normalizeSide(r.side),
+"Line":excelNumber(r.line),
+"American Odds":excelNumber(r.odds),
+"Projection":excelNumber(r.projection),
+"Probability %":r.probability==null
+?null:excelNumber(r.probability)*100,
+"Model EV %":r.ev==null
+?null:excelNumber(r.ev)*100,
+"Last 10":r.last10??"",
+"Minutes Reliability":m.label,
+"Minutes SD":m.sd,
+"Projected Minutes":m.projection,
+"Actual":excelNumber(r.actual),
+"Selection Status":r.selection_status==="selected"
+?"Selected":"Not Selected",
+"Result":r.result==="not_selected"
+?"Not Picked":String(r.result||"pending").toUpperCase(),
+"Grading Status":r.status||"",
+"Stake":excelNumber(r.stake),
+"Profit":excelNumber(r.profit),
+"Event ID":r.event_id||""
+};
+}
+
+function excelWidths(){
+return [
+{wch:13},{wch:19},{wch:14},{wch:25},
+{wch:10},{wch:12},{wch:15},{wch:12},
+{wch:10},{wch:16},{wch:14},{wch:17},
+{wch:15},{wch:12},{wch:21},{wch:13},
+{wch:19},{wch:12},{wch:19},{wch:17},
+{wch:17},{wch:12},{wch:14},{wch:20}
+];
+}
+
+function addExcelSheet(wb,name,rows){
+const sheet=XLSX.utils.json_to_sheet(rows);
+sheet["!cols"]=excelWidths();
+sheet["!autofilter"]={
+ref:sheet["!ref"]||"A1:X1"
+};
+XLSX.utils.book_append_sheet(wb,sheet,name);
+}
+
+function exportSummaryRows(rows){
+const selected=rows.filter(r=>r.selection_status==="selected");
+
+const overall=summarizeSelected(
+selected.map(r=>({
+...r,
+status:r.status||
+(["win","loss","push"].includes(r.result)
+?"graded":r.result==="dnp"?"dnp":"pending"),
+outcome:r.outcome||r.result
+}))
 );
 
-el("tab-yesterday").addEventListener(
-"click",
-()=>switchDay("yesterday")
+const summary=[
+["NBA PROP ANALYZER — ALL HISTORY",""],
+["Generated",new Date().toLocaleString()],
+["Saved Dates",new Set(rows.map(r=>r.date)).size],
+["Total Prediction Rows",rows.length],
+["Selected Predictions",selected.length],
+["Unselected Predictions",rows.length-selected.length],
+["Graded Selections",overall.graded],
+["Wins",overall.wins],
+["Losses",overall.losses],
+["Pushes",overall.pushes],
+["Win Rate %",overall.win_rate],
+["Hypothetical ROI %",overall.hypothetical_roi],
+["Hypothetical Profit $",overall.hypothetical_profit],
+["",""],
+["Market","Wins","Losses","Graded","Win Rate %","ROI %","Profit $"]
+];
+
+for(const market of ["Points","Rebounds","Assists"]){
+const group=selected.filter(r=>
+normalizeMarket(r.market)===market);
+
+const s=summarizeSelected(group.map(r=>({
+...r,
+status:r.status||
+(["win","loss","push"].includes(r.result)
+?"graded":"pending"),
+outcome:r.outcome||r.result
+})));
+
+summary.push([
+market,s.wins,s.losses,s.graded,
+s.win_rate,s.hypothetical_roi,s.hypothetical_profit
+]);
+}
+
+summary.push([]);
+summary.push(["Date","Predictions","Selected",
+"Graded","Wins","Losses","Win Rate %","ROI %","Profit $"]);
+
+const dates=[...new Set(rows.map(r=>r.date))]
+.filter(Boolean).sort().reverse();
+
+for(const date of dates){
+const daily=rows.filter(r=>r.date===date);
+const picks=daily.filter(r=>r.selection_status==="selected");
+const s=summarizeSelected(picks.map(r=>({
+...r,
+status:r.status||
+(["win","loss","push"].includes(r.result)
+?"graded":"pending"),
+outcome:r.outcome||r.result
+})));
+
+summary.push([
+date,daily.length,picks.length,s.graded,
+s.wins,s.losses,s.win_rate,
+s.hypothetical_roi,s.hypothetical_profit
+]);
+}
+
+summary.push([]);
+summary.push([
+"NOTE",
+"Profit and ROI are hypothetical. Pending and DNP are not settled bets."
+]);
+
+return summary;
+}
+
+async function downloadExcel(){
+const button=el("download-excel");
+const status=el("export-status");
+
+button.disabled=true;
+button.textContent="Preparing Excel...";
+status.textContent="Collecting all saved daily predictions...";
+
+try{
+if(typeof XLSX==="undefined")
+throw new Error(
+"Excel library did not load. Check your internet connection and refresh."
 );
 
-for (const id of [
-"search",
-"game",
-"market",
-"side",
-"odds-filter",
-"minutes-filter",
-"selection-filter",
-"result-filter"
-]) {
+const json=await fetchJson("graded_predictions.json");
+
+if(!Array.isArray(json.predictions))
+throw new Error("Historical grading file is missing predictions.");
+
+const history=json.predictions.map(historyRow);
+
+const current=todayData.length
+?todayData
+:[];
+
+const rowsByKey=new Map();
+
+for(const r of history)
+rowsByKey.set(predictionKey(r),r);
+
+for(const r of current){
+const key=predictionKey(r);
+if(!rowsByKey.has(key))
+rowsByKey.set(key,r);
+}
+
+const all=[...rowsByKey.values()];
+
+if(!all.length)
+throw new Error("No saved predictions available to export.");
+
+const wb=XLSX.utils.book_new();
+
+const summary=XLSX.utils.aoa_to_sheet(
+exportSummaryRows(all)
+);
+
+summary["!cols"]=[
+{wch:30},{wch:22},{wch:18},{wch:15},
+{wch:18},{wch:15},{wch:18},{wch:18},{wch:18}
+];
+
+XLSX.utils.book_append_sheet(wb,summary,"Summary");
+
+const dates=[...new Set(all.map(r=>r.date))]
+.filter(Boolean).sort().reverse();
+
+for(const date of dates){
+const daily=all.filter(r=>r.date===date);
+
+daily.sort((a,b)=>{
+const game=shortMatchup(a).localeCompare(shortMatchup(b));
+if(game)return game;
+const player=String(a.player||"").localeCompare(
+String(b.player||""));
+if(player)return player;
+return String(a.market||"").localeCompare(
+String(b.market||""));
+});
+
+addExcelSheet(
+wb,date,
+daily.map(exportRow)
+);
+}
+
+const filename=
+"NBA_Prop_Analyzer_All_History_"+
+new Date().toISOString().slice(0,10)+".xlsx";
+
+XLSX.writeFile(wb,filename,{
+bookType:"xlsx",
+compression:true
+});
+
+status.textContent=
+"Excel export prepared: "+
+all.length+" predictions across "+
+dates.length+" dates. "+
+"Check your browser downloads.";
+
+}catch(error){
+console.error(error);
+status.textContent="Excel export failed: "+error.message;
+alert("Could not create Excel file: "+error.message);
+}finally{
+button.disabled=false;
+button.textContent="Download Excel — All History";
+}
+}
+
+el("download-excel").addEventListener(
+"click",downloadExcel
+);
+
+/* END EXCEL EXPORT */
+
+el("tab-today").addEventListener("click",
+()=>switchDay("today"));
+
+el("tab-yesterday").addEventListener("click",
+()=>switchDay("yesterday"));
+
+for(const id of [
+"search","game","market","side",
+"odds-filter","minutes-filter",
+"selection-filter","result-filter"
+]){
 el(id).addEventListener("input",draw);
 }
 
-document.querySelectorAll("th[data-sort]").forEach(th => {
-th.addEventListener("click",() => {
-const key = th.dataset.sort;
+document.querySelectorAll("th[data-sort]").forEach(th=>{
+th.addEventListener("click",()=>{
+const key=th.dataset.sort;
 
-if (sortKey === key) {
-sortAscending = !sortAscending;
-} else {
-sortKey = key;
-
-sortAscending = [
-"date",
-"matchup",
-"game_time",
-"player",
-"team",
-"opponent",
-"market",
-"side",
-"result"
+if(sortKey===key)
+sortAscending=!sortAscending;
+else{
+sortKey=key;
+sortAscending=[
+"date","matchup","game_time","player",
+"team","opponent","market","side","result"
 ].includes(key);
 }
 
@@ -1752,7 +1336,7 @@ draw();
 });
 });
 
-el("refresh").addEventListener("click",() => {
+el("refresh").addEventListener("click",()=>{
 loadData();
 loadTracking();
 loadBacktest();
@@ -1761,7 +1345,6 @@ loadBacktest();
 loadData();
 loadTracking();
 loadBacktest();
-
 </script>
 </body>
 </html>
