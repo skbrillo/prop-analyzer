@@ -1,4 +1,5 @@
 
+
 import csv
 import json
 import re
@@ -212,6 +213,9 @@ def grade_one(
         "diagnostic_category": "",
         "diagnostic_teams_found": [],
         "diagnostic_match_count": 0,
+        "team_recovered_from_logs": False,
+        "verified_team": None,
+        "verified_opponent": None,
     })
 
     tipoff = parse_timestamp(row.get("game_time"))
@@ -271,18 +275,9 @@ def grade_one(
 
     result["diagnostic_teams_found"] = found_teams
 
-    if (
-        not team
-        or team not in matchup_teams
-        or opponent not in matchup_teams
-        or team == opponent
-    ):
-        return pending(
-            result,
-            "Team or opponent mismatch",
-            "team_mismatch"
-        )
-
+    # Only recover missing historical team fields when the completed
+    # game's ESPN logs uniquely identify the player's team.
+    # Never override a conflicting, explicitly recorded team.
     if not matchup_teams.issubset(
         teams_by_date.get(game_date, set())
     ):
@@ -291,6 +286,56 @@ def grade_one(
             "Both team logs not available",
             "missing_team_logs"
         )
+
+    if not team:
+        candidates = set(found_teams) & matchup_teams
+        if (
+            len(candidates) == 1
+            and set(found_teams) == candidates
+            and (not opponent or opponent == (matchup_teams - candidates).pop())
+        ):
+            team = next(iter(candidates))
+            opponent = next(iter(matchup_teams - {team}))
+            result["team_recovered_from_logs"] = True
+        else:
+            return pending(
+                result,
+                "Missing team; no unique matching player game log",
+                "team_mismatch"
+            )
+
+    if (
+        team not in matchup_teams
+        or (opponent and opponent not in matchup_teams)
+        or (opponent and team == opponent)
+    ):
+        return pending(
+            result,
+            "Team or opponent mismatch",
+            "team_mismatch"
+        )
+
+    if not opponent:
+        # Only recover the opponent when the player has an exact
+        # game-log match for the explicitly recorded team.
+        if len(stats.get((game_date, player, team), [])) != 1:
+            return pending(
+                result,
+                "Missing opponent; player-team not uniquely verified",
+                "team_mismatch"
+            )
+        opponent = next(iter(matchup_teams - {team}))
+        result["team_recovered_from_logs"] = True
+
+    if {team, opponent} != matchup_teams:
+        return pending(
+            result,
+            "Team or opponent mismatch",
+            "team_mismatch"
+        )
+
+    result["verified_team"] = team
+    result["verified_opponent"] = opponent
 
     matches = stats.get(
         (game_date, player, team),
@@ -496,6 +541,11 @@ def build_diagnostics(rows):
             for date, counts in sorted(by_date.items())
         },
         "pending_examples": examples,
+        "recovered_and_graded": sum(
+            row.get("team_recovered_from_logs", False)
+            and row.get("status") == "graded"
+            for row in rows
+        ),
     }
 
 
@@ -558,7 +608,7 @@ def main():
             "Five-hour buffer is not official final verification.",
             "Team/date matching may not distinguish doubleheaders.",
             "Missing players are not automatically losses.",
-            "No automatic team correction is performed.",
+            "Only missing historical team fields may be recovered from unique matching game logs; original history is unchanged.",
             "Model profitability is not yet validated.",
         ],
     }
@@ -585,6 +635,8 @@ def main():
     print("Losses:", summary["losses"])
     print("Pushes:", summary["pushes"])
     print("Hypothetical ROI:", summary["hypothetical_roi"])
+    print("Historical team fields recovered and graded:",
+          diagnostics["recovered_and_graded"])
 
     print()
     print("PENDING DIAGNOSTICS")
