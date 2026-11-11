@@ -457,6 +457,56 @@ def grade_one(
     return result
 
 
+def select_one_side(predictions):
+    """Choose one positive-EV side per event/player/market before grading.
+
+    Preserve all historical rows; unselected rows are retained in the JSON
+    but never contribute to performance calculations.
+    """
+    groups = defaultdict(list)
+    for index, row in enumerate(predictions):
+        key = (
+            str(row.get("game_date", "")).strip(),
+            str(row.get("event_id") or row.get("matchup") or "").strip(),
+            normalize(row.get("player")),
+            normalize(row.get("market")),
+        )
+        groups[key].append(index)
+
+    selected = set()
+    for indices in groups.values():
+        eligible = []
+        for index in indices:
+            row = predictions[index]
+            ev = number(row.get("model_ev"))
+            probability = number(row.get("probability"))
+            side = str(row.get("side", "")).strip().lower()
+            if ev is not None and ev > 0 and side in ("over", "under"):
+                eligible.append((ev, probability if probability is not None else -1, -index, index))
+        if eligible:
+            selected.add(max(eligible)[-1])
+    return selected
+
+
+def not_selected(row):
+    result = dict(row)
+    result.update({
+        "status": "not_selected",
+        "actual": None,
+        "outcome": None,
+        "profit": None,
+        "stake": None,
+        "reason": "Not the highest positive-EV side for this player, game, and market",
+        "diagnostic_category": "not_selected",
+        "diagnostic_teams_found": [],
+        "diagnostic_match_count": 0,
+        "team_recovered_from_logs": False,
+        "verified_team": None,
+        "verified_opponent": None,
+    })
+    return result
+
+
 def summarize(rows):
     graded = [
         row for row in rows
@@ -491,6 +541,8 @@ def summarize(rows):
 
     return {
         "predictions": len(rows),
+        "selected": sum(row["status"] != "not_selected" for row in rows),
+        "not_selected": sum(row["status"] == "not_selected" for row in rows),
         "graded": len(graded),
         "dnp": sum(row["status"] == "dnp" for row in rows),
         "pending": sum(
@@ -591,6 +643,7 @@ def main():
 
     now = datetime.now(timezone.utc)
 
+    selected_indices = select_one_side(predictions)
     results = [
         grade_one(
             row,
@@ -599,8 +652,8 @@ def main():
             player_teams_by_date,
             player_logs_by_date,
             now
-        )
-        for row in predictions
+        ) if index in selected_indices else not_selected(row)
+        for index, row in enumerate(predictions)
     ]
 
     markets = {}
@@ -623,12 +676,14 @@ def main():
     output = {
         "generated_at": now.isoformat(),
         "summary": summarize(results),
+        "selection_policy": "Highest positive model_ev per game/player/market; other sides excluded",
         "markets": markets,
         "diagnostics": diagnostics,
         "predictions": results,
         "limitations": [
             "Hypothetical results, not actual bets.",
-            "Over and under selections are correlated.",
+            "Only one highest-positive-EV side is selected per game/player/market.",
+            "Historical selection is a reconstructed model backtest, not verified placed bets.",
             "Five-hour buffer is not official final verification.",
             "Team/date matching may not distinguish doubleheaders.",
             "Missing players are not automatically losses.",
@@ -653,6 +708,8 @@ def main():
 
     print("Prediction grading completed.")
     print("Total predictions:", summary["predictions"])
+    print("Selected:", summary["selected"])
+    print("Not selected:", summary["not_selected"])
     print("Graded:", summary["graded"])
     print("DNP:", summary["dnp"])
     print("Pending:", summary["pending"])
