@@ -24,113 +24,78 @@ h3{font-size:15px;margin:12px 0 8px}
 .red,.loss{color:var(--red)}
 .under,.pending{color:var(--yellow)}
 .dnp,.push{color:#b9cafa}
-.warn{
- background:#332c19;color:#ffda8c;
- padding:9px 12px;border-radius:8px;margin:10px 0;
- font-size:11px
-}
-.stats{
- display:grid;grid-template-columns:repeat(6,minmax(0,1fr));
- gap:8px;margin:10px 0
-}
-.stat,.card{
- background:var(--card);border:1px solid var(--border);
- border-radius:9px;padding:10px;min-width:0
-}
+.warn{background:#332c19;color:#ffda8c;padding:9px 12px;border-radius:8px;margin:10px 0;font-size:11px}
+.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px;margin:10px 0}
+.stat,.card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:10px;min-width:0}
 .stat{font-size:11px;color:var(--muted)}
-.stat b{
- display:block;color:var(--text);
- font-size:23px;margin-top:4px;font-variant-numeric:tabular-nums
-}
+.stat b{display:block;color:var(--text);font-size:23px;margin-top:4px;font-variant-numeric:tabular-nums}
 .stat b.green{color:var(--green)}
 .stat b.red{color:var(--red)}
-.tabs,.controls{
- display:flex;flex-wrap:wrap;gap:6px;margin:9px 0
-}
-button,input,select{
- background:#18273d;color:white;border:1px solid #41516b;
- border-radius:6px;padding:8px;font:inherit
-}
+.tabs,.controls{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+button,input,select{background:#18273d;color:white;border:1px solid #41516b;border-radius:6px;padding:8px;font:inherit}
 button{cursor:pointer}
 button:hover{border-color:var(--green)}
 button.active,#refresh{background:#256c46;border-color:#39865b}
-#download-excel,#download-edge{background:#2e7d32}
+#download-excel,#download-edge,#monthly-export{background:#2e7d32}
 input{flex:1;min-width:150px}
 .controls select{max-width:210px}
 .section{margin-top:22px;padding-top:16px;border-top:1px solid var(--border)}
-.head{
- display:flex;justify-content:space-between;align-items:center;
- flex-wrap:wrap;gap:8px;margin:12px 0 6px
-}
+.head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin:12px 0 6px}
 .head h2{margin:0}
-.tablewrap{
- width:100%;overflow-x:auto;
- border:1px solid var(--border);border-radius:8px
-}
-table{
- border-collapse:collapse;width:100%;
- font-variant-numeric:tabular-nums
-}
-th,td{
- padding:8px 6px;border-bottom:1px solid #2b3a50;
- text-align:left;white-space:nowrap;font-size:11px
-}
-th{
- background:var(--card);color:var(--muted);
- cursor:pointer;position:sticky;top:0
-}
+.tablewrap{width:100%;overflow-x:auto;border:1px solid var(--border);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:8px 6px;border-bottom:1px solid #2b3a50;text-align:left;white-space:nowrap;font-size:11px}
+th{background:var(--card);color:var(--muted);cursor:pointer;position:sticky;top:0}
 tbody tr:hover{background:#1d3048}
 .player{font-weight:700}
 .rank,.score{color:var(--green);font-weight:800}
-.pill{
- display:inline-block;border-radius:4px;
- padding:2px 5px;font-size:10px;font-weight:700
-}
+.pill{display:inline-block;border-radius:4px;padding:2px 5px;font-size:10px;font-weight:700}
 .Stable{background:#123f2b;color:#8ef0b4}
 .Moderate{background:#493914;color:#ffe099}
 .Volatile{background:#512626;color:#ffb0b0}
 .NA{background:#29384c;color:#a6b5c9}
-.lineup{
- font-size:9px;margin-left:4px;padding:1px 4px;
- border-radius:3px
-}
+.lineup{font-size:9px;margin-left:4px;padding:1px 4px;border-radius:3px}
 .starter{background:#123f2b;color:#8ef0b4}
 .bench{background:#493914;color:#ffe099}
 .unverified{background:#29384c;color:#a6b5c9}
-.cards{
- display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
- gap:9px;margin-top:10px
-}
-.gamecards{
- display:grid;
- grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
- gap:9px;margin-top:10px
-}
-.metric{
- display:flex;justify-content:space-between;gap:8px;
- border-top:1px solid #2b3a50;padding:7px 0
-}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:10px}
+.gamecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px;margin-top:10px}
+.metric{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #2b3a50;padding:7px 0}
 .metric span{color:var(--muted)}
 .metric strong{text-align:right}
 .big{font-size:24px;color:var(--green);font-weight:700}
-.info{
- border:1px solid var(--border);border-radius:9px;
- padding:12px;margin-top:12px;color:var(--muted);line-height:1.6
-}
+.info{border:1px solid var(--border);border-radius:9px;padding:12px;margin-top:12px;color:var(--muted);line-height:1.6}
 .footer{color:var(--muted);font-size:11px;margin:20px 0}
-#status,#edge-status,#tracking-status,#export-status{
- margin:6px 0
-}
 .daily-table{min-width:850px}
+
+/* Monthly Top 25 tracker */
+.monthly-panel{background:#101e30;border:1px solid #36516a;border-radius:10px;padding:12px;margin:10px 0}
+.monthly-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+.monthly-head h2{margin:0}
+.monthly-actions{display:flex;gap:6px;flex-wrap:wrap}
+.monthly-stats{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:7px;margin-top:10px}
+.monthly-stats .stat{padding:9px}
+.monthly-stats .stat b{font-size:21px}
+.monthly-status{font-size:11px;color:var(--muted);margin-top:8px}
+.monthly-details{margin-top:10px}
+.monthly-details summary{cursor:pointer;color:var(--green);font-weight:700}
+.monthly-details .tablewrap{margin-top:9px}
+.monthly-details table{min-width:760px}
+.monthly-details th{cursor:default}
+.monthly-note{font-size:10px;color:var(--muted);margin-top:8px}
+@media(max-width:1100px){
+ .monthly-stats{grid-template-columns:repeat(4,1fr)}
+}
 @media(max-width:1000px){
  .stats{grid-template-columns:repeat(3,1fr)}
  th,td{font-size:10px}
 }
 @media(max-width:650px){
- .stats{grid-template-columns:repeat(2,1fr)}
+ .stats,.monthly-stats{grid-template-columns:repeat(2,1fr)}
  .cards{grid-template-columns:1fr}
  .controls input,.controls select{width:100%;max-width:none}
  .stat b{font-size:20px}
+ .monthly-stats .stat b{font-size:19px}
 }
 </style>
 </head>
@@ -138,14 +103,11 @@ tbody tr:hover{background:#1d3048}
 <main>
 
 <h1>NBA Prop Analyzer</h1>
-<div class="muted">
- ESPN Statistics + DraftKings Odds | Experimental Edge Model
-</div>
+<div class="muted">ESPN Statistics + DraftKings Odds | Experimental Edge Model</div>
 
 <div class="warn">
- Model probabilities, Edge Scores and expected values are
- experimental estimates, not proven betting advantages.
- Only American odds of -125 or better are displayed.
+ Model probabilities, Edge Scores and expected values are experimental estimates,
+ not proven betting advantages. Only American odds of -125 or better are displayed.
 </div>
 
 <div class="stats">
@@ -156,6 +118,67 @@ tbody tr:hover{background:#1d3048}
  <div class="stat">Historical Losses<b id="total-losses" class="red">--</b></div>
  <div class="stat">Last Updated<b id="updated" style="font-size:13px">--</b></div>
 </div>
+
+<!-- MONTHLY TOP 25 PERFORMANCE -->
+<section class="monthly-panel">
+ <div class="monthly-head">
+  <h2>Top 25 Edge Model — Monthly Performance</h2>
+  <div class="monthly-actions">
+   <select id="monthly-select" aria-label="Select month">
+    <option value="">Loading months...</option>
+   </select>
+   <button id="monthly-export">Download Monthly CSV</button>
+  </div>
+ </div>
+
+ <div class="monthly-stats">
+  <div class="stat">Archived Picks<b id="month-picks">--</b></div>
+  <div class="stat">Wins<b id="month-wins" class="green">--</b></div>
+  <div class="stat">Losses<b id="month-losses" class="red">--</b></div>
+  <div class="stat">Win Rate<b id="month-winrate">--</b></div>
+  <div class="stat">ROI<b id="month-roi">--</b></div>
+  <div class="stat">Profit / Loss<b id="month-profit">--</b></div>
+  <div class="stat">Pending<b id="month-pending">--</b></div>
+ </div>
+
+ <div id="monthly-status" class="monthly-status">Loading monthly Edge Model performance...</div>
+
+ <details class="monthly-details" id="monthly-details">
+  <summary>View daily performance and individual picks</summary>
+  <h3>Daily Top 25 Results</h3>
+  <div class="tablewrap">
+   <table>
+    <thead>
+     <tr>
+      <th>Date</th><th>Picks</th><th>Wins</th><th>Losses</th>
+      <th>Push</th><th>DNP</th><th>Pending</th>
+      <th>Win Rate</th><th>ROI</th><th>Profit (Units)</th>
+     </tr>
+    </thead>
+    <tbody id="monthly-daily-rows"></tbody>
+   </table>
+  </div>
+  <h3>Archived Picks</h3>
+  <div class="tablewrap">
+   <table>
+    <thead>
+     <tr>
+      <th>Date</th><th>Rank</th><th>Player</th><th>Market</th>
+      <th>Side</th><th>Line</th><th>Odds</th><th>Score</th>
+      <th>Actual</th><th>Result</th><th>Units</th>
+     </tr>
+    </thead>
+    <tbody id="monthly-pick-rows"></tbody>
+   </table>
+  </div>
+ </details>
+
+ <div class="monthly-note">
+  Separate from the historical model. Only archived Top 25 selections count.
+  Win rate excludes pushes, DNP and pending picks. ROI assumes one unit
+  risked per settled win/loss bet. Results are hypothetical, not verified wagers.
+ </div>
+</section>
 
 <div class="tabs">
  <button id="view-edge" class="active">Top 25 Edge Model</button>
@@ -260,71 +283,71 @@ tbody tr:hover{background:#1d3048}
 </div>
 
 <section class="section">
-<h2>NBA Game Lines</h2>
-<div class="muted">Saved DraftKings spreads, totals and implied points.</div>
-<div id="game-lines-status" class="muted"></div>
-<div id="game-lines-grid" class="gamecards"></div>
+ <h2>NBA Game Lines</h2>
+ <div class="muted">Saved DraftKings spreads, totals and implied points.</div>
+ <div id="game-lines-status" class="muted"></div>
+ <div id="game-lines-grid" class="gamecards"></div>
 </section>
 
 <section class="section">
-<h2>Live Betting Performance</h2>
-<div class="muted">
- Saved historical model selections graded against ESPN.
- Historical selections are not retroactively changed by the new Edge Model.
-</div>
-<div id="tracking-status" class="muted"></div>
+ <h2>Live Betting Performance</h2>
+ <div class="muted">
+  Saved historical model selections graded against ESPN.
+  Historical selections are not retroactively changed by the new Edge Model.
+ </div>
+ <div id="tracking-status" class="muted"></div>
 
-<div class="stats" style="grid-template-columns:repeat(4,minmax(0,1fr))">
- <div class="stat">Win Rate<b id="track-winrate">--</b></div>
- <div class="stat">ROI<b id="track-roi">--</b></div>
- <div class="stat">Profit / Loss<b id="track-profit">--</b></div>
- <div class="stat">Settled Outcomes<b id="track-settled">--</b></div>
-</div>
+ <div class="stats" style="grid-template-columns:repeat(4,minmax(0,1fr))">
+  <div class="stat">Win Rate<b id="track-winrate">--</b></div>
+  <div class="stat">ROI<b id="track-roi">--</b></div>
+  <div class="stat">Profit / Loss<b id="track-profit">--</b></div>
+  <div class="stat">Settled Outcomes<b id="track-settled">--</b></div>
+ </div>
 
-<div id="tracking-details" class="muted"></div>
-<h3>Performance by Market</h3>
-<div id="tracking-breakdowns" class="cards"></div>
-<h3>Over vs. Under</h3>
-<div id="side-breakdowns" class="cards"></div>
+ <div id="tracking-details" class="muted"></div>
+ <h3>Performance by Market</h3>
+ <div id="tracking-breakdowns" class="cards"></div>
+ <h3>Over vs. Under</h3>
+ <div id="side-breakdowns" class="cards"></div>
 
-<h3>Daily Results</h3>
-<div class="tablewrap">
-<table class="daily-table">
-<thead>
-<tr>
- <th>Date</th><th>Selections</th><th>Graded</th>
- <th>W</th><th>L</th><th>Push</th><th>DNP</th>
- <th>Pending</th><th>Win Rate</th><th>ROI</th><th>Profit</th>
-</tr>
-</thead>
-<tbody id="daily-results"></tbody>
-</table>
-</div>
+ <h3>Daily Results</h3>
+ <div class="tablewrap">
+ <table class="daily-table">
+ <thead>
+ <tr>
+  <th>Date</th><th>Selections</th><th>Graded</th>
+  <th>W</th><th>L</th><th>Push</th><th>DNP</th>
+  <th>Pending</th><th>Win Rate</th><th>ROI</th><th>Profit</th>
+ </tr>
+ </thead>
+ <tbody id="daily-results"></tbody>
+ </table>
+ </div>
 
-<div id="selection-audit" class="note"></div>
-<div class="info">
- <strong>Performance methodology</strong>
- <p>
- Only selected and settled predictions count toward win rate and ROI.
- Pushes return the original stake. DNP and unselected predictions
- are excluded from settled returns.
- </p>
- <p>
- Performance shown here belongs to the saved historical selection
- strategy, not necessarily the new Top 25 Edge Model.
- </p>
-</div>
+ <div id="selection-audit" class="note"></div>
+ <div class="info">
+  <strong>Performance methodology</strong>
+  <p>
+   Only selected and settled predictions count toward win rate and ROI.
+   Pushes return the original stake. DNP and unselected predictions
+   are excluded from settled returns.
+  </p>
+  <p>
+   Performance shown here belongs to the saved historical selection
+   strategy, not necessarily the new Top 25 Edge Model.
+  </p>
+ </div>
 </section>
 
 <section class="section">
-<h2>Model Performance</h2>
-<div class="muted">Historical prediction accuracy using ESPN game logs.</div>
-<div id="backtest-status" class="muted"></div>
-<div id="performance-grid" class="cards"></div>
-<div class="info">
- MAE is mean absolute error. RMSE is root mean squared error.
- Bias is average projection minus actual.
-</div>
+ <h2>Model Performance</h2>
+ <div class="muted">Historical prediction accuracy using ESPN game logs.</div>
+ <div id="backtest-status" class="muted"></div>
+ <div id="performance-grid" class="cards"></div>
+ <div class="info">
+  MAE is mean absolute error. RMSE is root mean squared error.
+  Bias is average projection minus actual.
+ </div>
 </section>
 
 <div class="footer">
@@ -355,6 +378,8 @@ let yesterdayDate="";
 let sortKey="rank";
 let sortAscending=true;
 let lineupData={games:{}};
+let monthlyReport={months:{}};
+let selectedMonth="";
 
 const TEAM_CODES={
  "Atlanta Hawks":"ATL","Boston Celtics":"BOS",
@@ -449,9 +474,7 @@ function sideName(v){
 }
 
 function shortMarket(v){
- return {
-  Points:"PTS",Rebounds:"REB",Assists:"AST"
- }[marketName(v)]||v||"--";
+ return {Points:"PTS",Rebounds:"REB",Assists:"AST"}[marketName(v)]||v||"--";
 }
 
 function first(r,keys){
@@ -483,12 +506,9 @@ function minutes(r){
  let label=null;
  if(raw!==null){
   const s=String(raw).toLowerCase();
-  if(s.includes("volatile")||s.includes("high risk"))
-   label="Volatile";
-  else if(s.includes("moderate")||s.includes("medium"))
-   label="Moderate";
-  else if(s.includes("stable")||s.includes("reliable"))
-   label="Stable";
+  if(s.includes("volatile")||s.includes("high risk"))label="Volatile";
+  else if(s.includes("moderate")||s.includes("medium"))label="Moderate";
+  else if(s.includes("stable")||s.includes("reliable"))label="Stable";
  }
  if(!label&&sd!==null)
   label=sd<=4?"Stable":sd<=7?"Moderate":"Volatile";
@@ -563,8 +583,7 @@ function markSelections(rows){
  rows.forEach((r,i)=>{
   const key=[
    r.date,r.event_id||r.matchup||"",
-   String(r.player||"").toLowerCase(),
-   r.market
+   String(r.player||"").toLowerCase(),r.market
   ].join("|");
   if(!groups.has(key))groups.set(key,[]);
   groups.get(key).push(i);
@@ -574,17 +593,12 @@ function markSelections(rows){
   for(const i of indices){
    const r=rows[i];
    const ev=Number(r.ev);
-   if(!validOdds(r)||!Number.isFinite(ev)||ev<=0)
-    continue;
+   if(!validOdds(r)||!Number.isFinite(ev)||ev<=0)continue;
    if(!["Over","Under"].includes(r.side))continue;
-   if(ev>bestEV){
-    best=i;
-    bestEV=ev;
-   }
+   if(ev>bestEV){best=i;bestEV=ev;}
   }
   for(const i of indices){
-   rows[i].selection_status=
-    i===best?"selected":"not_selected";
+   rows[i].selection_status=i===best?"selected":"not_selected";
    if(i!==best)rows[i].result="not_selected";
   }
  }
@@ -606,8 +620,7 @@ function lineupInfo(r){
  for(const g of Object.values(lineupData.games||{})){
   if(!g||g.status!=="confirmed")continue;
   if(![g.home,g.away].includes(t))continue;
-  if(opp!=="--"&&![g.home,g.away].includes(opp))
-   continue;
+  if(opp!=="--"&&![g.home,g.away].includes(opp))continue;
 
   const d=new Date(g.tipoff);
   if(Number.isNaN(d.getTime()))continue;
@@ -616,16 +629,12 @@ function lineupInfo(r){
    year:"numeric",month:"2-digit",day:"2-digit"
   }).formatToParts(d);
   const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));
-  if(r.date!==p.year+"-"+p.month+"-"+p.day)
-   continue;
+  if(r.date!==p.year+"-"+p.month+"-"+p.day)continue;
 
   const starters=t===g.home?g.home_starters:g.away_starters;
-  if(!Array.isArray(starters)||starters.length!==5)
-   continue;
-  const found=starters.some(x=>
-   normalizeName(x.name)===name
-  );
-  return found?"starter":"bench";
+  if(!Array.isArray(starters)||starters.length!==5)continue;
+  return starters.some(x=>normalizeName(x.name)===name)
+   ?"starter":"bench";
  }
  return "unverified";
 }
@@ -658,6 +667,194 @@ function addCard(parent,title,items,big=null){
  return card;
 }
 
+/* MONTHLY TOP 25 TRACKING */
+
+function monthLabel(month){
+ const d=new Date(month+"-01T12:00:00Z");
+ if(Number.isNaN(d.getTime()))return month;
+ return d.toLocaleDateString("en-US",{
+  timeZone:"UTC",month:"long",year:"numeric"
+ });
+}
+
+function monthlyPct(v){
+ return v==null?"--":number(v,1)+"%";
+}
+
+function monthlyUnits(v){
+ if(v==null)return "--";
+ const n=Number(v);
+ if(!Number.isFinite(n))return "--";
+ return (n>0?"+":"")+n.toFixed(2)+"u";
+}
+
+function monthlyCell(tr,value,cls=""){
+ return addText(tr,"td",String(value),cls);
+}
+
+function renderMonthly(){
+ const month=monthlyReport.months?.[selectedMonth];
+ const s=month?.summary||{};
+
+ $("month-picks").textContent=s.picks??0;
+ $("month-wins").textContent=s.wins??0;
+ $("month-losses").textContent=s.losses??0;
+ $("month-winrate").textContent=monthlyPct(s.win_rate);
+ $("month-roi").textContent=monthlyPct(s.roi);
+ $("month-profit").textContent=monthlyUnits(s.profit_units);
+ $("month-pending").textContent=s.pending??0;
+
+ const daily=$("monthly-daily-rows");
+ const picks=$("monthly-pick-rows");
+ daily.replaceChildren();
+ picks.replaceChildren();
+
+ for(const d of month?.days||[]){
+  const tr=document.createElement("tr");
+  [
+   d.date,d.picks,d.wins,d.losses,d.pushes,d.dnp,
+   d.pending,monthlyPct(d.win_rate),monthlyPct(d.roi),
+   monthlyUnits(d.profit_units)
+  ].forEach(v=>monthlyCell(tr,v??"--"));
+  daily.appendChild(tr);
+ }
+
+ for(const p of [...(month?.picks||[])].sort((a,b)=>
+  String(b.date).localeCompare(String(a.date))||
+  Number(a.rank||999)-Number(b.rank||999)
+ )){
+  const tr=document.createElement("tr");
+  [
+   p.date,p.rank??"--",p.player||"--",
+   marketName(p.market),p.side,
+   number(p.line),american(p.odds),
+   p.edge_score??"--",number(p.actual),
+   String(p.result||"pending").toUpperCase(),
+   monthlyUnits(p.profit_units)
+  ].forEach((v,i)=>{
+   monthlyCell(tr,v??"--",i===9?String(p.result||"pending"):"");
+  });
+  picks.appendChild(tr);
+ }
+
+ if(!month?.days?.length){
+  const tr=document.createElement("tr");
+  const td=monthlyCell(tr,"No archived Top 25 results for this month.");
+  td.colSpan=10;
+  daily.appendChild(tr);
+ }
+
+ if(!month?.picks?.length){
+  const tr=document.createElement("tr");
+  const td=monthlyCell(tr,"No archived picks available.");
+  td.colSpan=11;
+  picks.appendChild(tr);
+ }
+
+ const settled=s.settled??0;
+ $("monthly-status").textContent=month
+  ?monthLabel(selectedMonth)+" | "+
+   settled+" settled bets | "+
+   (s.pushes??0)+" pushes | "+
+   (s.dnp??0)+" DNP | "+
+   (s.invalid??0)+" invalid | "+
+   "1-unit risk per settled bet"
+  :"No archived Top 25 selections for "+monthLabel(selectedMonth)+".";
+}
+
+async function loadMonthly(){
+ const status=$("monthly-status");
+ try{
+  const json=await fetchJson("edge_monthly.json");
+  if(!json||typeof json.months!=="object"||!json.months)
+   throw Error("Invalid monthly report");
+
+  monthlyReport=json;
+
+  const available=Object.keys(json.months).sort().reverse();
+  const current=new Intl.DateTimeFormat("en-CA",{
+   timeZone:"America/Chicago",
+   year:"numeric",month:"2-digit"
+  }).format(new Date()).replace("/","-");
+
+  const months=[...new Set([current,...available])].sort().reverse();
+  const select=$("monthly-select");
+  const previous=selectedMonth;
+
+  select.replaceChildren();
+
+  for(const month of months)
+   select.add(new Option(monthLabel(month),month));
+
+  selectedMonth=months.includes(previous)?previous:current;
+  select.value=selectedMonth;
+  renderMonthly();
+
+ }catch(e){
+  console.warn("Monthly tracking:",e);
+  monthlyReport={months:{}};
+  selectedMonth=new Intl.DateTimeFormat("en-CA",{
+   timeZone:"America/Chicago",
+   year:"numeric",month:"2-digit"
+  }).format(new Date()).replace("/","-");
+
+  const select=$("monthly-select");
+  select.replaceChildren(
+   new Option(monthLabel(selectedMonth),selectedMonth)
+  );
+
+  for(const id of [
+   "month-picks","month-wins","month-losses",
+   "month-winrate","month-roi","month-profit","month-pending"
+  ])$(id).textContent="--";
+
+  $("monthly-daily-rows").replaceChildren();
+  $("monthly-pick-rows").replaceChildren();
+  status.textContent=
+   "Monthly data not available yet. The scheduled workflow must "+
+   "create docs/edge_monthly.json. "+e.message;
+ }
+}
+
+function csvValue(v){
+ const s=String(v??"");
+ return /[",\r\n]/.test(s)
+  ?'"'+s.replace(/"/g,'""')+'"':s;
+}
+
+function downloadMonthly(){
+ const month=monthlyReport.months?.[selectedMonth];
+ if(!month?.picks?.length){
+  alert("No archived Top 25 picks for this month.");
+  return;
+ }
+
+ const fields=[
+  "date","rank","player","team","opponent",
+  "market","side","line","odds","edge_score",
+  "actual","result","profit_units","saved_at"
+ ];
+
+ const csv=[
+  fields.join(","),
+  ...month.picks.map(p=>
+   fields.map(k=>csvValue(p[k])).join(",")
+  )
+ ].join("\r\n");
+
+ const blob=new Blob([csv],{type:"text/csv;charset=utf-8"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="NBA_Top25_"+selectedMonth+".csv";
+ document.body.appendChild(a);
+ a.click();
+ a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+/* PREDICTION TABLE */
+
 function updateTabs(){
  $("view-edge").classList.toggle("active",viewMode==="edge");
  $("view-all").classList.toggle("active",viewMode==="all");
@@ -684,14 +881,14 @@ function populateGames(){
  const previous=select.value;
  select.replaceChildren(new Option("All Games",""));
  const map=new Map();
- for(const r of data){
+
+ for(const r of data)
   map.set(gameKey(r),dateText(r.date)+" "+matchup(r));
- }
+
  for(const [key,label] of [...map].sort((a,b)=>
   a[1].localeCompare(b[1])
- )){
-  select.add(new Option(label,key));
- }
+ ))select.add(new Option(label,key));
+
  if([...select.options].some(o=>o.value===previous))
   select.value=previous;
 }
@@ -741,12 +938,9 @@ function updateSummary(){
  );
  $("count").textContent=eligible.length;
  $("positive").textContent=edgeData.length;
- $("games").textContent=
-  new Set(eligible.map(gameKey)).size;
- $("total-wins").textContent=
-  gradedReport?.summary?.wins??"--";
- $("total-losses").textContent=
-  gradedReport?.summary?.losses??"--";
+ $("games").textContent=new Set(eligible.map(gameKey)).size;
+ $("total-wins").textContent=gradedReport?.summary?.wins??"--";
+ $("total-losses").textContent=gradedReport?.summary?.losses??"--";
 }
 
 function sortValue(r){
@@ -910,8 +1104,6 @@ function displayGameLines(){
  const grid=$("game-lines-grid");
  grid.replaceChildren();
 
- // Use all today's predictions so every covered game is shown,
- // even if a particular game has no Top 25 selection.
  const source=activeDay==="today"
   ?todayData.filter(r=>r.date===todayDate)
   :historyData.filter(r=>r.date===yesterdayDate);
@@ -932,10 +1124,8 @@ function displayGameLines(){
    [team(r.away_team)+" Spread",number(r.away_spread)],
    [team(r.home_team)+" Spread",number(r.home_spread)],
    ["Game Total",number(r.game_total)],
-   [team(r.away_team)+" Implied",
-    number(r.away_implied_total)],
-   [team(r.home_team)+" Implied",
-    number(r.home_implied_total)]
+   [team(r.away_team)+" Implied",number(r.away_implied_total)],
+   [team(r.home_team)+" Implied",number(r.home_implied_total)]
   ]);
  }
 
@@ -1031,7 +1221,6 @@ async function loadData(){
    }))
    :[];
 
-  // Match actual results to Edge Model records.
   for(const r of edgeData){
    const match=saved.get(predictionKey(r));
    if(match){
@@ -1061,6 +1250,8 @@ async function loadData(){
   $("status").textContent="Data loading failed: "+e.message;
  }
 }
+
+/* HISTORICAL TRACKING */
 
 function trackUnits(v){
  if(v==null||!Number.isFinite(Number(v)))
@@ -1275,6 +1466,8 @@ async function loadBacktest(){
  }
 }
 
+/* EXCEL EXPORT */
+
 function excelNumber(v){
  if(v===null||v===undefined||v==="")
   return null;
@@ -1437,6 +1630,28 @@ async function downloadExcel(){
    addSheet(book,date,daily.map(exportRow));
   }
 
+  /* Include archived Top 25 picks in the same workbook. */
+  const monthlyPicks=Object.values(monthlyReport.months||{})
+   .flatMap(m=>m.picks||[]);
+
+  if(monthlyPicks.length){
+   addSheet(book,"Top25 Edge Archive",monthlyPicks.map(p=>({
+    Date:p.date,
+    Rank:p.rank,
+    Player:p.player,
+    Team:p.team,
+    Opponent:p.opponent,
+    Market:p.market,
+    Side:p.side,
+    Line:p.line,
+    Odds:p.odds,
+    EdgeScore:p.edge_score,
+    Actual:p.actual,
+    Result:p.result,
+    ProfitUnits:p.profit_units
+   })));
+  }
+
   XLSX.writeFile(
    book,
    "NBA_Prop_Analyzer_All_History_"+
@@ -1463,8 +1678,7 @@ function downloadEdge(){
   alert("No current Top 25 Edge Model data available.");
   return;
  }
- window.location.href=
-  "./edge_top25.csv?t="+Date.now();
+ window.location.href="./edge_top25.csv?t="+Date.now();
 }
 
 function refreshAll(){
@@ -1472,30 +1686,26 @@ function refreshAll(){
  loadTracking();
  loadBacktest();
  loadLineups();
+ loadMonthly();
 }
 
-$("view-edge").addEventListener("click",()=>
- setView("edge")
-);
-$("view-all").addEventListener("click",()=>
- setView("all")
-);
-$("tab-today").addEventListener("click",()=>
- switchDay("today")
-);
-$("tab-yesterday").addEventListener("click",()=>
- switchDay("yesterday")
-);
+/* BUTTONS AND EVENTS */
 
-$("download-edge").addEventListener(
- "click",downloadEdge
-);
-$("download-excel").addEventListener(
- "click",downloadExcel
-);
-$("refresh").addEventListener(
- "click",refreshAll
-);
+$("monthly-select").addEventListener("change",e=>{
+ selectedMonth=e.target.value;
+ renderMonthly();
+});
+
+$("monthly-export").addEventListener("click",downloadMonthly);
+
+$("view-edge").addEventListener("click",()=>setView("edge"));
+$("view-all").addEventListener("click",()=>setView("all"));
+$("tab-today").addEventListener("click",()=>switchDay("today"));
+$("tab-yesterday").addEventListener("click",()=>switchDay("yesterday"));
+
+$("download-edge").addEventListener("click",downloadEdge);
+$("download-excel").addEventListener("click",downloadExcel);
+$("refresh").addEventListener("click",refreshAll);
 
 for(const id of [
  "search","game","market","side",
