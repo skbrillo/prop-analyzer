@@ -27,36 +27,75 @@ input{min-width:210px;flex:1}
 button{cursor:pointer}
 button:hover{border-color:#75e3a5}
 #refresh{background:#256c46}
-.tablewrap{width:100%;overflow-x:auto;border:1px solid #293a52;border-radius:12px}
-table{width:100%;border-collapse:collapse;table-layout:fixed}
-th,td{padding:10px 4px;border-bottom:1px solid #2b3a50;text-align:left;font-size:11px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;font-variant-numeric:tabular-nums}
-th{background:#172338;color:#a6b5c9;cursor:pointer;position:sticky;top:0;z-index:1}
+
+/* Wider table with horizontal scrolling */
+.tablewrap{
+width:100%;
+overflow-x:auto;
+border:1px solid #293a52;
+border-radius:12px;
+scrollbar-width:thin;
+scrollbar-color:#536781 #111c2e;
+}
+table{
+width:100%;
+min-width:1750px;
+border-collapse:collapse;
+table-layout:fixed;
+}
+th,td{
+padding:12px 9px;
+border-bottom:1px solid #2b3a50;
+text-align:left;
+font-size:12px;
+white-space:nowrap;
+font-variant-numeric:tabular-nums;
+}
+th{
+background:#172338;
+color:#a6b5c9;
+cursor:pointer;
+position:sticky;
+top:0;
+z-index:1;
+}
 tr:hover{background:#18273d}
-th:nth-child(1){width:5%}
-th:nth-child(2){width:9%}
-th:nth-child(3){width:5%}
-th:nth-child(4){width:12%}
-th:nth-child(5){width:5%}
-th:nth-child(6){width:5%}
-th:nth-child(7){width:7%}
-th:nth-child(8){width:5%}
-th:nth-child(9){width:5%}
-th:nth-child(10){width:5%}
-th:nth-child(11){width:6%}
-th:nth-child(12){width:6%}
-th:nth-child(13){width:6%}
-th:nth-child(14){width:5%}
-th:nth-child(15){width:7%}
-th:nth-child(16){width:5%}
-th:nth-child(17){width:6%}
-th:nth-child(18){width:6%}
+
+/* Explicit column widths */
+th:nth-child(1){width:65px}
+th:nth-child(2){width:175px}
+th:nth-child(3){width:105px}
+th:nth-child(4){width:175px}
+th:nth-child(5){width:65px}
+th:nth-child(6){width:65px}
+th:nth-child(7){width:95px}
+th:nth-child(8){width:70px}
+th:nth-child(9){width:65px}
+th:nth-child(10){width:75px}
+th:nth-child(11){width:75px}
+th:nth-child(12){width:75px}
+th:nth-child(13){width:85px}
+th:nth-child(14){width:75px}
+th:nth-child(15){width:100px}
+th:nth-child(16){width:85px}
+th:nth-child(17){width:75px}
+th:nth-child(18){width:110px}
+
+td:nth-child(2),td:nth-child(4){
+overflow:hidden;
+text-overflow:ellipsis;
+}
+td:nth-child(18){
+font-weight:700;
+}
+
 .player{font-weight:700}
 .green,.win,.over{color:#75e3a5}
 .red,.loss{color:#f2a7a7}
 .under,.pending{color:#f8c477}
 .dnp,.push{color:#b9cafa}
 .not_selected{color:#8c9bb0}
-.pill{display:inline-block;padding:3px 5px;border-radius:5px;font-size:10px;font-weight:700}
+.pill{display:inline-block;padding:3px 6px;border-radius:5px;font-size:11px;font-weight:700}
 .Stable{background:#123f2b;color:#8ef0b4}
 .Moderate{background:#493914;color:#ffe099}
 .Volatile{background:#512626;color:#ffb0b0}
@@ -69,19 +108,17 @@ th:nth-child(18){width:6%}
 .big{font-size:27px;font-weight:700;color:#75e3a5;margin:10px 0}
 .info{border:1px solid #293a52;border-radius:12px;padding:17px;margin-top:18px;color:#b9c5d5;line-height:1.7}
 .footer{color:#9ba9be;font-size:12px;margin:28px 0;line-height:1.8}
-.daily-table{min-width:900px;table-layout:auto}
+.daily-table{min-width:1000px;table-layout:auto}
 .daily-table th,.daily-table td{width:auto;padding:12px 10px}
+
 @media(max-width:1100px){
 .stats{grid-template-columns:repeat(3,minmax(0,1fr))}
-th,td{font-size:10px;padding:8px 2px}
 }
 @media(max-width:750px){
 .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
 .cards{grid-template-columns:1fr}
 .tabs button{flex:1;min-width:0}
 .controls input,.controls select,.controls button{width:100%;flex:auto}
-.tablewrap{overflow-x:auto}
-table{min-width:960px}
 }
 </style>
 </head>
@@ -150,7 +187,6 @@ DraftKings pregame spreads, totals, and implied team points.
 <option value="Under">Under</option>
 </select>
 
-<!-- ALL ODDS IS NOW THE DEFAULT -->
 <select id="odds-filter">
 <option value="" selected>All Odds</option>
 <option value="-120">Odds -120 or Better</option>
@@ -166,7 +202,6 @@ DraftKings pregame spreads, totals, and implied team points.
 <option value="exclude-volatile">Hide Volatile</option>
 </select>
 
-<!-- ALL PREDICTIONS IS NOW THE DEFAULT -->
 <select id="selection-filter">
 <option value="" selected>All Predictions</option>
 <option value="selected">Model Picks</option>
@@ -181,7 +216,7 @@ DraftKings pregame spreads, totals, and implied team points.
 <option value="push">Pushes</option>
 <option value="dnp">DNP</option>
 <option value="invalid">Invalid</option>
-<option value="not_selected">Not Selected</option>
+<option value="not_selected">Not Picked</option>
 </select>
 
 <button id="refresh" type="button">Refresh Data</button>
@@ -203,7 +238,7 @@ Loading predictions...
 <tr>
 <th data-sort="date">Date</th>
 <th data-sort="matchup">Matchup</th>
-<th data-sort="game_time">Tipoff</th>
+<th data-sort="game_time">Tipoff (ET)</th>
 <th data-sort="player">Player</th>
 <th data-sort="team">Team</th>
 <th data-sort="opponent">Opp</th>
@@ -419,6 +454,31 @@ return parts.length === 3
 : String(value);
 }
 
+// Display saved ISO game time as Eastern Time.
+// No changes to stored game time or grading.
+function formatTipoff(value) {
+if (!value) return "--";
+
+const raw = String(value).trim();
+const parsed = new Date(raw);
+
+if (!Number.isNaN(parsed.getTime())) {
+return new Intl.DateTimeFormat("en-US",{
+timeZone:"America/New_York",
+hour:"numeric",
+minute:"2-digit",
+hour12:true
+}).format(parsed);
+}
+
+// Preserve already formatted times.
+if (/^\d{1,2}:\d{2}\s*(AM|PM)$/i.test(raw)) {
+return raw;
+}
+
+return raw;
+}
+
 function num(value, decimals=1) {
 if (value === null || value === undefined || value === "") {
 return "--";
@@ -586,8 +646,6 @@ historical:false
 };
 }
 
-// Select only the highest positive-EV side per
-// player, game, and market for current predictions.
 function markCurrentSelections(rows) {
 const groups = new Map();
 
@@ -784,6 +842,22 @@ return row.team_abbr || row.team;
 return row[sortKey];
 }
 
+function displayResult(result) {
+const r = String(result || "pending").toLowerCase();
+
+const labels = {
+win:"WIN",
+loss:"LOSS",
+push:"PUSH",
+pending:"PENDING",
+dnp:"DNP",
+invalid:"INVALID",
+not_selected:"Not Picked"
+};
+
+return labels[r] || r;
+}
+
 function draw() {
 const query = el("search").value.trim().toLowerCase();
 const game = el("game").value;
@@ -879,7 +953,7 @@ const result = String(row.result || "pending").toLowerCase();
 const values = [
 formatDate(row.date),
 shortMatchup(row),
-row.game_time || "--",
+formatTipoff(row.game_time),
 row.player || "--",
 shortTeam(row.team_abbr || row.team),
 shortTeam(row.opponent),
@@ -896,7 +970,7 @@ row.last10 === null || row.last10 === undefined
 minutes.label,
 num(minutes.projection,1),
 num(row.actual,1),
-result.toUpperCase()
+displayResult(result)
 ];
 
 values.forEach((value,index) => {
@@ -1013,7 +1087,7 @@ available++;
 }
 
 addCard(grid,shortMatchup(row),[
-["Tipoff",formatDate(row.date)+" "+(row.game_time||"--")],
+["Tipoff (ET)",formatDate(row.date)+" "+formatTipoff(row.game_time)],
 [shortTeam(row.away_team)+" Spread",num(row.away_spread)],
 [shortTeam(row.home_team)+" Spread",num(row.home_spread)],
 ["Game Total",num(row.game_total)],
@@ -1126,8 +1200,6 @@ displayGameLines([]);
 }
 }
 
-// Grader records monetary amounts in dollars.
-// Convert $100 to one hypothetical unit.
 function trackUnits(value) {
 if (
 value === null ||
@@ -1143,7 +1215,6 @@ return (units > 0 ? "+" : "") +
 units.toFixed(2) + " units";
 }
 
-// Use official saved market summaries when available.
 function trackingCard(container,title,summary) {
 const s = summary || {};
 
@@ -1167,8 +1238,6 @@ s.hypothetical_roi == null
 ]);
 }
 
-// Recalculate only selected predictions.
-// This is used for Over/Under and daily summaries.
 function summarizeSelected(rows) {
 const graded = rows.filter(row =>
 row.status === "graded" &&
@@ -1219,8 +1288,6 @@ hypothetical_profit:profit
 };
 }
 
-// Verify that only one prediction is selected
-// for each player, game, and market.
 function selectionAudit(rows) {
 const groups = new Map();
 
@@ -1256,7 +1323,6 @@ audit.textContent = duplicates.length
 audit.className = duplicates.length ? "warn" : "note";
 }
 
-// Daily performance uses only selected predictions.
 function displayDaily(rows) {
 const groups = new Map();
 
@@ -1369,8 +1435,6 @@ const selected = json.predictions.filter(
 row => row.status !== "not_selected"
 );
 
-// Points, rebounds and assists:
-// use the grader's saved official summaries.
 for (const [key,label] of [
 ["points","Points"],
 ["rebounds","Rebounds"],
@@ -1391,8 +1455,6 @@ saved || fallback
 );
 }
 
-// Over and Under:
-// calculate from the selected prediction records.
 for (const [key,label] of [
 ["over","Overs"],
 ["under","Unders"]
@@ -1470,7 +1532,6 @@ status.textContent =
 }
 }
 
-// Navigation
 el("tab-today").addEventListener(
 "click",
 ()=>switchDay("today")
@@ -1481,7 +1542,6 @@ el("tab-yesterday").addEventListener(
 ()=>switchDay("yesterday")
 );
 
-// Filters
 for (const id of [
 "search",
 "game",
@@ -1495,7 +1555,6 @@ for (const id of [
 el(id).addEventListener("input",draw);
 }
 
-// Sorting
 document.querySelectorAll("th[data-sort]").forEach(th => {
 th.addEventListener("click",() => {
 const key = th.dataset.sort;
@@ -1522,14 +1581,12 @@ draw();
 });
 });
 
-// Refresh
 el("refresh").addEventListener("click",() => {
 loadData();
 loadTracking();
 loadBacktest();
 });
 
-// Initial load
 loadData();
 loadTracking();
 loadBacktest();
