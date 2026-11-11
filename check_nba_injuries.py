@@ -1,186 +1,313 @@
 
 #!/usr/bin/env python3
 """
-NBA injury collector for Prop Analyzer.
+NBA Prop Analyzer - Injury Collector
 
-Source:
-https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries
+Primary source:
+ESPN NBA injury feed
+
+Team matching:
+1. Team metadata supplied by ESPN
+2. ESPN NBA team roster lookup
 
 Output:
 docs/nba_injuries.json
 
-Safety:
-- Never infer that an unlisted player is healthy.
-- Never replace a valid report with an empty report.
-- Preserve the previous successful report when ESPN fails.
-- Store the original ESPN status and update timestamp.
+Injury codes:
+O = Out
+D = Doubtful
+Q = Questionable
+P = Probable
+T = Day-To-Day
+A = Available
+U = Unrecognized status
+
+Safety rules:
+- Do not assume unlisted players are healthy.
+- Do not infer Questionable from Day-To-Day.
+- Do not use injury-record IDs as athlete IDs.
+- Do not publish a report with zero identified teams.
+- Do not overwrite a valid report when collection fails.
 """
 
 import json
 import os
+import re
 import sys
 import tempfile
+import unicodedata
+
+from collections import Counter
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.request import Request, urlopen
 
-ENDPOINT = (
+BASE = (
     "https://site.api.espn.com/apis/site/v2/"
-    "sports/basketball/nba/injuries"
+    "sports/basketball/nba"
 )
 
+INJURY_URL = BASE + "/injuries"
 OUTPUT = Path("docs/nba_injuries.json")
 
-TEAM_CODES = {
-    "atl": "ATL",
-    "bos": "BOS",
-    "bkn": "BKN",
-    "brk": "BKN",
-    "cha": "CHA",
-    "chi": "CHI",
-    "cle": "CLE",
-    "dal": "DAL",
-    "den": "DEN",
-    "det": "DET",
-    "gs": "GSW",
-    "gsw": "GSW",
-    "hou": "HOU",
-    "ind": "IND",
-    "lac": "LAC",
-    "lal": "LAL",
-    "mem": "MEM",
-    "mia": "MIA",
-    "mil": "MIL",
-    "min": "MIN",
-    "no": "NOP",
-    "nop": "NOP",
-    "ny": "NYK",
-    "nyk": "NYK",
-    "okc": "OKC",
-    "orl": "ORL",
-    "phi": "PHI",
-    "phx": "PHX",
-    "pho": "PHX",
-    "por": "POR",
-    "sac": "SAC",
-    "sa": "SAS",
-    "sas": "SAS",
-    "tor": "TOR",
-    "uta": "UTA",
-    "utah": "UTA",
-    "was": "WAS",
-    "wsh": "WAS",
+# ESPN NBA team IDs
+ESPN_TEAMS = {
+    "ATL": "1",
+    "BOS": "2",
+    "BKN": "17",
+    "CHA": "30",
+    "CHI": "4",
+    "CLE": "5",
+    "DAL": "6",
+    "DEN": "7",
+    "DET": "8",
+    "GSW": "9",
+    "HOU": "10",
+    "IND": "11",
+    "LAC": "12",
+    "LAL": "13",
+    "MEM": "29",
+    "MIA": "14",
+    "MIL": "15",
+    "MIN": "16",
+    "NOP": "3",
+    "NYK": "18",
+    "OKC": "25",
+    "ORL": "19",
+    "PHI": "20",
+    "PHX": "21",
+    "POR": "22",
+    "SAC": "23",
+    "SAS": "24",
+    "TOR": "28",
+    "UTA": "26",
+    "WAS": "27",
 }
 
-STATUS_MAP = {
-    "out": "O",
-    "doubtful": "D",
-    "questionable": "Q",
-    "probable": "P",
-    "available": "A",
-    "active": "A",
-    "day-to-day": "U",
-    "day to day": "U",
-    "gtd": "Q",
-    "game-time decision": "Q",
+TEAM_NAMES = {
+    "ATL": "Atlanta Hawks",
+    "BOS": "Boston Celtics",
+    "BKN": "Brooklyn Nets",
+    "CHA": "Charlotte Hornets",
+    "CHI": "Chicago Bulls",
+    "CLE": "Cleveland Cavaliers",
+    "DAL": "Dallas Mavericks",
+    "DEN": "Denver Nuggets",
+    "DET": "Detroit Pistons",
+    "GSW": "Golden State Warriors",
+    "HOU": "Houston Rockets",
+    "IND": "Indiana Pacers",
+    "LAC": "LA Clippers",
+    "LAL": "Los Angeles Lakers",
+    "MEM": "Memphis Grizzlies",
+    "MIA": "Miami Heat",
+    "MIL": "Milwaukee Bucks",
+    "MIN": "Minnesota Timberwolves",
+    "NOP": "New Orleans Pelicans",
+    "NYK": "New York Knicks",
+    "OKC": "Oklahoma City Thunder",
+    "ORL": "Orlando Magic",
+    "PHI": "Philadelphia 76ers",
+    "PHX": "Phoenix Suns",
+    "POR": "Portland Trail Blazers",
+    "SAC": "Sacramento Kings",
+    "SAS": "San Antonio Spurs",
+    "TOR": "Toronto Raptors",
+    "UTA": "Utah Jazz",
+    "WAS": "Washington Wizards",
 }
 
-def now_iso():
+ALIASES = {
+    "GS": "GSW",
+    "NY": "NYK",
+    "NO": "NOP",
+    "PHO": "PHX",
+    "BRK": "BKN",
+    "BKN": "BKN",
+    "SA": "SAS",
+    "UTAH": "UTA",
+    "WSH": "WAS",
+    "LAC": "LAC",
+    "LA CLIPPERS": "LAC",
+    "LOS ANGELES CLIPPERS": "LAC",
+}
+
+NAME_TO_TEAM = {
+    name.lower(): code
+    for code, name in TEAM_NAMES.items()
+}
+
+TEAM_ID_TO_CODE = {
+    team_id: code
+    for code, team_id in ESPN_TEAMS.items()
+}
+
+
+def timestamp():
     return datetime.now(timezone.utc).isoformat()
+
 
 def fetch_json(url):
     request = Request(
         url,
         headers={
-            "User-Agent": "Mozilla/5.0 PropAnalyzer/1.0",
+            "User-Agent": "Mozilla/5.0",
             "Accept": "application/json",
         },
     )
+
     with urlopen(request, timeout=25) as response:
         return json.load(response)
 
-def team_code(team):
-    if not isinstance(team, dict):
+
+def normalize_name(value):
+    value = unicodedata.normalize(
+        "NFD",
+        str(value or ""),
+    )
+
+    value = "".join(
+        char for char in value
+        if unicodedata.category(char) != "Mn"
+    )
+
+    value = value.lower()
+    value = re.sub(r"[^a-z0-9]", "", value)
+
+    return value
+
+
+def team_code(value):
+    if value is None:
         return ""
 
-    for key in ("abbreviation", "abbr"):
-        value = str(team.get(key) or "").strip()
-        if value:
-            return TEAM_CODES.get(value.lower(), value.upper())
+    if isinstance(value, dict):
+        for field in (
+            "abbreviation",
+            "abbr",
+            "displayName",
+            "name",
+            "shortDisplayName",
+            "id",
+        ):
+            result = team_code(value.get(field))
+
+            if result:
+                return result
+
+        return ""
+
+    text = str(value).strip()
+
+    if not text:
+        return ""
+
+    upper = text.upper()
+    lower = text.lower()
+
+    if upper in ESPN_TEAMS:
+        return upper
+
+    if upper in ALIASES:
+        return ALIASES[upper]
+
+    if lower in NAME_TO_TEAM:
+        return NAME_TO_TEAM[lower]
+
+    if text in TEAM_ID_TO_CODE:
+        return TEAM_ID_TO_CODE[text]
 
     return ""
 
-def injury_status(value):
+
+def get_group_team(group):
+    for field in (
+        "team",
+        "abbreviation",
+        "displayName",
+        "name",
+        "shortDisplayName",
+        "id",
+    ):
+        code = team_code(group.get(field))
+
+        if code:
+            return code
+
+    return ""
+
+
+def status_code(value):
     if isinstance(value, dict):
         value = (
             value.get("description")
-            or value.get("name")
             or value.get("displayName")
-            or value.get("type")
+            or value.get("name")
             or ""
         )
 
     raw = str(value or "").strip()
-    key = raw.lower()
+    status = raw.lower().replace("_", "-")
 
-    if key in STATUS_MAP:
-        return STATUS_MAP[key], raw
+    if status == "out" or status.startswith("out "):
+        return "O", raw
 
-    for word, code in STATUS_MAP.items():
-        if key.startswith(word):
-            return code, raw
+    if status.startswith("doubtful"):
+        return "D", raw
 
-    return "U", raw or "Unverified"
+    if status.startswith("questionable"):
+        return "Q", raw
 
-def extract_injuries(entry):
-    injuries = entry.get("injuries")
-    if isinstance(injuries, list):
-        return injuries
+    if status.startswith("probable"):
+        return "P", raw
 
-    if isinstance(entry.get("injury"), dict):
-        return [entry["injury"]]
+    if status in ("available", "active"):
+        return "A", raw
 
-    return []
+    if (
+        "day-to-day" in status
+        or "day to day" in status
+    ):
+        return "T", raw
 
-def athlete_info(entry):
-    athlete = entry.get("athlete") or {}
+    if (
+        status == "gtd"
+        or "game-time decision" in status
+    ):
+        return "Q", raw
 
-    if not isinstance(athlete, dict):
-        athlete = {}
+    return "U", raw or "Unrecognized"
 
-    name = (
-        athlete.get("displayName")
-        or athlete.get("fullName")
-        or entry.get("displayName")
-        or entry.get("name")
-        or ""
-    )
 
-    athlete_id = (
-        athlete.get("id")
-        or entry.get("id")
-        or ""
-    )
+def get_status(injury):
+    for field in (
+        "status",
+        "displayStatus",
+        "availability",
+    ):
+        value = injury.get(field)
 
-    return str(name).strip(), str(athlete_id)
+        if value:
+            return status_code(value)
 
-def reason_text(injury):
+    return "U", "Unrecognized"
+
+
+def get_reason(injury):
     details = injury.get("details") or {}
 
     if not isinstance(details, dict):
         details = {}
 
-    candidates = [
+    parts = []
+
+    for value in (
         details.get("detail"),
         details.get("description"),
         details.get("type"),
         injury.get("description"),
         injury.get("type"),
-    ]
-
-    parts = []
-
-    for value in candidates:
+    ):
         if isinstance(value, dict):
             value = (
                 value.get("description")
@@ -196,43 +323,22 @@ def reason_text(injury):
 
     return " | ".join(parts)[:300]
 
-def extract_status(injury):
-    for key in (
-        "status",
-        "displayStatus",
-        "availability",
-    ):
-        value = injury.get(key)
 
-        if value:
-            return injury_status(value)
+def parse_injuries(payload):
+    groups = payload.get("injuries")
 
-    return "U", "Unverified"
-
-def parse_feed(payload):
-    teams = payload.get("injuries")
-
-    if not isinstance(teams, list):
+    if not isinstance(groups, list):
         raise ValueError(
-            "Unexpected ESPN response: missing injuries list"
+            "ESPN injury response has no injuries list."
         )
 
     players = []
-    teams_seen = set()
 
-    for group in teams:
+    for group in groups:
         if not isinstance(group, dict):
             continue
 
-        team = group.get("team") or {}
-
-        if not isinstance(team, dict):
-            team = {}
-
-        code = team_code(team)
-
-        if code:
-            teams_seen.add(code)
+        group_team = get_group_team(group)
 
         entries = (
             group.get("injuries")
@@ -247,26 +353,56 @@ def parse_feed(payload):
             if not isinstance(entry, dict):
                 continue
 
-            name, athlete_id = athlete_info(entry)
+            athlete = entry.get("athlete") or {}
+
+            if not isinstance(athlete, dict):
+                athlete = {}
+
+            name = (
+                athlete.get("displayName")
+                or athlete.get("fullName")
+                or entry.get("displayName")
+                or entry.get("name")
+                or ""
+            )
+
+            name = str(name).strip()
 
             if not name:
                 continue
 
-            entry_team = entry.get("team")
+            athlete_id = str(
+                athlete.get("id") or ""
+            )
+
+            injury_record_id = str(
+                entry.get("id") or ""
+            )
 
             player_team = (
-                team_code(entry_team)
-                if isinstance(entry_team, dict)
-                else ""
-            ) or code
+                team_code(athlete.get("team"))
+                or team_code(entry.get("team"))
+                or group_team
+            )
 
-            injuries = extract_injuries(entry)
+            injuries = entry.get("injuries")
 
-            # Some ESPN responses put the injury fields
-            # directly on the player entry.
+            if not isinstance(injuries, list):
+                injuries = []
+
+            if not injuries:
+                one = entry.get("injury")
+
+                if isinstance(one, dict):
+                    injuries = [one]
+
             if not injuries and any(
-                key in entry
-                for key in ("status", "displayStatus")
+                field in entry
+                for field in (
+                    "status",
+                    "displayStatus",
+                    "availability",
+                )
             ):
                 injuries = [entry]
 
@@ -274,48 +410,191 @@ def parse_feed(payload):
                 if not isinstance(injury, dict):
                     continue
 
-                code_status, raw_status = extract_status(
-                    injury
-                )
+                status, raw = get_status(injury)
 
                 players.append({
                     "id": athlete_id,
+                    "injury_record_id": injury_record_id,
                     "name": name,
                     "team": player_team,
-                    "status": code_status,
-                    "raw_status": raw_status,
-                    "reason": reason_text(injury),
+                    "status": status,
+                    "raw_status": raw,
+                    "reason": get_reason(injury),
                     "date": (
                         injury.get("date")
                         or injury.get("lastUpdated")
                         or ""
                     ),
+                    "team_match": (
+                        "feed" if player_team
+                        else "unresolved"
+                    ),
                 })
 
-    # An empty feed is not proof that nobody is hurt.
     if not players:
         raise ValueError(
-            "ESPN returned no usable injury records; "
-            "preserving previous report."
+            "No usable injury records returned."
         )
 
-    # Remove exact duplicates.
+    return players
+
+
+def extract_roster_athletes(payload):
+    athletes = payload.get("athletes") or []
+
+    if not isinstance(athletes, list):
+        return []
+
+    result = []
+
+    for item in athletes:
+        if not isinstance(item, dict):
+            continue
+
+        if isinstance(item.get("items"), list):
+            result.extend(
+                athlete
+                for athlete in item["items"]
+                if isinstance(athlete, dict)
+            )
+        else:
+            result.append(item)
+
+    return result
+
+
+def build_roster_index():
+    """
+    Fetch current ESPN NBA rosters.
+
+    Only unique name-to-team matches are used.
+    Ambiguous matches remain unresolved.
+    """
+
+    matches = {}
+    successful = 0
+
+    for code, team_id in ESPN_TEAMS.items():
+        url = (
+            BASE
+            + "/teams/"
+            + team_id
+            + "/roster"
+        )
+
+        try:
+            payload = fetch_json(url)
+
+            athletes = extract_roster_athletes(
+                payload
+            )
+
+            if not athletes:
+                print(
+                    "Roster empty:",
+                    code,
+                )
+                continue
+
+            successful += 1
+
+            for athlete in athletes:
+                name = (
+                    athlete.get("displayName")
+                    or athlete.get("fullName")
+                    or ""
+                )
+
+                key = normalize_name(name)
+
+                if key:
+                    matches.setdefault(
+                        key,
+                        set(),
+                    ).add(code)
+
+        except Exception as error:
+            print(
+                "Roster lookup failed:",
+                code,
+                error,
+            )
+
+    index = {
+        name: next(iter(teams))
+        for name, teams in matches.items()
+        if len(teams) == 1
+    }
+
+    print(
+        "Roster endpoints successful:",
+        successful,
+        "of",
+        len(ESPN_TEAMS),
+    )
+
+    return index
+
+
+def resolve_teams(players):
+    unresolved = [
+        p for p in players
+        if not p["team"]
+    ]
+
+    if not unresolved:
+        return players
+
+    print(
+        "Players requiring team lookup:",
+        len(unresolved),
+    )
+
+    roster_index = build_roster_index()
+
+    for player in unresolved:
+        key = normalize_name(
+            player["name"]
+        )
+
+        code = roster_index.get(key)
+
+        if code:
+            player["team"] = code
+            player["team_match"] = "roster"
+
+    return players
+
+
+def deduplicate(players):
     unique = {}
 
     for player in players:
         key = (
-            player["id"],
-            player["name"].lower(),
+            normalize_name(player["name"]),
             player["team"],
             player["status"],
         )
 
-        unique[key] = player
+        existing = unique.get(key)
 
-    return list(unique.values()), sorted(teams_seen)
+        if existing is None:
+            unique[key] = player
+            continue
 
-def save_atomic(payload):
-    OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+        if str(player["date"]) > str(
+            existing["date"]
+        ):
+            unique[key] = player
+
+    return list(unique.values())
+
+
+def save_atomic(report):
+    OUTPUT.parent.mkdir(
+        parents=True,
+        exist_ok=True,
+    )
 
     fd, temporary = tempfile.mkstemp(
         prefix=".nba_injuries_",
@@ -324,62 +603,160 @@ def save_atomic(payload):
     )
 
     try:
-        with os.fdopen(fd, "w", encoding="utf-8") as file:
+        with os.fdopen(
+            fd,
+            "w",
+            encoding="utf-8",
+        ) as file:
             json.dump(
-                payload,
+                report,
                 file,
                 indent=2,
                 ensure_ascii=False,
             )
+
             file.write("\n")
 
-        os.replace(temporary, OUTPUT)
+        os.replace(
+            temporary,
+            OUTPUT,
+        )
 
     finally:
         if os.path.exists(temporary):
             os.remove(temporary)
 
+
 def main():
     print("=" * 48)
     print("NBA INJURY REPORT CHECK")
-    print("Started:", now_iso())
+    print("Started:", timestamp())
 
     try:
-        raw = fetch_json(ENDPOINT)
+        payload = fetch_json(
+            INJURY_URL
+        )
 
-        players, teams = parse_feed(raw)
+        players = parse_injuries(
+            payload
+        )
 
+        players = resolve_teams(
+            players
+        )
+
+        players = deduplicate(
+            players
+        )
+
+        identified = [
+            p for p in players
+            if p["team"]
+        ]
+
+        unresolved = [
+            p for p in players
+            if not p["team"]
+        ]
+
+        teams = sorted({
+            p["team"]
+            for p in identified
+        })
+
+        counts = dict(Counter(
+            p["status"]
+            for p in players
+        ))
+
+        if not identified:
+            raise ValueError(
+                "No player teams resolved. "
+                "Previous report preserved."
+            )
+
+        # A partially resolved report is useful for
+        # display, but unresolved records must not
+        # be used for automated betting decisions.
         report = {
-            "generated_at": now_iso(),
+            "generated_at": timestamp(),
             "source": "ESPN",
-            "source_url": ENDPOINT,
-            "status": "ok",
+            "source_url": INJURY_URL,
+            "status": (
+                "ok" if not unresolved
+                else "partial"
+            ),
             "player_count": len(players),
             "teams_reported": teams,
+            "teams_count": len(teams),
+            "players_with_team": len(identified),
+            "players_without_team": len(unresolved),
+            "status_counts": counts,
             "players": players,
         }
 
         save_atomic(report)
 
-        counts = {}
+        print(
+            "Players:",
+            len(players),
+        )
 
-        for player in players:
-            status = player["status"]
-            counts[status] = counts.get(status, 0) + 1
+        print(
+            "Teams identified:",
+            len(teams),
+        )
 
-        print("Players:", len(players))
-        print("Teams:", len(teams))
-        print("Status counts:", counts)
-        print("Saved:", OUTPUT)
+        print(
+            "Players with team:",
+            len(identified),
+        )
+
+        print(
+            "Players without team:",
+            len(unresolved),
+        )
+
+        print(
+            "Status counts:",
+            counts,
+        )
+
+        if unresolved:
+            print(
+                "Unresolved players:",
+                ", ".join(
+                    p["name"]
+                    for p in unresolved[:20]
+                ),
+            )
+
+        print(
+            "Saved:",
+            OUTPUT,
+        )
+
+        print(
+            "Report status:",
+            report["status"],
+        )
+
         print("SUCCESS")
 
-    except Exception as exc:
-        print("INJURY CHECK FAILED:", exc, file=sys.stderr)
+    except Exception as error:
         print(
-            "Previous injury data has not been overwritten.",
+            "INJURY CHECK FAILED:",
+            error,
             file=sys.stderr,
         )
+
+        print(
+            "Previous report preserved.",
+            file=sys.stderr,
+        )
+
         sys.exit(1)
+
 
 if __name__ == "__main__":
     main()
