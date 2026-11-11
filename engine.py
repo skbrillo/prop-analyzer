@@ -6,13 +6,16 @@ import statistics
 import pathlib
 import datetime
 import re
+from zoneinfo import ZoneInfo
 from collections import defaultdict
 
 ROOT = pathlib.Path(__file__).parent
 DATA = ROOT / "data"
 SITE = ROOT / "docs"
 
-VERSION = "v6-minutes-reliability-experimental"
+VERSION = "v7-live-injury-screen-experimental"
+MIN_ACCEPTABLE_ODDS = -125
+MAX_INJURY_AGE_MINUTES = 90
 
 MARKETS = {"points", "rebounds", "assists"}
 
@@ -306,6 +309,71 @@ def load_injuries():
     return injuries
 
 
+def load_live_injuries():
+    """Read the ESPN injury snapshot, never assuming missing means healthy."""
+    path = SITE / "nba_injuries.json"
+    if not path.exists():
+        return {}, "missing"
+    try:
+        report = json.loads(path.read_text(encoding="utf-8"))
+        if report.get("status") not in ("ok", "partial"):
+            return {}, "invalid_status"
+        timestamp = datetime.datetime.fromisoformat(
+            str(report.get("generated_at", "")).replace("Z", "+00:00")
+        )
+        if timestamp.tzinfo is None:
+            return {}, "missing_timezone"
+        age = (datetime.datetime.now(datetime.timezone.utc) -
+               timestamp.astimezone(datetime.timezone.utc)).total_seconds()
+        if age < -300 or age > MAX_INJURY_AGE_MINUTES * 60:
+            return {}, "stale"
+        index = {}
+        for item in report.get("players", []):
+            team = team_code(item.get("team"))
+            name = norm(item.get("name"))
+            if team and name:
+                index[(team, name)] = item
+        return index, "fresh"
+    except (ValueError, TypeError, OSError, AttributeError):
+        return {}, "invalid"
+
+
+def eligible_price(price):
+    return price >= MIN_ACCEPTABLE_ODDS
+
+
+def normalize_live_status(item):
+    raw = norm(item.get("status") or item.get("raw_status"))
+    if raw in ("o", "out", "inactive"):
+        return "O"
+    if raw in ("d", "doubtful"):
+        return "D"
+    if raw in ("q", "questionable"):
+        return "Q"
+    if raw in ("t", "day-to-day", "day to day", "dtd"):
+        return "T"
+    if raw in ("p", "probable"):
+        return "P"
+    if raw in ("a", "active", "available"):
+        return "A"
+    return "U"
+
+
+def live_injury_for_game(index, team, player, date):
+    """Snapshot is informational unless for the current Eastern game date."""
+    today_et = datetime.datetime.now(
+        ZoneInfo("America/New_York")
+    ).date().isoformat()
+    # Only use it for today's scheduled games, never historical backtests.
+    if date != today_et:
+        return None
+    return index.get((team, norm(player)))
+
+
+def market_odds_valid(value):
+    return (-10000 < value <= -100 or 100 <= value < 10000)
+
+
 def load_defense():
     rows = read_csv(DATA / "team_defense.csv")
 
@@ -460,6 +528,7 @@ def run():
     odds = read_csv(DATA / "sample_odds.csv")
 
     injuries = load_injuries()
+    live_injuries, live_injury_state = load_live_injuries()
     defense = load_defense()
 
     by_player = defaultdict(list)
@@ -486,6 +555,7 @@ def run():
 
     no_minutes = 0
     skipped_out = 0
+    live_out_skipped = 0
 
     defense_applied = 0
     defense_fallback = 0
@@ -495,6 +565,7 @@ def run():
         "insufficient_history": 0,
         "team_mismatch": 0,
         "confirmed_out": 0,
+        "live_out": 0,
         "insufficient_stats": 0,
         "invalid_odds": 0,
     }
@@ -554,6 +625,15 @@ def run():
         ) in ("out", "inactive"):
             skipped_out += 1
             reject("confirmed_out", bet)
+            continue
+
+        live_injury = live_injury_for_game(
+            live_injuries, abbr, player, date
+        )
+        live_status = normalize_live_status(live_injury) if live_injury else ""
+        if live_status == "O":
+            live_out_skipped += 1
+            reject("live_out", bet)
             continue
 
         usable = [
@@ -679,8 +759,8 @@ def run():
         under_odds = int(under_odds)
 
         if not (
-            -10000 < over_odds < 10000
-            and -10000 < under_odds < 10000
+            market_odds_valid(over_odds)
+            and market_odds_valid(under_odds)
         ):
             reject("invalid_odds", bet)
             continue
@@ -713,6 +793,8 @@ def run():
             ("Over", over, over_odds),
             ("Under", under, under_odds),
         ]:
+            if not eligible_price(price):
+                continue
             hits = sum(
                 (
                     value > line
@@ -860,6 +942,13 @@ def run():
                 "injury_minutes_multiplier": (
                     injury_multiplier
                 ),
+                "live_injury_status": live_status or "not_reported",
+                "live_injury_feed": live_injury_state,
+                "live_injury_reason": (
+                    live_injury.get("reason", "") if live_injury else ""
+                ),
+                "injury_uncertainty": live_status in ("D", "Q", "T"),
+                "odds_cutoff": MIN_ACCEPTABLE_ODDS,
 
                 "market_no_vig_probability": round(
                     market_over
@@ -900,15 +989,18 @@ def run():
         ),
 
         "mode": (
-            "REAL DATA. Experimental Version 5. "
-            "Version 4 minutes and defense projections retained. "
+            "REAL DATA. Experimental Version 7. "
+            "Minutes and defense projections retained. "
             "Probabilities use uncertainty-adjusted normal approximations, "
             "50% shrinkage toward no-vig DraftKings market probabilities, "
             "and push handling for whole-number lines. "
-            "Injuries and lineup changes require verified input. "
+            "Fresh ESPN Out statuses are screened for today's games; "
+            "uncertain injuries are flagged, not assigned invented adjustments. "
             "Probabilities are not calibrated and EV is not a validated edge."
         ),
 
+        "live_injury_feed": live_injury_state,
+        "odds_cutoff": MIN_ACCEPTABLE_ODDS,
         "results": output,
     }
 
@@ -921,6 +1013,8 @@ def run():
     print("DraftKings player prop lines:", len(odds))
     print("Team defense game records:", len(defense))
     print("Generated prediction outcomes:", len(output))
+    print("Live injury feed:", live_injury_state)
+    print("Live Out props screened:", live_out_skipped)
     print("Players matched to teams:", len(matched))
     print("Players without verified teams:", len(unmatched))
 
@@ -944,7 +1038,7 @@ def run():
         skipped_out,
     )
 
-    analyzed_props = len(output) // 2
+    analyzed_props = len(odds) - sum(rejection_counts.values())
     total_rejected = sum(rejection_counts.values())
 
     print("Props analyzed:", analyzed_props)
