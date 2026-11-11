@@ -1,0 +1,58 @@
+
+name: NBA Injury Report Check
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nba-injury-check
+  cancel-in-progress: false
+
+jobs:
+  injuries:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Collect NBA injuries
+        run: python check_nba_injuries.py
+
+      - name: Commit updated injury data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/nba_injuries.json
+
+          if git diff --cached --quiet; then
+            echo "No injury changes"
+            exit 0
+          fi
+
+          git commit -m "Update NBA injury report"
+
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              echo "Injury report published"
+              exit 0
+            fi
+            sleep 5
+          done
+
+          echo "Failed to push injury report"
+          exit 1
