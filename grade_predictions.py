@@ -1,5 +1,3 @@
-
-
 import csv
 import json
 import re
@@ -14,6 +12,16 @@ LOGS = ROOT / "data/game_logs.csv"
 OUTPUT = ROOT / "docs/graded_predictions.json"
 
 ET = ZoneInfo("America/New_York")
+
+# Manually confirmed DNPs for November 10, 2026 only.
+# Never infer DNP status solely from missing ESPN game logs.
+CONFIRMED_DNP = {
+    ("2026-11-10", "joshhart"),
+    ("2026-11-10", "laurimarkkanen"),
+    ("2026-11-10", "tylerherro"),
+    ("2026-11-10", "tristandasilva"),
+}
+
 
 TEAM_NAMES = {
     "ATL": "Atlanta Hawks",
@@ -186,6 +194,19 @@ def pending(result, reason, category):
     return result
 
 
+def dnp(result):
+    result.update({
+        "status": "dnp",
+        "actual": None,
+        "outcome": "dnp",
+        "profit": 0.0,
+        "stake": 0.0,
+        "reason": "Confirmed DNP (manual review)",
+        "diagnostic_category": "dnp",
+    })
+    return result
+
+
 def invalid(result, reason):
     result["status"] = "invalid"
     result["reason"] = reason
@@ -345,6 +366,8 @@ def grade_one(
     result["diagnostic_match_count"] = len(matches)
 
     if len(matches) == 0:
+        if (game_date, player) in CONFIRMED_DNP and not found_teams:
+            return dnp(result)
         if found_teams:
             return pending(
                 result,
@@ -469,6 +492,7 @@ def summarize(rows):
     return {
         "predictions": len(rows),
         "graded": len(graded),
+        "dnp": sum(row["status"] == "dnp" for row in rows),
         "pending": sum(
             row["status"] == "pending"
             for row in rows
@@ -608,6 +632,7 @@ def main():
             "Five-hour buffer is not official final verification.",
             "Team/date matching may not distinguish doubleheaders.",
             "Missing players are not automatically losses.",
+            "Only explicitly confirmed November 10, 2026 DNPs are voided; no stake or profit is counted.",
             "Only missing historical team fields may be recovered from unique matching game logs; original history is unchanged.",
             "Model profitability is not yet validated.",
         ],
@@ -629,6 +654,7 @@ def main():
     print("Prediction grading completed.")
     print("Total predictions:", summary["predictions"])
     print("Graded:", summary["graded"])
+    print("DNP:", summary["dnp"])
     print("Pending:", summary["pending"])
     print("Invalid:", summary["invalid"])
     print("Wins:", summary["wins"])
