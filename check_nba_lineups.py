@@ -1,73 +1,95 @@
 
 import json
 import urllib.request
-import urllib.error
 from datetime import datetime, timezone
 
-BASE = "https://cdn.nba.com/static/json/liveData"
 HEADERS = {
     "User-Agent": "Mozilla/5.0",
     "Accept": "application/json",
 }
 
 def fetch(url):
-    request = urllib.request.Request(url, headers=HEADERS)
-    with urllib.request.urlopen(request, timeout=20) as response:
+    request = urllib.request.Request(
+        url,
+        headers=HEADERS
+    )
+    with urllib.request.urlopen(
+        request,
+        timeout=20
+    ) as response:
         return json.load(response)
 
 def main():
-    print("NBA OFFICIAL LINEUP CONNECTION TEST")
-    print("Checked:", datetime.now(timezone.utc).isoformat())
+    now = datetime.now(timezone.utc)
+    print("ESPN NBA LINEUP CONNECTION TEST")
+    print("Checked:", now.isoformat())
 
-    scoreboard_url = (
-        f"{BASE}/scoreboard/todaysScoreboard_00.json"
+    url = (
+        "https://site.api.espn.com/apis/site/v2/"
+        "sports/basketball/nba/scoreboard"
     )
 
-    try:
-        data = fetch(scoreboard_url)
-        games = data.get("scoreboard", {}).get("games", [])
-        print("Scoreboard connection: SUCCESS")
-        print("Games returned:", len(games))
-    except Exception as error:
-        print("Scoreboard connection: FAILED")
-        print(type(error).__name__, str(error))
-        return
+    scoreboard = fetch(url)
+    events = scoreboard.get("events", [])
 
-    for game in games:
-        game_id = game.get("gameId")
-        away = game.get("awayTeam", {}).get("teamTricode")
-        home = game.get("homeTeam", {}).get("teamTricode")
+    print("Scoreboard connection: SUCCESS")
+    print("Games found:", len(events))
 
-        print(f"\n{away} @ {home} | {game_id}")
-        print("Game status:", game.get("gameStatusText"))
+    for event in events:
+        game_id = event.get("id")
+        print()
+        print("Game:", event.get("name"))
+        print("Tipoff:", event.get("date"))
+        print("ESPN ID:", game_id)
 
-        url = f"{BASE}/boxscore/boxscore_{game_id}.json"
+        if not game_id:
+            continue
+
+        summary_url = (
+            "https://site.api.espn.com/apis/site/v2/"
+            "sports/basketball/nba/summary"
+            f"?event={game_id}"
+        )
 
         try:
-            box = fetch(url).get("game", {})
+            summary = fetch(summary_url)
+            boxscore = summary.get("boxscore", {})
 
-            for side in ("awayTeam", "homeTeam"):
-                team = box.get(side, {})
-                players = team.get("players", [])
+            teams = boxscore.get("players", [])
+            print("Boxscore teams:", len(teams))
 
-                starters = [
-                    p.get("name", "Unknown")
-                    for p in players
-                    if str(p.get("starter", "")).strip()
-                    .lower() in ("1", "true")
-                ]
+            for team in teams:
+                name = team.get(
+                    "team", {}
+                ).get("displayName", "Unknown")
 
-                print(
-                    team.get("teamTricode", side),
-                    "Starters:",
-                    starters if starters else "NOT AVAILABLE"
-                )
+                print("Team:", name)
 
-            print("Box score connection: SUCCESS")
+                for group in team.get("statistics", []):
+                    athletes = group.get("athletes", [])
+                    starters = [
+                        a for a in athletes
+                        if a.get("starter") is True
+                    ]
+
+                    print(
+                        "Confirmed starter flags:",
+                        len(starters)
+                    )
+
+                    for athlete in starters:
+                        player = athlete.get("athlete", {})
+                        print(
+                            " STARTER:",
+                            player.get("displayName")
+                        )
 
         except Exception as error:
-            print("Box score connection: FAILED")
-            print(type(error).__name__, str(error))
+            print(
+                "Summary error:",
+                type(error).__name__,
+                str(error)
+            )
 
 if __name__ == "__main__":
     main()
