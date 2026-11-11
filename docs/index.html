@@ -5,9 +5,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>NBA Prop Analyzer</title>
-
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
-
 <style>
 *{box-sizing:border-box}
 body{margin:0;background:#0b1220;color:#e8edf6;font:13px system-ui,Arial,sans-serif}
@@ -53,6 +51,10 @@ th:nth-child(16){width:5%}
 th:nth-child(17){width:4.5%}
 th:nth-child(18){width:5%}
 .player{font-weight:700}
+.lineup-tag{display:inline-block;margin-left:5px;padding:1px 4px;border-radius:4px;font-size:9px;font-weight:800;vertical-align:middle;letter-spacing:.1px}
+.lineup-starter{background:#123f2b;color:#8ef0b4}
+.lineup-bench{background:#493914;color:#ffe099}
+.lineup-unverified{background:#29384c;color:#a6b5c9}
 .green,.win,.over{color:#75e3a5}
 .red,.loss{color:#f2a7a7}
 .under,.pending{color:#f8c477}
@@ -87,20 +89,16 @@ table{min-width:1100px}
 }
 </style>
 </head>
-
 <body>
 <main>
-
 <h1>Prop Analyzer</h1>
 <div class="muted">NBA Player Props | ESPN Statistics + DraftKings Odds</div>
-
 <div class="warn">
 <strong>REAL NBA DATA — EXPERIMENTAL MODEL.</strong>
 Only odds of -125 or better are displayed in the prediction table.
 Historical grading remains unchanged.
 Model probabilities and expected values are estimates, not validated betting edges.
 </div>
-
 <div class="stats">
 <div class="stat">Eligible Outcomes<b id="count">--</b></div>
 <div class="stat">Selected Positive EV<b id="positive">--</b></div>
@@ -109,48 +107,33 @@ Model probabilities and expected values are estimates, not validated betting edg
 <div class="stat">Total Losses<b id="total-losses" class="red">--</b></div>
 <div class="stat">Last Updated<b id="updated" style="font-size:15px">--</b></div>
 </div>
-
 <div class="tabs">
 <button id="tab-today" class="active">Today</button>
 <button id="tab-yesterday">Yesterday</button>
 <button id="download-excel">Download Excel — All History</button>
 </div>
-
 <div id="export-status" class="muted" role="status"></div>
 <div id="day-description" class="muted">Loading predictions...</div>
-
-<section class="section">
-<h2>NBA Game Lines</h2>
-<div class="muted">Saved DraftKings spreads, totals, and implied points.</div>
-<div id="game-lines-status" class="muted"></div>
-<div id="game-lines-grid" class="gamecards"></div>
-</section>
-
 <div class="controls">
 <input id="search" type="search" placeholder="Search player, team or opponent">
-
 <select id="game"><option value="">All Games</option></select>
-
 <select id="market">
 <option value="">PRA — All Markets</option>
 <option value="Points">Points</option>
 <option value="Rebounds">Rebounds</option>
 <option value="Assists">Assists</option>
 </select>
-
 <select id="side">
 <option value="">Over + Under</option>
 <option value="Over">Over</option>
 <option value="Under">Under</option>
 </select>
-
 <select id="odds-filter">
 <option value="-125" selected>Odds -125 or Better</option>
 <option value="-120">Odds -120 or Better</option>
 <option value="-110">Odds -110 or Better</option>
 <option value="100">Plus Money Only</option>
 </select>
-
 <select id="minutes-filter">
 <option value="">All Minutes Reliability</option>
 <option value="Stable">Stable Only</option>
@@ -158,13 +141,11 @@ Model probabilities and expected values are estimates, not validated betting edg
 <option value="Volatile">Volatile Only</option>
 <option value="exclude-volatile">Hide Volatile</option>
 </select>
-
 <select id="selection-filter">
 <option value="">All Predictions</option>
 <option value="selected">Model Picks</option>
 <option value="not_selected">Not Selected</option>
 </select>
-
 <select id="result-filter">
 <option value="">All Results</option>
 <option value="win">Wins</option>
@@ -175,21 +156,17 @@ Model probabilities and expected values are estimates, not validated betting edg
 <option value="invalid">Invalid</option>
 <option value="not_selected">Not Picked</option>
 </select>
-
 <button id="refresh">Refresh Data</button>
 </div>
-
 <div class="note">
 Minimum acceptable American odds: -125. Prices of -126, -130, -150 and worse are excluded.
 Minutes reliability: Stable ≤4 minutes SD; Moderate above 4 through 7; Volatile above 7.
 </div>
-
+<div id="lineup-status" class="muted" role="status">Pregame lineups: loading...</div>
 <div id="status" class="muted">Loading predictions...</div>
-
 <div class="tablewrap">
 <table>
-<thead>
-<tr>
+<thead><tr>
 <th data-sort="date">Date</th>
 <th data-sort="matchup">Game</th>
 <th data-sort="game_time">Tipoff</th>
@@ -208,53 +185,47 @@ Minutes reliability: Stable ≤4 minutes SD; Moderate above 4 through 7; Volatil
 <th data-sort="minutes_projection">Min</th>
 <th data-sort="actual">Act</th>
 <th data-sort="result">Result</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody id="rows"></tbody>
 </table>
 </div>
-
+<section class="section">
+<h2>NBA Game Lines</h2>
+<div class="muted">Saved DraftKings spreads, totals, and implied points.</div>
+<div id="game-lines-status" class="muted"></div>
+<div id="game-lines-grid" class="gamecards"></div>
+</section>
 <section class="section">
 <h2>Live Betting Performance</h2>
 <div class="muted">
 Saved pregame model selections graded against ESPN.
 Historical tracking is preserved, including picks made before the -125 display rule.
 </div>
-
 <div id="tracking-status" class="muted"></div>
-
 <div class="stats" style="grid-template-columns:repeat(4,minmax(0,1fr))">
 <div class="stat">Win Rate<b id="track-winrate">--</b></div>
 <div class="stat">ROI<b id="track-roi">--</b></div>
 <div class="stat">Profit / Loss<b id="track-profit">--</b></div>
 <div class="stat">Settled Outcomes<b id="track-settled">--</b></div>
 </div>
-
 <div id="tracking-details" class="muted"></div>
-
 <h3>Performance by Market</h3>
 <div id="tracking-breakdowns" class="cards"></div>
-
 <h3>Over vs. Under</h3>
 <div id="side-breakdowns" class="cards"></div>
-
 <h3>Daily Results</h3>
 <div class="daily-wrap">
 <table class="daily-table">
-<thead>
-<tr>
+<thead><tr>
 <th>Date</th><th>Selections</th><th>Graded</th>
 <th>W</th><th>L</th><th>Push</th>
 <th>DNP</th><th>Pending</th>
 <th>Win Rate</th><th>ROI</th><th>Profit</th>
-</tr>
-</thead>
+</tr></thead>
 <tbody id="daily-results"></tbody>
 </table>
 </div>
-
 <div id="selection-audit" class="note" style="margin-top:14px"></div>
-
 <div class="info">
 <strong>Performance methodology</strong>
 <p>Only selected and graded outcomes count toward win rate and ROI.
@@ -263,7 +234,6 @@ are excluded from returns.</p>
 <p>Positive estimated EV does not establish a profitable betting edge.</p>
 </div>
 </section>
-
 <section class="section">
 <h2>Model Performance</h2>
 <div class="muted">Historical prediction accuracy using ESPN game logs.</div>
@@ -274,21 +244,16 @@ MAE is mean absolute error. RMSE is root mean squared error.
 Bias is average projection minus actual.
 </div>
 </section>
-
 <div class="footer">
 Data: ESPN and DraftKings via The Odds API.
 <p>Model: <span id="model-version">Experimental</span></p>
 <p>Excel downloads use saved files only and do not request new sportsbook odds.</p>
 </div>
-
 </main>
-
 <script>
 "use strict";
-
 const MIN_ACCEPTABLE_ODDS=-125;
 const el=id=>document.getElementById(id);
-
 let todayData=[];
 let historyData=[];
 let data=[];
@@ -298,7 +263,8 @@ let sortKey="ev";
 let sortAscending=false;
 let todayDate="";
 let yesterdayDate="";
-
+let lineupData={games:{}};
+let lineupLoadError="";
 const TEAM_CODES={
 "Atlanta Hawks":"ATL",
 "Boston Celtics":"BOS",
@@ -332,30 +298,25 @@ const TEAM_CODES={
 "Utah Jazz":"UTA",
 "Washington Wizards":"WAS"
 };
-
 const TEAM_ALIASES={
 GS:"GSW",NY:"NYK",NO:"NOP",
 UTAH:"UTA",SA:"SAS",WSH:"WAS",
 PHO:"PHX",BRK:"BKN"
 };
-
 function shortTeam(value){
 const s=String(value||"").trim();
 return TEAM_CODES[s]||TEAM_ALIASES[s]||s||"--";
 }
-
 function shortMatchup(r){
 if(r.away_team&&r.home_team)
 return shortTeam(r.away_team)+" @ "+shortTeam(r.home_team);
 return r.matchup||"--";
 }
-
 function formatDate(v){
 if(!v)return "--";
 const p=String(v).split("-");
 return p.length===3?p[1]+"/"+p[2]:String(v);
 }
-
 function formatTipoff(v){
 if(!v)return "--";
 const d=new Date(v);
@@ -366,31 +327,26 @@ hour:"numeric",minute:"2-digit",hour12:true
 }).format(d);
 return String(v);
 }
-
 function num(v,n=1){
 if(v===null||v===undefined||v==="")return "--";
 const x=Number(v);
 return Number.isFinite(x)?x.toFixed(n):"--";
 }
-
 function pct(v){
 if(v===null||v===undefined||v==="")return "--";
 const x=Number(v);
 return Number.isFinite(x)?(x*100).toFixed(1)+"%":"--";
 }
-
 function odds(v){
 if(v===null||v===undefined||v==="")return "--";
 const x=Number(v);
 return Number.isFinite(x)?(x>0?"+":"")+x:"--";
 }
-
 function acceptableOdds(r){
 const n=Number(r.odds);
 return r.odds!==null&&r.odds!==undefined&&
 r.odds!==""&&Number.isFinite(n)&&n>=MIN_ACCEPTABLE_ODDS;
 }
-
 function normalizeMarket(v){
 const s=String(v||"").toLowerCase();
 if(s.includes("point"))return "Points";
@@ -398,33 +354,28 @@ if(s.includes("rebound"))return "Rebounds";
 if(s.includes("assist"))return "Assists";
 return v||"";
 }
-
 function normalizeSide(v){
 const s=String(v||"").toLowerCase();
 if(s==="over")return "Over";
 if(s==="under")return "Under";
 return v||"";
 }
-
 function shortMarket(v){
 return {Points:"PTS",Rebounds:"REB",Assists:"AST"}[
 normalizeMarket(v)]||v||"--";
 }
-
 function present(r,keys){
 for(const k of keys)
 if(r[k]!==null&&r[k]!==undefined&&r[k]!=="")
 return r[k];
 return null;
 }
-
 function numeric(r,keys){
 const v=present(r,keys);
 if(v===null)return null;
 const n=Number(v);
 return Number.isFinite(n)?n:null;
 }
-
 function minutesDetails(r){
 const sd=numeric(r,[
 "minutes_stddev","minutes_std_dev",
@@ -433,7 +384,6 @@ const sd=numeric(r,[
 "minutes_last10_std",
 "minutes_volatility","minutes_sd"
 ]);
-
 const raw=present(r,[
 "minutes_reliability",
 "minutes_reliability_label",
@@ -441,9 +391,7 @@ const raw=present(r,[
 "minutes_risk","minutes_risk_label",
 "minutes_stability","minutes_rating"
 ]);
-
 let label=null;
-
 if(raw!==null){
 const s=String(raw).toLowerCase();
 if(s.includes("volatile")||s.includes("high risk"))
@@ -453,21 +401,17 @@ label="Moderate";
 else if(s.includes("stable")||s.includes("reliable"))
 label="Stable";
 }
-
 if(!label&&sd!==null)
 label=sd<=4?"Stable":sd<=7?"Moderate":"Volatile";
-
 return {
 label:label||"N/A",
 sd,
 projection:numeric(r,["minutes_projection"])
 };
 }
-
 function historyRow(r){
 const outcome=String(r.outcome||"").toLowerCase();
 const status=String(r.status||"").toLowerCase();
-
 return {
 ...r,
 date:r.game_date||r.date||"",
@@ -484,7 +428,6 @@ selection_status:status==="not_selected"
 historical:true
 };
 }
-
 function currentRow(r){
 return {
 ...r,
@@ -497,7 +440,6 @@ selection_status:"unverified",
 historical:false
 };
 }
-
 function selectionGroupKey(r){
 return [
 r.date,
@@ -506,39 +448,29 @@ String(r.player||"").trim().toLowerCase(),
 String(r.market||"").toLowerCase()
 ].join("|");
 }
-
 function markCurrentSelections(rows){
 const groups=new Map();
-
 rows.forEach((r,i)=>{
 const k=selectionGroupKey(r);
 if(!groups.has(k))groups.set(k,[]);
 groups.get(k).push(i);
 });
-
 for(const indices of groups.values()){
 let best=-1,bestEv=-Infinity,bestProb=-Infinity;
-
 for(const i of indices){
 const r=rows[i];
-
 if(!acceptableOdds(r))continue;
-
 const ev=numeric(r,["ev"]);
 const prob=numeric(r,["probability"]);
-
 if(ev===null||ev<=0||
 !["Over","Under"].includes(r.side))continue;
-
 const p=prob===null?-1:prob;
-
 if(ev>bestEv||(ev===bestEv&&p>bestProb)){
 best=i;
 bestEv=ev;
 bestProb=p;
 }
 }
-
 for(const i of indices){
 rows[i].selection_status=i===best
 ?"selected":"not_selected";
@@ -546,7 +478,6 @@ if(i!==best)rows[i].result="not_selected";
 }
 }
 }
-
 function predictionKey(r){
 return [
 r.event_id||"",
@@ -557,12 +488,10 @@ normalizeSide(r.side),
 String(r.line??"")
 ].join("|");
 }
-
 function gameKey(r){
 return String(r.event_id||
 ((r.date||r.game_date||"")+"|"+(r.matchup||"")));
 }
-
 function isoDay(d){
 return [
 d.getFullYear(),
@@ -570,7 +499,6 @@ String(d.getMonth()+1).padStart(2,"0"),
 String(d.getDate()).padStart(2,"0")
 ].join("-");
 }
-
 function dateMinusOne(s){
 if(!s)return "";
 const d=new Date(s+"T12:00:00Z");
@@ -578,7 +506,6 @@ if(Number.isNaN(d.getTime()))return "";
 d.setUTCDate(d.getUTCDate()-1);
 return d.toISOString().slice(0,10);
 }
-
 function chooseDates(json){
 const dates=todayData.map(r=>r.date).filter(Boolean).sort();
 todayDate=dates.at(-1)||
@@ -586,7 +513,6 @@ String(json.generated_at||"").slice(0,10)||
 isoDay(new Date());
 yesterdayDate=dateMinusOne(todayDate);
 }
-
 function displayResult(r){
 return {
 win:"WIN",loss:"LOSS",push:"PUSH",
@@ -595,46 +521,36 @@ invalid:"INVALID",not_selected:"SKIP"
 }[String(r||"pending").toLowerCase()]||
 String(r).toUpperCase();
 }
-
 function populateGames(){
 const s=el("game"),old=s.value;
 s.replaceChildren(new Option("All Games",""));
-
 const games=new Map();
 for(const r of data)
 games.set(gameKey(r),formatDate(r.date)+" "+shortMatchup(r));
-
 for(const [key,label] of [...games].sort((a,b)=>
 a[1].localeCompare(b[1])))
 s.add(new Option(label,key));
-
 if([...s.options].some(o=>o.value===old))s.value=old;
 }
-
 function switchDay(day){
 activeDay=day;
-
 el("tab-today").classList.toggle("active",day==="today");
 el("tab-yesterday").classList.toggle("active",day==="yesterday");
-
 data=(day==="today"
 ?todayData.filter(r=>r.date===todayDate)
 :historyData.filter(r=>r.date===yesterdayDate))
 .filter(acceptableOdds);
-
 el("day-description").textContent=
 (day==="today"?"Today — "+todayDate:
 "Yesterday — "+yesterdayDate)+
 " | "+(day==="today"?"Current predictions":"Saved historical predictions")+
 " | Minimum odds -125";
-
 el("game").value="";
 populateGames();
 updateSummary();
 displayGameLines(data);
 draw();
 }
-
 function updateSummary(){
 el("count").textContent=data.length;
 el("positive").textContent=
@@ -643,7 +559,6 @@ el("games").textContent=new Set(data.map(gameKey)).size;
 el("total-wins").textContent=gradedReport?.summary?.wins??"--";
 el("total-losses").textContent=gradedReport?.summary?.losses??"--";
 }
-
 function sortValue(r){
 if(sortKey==="minutes_reliability")
 return {Stable:3,Moderate:2,Volatile:1}[
@@ -653,7 +568,59 @@ return minutesDetails(r).projection;
 if(sortKey==="team")return r.team_abbr||r.team;
 return r[sortKey];
 }
-
+function normalizedPlayerName(value){
+return String(value||"").normalize("NFD")
+.replace(/[\u0300-\u036f]/g,"")
+.toLowerCase().replace(/[^a-z0-9]/g,"");
+}
+function lineupInfo(r){
+if(activeDay!=="today")return null;
+const team=shortTeam(r.team_abbr||r.team);
+const opponent=shortTeam(r.opponent);
+const name=normalizedPlayerName(r.player);
+if(!name||!team||team==="--")return null;
+const rowDate=String(r.date||"");
+for(const game of Object.values(lineupData.games||{})){
+if(!game||game.status!=="confirmed")continue;
+if(![game.home,game.away].includes(team))continue;
+if(opponent&&opponent!=="--"&&![game.home,game.away].includes(opponent))continue;
+const tipoffDate=new Date(game.tipoff);
+if(!Number.isFinite(tipoffDate.getTime()))continue;
+const dateParts=new Intl.DateTimeFormat("en-US",{
+timeZone:"America/New_York",
+year:"numeric",month:"2-digit",day:"2-digit"
+}).formatToParts(tipoffDate);
+const dp=Object.fromEntries(dateParts.map(p=>[p.type,p.value]));
+const easternDate=dp.year+"-"+dp.month+"-"+dp.day;
+if(rowDate&&easternDate!==rowDate)continue;
+const starters=team===game.home?game.home_starters:game.away_starters;
+if(!Array.isArray(starters)||starters.length!==5)continue;
+const found=starters.some(p=>normalizedPlayerName(p.name)===name);
+return {status:found?"starter":"bench",game};
+}
+return {status:"unverified"};
+}
+async function loadLineups(){
+try{
+const json=await fetchJson("nba_lineups.json");
+if(!json||typeof json.games!=="object"||Array.isArray(json.games))
+throw new Error("Invalid lineup data");
+lineupData=json;
+lineupLoadError="";
+const games=Object.values(json.games);
+const confirmed=games.filter(g=>g?.status==="confirmed").length;
+el("lineup-status").textContent=
+"ESPN lineups: "+confirmed+" confirmed game"+(confirmed===1?"":"s")+
+" / "+games.length+" tracked · Updated "+
+(json.generated_at?new Date(json.generated_at).toLocaleTimeString():"unknown")+
+" · Unverified does not mean out.";
+}catch(e){
+lineupLoadError=e.message;
+el("lineup-status").textContent=
+"ESPN lineups unavailable ("+e.message+"). Predictions unchanged.";
+}
+draw();
+}
 function draw(){
 const query=el("search").value.trim().toLowerCase();
 const game=el("game").value;
@@ -663,15 +630,12 @@ const oddsLimit=el("odds-filter").value;
 const minFilter=el("minutes-filter").value;
 const selection=el("selection-filter").value;
 const result=el("result-filter").value;
-
 const filtered=data.filter(r=>{
 const text=[
 r.player,r.team,r.team_abbr,r.opponent,
 r.matchup,r.away_team,r.home_team
 ].filter(Boolean).join(" ").toLowerCase();
-
 const risk=minutesDetails(r).label;
-
 return acceptableOdds(r)&&text.includes(query)&&
 (!game||gameKey(r)===game)&&
 (!market||r.market===market)&&
@@ -683,11 +647,9 @@ return acceptableOdds(r)&&text.includes(query)&&
 ?risk!=="Volatile":risk===minFilter))&&
 (!oddsLimit||Number(r.odds)>=Number(oddsLimit));
 });
-
 filtered.sort((a,b)=>{
 const av=sortValue(a),bv=sortValue(b);
 let c=0;
-
 if(av==null)c=1;
 else if(bv==null)c=-1;
 else if(Number.isFinite(Number(av))&&
@@ -695,18 +657,14 @@ Number.isFinite(Number(bv))&&
 String(av).trim()!==""&&String(bv).trim()!=="")
 c=Number(av)-Number(bv);
 else c=String(av).localeCompare(String(bv));
-
 return sortAscending?c:-c;
 });
-
 const tbody=el("rows");
 tbody.replaceChildren();
-
 for(const r of filtered){
 const tr=document.createElement("tr");
 const m=minutesDetails(r);
 const result=String(r.result||"pending").toLowerCase();
-
 const values=[
 formatDate(r.date),shortMatchup(r),
 formatTipoff(r.game_time),r.player||"--",
@@ -719,17 +677,27 @@ r.last10==null?"--":r.last10+"/10",
 m.label,num(m.projection),
 num(r.actual),displayResult(result)
 ];
-
 values.forEach((v,i)=>{
 const td=document.createElement("td");
 td.textContent=v;
 td.title=String(v);
-
-if(i===3)td.className="player";
+if(i===3){
+td.className="player";
+const info=lineupInfo(r);
+if(info){
+const tag=document.createElement("span");
+tag.className="lineup-tag lineup-"+info.status;
+tag.textContent=info.status==="starter"?"S":
+info.status==="bench"?"B":"U";
+tag.title=info.status==="starter"?"Listed as an ESPN starter":
+info.status==="bench"?"Not among the five listed starters; may still play":
+"No complete confirmed ESPN starting lineup for this game";
+td.appendChild(tag);
+}
+}
 if(i===7)td.className=r.side==="Over"?"over":"under";
 if(i===12)td.className=Number(r.ev)>0?"green":"red";
 if(i===17)td.className=result;
-
 if(i===14){
 const pill=document.createElement("span");
 pill.className="pill "+(m.label==="N/A"?"NA":m.label);
@@ -738,12 +706,10 @@ pill.title=m.sd==null?"Minutes diagnostics unavailable":
 "Minutes SD: "+num(m.sd);
 td.replaceChildren(pill);
 }
-
 tr.appendChild(td);
 });
 tbody.appendChild(tr);
 }
-
 if(!filtered.length){
 const tr=document.createElement("tr");
 const td=document.createElement("td");
@@ -752,12 +718,10 @@ td.textContent="No predictions match the current filters.";
 tr.appendChild(td);
 tbody.appendChild(tr);
 }
-
 el("status").textContent=
 filtered.length+" of "+data.length+
 " eligible predictions displayed (odds -125 or better).";
 }
-
 function addText(parent,tag,value,cls=""){
 const n=document.createElement(tag);
 n.textContent=value;
@@ -765,12 +729,10 @@ if(cls)n.className=cls;
 parent.appendChild(n);
 return n;
 }
-
 function addCard(container,title,items,big=null){
 const c=addText(container,"div","","card");
 addText(c,"h3",title);
 if(big!==null)addText(c,"div",big,"big");
-
 for(const [label,value] of items){
 const line=addText(c,"div","","metric");
 addText(line,"span",label);
@@ -778,23 +740,18 @@ addText(line,"strong",String(value));
 }
 return c;
 }
-
 function displayGameLines(rows){
 const grid=el("game-lines-grid");
 grid.replaceChildren();
 const games=new Map();
-
 for(const r of rows){
 const k=gameKey(r),prev=games.get(k);
 if(!prev||(prev.game_total==null&&r.game_total!=null))
 games.set(k,r);
 }
-
 let available=0;
-
 for(const r of games.values()){
 if(r.game_total!=null)available++;
-
 addCard(grid,shortMatchup(r),[
 ["Tipoff (ET)",formatDate(r.date)+" "+formatTipoff(r.game_time)],
 [shortTeam(r.away_team)+" Spread",num(r.away_spread)],
@@ -804,12 +761,10 @@ addCard(grid,shortMatchup(r),[
 [shortTeam(r.home_team)+" Implied",num(r.home_implied_total)]
 ]);
 }
-
 el("game-lines-status").textContent=
 games.size?available+" of "+games.size+" games have saved lines.":
 "No saved game lines for this date.";
 }
-
 async function fetchJson(filename){
 const response=await fetch("./"+filename+"?t="+Date.now(),
 {cache:"no-store"});
@@ -817,35 +772,26 @@ if(!response.ok)
 throw new Error(filename+": HTTP "+response.status);
 return response.json();
 }
-
 async function loadData(){
 el("status").textContent="Loading predictions...";
-
 try{
 const [currentResult,historyResult]=await Promise.allSettled([
 fetchJson("results.json"),
 fetchJson("graded_predictions.json")
 ]);
-
 if(currentResult.status!=="fulfilled")
 throw currentResult.reason;
-
 const json=currentResult.value;
 if(!Array.isArray(json.results))
 throw new Error("results.json has no results array");
-
 todayData=json.results.map(currentRow);
 markCurrentSelections(todayData);
-
 gradedReport=historyResult.status==="fulfilled"
 ?historyResult.value:null;
-
 historyData=Array.isArray(gradedReport?.predictions)
 ?gradedReport.predictions.map(historyRow):[];
-
 const saved=new Map();
 for(const r of historyData)saved.set(predictionKey(r),r);
-
 for(const r of todayData){
 const match=saved.get(predictionKey(r));
 if(match){
@@ -854,43 +800,34 @@ r.actual=match.actual;
 r.selection_status=match.selection_status;
 }
 }
-
 chooseDates(json);
-
 el("updated").textContent=json.generated_at
 ?new Date(json.generated_at).toLocaleString():"Unknown";
-
 el("model-version").textContent=
 json.results[0]?.model||
 json.results[0]?.model_version||
 "Experimental model";
-
 switchDay(activeDay);
-
 }catch(e){
 console.error(e);
 el("status").textContent="Data loading failed: "+e.message;
 }
 }
-
 function trackUnits(v){
 if(v==null||!Number.isFinite(Number(v)))return "--";
 const n=Number(v)/100;
 return (n>0?"+":"")+n.toFixed(2)+" units";
 }
-
 function summarizeSelected(rows){
 const graded=rows.filter(r=>
 r.status==="graded"&&
 ["win","loss","push"].includes(
 String(r.outcome||"").toLowerCase()));
-
 const wins=graded.filter(r=>r.outcome==="win").length;
 const losses=graded.filter(r=>r.outcome==="loss").length;
 const pushes=graded.filter(r=>r.outcome==="push").length;
 const stake=graded.reduce((s,r)=>s+(Number(r.stake)||0),0);
 const profit=graded.reduce((s,r)=>s+(Number(r.profit)||0),0);
-
 return {
 selected:rows.length,
 graded:graded.length,wins,losses,pushes,
@@ -901,7 +838,6 @@ hypothetical_roi:stake?100*profit/stake:null,
 hypothetical_profit:profit
 };
 }
-
 function trackingCard(container,title,s={}){
 addCard(container,title,[
 ["Graded",s.graded??0],
@@ -914,24 +850,19 @@ num(s.hypothetical_roi)+"%"],
 ["DNP / Pending",(s.dnp??0)+" / "+(s.pending??0)]
 ]);
 }
-
 function displayDaily(rows){
 const groups=new Map();
-
 for(const r of rows){
 const date=r.game_date||r.date||"Unknown";
 if(!groups.has(date))groups.set(date,[]);
 groups.get(date).push(r);
 }
-
 const tbody=el("daily-results");
 tbody.replaceChildren();
-
 for(const [date,items] of
 [...groups].sort((a,b)=>b[0].localeCompare(a[0]))){
 const s=summarizeSelected(items);
 const tr=document.createElement("tr");
-
 [
 date,s.selected,s.graded,s.wins,s.losses,
 s.pushes,s.dnp,s.pending,
@@ -946,65 +877,52 @@ tr.appendChild(td);
 tbody.appendChild(tr);
 }
 }
-
 function selectionAudit(rows){
 const groups=new Map();
-
 for(const r of rows.filter(r=>r.status!=="not_selected")){
 const k=[
 r.game_date,r.event_id||r.matchup,
 String(r.player||"").toLowerCase(),
 String(r.market||"").toLowerCase()
 ].join("|");
-
 groups.set(k,(groups.get(k)||0)+1);
 }
-
 const duplicates=[...groups.values()].filter(n=>n>1).length;
 el("selection-audit").textContent=duplicates
 ?"WARNING: "+duplicates+" groups contain duplicate selected sides."
 :"Selection audit passed: no duplicate selected sides.";
 }
-
 async function loadTracking(){
 try{
 const json=await fetchJson("graded_predictions.json");
 if(!json.summary||!Array.isArray(json.predictions))
 throw new Error("Invalid grading report");
-
 gradedReport=json;
 const s=json.summary;
-
 el("track-winrate").textContent=num(s.win_rate)+"%";
 el("track-roi").textContent=num(s.hypothetical_roi)+"%";
 el("track-profit").textContent=trackUnits(s.hypothetical_profit);
 el("track-settled").textContent=s.graded??0;
-
 el("tracking-details").textContent=
 (s.wins??0)+" wins · "+(s.losses??0)+" losses · "+
 (s.pushes??0)+" pushes · "+(s.dnp??0)+" DNP · "+
 (s.pending??0)+" pending · "+
 (s.not_selected??0)+" not selected";
-
 const selected=json.predictions.filter(
 r=>r.status!=="not_selected");
-
 const marketGrid=el("tracking-breakdowns");
 const sideGrid=el("side-breakdowns");
 marketGrid.replaceChildren();
 sideGrid.replaceChildren();
-
 for(const [key,label] of [
 ["points","Points"],["rebounds","Rebounds"],
 ["assists","Assists"]
 ]){
 const subset=selected.filter(r=>
 String(r.market||"").toLowerCase()===key);
-
 trackingCard(marketGrid,label,
 json.markets?.[key]||summarizeSelected(subset));
 }
-
 for(const [key,label] of [
 ["over","Overs"],["under","Unders"]
 ]){
@@ -1013,36 +931,29 @@ selected.filter(r=>
 String(r.side||"").toLowerCase()===key)
 ));
 }
-
 displayDaily(selected);
 selectionAudit(json.predictions);
 updateSummary();
-
 el("tracking-status").textContent=
 "Graded results updated: "+
 (json.generated_at?
 new Date(json.generated_at).toLocaleString():"Unknown");
-
 }catch(e){
 el("tracking-status").textContent=
 "Grading unavailable: "+e.message;
 }
 }
-
 async function loadBacktest(){
 try{
 const json=await fetchJson("backtest.json");
 if(!json.markets)throw new Error("Invalid backtest");
-
 const grid=el("performance-grid");
 grid.replaceChildren();
-
 for(const [key,label] of [
 ["points","Points"],["rebounds","Rebounds"],
 ["assists","Assists"]
 ]){
 const s=json.markets[key]||{};
-
 addCard(grid,label,[
 ["Predictions Tested",s.predictions_tested??"--"],
 ["MAE",num(s.mean_absolute_error,3)],
@@ -1050,26 +961,20 @@ addCard(grid,label,[
 ["Bias",num(s.mean_signed_error,3)]
 ],num(s.mean_absolute_error,3));
 }
-
 el("backtest-status").textContent="Backtest loaded.";
-
 }catch(e){
 el("backtest-status").textContent=
 "Backtest unavailable: "+e.message;
 }
 }
-
 /* EXCEL EXPORT */
-
 function excelNumber(v){
 if(v===null||v===undefined||v==="")return null;
 const n=Number(v);
 return Number.isFinite(n)?n:null;
 }
-
 function exportRow(r){
 const m=minutesDetails(r);
-
 return {
 "Date":r.date||"",
 "Matchup":shortMatchup(r),
@@ -1101,7 +1006,6 @@ return {
 "Event ID":r.event_id||""
 };
 }
-
 function excelWidths(){
 return [
 {wch:13},{wch:19},{wch:14},{wch:25},
@@ -1112,7 +1016,6 @@ return [
 {wch:17},{wch:12},{wch:14},{wch:20}
 ];
 }
-
 function addExcelSheet(wb,name,rows){
 const sheet=XLSX.utils.json_to_sheet(rows);
 sheet["!cols"]=excelWidths();
@@ -1121,10 +1024,8 @@ ref:sheet["!ref"]||"A1:X1"
 };
 XLSX.utils.book_append_sheet(wb,sheet,name);
 }
-
 function exportSummaryRows(rows){
 const selected=rows.filter(r=>r.selection_status==="selected");
-
 const normalizeGrading=r=>({
 ...r,
 status:r.status||
@@ -1132,9 +1033,7 @@ status:r.status||
 ?"graded":r.result==="dnp"?"dnp":"pending"),
 outcome:r.outcome||r.result
 });
-
 const overall=summarizeSelected(selected.map(normalizeGrading));
-
 const summary=[
 ["NBA PROP ANALYZER — ALL HISTORY",""],
 ["Generated",new Date().toLocaleString()],
@@ -1152,104 +1051,77 @@ const summary=[
 ["",""],
 ["Market","Wins","Losses","Graded","Win Rate %","ROI %","Profit $"]
 ];
-
 for(const market of ["Points","Rebounds","Assists"]){
 const group=selected.filter(r=>
 normalizeMarket(r.market)===market);
-
 const s=summarizeSelected(group.map(normalizeGrading));
-
 summary.push([
 market,s.wins,s.losses,s.graded,
 s.win_rate,s.hypothetical_roi,s.hypothetical_profit
 ]);
 }
-
 summary.push([]);
 summary.push(["Date","Predictions","Selected",
 "Graded","Wins","Losses","Win Rate %","ROI %","Profit $"]);
-
 const dates=[...new Set(rows.map(r=>r.date))]
 .filter(Boolean).sort().reverse();
-
 for(const date of dates){
 const daily=rows.filter(r=>r.date===date);
 const picks=daily.filter(r=>r.selection_status==="selected");
 const s=summarizeSelected(picks.map(normalizeGrading));
-
 summary.push([
 date,daily.length,picks.length,s.graded,
 s.wins,s.losses,s.win_rate,
 s.hypothetical_roi,s.hypothetical_profit
 ]);
 }
-
 summary.push([]);
 summary.push([
 "NOTE",
 "Historical results include selections made before the -125 cutoff."
 ]);
-
 return summary;
 }
-
 async function downloadExcel(){
 const button=el("download-excel");
 const status=el("export-status");
-
 button.disabled=true;
 button.textContent="Preparing Excel...";
 status.textContent="Collecting all saved daily predictions...";
-
 try{
 if(typeof XLSX==="undefined")
 throw new Error(
 "Excel library did not load. Check your internet connection and refresh."
 );
-
 const json=await fetchJson("graded_predictions.json");
-
 if(!Array.isArray(json.predictions))
 throw new Error("Historical grading file is missing predictions.");
-
 const history=json.predictions.map(historyRow);
 const current=todayData;
-
 const rowsByKey=new Map();
-
 for(const r of history)
 rowsByKey.set(predictionKey(r),r);
-
 for(const r of current){
 const key=predictionKey(r);
 if(!rowsByKey.has(key))
 rowsByKey.set(key,r);
 }
-
 const all=[...rowsByKey.values()];
-
 if(!all.length)
 throw new Error("No saved predictions available to export.");
-
 const wb=XLSX.utils.book_new();
-
 const summary=XLSX.utils.aoa_to_sheet(
 exportSummaryRows(all)
 );
-
 summary["!cols"]=[
 {wch:30},{wch:22},{wch:18},{wch:15},
 {wch:18},{wch:15},{wch:18},{wch:18},{wch:18}
 ];
-
 XLSX.utils.book_append_sheet(wb,summary,"Summary");
-
 const dates=[...new Set(all.map(r=>r.date))]
 .filter(Boolean).sort().reverse();
-
 for(const date of dates){
 const daily=all.filter(r=>r.date===date);
-
 daily.sort((a,b)=>{
 const game=shortMatchup(a).localeCompare(shortMatchup(b));
 if(game)return game;
@@ -1259,24 +1131,19 @@ if(player)return player;
 return String(a.market||"").localeCompare(
 String(b.market||""));
 });
-
 addExcelSheet(wb,date,daily.map(exportRow));
 }
-
 const filename=
 "NBA_Prop_Analyzer_All_History_"+
 new Date().toISOString().slice(0,10)+".xlsx";
-
 XLSX.writeFile(wb,filename,{
 bookType:"xlsx",
 compression:true
 });
-
 status.textContent=
 "Excel export prepared: "+
 all.length+" predictions across "+
 dates.length+" dates. Check your browser downloads.";
-
 }catch(error){
 console.error(error);
 status.textContent="Excel export failed: "+error.message;
@@ -1286,17 +1153,13 @@ button.disabled=false;
 button.textContent="Download Excel — All History";
 }
 }
-
 el("download-excel").addEventListener(
 "click",downloadExcel
 );
-
 el("tab-today").addEventListener("click",
 ()=>switchDay("today"));
-
 el("tab-yesterday").addEventListener("click",
 ()=>switchDay("yesterday"));
-
 for(const id of [
 "search","game","market","side",
 "odds-filter","minutes-filter",
@@ -1304,11 +1167,9 @@ for(const id of [
 ]){
 el(id).addEventListener("input",draw);
 }
-
 document.querySelectorAll("th[data-sort]").forEach(th=>{
 th.addEventListener("click",()=>{
 const key=th.dataset.sort;
-
 if(sortKey===key)
 sortAscending=!sortAscending;
 else{
@@ -1318,17 +1179,17 @@ sortAscending=[
 "team","opponent","market","side","result"
 ].includes(key);
 }
-
 draw();
 });
 });
-
 el("refresh").addEventListener("click",()=>{
 loadData();
 loadTracking();
 loadBacktest();
+loadLineups();
 });
-
+setInterval(loadLineups,120000);
+loadLineups();
 loadData();
 loadTracking();
 loadBacktest();
