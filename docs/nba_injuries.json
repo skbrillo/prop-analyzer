@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-11T21:16:39.492729+00:00",
+  "generated_at": "2026-11-11T22:37:02.784892+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 98,
+  "player_count": 97,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -23,7 +23,6 @@
     "MIL",
     "MIN",
     "NOP",
-    "NYK",
     "OKC",
     "ORL",
     "PHI",
@@ -35,12 +34,12 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 29,
-  "players_with_team": 98,
+  "teams_count": 28,
+  "players_with_team": 97,
   "players_without_team": 0,
   "status_counts": {
-    "O": 76,
-    "T": 22
+    "O": 77,
+    "T": 20
   },
   "players": [
     {
@@ -100,6 +99,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538634",
+      "name": "Nolan Traore",
+      "team": "BKN",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Calf | out",
+      "date": "2026-11-11T21:57Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538583",
       "name": "Mikel Brown Jr.",
       "team": "BKN",
@@ -107,17 +117,6 @@
       "raw_status": "Out",
       "reason": "Not Specified | Illness | out",
       "date": "2026-11-11T16:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538506",
-      "name": "Nolan Traore",
-      "team": "BKN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Calf | day-to-day",
-      "date": "2026-11-10T22:56Z",
       "team_match": "feed"
     },
     {
@@ -243,46 +242,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60654",
-      "name": "Morez Johnson Jr.",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Leg | day-to-day",
-      "date": "2026-11-10T03:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "537788",
-      "name": "Sergio de Larrea",
-      "team": "DAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Knee | out",
-      "date": "2026-11-05T22:24Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "537125",
-      "name": "Tarik Biberovic",
-      "team": "DAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Heel | out",
-      "date": "2026-11-01T23:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "537120",
+      "injury_record_id": "538641",
       "name": "Dereck Lively II",
       "team": "DAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Surgery | Foot | out",
-      "date": "2026-11-01T22:57Z",
+      "date": "2026-11-11T22:13Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538640",
+      "name": "Tarik Biberovic",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Heel | out",
+      "date": "2026-11-11T22:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538639",
+      "name": "Sergio de Larrea",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Knee | out",
+      "date": "2026-11-11T22:10Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538637",
+      "name": "Morez Johnson Jr.",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Lower Leg | day-to-day",
+      "date": "2026-11-11T22:08Z",
       "team_match": "feed"
     },
     {
@@ -661,35 +660,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "538598",
-      "name": "Karl-Anthony Towns",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Calf | day-to-day",
-      "date": "2026-11-11T18:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538597",
-      "name": "Josh Hart",
-      "team": "NYK",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-11T18:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538392",
+      "injury_record_id": "538633",
       "name": "Jaylin Williams",
       "team": "OKC",
       "status": "O",
       "raw_status": "Out",
       "reason": "Spasms | Back | out",
-      "date": "2026-11-10T00:53Z",
+      "date": "2026-11-11T21:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538632",
+      "name": "Ajay Mitchell",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Ankle | out",
+      "date": "2026-11-11T21:18Z",
       "team_match": "feed"
     },
     {
@@ -815,13 +803,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "538349",
+      "injury_record_id": "538638",
       "name": "Adem Bona",
       "team": "PHI",
       "status": "O",
       "raw_status": "Out",
       "reason": "Sprain | Back | out",
-      "date": "2026-11-09T22:03Z",
+      "date": "2026-11-11T22:10Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538636",
+      "name": "Joel Embiid",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Foot | day-to-day",
+      "date": "2026-11-11T22:06Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538635",
+      "name": "LeBron James",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-11T22:06Z",
       "team_match": "feed"
     },
     {
@@ -976,28 +986,6 @@
       "raw_status": "Out",
       "reason": "Illness | out",
       "date": "2026-11-11T17:37Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538491",
-      "name": "Collin Murray-Boyles",
-      "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-10T21:51Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538490",
-      "name": "Immanuel Quickley",
-      "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-10T21:49Z",
       "team_match": "feed"
     },
     {
