@@ -3,13 +3,16 @@ name: Daily Prop Analyzer
 
 on:
   schedule:
-    # 5 AM Central, including daylight saving time.
+    # 5 AM Central
     - cron: "0 10,11 * * *"
 
-    # 4 PM Central, including daylight saving time.
+    # 12 PM Central
+    - cron: "0 17,18 * * *"
+
+    # 4 PM Central
     - cron: "0 21,22 * * *"
 
-    # Overnight grading, approximately 11:30 PM Central.
+    # 11:30 PM Central grading
     - cron: "30 4,5 * * *"
 
   workflow_dispatch:
@@ -37,46 +40,102 @@ jobs:
         with:
           python-version: "3.11"
 
-      # GitHub Actions schedules run in UTC.
-      # Check the actual Central time to avoid
-      # duplicate runs during daylight saving changes.
+      # Determine the intended Central time from
+      # the scheduled UTC time, not runner start time.
+      # This tolerates delayed GitHub Actions jobs.
 
       - name: Determine run type
         id: schedule
         shell: bash
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+          SCHEDULE: ${{ github.event.schedule }}
         run: |
-          HOUR=$(TZ=America/Chicago date +%H)
-          MINUTE=$(TZ=America/Chicago date +%M)
+          python - <<'PY'
+          import os
+          from datetime import datetime, timedelta, timezone
+          from zoneinfo import ZoneInfo
 
-          echo "Central time: $HOUR:$MINUTE"
+          event = os.environ["EVENT_NAME"]
+          schedule = os.environ.get("SCHEDULE", "")
+          output = os.environ["GITHUB_OUTPUT"]
 
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "run_type=manual" >> "$GITHUB_OUTPUT"
-            echo "run_predictions=true" >> "$GITHUB_OUTPUT"
+          run_type = "skip"
 
-          elif [ "$HOUR" = "05" ] && [ "$MINUTE" = "00" ]; then
-            echo "run_type=morning" >> "$GITHUB_OUTPUT"
-            echo "run_predictions=true" >> "$GITHUB_OUTPUT"
+          if event == "workflow_dispatch":
+              run_type = "manual"
 
-          elif [ "$HOUR" = "16" ] && [ "$MINUTE" = "00" ]; then
-            echo "run_type=afternoon" >> "$GITHUB_OUTPUT"
-            echo "run_predictions=true" >> "$GITHUB_OUTPUT"
+          else:
+              # Match the intended UTC cron slot against
+              # Central local time for the current date.
+              now = datetime.now(timezone.utc)
+              central = ZoneInfo("America/Chicago")
 
-          elif [ "$HOUR" = "23" ] && [ "$MINUTE" = "30" ]; then
-            echo "run_type=grading" >> "$GITHUB_OUTPUT"
-            echo "run_predictions=false" >> "$GITHUB_OUTPUT"
+              cron_slots = {
+                  "0 10,11 * * *": (10, 11, 0),
+                  "0 17,18 * * *": (17, 18, 0),
+                  "0 21,22 * * *": (21, 22, 0),
+                  "30 4,5 * * *": (4, 5, 30),
+              }
 
-          else
-            echo "run_type=skip" >> "$GITHUB_OUTPUT"
-            echo "run_predictions=false" >> "$GITHUB_OUTPUT"
-          fi
+              if schedule in cron_slots:
+                  first_hour, second_hour, minute = cron_slots[schedule]
+
+                  # Check recent possible scheduled slots.
+                  # Delayed runs remain tied to their slot.
+                  candidates = []
+
+                  for day_offset in (0, -1):
+                      day = (now + timedelta(days=day_offset)).date()
+
+                      for hour in (first_hour, second_hour):
+                          scheduled = datetime(
+                              day.year, day.month, day.day,
+                              hour, minute,
+                              tzinfo=timezone.utc
+                          )
+
+                          if scheduled <= now:
+                              candidates.append(scheduled)
+
+                  if candidates:
+                      scheduled = max(candidates)
+                      local = scheduled.astimezone(central)
+
+                      if schedule == "0 10,11 * * *":
+                          if local.hour == 5:
+                              run_type = "morning"
+
+                      elif schedule == "0 17,18 * * *":
+                          if local.hour == 12:
+                              run_type = "midday"
+
+                      elif schedule == "0 21,22 * * *":
+                          if local.hour == 16:
+                              run_type = "afternoon"
+
+                      elif schedule == "30 4,5 * * *":
+                          if local.hour == 23 and local.minute == 30:
+                              run_type = "grading"
+
+          predictions = run_type in (
+              "morning", "midday", "afternoon", "manual"
+          )
+
+          with open(output, "a") as f:
+              f.write(f"run_type={run_type}\n")
+              f.write(f"run_predictions={str(predictions).lower()}\n")
+
+          print("Run type:", run_type)
+          print("Run predictions:", predictions)
+          PY
 
       - name: Show run information
         run: |
           echo "Run type: ${{ steps.schedule.outputs.run_type }}"
           echo "Predictions: ${{ steps.schedule.outputs.run_predictions }}"
 
-      # Refresh NBA game logs and defensive data.
+      # Update NBA statistics.
 
       - name: Download real NBA statistics
         if: steps.schedule.outputs.run_type != 'skip'
@@ -86,9 +145,21 @@ jobs:
         if: steps.schedule.outputs.run_type != 'skip'
         run: python build_team_defense.py
 
-      # ParlayAPI replaces The Odds API.
-      # The collector protects existing odds when
-      # the provider returns an incomplete board.
+      # Preserve the previous odds before downloading.
+      # This is a local backup during the workflow.
+      # Persistent historical snapshots require
+      # a separate archive implementation.
+
+      - name: Back up previous odds
+        if: steps.schedule.outputs.run_predictions == 'true'
+        shell: bash
+        run: |
+          if [ -f data/sample_odds.csv ]; then
+            cp data/sample_odds.csv /tmp/previous_sample_odds.csv
+          fi
+
+      # Download DraftKings lines from ParlayAPI.
+      # Maximum estimated cost: 5 credits per run.
 
       - name: Download DraftKings odds from ParlayAPI
         if: steps.schedule.outputs.run_predictions == 'true'
@@ -96,7 +167,7 @@ jobs:
           PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
         run: python update_odds.py
 
-      # Generate fresh predictions after the odds update.
+      # Run model and Top 25 rankings.
 
       - name: Run prediction engine
         if: steps.schedule.outputs.run_predictions == 'true'
@@ -106,9 +177,7 @@ jobs:
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python edge_model.py
 
-      # Archive pregame predictions and rankings.
-      # Existing scripts retain responsibility
-      # for preventing duplicate historical records.
+      # Save predictions and update tracking.
 
       - name: Save pregame predictions
         if: steps.schedule.outputs.run_predictions == 'true'
@@ -130,7 +199,7 @@ jobs:
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python backtest.py
 
-      # Commit generated results.
+      # Save all updated results.
 
       - name: Save updated data and results
         if: steps.schedule.outputs.run_type != 'skip'
