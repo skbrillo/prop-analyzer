@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-11T22:37:02.784892+00:00",
+  "generated_at": "2026-11-11T23:13:39.045774+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 97,
+  "player_count": 96,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 97,
+  "players_with_team": 96,
   "players_without_team": 0,
   "status_counts": {
     "O": 77,
-    "T": 20
+    "T": 19
   },
   "players": [
     {
@@ -418,24 +418,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538493",
-      "name": "T.J. McConnell",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-10T22:05Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538013",
+      "injury_record_id": "538646",
       "name": "Tyrese Haliburton",
       "team": "IND",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
-      "date": "2026-11-07T20:46Z",
+      "date": "2026-11-11T22:29Z",
       "team_match": "feed"
     },
     {
@@ -979,6 +968,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538648",
+      "name": "Kawhi Leonard",
+      "team": "TOR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Knee | out",
+      "date": "2026-11-11T22:33Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538590",
       "name": "Trayce Jackson-Davis",
       "team": "TOR",
@@ -997,17 +997,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Groin | out",
       "date": "2026-11-10T21:48Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538468",
-      "name": "Kawhi Leonard",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Knee | out",
-      "date": "2026-11-10T17:33Z",
       "team_match": "feed"
     },
     {
