@@ -1,0 +1,45 @@
+
+name: NBA Pregame Lineup Check
+
+on:
+  schedule:
+    # GitHub Actions uses UTC.
+    # Every five minutes, check games approaching tipoff.
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nba-lineup-check
+  cancel-in-progress: false
+
+jobs:
+  lineups:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Check official NBA lineups
+        run: python check_nba_lineups.py
+
+      - name: Save lineup results
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+          git add docs/nba_lineups.json
+
+          if ! git diff --cached --quiet; then
+            git commit -m "Update NBA pregame lineups"
+            git pull --rebase
+            git push
+          fi
