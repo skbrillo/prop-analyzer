@@ -3,10 +3,15 @@ name: Daily Prop Analyzer
 
 on:
   schedule:
-    # Morning predictions: 6:15 AM Central Standard Time
-    - cron: "15 12 * * *"
+    # Morning predictions:
+    # 3:30 AM Central Standard Time
+    # 4:30 AM Central Daylight Time
+    - cron: "30 9 * * *"
 
-    # Late-night grading: 11:30 PM Central Standard Time
+    # Late-night grading:
+    # 11:30 PM Central Standard Time
+    # 12:30 AM Central Daylight Time
+    # No Odds API credits used
     - cron: "30 5 * * *"
 
   workflow_dispatch:
@@ -42,11 +47,11 @@ jobs:
       - name: Build NBA team defense statistics
         run: python build_team_defense.py
 
-      # Download DraftKings odds only in the morning
-      # or when manually triggered.
+      # Download DraftKings odds only during
+      # the morning run or a manual run.
 
       - name: Download real DraftKings odds
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 9 * * *'
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python update_odds.py
@@ -54,35 +59,35 @@ jobs:
       # Generate current NBA prop predictions.
 
       - name: Run prediction engine
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 9 * * *'
         run: python engine.py
 
-      # Preserve the existing prediction history system.
+      # Save original pregame predictions.
 
       - name: Save pregame predictions
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 9 * * *'
         run: python save_predictions.py
 
-      # NEW: Record pregame predictions and grade
-      # completed games using ESPN statistics.
+      # Update automatic prop tracking.
       # No Odds API requests.
 
       - name: Update automatic prop tracking
         run: python track_results.py
 
-      # Preserve the existing grading system.
+      # Grade completed predictions.
+      # No Odds API requests.
 
       - name: Grade completed predictions
         run: python grade_predictions.py
 
-      # Preserve the existing backtesting system.
+      # Historical backtesting.
 
       - name: Backtest historical NBA projections
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '15 12 * * *'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 9 * * *'
         run: python backtest.py
 
-      # Commit updated statistics, predictions,
-      # grading, backtesting, and tracking history.
+      # Save updated statistics, predictions,
+      # grading, backtesting, and tracking.
 
       - name: Save updated data and results
         run: |
@@ -97,8 +102,6 @@ jobs:
           git add docs/results.json
           git add docs/graded_predictions.json
           git add docs/backtest.json
-
-          # New automatic tracking history.
           git add docs/tracking.json
 
           if ! git diff --cached --quiet; then
