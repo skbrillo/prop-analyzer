@@ -4,9 +4,9 @@ name: Daily Prop Analyzer
 on:
   schedule:
     # Morning predictions:
-    # 3:30 AM Central Standard Time
-    # 4:30 AM Central Daylight Time
-    - cron: "30 9 * * *"
+    # 5:00 AM Central Standard Time
+    # 6:00 AM Central Daylight Time
+    - cron: "0 11 * * *"
 
     # Late-night grading:
     # 11:30 PM Central Standard Time
@@ -51,7 +51,7 @@ jobs:
       # the morning run or a manual run.
 
       - name: Download real DraftKings odds
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 9 * * *'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
         env:
           ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
         run: python update_odds.py
@@ -59,13 +59,21 @@ jobs:
       # Generate current NBA prop predictions.
 
       - name: Run prediction engine
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 9 * * *'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
         run: python engine.py
+
+      # Rank the strongest qualifying bets.
+      # Reads existing predictions.
+      # No additional Odds API credits used.
+
+      - name: Run Top 25 Edge Model
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
+        run: python edge_model.py
 
       # Save original pregame predictions.
 
       - name: Save pregame predictions
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 9 * * *'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
         run: python save_predictions.py
 
       # Update automatic prop tracking.
@@ -83,11 +91,11 @@ jobs:
       # Historical backtesting.
 
       - name: Backtest historical NBA projections
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '30 9 * * *'
+        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
         run: python backtest.py
 
       # Save updated statistics, predictions,
-      # grading, backtesting, and tracking.
+      # edge rankings, grading, and backtesting.
 
       - name: Save updated data and results
         run: |
@@ -104,7 +112,10 @@ jobs:
           git add docs/backtest.json
           git add docs/tracking.json
 
+          git add docs/edge_results.json
+          git add docs/edge_top25.csv
+
           if ! git diff --cached --quiet; then
-            git commit -m "Update NBA props, defense, and performance tracking"
+            git commit -m "Update NBA predictions, Top 25 Edge Model, and performance tracking"
             git push
           fi
