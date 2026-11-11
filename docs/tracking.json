@@ -1,85 +1,85 @@
 {
-  "updated_at": "2026-11-10T21:43:37.465310+00:00",
+  "updated_at": "2026-11-11T06:27:52.211714+00:00",
   "notes": "1-unit flat stake per prediction. Both sides are tracked independently; do not combine as a betting strategy. ROI excludes pushes. No closing-line data.",
   "summary": {
     "predictions": 422,
-    "settled": 0,
-    "pending": 422,
-    "wins": 0,
-    "losses": 0,
+    "settled": 322,
+    "pending": 100,
+    "wins": 161,
+    "losses": 161,
     "pushes": 0,
-    "win_rate": null,
-    "profit_units": 0,
-    "roi": null
+    "win_rate": 0.5,
+    "profit_units": -19.111,
+    "roi": -0.0594
   },
   "positive_ev": {
     "predictions": 150,
-    "settled": 0,
-    "pending": 150,
-    "wins": 0,
-    "losses": 0,
+    "settled": 110,
+    "pending": 40,
+    "wins": 64,
+    "losses": 46,
     "pushes": 0,
-    "win_rate": null,
-    "profit_units": 0,
-    "roi": null
+    "win_rate": 0.5818,
+    "profit_units": 11.368,
+    "roi": 0.1033
   },
   "by_market": {
     "points": {
       "predictions": 176,
-      "settled": 0,
-      "pending": 176,
-      "wins": 0,
-      "losses": 0,
+      "settled": 134,
+      "pending": 42,
+      "wins": 67,
+      "losses": 67,
       "pushes": 0,
-      "win_rate": null,
-      "profit_units": 0,
-      "roi": null
+      "win_rate": 0.5,
+      "profit_units": -7.694,
+      "roi": -0.0574
     },
     "rebounds": {
       "predictions": 148,
-      "settled": 0,
-      "pending": 148,
-      "wins": 0,
-      "losses": 0,
+      "settled": 112,
+      "pending": 36,
+      "wins": 56,
+      "losses": 56,
       "pushes": 0,
-      "win_rate": null,
-      "profit_units": 0,
-      "roi": null
+      "win_rate": 0.5,
+      "profit_units": -6.995,
+      "roi": -0.0625
     },
     "assists": {
       "predictions": 98,
-      "settled": 0,
-      "pending": 98,
-      "wins": 0,
-      "losses": 0,
+      "settled": 76,
+      "pending": 22,
+      "wins": 38,
+      "losses": 38,
       "pushes": 0,
-      "win_rate": null,
-      "profit_units": 0,
-      "roi": null
+      "win_rate": 0.5,
+      "profit_units": -4.422,
+      "roi": -0.0582
     }
   },
   "by_side": {
     "over": {
       "predictions": 211,
-      "settled": 0,
-      "pending": 211,
-      "wins": 0,
-      "losses": 0,
+      "settled": 161,
+      "pending": 50,
+      "wins": 63,
+      "losses": 98,
       "pushes": 0,
-      "win_rate": null,
-      "profit_units": 0,
-      "roi": null
+      "win_rate": 0.3913,
+      "profit_units": -43.179,
+      "roi": -0.2682
     },
     "under": {
       "predictions": 211,
-      "settled": 0,
-      "pending": 211,
-      "wins": 0,
-      "losses": 0,
+      "settled": 161,
+      "pending": 50,
+      "wins": 98,
+      "losses": 63,
       "pushes": 0,
-      "win_rate": null,
-      "profit_units": 0,
-      "roi": null
+      "win_rate": 0.6087,
+      "profit_units": 24.068,
+      "roi": 0.1495
     }
   },
   "predictions": [
@@ -100,9 +100,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 23.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -121,9 +122,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 17.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -142,9 +144,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.9259259259259259,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -163,9 +166,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.01,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -184,9 +188,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.6802721088435374,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -205,9 +210,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 1.24,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -226,9 +232,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 1.02,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -247,9 +254,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 25.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -268,9 +276,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 12.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -289,9 +298,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.7936507936507936,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -310,9 +320,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.05,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -331,9 +342,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -352,9 +364,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -373,9 +386,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 13.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -394,9 +408,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 33.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -415,9 +430,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.6993006993006993,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -436,9 +452,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -457,9 +474,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.7194244604316546,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -478,9 +496,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -499,9 +518,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -520,9 +540,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -541,9 +562,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.6896551724137931,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -562,9 +584,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -583,9 +606,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.6535947712418301,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -604,9 +628,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.7142857142857143,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -625,9 +650,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 30.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -646,9 +672,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -667,9 +694,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.6329113924050633,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -688,9 +716,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 1.04,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -709,9 +738,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -730,9 +760,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -751,9 +782,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -772,9 +804,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.8849557522123894,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -793,9 +826,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 14.0,
+      "profit_units": 1.04,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -814,9 +848,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 15.0,
+      "profit_units": 0.8695652173913043,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -835,9 +870,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9433962264150944,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -856,9 +892,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -877,9 +914,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.03,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -898,9 +936,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -919,9 +958,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -940,9 +980,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.06,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -961,9 +1002,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.847457627118644,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -982,9 +1024,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 0.546448087431694,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -1003,9 +1046,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.7936507936507936,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -1024,9 +1068,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 19.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -1066,9 +1111,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.8849557522123894,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1087,9 +1133,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 0.9803921568627451,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -1108,9 +1155,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 0.0,
+      "profit_units": 0.8547008547008547,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -1129,9 +1177,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.05,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1150,9 +1199,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 19.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1171,9 +1221,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 16.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -1192,9 +1243,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1213,9 +1265,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 0.9433962264150944,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1234,9 +1287,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -1255,9 +1309,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -1276,9 +1331,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 15.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -1297,9 +1353,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -1318,9 +1375,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 0.0,
+      "profit_units": 0.7692307692307693,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -1339,9 +1397,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 13.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -1381,9 +1440,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1402,9 +1462,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1423,9 +1484,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1444,9 +1506,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.746268656716418,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -1465,9 +1528,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1486,9 +1550,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -1507,9 +1572,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1528,9 +1594,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1549,9 +1616,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -1570,9 +1638,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1591,9 +1660,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -1612,9 +1682,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1654,9 +1725,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -1675,9 +1747,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1696,9 +1769,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.8620689655172413,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -1717,9 +1791,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 17.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1738,9 +1813,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1759,9 +1835,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1780,9 +1857,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.05,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1801,9 +1879,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1822,9 +1901,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1843,9 +1923,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.847457627118644,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1885,9 +1966,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 21.0,
+      "profit_units": 0.8620689655172413,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1906,9 +1988,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.6493506493506493,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1927,9 +2010,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.7874015748031497,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1948,9 +2032,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 0.9433962264150944,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -1969,9 +2054,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -1990,9 +2076,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2011,9 +2098,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.7692307692307693,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -2032,9 +2120,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.847457627118644,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2053,9 +2142,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -2074,9 +2164,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2095,9 +2186,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2116,9 +2208,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -2137,9 +2230,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2158,9 +2252,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 18.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2179,9 +2274,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 1.14,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2200,9 +2296,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.6369426751592356,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -2221,9 +2318,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.16,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2242,9 +2340,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9259259259259259,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -2263,9 +2362,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.7751937984496124,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2284,9 +2384,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2305,9 +2406,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 29.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -2326,9 +2428,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -2347,9 +2450,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -2368,9 +2472,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2389,9 +2494,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.7092198581560284,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -2410,9 +2516,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 14.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -2431,9 +2538,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2452,9 +2560,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2473,9 +2582,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.02,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2494,9 +2604,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -2515,9 +2626,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2536,9 +2648,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2557,9 +2670,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 24.0,
+      "profit_units": 0.847457627118644,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2578,9 +2692,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 36.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2599,9 +2714,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -2620,9 +2736,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -2641,9 +2758,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.05,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -2683,9 +2801,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 1.13,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -2704,9 +2823,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.6493506493506493,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -2725,9 +2845,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -2746,9 +2867,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 23.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -2767,9 +2889,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -2788,9 +2911,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -2809,9 +2933,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2830,9 +2955,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 31.0,
+      "profit_units": 0.9433962264150944,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2851,9 +2977,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 17.0,
+      "profit_units": 0.8620689655172413,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2872,9 +2999,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 13.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -2893,9 +3021,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -2914,9 +3043,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.9900990099009901,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2935,9 +3065,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2956,9 +3087,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.7142857142857143,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -2977,9 +3109,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -2998,9 +3131,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3019,9 +3153,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 13.0,
+      "profit_units": 0.8695652173913043,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3040,9 +3175,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 17.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -3061,9 +3197,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 31.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -3082,9 +3219,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -3103,9 +3241,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.684931506849315,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -3124,9 +3263,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.7874015748031497,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3145,9 +3285,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.6896551724137931,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -3166,9 +3307,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -3187,9 +3329,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.8130081300813008,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -3229,9 +3372,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.8547008547008547,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -3250,9 +3394,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 23.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -3271,9 +3416,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -3292,9 +3438,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.7575757575757576,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3313,9 +3460,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 24.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3334,9 +3482,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 36.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -3355,9 +3504,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 14.0,
+      "profit_units": 0.7874015748031497,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -3376,9 +3526,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -3397,9 +3548,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 0.7407407407407407,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -3418,9 +3570,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3439,9 +3592,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3460,9 +3614,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 0.7518796992481203,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -3481,9 +3636,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.8547008547008547,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -3502,9 +3658,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3523,9 +3680,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.01,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -3544,9 +3702,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 16.0,
+      "profit_units": 0.9174311926605505,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -3565,9 +3724,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -3586,9 +3746,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 29.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -3607,9 +3768,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3628,9 +3790,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -3649,9 +3812,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -3670,9 +3834,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -3691,9 +3856,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.6493506493506493,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -3712,9 +3878,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 0.0,
+      "profit_units": 0.8620689655172413,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -3733,9 +3900,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.8,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3754,9 +3922,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3775,9 +3944,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -3796,9 +3966,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.8695652173913043,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -3817,9 +3988,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.7936507936507936,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3838,9 +4010,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3859,9 +4032,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3880,9 +4054,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -3901,9 +4076,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 1.18,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3922,9 +4098,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 12.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -3943,9 +4120,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 1.14,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3964,9 +4142,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.78125,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -3985,9 +4164,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4006,9 +4186,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4027,9 +4208,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4048,9 +4230,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -4069,9 +4252,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.02,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4090,9 +4274,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4111,9 +4296,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4132,9 +4318,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 0.6493506493506493,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4153,9 +4340,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.6172839506172839,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -4174,9 +4362,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 17.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4195,9 +4384,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 21.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4237,9 +4427,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.09,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4258,9 +4449,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -4279,9 +4471,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.6711409395973155,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -4300,9 +4493,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.7299270072992701,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4321,9 +4515,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -4342,9 +4537,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.6493506493506493,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4363,9 +4559,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.8,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4384,9 +4581,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4405,9 +4603,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -4426,9 +4625,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.5847953216374269,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4447,9 +4647,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.6578947368421053,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4468,9 +4669,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -4489,9 +4691,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -4510,9 +4713,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.6451612903225806,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4552,9 +4756,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4573,9 +4778,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4594,9 +4800,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -4615,9 +4822,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 13.0,
+      "profit_units": 0.9259259259259259,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -4636,9 +4844,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 1.04,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -4657,9 +4866,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.7092198581560284,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -4678,9 +4888,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 15.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4699,9 +4910,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4720,9 +4932,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -4741,9 +4954,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4762,9 +4976,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -4783,9 +4998,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4804,9 +5020,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.13,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -4825,9 +5042,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.5291005291005291,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -4846,9 +5064,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 19.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -4867,9 +5086,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -4888,9 +5108,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 19.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -4909,9 +5130,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -4972,9 +5194,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -4993,9 +5216,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -5014,9 +5238,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -5035,9 +5260,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 14.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -5056,9 +5282,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5077,9 +5304,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5098,9 +5326,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -5119,9 +5348,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5140,9 +5370,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -5161,9 +5392,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 15.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -5182,9 +5414,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -5203,9 +5436,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -5224,9 +5458,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5245,9 +5480,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 30.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5266,9 +5502,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.8695652173913043,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -5287,9 +5524,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.9803921568627451,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5308,9 +5546,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -5329,9 +5568,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5350,9 +5590,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5371,9 +5612,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -5392,9 +5634,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 13.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -5413,9 +5656,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -5434,9 +5678,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 33.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5455,9 +5700,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5476,9 +5722,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.27,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -5497,9 +5744,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -5518,9 +5766,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5539,9 +5788,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -5560,9 +5810,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -5581,9 +5832,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -5602,9 +5854,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 1.08,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -5623,9 +5876,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -5644,9 +5898,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.28,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -5665,9 +5920,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5686,9 +5942,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -5707,9 +5964,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -5728,9 +5986,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 1.23,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5749,9 +6008,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 25.0,
+      "profit_units": 0.8333333333333334,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -5770,9 +6030,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5791,9 +6052,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 1.23,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5812,9 +6074,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5833,9 +6096,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 17.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5854,9 +6118,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 23.0,
+      "profit_units": 0.7936507936507936,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5875,9 +6140,10 @@
       "model": "v3-team-defense-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T19:32:15.178356+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5896,9 +6162,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 1.1,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5917,9 +6184,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 17.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5938,9 +6206,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 23.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -5959,9 +6228,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.7692307692307693,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -5980,9 +6250,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -6001,9 +6272,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -6022,9 +6294,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -6043,9 +6316,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "3689d555c9a1c81e3d300375b4c80530",
@@ -6064,9 +6338,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Milwaukee Bucks @ New York Knicks",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -6085,9 +6360,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -6106,9 +6382,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 23.0,
+      "profit_units": 0.9259259259259259,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -6127,9 +6404,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T20:25:42.839802+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 17.0,
+      "profit_units": 0.8849557522123894,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -6442,9 +6720,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T20:39:14.994671+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.6493506493506493,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -6862,9 +7141,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T20:39:14.994671+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.6535947712418301,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -6883,9 +7163,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T20:39:14.994671+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 36.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -6967,9 +7248,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T20:39:14.994671+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 24.0,
+      "profit_units": 0.8064516129032258,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -6988,9 +7270,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T20:39:14.994671+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 24.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -7051,9 +7334,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T20:39:14.994671+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 36.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -7156,9 +7440,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T20:39:14.994671+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -7660,9 +7945,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T20:39:14.994671+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -7828,9 +8114,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 12.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -7870,9 +8157,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.19,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -7912,9 +8200,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 33.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -7933,9 +8222,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -7954,9 +8244,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.8,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8017,9 +8308,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -8038,9 +8330,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -8059,9 +8352,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.09,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8101,9 +8395,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -8122,9 +8417,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -8143,9 +8439,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8185,9 +8482,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -8206,9 +8504,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 31.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -8227,9 +8526,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 31.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -8248,9 +8548,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 0.0,
+      "profit_units": 0.7751937984496124,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8290,9 +8591,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.7936507936507936,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -8311,9 +8613,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.6711409395973155,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8353,9 +8656,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8395,9 +8699,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.6493506493506493,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -8416,9 +8721,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.9900990099009901,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -8437,9 +8743,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8479,9 +8786,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -8500,9 +8808,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.9900990099009901,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "78ab42ddb22b68903fd53a384d0fc616",
@@ -8521,9 +8830,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Orlando Magic @ Sacramento Kings",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 33.0,
+      "profit_units": 0.8130081300813008,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8584,9 +8894,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "8178ff2ec61f604b61dfe6d7b8d71103",
@@ -8605,9 +8916,10 @@
       "model": "v4-smarter-minutes-experimental",
       "matchup": "Los Angeles Clippers @ Phoenix Suns",
       "predicted_at": "2026-11-10T21:11:32.165972+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -8626,9 +8938,10 @@
       "model": "v5-probability-audit-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T21:20:28.370690+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.12,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8710,9 +9023,10 @@
       "model": "v5-probability-audit-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T21:20:28.370690+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8773,9 +9087,10 @@
       "model": "v6-minutes-reliability-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T21:34:07.169442+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.7936507936507936,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -8794,9 +9109,10 @@
       "model": "v6-minutes-reliability-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T21:34:07.169442+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -8815,9 +9131,10 @@
       "model": "v6-minutes-reliability-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T21:34:07.169442+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -8836,9 +9153,10 @@
       "model": "v6-minutes-reliability-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T21:34:07.169442+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 1.06,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -8857,9 +9175,10 @@
       "model": "v6-minutes-reliability-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T21:34:07.169442+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.9900990099009901,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "9ac02cb22adf276b325b1e9c9c6c588e",
@@ -8878,9 +9197,10 @@
       "model": "v6-minutes-reliability-experimental",
       "matchup": "Miami Heat @ Utah Jazz",
       "predicted_at": "2026-11-10T21:34:07.169442+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "f5477c781c94e09e85374bbf9149c0f1",
@@ -8920,9 +9240,10 @@
       "model": "v6-minutes-reliability-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T21:43:37.352820+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.684931506849315,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     },
     {
       "event_id": "cfa503c66cd505776a910921875ef7dd",
@@ -8941,9 +9262,10 @@
       "model": "v6-minutes-reliability-experimental",
       "matchup": "Boston Celtics @ Philadelphia 76ers",
       "predicted_at": "2026-11-10T21:43:37.352820+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-11T06:27:52.211714+00:00"
     }
   ]
 }

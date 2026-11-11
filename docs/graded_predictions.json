@@ -1,57 +1,57 @@
 {
-  "generated_at": "2026-11-10T21:43:37.603048+00:00",
+  "generated_at": "2026-11-11T06:27:52.421062+00:00",
   "summary": {
     "predictions": 388,
-    "graded": 0,
-    "pending": 388,
+    "graded": 112,
+    "pending": 276,
     "invalid": 0,
-    "wins": 0,
-    "losses": 0,
+    "wins": 56,
+    "losses": 56,
     "pushes": 0,
-    "win_rate": null,
-    "hypothetical_profit": 0,
-    "hypothetical_staked": 0,
-    "hypothetical_roi": null
+    "win_rate": 50.0,
+    "hypothetical_profit": -791.8,
+    "hypothetical_staked": 11200.0,
+    "hypothetical_roi": -7.07
   },
   "markets": {
     "points": {
       "predictions": 146,
-      "graded": 0,
-      "pending": 146,
+      "graded": 44,
+      "pending": 102,
       "invalid": 0,
-      "wins": 0,
-      "losses": 0,
+      "wins": 22,
+      "losses": 22,
       "pushes": 0,
-      "win_rate": null,
-      "hypothetical_profit": 0,
-      "hypothetical_staked": 0,
-      "hypothetical_roi": null
+      "win_rate": 50.0,
+      "hypothetical_profit": -260.45,
+      "hypothetical_staked": 4400.0,
+      "hypothetical_roi": -5.92
     },
     "rebounds": {
       "predictions": 140,
-      "graded": 0,
-      "pending": 140,
+      "graded": 40,
+      "pending": 100,
       "invalid": 0,
-      "wins": 0,
-      "losses": 0,
+      "wins": 20,
+      "losses": 20,
       "pushes": 0,
-      "win_rate": null,
-      "hypothetical_profit": 0,
-      "hypothetical_staked": 0,
-      "hypothetical_roi": null
+      "win_rate": 50.0,
+      "hypothetical_profit": -305.97,
+      "hypothetical_staked": 4000.0,
+      "hypothetical_roi": -7.65
     },
     "assists": {
       "predictions": 102,
-      "graded": 0,
-      "pending": 102,
+      "graded": 28,
+      "pending": 74,
       "invalid": 0,
-      "wins": 0,
-      "losses": 0,
+      "wins": 14,
+      "losses": 14,
       "pushes": 0,
-      "win_rate": null,
-      "hypothetical_profit": 0,
-      "hypothetical_staked": 0,
-      "hypothetical_roi": null
+      "win_rate": 50.0,
+      "hypothetical_profit": -225.38,
+      "hypothetical_staked": 2800.0,
+      "hypothetical_roi": -8.05
     }
   },
   "predictions": [
@@ -178,12 +178,12 @@
       "model_ev": "0.5912",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "win",
+      "profit": 95.24,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "b55b802e736426162257fa21",
@@ -282,12 +282,12 @@
       "model_ev": "0.5058",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "win",
+      "profit": 81.3,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "a6ea7a8c2d8076fb826d1639",
@@ -573,7 +573,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "3a31ce76d1f0cf13fc5ac96b",
@@ -594,12 +594,12 @@
       "model_ev": "0.3098",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "win",
+      "profit": 75.19,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "3012afa2d9a4f04b9c084804",
@@ -729,7 +729,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "df8832c29a14044d6afaa16f",
@@ -781,7 +781,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "57cdd8eecebafd6a5be3c597",
@@ -802,12 +802,12 @@
       "model_ev": "0.2893",
       "last10": "8",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "win",
+      "profit": 65.79,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "b6197c9ed01a0d245622b0ca",
@@ -828,12 +828,12 @@
       "model_ev": "0.2842",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 19.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "e624095f7698e2bb7fbc0ffe",
@@ -1036,12 +1036,12 @@
       "model_ev": "0.2522",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "win",
+      "profit": 82.64,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "df70849e784435e357a41007",
@@ -1218,12 +1218,12 @@
       "model_ev": "0.1996",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "win",
+      "profit": 103.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "fe3c389000d9292873a968b7",
@@ -1374,12 +1374,12 @@
       "model_ev": "0.1724",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 21.0,
+      "outcome": "win",
+      "profit": 80.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "ebd514b68a2d9c5ab4fd115e",
@@ -1400,12 +1400,12 @@
       "model_ev": "0.171",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 16.0,
+      "outcome": "win",
+      "profit": 91.74,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "ebfcc467ee169600a06bd0f1",
@@ -1452,12 +1452,12 @@
       "model_ev": "0.1662",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "win",
+      "profit": 69.93,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "fd7fd49b2c7b8f5b20b5c307",
@@ -1504,12 +1504,12 @@
       "model_ev": "0.159",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "win",
+      "profit": 79.37,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "1e59fa9ba0c4f4f16891d258",
@@ -1530,12 +1530,12 @@
       "model_ev": "0.1519",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "win",
+      "profit": 84.03,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "cd78fe2370f9a001f3275654",
@@ -1764,12 +1764,12 @@
       "model_ev": "0.1213",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 11.0,
+      "outcome": "win",
+      "profit": 86.96,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "abf351177a74f636a82ea136",
@@ -1842,12 +1842,12 @@
       "model_ev": "0.1129",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "e0677068af04f42c0002d6eb",
@@ -1868,12 +1868,12 @@
       "model_ev": "0.1121",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "f01b1da10290af0a95923481",
@@ -1920,12 +1920,12 @@
       "model_ev": "0.111",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 14.0,
+      "outcome": "win",
+      "profit": 85.47,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "e7a9532a4127f57eb656119b",
@@ -1998,12 +1998,12 @@
       "model_ev": "0.1076",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "316d4226a4b52f6a09abf8bb",
@@ -2024,12 +2024,12 @@
       "model_ev": "0.1014",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 17.0,
+      "outcome": "win",
+      "profit": 93.46,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "ee9f5c945b2bf82f45381053",
@@ -2102,12 +2102,12 @@
       "model_ev": "0.0954",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 92.59,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "832c4f456b0798571d0c9794",
@@ -2128,12 +2128,12 @@
       "model_ev": "0.0939",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "win",
+      "profit": 91.74,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "411a1622fc07eace512fbba3",
@@ -2206,12 +2206,12 @@
       "model_ev": "0.0888",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "d2ece471905276053b4f9622",
@@ -2310,12 +2310,12 @@
       "model_ev": "0.0831",
       "last10": "8",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 24.0,
+      "outcome": "win",
+      "profit": 83.33,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "b83ff6913a8ccd237f1d1250",
@@ -2336,12 +2336,12 @@
       "model_ev": "0.082",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 62.89,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "d68553c9da016b8256f9e0b0",
@@ -2362,12 +2362,12 @@
       "model_ev": "0.0792",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 12.0,
+      "outcome": "win",
+      "profit": 93.46,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "826d85cbd503a4d9358ec1a4",
@@ -2518,12 +2518,12 @@
       "model_ev": "0.0595",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "006223df3145bef9c847a3cc",
@@ -2570,12 +2570,12 @@
       "model_ev": "0.0535",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "cfe2c24d190fd7488c7a3cbc",
@@ -2596,12 +2596,12 @@
       "model_ev": "0.0479",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 86.21,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "8d82625183c9edb4a3d204fa",
@@ -2674,12 +2674,12 @@
       "model_ev": "0.0395",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "c480af467f1a3cf805596b7a",
@@ -2700,12 +2700,12 @@
       "model_ev": "0.0391",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "win",
+      "profit": 64.1,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "7d8c0a5071b36e3c1ce42f1d",
@@ -2726,12 +2726,12 @@
       "model_ev": "0.0344",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "e0ef030fe4e6108ed962d807",
@@ -2783,7 +2783,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "ef2552e8a18516de162dfd73",
@@ -2830,12 +2830,12 @@
       "model_ev": "0.0309",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "6893ae896f9447db3313ee29",
@@ -2882,12 +2882,12 @@
       "model_ev": "0.0277",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "23e278fb0e21ca6f8db23d35",
@@ -2934,12 +2934,12 @@
       "model_ev": "0.0265",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 10.0,
+      "outcome": "win",
+      "profit": 86.21,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "adae6a1320a89dc14ba6a8a4",
@@ -2960,12 +2960,12 @@
       "model_ev": "0.0243",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 16.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "197de785dc0d970101372048",
@@ -2986,12 +2986,12 @@
       "model_ev": "0.0233",
       "last10": "8",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "6cbba121ae597f93504032ea",
@@ -3038,12 +3038,12 @@
       "model_ev": "0.0226",
       "last10": "2",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "win",
+      "profit": 92.59,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "5f779d1bb14198c9c0a3a73d",
@@ -3064,12 +3064,12 @@
       "model_ev": "0.0201",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 8.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "7644503e3f090d6a07c41394",
@@ -3090,12 +3090,12 @@
       "model_ev": "0.0089",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 23.0,
+      "outcome": "win",
+      "profit": 92.59,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "cc41db279c47fd1ec324ef40",
@@ -3116,12 +3116,12 @@
       "model_ev": "0.0084",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "a351b105325955503d18330c",
@@ -3142,12 +3142,12 @@
       "model_ev": "0.0077",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "win",
+      "profit": 90.91,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "4c8b123c0f4baf937e3a0efd",
@@ -3168,12 +3168,12 @@
       "model_ev": "0.0067",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 81.97,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "18437619a964593e03983b21",
@@ -3220,12 +3220,12 @@
       "model_ev": "0.0045",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "win",
+      "profit": 56.82,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "30a8c6b7cfdd471a497c6a33",
@@ -3272,12 +3272,12 @@
       "model_ev": "-0.001",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 21.0,
+      "outcome": "win",
+      "profit": 86.21,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "2d52fe3bf3dabc4423f559d1",
@@ -3298,12 +3298,12 @@
       "model_ev": "-0.0013",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 13.0,
+      "outcome": "win",
+      "profit": 83.33,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "91ac69f68bb1549438f01adc",
@@ -3433,7 +3433,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "2bf237e8252bef5c15a0431d",
@@ -3485,7 +3485,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "136b709fcf9021683034e86e",
@@ -3532,12 +3532,12 @@
       "model_ev": "-0.0145",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 18.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "641a9644de34a708f6edc9e2",
@@ -3610,12 +3610,12 @@
       "model_ev": "-0.0196",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 90.09,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "edca2811854440cdd1af9ad5",
@@ -3636,12 +3636,12 @@
       "model_ev": "-0.0199",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 80.65,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "e9cb73669c1d6935ce6eb772",
@@ -3740,12 +3740,12 @@
       "model_ev": "-0.0238",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "win",
+      "profit": 99.01,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "5644cb39b4fcaea33816d627",
@@ -3870,12 +3870,12 @@
       "model_ev": "-0.0291",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "win",
+      "profit": 60.61,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "35421189943a076237a19535",
@@ -3896,12 +3896,12 @@
       "model_ev": "-0.0372",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 36.0,
+      "outcome": "win",
+      "profit": 80.65,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "c9c796557b5cf64ad426beea",
@@ -3948,12 +3948,12 @@
       "model_ev": "-0.0401",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "cc71c38c30b50f0eff22f75e",
@@ -3974,12 +3974,12 @@
       "model_ev": "-0.0457",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "514ff5831eaa0217db685a1d",
@@ -4000,12 +4000,12 @@
       "model_ev": "-0.0475",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 80.65,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "c96ab33500c0c257f53b88fc",
@@ -4026,12 +4026,12 @@
       "model_ev": "-0.0507",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 8.0,
+      "outcome": "win",
+      "profit": 79.37,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "4194828da9281835998e44fa",
@@ -4182,12 +4182,12 @@
       "model_ev": "-0.0683",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "5bfcbe15e77127cae46e8a2f",
@@ -4234,12 +4234,12 @@
       "model_ev": "-0.0766",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 8.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "c0679c7f98ee53b63753ec91",
@@ -4260,12 +4260,12 @@
       "model_ev": "-0.0796",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 36.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "4de3392cb7ee058ebad89fdf",
@@ -4286,12 +4286,12 @@
       "model_ev": "-0.0829",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "win",
+      "profit": 72.46,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "222dc3b75e58e7dacd11f20a",
@@ -4338,12 +4338,12 @@
       "model_ev": "-0.0843",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "win",
+      "profit": 85.47,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "faaac718b03dda073daf2dfd",
@@ -4468,12 +4468,12 @@
       "model_ev": "-0.0986",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "9a2dd3f372570999b39f2268",
@@ -4546,12 +4546,12 @@
       "model_ev": "-0.1015",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 18.0,
+      "outcome": "win",
+      "profit": 92.59,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "956e154c64a231e3fb7857ae",
@@ -4577,7 +4577,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "f1699e9b9a54e57d4ecbcdce",
@@ -4676,12 +4676,12 @@
       "model_ev": "-0.1088",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "83e18a7443e1cacedbfdf23d",
@@ -4754,12 +4754,12 @@
       "model_ev": "-0.1101",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "c816c7ab369ea1169e2933a6",
@@ -4780,12 +4780,12 @@
       "model_ev": "-0.111",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "44679494ececed20c31e3bf9",
@@ -4858,12 +4858,12 @@
       "model_ev": "-0.1152",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 21.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "04692d942921e3654e1b6f69",
@@ -4884,12 +4884,12 @@
       "model_ev": "-0.1192",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 13.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "c0967463df0fb2984a8d8626",
@@ -4910,12 +4910,12 @@
       "model_ev": "-0.1204",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 23.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "5a091ad9cd9baa8f0104e2c5",
@@ -4936,12 +4936,12 @@
       "model_ev": "-0.1208",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "0e435718a05910eaaedf7a47",
@@ -4988,12 +4988,12 @@
       "model_ev": "-0.1273",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "win",
+      "profit": 76.92,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "5af70c2f6cf40f9bdfb5748d",
@@ -5014,12 +5014,12 @@
       "model_ev": "-0.1277",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "a988bdcab182c9cbca444aeb",
@@ -5149,7 +5149,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "de9c854a38196f7c40f691a8",
@@ -5170,12 +5170,12 @@
       "model_ev": "-0.1361",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 16.0,
+      "outcome": "win",
+      "profit": 73.53,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "e24b7521c4f1086a455ad2e8",
@@ -5196,12 +5196,12 @@
       "model_ev": "-0.1378",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 8.0,
+      "outcome": "win",
+      "profit": 93.46,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "eb0763004c179d450f45a32a",
@@ -5227,7 +5227,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "9a7c70aea2b2027fe9db0c3f",
@@ -5248,12 +5248,12 @@
       "model_ev": "-0.1434",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 10.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "fea5d1366afe78654e597dc2",
@@ -5274,12 +5274,12 @@
       "model_ev": "-0.1435",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "win",
+      "profit": 86.21,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "6d6ea94bca796cb950042845",
@@ -5300,12 +5300,12 @@
       "model_ev": "-0.1465",
       "last10": "8",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "418ea2e25e33185ca98f663b",
@@ -5326,12 +5326,12 @@
       "model_ev": "-0.1504",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "win",
+      "profit": 84.03,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "bb9e12114148b0e0347e28f3",
@@ -5378,12 +5378,12 @@
       "model_ev": "-0.1532",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "win",
+      "profit": 76.34,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "76e2fd73fb0bbbb2622394f0",
@@ -5482,12 +5482,12 @@
       "model_ev": "-0.1569",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 66.23,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "ee586d8a2f6b8cd21fe2346d",
@@ -5534,12 +5534,12 @@
       "model_ev": "-0.1626",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "49280ab149256e32d7518d48",
@@ -5638,12 +5638,12 @@
       "model_ev": "-0.1758",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "e6091a4b19a9ae1cd4f412cd",
@@ -5690,12 +5690,12 @@
       "model_ev": "-0.1798",
       "last10": "2",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "win",
+      "profit": 117.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "b8bcc0b55fce1420e0643bcf",
@@ -5742,12 +5742,12 @@
       "model_ev": "-0.1861",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "win",
+      "profit": 103.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "4d1e3bda2852b2beb72d91b9",
@@ -5794,12 +5794,12 @@
       "model_ev": "-0.1894",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 12.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "d930e857b6a024aee64ac919",
@@ -5898,12 +5898,12 @@
       "model_ev": "-0.2004",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "3591ab6f92619b1e0117f036",
@@ -5976,12 +5976,12 @@
       "model_ev": "-0.2035",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "win",
+      "profit": 69.44,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "eef074e74b60589857e1366f",
@@ -6028,12 +6028,12 @@
       "model_ev": "-0.2074",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 17.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "a21026c673952f9743f00ec5",
@@ -6054,12 +6054,12 @@
       "model_ev": "-0.2084",
       "last10": "2",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 24.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "405819c826a7d27b2a1bf5d4",
@@ -6106,12 +6106,12 @@
       "model_ev": "-0.2126",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "8ed794fe7fa8389fdc842cde",
@@ -6158,12 +6158,12 @@
       "model_ev": "-0.2153",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "593f8d7868196bebd9a0aeed",
@@ -6210,12 +6210,12 @@
       "model_ev": "-0.2156",
       "last10": "6",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 75.76,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "0039edce70317de6ac1af514",
@@ -6262,12 +6262,12 @@
       "model_ev": "-0.2227",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "win",
+      "profit": 122.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "839390bcaf9ffa57b0878f23",
@@ -6288,12 +6288,12 @@
       "model_ev": "-0.2275",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "win",
+      "profit": 103.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "391a6959b5f0d5b479d9504f",
@@ -6366,12 +6366,12 @@
       "model_ev": "-0.2392",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 11.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "f99c908712d80df10ab08e6c",
@@ -6418,12 +6418,12 @@
       "model_ev": "-0.241",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 14.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "ad2717f6ab139336d1b4fcf5",
@@ -6548,12 +6548,12 @@
       "model_ev": "-0.2614",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 5.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "9e7d1bf5f6d8ff6f05a99e79",
@@ -6600,12 +6600,12 @@
       "model_ev": "-0.2763",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "0f7c4fac857eb8a9a27b6484",
@@ -6626,12 +6626,12 @@
       "model_ev": "-0.278",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 16.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "48d29f7bc1b4020fd852c69a",
@@ -6730,12 +6730,12 @@
       "model_ev": "-0.288",
       "last10": "7",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "7b8e4b2e2626eba39e807443",
@@ -6886,12 +6886,12 @@
       "model_ev": "-0.3025",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "win",
+      "profit": 121.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "b05053b1ae231905e2151894",
@@ -6938,12 +6938,12 @@
       "model_ev": "-0.3092",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "d41f970b755b3af1d4ab6ae9",
@@ -6964,12 +6964,12 @@
       "model_ev": "-0.3095",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 21.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "e561cf86be3c70c8760bd1a5",
@@ -7125,7 +7125,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "6d0c1c900bd62e20694b7c23",
@@ -7146,12 +7146,12 @@
       "model_ev": "-0.3475",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "aebb9b0dd35f709431caacee",
@@ -7177,7 +7177,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "6f1dcdd65512e6d5d97a623a",
@@ -7328,12 +7328,12 @@
       "model_ev": "-0.3862",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "b935e55a557172f68e25adeb",
@@ -7354,12 +7354,12 @@
       "model_ev": "-0.4022",
       "last10": "5",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 19.0,
+      "outcome": "win",
+      "profit": 90.91,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "27cabd7eb78cde444dbb1441",
@@ -7437,7 +7437,7 @@
       "outcome": null,
       "profit": null,
       "stake": null,
-      "reason": "Waiting for game completion"
+      "reason": "Player absent or ambiguous in game logs"
     },
     {
       "prediction_id": "46808ef803fe10aaee110ee6",
@@ -7614,12 +7614,12 @@
       "model_ev": "-0.4928",
       "last10": "4",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 2.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "d97aa05830b72f4e135b4123",
@@ -7718,12 +7718,12 @@
       "model_ev": "-0.5197",
       "last10": "2",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "2552f4ca0a0dcdca240f5d9a",
@@ -8030,12 +8030,12 @@
       "model_ev": "-0.6621",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 4.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "0da44dc974bfcb980eeb14bd",
@@ -8082,12 +8082,12 @@
       "model_ev": "-0.6722",
       "last10": "3",
       "model_version": "baseline-normal-v1-unvalidated",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 6.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "590d3f8d67379d72d02fb592",
@@ -8186,12 +8186,12 @@
       "model_ev": "0.4327",
       "last10": "6",
       "model_version": "v3-team-defense-experimental",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "win",
+      "profit": 124.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "e4d77d1a15baf45f8fb9e98a",
@@ -8212,12 +8212,12 @@
       "model_ev": "0.0026",
       "last10": "6",
       "model_version": "v3-team-defense-experimental",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "win",
+      "profit": 84.75,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "3f819a53d1293d9297fc3164",
@@ -8238,12 +8238,12 @@
       "model_ev": "-0.1344",
       "last10": "4",
       "model_version": "v3-team-defense-experimental",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 3.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "c5eb42f628e73706d787615f",
@@ -8264,12 +8264,12 @@
       "model_ev": "-0.4185",
       "last10": "4",
       "model_version": "v3-team-defense-experimental",
-      "status": "pending",
-      "actual": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion"
+      "status": "graded",
+      "actual": 1.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": ""
     },
     {
       "prediction_id": "02cd01d81ee489dced541eea",
