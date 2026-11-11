@@ -5,6 +5,7 @@ import math
 import statistics
 import pathlib
 import datetime
+import re
 from collections import defaultdict
 
 ROOT = pathlib.Path(__file__).parent
@@ -210,33 +211,81 @@ def read_csv(path):
         return list(csv.DictReader(file))
 
 
+# ESPN and sportsbook team names can use different abbreviations.
+TEAM_NAMES = {
+    "ATL": "Atlanta Hawks", "BOS": "Boston Celtics",
+    "BKN": "Brooklyn Nets", "CHA": "Charlotte Hornets",
+    "CHI": "Chicago Bulls", "CLE": "Cleveland Cavaliers",
+    "DAL": "Dallas Mavericks", "DEN": "Denver Nuggets",
+    "DET": "Detroit Pistons", "GSW": "Golden State Warriors",
+    "HOU": "Houston Rockets", "IND": "Indiana Pacers",
+    "LAC": "Los Angeles Clippers", "LAL": "Los Angeles Lakers",
+    "MEM": "Memphis Grizzlies", "MIA": "Miami Heat",
+    "MIL": "Milwaukee Bucks", "MIN": "Minnesota Timberwolves",
+    "NOP": "New Orleans Pelicans", "NYK": "New York Knicks",
+    "OKC": "Oklahoma City Thunder", "ORL": "Orlando Magic",
+    "PHI": "Philadelphia 76ers", "PHX": "Phoenix Suns",
+    "POR": "Portland Trail Blazers", "SAC": "Sacramento Kings",
+    "SAS": "San Antonio Spurs", "TOR": "Toronto Raptors",
+    "UTA": "Utah Jazz", "WAS": "Washington Wizards",
+}
+TEAM_ALIASES = {
+    "GS": "GSW", "NY": "NYK", "NO": "NOP", "SA": "SAS",
+    "WSH": "WAS", "PHO": "PHX", "BRK": "BKN", "UTAH": "UTA",
+}
+
+
+def team_code(value):
+    raw = str(value or "").strip()
+    upper = raw.upper()
+    if upper in TEAM_NAMES:
+        return upper
+    if upper in TEAM_ALIASES:
+        return TEAM_ALIASES[upper]
+    key = re.sub(r"[^a-z0-9]", "", raw.casefold())
+    for code, name in TEAM_NAMES.items():
+        if key == re.sub(r"[^a-z0-9]", "", name.casefold()):
+            return code
+    if key == "laclippers":
+        return "LAC"
+    return ""
+
+
 def identify_team(games, bet):
+    """Verify the latest pregame team against the scheduled event.
+
+    Never infer a team from the matchup alone: that could attach a player
+    to an unrelated game. Reject conflicting ESPN name/abbreviation data.
+    """
+    if not games:
+        return None
     latest = games[-1]
-
-    team = latest.get("team", "")
-    home = bet.get("home_team", "")
-    away = bet.get("away_team", "")
-
-    if not team or not home or not away:
+    home_code = team_code(bet.get("home_team"))
+    away_code = team_code(bet.get("away_team"))
+    if not home_code or not away_code or home_code == away_code:
         return None
 
-    if norm(team) == norm(home):
-        return (
-            team,
-            latest.get("team_abbr", ""),
-            away,
-            latest.get("team_id", ""),
-        )
+    name_code = team_code(latest.get("team"))
+    abbr_code = team_code(latest.get("team_abbr"))
+    if name_code and abbr_code and name_code != abbr_code:
+        return None
+    player_code = name_code or abbr_code
+    if player_code not in (home_code, away_code):
+        return None
 
-    if norm(team) == norm(away):
-        return (
-            team,
-            latest.get("team_abbr", ""),
-            home,
-            latest.get("team_id", ""),
-        )
+    # If odds collector supplied a team, it must agree with ESPN.
+    odds_code = team_code(bet.get("team"))
+    if odds_code and odds_code != player_code:
+        return None
+    odds_abbr = team_code(bet.get("team_abbr"))
+    if odds_abbr and odds_abbr != player_code:
+        return None
 
-    return None
+    opponent_code = away_code if player_code == home_code else home_code
+    opponent = bet.get("away_team") if player_code == home_code else bet.get("home_team")
+    if team_code(opponent) != opponent_code:
+        return None
+    return TEAM_NAMES[player_code], player_code, opponent, latest.get("team_id", "")
 
 
 def load_injuries():
@@ -418,8 +467,17 @@ def run():
     for row in logs:
         by_player[norm(row.get("player"))].append(row)
 
-    for games in by_player.values():
-        games.sort(key=lambda row: row.get("date", ""))
+    for key, games in list(by_player.items()):
+        games.sort(key=lambda row: (row.get("date", ""), row.get("game_id", "")))
+        seen_games = set()
+        unique_games = []
+        for game in games:
+            identifier = (game.get("date", ""), game.get("game_id", ""))
+            if identifier in seen_games:
+                continue
+            seen_games.add(identifier)
+            unique_games.append(game)
+        by_player[key] = unique_games
 
     output = []
 
@@ -834,6 +892,7 @@ def run():
     SITE.mkdir(exist_ok=True)
 
     payload = {
+        "model": VERSION,
         "generated_at": (
             datetime.datetime.now(
                 datetime.timezone.utc
