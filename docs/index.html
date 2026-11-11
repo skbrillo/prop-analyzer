@@ -96,12 +96,13 @@ table{min-width:1100px}
 
 <div class="warn">
 <strong>REAL NBA DATA — EXPERIMENTAL MODEL.</strong>
+Only odds of -125 or better are displayed in the prediction table.
+Historical grading remains unchanged.
 Model probabilities and expected values are estimates, not validated betting edges.
-Historical results are hypothetical and do not represent wagers placed.
 </div>
 
 <div class="stats">
-<div class="stat">Analyzed Outcomes<b id="count">--</b></div>
+<div class="stat">Eligible Outcomes<b id="count">--</b></div>
 <div class="stat">Selected Positive EV<b id="positive">--</b></div>
 <div class="stat">Games Analyzed<b id="games">--</b></div>
 <div class="stat">Total Wins<b id="total-wins" class="green">--</b></div>
@@ -144,7 +145,7 @@ Historical results are hypothetical and do not represent wagers placed.
 </select>
 
 <select id="odds-filter">
-<option value="">All Odds</option>
+<option value="-125" selected>Odds -125 or Better</option>
 <option value="-120">Odds -120 or Better</option>
 <option value="-110">Odds -110 or Better</option>
 <option value="100">Plus Money Only</option>
@@ -179,8 +180,8 @@ Historical results are hypothetical and do not represent wagers placed.
 </div>
 
 <div class="note">
-Minutes reliability: Stable ≤4 minutes standard deviation;
-Moderate above 4 through 7; Volatile above 7.
+Minimum acceptable American odds: -125. Prices of -126, -130, -150 and worse are excluded.
+Minutes reliability: Stable ≤4 minutes SD; Moderate above 4 through 7; Volatile above 7.
 </div>
 
 <div id="status" class="muted">Loading predictions...</div>
@@ -217,7 +218,7 @@ Moderate above 4 through 7; Volatile above 7.
 <h2>Live Betting Performance</h2>
 <div class="muted">
 Saved pregame model selections graded against ESPN.
-Returns are hypothetical using $100 per selected graded outcome.
+Historical tracking is preserved, including picks made before the -125 display rule.
 </div>
 
 <div id="tracking-status" class="muted"></div>
@@ -285,6 +286,7 @@ Data: ESPN and DraftKings via The Odds API.
 <script>
 "use strict";
 
+const MIN_ACCEPTABLE_ODDS=-125;
 const el=id=>document.getElementById(id);
 
 let todayData=[];
@@ -381,6 +383,12 @@ function odds(v){
 if(v===null||v===undefined||v==="")return "--";
 const x=Number(v);
 return Number.isFinite(x)?(x>0?"+":"")+x:"--";
+}
+
+function acceptableOdds(r){
+const n=Number(r.odds);
+return r.odds!==null&&r.odds!==undefined&&
+r.odds!==""&&Number.isFinite(n)&&n>=MIN_ACCEPTABLE_ODDS;
 }
 
 function normalizeMarket(v){
@@ -513,6 +521,9 @@ let best=-1,bestEv=-Infinity,bestProb=-Infinity;
 
 for(const i of indices){
 const r=rows[i];
+
+if(!acceptableOdds(r))continue;
+
 const ev=numeric(r,["ev"]);
 const prob=numeric(r,["probability"]);
 
@@ -606,14 +617,16 @@ activeDay=day;
 el("tab-today").classList.toggle("active",day==="today");
 el("tab-yesterday").classList.toggle("active",day==="yesterday");
 
-data=day==="today"
+data=(day==="today"
 ?todayData.filter(r=>r.date===todayDate)
-:historyData.filter(r=>r.date===yesterdayDate);
+:historyData.filter(r=>r.date===yesterdayDate))
+.filter(acceptableOdds);
 
 el("day-description").textContent=
 (day==="today"?"Today — "+todayDate:
 "Yesterday — "+yesterdayDate)+
-" | "+(day==="today"?"Current predictions":"Saved historical predictions");
+" | "+(day==="today"?"Current predictions":"Saved historical predictions")+
+" | Minimum odds -125";
 
 el("game").value="";
 populateGames();
@@ -659,7 +672,7 @@ r.matchup,r.away_team,r.home_team
 
 const risk=minutesDetails(r).label;
 
-return text.includes(query)&&
+return acceptableOdds(r)&&text.includes(query)&&
 (!game||gameKey(r)===game)&&
 (!market||r.market===market)&&
 (!side||r.side===side)&&
@@ -668,9 +681,7 @@ return text.includes(query)&&
 (!minFilter||
 (minFilter==="exclude-volatile"
 ?risk!=="Volatile":risk===minFilter))&&
-(!oddsLimit||
-(r.odds!=null&&Number.isFinite(Number(r.odds))&&
-Number(r.odds)>=Number(oddsLimit)));
+(!oddsLimit||Number(r.odds)>=Number(oddsLimit));
 });
 
 filtered.sort((a,b)=>{
@@ -743,7 +754,8 @@ tbody.appendChild(tr);
 }
 
 el("status").textContent=
-filtered.length+" of "+data.length+" predictions displayed.";
+filtered.length+" of "+data.length+
+" eligible predictions displayed (odds -125 or better).";
 }
 
 function addText(parent,tag,value,cls=""){
@@ -1047,11 +1059,7 @@ el("backtest-status").textContent=
 }
 }
 
-/* ==================================================
-   EXCEL EXPORT
-   One workbook, Summary + one sheet per saved date.
-   Uses saved JSON only. No Odds API calls.
-   ================================================== */
+/* EXCEL EXPORT */
 
 function excelNumber(v){
 if(v===null||v===undefined||v==="")return null;
@@ -1117,15 +1125,15 @@ XLSX.utils.book_append_sheet(wb,sheet,name);
 function exportSummaryRows(rows){
 const selected=rows.filter(r=>r.selection_status==="selected");
 
-const overall=summarizeSelected(
-selected.map(r=>({
+const normalizeGrading=r=>({
 ...r,
 status:r.status||
 (["win","loss","push"].includes(r.result)
 ?"graded":r.result==="dnp"?"dnp":"pending"),
 outcome:r.outcome||r.result
-}))
-);
+});
+
+const overall=summarizeSelected(selected.map(normalizeGrading));
 
 const summary=[
 ["NBA PROP ANALYZER — ALL HISTORY",""],
@@ -1149,13 +1157,7 @@ for(const market of ["Points","Rebounds","Assists"]){
 const group=selected.filter(r=>
 normalizeMarket(r.market)===market);
 
-const s=summarizeSelected(group.map(r=>({
-...r,
-status:r.status||
-(["win","loss","push"].includes(r.result)
-?"graded":"pending"),
-outcome:r.outcome||r.result
-})));
+const s=summarizeSelected(group.map(normalizeGrading));
 
 summary.push([
 market,s.wins,s.losses,s.graded,
@@ -1173,13 +1175,7 @@ const dates=[...new Set(rows.map(r=>r.date))]
 for(const date of dates){
 const daily=rows.filter(r=>r.date===date);
 const picks=daily.filter(r=>r.selection_status==="selected");
-const s=summarizeSelected(picks.map(r=>({
-...r,
-status:r.status||
-(["win","loss","push"].includes(r.result)
-?"graded":"pending"),
-outcome:r.outcome||r.result
-})));
+const s=summarizeSelected(picks.map(normalizeGrading));
 
 summary.push([
 date,daily.length,picks.length,s.graded,
@@ -1191,7 +1187,7 @@ s.hypothetical_roi,s.hypothetical_profit
 summary.push([]);
 summary.push([
 "NOTE",
-"Profit and ROI are hypothetical. Pending and DNP are not settled bets."
+"Historical results include selections made before the -125 cutoff."
 ]);
 
 return summary;
@@ -1217,10 +1213,7 @@ if(!Array.isArray(json.predictions))
 throw new Error("Historical grading file is missing predictions.");
 
 const history=json.predictions.map(historyRow);
-
-const current=todayData.length
-?todayData
-:[];
+const current=todayData;
 
 const rowsByKey=new Map();
 
@@ -1267,10 +1260,7 @@ return String(a.market||"").localeCompare(
 String(b.market||""));
 });
 
-addExcelSheet(
-wb,date,
-daily.map(exportRow)
-);
+addExcelSheet(wb,date,daily.map(exportRow));
 }
 
 const filename=
@@ -1285,8 +1275,7 @@ compression:true
 status.textContent=
 "Excel export prepared: "+
 all.length+" predictions across "+
-dates.length+" dates. "+
-"Check your browser downloads.";
+dates.length+" dates. Check your browser downloads.";
 
 }catch(error){
 console.error(error);
@@ -1301,8 +1290,6 @@ button.textContent="Download Excel — All History";
 el("download-excel").addEventListener(
 "click",downloadExcel
 );
-
-/* END EXCEL EXPORT */
 
 el("tab-today").addEventListener("click",
 ()=>switchDay("today"));
