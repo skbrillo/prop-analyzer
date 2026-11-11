@@ -150,11 +150,12 @@ DraftKings pregame spreads, totals, and implied team points.
 <option value="Under">Under</option>
 </select>
 
+<!-- ALL ODDS IS NOW THE DEFAULT -->
 <select id="odds-filter">
+<option value="" selected>All Odds</option>
 <option value="-120">Odds -120 or Better</option>
 <option value="-110">Odds -110 or Better</option>
 <option value="100">Plus Money Only</option>
-<option value="">All Odds</option>
 </select>
 
 <select id="minutes-filter">
@@ -165,9 +166,10 @@ DraftKings pregame spreads, totals, and implied team points.
 <option value="exclude-volatile">Hide Volatile</option>
 </select>
 
+<!-- ALL PREDICTIONS IS NOW THE DEFAULT -->
 <select id="selection-filter">
-<option value="selected">Selected Only</option>
-<option value="">All Predictions</option>
+<option value="" selected>All Predictions</option>
+<option value="selected">Model Picks</option>
 <option value="not_selected">Not Selected</option>
 </select>
 
