@@ -1,4 +1,23 @@
 
+"""
+NBA DraftKings Odds Collector — ParlayAPI
+
+Reads:
+    data/game_logs.csv
+    PARLAY_API_KEY (GitHub Actions secret)
+
+Writes:
+    data/sample_odds.csv
+
+Compatible with the existing Prop Analyzer prediction engine.
+
+ParlayAPI:
+    https://parlay-api.com
+
+The script protects the existing odds CSV when no valid
+new player props are collected.
+"""
+
 import csv
 import json
 import math
@@ -10,31 +29,53 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
-from datetime import datetime, timezone, timedelta
+from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
-ROOT = pathlib.Path(__file__).parent
+
+ROOT = pathlib.Path(__file__).resolve().parent
 DATA = ROOT / "data"
 OUTPUT = DATA / "sample_odds.csv"
 
-API_BASE = "https://api.the-odds-api.com/v4"
+API_BASE = "https://parlay-api.com/v1"
 SPORT = "basketball_nba"
 BOOKMAKER = "draftkings"
 
-PROP_MARKETS = (
-    "player_points,player_rebounds,player_assists"
-)
-GAME_MARKETS = "spreads,totals"
-
-MONTHLY_CREDIT_RESERVE = 20
-MAX_CREDITS_PER_RUN = 45
-
-CREDITS_PER_GAME = 3
-GAME_LINES_ESTIMATED_CREDITS = 2
-
-ENABLE_DAILY_PACING = False
-
 EASTERN = ZoneInfo("America/New_York")
+
+PROP_MARKETS = (
+    "player_points",
+    "player_rebounds",
+    "player_assists",
+)
+
+GAME_MARKETS = (
+    "spreads",
+    "totals",
+)
+
+MARKET_NAMES = {
+    "player_points": "points",
+    "player_rebounds": "rebounds",
+    "player_assists": "assists",
+}
+
+# One props request = 3 credits.
+# Two game-line markets = approximately 2 credits.
+#
+# Default run: approximately 5 credits.
+# Two daily runs for 30 days: approximately 300 credits.
+#
+# Additional pages are allowed only within this budget.
+
+MAX_CREDITS_PER_RUN = 12
+MONTHLY_CREDIT_RESERVE = 100
+
+PROPS_REQUEST_COST = 3
+GAME_LINES_REQUEST_COST = 2
+
+PROPS_PAGE_LIMIT = 10000
+MAX_ODDS_AGE_SECONDS = 1800
 
 FIELDS = [
     "game_date",
@@ -58,19 +99,16 @@ FIELDS = [
     "away_implied_total",
 ]
 
-MARKET_NAMES = {
-    "player_points": "points",
-    "player_rebounds": "rebounds",
-    "player_assists": "assists",
-}
-
 
 def number(value):
     try:
         result = float(value)
-        return result if math.isfinite(result) else None
+        if math.isfinite(result):
+            return result
     except (TypeError, ValueError):
-        return None
+        pass
+
+    return None
 
 
 def norm(value):
@@ -79,45 +117,87 @@ def norm(value):
     )
 
 
-def request_json(path, params):
+def parse_time(value):
+    if not value:
+        return None
+
+    try:
+        return datetime.fromisoformat(
+            str(value).replace("Z", "+00:00")
+        ).astimezone(timezone.utc)
+    except (ValueError, TypeError, AttributeError):
+        return None
+
+
+def header_int(headers, name):
+    try:
+        return int(headers.get(name))
+    except (TypeError, ValueError):
+        return None
+
+
+def request_json(path, params, api_key):
     url = (
         API_BASE
         + path
         + "?"
-        + urllib.parse.urlencode(params)
+        + urllib.parse.urlencode(params, doseq=True)
     )
 
     request = urllib.request.Request(
         url,
         headers={
-            "User-Agent": "PropAnalyzer/1.0"
+            "X-API-Key": api_key,
+            "Accept": "application/json",
+            "User-Agent": "PropAnalyzer/2.0",
         },
     )
 
     try:
         with urllib.request.urlopen(
             request,
-            timeout=40,
+            timeout=60,
         ) as response:
 
             data = json.load(response)
             headers = response.headers
 
-            def header_number(name):
-                try:
-                    return int(headers.get(name))
-                except (TypeError, ValueError):
-                    return None
-
             usage = {
-                "remaining": header_number(
-                    "x-requests-remaining"
+                "remaining": header_int(
+                    headers,
+                    "x-requests-remaining",
                 ),
-                "used": header_number(
-                    "x-requests-used"
+                "used": header_int(
+                    headers,
+                    "x-requests-used",
                 ),
-                "last": header_number(
-                    "x-requests-last"
+                "last": header_int(
+                    headers,
+                    "x-requests-last",
+                ),
+                "has_more": (
+                    str(
+                        headers.get(
+                            "x-result-has-more",
+                            "false",
+                        )
+                    ).lower() == "true"
+                ),
+                "next_offset": header_int(
+                    headers,
+                    "x-next-offset",
+                ),
+                "truncated": (
+                    str(
+                        headers.get(
+                            "x-result-truncated",
+                            "false",
+                        )
+                    ).lower() == "true"
+                ),
+                "degraded": headers.get(
+                    "x-result-degraded",
+                    "",
                 ),
             }
 
@@ -130,60 +210,49 @@ def request_json(path, params):
         )
 
         raise RuntimeError(
-            f"Odds API HTTP {exc.code}: "
+            f"ParlayAPI HTTP {exc.code}: "
             f"{detail[:500]}"
         ) from exc
 
 
-def parse_time(value):
-    return datetime.fromisoformat(
-        value.replace("Z", "+00:00")
-    ).astimezone(timezone.utc)
+def load_player_teams():
+    path = DATA / "game_logs.csv"
 
-
-def credit_budget(remaining):
-    if remaining is None:
-        return 0
-
-    safe_available = max(
-        0,
-        remaining - MONTHLY_CREDIT_RESERVE,
-    )
-
-    budget = min(
-        safe_available,
-        MAX_CREDITS_PER_RUN,
-    )
-
-    if ENABLE_DAILY_PACING:
-        now = datetime.now(timezone.utc)
-
-        if now.month == 12:
-            next_month = datetime(
-                now.year + 1,
-                1,
-                1,
-                tzinfo=timezone.utc,
-            )
-        else:
-            next_month = datetime(
-                now.year,
-                now.month + 1,
-                1,
-                tzinfo=timezone.utc,
-            )
-
-        days_left = max(
-            1,
-            (next_month.date() - now.date()).days,
+    if not path.exists():
+        raise RuntimeError(
+            "Missing data/game_logs.csv"
         )
 
-        budget = min(
-            budget,
-            safe_available // days_left,
-        )
+    latest = {}
 
-    return max(0, budget)
+    with path.open(
+        newline="",
+        encoding="utf-8",
+    ) as file:
+
+        for row in csv.DictReader(file):
+            player = norm(row.get("player"))
+            date = row.get("date", "")
+            team = row.get("team", "")
+
+            if not player or not date or not team:
+                continue
+
+            previous = latest.get(player)
+
+            if (
+                previous is None
+                or date > previous["date"]
+            ):
+                latest[player] = {
+                    "date": date,
+                    "team": team,
+                }
+
+    return {
+        player: item["team"]
+        for player, item in latest.items()
+    }
 
 
 def find_next_slate(events):
@@ -192,61 +261,45 @@ def find_next_slate(events):
     future = []
 
     for event in events:
-        try:
-            start = parse_time(
-                event["commence_time"]
-            )
-        except (
-            KeyError,
-            ValueError,
-            TypeError,
-            AttributeError,
-        ):
-            continue
+        start = parse_time(
+            event.get("commence_time")
+        )
 
-        if start > now:
+        if start and start > now:
             future.append((start, event))
 
-    future.sort(
-        key=lambda pair: pair[0]
-    )
+    future.sort(key=lambda item: item[0])
 
     if not future:
         return []
 
-    # Choose the next NBA calendar date
-    # using Eastern Time.
-    first_date = future[0][0].astimezone(
+    slate_date = future[0][0].astimezone(
         EASTERN
     ).date()
 
-    slate = [
+    return [
         event
         for start, event in future
-        if start.astimezone(
-            EASTERN
-        ).date() == first_date
+        if start.astimezone(EASTERN).date()
+        == slate_date
     ]
-
-    return slate
 
 
 def event_details(event):
     start = parse_time(
-        event["commence_time"]
+        event.get("commence_time")
     )
 
-    eastern = start.astimezone(
-        EASTERN
-    )
+    if not start:
+        return None
 
-    home = event.get(
-        "home_team", ""
-    )
+    eastern = start.astimezone(EASTERN)
 
-    away = event.get(
-        "away_team", ""
-    )
+    home = event.get("home_team", "")
+    away = event.get("away_team", "")
+
+    if not home or not away:
+        return None
 
     return {
         "game_date": eastern.strftime(
@@ -259,23 +312,76 @@ def event_details(event):
             "%I:%M %p ET"
         ),
         "commence_time": event.get(
-            "commence_time", ""
+            "commence_time",
+            "",
         ),
-        "event_id": event.get(
-            "id", ""
-        ),
+        "event_id": event.get("id", ""),
     }
+
+
+def event_key(home, away, date):
+    return (
+        norm(home),
+        norm(away),
+        str(date),
+    )
+
+
+def make_event_lookup(events):
+    lookup = {}
+
+    for event in events:
+        details = event_details(event)
+
+        if not details:
+            continue
+
+        key = event_key(
+            details["home_team"],
+            details["away_team"],
+            details["game_date"],
+        )
+
+        lookup[key] = event
+
+    return lookup
+
+
+def match_event(row, lookup):
+    start = parse_time(
+        row.get("commence_time")
+    )
+
+    if not start:
+        return None
+
+    date = start.astimezone(
+        EASTERN
+    ).strftime("%Y-%m-%d")
+
+    key = event_key(
+        row.get("home_team"),
+        row.get("away_team"),
+        date,
+    )
+
+    return lookup.get(key)
 
 
 def bookmaker_markets(event):
     for bookmaker in event.get(
-        "bookmakers", []
+        "bookmakers",
+        [],
     ):
-        if bookmaker.get("key") == BOOKMAKER:
+        if (
+            norm(bookmaker.get("key"))
+            == BOOKMAKER
+        ):
             return {
                 market.get("key"): market
                 for market in bookmaker.get(
-                    "markets", []
+                    "markets",
+                    [],
                 )
             }
 
@@ -293,21 +399,14 @@ def extract_game_lines(event):
         "away_implied_total": None,
     }
 
-    home = event.get(
-        "home_team", ""
-    )
+    home = event.get("home_team", "")
+    away = event.get("away_team", "")
 
-    away = event.get(
-        "away_team", ""
-    )
+    for outcome in markets.get(
+        "spreads",
+        {},
+    ).get("outcomes", []):
 
-    spread_market = markets.get(
-        "spreads", {}
-    )
-
-    for outcome in spread_market.get(
-        "outcomes", []
-    ):
         point = number(
             outcome.get("point")
         )
@@ -315,52 +414,37 @@ def extract_game_lines(event):
         if point is None:
             continue
 
-        if norm(outcome.get("name")) == norm(home):
+        name = norm(
+            outcome.get("name")
+        )
+
+        if name == norm(home):
             result["home_spread"] = point
 
-        elif norm(
-            outcome.get("name")
-        ) == norm(away):
+        elif name == norm(away):
             result["away_spread"] = point
 
-    total_market = markets.get(
-        "totals", {}
-    )
+    for outcome in markets.get(
+        "totals",
+        {},
+    ).get("outcomes", []):
 
-    for outcome in total_market.get(
-        "outcomes", []
-    ):
-        if norm(
-            outcome.get("name")
-        ) == "over":
-
+        if norm(outcome.get("name")) == "over":
             result["game_total"] = number(
                 outcome.get("point")
             )
-
             break
 
     total = result["game_total"]
-
-    home_spread = result[
-        "home_spread"
-    ]
-
-    away_spread = result[
-        "away_spread"
-    ]
+    home_spread = result["home_spread"]
+    away_spread = result["away_spread"]
 
     if (
         total is not None
         and home_spread is not None
         and away_spread is not None
-        and abs(
-            home_spread + away_spread
-        ) < 0.01
+        and abs(home_spread + away_spread) < 0.01
     ):
-        # Spread is the handicap applied
-        # to the team, so a negative spread
-        # indicates the favored team.
         result["home_implied_total"] = round(
             (total - home_spread) / 2,
             2,
@@ -374,195 +458,192 @@ def extract_game_lines(event):
     return result
 
 
-def load_player_teams():
-    path = DATA / "game_logs.csv"
-
-    if not path.exists():
-        print(
-            "WARNING: game_logs.csv missing. "
-            "Cannot verify player-team assignments."
-        )
-        return {}
-
-    with path.open(
-        newline="",
-        encoding="utf-8",
-    ) as file:
-        rows = list(
-            csv.DictReader(file)
-        )
-
-    latest = {}
-
-    for row in rows:
-        player = norm(
-            row.get("player")
-        )
-
-        date = row.get(
-            "date", ""
-        )
-
-        team = row.get(
-            "team", ""
-        )
-
-        if not player or not date or not team:
-            continue
-
-        previous = latest.get(
-            player
-        )
-
-        if (
-            previous is None
-            or date > previous["date"]
-        ):
-            latest[player] = {
-                "date": date,
-                "team": team,
-            }
-
+def empty_game_lines():
     return {
-        player: item["team"]
-        for player, item in latest.items()
+        "home_spread": None,
+        "away_spread": None,
+        "game_total": None,
+        "home_implied_total": None,
+        "away_implied_total": None,
     }
 
 
+def valid_american_odds(value):
+    price = number(value)
+
+    if price is None:
+        return None
+
+    if abs(price) < 100:
+        return None
+
+    if price != int(price):
+        return None
+
+    return int(price)
+
+
 def extract_props(
-    event,
+    props,
+    slate,
     player_teams,
     game_lines,
 ):
-    details = event_details(event)
+    lookup = make_event_lookup(slate)
 
-    home = details[
-        "home_team"
-    ]
+    rows = {}
+    unknown_players = 0
+    team_mismatches = 0
+    stale_props = 0
 
-    away = details[
-        "away_team"
-    ]
+    now = datetime.now(timezone.utc)
 
-    markets = bookmaker_markets(event)
-
-    rows = []
-
-    skipped_unknown = 0
-    skipped_mismatch = 0
-
-    for market_key, market_name in (
-        MARKET_NAMES.items()
-    ):
-        market = markets.get(
-            market_key
-        )
-
-        if not market:
+    for prop in props:
+        if not isinstance(prop, dict):
             continue
 
-        grouped = {}
-
-        for outcome in market.get(
-            "outcomes", []
+        if (
+            norm(prop.get("bookmaker"))
+            != BOOKMAKER
         ):
-            player = str(
-                outcome.get(
-                    "description", ""
-                )
-            ).strip()
+            continue
 
-            side = str(
-                outcome.get(
-                    "name", ""
-                )
-            ).strip().lower()
+        market_key = prop.get(
+            "market_key",
+            "",
+        )
 
-            line = number(
-                outcome.get("point")
-            )
+        if market_key not in MARKET_NAMES:
+            continue
 
-            price = number(
-                outcome.get("price")
-            )
+        player = str(
+            prop.get("player") or ""
+        ).strip()
+
+        if not player:
+            continue
+
+        line = number(
+            prop.get("line")
+        )
+
+        over_odds = valid_american_odds(
+            prop.get("over_price")
+        )
+
+        under_odds = valid_american_odds(
+            prop.get("under_price")
+        )
+
+        if (
+            line is None
+            or over_odds is None
+            or under_odds is None
+        ):
+            continue
+
+        age = number(
+            prop.get("age_seconds")
+        )
+
+        if (
+            age is not None
+            and age > MAX_ODDS_AGE_SECONDS
+        ):
+            stale_props += 1
+            continue
+
+        event = match_event(
+            prop,
+            lookup,
+        )
+
+        if event is None:
+            continue
+
+        details = event_details(event)
+
+        if not details:
+            continue
+
+        start = parse_time(
+            details["commence_time"]
+        )
+
+        if not start or start <= now:
+            continue
+
+        home = details["home_team"]
+        away = details["away_team"]
+
+        team = player_teams.get(
+            norm(player)
+        )
+
+        if not team:
+            unknown_players += 1
+            continue
+
+        if norm(team) == norm(home):
+            opponent = away
+
+        elif norm(team) == norm(away):
+            opponent = home
+
+        else:
+            team_mismatches += 1
+            continue
+
+        lines = game_lines.get(
+            details["event_id"],
+            empty_game_lines(),
+        )
+
+        row = {
+            **details,
+            **lines,
+            "player": player,
+            "team": team,
+            "opponent": opponent,
+            "market": MARKET_NAMES[market_key],
+            "line": line,
+            "over_odds": over_odds,
+            "under_odds": under_odds,
+        }
+
+        key = (
+            details["event_id"],
+            norm(player),
+            market_key,
+            line,
+        )
+
+        existing = rows.get(key)
+
+        if existing is None:
+            rows[key] = (row, age)
+        else:
+            old_age = existing[1]
 
             if (
-                not player
-                or side not in (
-                    "over", "under"
+                age is not None
+                and (
+                    old_age is None
+                    or age < old_age
                 )
-                or line is None
-                or price is None
-                or price == 0
             ):
-                continue
+                rows[key] = (row, age)
 
-            key = (
-                norm(player),
-                line,
-            )
-
-            if key not in grouped:
-                grouped[key] = {
-                    "player": player,
-                    "line": line,
-                }
-
-            grouped[key][
-                side + "_odds"
-            ] = int(price)
-
-        for item in grouped.values():
-            if (
-                "over_odds" not in item
-                or "under_odds" not in item
-            ):
-                continue
-
-            player = item["player"]
-
-            team = player_teams.get(
-                norm(player)
-            )
-
-            # Do not assign a player to a
-            # game without a matching team.
-            if not team:
-                skipped_unknown += 1
-                continue
-
-            if norm(team) == norm(home):
-                opponent = away
-
-            elif norm(team) == norm(away):
-                opponent = home
-
-            else:
-                skipped_mismatch += 1
-                continue
-
-            row = {
-                **details,
-                **game_lines,
-                "player": player,
-                "team": team,
-                "opponent": opponent,
-                "market": market_name,
-                "line": item["line"],
-                "over_odds": item[
-                    "over_odds"
-                ],
-                "under_odds": item[
-                    "under_odds"
-                ],
-            }
-
-            rows.append(row)
+    result = [
+        item[0]
+        for item in rows.values()
+    ]
 
     return (
-        rows,
-        skipped_unknown,
-        skipped_mismatch,
+        result,
+        unknown_players,
+        team_mismatches,
+        stale_props,
     )
 
 
@@ -572,9 +653,6 @@ def save_rows(rows):
         exist_ok=True,
     )
 
-    # Write to a temporary file first.
-    # Replace the published CSV only
-    # after the write succeeds.
     descriptor, temporary = tempfile.mkstemp(
         prefix="sample_odds_",
         suffix=".csv",
@@ -618,370 +696,338 @@ def save_rows(rows):
 
 def main():
     api_key = os.environ.get(
-        "ODDS_API_KEY", ""
+        "PARLAY_API_KEY",
+        "",
     ).strip()
 
     if not api_key:
         print(
-            "ERROR: ODDS_API_KEY is missing."
+            "ERROR: PARLAY_API_KEY is missing."
         )
         return 1
 
+    print("=" * 55)
+    print("NBA PROP ANALYZER — PARLAYAPI")
+    print("=" * 55)
+    print("Sport:", SPORT)
+    print("Bookmaker:", BOOKMAKER)
     print(
-        "Prop Analyzer NBA Odds Collector"
-    )
-
-    print(
-        "Bookmaker:",
-        BOOKMAKER,
-    )
-
-    # The events endpoint is free.
-    events, usage = request_json(
-        f"/sports/{SPORT}/events",
-        {
-            "apiKey": api_key,
-            "dateFormat": "iso",
-        },
-    )
-
-    remaining = usage.get(
-        "remaining"
-    )
-
-    print(
-        "API credits remaining:",
-        remaining,
-    )
-
-    budget = credit_budget(
-        remaining
-    )
-
-    print(
-        "Today's credit budget:",
-        budget,
-    )
-
-    if not isinstance(events, list):
-        print(
-            "ERROR: Invalid events response."
-        )
-        return 1
-
-    slate = find_next_slate(
-        events
-    )
-
-    print(
-        "Games in next slate:",
-        len(slate),
-    )
-
-    if not slate:
-        print(
-            "No upcoming NBA games found. "
-            "Existing CSV preserved."
-        )
-        return 0
-
-    if budget < (
-        GAME_LINES_ESTIMATED_CREDITS
-        + CREDITS_PER_GAME
-    ):
-        print(
-            "Not enough safely budgeted "
-            "credits for game lines and "
-            "player props."
-        )
-
-        print(
-            "Existing CSV preserved."
-        )
-        return 0
-
-    # Reserve enough credits for the
-    # featured-market request.
-    max_games = (
-        budget - GAME_LINES_ESTIMATED_CREDITS
-    ) // CREDITS_PER_GAME
-
-    selected = slate[
-        :max_games
-    ]
-
-    print(
-        "Games selected:",
-        len(selected),
-    )
-
-    event_ids = [
-        event["id"]
-        for event in selected
-    ]
-
-    # One featured-market request
-    # retrieves spreads and totals
-    # for selected NBA games.
-    lines_data, line_usage = request_json(
-        f"/sports/{SPORT}/odds",
-        {
-            "apiKey": api_key,
-            "regions": "us",
-            "bookmakers": BOOKMAKER,
-            "markets": GAME_MARKETS,
-            "oddsFormat": "american",
-            "dateFormat": "iso",
-            "eventIds": ",".join(
-                event_ids
-            ),
-        },
-    )
-
-    spent = line_usage.get(
-        "last"
-    )
-
-    if spent is None:
-        # Conservative fallback.
-        spent = GAME_LINES_ESTIMATED_CREDITS
-
-    print(
-        "Game lines request credits:",
-        spent,
-    )
-
-    if spent > budget:
-        print(
-            "Unexpected credit cost. "
-            "Stopping before prop requests."
-        )
-        return 1
-
-    budget_left = budget - spent
-
-    game_lines = {}
-
-    if isinstance(
-        lines_data, list
-    ):
-        for event in lines_data:
-            event_id = event.get(
-                "id"
-            )
-
-            if event_id:
-                game_lines[event_id] = (
-                    extract_game_lines(
-                        event
-                    )
-                )
-
-    print(
-        "Game line records:",
-        len(game_lines),
+        "Max credits per run:",
+        MAX_CREDITS_PER_RUN,
     )
 
     player_teams = load_player_teams()
 
     if not player_teams:
         print(
-            "No ESPN player-team data. "
+            "ERROR: No verified player-team data."
+        )
+        return 1
+
+    print(
+        "Verified players:",
+        len(player_teams),
+    )
+
+    # Events are free.
+
+    events, event_usage = request_json(
+        f"/sports/{SPORT}/events",
+        {
+            "dateFormat": "iso",
+        },
+        api_key,
+    )
+
+    if not isinstance(events, list):
+        print("ERROR: Invalid events response.")
+        return 1
+
+    remaining = event_usage.get(
+        "remaining"
+    )
+
+    print(
+        "Monthly credits remaining:",
+        remaining,
+    )
+
+    if remaining is None:
+        print(
+            "ERROR: Could not verify API credits. "
             "Existing CSV preserved."
         )
         return 1
 
-    all_rows = []
-
-    total_unknown = 0
-    total_mismatch = 0
-
-    processed = 0
-
-    for event in selected:
-        if budget_left < CREDITS_PER_GAME:
-            print(
-                "Credit budget reached."
-            )
-            break
-
-        event_id = event["id"]
-
-        print(
-            "Collecting props:",
-            event.get(
-                "away_team", ""
-            ),
-            "@",
-            event.get(
-                "home_team", ""
-            ),
-        )
-
-        response, prop_usage = request_json(
-            (
-                f"/sports/{SPORT}"
-                f"/events/{event_id}/odds"
-            ),
-            {
-                "apiKey": api_key,
-                "regions": "us",
-                "bookmakers": BOOKMAKER,
-                "markets": PROP_MARKETS,
-                "oddsFormat": "american",
-                "dateFormat": "iso",
-            },
-        )
-
-        cost = prop_usage.get(
-            "last"
-        )
-
-        if cost is None:
-            cost = CREDITS_PER_GAME
-
-        budget_left -= cost
-
-        processed += 1
-
-        # Prefer the event metadata from
-        # the original event list.
-        if not isinstance(
-            response, dict
-        ):
-            print(
-                "Invalid event odds response."
-            )
-            continue
-
-        response["id"] = event_id
-
-        response["home_team"] = (
-            event.get(
-                "home_team", ""
-            )
-        )
-
-        response["away_team"] = (
-            event.get(
-                "away_team", ""
-            )
-        )
-
-        response["commence_time"] = (
-            event.get(
-                "commence_time", ""
-            )
-        )
-
-        lines = game_lines.get(
-            event_id,
-            {
-                "home_spread": None,
-                "away_spread": None,
-                "game_total": None,
-                "home_implied_total": None,
-                "away_implied_total": None,
-            },
-        )
-
-        rows, unknown, mismatch = (
-            extract_props(
-                response,
-                player_teams,
-                lines,
-            )
-        )
-
-        all_rows.extend(
-            rows
-        )
-
-        total_unknown += unknown
-        total_mismatch += mismatch
-
-        print(
-            "Valid props:",
-            len(rows),
-        )
-
-        print(
-            "Credits remaining in "
-            "daily budget:",
-            budget_left,
-        )
-
-        actual_remaining = prop_usage.get(
-            "remaining"
-        )
-
-        if (
-            actual_remaining is not None
-            and actual_remaining
-            <= MONTHLY_CREDIT_RESERVE
-        ):
-            print(
-                "Monthly reserve reached."
-            )
-            break
-
-    print(
-        "Games processed:",
-        processed,
+    available = max(
+        0,
+        remaining - MONTHLY_CREDIT_RESERVE,
     )
 
-    print(
-        "Valid player props:",
-        len(all_rows),
+    budget = min(
+        available,
+        MAX_CREDITS_PER_RUN,
     )
 
-    print(
-        "Unknown player teams skipped:",
-        total_unknown,
-    )
+    slate = find_next_slate(events)
 
     print(
-        "Team mismatches skipped:",
-        total_mismatch,
+        "Upcoming games:",
+        len(slate),
     )
 
-    games_with_totals = {
-        row["event_id"]
-        for row in all_rows
-        if row.get(
-            "game_total"
-        ) is not None
-    }
-
-    print(
-        "Games with DraftKings totals:",
-        len(games_with_totals),
-    )
-
-    if not all_rows:
+    if not slate:
         print(
-            "No verified player props "
-            "were collected."
-        )
-
-        print(
+            "No upcoming NBA games. "
             "Existing CSV preserved."
         )
         return 0
 
-    all_rows.sort(
+    if budget < PROPS_REQUEST_COST:
+        print(
+            "Insufficient safely budgeted credits. "
+            "Existing CSV preserved."
+        )
+        return 0
+
+    for event in slate:
+        details = event_details(event)
+
+        if details:
+            print(
+                "Game:",
+                details["matchup"],
+                details["game_time"],
+            )
+
+    game_lines = {}
+
+    # Game lines are optional.
+    # Never spend the final props budget on them.
+
+    if budget >= (
+        GAME_LINES_REQUEST_COST
+        + PROPS_REQUEST_COST
+    ):
+        lines_data, line_usage = request_json(
+            f"/sports/{SPORT}/odds",
+            {
+                "markets": ",".join(
+                    GAME_MARKETS
+                ),
+                "bookmakers": BOOKMAKER,
+                "regions": "us",
+                "oddsFormat": "american",
+                "dateFormat": "iso",
+            },
+            api_key,
+        )
+
+        cost = line_usage.get("last")
+
+        if cost is None:
+            print(
+                "ERROR: Missing game-line "
+                "credit usage header."
+            )
+            return 1
+
+        budget -= cost
+
+        print(
+            "Game-line credits used:",
+            cost,
+        )
+
+        if isinstance(lines_data, list):
+            lookup = make_event_lookup(slate)
+
+            for event in lines_data:
+                if not isinstance(event, dict):
+                    continue
+
+                matched = match_event(
+                    event,
+                    lookup,
+                )
+
+                if matched is None:
+                    continue
+
+                event_id = matched.get("id")
+
+                if event_id:
+                    game_lines[event_id] = (
+                        extract_game_lines(event)
+                    )
+
+    if budget < PROPS_REQUEST_COST:
+        print(
+            "Not enough credits for player props. "
+            "Existing CSV preserved."
+        )
+        return 1
+
+    # Fetch only DraftKings, and only the
+    # three markets used by the model.
+
+    all_props = []
+    offset = 0
+    page_count = 0
+    complete = False
+
+    while budget >= PROPS_REQUEST_COST:
+        print(
+            "Downloading DraftKings props, "
+            "offset:",
+            offset,
+        )
+
+        props, usage = request_json(
+            f"/sports/{SPORT}/props",
+            {
+                "markets": ",".join(
+                    PROP_MARKETS
+                ),
+                "bookmakers": BOOKMAKER,
+                "limit": PROPS_PAGE_LIMIT,
+                "offset": offset,
+                "maxAgeSec": MAX_ODDS_AGE_SECONDS,
+            },
+            api_key,
+        )
+
+        if not isinstance(props, list):
+            print(
+                "ERROR: Invalid props response. "
+                "Existing CSV preserved."
+            )
+            return 1
+
+        cost = usage.get("last")
+
+        if cost is None:
+            print(
+                "ERROR: Missing props credit "
+                "usage header."
+            )
+            return 1
+
+        budget -= cost
+        page_count += 1
+
+        all_props.extend(props)
+
+        print(
+            "Page:",
+            page_count,
+            "| Rows:",
+            len(props),
+            "| Credits:",
+            cost,
+        )
+
+        if usage["truncated"]:
+            print(
+                "WARNING: ParlayAPI reports "
+                "a truncated props board."
+            )
+            break
+
+        if usage["degraded"]:
+            print(
+                "WARNING: Degraded sources:",
+                usage["degraded"],
+            )
+            break
+
+        if not usage["has_more"]:
+            complete = True
+            break
+
+        next_offset = usage["next_offset"]
+
+        if (
+            next_offset is None
+            or next_offset <= offset
+        ):
+            print(
+                "WARNING: Invalid pagination."
+            )
+            break
+
+        offset = next_offset
+
+    if not complete:
+        print(
+            "WARNING: Incomplete props response. "
+            "Existing CSV preserved."
+        )
+        return 1
+
+    print(
+        "DraftKings props received:",
+        len(all_props),
+    )
+
+    (
+        rows,
+        unknown,
+        mismatch,
+        stale,
+    ) = extract_props(
+        all_props,
+        slate,
+        player_teams,
+        game_lines,
+    )
+
+    print(
+        "Valid player props:",
+        len(rows),
+    )
+
+    print(
+        "Unknown players skipped:",
+        unknown,
+    )
+
+    print(
+        "Team mismatches skipped:",
+        mismatch,
+    )
+
+    print(
+        "Stale props skipped:",
+        stale,
+    )
+
+    if not rows:
+        print(
+            "WARNING: No valid DraftKings "
+            "player props collected."
+        )
+        print(
+            "Existing CSV preserved."
+        )
+        return 1
+
+    rows.sort(
         key=lambda row: (
             row["game_date"],
             row["commence_time"],
             row["matchup"],
             row["player"],
             row["market"],
+            row["line"],
         )
     )
 
-    save_rows(
-        all_rows
-    )
+    save_rows(rows)
+
+    print("=" * 55)
+    print("COLLECTION COMPLETE")
+    print("=" * 55)
 
     print(
         "Saved:",
@@ -989,12 +1035,18 @@ def main():
     )
 
     print(
-        "CSV columns:",
-        ", ".join(FIELDS),
+        "Total valid props:",
+        len(rows),
     )
 
     print(
-        "Collection complete."
+        "Games with DraftKings lines:",
+        len(game_lines),
+    )
+
+    print(
+        "CSV columns:",
+        ", ".join(FIELDS),
     )
 
     return 0
@@ -1003,6 +1055,7 @@ def main():
 if __name__ == "__main__":
     try:
         sys.exit(main())
+
     except Exception as error:
         print(
             "Odds collection failed:",
