@@ -5,52 +5,135 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Prop Analyzer | NBA Player Props</title>
+
 <style>
 *{box-sizing:border-box}
-body{margin:0;background:#0b1220;color:#e8edf6;font:14px system-ui,Arial,sans-serif}
-main{max-width:1800px;margin:auto;padding:22px 14px}
-h1{font-size:34px;margin:0 0 5px}
-h2{font-size:23px;margin:0 0 9px}
-h3{font-size:17px;margin:0 0 12px}
-.muted,.note{color:#a6b5c9;line-height:1.6}
-.warn{background:#332c19;color:#ffda8c;padding:15px;border-radius:10px;margin:18px 0;line-height:1.6}
-.stats{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:10px;margin:18px 0}
-.stat,.card{background:#172338;border:1px solid #293a52;border-radius:12px;padding:15px;min-width:0}
-.stat b{font-size:24px;display:block;margin-top:8px;overflow-wrap:anywhere}
-.section{margin-top:35px;padding-top:23px;border-top:1px solid #293a52}
-.tabs{display:flex;gap:10px;margin:24px 0 10px}
-.tabs button{min-width:150px;font-weight:700;background:#172338}
-.tabs button.active{background:#267a4b;border-color:#56bc82}
-.controls{display:flex;flex-wrap:wrap;gap:9px;margin:16px 0}
-input,select,button{background:#18273d;color:white;border:1px solid #41516b;border-radius:8px;padding:10px;font:inherit}
-input{min-width:210px;flex:1}
+
+body{
+margin:0;
+background:#0b1220;
+color:#e8edf6;
+font:13px system-ui,Arial,sans-serif;
+}
+
+main{
+width:100%;
+max-width:none;
+margin:0 auto;
+padding:18px 12px;
+}
+
+h1{font-size:32px;margin:0 0 5px}
+h2{font-size:22px;margin:0 0 9px}
+h3{font-size:16px;margin:0 0 12px}
+
+.muted,.note{
+color:#a6b5c9;
+line-height:1.6;
+}
+
+.warn{
+background:#332c19;
+color:#ffda8c;
+padding:13px;
+border-radius:10px;
+margin:16px 0;
+line-height:1.6;
+}
+
+.stats{
+display:grid;
+grid-template-columns:repeat(6,minmax(0,1fr));
+gap:9px;
+margin:16px 0;
+}
+
+.stat,.card{
+background:#172338;
+border:1px solid #293a52;
+border-radius:12px;
+padding:13px;
+min-width:0;
+}
+
+.stat b{
+font-size:23px;
+display:block;
+margin-top:8px;
+overflow-wrap:anywhere;
+}
+
+.section{
+margin-top:32px;
+padding-top:20px;
+border-top:1px solid #293a52;
+}
+
+.tabs{
+display:flex;
+gap:10px;
+margin:22px 0 10px;
+}
+
+.tabs button{
+min-width:140px;
+font-weight:700;
+background:#172338;
+}
+
+.tabs button.active{
+background:#267a4b;
+border-color:#56bc82;
+}
+
+.controls{
+display:flex;
+flex-wrap:wrap;
+gap:8px;
+margin:15px 0;
+}
+
+input,select,button{
+background:#18273d;
+color:white;
+border:1px solid #41516b;
+border-radius:8px;
+padding:9px;
+font:inherit;
+}
+
+input{min-width:190px;flex:1}
+
 button{cursor:pointer}
 button:hover{border-color:#75e3a5}
 #refresh{background:#256c46}
 
-/* Wider table with horizontal scrolling */
+/* Main prediction table fits available desktop width */
 .tablewrap{
 width:100%;
-overflow-x:auto;
+overflow-x:hidden;
 border:1px solid #293a52;
-border-radius:12px;
-scrollbar-width:thin;
-scrollbar-color:#536781 #111c2e;
+border-radius:10px;
 }
+
 table{
 width:100%;
-min-width:1750px;
+min-width:0;
 border-collapse:collapse;
 table-layout:fixed;
 }
+
 th,td{
-padding:12px 9px;
+padding:9px 3px;
 border-bottom:1px solid #2b3a50;
 text-align:left;
-font-size:12px;
+font-size:clamp(9px,.69vw,12px);
 white-space:nowrap;
+overflow:hidden;
+text-overflow:clip;
 font-variant-numeric:tabular-nums;
 }
+
 th{
 background:#172338;
 color:#a6b5c9;
@@ -58,74 +141,156 @@ cursor:pointer;
 position:sticky;
 top:0;
 z-index:1;
-}
-tr:hover{background:#18273d}
-
-/* Explicit column widths */
-th:nth-child(1){width:65px}
-th:nth-child(2){width:175px}
-th:nth-child(3){width:105px}
-th:nth-child(4){width:175px}
-th:nth-child(5){width:65px}
-th:nth-child(6){width:65px}
-th:nth-child(7){width:95px}
-th:nth-child(8){width:70px}
-th:nth-child(9){width:65px}
-th:nth-child(10){width:75px}
-th:nth-child(11){width:75px}
-th:nth-child(12){width:75px}
-th:nth-child(13){width:85px}
-th:nth-child(14){width:75px}
-th:nth-child(15){width:100px}
-th:nth-child(16){width:85px}
-th:nth-child(17){width:75px}
-th:nth-child(18){width:110px}
-
-td:nth-child(2),td:nth-child(4){
-overflow:hidden;
-text-overflow:ellipsis;
-}
-td:nth-child(18){
 font-weight:700;
 }
 
-.player{font-weight:700}
+tr:hover{background:#18273d}
+
+/* Percentages total 100% */
+th:nth-child(1){width:4.5%}
+th:nth-child(2){width:7%}
+th:nth-child(3){width:6%}
+th:nth-child(4){width:13%}
+th:nth-child(5){width:4%}
+th:nth-child(6){width:4%}
+th:nth-child(7){width:5%}
+th:nth-child(8){width:5%}
+th:nth-child(9){width:4%}
+th:nth-child(10){width:5%}
+th:nth-child(11){width:5.5%}
+th:nth-child(12){width:5.5%}
+th:nth-child(13){width:6%}
+th:nth-child(14){width:5%}
+th:nth-child(15){width:6%}
+th:nth-child(16){width:5%}
+th:nth-child(17){width:4.5%}
+th:nth-child(18){width:5%}
+
+.player{
+font-weight:700;
+}
+
 .green,.win,.over{color:#75e3a5}
 .red,.loss{color:#f2a7a7}
 .under,.pending{color:#f8c477}
 .dnp,.push{color:#b9cafa}
 .not_selected{color:#8c9bb0}
-.pill{display:inline-block;padding:3px 6px;border-radius:5px;font-size:11px;font-weight:700}
+
+.pill{
+display:inline-block;
+padding:2px 3px;
+border-radius:4px;
+font-size:10px;
+font-weight:700;
+max-width:100%;
+}
+
 .Stable{background:#123f2b;color:#8ef0b4}
 .Moderate{background:#493914;color:#ffe099}
 .Volatile{background:#512626;color:#ffb0b0}
 .NA{background:#29384c;color:#a6b5c9}
-.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:16px}
-.gamecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(245px,1fr));gap:12px;margin-top:16px}
-.metric{display:flex;justify-content:space-between;gap:12px;border-top:1px solid #2b3a50;padding:9px 0}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(3,minmax(0,1fr));
+gap:12px;
+margin-top:16px;
+}
+
+.gamecards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(245px,1fr));
+gap:12px;
+margin-top:16px;
+}
+
+.metric{
+display:flex;
+justify-content:space-between;
+gap:12px;
+border-top:1px solid #2b3a50;
+padding:9px 0;
+}
+
 .metric span{color:#a6b5c9}
 .metric strong{text-align:right}
-.big{font-size:27px;font-weight:700;color:#75e3a5;margin:10px 0}
-.info{border:1px solid #293a52;border-radius:12px;padding:17px;margin-top:18px;color:#b9c5d5;line-height:1.7}
-.footer{color:#9ba9be;font-size:12px;margin:28px 0;line-height:1.8}
-.daily-table{min-width:1000px;table-layout:auto}
-.daily-table th,.daily-table td{width:auto;padding:12px 10px}
+
+.big{
+font-size:27px;
+font-weight:700;
+color:#75e3a5;
+margin:10px 0;
+}
+
+.info{
+border:1px solid #293a52;
+border-radius:12px;
+padding:17px;
+margin-top:18px;
+color:#b9c5d5;
+line-height:1.7;
+}
+
+.footer{
+color:#9ba9be;
+font-size:12px;
+margin:28px 0;
+line-height:1.8;
+}
+
+/* Performance table uses its own layout */
+.daily-wrap{
+width:100%;
+overflow-x:auto;
+border:1px solid #293a52;
+border-radius:10px;
+}
+
+.daily-table{
+min-width:900px;
+table-layout:auto;
+}
+
+.daily-table th,
+.daily-table td{
+width:auto;
+padding:11px 8px;
+font-size:12px;
+}
 
 @media(max-width:1100px){
-.stats{grid-template-columns:repeat(3,minmax(0,1fr))}
+.stats{
+grid-template-columns:repeat(3,minmax(0,1fr));
 }
+th,td{
+font-size:9px;
+padding:8px 2px;
+}
+}
+
 @media(max-width:750px){
-.stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+.stats{
+grid-template-columns:repeat(2,minmax(0,1fr));
+}
 .cards{grid-template-columns:1fr}
 .tabs button{flex:1;min-width:0}
-.controls input,.controls select,.controls button{width:100%;flex:auto}
+.controls input,
+.controls select,
+.controls button{
+width:100%;
+flex:auto;
+}
+.tablewrap{overflow-x:auto}
+table{min-width:1100px}
 }
 </style>
 </head>
+
 <body>
 <main>
 
 <h1>Prop Analyzer</h1>
+
 <div class="muted">
 NBA Player Props | ESPN Statistics + DraftKings Odds
 </div>
@@ -168,7 +333,8 @@ DraftKings pregame spreads, totals, and implied team points.
 
 <div class="controls">
 
-<input id="search" type="search" placeholder="Search player, team or opponent">
+<input id="search" type="search"
+placeholder="Search player, team or opponent">
 
 <select id="game">
 <option value="">All Games</option>
@@ -237,22 +403,22 @@ Loading predictions...
 <thead>
 <tr>
 <th data-sort="date">Date</th>
-<th data-sort="matchup">Matchup</th>
-<th data-sort="game_time">Tipoff (ET)</th>
+<th data-sort="matchup">Game</th>
+<th data-sort="game_time">Tipoff</th>
 <th data-sort="player">Player</th>
 <th data-sort="team">Team</th>
 <th data-sort="opponent">Opp</th>
-<th data-sort="market">Market</th>
+<th data-sort="market">Stat</th>
 <th data-sort="side">Side</th>
 <th data-sort="line">Line</th>
 <th data-sort="odds">Odds</th>
-<th data-sort="projection">Proj.</th>
-<th data-sort="probability">Prob.</th>
-<th data-sort="ev">Model EV</th>
-<th data-sort="last10">Last 10</th>
+<th data-sort="projection">Proj</th>
+<th data-sort="probability">Prob</th>
+<th data-sort="ev">EV</th>
+<th data-sort="last10">L10</th>
 <th data-sort="minutes_reliability">Min Risk</th>
-<th data-sort="minutes_projection">Proj Min</th>
-<th data-sort="actual">Actual</th>
+<th data-sort="minutes_projection">Min</th>
+<th data-sort="actual">Act</th>
 <th data-sort="result">Result</th>
 </tr>
 </thead>
@@ -292,7 +458,7 @@ Loading grading results...
 
 <h3 style="margin-top:26px">Daily Results</h3>
 
-<div class="tablewrap">
+<div class="daily-wrap">
 <table class="daily-table">
 <thead>
 <tr>
@@ -454,8 +620,6 @@ return parts.length === 3
 : String(value);
 }
 
-// Display saved ISO game time as Eastern Time.
-// No changes to stored game time or grading.
 function formatTipoff(value) {
 if (!value) return "--";
 
@@ -471,7 +635,6 @@ hour12:true
 }).format(parsed);
 }
 
-// Preserve already formatted times.
 if (/^\d{1,2}:\d{2}\s*(AM|PM)$/i.test(raw)) {
 return raw;
 }
@@ -527,6 +690,14 @@ const s = String(value || "").toLowerCase();
 if (s === "over") return "Over";
 if (s === "under") return "Under";
 return value || "";
+}
+
+function shortMarket(value) {
+const market = normalizeMarket(value);
+if (market === "Points") return "PTS";
+if (market === "Rebounds") return "REB";
+if (market === "Assists") return "AST";
+return market || "--";
 }
 
 function predictionKey(row) {
@@ -849,13 +1020,13 @@ const labels = {
 win:"WIN",
 loss:"LOSS",
 push:"PUSH",
-pending:"PENDING",
+pending:"PEND",
 dnp:"DNP",
 invalid:"INVALID",
-not_selected:"Not Picked"
+not_selected:"SKIP"
 };
 
-return labels[r] || r;
+return labels[r] || r.toUpperCase();
 }
 
 function draw() {
@@ -938,7 +1109,7 @@ const td = document.createElement("td");
 td.colSpan = 18;
 
 td.textContent = data.length
-? "No predictions match these filters. Try All Odds or All Predictions."
+? "No predictions match these filters."
 : "No saved predictions available for this date.";
 
 tr.appendChild(td);
@@ -957,11 +1128,11 @@ formatTipoff(row.game_time),
 row.player || "--",
 shortTeam(row.team_abbr || row.team),
 shortTeam(row.opponent),
-row.market || "--",
+shortMarket(row.market),
 row.side || "--",
 num(row.line,1),
 odds(row.odds),
-num(row.projection,2),
+num(row.projection,1),
 pct(row.probability),
 pct(row.ev),
 row.last10 === null || row.last10 === undefined
