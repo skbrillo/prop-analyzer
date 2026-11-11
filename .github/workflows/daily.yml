@@ -3,16 +3,14 @@ name: Daily Prop Analyzer
 
 on:
   schedule:
-    # Morning predictions:
-    # 5:00 AM Central Standard Time
-    # 6:00 AM Central Daylight Time
-    - cron: "0 11 * * *"
+    # 5 AM Central, including daylight saving time.
+    - cron: "0 10,11 * * *"
 
-    # Late-night grading:
-    # 11:30 PM Central Standard Time
-    # 12:30 AM Central Daylight Time
-    # No Odds API credits used
-    - cron: "30 5 * * *"
+    # 4 PM Central, including daylight saving time.
+    - cron: "0 21,22 * * *"
+
+    # Overnight grading, approximately 11:30 PM Central.
+    - cron: "30 4,5 * * *"
 
   workflow_dispatch:
 
@@ -27,6 +25,9 @@ jobs:
   analyze:
     runs-on: ubuntu-latest
 
+    env:
+      TZ: America/Chicago
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -36,97 +37,124 @@ jobs:
         with:
           python-version: "3.11"
 
-      # Download completed NBA game statistics.
-      # ESPN data does not consume Odds API credits.
+      # GitHub Actions schedules run in UTC.
+      # Check the actual Central time to avoid
+      # duplicate runs during daylight saving changes.
+
+      - name: Determine run type
+        id: schedule
+        shell: bash
+        run: |
+          HOUR=$(TZ=America/Chicago date +%H)
+          MINUTE=$(TZ=America/Chicago date +%M)
+
+          echo "Central time: $HOUR:$MINUTE"
+
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run_type=manual" >> "$GITHUB_OUTPUT"
+            echo "run_predictions=true" >> "$GITHUB_OUTPUT"
+
+          elif [ "$HOUR" = "05" ] && [ "$MINUTE" = "00" ]; then
+            echo "run_type=morning" >> "$GITHUB_OUTPUT"
+            echo "run_predictions=true" >> "$GITHUB_OUTPUT"
+
+          elif [ "$HOUR" = "16" ] && [ "$MINUTE" = "00" ]; then
+            echo "run_type=afternoon" >> "$GITHUB_OUTPUT"
+            echo "run_predictions=true" >> "$GITHUB_OUTPUT"
+
+          elif [ "$HOUR" = "23" ] && [ "$MINUTE" = "30" ]; then
+            echo "run_type=grading" >> "$GITHUB_OUTPUT"
+            echo "run_predictions=false" >> "$GITHUB_OUTPUT"
+
+          else
+            echo "run_type=skip" >> "$GITHUB_OUTPUT"
+            echo "run_predictions=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Show run information
+        run: |
+          echo "Run type: ${{ steps.schedule.outputs.run_type }}"
+          echo "Predictions: ${{ steps.schedule.outputs.run_predictions }}"
+
+      # Refresh NBA game logs and defensive data.
 
       - name: Download real NBA statistics
+        if: steps.schedule.outputs.run_type != 'skip'
         run: python update_nba_stats.py
 
-      # Build historical team defensive statistics.
-
       - name: Build NBA team defense statistics
+        if: steps.schedule.outputs.run_type != 'skip'
         run: python build_team_defense.py
 
-      # Download DraftKings odds only during
-      # the morning run or a manual run.
+      # ParlayAPI replaces The Odds API.
+      # The collector protects existing odds when
+      # the provider returns an incomplete board.
 
-      - name: Download real DraftKings odds
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
+      - name: Download DraftKings odds from ParlayAPI
+        if: steps.schedule.outputs.run_predictions == 'true'
         env:
-          ODDS_API_KEY: ${{ secrets.ODDS_API_KEY }}
+          PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
         run: python update_odds.py
 
-      # Generate current NBA prop predictions.
+      # Generate fresh predictions after the odds update.
 
       - name: Run prediction engine
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
+        if: steps.schedule.outputs.run_predictions == 'true'
         run: python engine.py
 
-      # Rank the strongest qualifying bets.
-      # No additional Odds API credits used.
-
       - name: Run Top 25 Edge Model
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
+        if: steps.schedule.outputs.run_predictions == 'true'
         run: python edge_model.py
 
-      # Save original pregame predictions.
+      # Archive pregame predictions and rankings.
+      # Existing scripts retain responsibility
+      # for preventing duplicate historical records.
 
       - name: Save pregame predictions
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
+        if: steps.schedule.outputs.run_predictions == 'true'
         run: python save_predictions.py
 
-      # Update automatic prop tracking.
-      # No Odds API requests.
-
       - name: Update automatic prop tracking
+        if: steps.schedule.outputs.run_type != 'skip'
         run: python track_results.py
 
-      # Grade completed predictions.
-      # No Odds API requests.
-
       - name: Grade completed predictions
+        if: steps.schedule.outputs.run_type != 'skip'
         run: python grade_predictions.py
 
-      # Archive the Top 25 before games begin.
-      # Grade archived selections after games finish.
-      # Update monthly wins, losses, ROI, and profit.
-      # No Odds API requests.
-
       - name: Update Top 25 monthly performance
+        if: steps.schedule.outputs.run_type != 'skip'
         run: python edge_monthly_tracker.py
 
-      # Historical backtesting.
-
       - name: Backtest historical NBA projections
-        if: github.event_name == 'workflow_dispatch' || github.event.schedule == '0 11 * * *'
+        if: steps.schedule.outputs.run_predictions == 'true'
         run: python backtest.py
 
-      # Save updated statistics, predictions,
-      # Edge Model rankings, monthly tracking,
-      # grading, and backtesting.
+      # Commit generated results.
 
       - name: Save updated data and results
+        if: steps.schedule.outputs.run_type != 'skip'
+        shell: bash
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add data/game_logs.csv
-          git add data/team_defense.csv
-          git add data/sample_odds.csv
-          git add data/prediction_history.csv
-
-          git add docs/results.json
-          git add docs/graded_predictions.json
-          git add docs/backtest.json
-          git add docs/tracking.json
-
-          git add docs/edge_results.json
-          git add docs/edge_top25.csv
-
-          git add docs/edge_archive/
-          git add docs/edge_monthly.json
+          git add -A -- \
+            data/game_logs.csv \
+            data/team_defense.csv \
+            data/sample_odds.csv \
+            data/prediction_history.csv \
+            docs/results.json \
+            docs/graded_predictions.json \
+            docs/backtest.json \
+            docs/tracking.json \
+            docs/edge_results.json \
+            docs/edge_top25.csv \
+            docs/edge_archive/ \
+            docs/edge_monthly.json
 
           if ! git diff --cached --quiet; then
-            git commit -m "Update NBA predictions, Edge Model, and monthly performance"
-            git push
+            git commit -m "Update NBA predictions and ParlayAPI results"
+            git pull --rebase origin main
+            git push origin main
           fi
