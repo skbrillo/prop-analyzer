@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-11T18:50:54.547673+00:00",
+  "generated_at": "2026-11-11T19:45:10.206520+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 95,
+  "player_count": 96,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -36,11 +36,11 @@
     "WAS"
   ],
   "teams_count": 29,
-  "players_with_team": 95,
+  "players_with_team": 96,
   "players_without_team": 0,
   "status_counts": {
-    "O": 72,
-    "T": 23
+    "O": 75,
+    "T": 21
   },
   "players": [
     {
@@ -177,6 +177,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538621",
+      "name": "Tobe Awaka",
+      "team": "CHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-11T19:18Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538609",
       "name": "Caleb Wilson",
       "team": "CHI",
@@ -195,17 +206,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Inflammation | Shoulder | day-to-day",
       "date": "2026-11-10T22:21Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538498",
-      "name": "Tobe Awaka",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-10T22:19Z",
       "team_match": "feed"
     },
     {
@@ -331,13 +331,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60706",
+      "injury_record_id": "538619",
       "name": "Will Richard",
       "team": "GSW",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Thumb | day-to-day",
-      "date": "2026-11-11T17:03Z",
+      "date": "2026-11-11T19:09Z",
       "team_match": "feed"
     },
     {
@@ -518,13 +518,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538509",
+      "injury_record_id": "538618",
       "name": "Quentin Grimes",
       "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Finger | day-to-day",
-      "date": "2026-11-10T23:07Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Finger | out",
+      "date": "2026-11-11T19:06Z",
       "team_match": "feed"
     },
     {
@@ -573,13 +573,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60694",
+      "injury_record_id": "538617",
       "name": "Tyler Herro",
       "team": "MIL",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Bruise | Knee | day-to-day",
-      "date": "2026-11-11T14:58Z",
+      "date": "2026-11-11T19:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538616",
+      "name": "Myles Turner",
+      "team": "MIL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Rest | out",
+      "date": "2026-11-11T19:03Z",
       "team_match": "feed"
     },
     {
