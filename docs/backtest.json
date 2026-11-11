@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T12:10:53.880498+00:00",
+  "generated_at": "2026-11-11T19:06:44.600748+00:00",
   "model": "Version 4 - Smarter Minutes",
   "method": "Paired historical walk-forward comparison of Version 3 and Version 4 minutes projections. Both versions use identical earlier-game data.",
   "markets": {
@@ -11,15 +11,15 @@
     },
     "rebounds": {
       "predictions_tested": 982,
-      "mean_absolute_error": 1.962,
-      "root_mean_squared_error": 2.605,
-      "mean_signed_error": 0.026
+      "mean_absolute_error": 1.958,
+      "root_mean_squared_error": 2.602,
+      "mean_signed_error": 0.029
     },
     "assists": {
       "predictions_tested": 982,
-      "mean_absolute_error": 1.426,
-      "root_mean_squared_error": 1.914,
-      "mean_signed_error": -0.022
+      "mean_absolute_error": 1.425,
+      "root_mean_squared_error": 1.913,
+      "mean_signed_error": -0.021
     }
   },
   "comparison": {
@@ -43,15 +43,15 @@
     "rebounds": {
       "version3": {
         "predictions_tested": 982,
-        "mean_absolute_error": 1.961,
-        "root_mean_squared_error": 2.613,
-        "mean_signed_error": -0.08
+        "mean_absolute_error": 1.957,
+        "root_mean_squared_error": 2.61,
+        "mean_signed_error": -0.077
       },
       "version4": {
         "predictions_tested": 982,
-        "mean_absolute_error": 1.962,
-        "root_mean_squared_error": 2.605,
-        "mean_signed_error": 0.026
+        "mean_absolute_error": 1.958,
+        "root_mean_squared_error": 2.602,
+        "mean_signed_error": 0.029
       },
       "winner": "Version 3",
       "mae_improvement": -0.001,
@@ -60,15 +60,15 @@
     "assists": {
       "version3": {
         "predictions_tested": 982,
-        "mean_absolute_error": 1.423,
-        "root_mean_squared_error": 1.922,
-        "mean_signed_error": -0.099
+        "mean_absolute_error": 1.422,
+        "root_mean_squared_error": 1.921,
+        "mean_signed_error": -0.098
       },
       "version4": {
         "predictions_tested": 982,
-        "mean_absolute_error": 1.426,
-        "root_mean_squared_error": 1.914,
-        "mean_signed_error": -0.022
+        "mean_absolute_error": 1.425,
+        "root_mean_squared_error": 1.913,
+        "mean_signed_error": -0.021
       },
       "winner": "Version 3",
       "mae_improvement": -0.003,
