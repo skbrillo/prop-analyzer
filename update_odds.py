@@ -36,6 +36,7 @@ from zoneinfo import ZoneInfo
 ROOT = pathlib.Path(__file__).resolve().parent
 DATA = ROOT / "data"
 OUTPUT = DATA / "sample_odds.csv"
+MOVEMENT_OUTPUT = ROOT / "docs" / "line_movement.json"
 
 API_BASE = "https://parlay-api.com/v1"
 SPORT = "basketball_nba"
@@ -64,7 +65,7 @@ MARKET_NAMES = {
 # Two game-line markets = approximately 2 credits.
 #
 # Default run: approximately 5 credits.
-# Two daily runs for 30 days: approximately 300 credits.
+# Three daily runs for 30 days: approximately 450 credits.
 #
 # Additional pages require a larger explicitly configured budget.
 
@@ -694,6 +695,56 @@ def save_rows(rows):
             os.unlink(temporary)
 
 
+
+
+def save_line_movement(rows):
+    """Retain first observed price/line per slate, update latest on each run."""
+    MOVEMENT_OUTPUT.parent.mkdir(parents=True, exist_ok=True)
+    existing = {}
+    if MOVEMENT_OUTPUT.exists():
+        try:
+            existing = json.loads(MOVEMENT_OUTPUT.read_text(encoding="utf-8"))
+        except (ValueError, OSError):
+            existing = {}
+    baseline = existing.get("baseline", {})
+    if not isinstance(baseline, dict):
+        baseline = {}
+    current = {}
+    timestamp = datetime.now(timezone.utc).isoformat()
+    for row in rows:
+        # Ignore the line when matching, because it is expected to move.
+        key = "|".join((str(row["game_date"]), norm(row["player"]), norm(row["market"])))
+        record = {
+            "game_date": row["game_date"], "player": row["player"],
+            "team": row["team"], "market": row["market"],
+            "line": row["line"], "over_odds": row["over_odds"],
+            "under_odds": row["under_odds"], "captured_at": timestamp,
+        }
+        # In the rare event of multiple lines for the same player/market,
+        # prefer the first consistently; avoid mixing alternate lines.
+        if key not in current:
+            current[key] = record
+        if key not in baseline:
+            baseline[key] = record
+    # Limit historical storage to recent dates to keep the dashboard fast.
+    dates = sorted({r["game_date"] for r in rows})
+    if dates:
+        from datetime import timedelta
+        cutoff = (datetime.fromisoformat(dates[-1]).date() - timedelta(days=14)).isoformat()
+        baseline = {k:v for k,v in baseline.items() if isinstance(v,dict) and str(v.get("game_date", "")) >= cutoff}
+    payload = {"updated_at": timestamp, "baseline": baseline, "current": current}
+    fd, tmp = tempfile.mkstemp(prefix="line_movement_", suffix=".json", dir=str(MOVEMENT_OUTPUT.parent))
+    try:
+        with os.fdopen(fd, "w", encoding="utf-8") as f:
+            json.dump(payload, f, indent=2, ensure_ascii=False)
+            f.write("\n")
+        os.replace(tmp, MOVEMENT_OUTPUT)
+    finally:
+        if os.path.exists(tmp):
+            os.unlink(tmp)
+    print("Line movement baseline entries:", len(baseline))
+    print("Line movement current entries:", len(current))
+
 def main():
     api_key = os.environ.get(
         "PARLAY_API_KEY",
@@ -1010,6 +1061,7 @@ def main():
     )
 
     save_rows(rows)
+    save_line_movement(rows)
 
     print("=" * 55)
     print("COLLECTION COMPLETE")
