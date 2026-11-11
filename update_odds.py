@@ -66,9 +66,9 @@ MARKET_NAMES = {
 # Default run: approximately 5 credits.
 # Two daily runs for 30 days: approximately 300 credits.
 #
-# Additional pages are allowed only within this budget.
+# Additional pages require a larger explicitly configured budget.
 
-MAX_CREDITS_PER_RUN = 12
+MAX_CREDITS_PER_RUN = 5
 MONTHLY_CREDIT_RESERVE = 100
 
 PROPS_REQUEST_COST = 3
@@ -753,21 +753,13 @@ def main():
     )
 
     if remaining is None:
-        print(
-            "ERROR: Could not verify API credits. "
-            "Existing CSV preserved."
+        print("Credit balance header unavailable; using strict per-run limit.")
+        budget = MAX_CREDITS_PER_RUN
+    else:
+        budget = min(
+            max(0, remaining - MONTHLY_CREDIT_RESERVE),
+            MAX_CREDITS_PER_RUN,
         )
-        return 1
-
-    available = max(
-        0,
-        remaining - MONTHLY_CREDIT_RESERVE,
-    )
-
-    budget = min(
-        available,
-        MAX_CREDITS_PER_RUN,
-    )
 
     slate = find_next_slate(events)
 
@@ -826,13 +818,10 @@ def main():
         cost = line_usage.get("last")
 
         if cost is None:
-            print(
-                "ERROR: Missing game-line "
-                "credit usage header."
-            )
-            return 1
+            cost = GAME_LINES_REQUEST_COST
+            print("Game-line usage header unavailable; charging estimated cost.")
 
-        budget -= cost
+        budget -= max(cost, GAME_LINES_REQUEST_COST)
 
         print(
             "Game-line credits used:",
@@ -907,13 +896,10 @@ def main():
         cost = usage.get("last")
 
         if cost is None:
-            print(
-                "ERROR: Missing props credit "
-                "usage header."
-            )
-            return 1
+            cost = PROPS_REQUEST_COST
+            print("Props usage header unavailable; charging documented cost.")
 
-        budget -= cost
+        budget -= max(cost, PROPS_REQUEST_COST)
         page_count += 1
 
         all_props.extend(props)
