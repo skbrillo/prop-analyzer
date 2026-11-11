@@ -1,4 +1,3 @@
-
 name: Daily Prop Analyzer
 
 on:
@@ -220,7 +219,8 @@ jobs:
             docs/edge_results.json \
             docs/edge_top25.csv \
             docs/edge_archive/ \
-            docs/edge_monthly.json
+            docs/edge_monthly.json \
+            docs/line_movement.json
 
           if ! git diff --cached --quiet; then
             git commit -m "Update NBA predictions and ParlayAPI results"
