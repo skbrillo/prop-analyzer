@@ -54,7 +54,8 @@ th:nth-child(18){width:6%}
 .green,.win,.over{color:#75e3a5}
 .red,.loss{color:#f2a7a7}
 .under,.pending{color:#f8c477}
-.push{color:#b9cafa}
+.dnp,.push{color:#b9cafa}
+.not_selected{color:#8c9bb0}
 .pill{display:inline-block;padding:3px 5px;border-radius:5px;font-size:10px;font-weight:700}
 .Stable{background:#123f2b;color:#8ef0b4}
 .Moderate{background:#493914;color:#ffe099}
@@ -84,6 +85,7 @@ table{min-width:960px}
 </head>
 <body>
 <main>
+
 <h1>Prop Analyzer</h1>
 <div class="muted">NBA Player Props | ESPN Statistics + DraftKings Odds</div>
 
@@ -98,7 +100,7 @@ values have not been sufficiently validated.
 
 <div class="stats">
 <div class="stat">Analyzed Outcomes<b id="count">--</b></div>
-<div class="stat">Positive Model EV<b id="positive">--</b></div>
+<div class="stat">Selected Positive EV<b id="positive">--</b></div>
 <div class="stat">Games Analyzed<b id="games">--</b></div>
 <div class="stat">Total Wins<b id="total-wins" class="green">--</b></div>
 <div class="stat">Total Losses<b id="total-losses" class="red">--</b></div>
@@ -120,24 +122,31 @@ values have not been sufficiently validated.
 
 <div class="controls">
 <input id="search" type="search" placeholder="Search player, team or opponent">
-<select id="game"><option value="">All Games</option></select>
+
+<select id="game">
+<option value="">All Games</option>
+</select>
+
 <select id="market">
 <option value="">PRA — All Markets</option>
 <option value="Points">Points</option>
 <option value="Rebounds">Rebounds</option>
 <option value="Assists">Assists</option>
 </select>
+
 <select id="side">
 <option value="">Over + Under</option>
 <option value="Over">Over</option>
 <option value="Under">Under</option>
 </select>
+
 <select id="odds-filter">
 <option value="-120">Odds -120 or Better</option>
 <option value="-110">Odds -110 or Better</option>
 <option value="100">Plus Money Only</option>
 <option value="">All Odds</option>
 </select>
+
 <select id="minutes-filter">
 <option value="">All Minutes Reliability</option>
 <option value="Stable">Stable Only</option>
@@ -145,14 +154,24 @@ values have not been sufficiently validated.
 <option value="Volatile">Volatile Only</option>
 <option value="exclude-volatile">Hide Volatile</option>
 </select>
+
+<select id="selection-filter">
+<option value="selected">Selected Only</option>
+<option value="">All Predictions</option>
+<option value="not_selected">Not Selected</option>
+</select>
+
 <select id="result-filter">
 <option value="">All Results</option>
 <option value="win">Wins</option>
 <option value="loss">Losses</option>
 <option value="pending">Pending</option>
 <option value="push">Pushes</option>
+<option value="dnp">DNP</option>
 <option value="invalid">Invalid</option>
+<option value="not_selected">Not Selected</option>
 </select>
+
 <button id="refresh" type="button">Refresh Data</button>
 </div>
 
@@ -161,6 +180,7 @@ Minutes reliability: Stable = standard deviation ≤4 minutes;
 Moderate = above 4 through 7; Volatile = above 7.
 Historical predictions without saved minutes diagnostics display N/A.
 </div>
+
 <div id="status" class="muted" role="status">Loading predictions...</div>
 
 <div class="tablewrap">
@@ -195,24 +215,28 @@ Historical predictions without saved minutes diagnostics display N/A.
 <h2>Live Betting Performance</h2>
 <div class="muted">
 Actual outcomes from saved pregame predictions graded against ESPN box scores.
-These are tracked model outcomes, not bets placed.
-Both Over and Under predictions may be counted separately.
+These are hypothetical model selections, not bets placed.
+Only one positive-EV side per player, game, and market is counted.
+DNP and unselected predictions are excluded.
 </div>
-<div id="tracking-status" class="muted">Loading tracking...</div>
+
+<div id="tracking-status" class="muted">Loading grading results...</div>
+
 <div class="stats" style="grid-template-columns:repeat(4,minmax(0,1fr))">
 <div class="stat">Win Rate<b id="track-winrate">--</b></div>
 <div class="stat">ROI<b id="track-roi">--</b></div>
 <div class="stat">Profit / Loss<b id="track-profit">--</b></div>
 <div class="stat">Settled Outcomes<b id="track-settled">--</b></div>
 </div>
+
 <div id="tracking-details" class="muted"></div>
 <div id="tracking-breakdowns" class="cards"></div>
+
 <div class="info">
 <strong>How to interpret these results</strong>
-<p>Results use a hypothetical flat 1-unit stake at the saved odds.
-Win rate and ROI exclude pushes where applicable.</p>
-<p>Because both sides of a line can be tracked, combined ROI does not
-necessarily represent a realizable betting strategy.</p>
+<p>Results use a hypothetical flat 1-unit stake at the saved odds.</p>
+<p>Only selected, graded predictions contribute to win rate, profit, and ROI.
+DNP and unselected predictions do not count as wagers.</p>
 <p>Positive EV is an unvalidated model estimate, not proof of a betting edge.</p>
 </div>
 </section>
@@ -244,6 +268,7 @@ historical predictions, not recalculated lines or odds.</p>
 <p>Game times are Eastern Time. Refresh reloads published files,
 not live sportsbook prices.</p>
 </div>
+
 </main>
 
 <script>
@@ -254,6 +279,7 @@ const el = id => document.getElementById(id);
 let todayData = [];
 let historyData = [];
 let data = [];
+let gradedReport = null;
 let activeDay = "today";
 let sortKey = "ev";
 let sortAscending = false;
@@ -273,8 +299,8 @@ const TEAM_CODES = {
 "Golden State Warriors":"GSW",
 "Houston Rockets":"HOU",
 "Indiana Pacers":"IND",
-"Los Angeles Clippers":"LAC",
 "LA Clippers":"LAC",
+"Los Angeles Clippers":"LAC",
 "Los Angeles Lakers":"LAL",
 "Memphis Grizzlies":"MEM",
 "Miami Heat":"MIA",
@@ -294,8 +320,20 @@ const TEAM_CODES = {
 "Washington Wizards":"WAS"
 };
 
+const TEAM_ALIASES = {
+"GS":"GSW",
+"NY":"NYK",
+"NO":"NOP",
+"UTAH":"UTA",
+"SA":"SAS",
+"WSH":"WAS",
+"PHO":"PHX",
+"BRK":"BKN"
+};
+
 function shortTeam(name) {
-return TEAM_CODES[name] || name || "--";
+const raw = String(name || "").trim();
+return TEAM_CODES[raw] || TEAM_ALIASES[raw] || raw || "--";
 }
 
 function shortMatchup(row) {
@@ -379,18 +417,27 @@ return Number.isFinite(n) ? n : null;
 
 function minutesDetails(row) {
 const sd = numeric(row, [
-"minutes_stddev","minutes_std_dev",
-"minutes_standard_deviation","minutes_last10_stddev",
-"minutes_last10_std","minutes_volatility","minutes_sd"
+"minutes_stddev",
+"minutes_std_dev",
+"minutes_standard_deviation",
+"minutes_last10_stddev",
+"minutes_last10_std",
+"minutes_volatility",
+"minutes_sd"
 ]);
 
 const raw = present(row, [
-"minutes_reliability","minutes_reliability_label",
-"minutes_reliability_category","minutes_risk",
-"minutes_risk_label","minutes_stability","minutes_rating"
+"minutes_reliability",
+"minutes_reliability_label",
+"minutes_reliability_category",
+"minutes_risk",
+"minutes_risk_label",
+"minutes_stability",
+"minutes_rating"
 ]);
 
 let label = null;
+
 if (raw !== null) {
 const s = String(raw).toLowerCase();
 if (s.includes("volatile") || s.includes("high risk")) label = "Volatile";
@@ -414,15 +461,22 @@ high:numeric(row,["minutes_last10_max","minutes_range_high"])
 function historyRow(row) {
 const outcome = String(row.outcome || "").toLowerCase();
 const status = String(row.status || "").toLowerCase();
+
 return {
 ...row,
 date:row.game_date || row.date || "",
 market:normalizeMarket(row.market),
 side:normalizeSide(row.side),
 ev:row.model_ev ?? row.ev ?? null,
-result:status === "graded" && ["win","loss","push"].includes(outcome)
+result:status === "graded" &&
+["win","loss","push"].includes(outcome)
 ? outcome
-: status === "invalid" ? "invalid" : "pending",
+: ["invalid","dnp","not_selected"].includes(status)
+? status
+: "pending",
+selection_status:status === "not_selected"
+? "not_selected"
+: "selected",
 historical:true
 };
 }
@@ -435,8 +489,61 @@ market:normalizeMarket(row.market),
 side:normalizeSide(row.side),
 ev:row.ev ?? row.model_ev ?? null,
 result:"pending",
+selection_status:"unverified",
 historical:false
 };
+}
+
+// Current predictions use the same positive-EV
+// selection policy as the grader.
+// Saved historical grading remains authoritative.
+function markCurrentSelections(rows) {
+const groups = new Map();
+
+rows.forEach((row,index) => {
+const key = [
+row.date,
+row.event_id || row.matchup || "",
+String(row.player || "").trim().toLowerCase(),
+String(row.market || "").toLowerCase()
+].join("|");
+
+if (!groups.has(key)) groups.set(key,[]);
+groups.get(key).push(index);
+});
+
+for (const indices of groups.values()) {
+let best = -1;
+let bestEv = -Infinity;
+let bestProb = -Infinity;
+
+for (const index of indices) {
+const row = rows[index];
+const ev = numeric(row,["ev"]);
+const prob = numeric(row,["probability"]);
+
+if (ev === null || ev <= 0 ||
+!["Over","Under"].includes(row.side)) continue;
+
+const pr = prob === null ? -1 : prob;
+
+if (ev > bestEv ||
+(ev === bestEv && pr > bestProb)) {
+best = index;
+bestEv = ev;
+bestProb = pr;
+}
+}
+
+for (const index of indices) {
+rows[index].selection_status =
+index === best ? "selected" : "not_selected";
+
+if (index !== best) {
+rows[index].result = "not_selected";
+}
+}
+}
 }
 
 function isoDay(date) {
@@ -463,10 +570,7 @@ if (!todayDate && json.generated_at) {
 todayDate = String(json.generated_at).slice(0,10);
 }
 
-if (!todayDate) {
-todayDate = isoDay(new Date());
-}
-
+if (!todayDate) todayDate = isoDay(new Date());
 yesterdayDate = dateMinusOne(todayDate);
 }
 
@@ -481,26 +585,39 @@ all.textContent = "All Games";
 select.appendChild(all);
 
 const games = new Map();
+
 for (const row of data) {
-games.set(gameKey(row), formatDate(row.date) + " " + shortMatchup(row));
+games.set(
+gameKey(row),
+formatDate(row.date) + " " + shortMatchup(row)
+);
 }
 
-for (const [key,label] of [...games].sort((a,b)=>a[1].localeCompare(b[1]))) {
+for (const [key,label] of
+[...games].sort((a,b)=>a[1].localeCompare(b[1]))) {
 const option = document.createElement("option");
 option.value = key;
 option.textContent = label;
 select.appendChild(option);
 }
 
-if ([...select.options].some(o=>o.value===old)) select.value=old;
+if ([...select.options].some(o=>o.value===old)) {
+select.value = old;
+}
 }
 
 function switchDay(day) {
 activeDay = day;
+
 el("tab-today").classList.toggle("active",day==="today");
 el("tab-yesterday").classList.toggle("active",day==="yesterday");
-el("tab-today").setAttribute("aria-pressed",String(day==="today"));
-el("tab-yesterday").setAttribute("aria-pressed",String(day==="yesterday"));
+
+el("tab-today").setAttribute(
+"aria-pressed",String(day==="today")
+);
+el("tab-yesterday").setAttribute(
+"aria-pressed",String(day==="yesterday")
+);
 
 if (day === "today") {
 data = todayData.filter(r=>r.date===todayDate);
@@ -513,7 +630,7 @@ el("day-description").textContent =
 " | Original saved pregame predictions and graded results";
 }
 
-el("game").value="";
+el("game").value = "";
 populateGames();
 updateSummary();
 displayGameLines(data);
@@ -521,98 +638,138 @@ draw();
 }
 
 function updateSummary() {
-el("count").textContent=data.length;
-el("positive").textContent=data.filter(r=>Number(r.ev)>0).length;
-el("games").textContent=new Set(data.map(gameKey)).size;
+el("count").textContent = data.length;
 
-const wins=historyData.filter(r=>r.result==="win").length;
-const losses=historyData.filter(r=>r.result==="loss").length;
+el("positive").textContent =
+data.filter(r=>r.selection_status==="selected").length;
 
-el("total-wins").textContent=historyData.length?wins:"--";
-el("total-losses").textContent=historyData.length?losses:"--";
+el("games").textContent =
+new Set(data.map(gameKey)).size;
+
+const s = gradedReport?.summary;
+
+el("total-wins").textContent =
+s ? s.wins : "--";
+
+el("total-losses").textContent =
+s ? s.losses : "--";
 }
 
 function sortValue(row) {
-if (sortKey==="minutes_reliability") {
-return {Stable:3,Moderate:2,Volatile:1}[minutesDetails(row).label] ?? 0;
+if (sortKey === "minutes_reliability") {
+return {
+Stable:3,
+Moderate:2,
+Volatile:1
+}[minutesDetails(row).label] ?? 0;
 }
-if (sortKey==="minutes_projection") return minutesDetails(row).projection;
-if (sortKey==="team") return row.team_abbr || row.team;
-if (sortKey==="actual") return row.actual;
+
+if (sortKey === "minutes_projection") {
+return minutesDetails(row).projection;
+}
+
+if (sortKey === "team") {
+return row.team_abbr || row.team;
+}
+
+if (sortKey === "actual") return row.actual;
+if (sortKey === "result") return row.result;
+
 return row[sortKey];
 }
 
 function draw() {
-const query=el("search").value.trim().toLowerCase();
-const game=el("game").value;
-const market=el("market").value;
-const side=el("side").value;
-const oddsLimit=el("odds-filter").value;
-const minFilter=el("minutes-filter").value;
-const resultFilter=el("result-filter").value;
+const query = el("search").value.trim().toLowerCase();
+const game = el("game").value;
+const market = el("market").value;
+const side = el("side").value;
+const oddsLimit = el("odds-filter").value;
+const minFilter = el("minutes-filter").value;
+const selectionFilter = el("selection-filter").value;
+const resultFilter = el("result-filter").value;
 
-const filtered=data.filter(row=>{
-const searchText=[
-row.player,row.team,row.team_abbr,row.opponent,row.matchup,
-row.away_team,row.home_team
+const filtered = data.filter(row => {
+const searchText = [
+row.player,
+row.team,
+row.team_abbr,
+row.opponent,
+row.matchup,
+row.away_team,
+row.home_team
 ].filter(Boolean).join(" ").toLowerCase();
 
-const risk=minutesDetails(row).label;
+const risk = minutesDetails(row).label;
 
-const minutesMatch=!minFilter ||
-(minFilter==="exclude-volatile"
-? risk!=="Volatile"
-: risk===minFilter);
+const minutesMatch = !minFilter ||
+(minFilter === "exclude-volatile"
+? risk !== "Volatile"
+: risk === minFilter);
 
-const oddsMatch=oddsLimit==="" ||
-(row.odds!==null && row.odds!==undefined &&
+const oddsMatch = oddsLimit === "" ||
+(
+row.odds !== null &&
+row.odds !== undefined &&
 Number.isFinite(Number(row.odds)) &&
-Number(row.odds)>=Number(oddsLimit));
+Number(row.odds) >= Number(oddsLimit)
+);
 
-return searchText.includes(query) &&
-(!game || gameKey(row)===game) &&
-(!market || row.market===market) &&
-(!side || row.side===side) &&
+const selectionMatch = !selectionFilter ||
+row.selection_status === selectionFilter;
+
+return (
+searchText.includes(query) &&
+(!game || gameKey(row) === game) &&
+(!market || row.market === market) &&
+(!side || row.side === side) &&
 oddsMatch &&
 minutesMatch &&
-(!resultFilter || row.result===resultFilter);
+selectionMatch &&
+(!resultFilter || row.result === resultFilter)
+);
 });
 
-filtered.sort((a,b)=>{
-const av=sortValue(a),bv=sortValue(b);
+filtered.sort((a,b) => {
+const av = sortValue(a);
+const bv = sortValue(b);
 let compare;
-if (av===null || av===undefined) compare=1;
-else if (bv===null || bv===undefined) compare=-1;
-else if (Number.isFinite(Number(av)) && Number.isFinite(Number(bv)) &&
-String(av).trim()!=="" && String(bv).trim()!=="") {
-compare=Number(av)-Number(bv);
+
+if (av === null || av === undefined) compare = 1;
+else if (bv === null || bv === undefined) compare = -1;
+else if (
+Number.isFinite(Number(av)) &&
+Number.isFinite(Number(bv)) &&
+String(av).trim() !== "" &&
+String(bv).trim() !== ""
+) {
+compare = Number(av)-Number(bv);
 } else {
-compare=String(av).localeCompare(String(bv));
+compare = String(av).localeCompare(String(bv));
 }
-return sortAscending?compare:-compare;
+
+return sortAscending ? compare : -compare;
 });
 
-const tbody=el("rows");
+const tbody = el("rows");
 tbody.replaceChildren();
 
 if (!filtered.length) {
-const tr=document.createElement("tr");
-const td=document.createElement("td");
-td.colSpan=18;
-td.textContent=data.length
-?"No predictions match these filters. Try All Odds."
-:"No saved predictions available for this date.";
+const tr = document.createElement("tr");
+const td = document.createElement("td");
+td.colSpan = 18;
+td.textContent = data.length
+? "No predictions match these filters. Try All Odds or All Predictions."
+: "No saved predictions available for this date.";
 tr.appendChild(td);
 tbody.appendChild(tr);
 }
 
 for (const row of filtered) {
-const tr=document.createElement("tr");
-const minutes=minutesDetails(row);
+const tr = document.createElement("tr");
+const minutes = minutesDetails(row);
+const result = String(row.result || "pending").toLowerCase();
 
-const result=String(row.result || "pending").toLowerCase();
-
-const values=[
+const values = [
 formatDate(row.date),
 shortMatchup(row),
 row.game_time || "--",
@@ -626,35 +783,42 @@ odds(row.odds),
 num(row.projection,2),
 pct(row.probability),
 pct(row.ev),
-row.last10===null || row.last10===undefined
-?"--":String(row.last10)+"/10",
+row.last10 === null || row.last10 === undefined
+? "--" : String(row.last10)+"/10",
 minutes.label,
 num(minutes.projection,1),
 num(row.actual,1),
 result.toUpperCase()
 ];
 
-values.forEach((value,index)=>{
-const td=document.createElement("td");
-td.textContent=value;
-td.title=String(value);
+values.forEach((value,index) => {
+const td = document.createElement("td");
+td.textContent = value;
+td.title = String(value);
 
-if (index===3) td.className="player";
-if (index===7) td.className=row.side==="Over"?"over":"under";
-if (index===12) td.className=Number(row.ev)>0?"green":"red";
-if (index===17) td.className=result;
+if (index === 3) td.className = "player";
+if (index === 7) {
+td.className = row.side === "Over" ? "over" : "under";
+}
+if (index === 12) {
+td.className = Number(row.ev)>0 ? "green" : "red";
+}
+if (index === 17) td.className = result;
 
-if (index===14) {
-const pill=document.createElement("span");
-pill.className="pill "+(minutes.label==="N/A"?"NA":minutes.label);
-pill.textContent=minutes.label;
-pill.title=minutes.sd===null
-?"Minutes diagnostics unavailable"
-:"Minutes standard deviation: "+num(minutes.sd,1);
+if (index === 14) {
+const pill = document.createElement("span");
+pill.className = "pill " +
+(minutes.label === "N/A" ? "NA" : minutes.label);
+pill.textContent = minutes.label;
+pill.title = minutes.sd === null
+? "Minutes diagnostics unavailable"
+: "Minutes standard deviation: " + num(minutes.sd,1);
 td.replaceChildren(pill);
 }
 
-if (index===16 && row.actual===null) td.textContent="--";
+if (index === 16 && row.actual === null) {
+td.textContent = "--";
+}
 
 tr.appendChild(td);
 });
@@ -662,57 +826,68 @@ tr.appendChild(td);
 tbody.appendChild(tr);
 }
 
-const wins=filtered.filter(r=>r.result==="win").length;
-const losses=filtered.filter(r=>r.result==="loss").length;
-const pending=filtered.filter(r=>r.result==="pending").length;
+const wins = filtered.filter(r=>r.result==="win").length;
+const losses = filtered.filter(r=>r.result==="loss").length;
+const pending = filtered.filter(r=>r.result==="pending").length;
 
-el("status").textContent=
-filtered.length+" of "+data.length+" outcomes displayed"+
-(activeDay==="yesterday"
-?" | "+wins+" wins · "+losses+" losses · "+pending+" pending"
-:"")+".";
+el("status").textContent =
+filtered.length + " of " + data.length +
+" outcomes displayed" +
+(activeDay === "yesterday"
+? " | " + wins + " wins · " +
+losses + " losses · " + pending + " pending"
+: "") + ".";
 }
 
 function addText(parent,tag,value,className="") {
-const node=document.createElement(tag);
-node.textContent=value;
-if (className) node.className=className;
+const node = document.createElement(tag);
+node.textContent = value;
+if (className) node.className = className;
 parent.appendChild(node);
 return node;
 }
 
 function metric(parent,label,value) {
-const line=addText(parent,"div","","metric");
+const line = addText(parent,"div","","metric");
 addText(line,"span",label);
 addText(line,"strong",String(value));
 }
 
 function addCard(container,title,items,bigValue=null) {
-const card=addText(container,"div","","card");
+const card = addText(container,"div","","card");
 addText(card,"h3",title);
-if (bigValue!==null) addText(card,"div",bigValue,"big");
-for (const [label,value] of items) metric(card,label,value);
+if (bigValue !== null) {
+addText(card,"div",bigValue,"big");
+}
+for (const [label,value] of items) {
+metric(card,label,value);
+}
 return card;
 }
 
 function displayGameLines(rows) {
-const grid=el("game-lines-grid");
+const grid = el("game-lines-grid");
 grid.replaceChildren();
 
-const games=new Map();
+const games = new Map();
 
 for (const row of rows) {
-const key=gameKey(row);
-const previous=games.get(key);
-if (!previous || (previous.game_total==null && row.game_total!=null)) {
+const key = gameKey(row);
+const previous = games.get(key);
+
+if (!previous ||
+(previous.game_total == null && row.game_total != null)) {
 games.set(key,row);
 }
 }
 
-let available=0;
+let available = 0;
 
 for (const row of games.values()) {
-if (row.game_total!=null && Number.isFinite(Number(row.game_total))) {
+if (
+row.game_total != null &&
+Number.isFinite(Number(row.game_total))
+) {
 available++;
 }
 
@@ -726,83 +901,103 @@ addCard(grid,shortMatchup(row),[
 ]);
 }
 
-el("game-lines-status").textContent=games.size
-?available+" of "+games.size+" games have saved lines available."
-:"No saved game lines available for this date.";
+el("game-lines-status").textContent = games.size
+? available + " of " + games.size +
+" games have saved lines available."
+: "No saved game lines available for this date.";
 }
 
 async function fetchJson(filename) {
-const response=await fetch(
-"./"+filename+"?t="+Date.now(),
+const response = await fetch(
+"./" + filename + "?t=" + Date.now(),
 {cache:"no-store"}
 );
-if (!response.ok) throw new Error(filename+": HTTP "+response.status);
+
+if (!response.ok) {
+throw new Error(filename + ": HTTP " + response.status);
+}
+
 return response.json();
 }
 
 async function loadData() {
-el("status").textContent="Loading predictions...";
+el("status").textContent = "Loading predictions...";
 
 try {
-const [currentResult,historyResult]=await Promise.allSettled([
+const [currentResult,historyResult] =
+await Promise.allSettled([
 fetchJson("results.json"),
 fetchJson("graded_predictions.json")
 ]);
 
-if (currentResult.status!=="fulfilled") {
+if (currentResult.status !== "fulfilled") {
 throw currentResult.reason;
 }
 
-const json=currentResult.value;
+const json = currentResult.value;
+
 if (!Array.isArray(json.results)) {
 throw new Error("results.json has no results array");
 }
 
-todayData=json.results.map(currentRow);
+todayData = json.results.map(currentRow);
+markCurrentSelections(todayData);
 
-historyData=historyResult.status==="fulfilled" &&
+gradedReport =
+historyResult.status === "fulfilled"
+? historyResult.value
+: null;
+
+historyData =
+historyResult.status === "fulfilled" &&
 Array.isArray(historyResult.value.predictions)
-?historyResult.value.predictions.map(historyRow)
-:[];
+? historyResult.value.predictions.map(historyRow)
+: [];
 
-const historicalByKey=new Map();
+const historicalByKey = new Map();
 
 for (const row of historyData) {
 historicalByKey.set(predictionKey(row),row);
 }
 
 for (const row of todayData) {
-const saved=historicalByKey.get(predictionKey(row));
+const saved = historicalByKey.get(predictionKey(row));
+
 if (saved) {
-row.result=saved.result;
-row.actual=saved.actual;
+row.result = saved.result;
+row.actual = saved.actual;
+row.selection_status = saved.selection_status;
 }
 }
 
 chooseDates(json);
 
-el("updated").textContent=json.generated_at
-?new Date(json.generated_at).toLocaleString()
-:"Unknown";
+el("updated").textContent = json.generated_at
+? new Date(json.generated_at).toLocaleString()
+: "Unknown";
 
-el("model-version").textContent=
+el("model-version").textContent =
 json.results[0]?.model ||
 json.results[0]?.model_version ||
 "Experimental model";
 
 switchDay(activeDay);
 
-if (historyResult.status!=="fulfilled") {
+if (historyResult.status !== "fulfilled") {
 el("day-description").textContent +=
-" | Historical file could not be loaded.";
+" | Historical grading file could not be loaded.";
 }
 
 } catch(error) {
 console.error(error);
-todayData=[];
-historyData=[];
-data=[];
-el("status").textContent="Could not load predictions: "+error.message;
+todayData = [];
+historyData = [];
+data = [];
+gradedReport = null;
+
+el("status").textContent =
+"Could not load predictions: " + error.message;
+
 el("rows").replaceChildren();
 updateSummary();
 displayGameLines([]);
@@ -810,80 +1005,161 @@ displayGameLines([]);
 }
 
 function trackUnits(value) {
-if (value===null || value===undefined ||
-!Number.isFinite(Number(value))) return "--";
-const n=Number(value);
-return (n>0?"+":"")+n.toFixed(2)+" units";
+if (
+value === null ||
+value === undefined ||
+!Number.isFinite(Number(value))
+) return "--";
+
+const n = Number(value)/100;
+return (n>0 ? "+" : "") + n.toFixed(2) + " units";
 }
 
-function addTrackingCard(container,title,stats) {
+function trackingCard(container,title,rows) {
+const graded = rows.filter(r=>r.status==="graded");
+
+const wins = graded.filter(r=>r.outcome==="win").length;
+const losses = graded.filter(r=>r.outcome==="loss").length;
+const pushes = graded.filter(r=>r.outcome==="push").length;
+
+const staked = graded.reduce(
+(a,r)=>a+(Number(r.stake)||0),0
+);
+
+const profit = graded.reduce(
+(a,r)=>a+(Number(r.profit)||0),0
+);
+
 addCard(container,title,[
-["Settled",stats?.settled??0],
+["Settled",graded.length],
 ["Wins / Losses / Pushes",
-(stats?.wins??0)+" / "+(stats?.losses??0)+" / "+(stats?.pushes??0)],
-["Win Rate",pct(stats?.win_rate)],
-["ROI",pct(stats?.roi)],
-["Profit / Loss",trackUnits(stats?.profit_units)]
+wins+" / "+losses+" / "+pushes],
+["Win Rate",
+wins+losses
+? (100*wins/(wins+losses)).toFixed(1)+"%"
+: "--"],
+["ROI",
+staked
+? (100*profit/staked).toFixed(1)+"%"
+: "--"],
+["Profit / Loss",trackUnits(profit)]
 ]);
 }
 
 async function loadTracking() {
-const status=el("tracking-status");
-const grid=el("tracking-breakdowns");
-status.textContent="Loading tracked results...";
+const status = el("tracking-status");
+const grid = el("tracking-breakdowns");
+
+status.textContent = "Loading selected prediction results...";
 grid.replaceChildren();
 
 try {
-const json=await fetchJson("tracking.json");
-if (!json.summary) throw new Error("Invalid tracking summary");
+const json = await fetchJson("graded_predictions.json");
 
-const s=json.summary;
-el("track-winrate").textContent=pct(s.win_rate);
-el("track-roi").textContent=pct(s.roi);
-el("track-profit").textContent=trackUnits(s.profit_units);
-el("track-settled").textContent=String(s.settled??0);
+if (!json.summary || !Array.isArray(json.predictions)) {
+throw new Error("Invalid grading report");
+}
 
-el("tracking-details").textContent=
-(s.wins??0)+" wins · "+(s.losses??0)+" losses · "+
-(s.pushes??0)+" pushes · "+(s.pending??0)+" pending";
+gradedReport = json;
+const s = json.summary;
+
+el("track-winrate").textContent =
+s.win_rate == null
+? "--"
+: Number(s.win_rate).toFixed(1)+"%";
+
+el("track-roi").textContent =
+s.hypothetical_roi == null
+? "--"
+: Number(s.hypothetical_roi).toFixed(1)+"%";
+
+el("track-profit").textContent =
+trackUnits(s.hypothetical_profit);
+
+el("track-settled").textContent =
+String(s.graded ?? 0);
+
+el("tracking-details").textContent =
+(s.wins??0)+" wins · "+
+(s.losses??0)+" losses · "+
+(s.pushes??0)+" pushes · "+
+(s.dnp??0)+" DNP · "+
+(s.pending??0)+" pending · "+
+(s.not_selected??0)+" not selected";
+
+const selected = json.predictions.filter(
+r=>r.status !== "not_selected"
+);
 
 for (const [key,label] of [
-["points","Points"],["rebounds","Rebounds"],["assists","Assists"]
+["points","Points"],
+["rebounds","Rebounds"],
+["assists","Assists"]
 ]) {
-addTrackingCard(grid,label,json.by_market?.[key]||{});
+trackingCard(
+grid,
+label,
+selected.filter(
+r=>String(r.market||"").toLowerCase()===key
+)
+);
 }
 
 for (const [key,label] of [
-["over","Overs"],["under","Unders"]
+["over","Overs"],
+["under","Unders"]
 ]) {
-addTrackingCard(grid,label,json.by_side?.[key]||{});
+trackingCard(
+grid,
+label,
+selected.filter(
+r=>String(r.side||"").toLowerCase()===key
+)
+);
 }
 
-addTrackingCard(grid,"Positive Model EV",json.positive_ev||{});
+trackingCard(
+grid,
+"Positive Model EV",
+selected.filter(r=>Number(r.model_ev)>0)
+);
 
-status.textContent="Tracking updated: "+
-(json.updated_at?new Date(json.updated_at).toLocaleString():"Unknown");
+status.textContent =
+"Selected predictions only · Grading updated: " +
+(json.generated_at
+? new Date(json.generated_at).toLocaleString()
+: "Unknown");
+
+updateSummary();
 
 } catch(error) {
 console.warn(error);
-status.textContent="Tracking unavailable: "+error.message;
+status.textContent =
+"Grading unavailable: " + error.message;
 }
 }
 
 async function loadBacktest() {
-const status=el("backtest-status");
-const grid=el("performance-grid");
+const status = el("backtest-status");
+const grid = el("performance-grid");
+
 grid.replaceChildren();
-status.textContent="Loading backtest...";
+status.textContent = "Loading backtest...";
 
 try {
-const json=await fetchJson("backtest.json");
-if (!json.markets) throw new Error("Invalid backtest data");
+const json = await fetchJson("backtest.json");
+
+if (!json.markets) {
+throw new Error("Invalid backtest data");
+}
 
 for (const [key,label] of [
-["points","Points"],["rebounds","Rebounds"],["assists","Assists"]
+["points","Points"],
+["rebounds","Rebounds"],
+["assists","Assists"]
 ]) {
-const s=json.markets[key]||{};
+const s = json.markets[key] || {};
+
 addCard(grid,label,[
 ["Predictions Tested",s.predictions_tested??"--"],
 ["MAE",num(s.mean_absolute_error,3)],
@@ -892,38 +1168,54 @@ addCard(grid,label,[
 ],num(s.mean_absolute_error,3));
 }
 
-status.textContent="Backtest updated: "+
-(json.generated_at?new Date(json.generated_at).toLocaleString():"Unknown");
+status.textContent =
+"Backtest updated: " +
+(json.generated_at
+? new Date(json.generated_at).toLocaleString()
+: "Unknown");
 
 } catch(error) {
 console.warn(error);
-status.textContent="Backtest unavailable: "+error.message;
+status.textContent =
+"Backtest unavailable: " + error.message;
 }
 }
 
-el("tab-today").addEventListener("click",()=>switchDay("today"));
-el("tab-yesterday").addEventListener("click",()=>switchDay("yesterday"));
+el("tab-today").addEventListener(
+"click",()=>switchDay("today")
+);
+
+el("tab-yesterday").addEventListener(
+"click",()=>switchDay("yesterday")
+);
 
 for (const id of [
-"search","game","market","side",
-"odds-filter","minutes-filter","result-filter"
+"search",
+"game",
+"market",
+"side",
+"odds-filter",
+"minutes-filter",
+"selection-filter",
+"result-filter"
 ]) {
 el(id).addEventListener("input",draw);
 }
 
 document.querySelectorAll("th[data-sort]").forEach(th=>{
 th.addEventListener("click",()=>{
-const key=th.dataset.sort;
+const key = th.dataset.sort;
 
-if (sortKey===key) {
-sortAscending=!sortAscending;
+if (sortKey === key) {
+sortAscending = !sortAscending;
 } else {
-sortKey=key;
-sortAscending=[
-"date","matchup","game_time","player","team",
-"opponent","market","side","result"
+sortKey = key;
+sortAscending = [
+"date","matchup","game_time","player",
+"team","opponent","market","side","result"
 ].includes(key);
 }
+
 draw();
 });
 });
@@ -937,6 +1229,7 @@ loadBacktest();
 loadData();
 loadTracking();
 loadBacktest();
+
 </script>
 </body>
 </html>
