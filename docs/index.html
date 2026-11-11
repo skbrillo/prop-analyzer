@@ -1,4 +1,3 @@
-
 <!doctype html>
 <html lang="en">
 <head>
@@ -54,6 +53,7 @@ tbody tr:hover{background:#1d3048}
 .Moderate{background:#493914;color:#ffe099}
 .Volatile{background:#512626;color:#ffb0b0}
 .NA{background:#29384c;color:#a6b5c9}
+.move-good{color:var(--green);font-weight:700}.move-bad{color:var(--red);font-weight:700}.move-flat{color:var(--muted)}
 .lineup{font-size:9px;margin-left:4px;padding:1px 4px;border-radius:3px}
 .starter{background:#123f2b;color:#8ef0b4}
 .bench{background:#493914;color:#ffe099}
@@ -266,6 +266,7 @@ tbody tr:hover{background:#1d3048}
  <th data-sort="market">Stat</th>
  <th data-sort="side">Side</th>
  <th data-sort="line">Line</th>
+  <th data-sort="movement">Line Move</th>
  <th data-sort="odds">Odds</th>
  <th data-sort="projection">Proj</th>
  <th data-sort="probability">Prob</th>
@@ -351,7 +352,7 @@ tbody tr:hover{background:#1d3048}
 </section>
 
 <div class="footer">
- Data: ESPN and DraftKings via The Odds API.
+ Data: ESPN and DraftKings via ParlayAPI.
  <p>Model: <span id="model-version">Experimental</span></p>
  <p>Excel exports use saved data and do not consume sportsbook API credits.</p>
 </div>
@@ -380,6 +381,7 @@ let sortAscending=true;
 let lineupData={games:{}};
 let monthlyReport={months:{}};
 let selectedMonth="";
+let movementData={baseline:{},current:{}};
 
 const TEAM_CODES={
  "Atlanta Hawks":"ATL","Boston Celtics":"BOS",
@@ -561,6 +563,31 @@ function predictionKey(r){
   marketName(r.market),sideName(r.side),
   String(r.line??"")
  ].join("|");
+}
+
+function movementKey(r){
+ return [r.date||r.game_date||"",String(r.player||"").trim().toLowerCase().replace(/\s+/g," "),String(r.market||"").trim().toLowerCase()].join("|");
+}
+function movementInfo(r){
+ const key=movementKey(r);
+ const old=movementData.baseline?.[key];
+ const now=movementData.current?.[key];
+ if(!old||!now)return {label:"—",cls:"move-flat",title:"No comparison available"};
+ const start=Number(old.line),end=Number(now.line);
+ if(!Number.isFinite(start)||!Number.isFinite(end))return {label:"—",cls:"move-flat",title:"Missing line"};
+ const diff=end-start;
+ const side=sideName(r.side);
+ const favorable=(side==="Over"&&diff<0)||(side==="Under"&&diff>0);
+ const oldOdds=side==="Over"?old.over_odds:old.under_odds;
+ const newOdds=side==="Over"?now.over_odds:now.under_odds;
+ const title=`First: ${start} (${american(oldOdds)}) | Latest: ${end} (${american(newOdds)})`;
+ if(Math.abs(diff)<0.001)return {label:"— Same",cls:"move-flat",title};
+ return {label:(diff>0?"↑ ":"↓ ")+Math.abs(diff).toFixed(1)+(favorable?" Better":" Worse"),cls:favorable?"move-good":"move-bad",title};
+}
+async function loadMovement(){
+ try{movementData=await fetchJson("line_movement.json");}
+ catch(e){movementData={baseline:{},current:{}};}
+ draw();
 }
 
 function gameKey(r){
@@ -944,6 +971,7 @@ function updateSummary(){
 }
 
 function sortValue(r){
+ if(sortKey==="movement"){const m=movementInfo(r);return m.label.includes("Same")?0:(Number(m.label.match(/[0-9.]+/)?.[0])||0)*(m.label.includes("Better")?1:-1);}
  if(sortKey==="minutes_reliability"){
   return {Stable:3,Moderate:2,Volatile:1}[
    minutes(r).label
@@ -1023,6 +1051,7 @@ function draw(){
    shortMarket(r.market),
    r.side||"--",
    number(r.line),
+   movementInfo(r).label,
    american(r.odds),
    number(r.projection),
    percent(r.probability),
@@ -1041,7 +1070,7 @@ function draw(){
    td.title=String(value);
 
    if(i===0)td.className="rank";
-   if(i===14)td.className="score";
+   if(i===15)td.className="score";
    if(i===4){
     td.className="player";
     const lineup=lineupInfo(r);
@@ -1058,11 +1087,12 @@ function draw(){
       "Starting lineup not confirmed";
     }
    }
+   if(i===10){const mv=movementInfo(r);td.className=mv.cls;td.title=mv.title;}
    if(i===8)
     td.className=r.side==="Over"?"over":"under";
-   if(i===13)
+   if(i===14)
     td.className=Number(r.ev)>0?"green":"red";
-   if(i===16){
+   if(i===17){
     const pill=document.createElement("span");
     pill.className="pill "+(
      m.label==="N/A"?"NA":m.label
@@ -1073,9 +1103,9 @@ function draw(){
      "Minutes SD: "+number(m.sd);
     td.replaceChildren(pill);
    }
-   if(i===19)
+   if(i===20)
     td.className=String(r.result||"pending").toLowerCase();
-   if(viewMode!=="edge"&&(i===0||i===14))
+   if(viewMode!=="edge"&&(i===0||i===15))
     td.style.display="none";
 
    tr.appendChild(td);
@@ -1087,7 +1117,7 @@ function draw(){
  if(!rows.length){
   const tr=document.createElement("tr");
   const td=document.createElement("td");
-  td.colSpan=viewMode==="edge"?20:18;
+  td.colSpan=viewMode==="edge"?21:19;
   td.textContent="No predictions match the current filters.";
   tr.appendChild(td);
   tbody.appendChild(tr);
@@ -1683,6 +1713,7 @@ function downloadEdge(){
 
 function refreshAll(){
  loadData();
+ loadMovement();
  loadTracking();
  loadBacktest();
  loadLineups();
