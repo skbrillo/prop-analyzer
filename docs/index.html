@@ -56,6 +56,7 @@ tbody tr:hover{background:#1d3048}
 .move-good{color:var(--green);font-weight:700}.move-bad{color:var(--red);font-weight:700}.move-flat{color:var(--muted)}
 .lineup{font-size:9px;margin-left:4px;padding:1px 4px;border-radius:3px}
 .starter{background:#123f2b;color:#8ef0b4}
+.projected{background:#253d62;color:#a9d0ff}
 .out{background:#512626;color:#ffb0b0}
 .bench{background:#493914;color:#ffe099}
 .unverified,.bench{background:#29384c;color:#a6b5c9}
@@ -704,6 +705,10 @@ function lineupInfo(r){
  if(status==="confirmed"&&Array.isArray(starters)&&
     starters.length===5&&starters.some(x=>normalizeName(x.name)===name))
   return "starter";
+ const projected=home?g.home_projected:g.away_projected;
+ if(status!=="confirmed"&&Array.isArray(projected)&&
+    projected.some(x=>normalizeName(x.name)===name))
+  return "projected";
  return "bench";
 }
 
@@ -1125,13 +1130,16 @@ function draw(){
     if(lineup){
      const tag=addText(td,"span",
       lineup==="starter"?"S":
-      lineup==="out"?"O":"B",
+      lineup==="out"?"O":
+      lineup==="projected"?"P":"B",
       "lineup "+lineup
      );
      tag.title=lineup==="starter"
       ?"Confirmed RotoWire starter":
       lineup==="out"
       ?"Listed Out by RotoWire":
+      lineup==="projected"
+      ?"Projected RotoWire starter; not yet confirmed":
       "Not confirmed as a starter or Out; may still play";
     }
    }
