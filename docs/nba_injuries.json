@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T22:24:43.380873+00:00",
+  "generated_at": "2026-11-12T23:06:58.518821+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 99,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,13 +35,25 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 99,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
+    "T": 29,
     "O": 71,
-    "T": 28
+    "U": 1
   },
   "players": [
+    {
+      "id": "",
+      "injury_record_id": "538831",
+      "name": "Kingston Flemings",
+      "team": "ATL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-12T23:04Z",
+      "team_match": "feed"
+    },
     {
       "id": "",
       "injury_record_id": "538188",
@@ -370,6 +382,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-10-16T16:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538829",
+      "name": "Marcus Smart",
+      "team": "HOU",
+      "status": "U",
+      "raw_status": "Suspension",
+      "reason": "Suspension",
+      "date": "2026-11-12T22:45Z",
       "team_match": "feed"
     },
     {
