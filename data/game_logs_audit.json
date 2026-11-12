@@ -1,0 +1,1715 @@
+{
+  "generated_at_utc": "2026-11-12T12:15:09.476753+00:00",
+  "regular_season_only": true,
+  "games_validated": 170,
+  "accepted_rows": 3832,
+  "explicit_dnp_rows": 722,
+  "rejection_counts": {
+    "non_regular_season_game": 67,
+    "invalid_stats_or_minutes": 12
+  },
+  "fetch_failures": [],
+  "game_coverage": [
+    {
+      "date": "2026-10-20",
+      "game_id": "401909088",
+      "teams": [
+        "DET",
+        "BOS"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-20",
+      "game_id": "401909089",
+      "teams": [
+        "NY",
+        "PHI"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-10-20",
+      "game_id": "401909090",
+      "teams": [
+        "SA",
+        "OKC"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909834",
+      "teams": [
+        "ORL",
+        "ATL"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909835",
+      "teams": [
+        "WSH",
+        "MIL"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909091",
+      "teams": [
+        "MIA",
+        "MIN"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909836",
+      "teams": [
+        "BKN",
+        "CHA"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909837",
+      "teams": [
+        "TOR",
+        "CHI"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909838",
+      "teams": [
+        "MEM",
+        "UTAH"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909839",
+      "teams": [
+        "NO",
+        "IND"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909840",
+      "teams": [
+        "HOU",
+        "DAL"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909092",
+      "teams": [
+        "LAL",
+        "GS"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909841",
+      "teams": [
+        "POR",
+        "PHX"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-10-21",
+      "game_id": "401909842",
+      "teams": [
+        "LAC",
+        "SAC"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-22",
+      "game_id": "401909093",
+      "teams": [
+        "PHI",
+        "CLE"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-10-22",
+      "game_id": "401909094",
+      "teams": [
+        "OKC",
+        "DEN"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909848",
+      "teams": [
+        "MIL",
+        "CHI"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 11
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909095",
+      "teams": [
+        "BOS",
+        "NY"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909843",
+      "teams": [
+        "CHA",
+        "ATL"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909844",
+      "teams": [
+        "IND",
+        "DAL"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909845",
+      "teams": [
+        "ORL",
+        "MIN"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909846",
+      "teams": [
+        "WSH",
+        "TOR"
+      ],
+      "player_logs": 28,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909847",
+      "teams": [
+        "MIA",
+        "DET"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909096",
+      "teams": [
+        "SA",
+        "HOU"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909849",
+      "teams": [
+        "UTAH",
+        "NO"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909850",
+      "teams": [
+        "GS",
+        "MEM"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909851",
+      "teams": [
+        "LAL",
+        "LAC"
+      ],
+      "player_logs": 18,
+      "explicit_dnps": 10
+    },
+    {
+      "date": "2026-10-23",
+      "game_id": "401909852",
+      "teams": [
+        "SAC",
+        "POR"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-24",
+      "game_id": "401909853",
+      "teams": [
+        "CHA",
+        "MIA"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-24",
+      "game_id": "401909854",
+      "teams": [
+        "CLE",
+        "BKN"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-24",
+      "game_id": "401909855",
+      "teams": [
+        "PHI",
+        "MIL"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-24",
+      "game_id": "401909857",
+      "teams": [
+        "CHI",
+        "WSH"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-10-24",
+      "game_id": "401909858",
+      "teams": [
+        "DAL",
+        "SA"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-10-24",
+      "game_id": "401909856",
+      "teams": [
+        "ATL",
+        "HOU"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-24",
+      "game_id": "401909859",
+      "teams": [
+        "DEN",
+        "NO"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-24",
+      "game_id": "401909860",
+      "teams": [
+        "PHX",
+        "GS"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-25",
+      "game_id": "401909861",
+      "teams": [
+        "UTAH",
+        "LAL"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 10
+    },
+    {
+      "date": "2026-10-25",
+      "game_id": "401909862",
+      "teams": [
+        "BKN",
+        "IND"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-25",
+      "game_id": "401909863",
+      "teams": [
+        "NY",
+        "ORL"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-25",
+      "game_id": "401909864",
+      "teams": [
+        "MIN",
+        "TOR"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-25",
+      "game_id": "401909865",
+      "teams": [
+        "OKC",
+        "LAC"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-25",
+      "game_id": "401909866",
+      "teams": [
+        "PHI",
+        "DET"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-25",
+      "game_id": "401909867",
+      "teams": [
+        "SAC",
+        "MEM"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-26",
+      "game_id": "401909868",
+      "teams": [
+        "CHA",
+        "WSH"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-26",
+      "game_id": "401909869",
+      "teams": [
+        "CLE",
+        "MIN"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-10-26",
+      "game_id": "401909870",
+      "teams": [
+        "BOS",
+        "CHI"
+      ],
+      "player_logs": 29,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-10-26",
+      "game_id": "401909871",
+      "teams": [
+        "MIA",
+        "DAL"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-26",
+      "game_id": "401909872",
+      "teams": [
+        "MIL",
+        "IND"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-26",
+      "game_id": "401909873",
+      "teams": [
+        "OKC",
+        "PHX"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-10-26",
+      "game_id": "401909874",
+      "teams": [
+        "HOU",
+        "ATL"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-26",
+      "game_id": "401909875",
+      "teams": [
+        "UTAH",
+        "MEM"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-10-26",
+      "game_id": "401909876",
+      "teams": [
+        "DEN",
+        "GS"
+      ],
+      "player_logs": 28,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-10-27",
+      "game_id": "401909877",
+      "teams": [
+        "BOS",
+        "BKN"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-10-27",
+      "game_id": "401909878",
+      "teams": [
+        "NY",
+        "DET"
+      ],
+      "player_logs": 28,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-10-27",
+      "game_id": "401909879",
+      "teams": [
+        "SA",
+        "SAC"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-27",
+      "game_id": "401909880",
+      "teams": [
+        "LAL",
+        "POR"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909881",
+      "teams": [
+        "ATL",
+        "MIA"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909882",
+      "teams": [
+        "CLE",
+        "WSH"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909883",
+      "teams": [
+        "DET",
+        "CHA"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909884",
+      "teams": [
+        "IND",
+        "PHI"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909885",
+      "teams": [
+        "TOR",
+        "ORL"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909886",
+      "teams": [
+        "CHI",
+        "NY"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909887",
+      "teams": [
+        "MIL",
+        "HOU"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909888",
+      "teams": [
+        "MIN",
+        "GS"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909889",
+      "teams": [
+        "NO",
+        "DEN"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909890",
+      "teams": [
+        "UTAH",
+        "SA"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909891",
+      "teams": [
+        "DAL",
+        "OKC"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-10-28",
+      "game_id": "401909892",
+      "teams": [
+        "LAC",
+        "LAL"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 4
+    },
+    {
+      "date": "2026-10-29",
+      "game_id": "401909893",
+      "teams": [
+        "ATL",
+        "CLE"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-29",
+      "game_id": "401909894",
+      "teams": [
+        "NO",
+        "SAC"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-29",
+      "game_id": "401909895",
+      "teams": [
+        "POR",
+        "MEM"
+      ],
+      "player_logs": 28,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909277",
+      "teams": [
+        "WSH",
+        "CHA"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909278",
+      "teams": [
+        "BOS",
+        "CHI"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909279",
+      "teams": [
+        "BKN",
+        "DET"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909280",
+      "teams": [
+        "PHI",
+        "NY"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909281",
+      "teams": [
+        "TOR",
+        "ORL"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909282",
+      "teams": [
+        "MIA",
+        "IND"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909283",
+      "teams": [
+        "DAL",
+        "HOU"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909284",
+      "teams": [
+        "MIN",
+        "LAC"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909285",
+      "teams": [
+        "GS",
+        "LAL"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-10-30",
+      "game_id": "401909286",
+      "teams": [
+        "PHX",
+        "DEN"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-10-31",
+      "game_id": "401909896",
+      "teams": [
+        "UTAH",
+        "POR"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-31",
+      "game_id": "401909897",
+      "teams": [
+        "CHA",
+        "PHI"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-10-31",
+      "game_id": "401909898",
+      "teams": [
+        "NO",
+        "ATL"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-10-31",
+      "game_id": "401909899",
+      "teams": [
+        "MEM",
+        "SAC"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-10-31",
+      "game_id": "401909900",
+      "teams": [
+        "MIL",
+        "CLE"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-10-31",
+      "game_id": "401909901",
+      "teams": [
+        "SA",
+        "MIN"
+      ],
+      "player_logs": 18,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-10-31",
+      "game_id": "401909902",
+      "teams": [
+        "HOU",
+        "OKC"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-01",
+      "game_id": "401909903",
+      "teams": [
+        "ORL",
+        "BOS"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-01",
+      "game_id": "401909904",
+      "teams": [
+        "IND",
+        "BKN"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-01",
+      "game_id": "401909905",
+      "teams": [
+        "GS",
+        "LAC"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-01",
+      "game_id": "401909906",
+      "teams": [
+        "LAL",
+        "TOR"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909907",
+      "teams": [
+        "CLE",
+        "OKC"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909908",
+      "teams": [
+        "CHA",
+        "DET"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909909",
+      "teams": [
+        "IND",
+        "ATL"
+      ],
+      "player_logs": 16,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909910",
+      "teams": [
+        "NY",
+        "BKN"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909911",
+      "teams": [
+        "ORL",
+        "WSH"
+      ],
+      "player_logs": 18,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909912",
+      "teams": [
+        "PHI",
+        "CHI"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909913",
+      "teams": [
+        "DAL",
+        "SAC"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909914",
+      "teams": [
+        "MEM",
+        "NO"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909915",
+      "teams": [
+        "MIN",
+        "MIL"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909916",
+      "teams": [
+        "HOU",
+        "BOS"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909917",
+      "teams": [
+        "SA",
+        "UTAH"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909918",
+      "teams": [
+        "DEN",
+        "POR"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909919",
+      "teams": [
+        "GS",
+        "PHX"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909920",
+      "teams": [
+        "LAC",
+        "TOR"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-02",
+      "game_id": "401909921",
+      "teams": [
+        "LAL",
+        "MIA"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909922",
+      "teams": [
+        "DET",
+        "PHI"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909923",
+      "teams": [
+        "WSH",
+        "ATL"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 4
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909924",
+      "teams": [
+        "BOS",
+        "MIL"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909925",
+      "teams": [
+        "BKN",
+        "CHA"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909926",
+      "teams": [
+        "NY",
+        "CHI"
+      ],
+      "player_logs": 29,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909927",
+      "teams": [
+        "MEM",
+        "IND"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 4
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909928",
+      "teams": [
+        "NO",
+        "UTAH"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909929",
+      "teams": [
+        "OKC",
+        "CLE"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909930",
+      "teams": [
+        "HOU",
+        "MIN"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909931",
+      "teams": [
+        "DEN",
+        "TOR"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909932",
+      "teams": [
+        "PHX",
+        "POR"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909933",
+      "teams": [
+        "SA",
+        "DAL"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909934",
+      "teams": [
+        "SAC",
+        "LAL"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-04",
+      "game_id": "401909935",
+      "teams": [
+        "LAC",
+        "MIA"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-11-05",
+      "game_id": "401909936",
+      "teams": [
+        "PHX",
+        "ORL"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-05",
+      "game_id": "401909937",
+      "teams": [
+        "GS",
+        "MIA"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-06",
+      "game_id": "401909287",
+      "teams": [
+        "ATL",
+        "WSH"
+      ],
+      "player_logs": 18,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-06",
+      "game_id": "401909288",
+      "teams": [
+        "CHA",
+        "BOS"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-06",
+      "game_id": "401909289",
+      "teams": [
+        "CLE",
+        "PHI"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-06",
+      "game_id": "401909290",
+      "teams": [
+        "DAL",
+        "UTAH"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-06",
+      "game_id": "401909291",
+      "teams": [
+        "MEM",
+        "OKC"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-06",
+      "game_id": "401909292",
+      "teams": [
+        "MIL",
+        "TOR"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-06",
+      "game_id": "401909293",
+      "teams": [
+        "NO",
+        "MIN"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-11-06",
+      "game_id": "401909294",
+      "teams": [
+        "LAL",
+        "POR"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-06",
+      "game_id": "401909295",
+      "teams": [
+        "SAC",
+        "SA"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-07",
+      "game_id": "401909938",
+      "teams": [
+        "IND",
+        "DEN"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 4
+    },
+    {
+      "date": "2026-11-07",
+      "game_id": "401909939",
+      "teams": [
+        "ATL",
+        "BKN"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-07",
+      "game_id": "401909940",
+      "teams": [
+        "CLE",
+        "NY"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 4
+    },
+    {
+      "date": "2026-11-07",
+      "game_id": "401909941",
+      "teams": [
+        "OKC",
+        "WSH"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-07",
+      "game_id": "401909942",
+      "teams": [
+        "GS",
+        "ORL"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-07",
+      "game_id": "401909943",
+      "teams": [
+        "PHX",
+        "HOU"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 10
+    },
+    {
+      "date": "2026-11-07",
+      "game_id": "401909944",
+      "teams": [
+        "POR",
+        "SA"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-08",
+      "game_id": "401909945",
+      "teams": [
+        "CHI",
+        "PHI"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-08",
+      "game_id": "401909946",
+      "teams": [
+        "DET",
+        "LAL"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 10
+    },
+    {
+      "date": "2026-11-08",
+      "game_id": "401909947",
+      "teams": [
+        "MIN",
+        "UTAH"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-08",
+      "game_id": "401909948",
+      "teams": [
+        "DAL",
+        "BKN"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-08",
+      "game_id": "401909949",
+      "teams": [
+        "MIL",
+        "BOS"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-08",
+      "game_id": "401909950",
+      "teams": [
+        "LAC",
+        "NO"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-08",
+      "game_id": "401909951",
+      "teams": [
+        "SAC",
+        "MIA"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-09",
+      "game_id": "401909952",
+      "teams": [
+        "ATL",
+        "LAL"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-09",
+      "game_id": "401909953",
+      "teams": [
+        "CHA",
+        "CLE"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-09",
+      "game_id": "401909954",
+      "teams": [
+        "DET",
+        "WSH"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-09",
+      "game_id": "401909955",
+      "teams": [
+        "TOR",
+        "MEM"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-09",
+      "game_id": "401909956",
+      "teams": [
+        "DAL",
+        "IND"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-09",
+      "game_id": "401909957",
+      "teams": [
+        "HOU",
+        "DEN"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 4
+    },
+    {
+      "date": "2026-11-09",
+      "game_id": "401909958",
+      "teams": [
+        "PHX",
+        "SA"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-09",
+      "game_id": "401909959",
+      "teams": [
+        "GS",
+        "NO"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-10",
+      "game_id": "401909960",
+      "teams": [
+        "NY",
+        "MIL"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-10",
+      "game_id": "401909961",
+      "teams": [
+        "PHI",
+        "BOS"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-10",
+      "game_id": "401909962",
+      "teams": [
+        "PHX",
+        "LAC"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-10",
+      "game_id": "401909963",
+      "teams": [
+        "UTAH",
+        "MIA"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-10",
+      "game_id": "401909964",
+      "teams": [
+        "SAC",
+        "ORL"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-10",
+      "game_id": "401909965",
+      "teams": [
+        "POR",
+        "OKC"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909966",
+      "teams": [
+        "IND",
+        "WSH"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909967",
+      "teams": [
+        "NY",
+        "CLE"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909968",
+      "teams": [
+        "TOR",
+        "BOS"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909969",
+      "teams": [
+        "CHI",
+        "SA"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909970",
+      "teams": [
+        "MEM",
+        "DEN"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909971",
+      "teams": [
+        "MIL",
+        "LAL"
+      ],
+      "player_logs": 28,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909972",
+      "teams": [
+        "NO",
+        "BKN"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909973",
+      "teams": [
+        "UTAH",
+        "ORL"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909974",
+      "teams": [
+        "HOU",
+        "GS"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-11",
+      "game_id": "401909975",
+      "teams": [
+        "POR",
+        "OKC"
+      ],
+      "player_logs": 18,
+      "explicit_dnps": 6
+    }
+  ],
+  "status": "accepted"
+}
