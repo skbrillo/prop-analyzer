@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T11:36:24.208231+00:00",
+  "generated_at": "2026-11-12T11:41:18.520347+00:00",
   "summary": {
     "predictions": 1353,
     "selected": 418,
@@ -84928,7 +84928,226 @@
         "teams_found": []
       }
     ],
-    "recovered_and_graded": 12
+    "recovered_and_graded": 12,
+    "missing_player_details": [
+      {
+        "game_date": "2026-11-11",
+        "player": "Nolan Traore",
+        "team": "BKN",
+        "matchup": "Brooklyn Nets @ New Orleans Pelicans",
+        "market": "Points",
+        "line": "11.5",
+        "side": "Over",
+        "same_team_log_count": 12,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Nolan Traore",
+        "team": "BKN",
+        "matchup": "Brooklyn Nets @ New Orleans Pelicans",
+        "market": "Assists",
+        "line": "3.5",
+        "side": "Under",
+        "same_team_log_count": 12,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Myles Turner",
+        "team": "MIL",
+        "matchup": "Los Angeles Lakers @ Milwaukee Bucks",
+        "market": "Assists",
+        "line": "1.5",
+        "side": "Over",
+        "same_team_log_count": 14,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Trey Murphy III",
+        "team": "NOP",
+        "matchup": "Brooklyn Nets @ New Orleans Pelicans",
+        "market": "Assists",
+        "line": "2.5",
+        "side": "Over",
+        "same_team_log_count": 13,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Myles Turner",
+        "team": "MIL",
+        "matchup": "Los Angeles Lakers @ Milwaukee Bucks",
+        "market": "Points",
+        "line": "8.5",
+        "side": "Under",
+        "same_team_log_count": 14,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Devin Vassell",
+        "team": "SAS",
+        "matchup": "San Antonio Spurs @ Chicago Bulls",
+        "market": "Points",
+        "line": "10.5",
+        "side": "Over",
+        "same_team_log_count": 12,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Paul George",
+        "team": "BOS",
+        "matchup": "Boston Celtics @ Toronto Raptors",
+        "market": "Points",
+        "line": "18.5",
+        "side": "Over",
+        "same_team_log_count": 10,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Devin Vassell",
+        "team": "SAS",
+        "matchup": "San Antonio Spurs @ Chicago Bulls",
+        "market": "Assists",
+        "line": "2.5",
+        "side": "Over",
+        "same_team_log_count": 12,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Nolan Traore",
+        "team": "BKN",
+        "matchup": "Brooklyn Nets @ New Orleans Pelicans",
+        "market": "Rebounds",
+        "line": "2.5",
+        "side": "Over",
+        "same_team_log_count": 12,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Ajay Mitchell",
+        "team": "OKC",
+        "matchup": "Oklahoma City Thunder @ Portland Trail Blazers",
+        "market": "Assists",
+        "line": "3.5",
+        "side": "Under",
+        "same_team_log_count": 9,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Paul George",
+        "team": "BOS",
+        "matchup": "Boston Celtics @ Toronto Raptors",
+        "market": "Assists",
+        "line": "3.5",
+        "side": "Over",
+        "same_team_log_count": 10,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Myles Turner",
+        "team": "MIL",
+        "matchup": "Los Angeles Lakers @ Milwaukee Bucks",
+        "market": "Rebounds",
+        "line": "4.5",
+        "side": "Over",
+        "same_team_log_count": 14,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Lauri Markkanen",
+        "team": "UTA",
+        "matchup": "Orlando Magic @ Utah Jazz",
+        "market": "Points",
+        "line": "20.5",
+        "side": "Under",
+        "same_team_log_count": 10,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Lauri Markkanen",
+        "team": "UTA",
+        "matchup": "Orlando Magic @ Utah Jazz",
+        "market": "Rebounds",
+        "line": "6.5",
+        "side": "Under",
+        "same_team_log_count": 10,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Devin Vassell",
+        "team": "SAS",
+        "matchup": "San Antonio Spurs @ Chicago Bulls",
+        "market": "Assists",
+        "line": "2.5",
+        "side": "Over",
+        "same_team_log_count": 12,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Devin Vassell",
+        "team": "SAS",
+        "matchup": "San Antonio Spurs @ Chicago Bulls",
+        "market": "Points",
+        "line": "10.5",
+        "side": "Over",
+        "same_team_log_count": 12,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Jamal Cain",
+        "team": "ORL",
+        "matchup": "Orlando Magic @ Utah Jazz",
+        "market": "Points",
+        "line": "8.5",
+        "side": "Under",
+        "same_team_log_count": 10,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      },
+      {
+        "game_date": "2026-11-11",
+        "player": "Jamal Cain",
+        "team": "ORL",
+        "matchup": "Orlando Magic @ Utah Jazz",
+        "market": "Rebounds",
+        "line": "4.5",
+        "side": "Under",
+        "same_team_log_count": 10,
+        "possible_name_matches": [],
+        "reason": "No exact player/date/team record in data/game_logs.csv"
+      }
+    ],
+    "missing_unique_players": 8
   },
   "predictions": [
     {
