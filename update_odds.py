@@ -1,4 +1,3 @@
-
 """
 NBA DraftKings Odds Collector — ParlayAPI
 
@@ -76,7 +75,9 @@ PROPS_REQUEST_COST = 3
 GAME_LINES_REQUEST_COST = 2
 
 PROPS_PAGE_LIMIT = 10000
-MAX_ODDS_AGE_SECONDS = 1800
+MAX_ODDS_AGE_SECONDS = 300
+# A missing quote timestamp cannot establish that the price is current.
+REQUIRE_QUOTE_AGE = True
 
 FIELDS = [
     "game_date",
@@ -496,6 +497,8 @@ def extract_props(
     unknown_players = 0
     team_mismatches = 0
     stale_props = 0
+    unverified_age = 0
+    alternate_lines_removed = 0
 
     now = datetime.now(timezone.utc)
 
@@ -547,9 +550,13 @@ def extract_props(
             prop.get("age_seconds")
         )
 
+        if age is None and REQUIRE_QUOTE_AGE:
+            unverified_age += 1
+            continue
+
         if (
             age is not None
-            and age > MAX_ODDS_AGE_SECONDS
+            and (age < 0 or age > MAX_ODDS_AGE_SECONDS)
         ):
             stale_props += 1
             continue
@@ -635,16 +642,38 @@ def extract_props(
             ):
                 rows[key] = (row, age)
 
-    result = [
-        item[0]
-        for item in rows.values()
-    ]
+    # ParlayAPI may return alternate lines for a single player/market.
+    # A near-even two-sided market is a useful *heuristic* for the main line;
+    # it is not proof of DraftKings' currently displayed standard line.
+    # Keep the over and under prices attached to the SAME selected line.
+    def implied_probability(american):
+        return (-american) / ((-american) + 100) if american < 0 else 100 / (american + 100)
+
+    def line_score(item):
+        row, age = item
+        over_p = implied_probability(row["over_odds"])
+        under_p = implied_probability(row["under_odds"])
+        # Normalize out vig. Standard two-sided lines tend toward 50/50.
+        fair_over = over_p / (over_p + under_p)
+        return (abs(fair_over - 0.5), age if age is not None else float("inf"))
+
+    main_lines = {}
+    for (event_id, player_key, market_key, line), item in rows.items():
+        group_key = (event_id, player_key, market_key)
+        previous = main_lines.get(group_key)
+        if previous is None or line_score(item) < line_score(previous):
+            main_lines[group_key] = item
+
+    alternate_lines_removed = len(rows) - len(main_lines)
+    result = [item[0] for item in main_lines.values()]
 
     return (
         result,
         unknown_players,
         team_mismatches,
         stale_props,
+        unverified_age,
+        alternate_lines_removed,
     )
 
 
@@ -822,7 +851,7 @@ def main():
     if not slate:
         print(
             "No upcoming NBA games. "
-            "Existing CSV preserved."
+            "Existing CSV preserved; downstream model must not reuse it as current odds."
         )
         return 0
 
@@ -1012,6 +1041,8 @@ def main():
         unknown,
         mismatch,
         stale,
+        unverified_age,
+        alternate_lines_removed,
     ) = extract_props(
         all_props,
         slate,
@@ -1038,6 +1069,10 @@ def main():
         "Stale props skipped:",
         stale,
     )
+
+    print("Props rejected for missing quote age:", unverified_age)
+    print("Alternate lines removed:", alternate_lines_removed)
+    print("NOTE: Main-line selection uses a balanced-odds heuristic, not sportsbook verification.")
 
     if not rows:
         print(
