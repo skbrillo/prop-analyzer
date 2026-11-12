@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T20:56:55.895707+00:00",
+  "generated_at": "2026-11-12T21:36:18.675543+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 98,
+  "player_count": 100,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -36,11 +36,11 @@
     "WAS"
   ],
   "teams_count": 29,
-  "players_with_team": 98,
+  "players_with_team": 100,
   "players_without_team": 0,
   "status_counts": {
     "O": 68,
-    "T": 30
+    "T": 32
   },
   "players": [
     {
@@ -430,6 +430,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538813",
+      "name": "Brandon Ingram",
+      "team": "LAC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Surgery | Achilles | out",
+      "date": "2026-11-12T21:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60695",
       "name": "Cam Christie",
       "team": "LAC",
@@ -448,17 +459,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Foot | out",
       "date": "2026-11-10T00:05Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538374",
-      "name": "Brandon Ingram",
-      "team": "LAC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Achilles | out",
-      "date": "2026-11-10T00:00Z",
       "team_match": "feed"
     },
     {
@@ -562,6 +562,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60781",
+      "name": "Giannis Antetokounmpo",
+      "team": "MIA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Wrist | day-to-day",
+      "date": "2026-11-12T21:18Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538799",
       "name": "Pelle Larsson",
       "team": "MIA",
@@ -578,7 +589,7 @@
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
+      "reason": "Soreness | Ankle | day-to-day",
       "date": "2026-11-12T18:32Z",
       "team_match": "feed"
     },
@@ -628,12 +639,34 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60779",
+      "injury_record_id": "538812",
+      "name": "Bryce McGowens",
+      "team": "NOP",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Infection | Elbow | day-to-day",
+      "date": "2026-11-12T20:56Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538811",
       "name": "Trendon Watford",
       "team": "NOP",
       "status": "O",
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
+      "date": "2026-11-12T20:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538810",
+      "name": "Bennedict Mathurin",
+      "team": "NOP",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Thumb | day-to-day",
       "date": "2026-11-12T20:53Z",
       "team_match": "feed"
     },
@@ -657,17 +690,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Tendinitis | Knee | day-to-day",
       "date": "2026-11-12T20:48Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60767",
-      "name": "Bennedict Mathurin",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Thumb | day-to-day",
-      "date": "2026-11-12T15:03Z",
       "team_match": "feed"
     },
     {
