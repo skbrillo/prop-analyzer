@@ -644,17 +644,21 @@ def main():
     now = datetime.now(timezone.utc)
 
     selected_indices = select_one_side(predictions)
-    results = [
-        grade_one(
-            row,
-            stats,
-            teams_by_date,
-            player_teams_by_date,
-            player_logs_by_date,
-            now
-        ) if index in selected_indices else not_selected(row)
-        for index, row in enumerate(predictions)
+    # Grade every outcome for diagnostics. The original selected-only report
+    # remains unchanged in meaning and is retained for existing dashboards.
+    all_results = [
+        grade_one(row, stats, teams_by_date, player_teams_by_date,
+                  player_logs_by_date, now)
+        for row in predictions
     ]
+    results = [
+        dict(graded) if index in selected_indices else not_selected(row)
+        for index, (row, graded) in enumerate(zip(predictions, all_results))
+    ]
+    # Keep the selection flag in the all-outcomes detail for comparisons.
+    for index, row in enumerate(all_results):
+        row["grader_selected"] = index in selected_indices
+
 
     markets = {}
 
@@ -676,13 +680,22 @@ def main():
     output = {
         "generated_at": now.isoformat(),
         "summary": summarize(results),
+        "all_outcomes_summary": summarize(all_results),
+        "grader_selected_summary": summarize(results),
+        "all_outcomes_markets": {
+            market: summarize([r for r in all_results if str(r.get("market", "")).lower() == market])
+            for market in ("points", "rebounds", "assists")
+        },
+        "all_outcomes_predictions": all_results,
         "selection_policy": "Highest positive model_ev per game/player/market; other sides excluded",
         "markets": markets,
         "diagnostics": diagnostics,
         "predictions": results,
         "limitations": [
             "Hypothetical results, not actual bets.",
-            "Only one highest-positive-EV side is selected per game/player/market.",
+            "Only one highest-positive-EV side is selected per game/player/market for the legacy selected-only summary.",
+            "All-outcomes diagnostics can contain both over and under on the same player prop; these are not independent bets.",
+            "All-outcomes ROI is hypothetical per outcome, not a realizable betting strategy.",
             "Historical selection is a reconstructed model backtest, not verified placed bets.",
             "Five-hour buffer is not official final verification.",
             "Team/date matching may not distinguish doubleheaders.",
@@ -709,6 +722,8 @@ def main():
     print("Prediction grading completed.")
     print("Total predictions:", summary["predictions"])
     print("Selected:", summary["selected"])
+    print("All outcomes graded:", output["all_outcomes_summary"]["graded"])
+    print("All outcomes wins/losses:", output["all_outcomes_summary"]["wins"], output["all_outcomes_summary"]["losses"])
     print("Not selected:", summary["not_selected"])
     print("Graded:", summary["graded"])
     print("DNP:", summary["dnp"])
