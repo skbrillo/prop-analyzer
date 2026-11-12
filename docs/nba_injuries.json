@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T03:28:55.766820+00:00",
+  "generated_at": "2026-11-12T04:26:37.694197+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 96,
+  "player_count": 97,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 96,
+  "players_with_team": 97,
   "players_without_team": 0,
   "status_counts": {
     "O": 81,
-    "T": 15
+    "T": 16
   },
   "players": [
     {
@@ -319,13 +319,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538698",
+      "injury_record_id": "538702",
       "name": "Stephen Curry",
       "team": "GSW",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Hip | day-to-day",
-      "date": "2026-11-12T02:57Z",
+      "reason": "Soreness | Abdomen | day-to-day",
+      "date": "2026-11-12T03:19Z",
       "team_match": "feed"
     },
     {
@@ -506,6 +506,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "538713",
+      "name": "Austin Reaves",
+      "team": "LAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Heel | day-to-day",
+      "date": "2026-11-12T04:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538703",
+      "name": "Luka Doncic",
+      "team": "LAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-12T03:34Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538700",
       "name": "Collin Sexton",
       "team": "LAL",
@@ -513,17 +535,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Head | day-to-day",
       "date": "2026-11-12T03:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538691",
-      "name": "Austin Reaves",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Heel | day-to-day",
-      "date": "2026-11-12T02:41Z",
       "team_match": "feed"
     },
     {
@@ -572,13 +583,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538699",
+      "injury_record_id": "538705",
       "name": "Ryan Rollins",
       "team": "MIL",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Head | day-to-day",
-      "date": "2026-11-12T03:11Z",
+      "date": "2026-11-12T03:40Z",
       "team_match": "feed"
     },
     {
