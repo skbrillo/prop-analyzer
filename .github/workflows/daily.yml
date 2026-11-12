@@ -2,7 +2,7 @@ name: Daily Prop Analyzer
 
 on:
   schedule:
-    # 5 AM Central (standard/daylight UTC alternatives)
+    # 5 AM Central, accounting for CST/CDT
     - cron: '0 10,11 * * *'
     # 12 PM Central
     - cron: '0 17,18 * * *'
@@ -13,13 +13,13 @@ on:
   workflow_dispatch:
     inputs:
       run_mode:
-        description: 'Choose what to run (Statistics Only uses no odds API credits)'
+        description: 'Choose run type (statistics/grading only do not fetch odds)'
         required: true
         type: choice
-        default: statistics_only
+        default: full_model
         options:
-          - statistics_only
           - full_model
+          - statistics_only
           - grading_only
 
 permissions:
@@ -66,11 +66,11 @@ jobs:
 
           if event == 'workflow_dispatch':
               run_type = {
-                  'statistics_only': 'statistics_only',
                   'full_model': 'manual',
+                  'statistics_only': 'statistics_only',
                   'grading_only': 'grading_only',
-              }.get(requested, 'statistics_only')
-          else:
+              }.get(requested, 'manual')
+          elif event == 'schedule':
               cron_slots = {
                   '0 10,11 * * *': (10, 11, 0, 5, 0, 'morning'),
                   '0 17,18 * * *': (17, 18, 0, 12, 0, 'midday'),
@@ -79,8 +79,6 @@ jobs:
               }
               if schedule in cron_slots:
                   h1, h2, minute, local_hour, local_minute, kind = cron_slots[schedule]
-                  # Resolve both UTC slots against Central time, accounting for DST.
-                  # Allow delayed GitHub Actions starts up to 3 hours.
                   candidates = []
                   for offset in (0, -1, -2):
                       date = (now + timedelta(days=offset)).date()
@@ -161,7 +159,7 @@ jobs:
         run: python grade_predictions.py
 
       - name: Update Top 25 monthly performance
-        if: steps.schedule.outputs.run_grading == 'true'
+        if: steps.schedule.outputs.run_predictions == 'true' || steps.schedule.outputs.run_grading == 'true'
         run: python edge_monthly_tracker.py
 
       - name: Backtest historical NBA projections
