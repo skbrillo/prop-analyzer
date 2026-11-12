@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T02:39:08.714982+00:00",
+  "generated_at": "2026-11-12T03:28:55.766820+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 91,
+  "player_count": 96,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 91,
+  "players_with_team": 96,
   "players_without_team": 0,
   "status_counts": {
-    "O": 83,
-    "T": 8
+    "O": 81,
+    "T": 15
   },
   "players": [
     {
@@ -88,13 +88,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538595",
+      "injury_record_id": "-60747",
       "name": "Paul George",
       "team": "BOS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-11T17:55Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-12T03:01Z",
       "team_match": "feed"
     },
     {
@@ -172,6 +172,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T22:26Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538696",
+      "name": "Caleb Wilson",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hand | day-to-day",
+      "date": "2026-11-12T02:53Z",
       "team_match": "feed"
     },
     {
@@ -304,6 +315,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T16:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538698",
+      "name": "Stephen Curry",
+      "team": "GSW",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hip | day-to-day",
+      "date": "2026-11-12T02:57Z",
       "team_match": "feed"
     },
     {
@@ -484,6 +506,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "538700",
+      "name": "Collin Sexton",
+      "team": "LAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Head | day-to-day",
+      "date": "2026-11-12T03:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538691",
+      "name": "Austin Reaves",
+      "team": "LAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Heel | day-to-day",
+      "date": "2026-11-12T02:41Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538618",
       "name": "Quentin Grimes",
       "team": "LAL",
@@ -524,6 +568,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-11-07T17:24Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538699",
+      "name": "Ryan Rollins",
+      "team": "MIL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Head | day-to-day",
+      "date": "2026-11-12T03:11Z",
       "team_match": "feed"
     },
     {
@@ -924,6 +979,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60748",
+      "name": "Trayce Jackson-Davis",
+      "team": "TOR",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-12T03:01Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538648",
       "name": "Kawhi Leonard",
       "team": "TOR",
@@ -931,17 +997,6 @@
       "raw_status": "Out",
       "reason": "Inflammation | Knee | out",
       "date": "2026-11-11T22:33Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538590",
-      "name": "Trayce Jackson-Davis",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-11T17:37Z",
       "team_match": "feed"
     },
     {
