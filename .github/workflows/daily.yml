@@ -2,19 +2,25 @@ name: Daily Prop Analyzer
 
 on:
   schedule:
-    # 5 AM Central
-    - cron: "0 10,11 * * *"
-
+    # 5 AM Central (standard/daylight UTC alternatives)
+    - cron: '0 10,11 * * *'
     # 12 PM Central
-    - cron: "0 17,18 * * *"
-
+    - cron: '0 17,18 * * *'
     # 4 PM Central
-    - cron: "0 21,22 * * *"
-
-    # 11:30 PM Central grading
-    - cron: "30 4,5 * * *"
-
+    - cron: '0 21,22 * * *'
+    # 11:30 PM Central
+    - cron: '30 4,5 * * *'
   workflow_dispatch:
+    inputs:
+      run_mode:
+        description: 'Choose what to run (Statistics Only uses no odds API credits)'
+        required: true
+        type: choice
+        default: statistics_only
+        options:
+          - statistics_only
+          - full_model
+          - grading_only
 
 permissions:
   contents: write
@@ -26,7 +32,6 @@ concurrency:
 jobs:
   analyze:
     runs-on: ubuntu-latest
-
     env:
       TZ: America/Chicago
 
@@ -37,11 +42,7 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-
-      # Determine the intended Central time from
-      # the scheduled UTC time, not runner start time.
-      # This tolerates delayed GitHub Actions jobs.
+          python-version: '3.11'
 
       - name: Determine run type
         id: schedule
@@ -49,105 +50,81 @@ jobs:
         env:
           EVENT_NAME: ${{ github.event_name }}
           SCHEDULE: ${{ github.event.schedule }}
+          REQUESTED_MODE: ${{ inputs.run_mode }}
         run: |
           python - <<'PY'
           import os
           from datetime import datetime, timedelta, timezone
           from zoneinfo import ZoneInfo
 
-          event = os.environ["EVENT_NAME"]
-          schedule = os.environ.get("SCHEDULE", "")
-          output = os.environ["GITHUB_OUTPUT"]
+          event = os.environ['EVENT_NAME']
+          schedule = os.environ.get('SCHEDULE', '')
+          requested = os.environ.get('REQUESTED_MODE', '')
+          now = datetime.now(timezone.utc)
+          central = ZoneInfo('America/Chicago')
+          run_type = 'skip'
 
-          run_type = "skip"
-
-          if event == "workflow_dispatch":
-              run_type = "manual"
-
+          if event == 'workflow_dispatch':
+              run_type = {
+                  'statistics_only': 'statistics_only',
+                  'full_model': 'manual',
+                  'grading_only': 'grading_only',
+              }.get(requested, 'statistics_only')
           else:
-              # Match the intended UTC cron slot against
-              # Central local time for the current date.
-              now = datetime.now(timezone.utc)
-              central = ZoneInfo("America/Chicago")
-
               cron_slots = {
-                  "0 10,11 * * *": (10, 11, 0),
-                  "0 17,18 * * *": (17, 18, 0),
-                  "0 21,22 * * *": (21, 22, 0),
-                  "30 4,5 * * *": (4, 5, 30),
+                  '0 10,11 * * *': (10, 11, 0, 5, 0, 'morning'),
+                  '0 17,18 * * *': (17, 18, 0, 12, 0, 'midday'),
+                  '0 21,22 * * *': (21, 22, 0, 16, 0, 'afternoon'),
+                  '30 4,5 * * *': (4, 5, 30, 23, 30, 'grading'),
               }
-
               if schedule in cron_slots:
-                  first_hour, second_hour, minute = cron_slots[schedule]
-
-                  # Check recent possible scheduled slots.
-                  # Delayed runs remain tied to their slot.
+                  h1, h2, minute, local_hour, local_minute, kind = cron_slots[schedule]
+                  # Resolve both UTC slots against Central time, accounting for DST.
+                  # Allow delayed GitHub Actions starts up to 3 hours.
                   candidates = []
-
-                  for day_offset in (0, -1):
-                      day = (now + timedelta(days=day_offset)).date()
-
-                      for hour in (first_hour, second_hour):
-                          scheduled = datetime(
-                              day.year, day.month, day.day,
-                              hour, minute,
-                              tzinfo=timezone.utc
-                          )
-
-                          if scheduled <= now:
-                              candidates.append(scheduled)
-
+                  for offset in (0, -1, -2):
+                      date = (now + timedelta(days=offset)).date()
+                      for hour in (h1, h2):
+                          slot = datetime(date.year, date.month, date.day,
+                                          hour, minute, tzinfo=timezone.utc)
+                          local = slot.astimezone(central)
+                          if (local.hour, local.minute) == (local_hour, local_minute):
+                              delay = (now - slot).total_seconds()
+                              if 0 <= delay <= 10800:
+                                  candidates.append((delay, slot))
                   if candidates:
-                      scheduled = max(candidates)
-                      local = scheduled.astimezone(central)
+                      run_type = kind
 
-                      if schedule == "0 10,11 * * *":
-                          if local.hour == 5:
-                              run_type = "morning"
-
-                      elif schedule == "0 17,18 * * *":
-                          if local.hour == 12:
-                              run_type = "midday"
-
-                      elif schedule == "0 21,22 * * *":
-                          if local.hour == 16:
-                              run_type = "afternoon"
-
-                      elif schedule == "30 4,5 * * *":
-                          if local.hour == 23 and local.minute == 30:
-                              run_type = "grading"
-
-          predictions = run_type in (
-              "morning", "midday", "afternoon", "manual"
-          )
-
-          with open(output, "a") as f:
-              f.write(f"run_type={run_type}\n")
-              f.write(f"run_predictions={str(predictions).lower()}\n")
-
-          print("Run type:", run_type)
-          print("Run predictions:", predictions)
+          run_predictions = run_type in ('morning', 'midday', 'afternoon', 'manual')
+          run_stats = run_type in ('morning', 'midday', 'afternoon',
+                                   'grading', 'manual', 'statistics_only')
+          run_grading = run_type in ('morning', 'midday', 'afternoon',
+                                     'grading', 'manual', 'grading_only')
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'run_type={run_type}\n')
+              f.write(f'run_predictions={str(run_predictions).lower()}\n')
+              f.write(f'run_stats={str(run_stats).lower()}\n')
+              f.write(f'run_grading={str(run_grading).lower()}\n')
+          print('Run type:', run_type)
+          print('Run predictions:', run_predictions)
+          print('Update ESPN stats:', run_stats)
+          print('Grade predictions:', run_grading)
           PY
 
       - name: Show run information
         run: |
           echo "Run type: ${{ steps.schedule.outputs.run_type }}"
           echo "Predictions: ${{ steps.schedule.outputs.run_predictions }}"
-
-      # Update NBA statistics.
+          echo "ESPN stats: ${{ steps.schedule.outputs.run_stats }}"
+          echo "Grading: ${{ steps.schedule.outputs.run_grading }}"
 
       - name: Download real NBA statistics
-        if: steps.schedule.outputs.run_type != 'skip'
+        if: steps.schedule.outputs.run_stats == 'true'
         run: python update_nba_stats.py
 
       - name: Build NBA team defense statistics
-        if: steps.schedule.outputs.run_type != 'skip'
+        if: steps.schedule.outputs.run_stats == 'true'
         run: python build_team_defense.py
-
-      # Preserve the previous odds before downloading.
-      # This is a local backup during the workflow.
-      # Persistent historical snapshots require
-      # a separate archive implementation.
 
       - name: Back up previous odds
         if: steps.schedule.outputs.run_predictions == 'true'
@@ -157,16 +134,11 @@ jobs:
             cp data/sample_odds.csv /tmp/previous_sample_odds.csv
           fi
 
-      # Download DraftKings lines from ParlayAPI.
-      # Maximum estimated cost: 5 credits per run.
-
       - name: Download DraftKings odds from ParlayAPI
         if: steps.schedule.outputs.run_predictions == 'true'
         env:
           PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
         run: python update_odds.py
-
-      # Run model and Top 25 rankings.
 
       - name: Run prediction engine
         if: steps.schedule.outputs.run_predictions == 'true'
@@ -176,39 +148,37 @@ jobs:
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python edge_model.py
 
-      # Save predictions and update tracking.
-
       - name: Save pregame predictions
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python save_predictions.py
 
       - name: Update automatic prop tracking
-        if: steps.schedule.outputs.run_type != 'skip'
+        if: steps.schedule.outputs.run_grading == 'true'
         run: python track_results.py
 
       - name: Grade completed predictions
-        if: steps.schedule.outputs.run_type != 'skip'
+        if: steps.schedule.outputs.run_grading == 'true'
         run: python grade_predictions.py
 
       - name: Update Top 25 monthly performance
-        if: steps.schedule.outputs.run_type != 'skip'
+        if: steps.schedule.outputs.run_grading == 'true'
         run: python edge_monthly_tracker.py
 
       - name: Backtest historical NBA projections
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python backtest.py
 
-      # Save all updated results.
-
       - name: Save updated data and results
         if: steps.schedule.outputs.run_type != 'skip'
         shell: bash
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
 
           git add -A -- \
             data/game_logs.csv \
+            data/game_dnp.json \
+            data/game_logs_audit.json \
             data/team_defense.csv \
             data/sample_odds.csv \
             data/prediction_history.csv \
@@ -223,7 +193,9 @@ jobs:
             docs/line_movement.json
 
           if ! git diff --cached --quiet; then
-            git commit -m "Update NBA predictions and ParlayAPI results"
+            git commit -m 'Update NBA predictions, statistics and grading results'
             git pull --rebase origin main
             git push origin main
+          else
+            echo 'No changed data to commit.'
           fi
