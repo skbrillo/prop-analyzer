@@ -1,0 +1,49 @@
+name: Test RotoWire Lineup Parsing
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Install HTML parser
+        run: python -m pip install beautifulsoup4
+      - name: Inspect lineup structure
+        run: |
+          python - <<'PY'
+          import re
+          import urllib.request
+          from bs4 import BeautifulSoup
+
+          url = 'https://www.rotowire.com/basketball/nba-lineups.php'
+          req = urllib.request.Request(url, headers={
+              'User-Agent': 'Mozilla/5.0 (compatible; NBA-Lineup-Access-Test/1.0)',
+              'Accept': 'text/html',
+          })
+          with urllib.request.urlopen(req, timeout=30) as response:
+              html = response.read().decode('utf-8', errors='replace')
+          soup = BeautifulSoup(html, 'html.parser')
+          cards = soup.select('.lineup__box')
+          print('HTTP: 200')
+          print('Lineup cards:', len(cards))
+          print('Lineup team blocks:', len(soup.select('.lineup__team')))
+          print('Lineup player elements:', len(soup.select('.lineup__player')))
+          print('Confirmed labels:', len(soup.find_all(string=re.compile(r'^\s*Confirmed Lineup\s*$', re.I))))
+          print('Expected labels:', len(soup.find_all(string=re.compile(r'^\s*Expected Lineup\s*$', re.I))))
+          for i, card in enumerate(cards[:3], 1):
+              print(f'\n--- MATCHUP {i} ---')
+              print('Classes:', card.get('class'))
+              print('Text sample:', ' | '.join(card.stripped_strings)[:900])
+              for team in card.select('.lineup__team')[:2]:
+                  print('Team classes:', team.get('class'))
+                  print('Team sample:', ' | '.join(team.stripped_strings)[:350])
+          if not cards:
+              print('\nNo .lineup__box cards found. Candidate class names:')
+              names = sorted({c for el in soup.find_all(class_=True) for c in el.get('class', []) if 'lineup' in c.lower()})
+              print(names[:100])
+              raise SystemExit('No lineup cards found; inspect selectors')
+          PY
