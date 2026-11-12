@@ -146,7 +146,7 @@ tbody tr:hover{background:#1d3048}
  </div>
  <div class="compare-grid" id="comparison-grid"></div>
  <div class="note" id="comparison-status">Loading saved grading and Top 25 archive...</div>
- <div class="note">All Outcomes grades every saved valid pregame outcome, including opposite sides of the same prop; its ROI is diagnostic, not a tradable strategy. Grader Selected retains the original selection rules. Top 25 counts only archived Edge Model picks. All figures are hypothetical, not verified bets.</div>
+ <div class="note">All Model Picks counts only the highest-EV eligible side per game/player/market (EV may be negative). Qualified Picks requires positive EV and odds of -125 or better, but does not independently apply every Edge Model filter. Top 25 counts only archived Edge Model picks. Historical selections are reconstructed, hypothetical results, not verified wagers.</div>
 </section>
 
 <!-- MONTHLY TOP 25 PERFORMANCE -->
@@ -820,11 +820,11 @@ function renderComparison(){
  const date=comparePeriodDate();
  const period=comparisonPeriod;
  $("comparison-period-label").textContent=period==="all"?"All archived dates":period==="month"?date.slice(0,7):date;
- const all=gradedReport?.all_outcomes_predictions;
- const selected=gradedReport?.predictions;
+ const all=gradedReport?.all_model_picks_predictions;
+ const selected=gradedReport?.qualified_picks_predictions;
  const groups=[
-  {title:"All Outcomes",rows:Array.isArray(all)?compareRows(all,period,date):null},
-  {title:"Grader Selected",rows:Array.isArray(selected)?compareRows(selected.filter(r=>r.status!=="not_selected"),period,date):null},
+  {title:"All Model Picks",rows:Array.isArray(all)?compareRows(all,period,date):null},
+  {title:"Qualified Picks",rows:Array.isArray(selected)?compareRows(selected,period,date):null},
   {title:"Top 25 Edge Model",summary:summarizeEdgeArchive(compareEdgePicks(period,date))}
  ];
  for(const g of groups){
@@ -847,8 +847,8 @@ function renderComparison(){
   }
  }
  $("comparison-status").textContent=!Array.isArray(all)
-  ?"All Outcomes awaiting the updated grade_predictions.py output; legacy selected results and Top 25 remain available."
-  :"Performance recalculated from saved historical outcomes and archived Top 25 picks. No sportsbook API calls.";
+  ?"All Model Picks awaiting the updated grade_predictions.py output; existing tracking and Top 25 remain available."
+  :"Performance calculated from one-sided saved model decisions and archived Top 25 picks. No sportsbook API calls.";
 }
 
 /* MONTHLY TOP 25 TRACKING */
