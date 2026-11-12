@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T04:26:37.694197+00:00",
+  "generated_at": "2026-11-12T05:26:31.249389+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -506,6 +506,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538719",
+      "name": "Collin Sexton",
+      "team": "LAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Head | day-to-day",
+      "date": "2026-11-12T04:40Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538713",
       "name": "Austin Reaves",
       "team": "LAL",
@@ -524,17 +535,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Ankle | day-to-day",
       "date": "2026-11-12T03:34Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538700",
-      "name": "Collin Sexton",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Head | day-to-day",
-      "date": "2026-11-12T03:11Z",
       "team_match": "feed"
     },
     {
