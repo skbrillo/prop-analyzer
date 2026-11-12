@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T14:41:05.160452+00:00",
+  "generated_at": "2026-11-12T15:34:05.158811+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,8 +38,8 @@
   "players_with_team": 97,
   "players_without_team": 0,
   "status_counts": {
-    "O": 81,
-    "T": 16
+    "O": 64,
+    "T": 33
   },
   "players": [
     {
@@ -99,24 +99,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "538634",
+      "injury_record_id": "-60763",
       "name": "Nolan Traore",
       "team": "BKN",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Calf | out",
-      "date": "2026-11-11T21:57Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Calf | day-to-day",
+      "date": "2026-11-12T15:02Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "538583",
+      "injury_record_id": "-60761",
       "name": "Mikel Brown Jr.",
       "team": "BKN",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Not Specified | Illness | out",
-      "date": "2026-11-11T16:40Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Illness | day-to-day",
+      "date": "2026-11-12T15:02Z",
       "team_match": "feed"
     },
     {
@@ -176,6 +176,39 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60758",
+      "name": "Dailyn Swain",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-12T15:00Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-60757",
+      "name": "Norman Powell",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Inflammation | Shoulder | day-to-day",
+      "date": "2026-11-12T15:00Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-60755",
+      "name": "Tobe Awaka",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-12T15:00Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538696",
       "name": "Caleb Wilson",
       "team": "CHI",
@@ -183,39 +216,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Hand | day-to-day",
       "date": "2026-11-12T02:53Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538668",
-      "name": "Dailyn Swain",
-      "team": "CHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Back | out",
-      "date": "2026-11-12T00:21Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538653",
-      "name": "Norman Powell",
-      "team": "CHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Shoulder | out",
-      "date": "2026-11-11T23:27Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538621",
-      "name": "Tobe Awaka",
-      "team": "CHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Back | out",
-      "date": "2026-11-11T19:18Z",
       "team_match": "feed"
     },
     {
@@ -319,6 +319,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60768",
+      "name": "Gary Payton II",
+      "team": "GSW",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Inflammation | Knee | day-to-day",
+      "date": "2026-11-12T15:03Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538725",
       "name": "Stephen Curry",
       "team": "GSW",
@@ -326,17 +337,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Abdomen | day-to-day",
       "date": "2026-11-12T05:39Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538488",
-      "name": "Gary Payton II",
-      "team": "GSW",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Knee | out",
-      "date": "2026-11-10T21:36Z",
       "team_match": "feed"
     },
     {
@@ -506,6 +506,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60759",
+      "name": "Quentin Grimes",
+      "team": "LAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Finger | day-to-day",
+      "date": "2026-11-12T15:01Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538719",
       "name": "Collin Sexton",
       "team": "LAL",
@@ -539,13 +550,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538618",
-      "name": "Quentin Grimes",
-      "team": "LAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Finger | out",
-      "date": "2026-11-11T19:06Z",
+      "injury_record_id": "-60756",
+      "name": "Quinten Post",
+      "team": "MEM",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Head | day-to-day",
+      "date": "2026-11-12T15:00Z",
       "team_match": "feed"
     },
     {
@@ -556,17 +567,6 @@
       "status": "O",
       "raw_status": "Out",
       "reason": "Soreness | Back | out",
-      "date": "2026-11-10T23:09Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538510",
-      "name": "Quinten Post",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Head | out",
       "date": "2026-11-10T23:09Z",
       "team_match": "feed"
     },
@@ -583,6 +583,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60760",
+      "name": "Myles Turner",
+      "team": "MIL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Rest | day-to-day",
+      "date": "2026-11-12T15:01Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538705",
       "name": "Ryan Rollins",
       "team": "MIL",
@@ -590,17 +601,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Head | day-to-day",
       "date": "2026-11-12T03:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538616",
-      "name": "Myles Turner",
-      "team": "MIL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Rest | out",
-      "date": "2026-11-11T19:03Z",
       "team_match": "feed"
     },
     {
@@ -627,35 +627,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "538662",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Tendinitis | Knee | out",
-      "date": "2026-11-11T23:50Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538586",
+      "injury_record_id": "-60767",
       "name": "Bennedict Mathurin",
       "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Thumb | out",
-      "date": "2026-11-11T16:55Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Thumb | day-to-day",
+      "date": "2026-11-12T15:03Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "538481",
+      "injury_record_id": "-60764",
       "name": "Trendon Watford",
       "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-10T19:26Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-12T15:02Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-60762",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Tendinitis | Knee | day-to-day",
+      "date": "2026-11-12T15:02Z",
       "team_match": "feed"
     },
     {
@@ -671,6 +671,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60769",
+      "name": "Ajay Mitchell",
+      "team": "OKC",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-12T15:04Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538633",
       "name": "Jaylin Williams",
       "team": "OKC",
@@ -678,17 +689,6 @@
       "raw_status": "Out",
       "reason": "Spasms | Back | out",
       "date": "2026-11-11T21:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538632",
-      "name": "Ajay Mitchell",
-      "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Ankle | out",
-      "date": "2026-11-11T21:18Z",
       "team_match": "feed"
     },
     {
@@ -737,24 +737,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "538681",
+      "injury_record_id": "-60766",
       "name": "Tristan da Silva",
       "team": "ORL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Calf | out",
-      "date": "2026-11-12T01:33Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Strain | Calf | day-to-day",
+      "date": "2026-11-12T15:03Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "538679",
+      "injury_record_id": "-60765",
       "name": "Jamal Cain",
       "team": "ORL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Shoulder | out",
-      "date": "2026-11-12T01:28Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Shoulder | day-to-day",
+      "date": "2026-11-12T15:03Z",
       "team_match": "feed"
     },
     {
@@ -880,13 +880,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538631",
+      "injury_record_id": "-60770",
       "name": "Chris Youngblood",
       "team": "POR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Foot | out",
-      "date": "2026-11-11T21:05Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Foot | day-to-day",
+      "date": "2026-11-12T15:04Z",
       "team_match": "feed"
     },
     {
@@ -957,13 +957,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538652",
+      "injury_record_id": "-60754",
       "name": "Devin Vassell",
       "team": "SAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Groin | out",
-      "date": "2026-11-11T23:26Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Groin | day-to-day",
+      "date": "2026-11-12T14:59Z",
       "team_match": "feed"
     },
     {
