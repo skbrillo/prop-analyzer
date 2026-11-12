@@ -10,6 +10,7 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parent
 HISTORY = ROOT / "data/prediction_history.csv"
 LOGS = ROOT / "data/game_logs.csv"
+DNP_LOGS = ROOT / "data/game_dnp.json"
 OUTPUT = ROOT / "docs/graded_predictions.json"
 
 ET = ZoneInfo("America/New_York")
@@ -188,6 +189,28 @@ def load_stats():
     )
 
 
+def load_confirmed_dnps():
+    """Read ESPN-explicit DNPs only; missing records are never assumed DNP."""
+    if not DNP_LOGS.exists():
+        print("NOTICE: data/game_dnp.json absent; ESPN DNP reconciliation unavailable")
+        return {}
+    with DNP_LOGS.open("r", encoding="utf-8") as file:
+        payload = json.load(file)
+    if not isinstance(payload, dict) or not isinstance(payload.get("records"), list):
+        raise ValueError("Invalid data/game_dnp.json: expected records array")
+    result = defaultdict(list)
+    for row in payload["records"]:
+        if not isinstance(row, dict):
+            continue
+        date = str(row.get("date", "")).strip()
+        player = normalize(row.get("player"))
+        team = team_code(row.get("team") or row.get("team_abbr"))
+        opponent = team_code(row.get("opponent") or row.get("opponent_abbr"))
+        if date and player and team and opponent and team != opponent:
+            result[(date, player, team, opponent)].append(row)
+    return result
+
+
 def pending(result, reason, category):
     result["status"] = "pending"
     result["reason"] = reason
@@ -221,7 +244,8 @@ def grade_one(
     teams_by_date,
     player_teams_by_date,
     player_logs_by_date,
-    now
+    now,
+    confirmed_dnps=None
 ):
     result = dict(row)
 
@@ -367,6 +391,12 @@ def grade_one(
     result["diagnostic_match_count"] = len(matches)
 
     if len(matches) == 0:
+        explicit = (confirmed_dnps or {}).get((game_date, player, team, opponent), [])
+        if len(explicit) == 1 and not found_teams:
+            result = dnp(result)
+            result["reason"] = "ESPN box score explicitly marks didNotPlay=true"
+            result["dnp_source"] = "data/game_dnp.json"
+            return result
         if (game_date, player) in CONFIRMED_DNP and not found_teams:
             return dnp(result)
         if found_teams:
@@ -671,6 +701,7 @@ def main():
     ) = load_stats()
 
     now = datetime.now(timezone.utc)
+    confirmed_dnps = load_confirmed_dnps()
 
     selected_indices = select_one_side(predictions)
     # Grade every outcome for diagnostics. The original selected-only report
@@ -783,7 +814,7 @@ def main():
             "Five-hour buffer is not official final verification.",
             "Team/date matching may not distinguish doubleheaders.",
             "Missing players are not automatically losses.",
-            "Only explicitly confirmed November 10, 2026 DNPs are voided; no stake or profit is counted.",
+            "DNPs are voided only with explicit ESPN box-score DNP records or the existing manually confirmed November 10 list; no stake or profit is counted.",
             "Only missing historical team fields may be recovered from unique matching game logs; original history is unchanged.",
             "Model profitability is not yet validated.",
         ],
@@ -812,6 +843,7 @@ def main():
     print("Not selected:", summary["not_selected"])
     print("Graded:", summary["graded"])
     print("DNP:", summary["dnp"])
+    print("ESPN explicit DNP records loaded:", sum(map(len, confirmed_dnps.values())))
     print("Pending:", summary["pending"])
     print("Invalid:", summary["invalid"])
     print("Wins:", summary["wins"])
