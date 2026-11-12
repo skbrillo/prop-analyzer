@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T17:29:41.924489+00:00",
+  "generated_at": "2026-11-12T18:16:36.597596+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,8 +38,8 @@
   "players_with_team": 98,
   "players_without_team": 0,
   "status_counts": {
-    "O": 66,
-    "T": 32
+    "O": 67,
+    "T": 31
   },
   "players": [
     {
@@ -814,6 +814,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60774",
+      "name": "LeBron James",
+      "team": "PHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-12T18:06Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538766",
       "name": "Dominick Barlow",
       "team": "PHI",
@@ -843,17 +854,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Foot | day-to-day",
       "date": "2026-11-12T16:34Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538762",
-      "name": "LeBron James",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-12T16:32Z",
       "team_match": "feed"
     },
     {
