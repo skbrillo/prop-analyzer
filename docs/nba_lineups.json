@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T23:51:47.567911+00:00",
+  "generated_at": "2026-11-12T00:55:37.001223+00:00",
   "source": "ESPN",
   "games": {
     "401909966": {
@@ -8,11 +8,63 @@
       "tipoff": "2026-11-12T00:00:00+00:00",
       "home": "IND",
       "away": "WSH",
-      "checked_at": "2026-11-11T23:51:47.567911+00:00",
-      "minutes_before_tipoff": 8.2,
-      "status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": -55.6,
+      "status": "confirmed",
+      "home_starters": [
+        {
+          "id": "3149673",
+          "name": "Pascal Siakam",
+          "team": "IND"
+        },
+        {
+          "id": "4017837",
+          "name": "Ivica Zubac",
+          "team": "IND"
+        },
+        {
+          "id": "3133603",
+          "name": "Kelly Oubre Jr.",
+          "team": "IND"
+        },
+        {
+          "id": "4395712",
+          "name": "Andrew Nembhard",
+          "team": "IND"
+        },
+        {
+          "id": "4396909",
+          "name": "Aaron Nesmith",
+          "team": "IND"
+        }
+      ],
+      "away_starters": [
+        {
+          "id": "6583",
+          "name": "Anthony Davis",
+          "team": "WSH"
+        },
+        {
+          "id": "5142718",
+          "name": "AJ Dybantsa",
+          "team": "WSH"
+        },
+        {
+          "id": "5174563",
+          "name": "Kyshawn George",
+          "team": "WSH"
+        },
+        {
+          "id": "5160992",
+          "name": "Alex Sarr",
+          "team": "WSH"
+        },
+        {
+          "id": "4277905",
+          "name": "Trae Young",
+          "team": "WSH"
+        }
+      ],
       "source": "ESPN"
     },
     "401909967": {
@@ -21,11 +73,63 @@
       "tipoff": "2026-11-12T00:00:00+00:00",
       "home": "NY",
       "away": "CLE",
-      "checked_at": "2026-11-11T23:51:47.567911+00:00",
-      "minutes_before_tipoff": 8.2,
-      "status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": -55.6,
+      "status": "confirmed",
+      "home_starters": [
+        {
+          "id": "3934719",
+          "name": "OG Anunoby",
+          "team": "NY"
+        },
+        {
+          "id": "3136195",
+          "name": "Karl-Anthony Towns",
+          "team": "NY"
+        },
+        {
+          "id": "3062679",
+          "name": "Josh Hart",
+          "team": "NY"
+        },
+        {
+          "id": "3147657",
+          "name": "Mikal Bridges",
+          "team": "NY"
+        },
+        {
+          "id": "3934672",
+          "name": "Jalen Brunson",
+          "team": "NY"
+        }
+      ],
+      "away_starters": [
+        {
+          "id": "4066328",
+          "name": "Jarrett Allen",
+          "team": "CLE"
+        },
+        {
+          "id": "4432158",
+          "name": "Evan Mobley",
+          "team": "CLE"
+        },
+        {
+          "id": "3992",
+          "name": "James Harden",
+          "team": "CLE"
+        },
+        {
+          "id": "3908809",
+          "name": "Donovan Mitchell",
+          "team": "CLE"
+        },
+        {
+          "id": "4576087",
+          "name": "Peyton Watson",
+          "team": "CLE"
+        }
+      ],
       "source": "ESPN"
     },
     "401909968": {
@@ -34,8 +138,229 @@
       "tipoff": "2026-11-12T00:00:00+00:00",
       "home": "TOR",
       "away": "BOS",
-      "checked_at": "2026-11-11T23:51:47.567911+00:00",
-      "minutes_before_tipoff": 8.2,
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": -55.6,
+      "status": "confirmed",
+      "home_starters": [
+        {
+          "id": "4395625",
+          "name": "RJ Barrett",
+          "team": "TOR"
+        },
+        {
+          "id": "5093267",
+          "name": "Collin Murray-Boyles",
+          "team": "TOR"
+        },
+        {
+          "id": "3134908",
+          "name": "Jakob Poeltl",
+          "team": "TOR"
+        },
+        {
+          "id": "4395724",
+          "name": "Immanuel Quickley",
+          "team": "TOR"
+        },
+        {
+          "id": "4684272",
+          "name": "Ja'Kobe Walter",
+          "team": "TOR"
+        }
+      ],
+      "away_starters": [
+        {
+          "id": "4065648",
+          "name": "Jayson Tatum",
+          "team": "BOS"
+        },
+        {
+          "id": "4277951",
+          "name": "Luka Garza",
+          "team": "BOS"
+        },
+        {
+          "id": "4397424",
+          "name": "Neemias Queta",
+          "team": "BOS"
+        },
+        {
+          "id": "3078576",
+          "name": "Derrick White",
+          "team": "BOS"
+        },
+        {
+          "id": "4593841",
+          "name": "Baylor Scheierman",
+          "team": "BOS"
+        }
+      ],
+      "source": "ESPN"
+    },
+    "401909960": {
+      "game_id": "401909960",
+      "game": "Milwaukee Bucks at New York Knicks",
+      "tipoff": "2026-11-11T00:30:00+00:00",
+      "home": "NY",
+      "away": "MIL",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": -1465.6,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909961": {
+      "game_id": "401909961",
+      "game": "Boston Celtics at Philadelphia 76ers",
+      "tipoff": "2026-11-11T01:00:00+00:00",
+      "home": "PHI",
+      "away": "BOS",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": -1435.6,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909962": {
+      "game_id": "401909962",
+      "game": "LA Clippers at Phoenix Suns",
+      "tipoff": "2026-11-11T02:00:00+00:00",
+      "home": "PHX",
+      "away": "LAC",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": -1375.6,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909963": {
+      "game_id": "401909963",
+      "game": "Miami Heat at Utah Jazz",
+      "tipoff": "2026-11-11T02:00:00+00:00",
+      "home": "UTAH",
+      "away": "MIA",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": -1375.6,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909964": {
+      "game_id": "401909964",
+      "game": "Orlando Magic at Sacramento Kings",
+      "tipoff": "2026-11-11T03:00:00+00:00",
+      "home": "SAC",
+      "away": "ORL",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": -1315.6,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909965": {
+      "game_id": "401909965",
+      "game": "Oklahoma City Thunder at Portland Trail Blazers",
+      "tipoff": "2026-11-11T04:00:00+00:00",
+      "home": "POR",
+      "away": "OKC",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": -1255.6,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909969": {
+      "game_id": "401909969",
+      "game": "San Antonio Spurs at Chicago Bulls",
+      "tipoff": "2026-11-12T01:00:00+00:00",
+      "home": "CHI",
+      "away": "SA",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": 4.4,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909970": {
+      "game_id": "401909970",
+      "game": "Denver Nuggets at Memphis Grizzlies",
+      "tipoff": "2026-11-12T01:00:00+00:00",
+      "home": "MEM",
+      "away": "DEN",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": 4.4,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909971": {
+      "game_id": "401909971",
+      "game": "Los Angeles Lakers at Milwaukee Bucks",
+      "tipoff": "2026-11-12T01:00:00+00:00",
+      "home": "MIL",
+      "away": "LAL",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": 4.4,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909972": {
+      "game_id": "401909972",
+      "game": "Brooklyn Nets at New Orleans Pelicans",
+      "tipoff": "2026-11-12T01:00:00+00:00",
+      "home": "NO",
+      "away": "BKN",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": 4.4,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909973": {
+      "game_id": "401909973",
+      "game": "Orlando Magic at Utah Jazz",
+      "tipoff": "2026-11-12T02:00:00+00:00",
+      "home": "UTAH",
+      "away": "ORL",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": 64.4,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909974": {
+      "game_id": "401909974",
+      "game": "Golden State Warriors at Houston Rockets",
+      "tipoff": "2026-11-12T02:30:00+00:00",
+      "home": "HOU",
+      "away": "GS",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": 94.4,
+      "status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "source": "ESPN"
+    },
+    "401909975": {
+      "game_id": "401909975",
+      "game": "Oklahoma City Thunder at Portland Trail Blazers",
+      "tipoff": "2026-11-12T03:00:00+00:00",
+      "home": "POR",
+      "away": "OKC",
+      "checked_at": "2026-11-12T00:55:37.001223+00:00",
+      "minutes_before_tipoff": 124.4,
       "status": "unverified",
       "home_starters": [],
       "away_starters": [],
