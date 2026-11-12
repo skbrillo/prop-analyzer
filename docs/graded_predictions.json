@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T11:57:27.868099+00:00",
+  "generated_at": "2026-11-12T12:21:54.687822+00:00",
   "summary": {
     "predictions": 1500,
     "selected": 460,
@@ -144013,7 +144013,7 @@
     "Five-hour buffer is not official final verification.",
     "Team/date matching may not distinguish doubleheaders.",
     "Missing players are not automatically losses.",
-    "Only explicitly confirmed November 10, 2026 DNPs are voided; no stake or profit is counted.",
+    "DNPs are voided only with explicit ESPN box-score DNP records or the existing manually confirmed November 10 list; no stake or profit is counted.",
     "Only missing historical team fields may be recovered from unique matching game logs; original history is unchanged.",
     "Model profitability is not yet validated."
   ]
