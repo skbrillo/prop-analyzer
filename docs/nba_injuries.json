@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T18:16:36.597596+00:00",
+  "generated_at": "2026-11-12T19:22:40.004025+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -20,6 +20,7 @@
     "LAC",
     "LAL",
     "MEM",
+    "MIA",
     "MIL",
     "MIN",
     "NOP",
@@ -34,7 +35,7 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 28,
+  "teams_count": 29,
   "players_with_team": 98,
   "players_without_team": 0,
   "status_counts": {
@@ -117,28 +118,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Not Specified | Illness | day-to-day",
       "date": "2026-11-12T15:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538666",
-      "name": "Grant Williams",
-      "team": "CHA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Hamstring | out",
-      "date": "2026-11-12T00:12Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538664",
-      "name": "Moussa Diabate",
-      "team": "CHA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Quadriceps | day-to-day",
-      "date": "2026-11-12T00:10Z",
       "team_match": "feed"
     },
     {
@@ -583,6 +562,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "538799",
+      "name": "Pelle Larsson",
+      "team": "MIA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-12T18:35Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538798",
+      "name": "Klay Thompson",
+      "team": "MIA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-12T18:32Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60760",
       "name": "Myles Turner",
       "team": "MIL",
@@ -814,13 +815,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60774",
+      "injury_record_id": "538794",
       "name": "LeBron James",
       "team": "PHI",
       "status": "O",
       "raw_status": "Out",
       "reason": "Back | out",
-      "date": "2026-11-12T18:06Z",
+      "date": "2026-11-12T18:07Z",
       "team_match": "feed"
     },
     {
@@ -990,13 +991,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60748",
+      "injury_record_id": "538795",
       "name": "Trayce Jackson-Davis",
       "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-12T03:01Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-12T18:09Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538793",
+      "name": "Scottie Barnes",
+      "team": "TOR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Groin | out",
+      "date": "2026-11-12T18:05Z",
       "team_match": "feed"
     },
     {
@@ -1008,17 +1020,6 @@
       "raw_status": "Out",
       "reason": "Inflammation | Knee | out",
       "date": "2026-11-11T22:33Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538489",
-      "name": "Scottie Barnes",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Groin | out",
-      "date": "2026-11-10T21:48Z",
       "team_match": "feed"
     },
     {
