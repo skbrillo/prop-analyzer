@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T05:20:18.116534+00:00",
+  "generated_at": "2026-11-12T06:27:05.392171+00:00",
   "source": "RotoWire",
   "games": {
     "401909966": {
@@ -1276,6 +1276,192 @@
           "status": "out"
         }
       ],
+      "source": "RotoWire"
+    },
+    "401909976": {
+      "game_id": "401909976",
+      "game": "Toronto Raptors at Philadelphia 76ers",
+      "tipoff": "2026-11-13T00:00:00+00:00",
+      "home": "PHI",
+      "away": "TOR",
+      "checked_at": "2026-11-12T06:27:05.392171+00:00",
+      "minutes_before_tipoff": 1052.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Immanuel Quickley",
+          "team": "TOR"
+        },
+        {
+          "name": "RJ Barrett",
+          "team": "TOR"
+        },
+        {
+          "name": "Ja'Kobe Walter",
+          "team": "TOR"
+        },
+        {
+          "name": "Collin Murray-Boyles",
+          "team": "TOR"
+        },
+        {
+          "name": "Jakob Poeltl",
+          "team": "TOR"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Nate Bittle",
+          "team": "TOR",
+          "status": "out"
+        },
+        {
+          "name": "Kawhi Leonard",
+          "team": "TOR",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Nate Bittle",
+          "team": "TOR",
+          "status": "out"
+        },
+        {
+          "name": "Kawhi Leonard",
+          "team": "TOR",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909977": {
+      "game_id": "401909977",
+      "game": "Detroit Pistons at Washington Wizards",
+      "tipoff": "2026-11-13T00:00:00+00:00",
+      "home": "WAS",
+      "away": "DET",
+      "checked_at": "2026-11-12T06:27:05.392171+00:00",
+      "minutes_before_tipoff": 1052.9,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Trae Young",
+          "team": "WAS"
+        },
+        {
+          "name": "Kyshawn George",
+          "team": "WAS"
+        },
+        {
+          "name": "AJ Dybantsa",
+          "team": "WAS"
+        },
+        {
+          "name": "Anthony Davis",
+          "team": "WAS"
+        },
+        {
+          "name": "Alex Sarr",
+          "team": "WAS"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Reece Beekman",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Justin Champagnie",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Tristan Vukcevic",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Jamir Watkins",
+          "team": "WAS",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Reece Beekman",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Justin Champagnie",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Tristan Vukcevic",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Jamir Watkins",
+          "team": "WAS",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909978": {
+      "game_id": "401909978",
+      "game": "Dallas Mavericks at Minnesota Timberwolves",
+      "tipoff": "2026-11-13T01:00:00+00:00",
+      "home": "MIN",
+      "away": "DAL",
+      "checked_at": "2026-11-12T06:27:05.392171+00:00",
+      "minutes_before_tipoff": 1112.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401909979": {
+      "game_id": "401909979",
+      "game": "Charlotte Hornets at Phoenix Suns",
+      "tipoff": "2026-11-13T02:00:00+00:00",
+      "home": "PHX",
+      "away": "CHA",
+      "checked_at": "2026-11-12T06:27:05.392171+00:00",
+      "minutes_before_tipoff": 1172.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
       "source": "RotoWire"
     }
   }
