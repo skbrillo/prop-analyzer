@@ -9,15 +9,18 @@ import urllib.error
 import urllib.request
 from collections import Counter
 from datetime import datetime, timedelta, timezone
+from zoneinfo import ZoneInfo
 
 ROOT = pathlib.Path(__file__).resolve().parent
 DATA = ROOT / 'data'
 OUTPUT = DATA / 'game_logs.csv'
 AUDIT = DATA / 'game_logs_audit.json'
+DNP_OUTPUT = DATA / 'game_dnp.json'
 BASE = 'https://site.api.espn.com/apis/site/v2/sports/basketball/nba'
 DAYS_BACK = 120
 REGULAR_SEASON_ONLY = True
 MIN_ACCEPTED_ROWS = 100
+ET = ZoneInfo('America/New_York')
 FIELDS = ['date', 'player', 'player_id', 'team', 'team_abbr', 'team_id',
           'points', 'rebounds', 'assists', 'minutes', 'game_id', 'opponent', 'opponent_abbr']
 
@@ -25,7 +28,8 @@ FIELDS = ['date', 'player', 'player_id', 'team', 'team_abbr', 'team_id',
 def fetch_json(url, attempts=3):
     for attempt in range(attempts):
         try:
-            request = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'})
+            request = urllib.request.Request(url, headers={
+                'User-Agent': 'Mozilla/5.0', 'Accept': 'application/json'})
             with urllib.request.urlopen(request, timeout=30) as response:
                 return json.load(response)
         except (urllib.error.URLError, TimeoutError, json.JSONDecodeError):
@@ -89,12 +93,26 @@ def regular_season(event):
         return False
 
 
+def event_eastern_date(event, fallback):
+    value = event.get('date')
+    if not value:
+        return fallback
+    try:
+        parsed = datetime.fromisoformat(value.replace('Z', '+00:00'))
+        if parsed.tzinfo is None:
+            return fallback
+        return parsed.astimezone(ET).date().isoformat()
+    except (ValueError, TypeError):
+        return fallback
+
+
 def collect():
-    today = datetime.now(timezone.utc).date()
-    rows, issues = [], Counter()
-    seen_games, seen_players = set(), set()
+    today = datetime.now(ET).date()
+    rows, dnps, issues = [], [], Counter()
+    seen_games, seen_players, seen_dnps = set(), set(), set()
     failures = []
     checked = 0
+    game_coverage = []
     for days_ago in range(DAYS_BACK, -1, -1):
         day = today - timedelta(days=days_ago)
         date_string = day.strftime('%Y%m%d')
@@ -130,7 +148,9 @@ def collect():
             if len(set(actual_ids)) != 2 or set(actual_ids) != set(expected):
                 issues['boxscore_scoreboard_team_mismatch'] += 1
                 continue
-            checked += 1
+            game_date = event_eastern_date(event, day.isoformat())
+            game_rows, game_dnps = [], []
+            game_valid = True
             for entry in team_entries:
                 team = entry.get('team') or {}
                 team_id = str(team.get('id') or '')
@@ -138,8 +158,10 @@ def collect():
                 team_abbr = team.get('abbreviation') or ''
                 if team_name != expected[team_id]['name'] or team_abbr != expected[team_id]['abbr']:
                     issues['team_metadata_mismatch'] += 1
-                    continue
+                    game_valid = False
+                    break
                 opponent = next(t for tid, t in expected.items() if tid != team_id)
+                found_group = False
                 for group in entry.get('statistics') or []:
                     labels = [str(x).upper() for x in group.get('labels') or []]
                     if not {'PTS', 'REB', 'AST'}.issubset(labels):
@@ -148,14 +170,21 @@ def collect():
                     if minute_index is None:
                         issues['missing_minutes_column'] += 1
                         continue
+                    found_group = True
                     for athlete in group.get('athletes') or []:
-                        if athlete.get('didNotPlay'):
-                            continue
                         player = athlete.get('athlete') or {}
                         player_id = str(player.get('id') or '')
                         name = str(player.get('displayName') or '').strip()
                         if not player_id.isdigit() or not name:
                             issues['missing_player_identity'] += 1
+                            continue
+                        if athlete.get('didNotPlay') is True:
+                            game_dnps.append({'date': game_date, 'player': name,
+                                              'player_id': player_id, 'team': team_name,
+                                              'team_abbr': team_abbr, 'team_id': team_id,
+                                              'game_id': game_id, 'opponent': opponent['name'],
+                                              'opponent_abbr': opponent['abbr'],
+                                              'reason': str(athlete.get('reason') or athlete.get('status') or 'ESPN didNotPlay=true')})
                             continue
                         values = athlete.get('stats') or []
                         if len(values) != len(labels):
@@ -169,21 +198,40 @@ def collect():
                         if points > 100 or rebounds > 60 or assists > 40:
                             issues['implausible_stats'] += 1
                             continue
-                        key = (game_id, player_id)
-                        if key in seen_players:
-                            issues['duplicate_player_game'] += 1
-                            continue
-                        seen_players.add(key)
-                        rows.append({'date': day.isoformat(), 'player': name, 'player_id': player_id,
-                                     'team': team_name, 'team_abbr': team_abbr, 'team_id': team_id,
-                                     'points': points, 'rebounds': rebounds, 'assists': assists,
-                                     'minutes': minutes, 'game_id': game_id,
-                                     'opponent': opponent['name'], 'opponent_abbr': opponent['abbr']})
+                        game_rows.append({'date': game_date, 'player': name, 'player_id': player_id,
+                                          'team': team_name, 'team_abbr': team_abbr, 'team_id': team_id,
+                                          'points': points, 'rebounds': rebounds, 'assists': assists,
+                                          'minutes': minutes, 'game_id': game_id,
+                                          'opponent': opponent['name'], 'opponent_abbr': opponent['abbr']})
+                if not found_group:
+                    issues['missing_stat_group_for_team'] += 1
+                    game_valid = False
+                    break
+            if not game_valid or not game_rows:
+                issues['incomplete_game_boxscore'] += 1
+                continue
+            checked += 1
+            for row in game_rows:
+                key = (row['game_id'], row['player_id'])
+                if key in seen_players:
+                    issues['duplicate_player_game'] += 1
+                    continue
+                seen_players.add(key)
+                rows.append(row)
+            for row in game_dnps:
+                key = (row['game_id'], row['player_id'])
+                if key in seen_dnps or key in seen_players:
+                    continue
+                seen_dnps.add(key)
+                dnps.append(row)
+            game_coverage.append({'date': game_date, 'game_id': game_id,
+                                  'teams': [t['abbr'] for t in expected.values()],
+                                  'player_logs': len(game_rows), 'explicit_dnps': len(game_dnps)})
             time.sleep(0.15)
         if days_ago % 10 == 0:
-            print(f'Checked {date_string}: {len(rows)} accepted logs')
+            print(f'Checked {date_string}: {len(rows)} accepted logs; {len(dnps)} explicit DNPs')
         time.sleep(0.05)
-    return rows, issues, failures, checked
+    return rows, dnps, issues, failures, checked, game_coverage
 
 
 def atomic_write_csv(path, rows):
@@ -200,21 +248,38 @@ def atomic_write_csv(path, rows):
             os.unlink(temporary)
 
 
+def atomic_write_json(path, payload):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, temporary = tempfile.mkstemp(prefix='.game_logs_', suffix='.json', dir=path.parent)
+    try:
+        with os.fdopen(fd, 'w', encoding='utf-8') as file:
+            json.dump(payload, file, indent=2)
+        os.replace(temporary, path)
+    finally:
+        if os.path.exists(temporary):
+            os.unlink(temporary)
+
+
 def main():
-    rows, issues, failures, games = collect()
+    rows, dnps, issues, failures, games, coverage = collect()
     rows.sort(key=lambda row: (row['date'], row['game_id'], row['player_id']))
+    dnps.sort(key=lambda row: (row['date'], row['game_id'], row['player_id']))
     audit = {'generated_at_utc': datetime.now(timezone.utc).isoformat(),
              'regular_season_only': REGULAR_SEASON_ONLY,
              'games_validated': games, 'accepted_rows': len(rows),
-             'rejection_counts': dict(issues), 'fetch_failures': failures,
+             'explicit_dnp_rows': len(dnps), 'rejection_counts': dict(issues),
+             'fetch_failures': failures, 'game_coverage': coverage,
              'status': 'rejected' if failures or len(rows) < MIN_ACCEPTED_ROWS else 'accepted'}
     DATA.mkdir(parents=True, exist_ok=True)
-    AUDIT.write_text(json.dumps(audit, indent=2), encoding='utf-8')
+    atomic_write_json(AUDIT, audit)
     if audit['status'] != 'accepted':
-        raise RuntimeError('Data validation failed. Existing game_logs.csv preserved. See data/game_logs_audit.json')
+        raise RuntimeError('Data validation failed. Existing game_logs.csv and game_dnp.json preserved. See data/game_logs_audit.json')
     atomic_write_csv(OUTPUT, rows)
+    atomic_write_json(DNP_OUTPUT, {'generated_at_utc': audit['generated_at_utc'], 'records': dnps})
     print(f'Saved {len(rows)} validated regular-season player logs from {games} games')
+    print(f'Saved {len(dnps)} ESPN-explicit DNP records to {DNP_OUTPUT}')
     print(f'Rejection counts: {dict(issues)}')
+    print('NOTE: grade_predictions.py must be updated separately to read game_dnp.json; no grading logic was changed.')
 
 
 if __name__ == '__main__':
