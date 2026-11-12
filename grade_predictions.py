@@ -1,4 +1,5 @@
 import csv
+import difflib
 import json
 import re
 from collections import Counter, defaultdict
@@ -716,6 +717,38 @@ def main():
 
     diagnostics = build_diagnostics(results)
 
+    # Diagnose missing players without assigning speculative results.
+    # Suggestions are for investigation only and never affect grading.
+    missing_details = []
+    for row in results:
+        if row.get("diagnostic_category") != "player_missing":
+            continue
+        date = str(row.get("game_date", "")).strip()
+        player_key = normalize(row.get("player"))
+        team = team_code(row.get("team"))
+        same_team = sorted({
+            name for (log_date, name, log_team) in stats
+            if log_date == date and log_team == team
+        })
+        suggestions = difflib.get_close_matches(player_key, same_team, n=5, cutoff=0.65)
+        missing_details.append({
+            "game_date": date,
+            "player": row.get("player"),
+            "team": team,
+            "matchup": row.get("matchup"),
+            "market": row.get("market"),
+            "line": row.get("line"),
+            "side": row.get("side"),
+            "same_team_log_count": len(same_team),
+            "possible_name_matches": suggestions,
+            "reason": "No exact player/date/team record in data/game_logs.csv",
+        })
+    diagnostics["missing_player_details"] = missing_details
+    diagnostics["missing_unique_players"] = len({
+        (r["game_date"], normalize(r["player"]), r["team"])
+        for r in missing_details
+    })
+
     output = {
         "generated_at": now.isoformat(),
         "summary": summarize(results),
@@ -799,6 +832,18 @@ def main():
             key=lambda item: -item[1]
         ):
             print(f"{reason}: {count}")
+
+    if missing_details:
+        print()
+        print("MISSING PLAYER DETAILS (investigate game_logs.csv source)")
+        print("Unique missing players:", diagnostics["missing_unique_players"])
+        for detail in missing_details:
+            print(
+                f"{detail['game_date']} | {detail['player']} | "
+                f"{detail['team']} | {detail['market']} {detail['side']} "
+                f"{detail['line']} | team logs: {detail['same_team_log_count']} | "
+                f"possible name matches: {detail['possible_name_matches']}"
+            )
 
     print()
     print("PENDING BY GAME DATE")
