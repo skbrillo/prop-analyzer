@@ -1,3 +1,4 @@
+
 name: Test RotoWire Five Starters
 
 on:
@@ -12,6 +13,7 @@ jobs:
     steps:
       - name: Install parser
         run: python -m pip install beautifulsoup4
+
       - name: Extract five starters per team
         run: |
           python - <<'PY'
@@ -24,6 +26,7 @@ jobs:
               'User-Agent': 'Mozilla/5.0',
               'Accept': 'text/html',
           })
+
           with urllib.request.urlopen(request, timeout=30) as response:
               html = response.read().decode('utf-8', errors='replace')
               print('HTTP:', response.status)
@@ -31,42 +34,58 @@ jobs:
           soup = BeautifulSoup(html, 'html.parser')
           valid_teams = 0
           errors = []
+
           for card in soup.select('.lineup__box'):
               teams = card.select('.lineup__team')
               if len(teams) != 2:
-                  continue  # Advertisements can share this container class.
+                  continue
+
               print('\nMATCHUP')
+
               for team in teams:
                   abbr = team.get_text(' ', strip=True)
-                  # Player lists are in adjacent visit/home columns, not the team abbreviation node.
                   side = 'visit' if 'is-visit' in team.get('class', []) else 'home'
                   column = card.select_one('.lineup__list.is-' + side)
+
                   if column is None:
                       errors.append(f'{abbr}: no {side} lineup list')
                       print(f'  {abbr}: LINEUP LIST NOT FOUND')
                       continue
+
                   heading = column.select_one('.lineup__status')
                   status = heading.get_text(' ', strip=True) if heading else 'Unknown'
+
                   players = []
                   for li in column.select('li'):
-                      # RotoWire uses lineup__player for the five starting slots.
                       if 'lineup__player' not in li.get('class', []):
                           continue
+                      if len(players) == 5:
+                          break
+
                       name_el = li.select_one('a')
                       name = name_el.get_text(' ', strip=True) if name_el else li.get_text(' ', strip=True)
                       name = re.sub(r'\s+(Ques|Prob|Out|Doubt)$', '', name).strip()
+
                       if name:
                           players.append(name)
+
                   print(f'  {abbr} [{status}]: {len(players)} starters: {", ".join(players)}')
-                  if len(players) == 5 and len(set(players)) == 5 and ('Confirmed' in status or 'Expected' in status):
+
+                  if (
+                      len(players) == 5
+                      and len(set(players)) == 5
+                      and ('Confirmed' in status or 'Expected' in status)
+                  ):
                       valid_teams += 1
                   else:
                       errors.append(f'{abbr}: {len(players)} players, status={status!r}')
 
           print(f'\nVALID TEAMS: {valid_teams}')
           print(f'ERRORS: {len(errors)}')
+
           for error in errors:
               print('ERROR:', error)
+
           if valid_teams == 0 or errors:
               raise SystemExit('Parser validation failed; see details above.')
           PY
