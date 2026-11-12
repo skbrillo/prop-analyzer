@@ -58,7 +58,8 @@ tbody tr:hover{background:#1d3048}
 .starter{background:#123f2b;color:#8ef0b4}
 .out{background:#512626;color:#ffb0b0}
 .bench{background:#493914;color:#ffe099}
-.unverified{background:#29384c;color:#a6b5c9}
+.unverified,.bench{background:#29384c;color:#a6b5c9}
+.lineup.out{background:#512626;color:#ffb0b0}
 .cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin-top:10px}
 .gamecards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:9px;margin-top:10px}
 .metric{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #2b3a50;padding:7px 0}
@@ -669,7 +670,7 @@ function lineupInfo(r){
  const t=team(r.team_abbr||r.team);
  const opp=team(r.opponent);
  const name=normalizeName(r.player);
- if(!name||t==="--")return "unverified";
+ if(!name||t==="--")return "bench";
 
  // Require the same matchup and ET game date to avoid stale statuses.
  const matches=[];
@@ -687,7 +688,7 @@ function lineupInfo(r){
   if(r.date!==date)continue;
   matches.push(g);
  }
- if(matches.length!==1)return "unverified";
+ if(matches.length!==1)return "bench";
  const g=matches[0];
  const home=t===g.home;
  const out=home?g.home_out:g.away_out;
@@ -703,7 +704,7 @@ function lineupInfo(r){
  if(status==="confirmed"&&Array.isArray(starters)&&
     starters.length===5&&starters.some(x=>normalizeName(x.name)===name))
   return "starter";
- return "unverified";
+ return "bench";
 }
 
 function isOut(r){
@@ -1124,14 +1125,14 @@ function draw(){
     if(lineup){
      const tag=addText(td,"span",
       lineup==="starter"?"S":
-      lineup==="bench"?"B":"U",
+      lineup==="out"?"O":"B",
       "lineup "+lineup
      );
      tag.title=lineup==="starter"
-      ?"Confirmed ESPN starter":
-      lineup==="bench"
-      ?"Not in confirmed starting five; may still play":
-      "Starting lineup not confirmed";
+      ?"Confirmed RotoWire starter":
+      lineup==="out"
+      ?"Listed Out by RotoWire":
+      "Not confirmed as a starter or Out; may still play";
     }
    }
    if(i===10){const mv=movementInfo(r);td.className=mv.cls;td.title=mv.title;}
