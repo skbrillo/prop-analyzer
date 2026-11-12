@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T23:06:58.518821+00:00",
+  "generated_at": "2026-11-12T23:47:33.223106+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 101,
+  "player_count": 102,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,14 +35,36 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 101,
+  "players_with_team": 102,
   "players_without_team": 0,
   "status_counts": {
-    "T": 29,
-    "O": 71,
+    "O": 73,
+    "T": 28,
     "U": 1
   },
   "players": [
+    {
+      "id": "",
+      "injury_record_id": "538836",
+      "name": "Keshon Gilbert",
+      "team": "ATL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Knee | out",
+      "date": "2026-11-12T23:10Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538835",
+      "name": "Asa Newell",
+      "team": "ATL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Toe | out",
+      "date": "2026-11-12T23:08Z",
+      "team_match": "feed"
+    },
     {
       "id": "",
       "injury_record_id": "538831",
@@ -52,28 +74,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Back | day-to-day",
       "date": "2026-11-12T23:04Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538188",
-      "name": "Asa Newell",
-      "team": "ATL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Toe | out",
-      "date": "2026-11-08T22:15Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538186",
-      "name": "Keshon Gilbert",
-      "team": "ATL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Knee | out",
-      "date": "2026-11-08T22:13Z",
       "team_match": "feed"
     },
     {
@@ -265,17 +265,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "538637",
-      "name": "Morez Johnson Jr.",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-11T22:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "534858",
       "name": "Julian Strawther",
       "team": "DEN",
@@ -419,13 +408,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "538683",
+      "injury_record_id": "538834",
+      "name": "T.J. McConnell",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Strain | Hamstring | day-to-day",
+      "date": "2026-11-12T23:08Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538830",
       "name": "Aaron Nesmith",
       "team": "IND",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Knee | day-to-day",
-      "date": "2026-11-12T01:59Z",
+      "date": "2026-11-12T23:02Z",
       "team_match": "feed"
     },
     {
@@ -562,13 +562,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60756",
+      "injury_record_id": "538838",
       "name": "Quinten Post",
       "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Head | day-to-day",
-      "date": "2026-11-12T15:00Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Concussion | out",
+      "date": "2026-11-12T23:17Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538837",
+      "name": "Zach Edey",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Ankle | out",
+      "date": "2026-11-12T23:16Z",
       "team_match": "feed"
     },
     {
@@ -881,17 +892,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "538763",
-      "name": "Joel Embiid",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Foot | day-to-day",
-      "date": "2026-11-12T16:34Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "533362",
       "name": "Ariel Hukporti",
       "team": "PHI",
@@ -991,13 +991,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60754",
+      "injury_record_id": "538833",
       "name": "Devin Vassell",
       "team": "SAS",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Groin | day-to-day",
-      "date": "2026-11-12T14:59Z",
+      "date": "2026-11-12T23:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538832",
+      "name": "De'Aaron Fox",
+      "team": "SAS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hip | day-to-day",
+      "date": "2026-11-12T23:05Z",
       "team_match": "feed"
     },
     {
