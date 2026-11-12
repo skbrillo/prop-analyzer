@@ -4,6 +4,7 @@ Uses the complete graded outcome history, not the legacy selected-only subset.
 Only explicit ESPN DNP records can independently void a missing prediction.
 """
 import argparse
+import csv
 import json
 import math
 import re
@@ -15,6 +16,7 @@ ROOT = Path(__file__).resolve().parent
 DOCS = ROOT / 'docs'
 ARCHIVE = DOCS / 'edge_archive'
 DNP_FILE = ROOT / 'data' / 'game_dnp.json'
+GAME_LOGS = ROOT / 'data' / 'game_logs.csv'
 
 TEAM_ALIASES = {'GS': 'GSW', 'NY': 'NYK', 'NO': 'NOP', 'UTAH': 'UTA',
                 'SA': 'SAS', 'WSH': 'WAS', 'PHO': 'PHX', 'BRK': 'BKN'}
@@ -154,7 +156,45 @@ def explicit_dnp(pick, dnp_lookup):
     return False
 
 
-def settle(pick, lookup, dnp_lookup):
+def load_game_logs():
+    lookup = defaultdict(list)
+    if not GAME_LOGS.exists():
+        print('ESPN game logs unavailable; direct settlement fallback disabled')
+        return lookup
+    with GAME_LOGS.open(newline='', encoding='utf-8-sig') as file:
+        for r in csv.DictReader(file):
+            date = str(r.get('date') or '').strip()
+            player = norm(r.get('player'))
+            team = team_code(r.get('team') or r.get('team_abbr'))
+            if date and player and team:
+                lookup[(date, player, team)].append(r)
+    return lookup
+
+
+def direct_game_result(pick, logs):
+    """Settle only an unambiguous ESPN game/player/team/opponent row."""
+    date = str(pick.get('game_date') or pick.get('date') or '').strip()
+    player = norm(pick.get('player'))
+    team = team_code(pick.get('team'))
+    opponent = team_code(pick.get('opponent'))
+    market = norm(pick.get('market'))
+    side = norm(pick.get('side'))
+    field = {'points': 'points', 'rebounds': 'rebounds', 'assists': 'assists'}.get(market)
+    line = numeric(pick.get('line'))
+    if not all((date, player, team, opponent, field)) or line is None or side not in ('over', 'under') or team == opponent:
+        return None
+    matches = [r for r in logs.get((date, player, team), [])
+               if team_code(r.get('opponent') or r.get('opponent_abbr')) == opponent]
+    if len(matches) != 1:
+        return None
+    actual = numeric(matches[0].get(field))
+    if actual is None or actual < 0 or not actual.is_integer():
+        return None
+    result = 'push' if actual == line else ('win' if (actual > line) == (side == 'over') else 'loss')
+    return result, int(actual)
+
+
+def settle(pick, lookup, dnp_lookup, logs):
     r = choose_record(pick, lookup.get(key(pick), []))
     result, actual = 'pending', None
     if r is not None:
@@ -167,6 +207,10 @@ def settle(pick, lookup, dnp_lookup):
             result = 'dnp'
         elif status == 'invalid' or outcome == 'invalid':
             result = 'invalid'
+    if result == 'pending':
+        direct = direct_game_result(pick, logs)
+        if direct is not None:
+            result, actual = direct
     if result == 'pending' and explicit_dnp(pick, dnp_lookup):
         # A conflicting actual graded record must never be overridden.
         result = 'dnp'
@@ -224,6 +268,7 @@ def grade():
         team = team_code(r.get('team') or r.get('team_abbr'))
         if date and name and team:
             dnp_lookup[(date, name, team)].append(r)
+    logs = load_game_logs()
     months = defaultdict(list)
     for path in sorted(ARCHIVE.glob('????-??-??.json')):
         snap = read(path, {})
@@ -233,7 +278,7 @@ def grade():
         for p in snap.get('picks', []):
             if not isinstance(p, dict):
                 continue
-            result, actual, profit = settle(p, lookup, dnp_lookup)
+            result, actual, profit = settle(p, lookup, dnp_lookup, logs)
             months[day[:7]].append({
                 'date': day, 'rank': p.get('rank'), 'player': p.get('player'),
                 'team': p.get('team'), 'opponent': p.get('opponent'),
@@ -255,6 +300,7 @@ def grade():
     print('Monthly Edge results:', {m: v['summary'] for m, v in out['months'].items()})
     print('Grading source:', 'all_outcomes_predictions' if isinstance(source.get('all_outcomes_predictions'), list) else 'legacy predictions')
     print('ESPN explicit DNP records:', len(dnp_records))
+    print('ESPN direct settlement log rows:', sum(map(len, logs.values())))
 
 
 if __name__ == '__main__':
