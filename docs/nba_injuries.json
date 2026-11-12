@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-11T23:54:50.332423+00:00",
+  "generated_at": "2026-11-12T00:42:24.524325+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 96,
+  "player_count": 93,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 96,
+  "players_with_team": 93,
   "players_without_team": 0,
   "status_counts": {
-    "O": 79,
-    "T": 17
+    "O": 81,
+    "T": 12
   },
   "players": [
     {
@@ -121,35 +121,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60646",
-      "name": "Brandon Miller",
-      "team": "CHA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Groin | day-to-day",
-      "date": "2026-11-10T02:51Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60645",
-      "name": "Moussa Diabate",
-      "team": "CHA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Quadriceps | day-to-day",
-      "date": "2026-11-10T02:51Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538195",
+      "injury_record_id": "538666",
       "name": "Grant Williams",
       "team": "CHA",
       "status": "O",
       "raw_status": "Out",
       "reason": "Hamstring | out",
-      "date": "2026-11-08T22:35Z",
+      "date": "2026-11-12T00:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538664",
+      "name": "Moussa Diabate",
+      "team": "CHA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Quadriceps | day-to-day",
+      "date": "2026-11-12T00:10Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538663",
+      "name": "Brandon Miller",
+      "team": "CHA",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Groin | out",
+      "date": "2026-11-12T00:06Z",
       "team_match": "feed"
     },
     {
@@ -176,13 +176,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60729",
+      "injury_record_id": "538668",
       "name": "Dailyn Swain",
       "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-11T23:28Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-12T00:21Z",
       "team_match": "feed"
     },
     {
@@ -205,28 +205,6 @@
       "raw_status": "Out",
       "reason": "Back | out",
       "date": "2026-11-11T19:18Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538609",
-      "name": "Caleb Wilson",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-11T18:21Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538497",
-      "name": "Zach Collins",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-10T22:19Z",
       "team_match": "feed"
     },
     {
@@ -517,17 +495,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "538512",
-      "name": "Isaiah Stewart",
-      "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Knee | day-to-day",
-      "date": "2026-11-10T23:13Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538511",
       "name": "Scotty Pippen Jr.",
       "team": "MEM",
@@ -566,7 +533,7 @@
       "team": "MIL",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Bruise | Knee | day-to-day",
+      "reason": "day-to-day",
       "date": "2026-11-11T19:05Z",
       "team_match": "feed"
     },
@@ -605,13 +572,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60731",
+      "injury_record_id": "538662",
       "name": "Trey Murphy III",
       "team": "NOP",
       "status": "O",
       "raw_status": "Out",
       "reason": "Tendinitis | Knee | out",
-      "date": "2026-11-11T23:47Z",
+      "date": "2026-11-11T23:50Z",
       "team_match": "feed"
     },
     {
