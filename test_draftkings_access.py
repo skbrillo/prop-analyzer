@@ -1,144 +1,116 @@
-"""DraftKings NBA market endpoint diagnostic V4.
-
-Run: python -u test_draftkings_access.py
-Uses Python standard library only. Read-only, no paid APIs, no model changes.
+"""V5: Inspect the public third-party sportsbook JSON feed (read-only).
+Replace test_draftkings_access.py with this file and run existing GitHub workflow.
+No DraftKings direct API requests, no paid odds API, no repository writes.
 """
 import json
 import re
-import sys
 import urllib.error
-import urllib.parse
 import urllib.request
 from collections import Counter
 from datetime import datetime, timezone
 
-BASE = 'https://sportsbook-nash.draftkings.com/sites/US-TN-SB/api/sportscontent/controldata/league/leagueSubcategory/v1/markets'
-PARAMS = {
-    'isBatchable': 'false',
-    'templateVars': '42648',
-    'eventsQuery': "$filter=leagueId eq '42648' AND clientMetadata/Subcategories/any(s: s/Id eq '16477')",
-    'marketsQuery': "$filter=clientMetadata/subCategoryId eq '16477' AND tags/all(t: t ne 'SportcastBetBuilder')",
-    'include': 'Events',
-    'entity': 'events',
-}
-URL = BASE + '?' + urllib.parse.urlencode(PARAMS)
-HEADERS = {
-    'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/157.0.0.0 Safari/537.36',
-    'Accept': 'application/json, text/plain, */*',
-    'Accept-Language': 'en-US,en;q=0.9',
-    'Origin': 'https://sportsbook.draftkings.com',
-    'Referer': 'https://sportsbook.draftkings.com/',
-}
-MAX_BYTES = 12_000_000
+URL = 'https://draftkingsapi.com/api/v1/public/sportsbook'
+TIMEOUT = 20
+MAX_BYTES = 5_000_000
 
 
-def brief(value, max_chars=200):
-    try:
-        output = json.dumps(value, ensure_ascii=False, default=str)
-    except (TypeError, ValueError):
-        output = str(value)
-    return output[:max_chars] + ('...' if len(output) > max_chars else '')
+def short(value, limit=260):
+    s = json.dumps(value, ensure_ascii=False, default=str)
+    return s if len(s) <= limit else s[:limit] + '...'
 
 
-def inspect_list(label, records, limit=3):
-    print(f'\n{label}: {len(records)} records')
-    if not records:
+def traverse(obj, prefix='$', depth=0):
+    if depth > 8:
         return
-    print('First record keys:', list(records[0])[:35] if isinstance(records[0], dict) else type(records[0]).__name__)
-    for index, item in enumerate(records[:limit], 1):
-        if isinstance(item, dict):
-            fields = ['id', 'name', 'label', 'displayName', 'eventId', 'marketId', 'marketType', 'offerId',
-                      'line', 'points', 'odds', 'oddsAmerican', 'americanOdds', 'price', 'trueOdds',
-                      'participants', 'outcomes', 'selections', 'offers']
-            compact = {k: item[k] for k in fields if k in item}
-            print(f'  #{index}:', brief(compact if compact else item, 700))
-        else:
-            print(f'  #{index}:', brief(item, 300))
+    if isinstance(obj, dict):
+        for k, v in obj.items():
+            p = prefix + '.' + str(k)
+            yield p, k, v
+            yield from traverse(v, p, depth + 1)
+    elif isinstance(obj, list):
+        for i, v in enumerate(obj[:8]):
+            yield from traverse(v, f'{prefix}[{i}]', depth + 1)
 
 
-def walk(node, path='$', depth=0, results=None):
-    if results is None:
-        results = []
-    if depth > 12 or len(results) >= 30:
-        return results
-    if isinstance(node, dict):
-        keys = set(node)
-        signal = keys & {'oddsAmerican', 'americanOdds', 'odds', 'price', 'displayOdds', 'outcomes', 'selections'}
-        if signal:
-            results.append((path, sorted(signal), node))
-        for key, value in node.items():
-            if isinstance(value, (dict, list)):
-                walk(value, f'{path}.{key}', depth + 1, results)
-    elif isinstance(node, list):
-        for i, value in enumerate(node[:60]):
-            if isinstance(value, (dict, list)):
-                walk(value, f'{path}[{i}]', depth + 1, results)
-    return results
+def is_nba(game):
+    if not isinstance(game, dict):
+        return False
+    return any('nba' in str(game.get(k, '')).lower() for k in
+               ('league', 'sport', 'sport_key', 'league_key', 'competition'))
 
 
 def main():
-    print('DraftKings NBA market-data diagnostic V4 —', datetime.now(timezone.utc).isoformat())
-    print('Endpoint host:', urllib.parse.urlparse(URL).netloc)
-    print('Endpoint path:', urllib.parse.urlparse(URL).path)
-    print('League ID: 42648; subcategory ID: 16477')
-    print('Read-only request. No login, cookies, tokens, or paid API.')
-    request = urllib.request.Request(URL, headers=HEADERS, method='GET')
+    print('Public sportsbook feed diagnostic V5:', datetime.now(timezone.utc).isoformat())
+    print('Source:', URL)
+    req = urllib.request.Request(URL, headers={
+        'User-Agent': 'NBAPropAnalyzerDiagnostic/1.0',
+        'Accept': 'application/json',
+    })
     try:
-        with urllib.request.urlopen(request, timeout=25) as response:
-            status = response.status
-            content_type = response.headers.get('Content-Type', '')
-            raw = response.read(MAX_BYTES + 1)
+        with urllib.request.urlopen(req, timeout=TIMEOUT) as resp:
+            raw = resp.read(MAX_BYTES + 1)
+            print('HTTP:', resp.status, 'Content-Type:', resp.headers.get('Content-Type'))
     except urllib.error.HTTPError as exc:
         print('HTTP ERROR:', exc.code, exc.reason)
-        print('Response preview:', brief(exc.read(1200).decode('utf-8', 'replace'), 1200))
         return 1
-    except (urllib.error.URLError, TimeoutError, OSError) as exc:
-        print('REQUEST ERROR:', type(exc).__name__, str(exc))
+    except Exception as exc:
+        print('FETCH ERROR:', type(exc).__name__, str(exc)[:300])
         return 1
-    print('HTTP status:', status)
-    print('Content-Type:', content_type)
-    print('Bytes:', len(raw), 'truncated:', len(raw) > MAX_BYTES)
     if len(raw) > MAX_BYTES:
-        print('Response exceeded size limit; cannot safely parse.')
+        print('ERROR: JSON exceeds safety size limit')
         return 1
     try:
         data = json.loads(raw)
     except (ValueError, UnicodeDecodeError) as exc:
-        print('NOT VALID JSON:', str(exc))
-        print('Response preview:', brief(raw[:700].decode('utf-8', 'replace'), 700))
+        print('ERROR: Invalid JSON:', str(exc)[:300])
         return 1
-    print('Top-level type:', type(data).__name__)
-    if isinstance(data, dict):
-        print('Top-level keys:', list(data)[:45])
-        for key, value in data.items():
-            if isinstance(value, list):
-                print(f'  {key}: list length {len(value)}')
-            elif isinstance(value, dict):
-                print(f'  {key}: object keys {list(value)[:12]}')
-            else:
-                print(f'  {key}: {brief(value, 100)}')
-        for key in ('sports', 'leagues', 'events', 'markets', 'outcomes', 'selections', 'offers'):
-            if isinstance(data.get(key), list):
-                inspect_list(key, data[key], 2 if key in ('events', 'markets') else 1)
-    else:
-        print('Data preview:', brief(data, 700))
-    matches = walk(data)
-    print('\nODDS/MARKET STRUCTURE CANDIDATES:', len(matches))
-    for path, fields, obj in matches[:12]:
-        print(' Path:', path, 'signal fields:', fields)
-        print(' Sample:', brief({k: v for k, v in obj.items() if k.lower() in
-                                 ('name', 'label', 'displayname', 'line', 'points', 'price', 'odds',
-                                  'oddsamerican', 'americanodds', 'displayodds', 'outcomes', 'selections')}, 500))
-    text = json.dumps(data, ensure_ascii=False)
-    for term in ('Tyrese Maxey', 'Joel Embiid', 'Jaylen Brown'):
-        print(f'Player name {term!r} present:', term.lower() in text.lower())
-    if matches:
-        print('\nRESULT: Market/odds-shaped fields found. Review samples to confirm actual player lines and prices.')
-    else:
-        print('\nRESULT: Valid response, but no odds-shaped fields identified by this diagnostic.')
-    print('NOTE: HTTP 200 or player names alone do not establish usable betting prices.')
+    print('Bytes:', len(raw), 'Root type:', type(data).__name__)
+    if not isinstance(data, dict):
+        print('ERROR: Expected a JSON object')
+        return 1
+    print('Top-level keys:', list(data))
+    for key in ('feed', 'keyless', 'generated_at', 'oldest_snapshot_age_seconds',
+                'count', 'note', 'limit_per_league'):
+        if key in data:
+            print(f'{key}:', short(data[key], 800))
+    snapshots = data.get('snapshots')
+    if isinstance(snapshots, list):
+        print('Snapshots:', short(snapshots, 1200))
+    games = data.get('games')
+    if not isinstance(games, list):
+        print('No games list; cannot establish NBA coverage.')
+        return 0
+    nba = [g for g in games if is_nba(g)]
+    print('Total games:', len(games), 'NBA games:', len(nba))
+    if games:
+        print('Example game keys:', list(games[0]) if isinstance(games[0], dict) else type(games[0]).__name__)
+    if not nba:
+        print('No NBA games identified. Example:', short(games[0], 1100) if games else 'none')
+        return 0
+    print('First NBA game sample:', short(nba[0], 2400))
+    print('First NBA game keys:', list(nba[0]))
+    field_hits = Counter()
+    examples = {}
+    pattern = re.compile(r'book|sportsbook|market|player|prop|outcome|odds|price|point|rebound|assist|three|line|total|spread|updated|time|timestamp', re.I)
+    for g in nba:
+        for path, key, value in traverse(g):
+            if pattern.search(str(key)):
+                field_hits[key] += 1
+                if key not in examples:
+                    examples[key] = (path, short(value, 220))
+    print('Relevant field names and occurrences:', field_hits.most_common(60))
+    for key, (path, value) in list(examples.items())[:35]:
+        print('FIELD', path, '=', value)
+    blob = json.dumps(nba, ensure_ascii=False).lower()
+    for term in ('draftkings', 'fanduel', 'betmgm', 'caesars', 'player_points',
+                 'player_rebounds', 'player_assists', 'player_threes', 'player props'):
+        print('Contains', repr(term) + ':', term in blob)
+    print('\nASSESSMENT: HTTP 200 and fresh timestamps do not prove real, book-specific,')
+    print('bettable player props. Review game sample, market fields, sportsbook identity,')
+    print('and feed note above before using this source for EV or line movements.')
+    print('No changes made to model, odds, predictions, or files.')
     return 0
 
 
 if __name__ == '__main__':
-    sys.exit(main())
+    raise SystemExit(main())
