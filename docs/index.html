@@ -1079,19 +1079,34 @@ function populateGames(){
   select.value=previous;
 }
 
+function archivedEdgeRows(date){
+ // The monthly archive records the original selections, not a new ranking.
+ const picks=Object.values(monthlyReport.months||{})
+  .flatMap(month=>Array.isArray(month.picks)?month.picks:[])
+  .filter(p=>String(p.date||p.game_date||"")===date);
+ return picks.map(p=>({
+  ...p,
+  date:p.date||p.game_date||date,
+  market:marketName(p.market),
+  side:sideName(p.side),
+  ev:p.ev??p.model_ev??null,
+  result:String(p.result||"pending").toLowerCase(),
+  selection_status:"selected",
+  historical:true
+ }));
+}
+
 function switchDay(day){
  activeDay=day;
-
- if(day==="yesterday"&&viewMode==="edge")
-  viewMode="all";
-
  if(day==="today"){
   data=(viewMode==="edge"?edgeData:todayData)
    .filter(r=>r.date===todayDate&&validOdds(r));
+ }else if(viewMode==="edge"){
+  data=archivedEdgeRows(yesterdayDate);
+  // Historical selections are displayed as saved, including their original odds.
  }else{
   data=historyData.filter(r=>
-   r.date===yesterdayDate&&validOdds(r)
-  );
+   r.date===yesterdayDate&&validOdds(r));
  }
 
  updateTabs();
@@ -1104,14 +1119,24 @@ function switchDay(day){
   (day==="today"?"Today: "+todayDate:
    "Yesterday: "+yesterdayDate)+
   " | "+(viewMode==="edge"?
-   "Ranked Edge Model":"Saved predictions");
+   (day==="today"?"Ranked Edge Model":"Archived Top 25 Edge Model selections"):
+   "Saved predictions");
 
  if(viewMode==="edge"){
-  $("edge-status").textContent=edgeData.length
-   ?edgeData.length+" ranked selections | "+
-    (edgeReport?.counts?.eligible??"--")+
-    " eligible candidates | Experimental"
-   :"No current matching Edge Model rankings available.";
+  if(day==="yesterday"){
+   const archiveReady=Object.keys(monthlyReport.months||{}).length>0;
+   $("edge-status").textContent=data.length
+    ?data.length+" original archived Edge Model selections"
+    :archiveReady
+     ?"No archived Edge Model selections found for this date."
+     :"Loading Top 25 archive (or archive unavailable).";
+  }else{
+   $("edge-status").textContent=edgeData.length
+    ?edgeData.length+" ranked selections | "+
+     (edgeReport?.counts?.eligible??"--")+
+     " eligible candidates | Experimental"
+    :"No current matching Edge Model rankings available.";
+  }
  }else{
   $("edge-status").textContent=
    "All available prediction outcomes | Minimum odds -125";
