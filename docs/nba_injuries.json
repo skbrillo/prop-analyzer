@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T20:13:39.832700+00:00",
+  "generated_at": "2026-11-12T20:56:55.895707+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -39,8 +39,8 @@
   "players_with_team": 98,
   "players_without_team": 0,
   "status_counts": {
-    "O": 67,
-    "T": 31
+    "O": 68,
+    "T": 30
   },
   "players": [
     {
@@ -628,6 +628,39 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60779",
+      "name": "Trendon Watford",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-12T20:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538809",
+      "name": "Yves Missi",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Knee | out",
+      "date": "2026-11-12T20:50Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538808",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Tendinitis | Knee | day-to-day",
+      "date": "2026-11-12T20:48Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60767",
       "name": "Bennedict Mathurin",
       "team": "NOP",
@@ -635,39 +668,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Sprain | Thumb | day-to-day",
       "date": "2026-11-12T15:03Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60764",
-      "name": "Trendon Watford",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-12T15:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60762",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Tendinitis | Knee | day-to-day",
-      "date": "2026-11-12T15:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "537773",
-      "name": "Yves Missi",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Knee | out",
-      "date": "2026-11-05T20:47Z",
       "team_match": "feed"
     },
     {
