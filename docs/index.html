@@ -572,17 +572,42 @@ function movementInfo(r){
  const key=movementKey(r);
  const old=movementData.baseline?.[key];
  const now=movementData.current?.[key];
- if(!old||!now)return {label:"—",cls:"move-flat",title:"No comparison available"};
+ if(!old||!now)return {label:"— No data",cls:"move-flat",title:"No matching baseline and latest snapshot",sort:0};
  const start=Number(old.line),end=Number(now.line);
- if(!Number.isFinite(start)||!Number.isFinite(end))return {label:"—",cls:"move-flat",title:"Missing line"};
- const diff=end-start;
+ if(!Number.isFinite(start)||!Number.isFinite(end))
+  return {label:"— No line",cls:"move-flat",title:"Missing prop line",sort:0};
  const side=sideName(r.side);
- const favorable=(side==="Over"&&diff<0)||(side==="Under"&&diff>0);
- const oldOdds=side==="Over"?old.over_odds:old.under_odds;
- const newOdds=side==="Over"?now.over_odds:now.under_odds;
- const title=`First: ${start} (${american(oldOdds)}) | Latest: ${end} (${american(newOdds)})`;
- if(Math.abs(diff)<0.001)return {label:"— Same",cls:"move-flat",title};
- return {label:(diff>0?"↑ ":"↓ ")+Math.abs(diff).toFixed(1)+(favorable?" Better":" Worse"),cls:favorable?"move-good":"move-bad",title};
+ const oldRaw=side==="Over"?old.over_odds:old.under_odds;
+ const nowRaw=side==="Over"?now.over_odds:now.under_odds;
+ const oldOdds=oldRaw===null||oldRaw===undefined?NaN:Number(oldRaw);
+ const newOdds=nowRaw===null||nowRaw===undefined?NaN:Number(nowRaw);
+ const lineDelta=end-start;
+ const lineMoved=Math.abs(lineDelta)>0.001;
+ const oddsMoved=Number.isFinite(oldOdds)&&Number.isFinite(newOdds)&&oldOdds!==newOdds;
+ const title=`${side} | Baseline: ${start} (${american(oldRaw)}) | Latest: ${end} (${american(nowRaw)}) | Baseline captured: ${old.captured_at||"unknown"} | Latest captured: ${now.captured_at||"unknown"}`;
+ if(!lineMoved&&!oddsMoved)return {label:"— Same",cls:"move-flat",title,sort:0};
+ const parts=[];
+ let favorable=null;
+ if(lineMoved){
+  const lineBetter=(side==="Over"&&lineDelta<0)||(side==="Under"&&lineDelta>0);
+  favorable=lineBetter;
+  parts.push((lineDelta>0?"↑ ":"↓ ")+Math.abs(lineDelta).toFixed(1));
+ }
+ if(oddsMoved){
+  const oddsBetter=newOdds>oldOdds;
+  // American odds increase as the payout improves: -120 -> -110 -> +100 -> +110.
+  if(!lineMoved)favorable=oddsBetter;
+  parts.push("Odds "+american(oldOdds)+"→"+american(newOdds));
+ }
+ // When the line and odds move in opposite directions, don't claim the total
+ // offer is unambiguously better or worse without repricing its probability.
+ if(lineMoved&&oddsMoved){
+  const lineBetter=(side==="Over"&&lineDelta<0)||(side==="Under"&&lineDelta>0);
+  const oddsBetter=newOdds>oldOdds;
+  if(lineBetter!==oddsBetter)favorable=null;
+ }
+ const label=parts.join(" · ")+(favorable===null?" · Mixed":favorable?" · Better":" · Worse");
+ return {label,cls:favorable===null?"move-flat":favorable?"move-good":"move-bad",title,sort:lineMoved?Math.abs(lineDelta)*100+Math.abs(newOdds-oldOdds||0):Math.abs(newOdds-oldOdds)};
 }
 async function loadMovement(){
  try{movementData=await fetchJson("line_movement.json");}
@@ -971,7 +996,7 @@ function updateSummary(){
 }
 
 function sortValue(r){
- if(sortKey==="movement"){const m=movementInfo(r);return m.label.includes("Same")?0:(Number(m.label.match(/[0-9.]+/)?.[0])||0)*(m.label.includes("Better")?1:-1);}
+ if(sortKey==="movement")return movementInfo(r).sort;
  if(sortKey==="minutes_reliability"){
   return {Stable:3,Moderate:2,Volatile:1}[
    minutes(r).label
