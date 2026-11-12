@@ -1,0 +1,28 @@
+name: Test DraftKings Access
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test-draftkings:
+    name: Test DraftKings Access
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Check test script exists
+        run: test -f test_draftkings_access.py
+
+      - name: Run DraftKings access diagnostic
+        run: python -u test_draftkings_access.py
