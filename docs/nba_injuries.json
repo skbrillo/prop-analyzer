@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T15:34:05.158811+00:00",
+  "generated_at": "2026-11-12T16:39:13.889973+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 97,
+  "player_count": 98,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 97,
+  "players_with_team": 98,
   "players_without_team": 0,
   "status_counts": {
-    "O": 64,
+    "O": 65,
     "T": 33
   },
   "players": [
@@ -814,6 +814,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538762",
+      "name": "LeBron James",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-12T16:32Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538638",
       "name": "Adem Bona",
       "team": "PHI",
@@ -831,17 +842,6 @@
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Foot | day-to-day",
-      "date": "2026-11-11T22:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538635",
-      "name": "LeBron James",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
       "date": "2026-11-11T22:06Z",
       "team_match": "feed"
     },
@@ -1030,6 +1030,17 @@
       "raw_status": "Out",
       "reason": "Fracture | Foot | out",
       "date": "2026-11-08T21:20Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-60771",
+      "name": "Trey Alexander",
+      "team": "UTA",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-12T15:42Z",
       "team_match": "feed"
     },
     {
