@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T01:56:07.964913+00:00",
+  "generated_at": "2026-11-12T02:39:08.714982+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 90,
+  "player_count": 91,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 90,
+  "players_with_team": 91,
   "players_without_team": 0,
   "status_counts": {
     "O": 83,
-    "T": 7
+    "T": 8
   },
   "players": [
     {
@@ -381,6 +381,17 @@
       "raw_status": "Out",
       "reason": "Strain | Calf | out",
       "date": "2026-11-09T23:55Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538683",
+      "name": "Aaron Nesmith",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Knee | day-to-day",
+      "date": "2026-11-12T01:59Z",
       "team_match": "feed"
     },
     {
