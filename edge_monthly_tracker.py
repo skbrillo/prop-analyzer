@@ -90,29 +90,68 @@ def key(p):
 
 
 def archive():
+    """Append genuinely new, still-pregame selections without changing old picks."""
     edge = read(DOCS / 'edge_results.json', {})
     prediction = read(DOCS / 'results.json', {})
-    if not isinstance(edge, dict) or not isinstance(prediction, dict) or not edge or edge.get('prediction_generated_at') != prediction.get('generated_at'):
+    if not isinstance(edge, dict) or not isinstance(prediction, dict) or not edge:
+        print('Archive skipped: prediction or Edge Model output unavailable')
+        return
+    if not edge.get('prediction_generated_at') or edge.get('prediction_generated_at') != prediction.get('generated_at'):
         print('Archive skipped: rankings do not match prediction run')
         return
+
     now = datetime.now(timezone.utc)
     groups = defaultdict(list)
+    skipped = defaultdict(int)
     for p in edge.get('top25', []):
         if not isinstance(p, dict):
+            skipped['invalid_pick'] += 1
             continue
-        day = p.get('game_date') or p.get('date')
-        tip = parse_time(p.get('commence_time'))
-        if day and tip and now < tip:
-            groups[day].append(p)
-    for day, picks in groups.items():
+        day = str(p.get('game_date') or p.get('date') or '').strip()[:10]
+        # The prediction engine uses game_time; some feeds use commence_time.
+        tip = parse_time(p.get('commence_time') or p.get('game_time') or p.get('tipoff'))
+        if not day or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', day):
+            skipped['missing_game_date'] += 1
+            continue
+        if tip is None:
+            skipped['missing_valid_tipoff'] += 1
+            continue
+        if now >= tip:
+            skipped['game_already_started'] += 1
+            continue
+        groups[day].append(p)
+
+    for day, picks in sorted(groups.items()):
         path = ARCHIVE / f'{day}.json'
-        if path.exists():
-            print(f'Archive unchanged: {day}')
+        existing = read(path, None) if path.exists() else None
+        if path.exists() and (not isinstance(existing, dict) or not isinstance(existing.get('picks'), list)):
+            print(f'ERROR: Cannot read existing archive {path}; refusing to overwrite')
             continue
-        write(path, {'date': day, 'saved_at': now.isoformat(),
-                     'prediction_generated_at': edge.get('prediction_generated_at'),
-                     'model': edge.get('model'), 'picks': picks})
-        print(f'Archived {len(picks)} picks: {day}')
+        snapshot = existing if existing is not None else {
+            'date': day, 'saved_at': now.isoformat(),
+            'prediction_generated_at': edge.get('prediction_generated_at'),
+            'model': edge.get('model'), 'picks': []
+        }
+        stored = snapshot['picks']
+        seen = {key(p) for p in stored if isinstance(p, dict)}
+        added = 0
+        for p in picks:
+            identity = key(p)
+            if identity in seen:
+                skipped['already_archived'] += 1
+                continue
+            # Preserve the original selection and its pregame timestamp.
+            new_pick = dict(p)
+            new_pick['saved_at'] = now.isoformat()
+            stored.append(new_pick)
+            seen.add(identity)
+            added += 1
+        if added:
+            write(path, snapshot)
+        print(f'Archive {day}: {len(stored)} total picks, {added} newly saved')
+    print('Archive diagnostic:', dict(skipped), '| eligible dates:', len(groups))
+    if not groups:
+        print('No new pregame picks eligible for archiving. Check the tipoff fields and run time.')
 
 
 def same_game(pick, record):
@@ -286,7 +325,7 @@ def grade():
                 'line': p.get('line'), 'odds': p.get('odds'),
                 'edge_score': p.get('edge_score'), 'result': result,
                 'actual': actual, 'profit_units': profit,
-                'saved_at': snap.get('saved_at')})
+                'saved_at': p.get('saved_at') or snap.get('saved_at')})
     out = {'generated_at': datetime.now(timezone.utc).isoformat(), 'months': {}}
     for month, picks in sorted(months.items()):
         daily = defaultdict(list)
