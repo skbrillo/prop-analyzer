@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T23:13:39.263095+00:00",
+  "generated_at": "2026-11-12T23:59:38.865765+00:00",
   "source": "RotoWire",
   "games": {
     "401909966": {
@@ -1206,14 +1206,12 @@
       "tipoff": "2026-11-13T00:00:00+00:00",
       "home": "PHI",
       "away": "TOR",
-      "checked_at": "2026-11-12T23:13:39.263095+00:00",
-      "minutes_before_tipoff": 46.3,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-12T23:59:38.865765+00:00",
+      "minutes_before_tipoff": 0.4,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Tyrese Maxey",
           "team": "PHI"
@@ -1235,7 +1233,7 @@
           "team": "PHI"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Immanuel Quickley",
           "team": "TOR"
@@ -1257,6 +1255,8 @@
           "team": "TOR"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Dominick Barlow",
@@ -1341,14 +1341,12 @@
       "tipoff": "2026-11-13T00:00:00+00:00",
       "home": "WAS",
       "away": "DET",
-      "checked_at": "2026-11-12T23:13:39.263095+00:00",
-      "minutes_before_tipoff": 46.3,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-12T23:59:38.865765+00:00",
+      "minutes_before_tipoff": 0.4,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Trae Young",
           "team": "WAS"
@@ -1370,7 +1368,7 @@
           "team": "WAS"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Cade Cunningham",
           "team": "DET"
@@ -1392,6 +1390,8 @@
           "team": "DET"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Reece Beekman",
@@ -1466,8 +1466,8 @@
       "tipoff": "2026-11-13T01:00:00+00:00",
       "home": "MIN",
       "away": "DAL",
-      "checked_at": "2026-11-12T23:13:39.263095+00:00",
-      "minutes_before_tipoff": 106.3,
+      "checked_at": "2026-11-12T23:59:38.865765+00:00",
+      "minutes_before_tipoff": 60.4,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1581,8 +1581,8 @@
       "tipoff": "2026-11-13T02:00:00+00:00",
       "home": "PHX",
       "away": "CHA",
-      "checked_at": "2026-11-12T23:13:39.263095+00:00",
-      "minutes_before_tipoff": 166.3,
+      "checked_at": "2026-11-12T23:59:38.865765+00:00",
+      "minutes_before_tipoff": 120.4,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
