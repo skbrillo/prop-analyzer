@@ -488,6 +488,34 @@ def select_one_side(predictions):
     return selected
 
 
+
+def select_model_sides(predictions, require_positive_ev=False):
+    """One pregame candidate per game/player/market, with odds >= -125.
+
+    Select by maximum saved model EV. Never use final outcomes in selection.
+    Historical picks are reconstructed, not proof of bets placed pregame.
+    """
+    groups = defaultdict(list)
+    for index, row in enumerate(predictions):
+        odds = number(row.get("odds"))
+        ev = number(row.get("model_ev"))
+        side = str(row.get("side", "")).strip().lower()
+        if odds is None or odds < -125 or odds == 0 or ev is None:
+            continue
+        if side not in ("over", "under"):
+            continue
+        if require_positive_ev and ev <= 0:
+            continue
+        key = (
+            str(row.get("game_date", "")).strip(),
+            str(row.get("event_id") or row.get("matchup") or "").strip(),
+            normalize(row.get("player")),
+            normalize(row.get("market")),
+        )
+        groups[key].append((ev, -index, index))
+    return {max(candidates)[-1] for candidates in groups.values()}
+
+
 def not_selected(row):
     result = dict(row)
     result.update({
@@ -655,6 +683,17 @@ def main():
         dict(graded) if index in selected_indices else not_selected(row)
         for index, (row, graded) in enumerate(zip(predictions, all_results))
     ]
+    # One-sided model decisions. The original all-outcomes and legacy selected
+    # results remain available for audit and backward compatibility.
+    model_indices = select_model_sides(predictions)
+    qualified_indices = select_model_sides(predictions, require_positive_ev=True)
+    model_picks = [dict(all_results[i]) for i in sorted(model_indices)]
+    qualified_picks = [dict(all_results[i]) for i in sorted(qualified_indices)]
+    for row in model_picks:
+        row["selection_group"] = "all_model_picks"
+    for row in qualified_picks:
+        row["selection_group"] = "qualified_picks"
+
     # Keep the selection flag in the all-outcomes detail for comparisons.
     for index, row in enumerate(all_results):
         row["grader_selected"] = index in selected_indices
@@ -680,6 +719,15 @@ def main():
     output = {
         "generated_at": now.isoformat(),
         "summary": summarize(results),
+        "all_model_picks_summary": summarize(model_picks),
+        "qualified_picks_summary": summarize(qualified_picks),
+        "all_model_picks_predictions": model_picks,
+        "qualified_picks_predictions": qualified_picks,
+        "selection_definitions": {
+            "all_model_picks": "Highest saved model_ev per game/player/market among outcomes with American odds >= -125; EV may be negative",
+            "qualified_picks": "Highest positive saved model_ev per game/player/market among outcomes with American odds >= -125; does not independently recheck Edge Model sample-size or other filters",
+            "top25": "Separate archived Edge Model selections; not reconstructed here"
+        },
         "all_outcomes_summary": summarize(all_results),
         "grader_selected_summary": summarize(results),
         "all_outcomes_markets": {
@@ -696,6 +744,8 @@ def main():
             "Only one highest-positive-EV side is selected per game/player/market for the legacy selected-only summary.",
             "All-outcomes diagnostics can contain both over and under on the same player prop; these are not independent bets.",
             "All-outcomes ROI is hypothetical per outcome, not a realizable betting strategy.",
+            "All Model Picks and Qualified Picks are reconstructed from saved pregame model EV, not verified placed bets.",
+            "Qualified Picks uses positive EV and the -125 odds cutoff, not all Top 25 Edge Model filters.",
             "Historical selection is a reconstructed model backtest, not verified placed bets.",
             "Five-hour buffer is not official final verification.",
             "Team/date matching may not distinguish doubleheaders.",
@@ -722,6 +772,8 @@ def main():
     print("Prediction grading completed.")
     print("Total predictions:", summary["predictions"])
     print("Selected:", summary["selected"])
+    print("All model picks:", len(model_picks), "graded:", output["all_model_picks_summary"]["graded"])
+    print("Qualified picks:", len(qualified_picks), "graded:", output["qualified_picks_summary"]["graded"])
     print("All outcomes graded:", output["all_outcomes_summary"]["graded"])
     print("All outcomes wins/losses:", output["all_outcomes_summary"]["wins"], output["all_outcomes_summary"]["losses"])
     print("Not selected:", summary["not_selected"])
