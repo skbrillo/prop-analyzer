@@ -10,6 +10,7 @@ import math
 import re
 from collections import defaultdict
 from datetime import datetime, timezone
+from zoneinfo import ZoneInfo
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
@@ -90,7 +91,17 @@ def key(p):
 
 
 def archive():
-    """Append genuinely new, still-pregame selections without changing old picks."""
+    """Lock one official pregame Top 25 snapshot per game date after 4 PM Central.
+
+    Existing daily archives are immutable, including historical files made by
+    the previous append-based tracker. No automatic historical cleanup occurs.
+    """
+    now = datetime.now(timezone.utc)
+    central_now = now.astimezone(ZoneInfo('America/Chicago'))
+    if (central_now.hour, central_now.minute) < (16, 0):
+        print('Official archive deferred until 4:00 PM Central; live rankings can still refresh.')
+        return
+
     edge = read(DOCS / 'edge_results.json', {})
     prediction = read(DOCS / 'results.json', {})
     if not isinstance(edge, dict) or not isinstance(prediction, dict) or not edge:
@@ -100,7 +111,6 @@ def archive():
         print('Archive skipped: rankings do not match prediction run')
         return
 
-    now = datetime.now(timezone.utc)
     groups = defaultdict(list)
     skipped = defaultdict(int)
     for p in edge.get('top25', []):
@@ -108,50 +118,61 @@ def archive():
             skipped['invalid_pick'] += 1
             continue
         day = str(p.get('game_date') or p.get('date') or '').strip()[:10]
-        # The prediction engine uses game_time; some feeds use commence_time.
         tip = parse_time(p.get('commence_time') or p.get('game_time') or p.get('tipoff'))
-        if not day or not re.fullmatch(r'\d{4}-\d{2}-\d{2}', day):
+        if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', day):
             skipped['missing_game_date'] += 1
             continue
         if tip is None:
             skipped['missing_valid_tipoff'] += 1
             continue
-        if now >= tip:
+        if tip <= now:
             skipped['game_already_started'] += 1
+            continue
+        # Only lock today's game slate, not future-day games surfaced by a feed.
+        if day != now.astimezone(ZoneInfo('America/New_York')).strftime('%Y-%m-%d'):
+            skipped['not_todays_slate'] += 1
             continue
         groups[day].append(p)
 
     for day, picks in sorted(groups.items()):
         path = ARCHIVE / f'{day}.json'
-        existing = read(path, None) if path.exists() else None
-        if path.exists() and (not isinstance(existing, dict) or not isinstance(existing.get('picks'), list)):
-            print(f'ERROR: Cannot read existing archive {path}; refusing to overwrite')
+        if path.exists():
+            existing = read(path, None)
+            if not isinstance(existing, dict) or not isinstance(existing.get('picks'), list):
+                print(f'ERROR: Existing archive unreadable: {path}; refusing to overwrite')
+            else:
+                print(f'Archive LOCKED for {day}: {len(existing["picks"])} existing picks; no additions or edits')
             continue
-        snapshot = existing if existing is not None else {
-            'date': day, 'saved_at': now.isoformat(),
-            'prediction_generated_at': edge.get('prediction_generated_at'),
-            'model': edge.get('model'), 'picks': []
-        }
-        stored = snapshot['picks']
-        seen = {key(p) for p in stored if isinstance(p, dict)}
-        added = 0
+        unique = []
+        seen = set()
         for p in picks:
-            identity = key(p)
+            # Deduplicate by player, market, and side regardless of line changes.
+            identity = (norm(p.get('player')), norm(p.get('market')), norm(p.get('side')))
             if identity in seen:
-                skipped['already_archived'] += 1
+                skipped['duplicate_player_market_side'] += 1
                 continue
-            # Preserve the original selection and its pregame timestamp.
-            new_pick = dict(p)
-            new_pick['saved_at'] = now.isoformat()
-            stored.append(new_pick)
             seen.add(identity)
-            added += 1
-        if added:
-            write(path, snapshot)
-        print(f'Archive {day}: {len(stored)} total picks, {added} newly saved')
+            saved = dict(p)
+            saved['saved_at'] = now.isoformat()
+            unique.append(saved)
+            if len(unique) == 25:
+                break
+        if not unique:
+            continue
+        snapshot = {
+            'date': day,
+            'saved_at': now.isoformat(),
+            'locked_at': now.isoformat(),
+            'lock_policy': 'first full model run at or after 4 PM America/Chicago, before tipoff',
+            'prediction_generated_at': edge.get('prediction_generated_at'),
+            'model': edge.get('model'),
+            'picks': unique,
+        }
+        write(path, snapshot)
+        print(f'Official archive LOCKED for {day}: {len(unique)} pregame selections')
     print('Archive diagnostic:', dict(skipped), '| eligible dates:', len(groups))
     if not groups:
-        print('No new pregame picks eligible for archiving. Check the tipoff fields and run time.')
+        print('No eligible pregame selections to lock on this run.')
 
 
 def same_game(pick, record):
