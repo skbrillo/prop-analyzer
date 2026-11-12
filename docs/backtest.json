@@ -1,100 +1,100 @@
 {
-  "generated_at": "2026-11-11T23:58:34.256594+00:00",
+  "generated_at": "2026-11-12T11:45:54.144044+00:00",
   "model": "Version 4 - Smarter Minutes",
   "method": "Paired historical walk-forward comparison of Version 3 and Version 4 minutes projections. Both versions use identical earlier-game data.",
   "markets": {
     "points": {
-      "predictions_tested": 108,
-      "mean_absolute_error": 4.71,
-      "root_mean_squared_error": 5.954,
-      "mean_signed_error": -0.256
+      "predictions_tested": 214,
+      "mean_absolute_error": 4.639,
+      "root_mean_squared_error": 5.886,
+      "mean_signed_error": -0.596
     },
     "rebounds": {
-      "predictions_tested": 108,
-      "mean_absolute_error": 2.062,
-      "root_mean_squared_error": 2.718,
-      "mean_signed_error": 0.339
+      "predictions_tested": 214,
+      "mean_absolute_error": 1.939,
+      "root_mean_squared_error": 2.562,
+      "mean_signed_error": 0.408
     },
     "assists": {
-      "predictions_tested": 108,
-      "mean_absolute_error": 1.333,
-      "root_mean_squared_error": 1.65,
-      "mean_signed_error": -0.177
+      "predictions_tested": 214,
+      "mean_absolute_error": 1.407,
+      "root_mean_squared_error": 1.81,
+      "mean_signed_error": -0.01
     }
   },
   "comparison": {
     "points": {
       "version3": {
-        "predictions_tested": 108,
-        "mean_absolute_error": 4.636,
-        "root_mean_squared_error": 5.877,
-        "mean_signed_error": -0.3
+        "predictions_tested": 214,
+        "mean_absolute_error": 4.596,
+        "root_mean_squared_error": 5.847,
+        "mean_signed_error": -0.633
       },
       "version4": {
-        "predictions_tested": 108,
-        "mean_absolute_error": 4.71,
-        "root_mean_squared_error": 5.954,
-        "mean_signed_error": -0.256
+        "predictions_tested": 214,
+        "mean_absolute_error": 4.639,
+        "root_mean_squared_error": 5.886,
+        "mean_signed_error": -0.596
       },
       "winner": "Version 3",
-      "mae_improvement": -0.074,
-      "mae_improvement_percent": -1.6
+      "mae_improvement": -0.043,
+      "mae_improvement_percent": -0.94
     },
     "rebounds": {
       "version3": {
-        "predictions_tested": 108,
-        "mean_absolute_error": 2.056,
-        "root_mean_squared_error": 2.729,
-        "mean_signed_error": 0.322
+        "predictions_tested": 214,
+        "mean_absolute_error": 1.936,
+        "root_mean_squared_error": 2.574,
+        "mean_signed_error": 0.393
       },
       "version4": {
-        "predictions_tested": 108,
-        "mean_absolute_error": 2.062,
-        "root_mean_squared_error": 2.718,
-        "mean_signed_error": 0.339
+        "predictions_tested": 214,
+        "mean_absolute_error": 1.939,
+        "root_mean_squared_error": 2.562,
+        "mean_signed_error": 0.408
       },
       "winner": "Version 3",
-      "mae_improvement": -0.006,
-      "mae_improvement_percent": -0.29
+      "mae_improvement": -0.003,
+      "mae_improvement_percent": -0.15
     },
     "assists": {
       "version3": {
-        "predictions_tested": 108,
-        "mean_absolute_error": 1.333,
-        "root_mean_squared_error": 1.65,
-        "mean_signed_error": -0.185
+        "predictions_tested": 214,
+        "mean_absolute_error": 1.402,
+        "root_mean_squared_error": 1.803,
+        "mean_signed_error": -0.017
       },
       "version4": {
-        "predictions_tested": 108,
-        "mean_absolute_error": 1.333,
-        "root_mean_squared_error": 1.65,
-        "mean_signed_error": -0.177
+        "predictions_tested": 214,
+        "mean_absolute_error": 1.407,
+        "root_mean_squared_error": 1.81,
+        "mean_signed_error": -0.01
       },
-      "winner": "Tie",
-      "mae_improvement": 0.0,
-      "mae_improvement_percent": 0.0
+      "winner": "Version 3",
+      "mae_improvement": -0.005,
+      "mae_improvement_percent": -0.36
     }
   },
   "minutes_comparison": {
     "version3": {
-      "predictions_tested": 108,
-      "mean_absolute_error": 3.723,
-      "root_mean_squared_error": 5.058,
-      "mean_signed_error": 0.333
+      "predictions_tested": 214,
+      "mean_absolute_error": 4.017,
+      "root_mean_squared_error": 5.236,
+      "mean_signed_error": -0.033
     },
     "version4": {
-      "predictions_tested": 108,
-      "mean_absolute_error": 3.78,
-      "root_mean_squared_error": 5.079,
-      "mean_signed_error": 0.422
+      "predictions_tested": 214,
+      "mean_absolute_error": 4.067,
+      "root_mean_squared_error": 5.236,
+      "mean_signed_error": 0.065
     },
     "winner": "Version 3",
-    "mae_improvement": -0.057,
-    "mae_improvement_percent": -1.53
+    "mae_improvement": -0.05,
+    "mae_improvement_percent": -1.24
   },
   "skipped": {
     "insufficient_history": 0,
-    "insufficient_minutes": 7,
+    "insufficient_minutes": 12,
     "invalid_current_minutes": 0,
     "invalid_market_values": 0
   },
