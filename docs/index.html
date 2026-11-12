@@ -71,6 +71,16 @@ tbody tr:hover{background:#1d3048}
 .footer{color:var(--muted);font-size:11px;margin:20px 0}
 .daily-table{min-width:850px}
 
+/* Three-way historical performance comparison */
+.compare-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:10px 0}
+.compare-card{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:12px;min-width:0}
+.compare-card h3{margin:0 0 8px}
+.compare-numbers{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.compare-numbers span{display:block;color:var(--muted);font-size:10px}
+.compare-numbers b{display:block;font-size:18px;margin-top:3px;font-variant-numeric:tabular-nums}
+.compare-actions{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin:10px 0}
+@media(max-width:850px){.compare-grid{grid-template-columns:1fr}}
+
 /* Monthly Top 25 tracker */
 .monthly-panel{background:#101e30;border:1px solid #36516a;border-radius:10px;padding:12px;margin:10px 0}
 .monthly-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
@@ -121,6 +131,23 @@ tbody tr:hover{background:#1d3048}
  <div class="stat">Historical Losses<b id="total-losses" class="red">--</b></div>
  <div class="stat">Last Updated<b id="updated" style="font-size:13px">--</b></div>
 </div>
+
+<!-- HISTORICAL PERFORMANCE COMPARISON -->
+<section class="section" id="historical-comparison">
+ <div class="head"><h2>Historical Performance — Three Groups</h2></div>
+ <div class="compare-actions">
+  <label for="comparison-period">Period</label>
+  <select id="comparison-period">
+   <option value="all">All Time</option>
+   <option value="month">This Month</option>
+   <option value="day">Today</option>
+  </select>
+  <span id="comparison-period-label" class="muted"></span>
+ </div>
+ <div class="compare-grid" id="comparison-grid"></div>
+ <div class="note" id="comparison-status">Loading saved grading and Top 25 archive...</div>
+ <div class="note">All Outcomes grades every saved valid pregame outcome, including opposite sides of the same prop; its ROI is diagnostic, not a tradable strategy. Grader Selected retains the original selection rules. Top 25 counts only archived Edge Model picks. All figures are hypothetical, not verified bets.</div>
+</section>
 
 <!-- MONTHLY TOP 25 PERFORMANCE -->
 <section class="monthly-panel">
@@ -385,6 +412,7 @@ let lineupData={games:{}};
 let monthlyReport={months:{}};
 let selectedMonth="";
 let movementData={baseline:{},current:{}};
+let comparisonPeriod="all";
 
 const TEAM_CODES={
  "Atlanta Hawks":"ATL","Boston Celtics":"BOS",
@@ -747,6 +775,82 @@ function addCard(parent,title,items,big=null){
  return card;
 }
 
+/* THREE-GROUP HISTORICAL PERFORMANCE */
+function comparePeriodDate(){
+ const now=new Date();
+ const parts=new Intl.DateTimeFormat("en-US",{
+  timeZone:"America/Chicago",year:"numeric",month:"2-digit",day:"2-digit"
+ }).formatToParts(now);
+ const p=Object.fromEntries(parts.map(x=>[x.type,x.value]));
+ return p.year+"-"+p.month+"-"+p.day;
+}
+function compareRows(rows,period,date){
+ if(period==="all")return rows;
+ return rows.filter(r=>{
+  const d=String(r.game_date||r.date||"");
+  return period==="day"?d===date:d.startsWith(date.slice(0,7));
+ });
+}
+function compareEdgePicks(period,date){
+ const picks=Object.values(monthlyReport.months||{}).flatMap(m=>m.picks||[]);
+ return compareRows(picks,period,date);
+}
+function summarizeEdgeArchive(picks){
+ let wins=0,losses=0,pushes=0,dnp=0,pending=0,profit=0,staked=0;
+ for(const p of picks){
+  const result=String(p.result||"").toLowerCase();
+  if(result==="win"||result==="loss"){
+   if(result==="win")wins++;else losses++;
+   const units=Number(p.profit_units);
+   if(Number.isFinite(units))profit+=units;
+   staked++;
+  }else if(result==="push")pushes++;
+  else if(result==="dnp")dnp++;
+  else pending++;
+ }
+ return {predictions:picks.length,graded:wins+losses+pushes,wins,losses,pushes,dnp,pending,
+  win_rate:wins+losses?100*wins/(wins+losses):null,
+  hypothetical_roi:staked?100*profit/staked:null,
+  hypothetical_profit:profit*100};
+}
+function renderComparison(){
+ const grid=$("comparison-grid");
+ if(!grid)return;
+ grid.replaceChildren();
+ const date=comparePeriodDate();
+ const period=comparisonPeriod;
+ $("comparison-period-label").textContent=period==="all"?"All archived dates":period==="month"?date.slice(0,7):date;
+ const all=gradedReport?.all_outcomes_predictions;
+ const selected=gradedReport?.predictions;
+ const groups=[
+  {title:"All Outcomes",rows:Array.isArray(all)?compareRows(all,period,date):null},
+  {title:"Grader Selected",rows:Array.isArray(selected)?compareRows(selected.filter(r=>r.status!=="not_selected"),period,date):null},
+  {title:"Top 25 Edge Model",summary:summarizeEdgeArchive(compareEdgePicks(period,date))}
+ ];
+ for(const g of groups){
+  const card=addText(grid,"div","","compare-card");
+  addText(card,"h3",g.title);
+  if(!g.rows&&!g.summary){addText(card,"div","Waiting for updated grading file","muted");continue;}
+  const s=g.summary||summarize(g.rows);
+  const nums=addText(card,"div","","compare-numbers");
+  const metrics=[
+   ["Saved",s.predictions??s.selected??g.rows?.length??0],
+   ["Wins",s.wins??0],["Losses",s.losses??0],
+   ["Win Rate",s.win_rate==null?"--":number(s.win_rate)+"%"],
+   ["ROI",s.hypothetical_roi==null?"--":number(s.hypothetical_roi)+"%"],
+   ["Profit / Loss",trackUnits(s.hypothetical_profit)],
+   ["Pushes",s.pushes??0],["Pending",s.pending??0]
+  ];
+  for(const [label,value] of metrics){
+   const item=addText(nums,"div","");
+   addText(item,"span",label);addText(item,"b",String(value));
+  }
+ }
+ $("comparison-status").textContent=!Array.isArray(all)
+  ?"All Outcomes awaiting the updated grade_predictions.py output; legacy selected results and Top 25 remain available."
+  :"Performance recalculated from saved historical outcomes and archived Top 25 picks. No sportsbook API calls.";
+}
+
 /* MONTHLY TOP 25 TRACKING */
 
 function monthLabel(month){
@@ -869,6 +973,7 @@ async function loadMonthly(){
   selectedMonth=months.includes(previous)?previous:current;
   select.value=selectedMonth;
   renderMonthly();
+  renderComparison();
 
  }catch(e){
   console.warn("Monthly tracking:",e);
@@ -890,6 +995,7 @@ async function loadMonthly(){
 
   $("monthly-daily-rows").replaceChildren();
   $("monthly-pick-rows").replaceChildren();
+  renderComparison();
   status.textContent=
    "Monthly data not available yet. The scheduled workflow must "+
    "create docs/edge_monthly.json. "+e.message;
@@ -1510,6 +1616,7 @@ async function loadTracking(){
   displayDaily(selected);
   selectionAudit(json.predictions);
   updateSummary();
+  renderComparison();
 
   $("tracking-status").textContent=
    "Graded results updated: "+
@@ -1784,6 +1891,7 @@ $("monthly-select").addEventListener("change",e=>{
 });
 
 $("monthly-export").addEventListener("click",downloadMonthly);
+$("comparison-period").addEventListener("change",e=>{comparisonPeriod=e.target.value;renderComparison();});
 
 $("view-edge").addEventListener("click",()=>setView("edge"));
 $("view-all").addEventListener("click",()=>setView("all"));
