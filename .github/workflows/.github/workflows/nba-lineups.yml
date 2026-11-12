@@ -1,0 +1,59 @@
+name: NBA Lineup Refresh
+
+on:
+  schedule:
+    # Every 15 minutes; gate below limits runs to 4:00–11:45 PM Central.
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nba-lineup-refresh
+  cancel-in-progress: false
+
+jobs:
+  lineups:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check Central time
+        id: window
+        env:
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          python - <<'PY'
+          import os
+          from datetime import datetime
+          from zoneinfo import ZoneInfo
+          hour = datetime.now(ZoneInfo('America/Chicago')).hour
+          allowed = os.environ['EVENT_NAME'] == 'workflow_dispatch' or 16 <= hour <= 23
+          with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
+              f.write(f'run={str(allowed).lower()}\n')
+          print('Central hour:', hour, 'Run:', allowed)
+          PY
+      - name: Checkout repository
+        if: steps.window.outputs.run == 'true'
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - name: Set up Python
+        if: steps.window.outputs.run == 'true'
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Refresh ESPN lineups (no odds API)
+        if: steps.window.outputs.run == 'true'
+        run: python check_nba_lineups.py
+      - name: Commit refreshed lineup file
+        if: steps.window.outputs.run == 'true'
+        shell: bash
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add docs/nba_lineups.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'Refresh ESPN NBA starting lineups'
+            git pull --rebase origin main
+            git push origin main
+          fi
