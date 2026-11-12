@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T02:12:31.174242+00:00",
+  "generated_at": "2026-11-12T03:10:23.901465+00:00",
   "source": "RotoWire",
   "games": {
     "401909966": {
@@ -8,8 +8,8 @@
       "tipoff": "2026-11-12T00:00:00+00:00",
       "home": "IND",
       "away": "WAS",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": -132.5,
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -190.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -143,8 +143,8 @@
       "tipoff": "2026-11-12T00:00:00+00:00",
       "home": "NYK",
       "away": "CLE",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": -132.5,
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -190.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -227,8 +227,8 @@
       "tipoff": "2026-11-12T00:00:00+00:00",
       "home": "TOR",
       "away": "BOS",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": -132.5,
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -190.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -280,17 +280,7 @@
       "away_projected": [],
       "home_out": [
         {
-          "name": "Scottie Barnes",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
           "name": "Nate Bittle",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Trayce Jackson-Davis",
           "team": "TOR",
           "status": "out"
         },
@@ -300,37 +290,16 @@
           "status": "out"
         }
       ],
-      "away_out": [
-        {
-          "name": "Paul George",
-          "team": "BOS",
-          "status": "out"
-        }
-      ],
+      "away_out": [],
       "out_players": [
         {
-          "name": "Scottie Barnes",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
           "name": "Nate Bittle",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Trayce Jackson-Davis",
           "team": "TOR",
           "status": "out"
         },
         {
           "name": "Kawhi Leonard",
           "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Paul George",
-          "team": "BOS",
           "status": "out"
         }
       ],
@@ -420,8 +389,8 @@
       "tipoff": "2026-11-12T01:00:00+00:00",
       "home": "CHI",
       "away": "SAS",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": -72.5,
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -130.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -545,8 +514,8 @@
       "tipoff": "2026-11-12T01:00:00+00:00",
       "home": "MEM",
       "away": "DEN",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": -72.5,
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -130.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -640,8 +609,8 @@
       "tipoff": "2026-11-12T01:00:00+00:00",
       "home": "MIL",
       "away": "LAL",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": -72.5,
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -130.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -725,8 +694,8 @@
       "tipoff": "2026-11-12T01:00:00+00:00",
       "home": "NOP",
       "away": "BKN",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": -72.5,
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -130.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -850,8 +819,8 @@
       "tipoff": "2026-11-12T02:00:00+00:00",
       "home": "UTA",
       "away": "ORL",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": -12.5,
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -70.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1015,8 +984,8 @@
       "tipoff": "2026-11-12T02:30:00+00:00",
       "home": "HOU",
       "away": "GSW",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": 17.5,
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -40.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1150,14 +1119,12 @@
       "tipoff": "2026-11-12T03:00:00+00:00",
       "home": "POR",
       "away": "OKC",
-      "checked_at": "2026-11-12T02:12:31.174242+00:00",
-      "minutes_before_tipoff": 47.5,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-12T03:10:23.901465+00:00",
+      "minutes_before_tipoff": -10.4,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Damian Lillard",
           "team": "POR"
@@ -1179,7 +1146,7 @@
           "team": "POR"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Shai Gilgeous-Alexander",
           "team": "OKC"
@@ -1193,7 +1160,7 @@
           "team": "OKC"
         },
         {
-          "name": "Kenrich Williams",
+          "name": "Aday Mara",
           "team": "OKC"
         },
         {
@@ -1201,6 +1168,8 @@
           "team": "OKC"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Vit Krejci",
