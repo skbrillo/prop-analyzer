@@ -1,4 +1,3 @@
-
 name: Grade Predictions Only
 
 on:
@@ -7,6 +6,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: grade-predictions-only
+  cancel-in-progress: false
+
 jobs:
   grade:
     runs-on: ubuntu-latest
@@ -14,6 +17,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          persist-credentials: true
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -23,12 +28,32 @@ jobs:
       - name: Grade predictions
         run: python grade_predictions.py
 
-      - name: Commit grading results
+      - name: Update Top 25 monthly performance
+        run: python edge_monthly_tracker.py --grade-only
+
+      - name: Show updated Top Edge summary
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          path = Path('docs/edge_monthly.json')
+          if not path.exists():
+              raise SystemExit('ERROR: docs/edge_monthly.json was not generated')
+          data = json.loads(path.read_text(encoding='utf-8'))
+          for month, info in sorted(data.get('months', {}).items()):
+              print(f'{month} monthly: {info.get("summary", {})}')
+              for day in info.get('days', []):
+                  print(f'  {day.get("date")}: {day}')
+          PY
+
+      - name: Commit grading and Top Edge results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/graded_predictions.json
+          git add docs/graded_predictions.json docs/edge_monthly.json
           if ! git diff --cached --quiet; then
-            git commit -m "Update graded predictions"
+            git commit -m "Update graded predictions and Top Edge results"
             git push
+          else
+            echo "No grading changes to commit"
           fi
