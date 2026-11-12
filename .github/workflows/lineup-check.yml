@@ -27,7 +27,10 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Check official NBA lineups
+      - name: Install RotoWire parser
+        run: python -m pip install beautifulsoup4
+
+      - name: Check NBA lineups
         id: lineup_check
         continue-on-error: true
         run: python check_nba_lineups.py
