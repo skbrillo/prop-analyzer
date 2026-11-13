@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-13T23:26:59.981775+00:00",
+  "generated_at": "2026-11-13T23:58:49.716787+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 101,
+  "player_count": 99,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 101,
+  "players_with_team": 99,
   "players_without_team": 0,
   "status_counts": {
-    "O": 75,
-    "T": 25,
+    "O": 77,
+    "T": 21,
     "U": 1
   },
   "players": [
@@ -74,17 +74,6 @@
       "raw_status": "Out",
       "reason": "Toe | out",
       "date": "2026-11-12T23:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538831",
-      "name": "Kingston Flemings",
-      "team": "ATL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-12T23:04Z",
       "team_match": "feed"
     },
     {
@@ -188,17 +177,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "538818",
-      "name": "Norman Powell",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Inflammation | Shoulder | day-to-day",
-      "date": "2026-11-12T21:38Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538817",
       "name": "Caleb Wilson",
       "team": "CHI",
@@ -228,6 +206,17 @@
       "raw_status": "Out",
       "reason": "Elbow | out",
       "date": "2026-11-10T22:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "535193",
+      "name": "Nae'Qwan Tomlin",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-10-20T15:11Z",
       "team_match": "feed"
     },
     {
@@ -595,13 +584,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538944",
+      "injury_record_id": "538946",
       "name": "Klay Thompson",
       "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-13T23:06Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Ankle | out",
+      "date": "2026-11-13T23:21Z",
       "team_match": "feed"
     },
     {
@@ -668,17 +657,6 @@
       "raw_status": "Out",
       "reason": "Bruise | Knee | out",
       "date": "2026-11-13T18:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538915",
-      "name": "Bennedict Mathurin",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Thumb | day-to-day",
-      "date": "2026-11-13T18:10Z",
       "team_match": "feed"
     },
     {
