@@ -323,52 +323,67 @@ def event_details(event):
 
 
 def event_key(home, away, date):
-    return (
-        norm(home),
-        norm(away),
-        str(date),
-    )
+    return (norm(home), norm(away), str(date))
 
 
 def make_event_lookup(events):
-    lookup = {}
-
-    for event in events:
-        details = event_details(event)
-
-        if not details:
-            continue
-
-        key = event_key(
-            details["home_team"],
-            details["away_team"],
-            details["game_date"],
-        )
-
-        lookup[key] = event
-
-    return lookup
+    """Index only the upcoming slate; never match a different game."""
+    return [event for event in events if event_details(event)]
 
 
 def match_event(row, lookup):
-    start = parse_time(
-        row.get("commence_time")
-    )
+    """Use verified event ID first, then a unique team/date match.
 
-    if not start:
+    A provider's prop timestamp may differ from its event timestamp or be
+    missing. Never match on time alone, and never choose an ambiguous game.
+    """
+    row_home = norm(row.get("home_team"))
+    row_away = norm(row.get("away_team"))
+    row_ids = {str(row.get(k)).strip() for k in ("event_id", "canonical_event_id")
+               if row.get(k) is not None and str(row.get(k)).strip()}
+
+    def teams_agree(event):
+        return (not row_home or row_home == norm(event.get("home_team"))) and (
+            not row_away or row_away == norm(event.get("away_team")))
+
+    # IDs are the strongest identifier, but do not accept conflicting teams.
+    id_matches = [event for event in lookup if teams_agree(event) and
+                  row_ids.intersection({str(event.get(k)).strip() for k in
+                  ("id", "event_id", "canonical_event_id") if event.get(k)})]
+    if len(id_matches) == 1:
+        return id_matches[0]
+    if len(id_matches) > 1:
         return None
 
-    date = start.astimezone(
-        EASTERN
-    ).strftime("%Y-%m-%d")
+    # Without an ID match, both teams must be present and agree exactly.
+    if not row_home or not row_away:
+        return None
+    candidates = [event for event in lookup if teams_agree(event)]
+    if not candidates:
+        return None
 
-    key = event_key(
-        row.get("home_team"),
-        row.get("away_team"),
-        date,
-    )
+    dates = set()
+    raw_date = str(row.get("game_date") or "")[:10]
+    if len(raw_date) == 10:
+        dates.add(raw_date)
+    start = parse_time(row.get("commence_time"))
+    if start:
+        dates.add(start.astimezone(EASTERN).date().isoformat())
+    reported = parse_time(row.get("commence_time_reported"))
+    if reported:
+        dates.add(reported.astimezone(EASTERN).date().isoformat())
 
-    return lookup.get(key)
+    dated = [event for event in candidates if event_details(event)["game_date"] in dates]
+    if len(dated) == 1:
+        return dated[0]
+    if len(dated) > 1:
+        return None
+
+    # Only allow a missing date if this matchup is unique on the slate.
+    # A supplied conflicting date is not a license to guess.
+    if not dates and len(candidates) == 1:
+        return candidates[0]
+    return None
 
 
 def bookmaker_markets(event):
@@ -501,6 +516,7 @@ def extract_props(
     unverified_age = 0
     alternate_lines_removed = 0
     rejection_counts = Counter()
+    unmatched_game_examples = []
 
     now = datetime.now(timezone.utc)
 
@@ -577,6 +593,15 @@ def extract_props(
 
         if event is None:
             rejection_counts["no_matching_game"] += 1
+            if len(unmatched_game_examples) < 3:
+                unmatched_game_examples.append({
+                    "event_id": prop.get("event_id"),
+                    "canonical_event_id": prop.get("canonical_event_id"),
+                    "home_team": prop.get("home_team"),
+                    "away_team": prop.get("away_team"),
+                    "game_date": prop.get("game_date"),
+                    "commence_time": prop.get("commence_time"),
+                })
             continue
 
         details = event_details(event)
@@ -1098,6 +1123,8 @@ def main():
     print("Props rejected for missing quote age:", unverified_age)
     print("Alternate lines removed:", alternate_lines_removed)
     print("Rejection reasons:", json.dumps(rejection_counts, sort_keys=True))
+    if unmatched_game_examples:
+        print("Unmatched game examples:", json.dumps(unmatched_game_examples))
     print("NOTE: Main-line selection uses a balanced-odds heuristic, not sportsbook verification.")
 
     if not rows:
