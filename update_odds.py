@@ -28,6 +28,7 @@ import urllib.error
 import urllib.parse
 import urllib.request
 
+from collections import Counter
 from datetime import datetime, timezone
 from zoneinfo import ZoneInfo
 
@@ -499,17 +500,20 @@ def extract_props(
     stale_props = 0
     unverified_age = 0
     alternate_lines_removed = 0
+    rejection_counts = Counter()
 
     now = datetime.now(timezone.utc)
 
     for prop in props:
         if not isinstance(prop, dict):
+            rejection_counts["not_a_dictionary"] += 1
             continue
 
         if (
             norm(prop.get("bookmaker"))
             != BOOKMAKER
         ):
+            rejection_counts["bookmaker_not_draftkings"] += 1
             continue
 
         market_key = prop.get(
@@ -518,6 +522,7 @@ def extract_props(
         )
 
         if market_key not in MARKET_NAMES:
+            rejection_counts["market_not_supported"] += 1
             continue
 
         player = str(
@@ -525,6 +530,7 @@ def extract_props(
         ).strip()
 
         if not player:
+            rejection_counts["missing_player"] += 1
             continue
 
         line = number(
@@ -544,6 +550,7 @@ def extract_props(
             or over_odds is None
             or under_odds is None
         ):
+            rejection_counts["missing_or_invalid_line_or_prices"] += 1
             continue
 
         age = number(
@@ -552,6 +559,7 @@ def extract_props(
 
         if age is None and REQUIRE_QUOTE_AGE:
             unverified_age += 1
+            rejection_counts["missing_quote_age"] += 1
             continue
 
         if (
@@ -559,6 +567,7 @@ def extract_props(
             and (age < 0 or age > MAX_ODDS_AGE_SECONDS)
         ):
             stale_props += 1
+            rejection_counts["stale_quote"] += 1
             continue
 
         event = match_event(
@@ -567,11 +576,13 @@ def extract_props(
         )
 
         if event is None:
+            rejection_counts["no_matching_game"] += 1
             continue
 
         details = event_details(event)
 
         if not details:
+            rejection_counts["invalid_game_details"] += 1
             continue
 
         start = parse_time(
@@ -579,6 +590,7 @@ def extract_props(
         )
 
         if not start or start <= now:
+            rejection_counts["game_already_started"] += 1
             continue
 
         home = details["home_team"]
@@ -590,6 +602,7 @@ def extract_props(
 
         if not team:
             unknown_players += 1
+            rejection_counts["player_not_in_game_logs"] += 1
             continue
 
         if norm(team) == norm(home):
@@ -600,6 +613,7 @@ def extract_props(
 
         else:
             team_mismatches += 1
+            rejection_counts["player_team_mismatch"] += 1
             continue
 
         lines = game_lines.get(
@@ -674,6 +688,7 @@ def extract_props(
         stale_props,
         unverified_age,
         alternate_lines_removed,
+        dict(rejection_counts),
     )
 
 
@@ -1035,6 +1050,15 @@ def main():
         "DraftKings props received:",
         len(all_props),
     )
+    # Diagnose the API response without exposing the API key or full payload.
+    print("Response item types:", dict(Counter(type(item).__name__ for item in all_props)))
+    print("Returned bookmaker values:", dict(Counter(str(item.get("bookmaker", "<missing>"))[:60] for item in all_props if isinstance(item, dict))))
+    print("Returned market keys:", dict(Counter(str(item.get("market_key", "<missing>"))[:60] for item in all_props if isinstance(item, dict))))
+    for item in all_props[:2]:
+        if isinstance(item, dict):
+            print("Sample record field names:", sorted(str(k) for k in item.keys()))
+        else:
+            print("Sample record type:", type(item).__name__)
 
     (
         rows,
@@ -1043,6 +1067,7 @@ def main():
         stale,
         unverified_age,
         alternate_lines_removed,
+        rejection_counts,
     ) = extract_props(
         all_props,
         slate,
@@ -1072,6 +1097,7 @@ def main():
 
     print("Props rejected for missing quote age:", unverified_age)
     print("Alternate lines removed:", alternate_lines_removed)
+    print("Rejection reasons:", json.dumps(rejection_counts, sort_keys=True))
     print("NOTE: Main-line selection uses a balanced-odds heuristic, not sportsbook verification.")
 
     if not rows:
