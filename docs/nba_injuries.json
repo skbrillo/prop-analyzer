@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-13T00:32:53.932681+00:00",
+  "generated_at": "2026-11-13T01:49:26.528951+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 103,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 103,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "O": 73,
-    "T": 29,
+    "O": 74,
+    "T": 26,
     "U": 1
   },
   "players": [
@@ -474,17 +474,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60695",
-      "name": "Cam Christie",
-      "team": "LAC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
-      "date": "2026-11-11T14:59Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538376",
       "name": "Yanic Konan Niederhauser",
       "team": "LAC",
@@ -716,13 +705,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60769",
+      "injury_record_id": "538849",
+      "name": "Thomas Sorber",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Knee | out",
+      "date": "2026-11-13T01:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538846",
       "name": "Ajay Mitchell",
       "team": "OKC",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
-      "date": "2026-11-12T15:04Z",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-13T01:03Z",
       "team_match": "feed"
     },
     {
@@ -734,17 +734,6 @@
       "raw_status": "Out",
       "reason": "Spasms | Back | out",
       "date": "2026-11-11T21:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "537482",
-      "name": "Thomas Sorber",
-      "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Knee | out",
-      "date": "2026-11-03T22:45Z",
       "team_match": "feed"
     },
     {
@@ -859,17 +848,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60797",
-      "name": "Joel Embiid",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Knee | day-to-day",
-      "date": "2026-11-13T00:21Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538794",
       "name": "LeBron James",
       "team": "PHI",
@@ -925,13 +903,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60770",
+      "injury_record_id": "538848",
       "name": "Chris Youngblood",
       "team": "POR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Foot | day-to-day",
-      "date": "2026-11-12T15:04Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Foot | out",
+      "date": "2026-11-13T01:06Z",
       "team_match": "feed"
     },
     {
@@ -969,13 +947,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60692",
+      "injury_record_id": "538843",
       "name": "Precious Achiuwa",
       "team": "SAC",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-11T14:44Z",
+      "date": "2026-11-13T00:22Z",
       "team_match": "feed"
     },
     {
