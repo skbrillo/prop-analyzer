@@ -1,4 +1,4 @@
-"""Archive pregame Top 25 Edge picks and track monthly results.
+"""Archive pregame threshold-qualified Edge picks and track monthly results.
 
 Uses the complete graded outcome history, not the legacy selected-only subset.
 Only explicit ESPN DNP records can independently void a missing prediction.
@@ -93,7 +93,7 @@ def key(p):
 
 
 def archive():
-    """Lock one official pregame Top 25 snapshot per game date after 4 PM Central.
+    """Lock one official pregame threshold-qualified snapshot per game date after 4 PM Central.
 
     Existing daily archives are immutable, including historical files made by
     the previous append-based tracker. No automatic historical cleanup occurs.
@@ -123,7 +123,7 @@ def archive():
 
     groups = defaultdict(list)
     skipped = defaultdict(int)
-    for p in edge.get('top25', []):
+    for p in edge.get('qualifying', edge.get('top25', [])):
         if not isinstance(p, dict):
             skipped['invalid_pick'] += 1
             continue
@@ -169,10 +169,13 @@ def archive():
             odds = numeric(p.get('odds'))
             line = numeric(p.get('line'))
             rank = numeric(p.get('rank'))
-            if (not identity[0] or identity[1] not in ('points','rebounds','assists')
+            gap = numeric(p.get('edge_probability_gap'))
+            sample = numeric(p.get('sample_size'))
+            if (gap is None or gap < 0.07 - 1e-9 or sample is None or sample < 10
+                    or not identity[0] or identity[1] not in ('points','rebounds','assists')
                     or identity[2] not in ('over','under') or line is None
                     or odds is None or odds < -125 or odds == 0 or (-100 < odds < 100)
-                    or rank is None or not rank.is_integer() or not 1 <= rank <= 25):
+                    or rank is None or not rank.is_integer() or rank < 1):
                 skipped['invalid_locked_pick'] += 1
                 continue
             seen.add(identity)
@@ -180,8 +183,6 @@ def archive():
             saved = dict(p)
             saved['saved_at'] = now.isoformat()
             unique.append(saved)
-            if len(unique) == 25:
-                break
         if not unique:
             continue
         if len({int(p['rank']) for p in unique}) != len(unique):
@@ -192,7 +193,9 @@ def archive():
             'saved_at': now.isoformat(),
             'locked_at': now.isoformat(),
             'lock_policy': 'first full model run at or after 4 PM America/Chicago, before tipoff',
-            'archive_version': 2,
+            'archive_version': 3,
+            'selection_policy': 'minimum 7 percentage point no-vig probability edge; no pick cap',
+            'minimum_probability_edge': 0.07,
             'official': True,
             'prediction_generated_at': edge.get('prediction_generated_at'),
             'model': edge.get('model'),
@@ -339,7 +342,7 @@ def validate_snapshot(day, snap):
         return ['unreadable or missing picks']
     if snap.get('date') != day:
         problems.append('snapshot date does not match filename')
-    if snap.get('archive_version') != 2 or snap.get('official') is not True:
+    if snap.get('archive_version') != 3 or snap.get('official') is not True:
         problems.append('missing verified official lock metadata')
     locked = parse_time(snap.get('locked_at'))
     generated = parse_time(snap.get('prediction_generated_at'))
@@ -352,8 +355,10 @@ def validate_snapshot(day, snap):
         if generated > locked or generated.astimezone(CENTRAL).strftime('%Y-%m-%d') != day or generated.astimezone(CENTRAL).hour < 16:
             problems.append('model timestamp outside permitted lock window')
     picks = snap['picks']
-    if not 1 <= len(picks) <= 25:
-        problems.append(f'{len(picks)} picks (must be 1-25)')
+    if len(picks) < 1:
+        problems.append('empty official snapshot')
+    if numeric(snap.get('minimum_probability_edge')) != 0.07:
+        problems.append('wrong or missing 7% threshold metadata')
     identities, ranks, player_markets = set(), set(), set()
     for i, p in enumerate(picks, 1):
         if not isinstance(p, dict):
@@ -368,13 +373,18 @@ def validate_snapshot(day, snap):
         identities.add(identity)
         player_markets.add(pm)
         rank = numeric(p.get('rank'))
-        if rank is None or not rank.is_integer() or not 1 <= rank <= 25 or int(rank) in ranks:
+        if rank is None or not rank.is_integer() or rank < 1 or int(rank) in ranks:
             problems.append(f'pick {i}: missing/duplicate rank')
         else:
             ranks.add(int(rank))
         odds = numeric(p.get('odds'))
         if odds is None or odds < -125 or odds == 0 or -100 < odds < 100:
             problems.append(f'pick {i}: invalid odds')
+        gap = numeric(p.get('edge_probability_gap'))
+        if gap is None or gap < 0.07 - 1e-9:
+            problems.append(f'pick {i}: below minimum 7% probability edge')
+        if numeric(p.get('sample_size')) is None or numeric(p.get('sample_size')) < 10:
+            problems.append(f'pick {i}: sample under 10')
         if numeric(p.get('line')) is None:
             problems.append(f'pick {i}: invalid line')
         if str(p.get('game_date') or p.get('date') or '')[:10] != day:
