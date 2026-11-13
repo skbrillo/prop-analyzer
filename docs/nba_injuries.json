@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-13T22:48:47.270006+00:00",
+  "generated_at": "2026-11-13T23:26:59.981775+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 103,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 103,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "O": 74,
-    "T": 28,
+    "O": 75,
+    "T": 25,
     "U": 1
   },
   "players": [
@@ -430,28 +430,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "538834",
-      "name": "T.J. McConnell",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Strain | Hamstring | day-to-day",
-      "date": "2026-11-12T23:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538830",
-      "name": "Aaron Nesmith",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Knee | day-to-day",
-      "date": "2026-11-12T23:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538646",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -617,24 +595,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "538921",
+      "injury_record_id": "538944",
       "name": "Klay Thompson",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-13T18:22Z",
+      "date": "2026-11-13T23:06Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "538920",
+      "injury_record_id": "538943",
       "name": "Pelle Larsson",
       "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-13T18:20Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-13T23:04Z",
       "team_match": "feed"
     },
     {
