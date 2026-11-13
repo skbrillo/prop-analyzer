@@ -1102,20 +1102,30 @@ function populateGames(){
 }
 
 function archivedEdgeRows(date){
- // The monthly archive records the original selections, not a new ranking.
- const picks=Object.values(monthlyReport.months||{})
-  .flatMap(month=>Array.isArray(month.picks)?month.picks:[])
-  .filter(p=>String(p.date||p.game_date||"")===date);
- return picks.map(p=>({
-  ...p,
-  date:p.date||p.game_date||date,
-  market:marketName(p.market),
-  side:sideName(p.side),
-  ev:p.ev??p.model_ev??null,
-  result:String(p.result||"pending").toLowerCase(),
-  selection_status:"selected",
-  historical:true
- }));
+ // Official locked picks take precedence; older days may only have legacy records.
+ // Never count legacy or previews in the official monthly performance totals.
+ const sources=[
+  ["months","Official locked"],
+  ["legacy_months","Legacy historical"],
+  ["preview_months","Pregame preview"]
+ ];
+ for(const [field,label] of sources){
+  const picks=Object.values(monthlyReport[field]||{})
+   .flatMap(month=>Array.isArray(month.picks)?month.picks:[])
+   .filter(p=>String(p.date||p.game_date||"")===date);
+  if(picks.length)return picks.map(p=>({
+   ...p,
+   date:p.date||p.game_date||date,
+   market:marketName(p.market),
+   side:sideName(p.side),
+   ev:p.ev??p.model_ev??null,
+   result:String(p.result||"pending").toLowerCase(),
+   selection_status:"selected",
+   historical:true,
+   archive_type:label
+  }));
+ }
+ return [];
 }
 
 function switchDay(day){
@@ -1146,12 +1156,12 @@ function switchDay(day){
 
  if(viewMode==="edge"){
   if(day==="yesterday"){
-   const archiveReady=Object.keys(monthlyReport.months||{}).length>0;
+   const archiveReady=["months","legacy_months","preview_months"].some(k=>Object.keys(monthlyReport[k]||{}).length>0);
    $("edge-status").textContent=data.length
-    ?data.length+" original archived Edge Model selections"
+    ?data.length+" archived Edge Model selections ("+(data[0]?.archive_type||"Historical")+"; excluded from official performance unless locked)"
     :archiveReady
      ?"No archived Edge Model selections found for this date."
-     :"Loading Top 25 archive (or archive unavailable).";
+     :"No archive data loaded yet; check docs/edge_monthly.json.";
   }else{
    $("edge-status").textContent=edgeData.length
     ?edgeData.length+" qualifying selections | "+
