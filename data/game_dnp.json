@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-12T23:34:16.485395+00:00",
+  "generated_at_utc": "2026-11-13T06:28:09.477698+00:00",
   "records": [
     {
       "date": "2026-10-20",
@@ -8663,6 +8663,174 @@
       "game_id": "401909975",
       "opponent": "Oklahoma City Thunder",
       "opponent_abbr": "OKC",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Rayan Rupert",
+      "player_id": "5099752",
+      "team": "Philadelphia 76ers",
+      "team_abbr": "PHI",
+      "team_id": "20",
+      "game_id": "401909976",
+      "opponent": "Toronto Raptors",
+      "opponent_abbr": "TOR",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Anthony Gill",
+      "player_id": "2581184",
+      "team": "Washington Wizards",
+      "team_abbr": "WSH",
+      "team_id": "27",
+      "game_id": "401909977",
+      "opponent": "Detroit Pistons",
+      "opponent_abbr": "DET",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Taurean Prince",
+      "player_id": "2990962",
+      "team": "Detroit Pistons",
+      "team_abbr": "DET",
+      "team_id": "8",
+      "game_id": "401909977",
+      "opponent": "Washington Wizards",
+      "opponent_abbr": "WSH",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Elijah Harkless",
+      "player_id": "4397449",
+      "team": "Detroit Pistons",
+      "team_abbr": "DET",
+      "team_id": "8",
+      "game_id": "401909977",
+      "opponent": "Washington Wizards",
+      "opponent_abbr": "WSH",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Tolu Smith",
+      "player_id": "4397882",
+      "team": "Detroit Pistons",
+      "team_abbr": "DET",
+      "team_id": "8",
+      "game_id": "401909977",
+      "opponent": "Washington Wizards",
+      "opponent_abbr": "WSH",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Tre Mann",
+      "player_id": "4432819",
+      "team": "Washington Wizards",
+      "team_abbr": "WSH",
+      "team_id": "27",
+      "game_id": "401909977",
+      "opponent": "Detroit Pistons",
+      "opponent_abbr": "DET",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Isaac Jones",
+      "player_id": "5107818",
+      "team": "Detroit Pistons",
+      "team_abbr": "DET",
+      "team_id": "8",
+      "game_id": "401909977",
+      "opponent": "Washington Wizards",
+      "opponent_abbr": "WSH",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Khris Middleton",
+      "player_id": "6609",
+      "team": "Washington Wizards",
+      "team_abbr": "WSH",
+      "team_id": "27",
+      "game_id": "401909977",
+      "opponent": "Detroit Pistons",
+      "opponent_abbr": "DET",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Duop Reath",
+      "player_id": "4066268",
+      "team": "Phoenix Suns",
+      "team_abbr": "PHX",
+      "team_id": "21",
+      "game_id": "401909979",
+      "opponent": "Charlotte Hornets",
+      "opponent_abbr": "CHA",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Jamaree Bouyea",
+      "player_id": "4280245",
+      "team": "Phoenix Suns",
+      "team_abbr": "PHX",
+      "team_id": "21",
+      "game_id": "401909979",
+      "opponent": "Charlotte Hornets",
+      "opponent_abbr": "CHA",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "PJ Hall",
+      "player_id": "4701225",
+      "team": "Charlotte Hornets",
+      "team_abbr": "CHA",
+      "team_id": "30",
+      "game_id": "401909979",
+      "opponent": "Phoenix Suns",
+      "opponent_abbr": "PHX",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Koa Peat",
+      "player_id": "5041953",
+      "team": "Phoenix Suns",
+      "team_abbr": "PHX",
+      "team_id": "21",
+      "game_id": "401909979",
+      "opponent": "Charlotte Hornets",
+      "opponent_abbr": "CHA",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Rasheer Fleming",
+      "player_id": "5105977",
+      "team": "Phoenix Suns",
+      "team_abbr": "PHX",
+      "team_id": "21",
+      "game_id": "401909979",
+      "opponent": "Charlotte Hornets",
+      "opponent_abbr": "CHA",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-12",
+      "player": "Liam McNeeley",
+      "player_id": "5239590",
+      "team": "Charlotte Hornets",
+      "team_abbr": "CHA",
+      "team_id": "30",
+      "game_id": "401909979",
+      "opponent": "Phoenix Suns",
+      "opponent_abbr": "PHX",
       "reason": "COACH'S DECISION"
     }
   ]

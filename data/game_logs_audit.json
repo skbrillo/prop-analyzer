@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-12T23:34:16.485395+00:00",
+  "generated_at_utc": "2026-11-13T06:28:09.477698+00:00",
   "regular_season_only": true,
-  "games_validated": 170,
-  "accepted_rows": 3832,
-  "explicit_dnp_rows": 722,
+  "games_validated": 174,
+  "accepted_rows": 3922,
+  "explicit_dnp_rows": 736,
   "rejection_counts": {
     "non_regular_season_game": 67,
     "invalid_stats_or_minutes": 12
@@ -1708,6 +1708,46 @@
         "OKC"
       ],
       "player_logs": 18,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-12",
+      "game_id": "401909976",
+      "teams": [
+        "PHI",
+        "TOR"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-12",
+      "game_id": "401909977",
+      "teams": [
+        "WSH",
+        "DET"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-12",
+      "game_id": "401909978",
+      "teams": [
+        "MIN",
+        "DAL"
+      ],
+      "player_logs": 27,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-12",
+      "game_id": "401909979",
+      "teams": [
+        "PHX",
+        "CHA"
+      ],
+      "player_logs": 20,
       "explicit_dnps": 6
     }
   ],
