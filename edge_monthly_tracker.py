@@ -18,6 +18,8 @@ DOCS = ROOT / 'docs'
 ARCHIVE = DOCS / 'edge_archive'
 DNP_FILE = ROOT / 'data' / 'game_dnp.json'
 GAME_LOGS = ROOT / 'data' / 'game_logs.csv'
+OFFICIAL_START = '2026-11-13'  # Earlier append-based archives remain legacy only.
+CENTRAL = ZoneInfo('America/Chicago')
 
 TEAM_ALIASES = {'GS': 'GSW', 'NY': 'NYK', 'NO': 'NOP', 'UTAH': 'UTA',
                 'SA': 'SAS', 'WSH': 'WAS', 'PHO': 'PHX', 'BRK': 'BKN'}
@@ -111,6 +113,14 @@ def archive():
         print('Archive skipped: rankings do not match prediction run')
         return
 
+    generated = parse_time(edge.get('prediction_generated_at'))
+    if generated is None or generated > now:
+        print('ERROR: Invalid or future prediction timestamp; no archive created')
+        return
+    if generated.astimezone(CENTRAL).date() != central_now.date() or generated.astimezone(CENTRAL).hour < 16:
+        print('ERROR: Model must be generated on the lock date at or after 4 PM Central')
+        return
+
     groups = defaultdict(list)
     skipped = defaultdict(int)
     for p in edge.get('top25', []):
@@ -132,6 +142,9 @@ def archive():
         if day != now.astimezone(ZoneInfo('America/New_York')).strftime('%Y-%m-%d'):
             skipped['not_todays_slate'] += 1
             continue
+        if day < OFFICIAL_START:
+            skipped['legacy_date'] += 1
+            continue
         groups[day].append(p)
 
     for day, picks in sorted(groups.items()):
@@ -145,13 +158,25 @@ def archive():
             continue
         unique = []
         seen = set()
+        seen_player_market = set()
         for p in picks:
             # Deduplicate by player, market, and side regardless of line changes.
             identity = (norm(p.get('player')), norm(p.get('market')), norm(p.get('side')))
-            if identity in seen:
-                skipped['duplicate_player_market_side'] += 1
+            player_market = identity[:2]
+            if identity in seen or player_market in seen_player_market:
+                skipped['duplicate_player_market'] += 1
+                continue
+            odds = numeric(p.get('odds'))
+            line = numeric(p.get('line'))
+            rank = numeric(p.get('rank'))
+            if (not identity[0] or identity[1] not in ('points','rebounds','assists')
+                    or identity[2] not in ('over','under') or line is None
+                    or odds is None or odds < -125 or odds == 0 or (-100 < odds < 100)
+                    or rank is None or not rank.is_integer() or not 1 <= rank <= 25):
+                skipped['invalid_locked_pick'] += 1
                 continue
             seen.add(identity)
+            seen_player_market.add(player_market)
             saved = dict(p)
             saved['saved_at'] = now.isoformat()
             unique.append(saved)
@@ -159,11 +184,16 @@ def archive():
                 break
         if not unique:
             continue
+        if len({int(p['rank']) for p in unique}) != len(unique):
+            print(f'ERROR: Duplicate ranks for {day}; refusing to lock')
+            continue
         snapshot = {
             'date': day,
             'saved_at': now.isoformat(),
             'locked_at': now.isoformat(),
             'lock_policy': 'first full model run at or after 4 PM America/Chicago, before tipoff',
+            'archive_version': 2,
+            'official': True,
             'prediction_generated_at': edge.get('prediction_generated_at'),
             'model': edge.get('model'),
             'picks': unique,
@@ -302,12 +332,63 @@ def totals(rows):
             'profit_units': profit}
 
 
+def validate_snapshot(day, snap):
+    """Fail closed: invalid official snapshots cannot affect reported performance."""
+    problems = []
+    if not isinstance(snap, dict) or not isinstance(snap.get('picks'), list):
+        return ['unreadable or missing picks']
+    if snap.get('date') != day:
+        problems.append('snapshot date does not match filename')
+    if snap.get('archive_version') != 2 or snap.get('official') is not True:
+        problems.append('missing verified official lock metadata')
+    locked = parse_time(snap.get('locked_at'))
+    generated = parse_time(snap.get('prediction_generated_at'))
+    if locked is None or generated is None:
+        problems.append('missing valid lock/model timestamp')
+    else:
+        local = locked.astimezone(CENTRAL)
+        if local.strftime('%Y-%m-%d') != day or (local.hour, local.minute) < (16, 0):
+            problems.append('lock not on game date after 4 PM Central')
+        if generated > locked or generated.astimezone(CENTRAL).strftime('%Y-%m-%d') != day or generated.astimezone(CENTRAL).hour < 16:
+            problems.append('model timestamp outside permitted lock window')
+    picks = snap['picks']
+    if not 1 <= len(picks) <= 25:
+        problems.append(f'{len(picks)} picks (must be 1-25)')
+    identities, ranks, player_markets = set(), set(), set()
+    for i, p in enumerate(picks, 1):
+        if not isinstance(p, dict):
+            problems.append(f'pick {i}: invalid object')
+            continue
+        identity = (norm(p.get('player')), norm(p.get('market')), norm(p.get('side')))
+        pm = identity[:2]
+        if not identity[0] or identity[1] not in ('points', 'rebounds', 'assists') or identity[2] not in ('over', 'under'):
+            problems.append(f'pick {i}: invalid player/market/side')
+        if identity in identities or pm in player_markets:
+            problems.append(f'pick {i}: duplicate player/market')
+        identities.add(identity)
+        player_markets.add(pm)
+        rank = numeric(p.get('rank'))
+        if rank is None or not rank.is_integer() or not 1 <= rank <= 25 or int(rank) in ranks:
+            problems.append(f'pick {i}: missing/duplicate rank')
+        else:
+            ranks.add(int(rank))
+        odds = numeric(p.get('odds'))
+        if odds is None or odds < -125 or odds == 0 or -100 < odds < 100:
+            problems.append(f'pick {i}: invalid odds')
+        if numeric(p.get('line')) is None:
+            problems.append(f'pick {i}: invalid line')
+        if str(p.get('game_date') or p.get('date') or '')[:10] != day:
+            problems.append(f'pick {i}: wrong game date')
+        tip = parse_time(p.get('commence_time') or p.get('game_time') or p.get('tipoff'))
+        if tip is None or locked is None or tip <= locked:
+            problems.append(f'pick {i}: no verified pregame tipoff')
+    return problems
+
+
 def grade():
     source = read(DOCS / 'graded_predictions.json', {})
     if not isinstance(source, dict):
         source = {}
-    # The selected-only 'predictions' list can label otherwise graded outcomes
-    # 'not_selected'. The full outcomes list is authoritative for settlement.
     records = source.get('all_outcomes_predictions')
     if not isinstance(records, list):
         records = source.get('predictions', [])
@@ -330,34 +411,61 @@ def grade():
             dnp_lookup[(date, name, team)].append(r)
     logs = load_game_logs()
     months = defaultdict(list)
+    legacy_months = defaultdict(list)
+    audits = []
     for path in sorted(ARCHIVE.glob('????-??-??.json')):
-        snap = read(path, {})
-        if not isinstance(snap, dict):
+        snap = read(path, None)
+        day = path.stem
+        is_legacy = day < OFFICIAL_START
+        problems = [] if is_legacy else validate_snapshot(day, snap)
+        picks = snap.get('picks', []) if isinstance(snap, dict) else []
+        if not isinstance(picks, list):
+            picks = []
+        if is_legacy:
+            audits.append({'date': day, 'classification': 'legacy', 'count': len(picks),
+                           'message': 'Preserved; excluded from official performance'})
+        elif problems:
+            audits.append({'date': day, 'classification': 'invalid', 'count': len(picks),
+                           'problems': problems})
+            print(f'ERROR: Official archive {day} FAILED VALIDATION: {problems}')
             continue
-        day = str(snap.get('date') or path.stem)
-        for p in snap.get('picks', []):
+        else:
+            audits.append({'date': day, 'classification': 'official', 'count': len(picks)})
+        for p in picks:
             if not isinstance(p, dict):
                 continue
             result, actual, profit = settle(p, lookup, dnp_lookup, logs)
-            months[day[:7]].append({
-                'date': day, 'rank': p.get('rank'), 'player': p.get('player'),
-                'team': p.get('team'), 'opponent': p.get('opponent'),
-                'market': p.get('market'), 'side': p.get('side'),
-                'line': p.get('line'), 'odds': p.get('odds'),
-                'edge_score': p.get('edge_score'), 'result': result,
-                'actual': actual, 'profit_units': profit,
-                'saved_at': p.get('saved_at') or snap.get('saved_at')})
-    out = {'generated_at': datetime.now(timezone.utc).isoformat(), 'months': {}}
-    for month, picks in sorted(months.items()):
-        daily = defaultdict(list)
-        for p in picks:
-            daily[p['date']].append(p)
-        out['months'][month] = {
-            'summary': totals(picks),
-            'days': [{'date': day, **totals(rows)} for day, rows in sorted(daily.items(), reverse=True)],
-            'picks': picks}
+            record = {'date': day, 'rank': p.get('rank'), 'player': p.get('player'),
+                      'team': p.get('team'), 'opponent': p.get('opponent'),
+                      'market': p.get('market'), 'side': p.get('side'),
+                      'line': p.get('line'), 'odds': p.get('odds'),
+                      'edge_score': p.get('edge_score'), 'result': result,
+                      'actual': actual, 'profit_units': profit,
+                      'saved_at': p.get('saved_at') or snap.get('saved_at')}
+            (legacy_months if is_legacy else months)[day[:7]].append(record)
+
+    def make_months(groups):
+        result = {}
+        for month, picks in sorted(groups.items()):
+            daily = defaultdict(list)
+            for p in picks:
+                daily[p['date']].append(p)
+            result[month] = {'summary': totals(picks),
+                             'days': [{'date': day, **totals(rows)} for day, rows in sorted(daily.items(), reverse=True)],
+                             'picks': picks}
+        return result
+
+    out = {'generated_at': datetime.now(timezone.utc).isoformat(),
+           'official_start_date': OFFICIAL_START,
+           'methodology': 'Only validated immutable 4 PM Central pregame locks count as official.',
+           'months': make_months(months),
+           'legacy_months': make_months(legacy_months),
+           'archive_audit': audits,
+           'validation_errors': sum(a['classification'] == 'invalid' for a in audits)}
     write(DOCS / 'edge_monthly.json', out)
-    print('Monthly Edge results:', {m: v['summary'] for m, v in out['months'].items()})
+    print('OFFICIAL monthly Edge results:', {m: v['summary'] for m, v in out['months'].items()})
+    print('LEGACY excluded from official:', {m: v['summary']['picks'] for m, v in out['legacy_months'].items()})
+    print('Archive validation errors:', out['validation_errors'])
     print('Grading source:', 'all_outcomes_predictions' if isinstance(source.get('all_outcomes_predictions'), list) else 'legacy predictions')
     print('ESPN explicit DNP records:', len(dnp_records))
     print('ESPN direct settlement log rows:', sum(map(len, logs.values())))
