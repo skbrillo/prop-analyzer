@@ -714,6 +714,7 @@ def extract_props(
         unverified_age,
         alternate_lines_removed,
         dict(rejection_counts),
+        unmatched_game_examples,
     )
 
 
@@ -1093,6 +1094,7 @@ def main():
         unverified_age,
         alternate_lines_removed,
         rejection_counts,
+        unmatched_game_examples,
     ) = extract_props(
         all_props,
         slate,
@@ -1125,6 +1127,10 @@ def main():
     print("Rejection reasons:", json.dumps(rejection_counts, sort_keys=True))
     if unmatched_game_examples:
         print("Unmatched game examples:", json.dumps(unmatched_game_examples))
+        print("Upcoming slate matching reference:", json.dumps([{
+            "event_id": e.get("id"), "home_team": e.get("home_team"),
+            "away_team": e.get("away_team"), "commence_time": e.get("commence_time")
+        } for e in slate[:9]]))
     print("NOTE: Main-line selection uses a balanced-odds heuristic, not sportsbook verification.")
 
     if not rows:
