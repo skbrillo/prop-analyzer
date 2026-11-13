@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T17:54:26.378120+00:00",
+  "generated_at": "2026-11-13T18:32:53.001121+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,8 +38,8 @@
   "players_with_team": 104,
   "players_without_team": 0,
   "status_counts": {
-    "O": 71,
-    "T": 32,
+    "O": 73,
+    "T": 30,
     "U": 1
   },
   "players": [
@@ -595,35 +595,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "538816",
+      "injury_record_id": "538921",
       "name": "Klay Thompson",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-12T21:23Z",
+      "date": "2026-11-13T18:22Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "538815",
-      "name": "Giannis Antetokounmpo",
-      "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Wrist | day-to-day",
-      "date": "2026-11-12T21:22Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538814",
+      "injury_record_id": "538920",
       "name": "Pelle Larsson",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-12T21:20Z",
+      "date": "2026-11-13T18:20Z",
       "team_match": "feed"
     },
     {
@@ -650,13 +639,57 @@
     },
     {
       "id": "",
-      "injury_record_id": "538812",
+      "injury_record_id": "538917",
       "name": "Bryce McGowens",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Infection | Elbow | out",
+      "date": "2026-11-13T18:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538916",
+      "name": "Yves Missi",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Knee | out",
+      "date": "2026-11-13T18:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538915",
+      "name": "Bennedict Mathurin",
       "team": "NOP",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Infection | Elbow | day-to-day",
-      "date": "2026-11-12T20:56Z",
+      "reason": "Sprain | Thumb | day-to-day",
+      "date": "2026-11-13T18:10Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538914",
+      "name": "Dejounte Murray",
+      "team": "NOP",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-13T18:09Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538912",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Tendinitis | Knee | out",
+      "date": "2026-11-13T18:07Z",
       "team_match": "feed"
     },
     {
@@ -668,39 +701,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-11-12T20:53Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538810",
-      "name": "Bennedict Mathurin",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Thumb | day-to-day",
-      "date": "2026-11-12T20:53Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538809",
-      "name": "Yves Missi",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Knee | out",
-      "date": "2026-11-12T20:50Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538808",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Tendinitis | Knee | day-to-day",
-      "date": "2026-11-12T20:48Z",
       "team_match": "feed"
     },
     {
