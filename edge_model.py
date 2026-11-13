@@ -1,4 +1,3 @@
-
 """Experimental NBA prop Edge Model with RotoWire lineup checks.
 
 Reads:
@@ -31,8 +30,9 @@ CSV_OUTPUT = ROOT / "docs" / "edge_top25.csv"
 MAX_ODDS_COST = -125
 MIN_SAMPLE = 10
 MIN_EV = 0.02
-MAX_PER_GAME = 5
-MAX_TOP = 25
+MIN_EDGE_GAP = 0.07  # model probability minus no-vig sportsbook probability
+MAX_PER_GAME = None  # no arbitrary game cap
+MAX_TOP = None  # qualify on edge, not rank quota
 CENTRAL = ZoneInfo("America/Chicago")
 
 TEAM_NAMES = {
@@ -241,6 +241,9 @@ def score_pick(p):
     ):
         reasons.append("invalid_model_inputs")
 
+    if probability is not None and no_vig is not None and probability - no_vig < MIN_EDGE_GAP:
+        reasons.append("edge_below_7_percentage_points")
+
     if ev is not None and ev < MIN_EV:
         reasons.append("ev_below_2_percent")
 
@@ -276,6 +279,8 @@ def score_pick(p):
 
     if calculated_ev < MIN_EV:
         return None, ["recomputed_ev_below_2_percent"]
+    if probability - no_vig < MIN_EDGE_GAP:
+        return None, ["recomputed_edge_below_7_percentage_points"]
 
     ev_points = 30 * clamp(calculated_ev / 0.20)
     probability_gap = probability - no_vig
@@ -361,7 +366,6 @@ def run():
     )
 
     selected = []
-    per_game = Counter()
     seen_players = set()
 
     for p in eligible:
@@ -369,12 +373,7 @@ def run():
             p.get("game_date"),
             normalize_name(p.get("player")),
         )
-        game_key = p["event_id"]
-
-        if (
-            player_key in seen_players
-            or per_game[game_key] >= MAX_PER_GAME
-        ):
+        if player_key in seen_players:
             continue
 
         selected.append({
@@ -383,13 +382,10 @@ def run():
         })
 
         seen_players.add(player_key)
-        per_game[game_key] += 1
 
-        if len(selected) >= MAX_TOP:
-            break
 
     payload = {
-        "model": "edge-v1-experimental",
+        "model": "edge-v2-7pct-threshold",
         "generated_at": datetime.now(timezone.utc).isoformat(),
         "prediction_model": source.get("model"),
         "prediction_generated_at": source.get("generated_at"),
@@ -402,9 +398,11 @@ def run():
         "lineup_counts": dict(lineup_counts),
         "filters": {
             "minimum_ev": MIN_EV,
+            "minimum_probability_edge": MIN_EDGE_GAP,
             "minimum_sample": MIN_SAMPLE,
             "minimum_odds": MAX_ODDS_COST,
-            "maximum_per_game": MAX_PER_GAME,
+            "maximum_per_game": None,
+            "maximum_daily_picks": None,
             "maximum_per_player": 1,
             "exclude_rotowire_out": True,
         },
@@ -413,8 +411,10 @@ def run():
             "eligible": len(eligible),
             "rejected": len(rejected),
             "top25": len(selected),
+            "qualifying": len(selected),
         },
-        "top25": selected,
+        "top25": selected,  # legacy consumer compatibility: no 25-pick limit
+        "qualifying": selected,
         "eligible": eligible,
         "rejected": rejected,
     }
@@ -431,7 +431,7 @@ def run():
         "game_time", "market", "side", "line",
         "odds", "projection", "probability",
         "last10", "minutes_reliability_score",
-        "lineup_status", "edge_ev", "edge_score",
+        "lineup_status", "edge_ev", "edge_score", "edge_probability_gap",
     ]
 
     with CSV_OUTPUT.open(
@@ -450,7 +450,7 @@ def run():
         f"Rejected: {len(rejected)}"
     )
     print(f"Lineup statuses: {dict(lineup_counts)}")
-    print(f"Top selections: {len(selected)}")
+    print(f"Qualifying selections (7% probability gap): {len(selected)}")
     print(f"Saved: {OUTPUT} and {CSV_OUTPUT}")
 
 
