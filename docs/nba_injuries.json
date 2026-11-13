@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T19:35:06.933022+00:00",
+  "generated_at": "2026-11-13T20:30:18.787262+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,8 +38,8 @@
   "players_with_team": 104,
   "players_without_team": 0,
   "status_counts": {
-    "O": 73,
-    "T": 30,
+    "O": 74,
+    "T": 29,
     "U": 1
   },
   "players": [
@@ -639,6 +639,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538929",
+      "name": "Dejounte Murray",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Ankle | out",
+      "date": "2026-11-13T20:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538917",
       "name": "Bryce McGowens",
       "team": "NOP",
@@ -668,17 +679,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Sprain | Thumb | day-to-day",
       "date": "2026-11-13T18:10Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538914",
-      "name": "Dejounte Murray",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
-      "date": "2026-11-13T18:09Z",
       "team_match": "feed"
     },
     {
