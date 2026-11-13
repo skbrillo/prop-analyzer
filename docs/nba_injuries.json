@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-13T22:08:44.707558+00:00",
+  "generated_at": "2026-11-13T22:48:47.270006+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 104,
+  "player_count": 103,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 104,
+  "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
-    "O": 75,
+    "O": 74,
     "T": 28,
     "U": 1
   },
@@ -111,24 +111,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60763",
-      "name": "Nolan Traore",
-      "team": "BKN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Calf | day-to-day",
-      "date": "2026-11-12T15:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60761",
+      "injury_record_id": "538937",
       "name": "Mikel Brown Jr.",
       "team": "BKN",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Not Specified | Illness | day-to-day",
-      "date": "2026-11-12T15:02Z",
+      "date": "2026-11-13T22:08Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538936",
+      "name": "Nolan Traore",
+      "team": "BKN",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Calf | day-to-day",
+      "date": "2026-11-13T22:07Z",
       "team_match": "feed"
     },
     {
@@ -228,6 +228,28 @@
       "raw_status": "Out",
       "reason": "Elbow | out",
       "date": "2026-11-10T22:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538935",
+      "name": "Max Christie",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-13T22:06Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538934",
+      "name": "Morez Johnson Jr.",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Lower Leg | day-to-day",
+      "date": "2026-11-13T22:05Z",
       "team_match": "feed"
     },
     {
@@ -767,39 +789,6 @@
       "raw_status": "Out",
       "reason": "Fracture | Leg | out",
       "date": "2026-10-28T23:41Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538903",
-      "name": "Jamal Cain",
-      "team": "ORL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Shoulder | day-to-day",
-      "date": "2026-11-13T17:12Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538901",
-      "name": "Tristan da Silva",
-      "team": "ORL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Strain | Calf | day-to-day",
-      "date": "2026-11-13T17:09Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538900",
-      "name": "Jalen Suggs",
-      "team": "ORL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Knee | out",
-      "date": "2026-11-13T17:08Z",
       "team_match": "feed"
     },
     {
