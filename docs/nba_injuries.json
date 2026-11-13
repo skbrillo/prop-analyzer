@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T21:26:47.009067+00:00",
+  "generated_at": "2026-11-13T22:08:44.707558+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -507,6 +507,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538933",
+      "name": "Quentin Grimes",
+      "team": "LAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Finger | day-to-day",
+      "date": "2026-11-13T21:26Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538931",
       "name": "Austin Reaves",
       "team": "LAL",
@@ -525,17 +536,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Ankle | day-to-day",
       "date": "2026-11-13T20:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60759",
-      "name": "Quentin Grimes",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Finger | day-to-day",
-      "date": "2026-11-12T15:01Z",
       "team_match": "feed"
     },
     {
