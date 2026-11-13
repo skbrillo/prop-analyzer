@@ -16,6 +16,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parent
 DOCS = ROOT / 'docs'
 ARCHIVE = DOCS / 'edge_archive'
+PREVIEW = ARCHIVE  # Preview files use a separate prefix; existing workflow commits this folder.
 DNP_FILE = ROOT / 'data' / 'game_dnp.json'
 GAME_LOGS = ROOT / 'data' / 'game_logs.csv'
 OFFICIAL_START = '2026-11-13'  # Earlier append-based archives remain legacy only.
@@ -100,10 +101,6 @@ def archive():
     """
     now = datetime.now(timezone.utc)
     central_now = now.astimezone(ZoneInfo('America/Chicago'))
-    if (central_now.hour, central_now.minute) < (16, 0):
-        print('Official archive deferred until 4:00 PM Central; live rankings can still refresh.')
-        return
-
     edge = read(DOCS / 'edge_results.json', {})
     prediction = read(DOCS / 'results.json', {})
     if not isinstance(edge, dict) or not isinstance(prediction, dict) or not edge:
@@ -117,8 +114,8 @@ def archive():
     if generated is None or generated > now:
         print('ERROR: Invalid or future prediction timestamp; no archive created')
         return
-    if generated.astimezone(CENTRAL).date() != central_now.date() or generated.astimezone(CENTRAL).hour < 16:
-        print('ERROR: Model must be generated on the lock date at or after 4 PM Central')
+    if generated.astimezone(CENTRAL).date() != central_now.date():
+        print('Archive skipped: model not generated on current Central calendar date')
         return
 
     groups = defaultdict(list)
@@ -148,6 +145,17 @@ def archive():
         groups[day].append(p)
 
     for day, picks in sorted(groups.items()):
+        # Preserve a pregame snapshot at every run, independently of the 4 PM lock.
+        # A preview is NOT an official wager or an official locked selection.
+        preview_path = PREVIEW / f'preview-{day}.json'
+        if not (ARCHIVE / f'{day}.json').exists():
+            write(preview_path, {'date': day, 'saved_at': now.isoformat(),
+                                 'official': False, 'status': 'pregame_preview',
+                                 'picks': picks})
+            print(f'Pregame preview saved for {day}: {len(picks)} selections')
+        if (central_now.hour, central_now.minute) < (16, 0) or generated.astimezone(CENTRAL).hour < 16:
+            print('Official lock deferred until a fresh run after 4 PM Central')
+            continue
         path = ARCHIVE / f'{day}.json'
         if path.exists():
             existing = read(path, None)
@@ -422,6 +430,7 @@ def grade():
     logs = load_game_logs()
     months = defaultdict(list)
     legacy_months = defaultdict(list)
+    preview_months = defaultdict(list)
     audits = []
     for path in sorted(ARCHIVE.glob('????-??-??.json')):
         snap = read(path, None)
@@ -454,6 +463,29 @@ def grade():
                       'saved_at': p.get('saved_at') or snap.get('saved_at')}
             (legacy_months if is_legacy else months)[day[:7]].append(record)
 
+    # Show archived pregame previews if a valid official lock is not present.
+    # These records remain explicitly unofficial and never enter official ROI.
+    official_days = {r['date'] for rows in months.values() for r in rows}
+    for path in sorted(PREVIEW.glob('preview-????-??-??.json')):
+        day = path.stem.removeprefix('preview-')
+        if day in official_days:
+            continue
+        snap = read(path, {})
+        if not isinstance(snap, dict) or snap.get('date') != day:
+            continue
+        for p in snap.get('picks', []):
+            if not isinstance(p, dict):
+                continue
+            result, actual, profit = settle(p, lookup, dnp_lookup, logs)
+            preview_months[day[:7]].append({
+                'date': day, 'rank': p.get('rank'), 'player': p.get('player'),
+                'team': p.get('team'), 'opponent': p.get('opponent'),
+                'market': p.get('market'), 'side': p.get('side'),
+                'line': p.get('line'), 'odds': p.get('odds'),
+                'edge_score': p.get('edge_score'), 'result': result,
+                'actual': actual, 'profit_units': profit,
+                'saved_at': snap.get('saved_at'), 'official': False})
+
     def make_months(groups):
         result = {}
         for month, picks in sorted(groups.items()):
@@ -470,10 +502,12 @@ def grade():
            'methodology': 'Only validated immutable 4 PM Central pregame locks count as official.',
            'months': make_months(months),
            'legacy_months': make_months(legacy_months),
+           'preview_months': make_months(preview_months),
            'archive_audit': audits,
            'validation_errors': sum(a['classification'] == 'invalid' for a in audits)}
     write(DOCS / 'edge_monthly.json', out)
     print('OFFICIAL monthly Edge results:', {m: v['summary'] for m, v in out['months'].items()})
+    print('PREVIEW excluded from official:', {m: v['summary']['picks'] for m, v in out['preview_months'].items()})
     print('LEGACY excluded from official:', {m: v['summary']['picks'] for m, v in out['legacy_months'].items()})
     print('Archive validation errors:', out['validation_errors'])
     print('Grading source:', 'all_outcomes_predictions' if isinstance(source.get('all_outcomes_predictions'), list) else 'legacy predictions')
