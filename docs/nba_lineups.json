@@ -1,172 +1,7 @@
 {
-  "generated_at": "2026-11-13T14:52:12.456871+00:00",
+  "generated_at": "2026-11-13T15:42:03.546847+00:00",
   "source": "RotoWire",
   "games": {
-    "401909975": {
-      "game_id": "401909975",
-      "game": "Oklahoma City Thunder at Portland Trail Blazers",
-      "tipoff": "2026-11-12T03:00:00+00:00",
-      "home": "POR",
-      "away": "OKC",
-      "checked_at": "2026-11-12T05:20:18.116534+00:00",
-      "minutes_before_tipoff": -140.3,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Damian Lillard",
-          "team": "POR"
-        },
-        {
-          "name": "Sidy Cissoko",
-          "team": "POR"
-        },
-        {
-          "name": "Toumani Camara",
-          "team": "POR"
-        },
-        {
-          "name": "Deni Avdija",
-          "team": "POR"
-        },
-        {
-          "name": "Donovan Clingan",
-          "team": "POR"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Shai Gilgeous-Alexander",
-          "team": "OKC"
-        },
-        {
-          "name": "Jared McCain",
-          "team": "OKC"
-        },
-        {
-          "name": "Alex Caruso",
-          "team": "OKC"
-        },
-        {
-          "name": "Aday Mara",
-          "team": "OKC"
-        },
-        {
-          "name": "Isaiah Hartenstein",
-          "team": "OKC"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Vit Krejci",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Ja Morant",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Shaedon Sharpe",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Chris Youngblood",
-          "team": "POR",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Chet Holmgren",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Ajay Mitchell",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Thomas Sorber",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Cason Wallace",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Williams",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jaylin Williams",
-          "team": "OKC",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Vit Krejci",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Ja Morant",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Shaedon Sharpe",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Chris Youngblood",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Chet Holmgren",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Ajay Mitchell",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Thomas Sorber",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Cason Wallace",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Williams",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jaylin Williams",
-          "team": "OKC",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909976": {
       "game_id": "401909976",
       "game": "Toronto Raptors at Philadelphia 76ers",
@@ -603,8 +438,8 @@
       "tipoff": "2026-11-14T00:00:00+00:00",
       "home": "IND",
       "away": "NYK",
-      "checked_at": "2026-11-13T14:52:12.456871+00:00",
-      "minutes_before_tipoff": 547.8,
+      "checked_at": "2026-11-13T15:42:03.546847+00:00",
+      "minutes_before_tipoff": 497.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -697,8 +532,8 @@
       "tipoff": "2026-11-14T00:00:00+00:00",
       "home": "ORL",
       "away": "MIL",
-      "checked_at": "2026-11-13T14:52:12.456871+00:00",
-      "minutes_before_tipoff": 547.8,
+      "checked_at": "2026-11-13T15:42:03.546847+00:00",
+      "minutes_before_tipoff": 497.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -801,8 +636,8 @@
       "tipoff": "2026-11-14T01:00:00+00:00",
       "home": "MIA",
       "away": "CLE",
-      "checked_at": "2026-11-13T14:52:12.456871+00:00",
-      "minutes_before_tipoff": 607.8,
+      "checked_at": "2026-11-13T15:42:03.546847+00:00",
+      "minutes_before_tipoff": 557.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -895,8 +730,8 @@
       "tipoff": "2026-11-14T01:00:00+00:00",
       "home": "CHI",
       "away": "ATL",
-      "checked_at": "2026-11-13T14:52:12.456871+00:00",
-      "minutes_before_tipoff": 607.8,
+      "checked_at": "2026-11-13T15:42:03.546847+00:00",
+      "minutes_before_tipoff": 557.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1010,8 +845,8 @@
       "tipoff": "2026-11-14T01:00:00+00:00",
       "home": "NOP",
       "away": "MEM",
-      "checked_at": "2026-11-13T14:52:12.456871+00:00",
-      "minutes_before_tipoff": 607.8,
+      "checked_at": "2026-11-13T15:42:03.546847+00:00",
+      "minutes_before_tipoff": 557.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1115,8 +950,8 @@
       "tipoff": "2026-11-14T01:30:00+00:00",
       "home": "HOU",
       "away": "UTA",
-      "checked_at": "2026-11-13T14:52:12.456871+00:00",
-      "minutes_before_tipoff": 637.8,
+      "checked_at": "2026-11-13T15:42:03.546847+00:00",
+      "minutes_before_tipoff": 587.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1240,8 +1075,8 @@
       "tipoff": "2026-11-14T02:30:00+00:00",
       "home": "SAS",
       "away": "GSW",
-      "checked_at": "2026-11-13T14:52:12.456871+00:00",
-      "minutes_before_tipoff": 697.8,
+      "checked_at": "2026-11-13T15:42:03.546847+00:00",
+      "minutes_before_tipoff": 647.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1375,8 +1210,8 @@
       "tipoff": "2026-11-14T03:00:00+00:00",
       "home": "SAC",
       "away": "POR",
-      "checked_at": "2026-11-13T14:52:12.456871+00:00",
-      "minutes_before_tipoff": 727.8,
+      "checked_at": "2026-11-13T15:42:03.546847+00:00",
+      "minutes_before_tipoff": 677.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1490,8 +1325,8 @@
       "tipoff": "2026-11-14T03:30:00+00:00",
       "home": "LAC",
       "away": "OKC",
-      "checked_at": "2026-11-13T14:52:12.456871+00:00",
-      "minutes_before_tipoff": 757.8,
+      "checked_at": "2026-11-13T15:42:03.546847+00:00",
+      "minutes_before_tipoff": 707.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1525,11 +1360,11 @@
           "team": "OKC"
         },
         {
-          "name": "Ajay Mitchell",
+          "name": "Jared McCain",
           "team": "OKC"
         },
         {
-          "name": "Alex Caruso",
+          "name": "Ajay Mitchell",
           "team": "OKC"
         },
         {
