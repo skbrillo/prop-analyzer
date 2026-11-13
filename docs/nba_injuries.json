@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-12T23:47:33.223106+00:00",
+  "generated_at": "2026-11-13T00:32:53.932681+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 102,
+  "player_count": 103,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,14 +35,25 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 102,
+  "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
     "O": 73,
-    "T": 28,
+    "T": 29,
     "U": 1
   },
   "players": [
+    {
+      "id": "",
+      "injury_record_id": "538842",
+      "name": "Mouhamed Gueye",
+      "team": "ATL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Fracture | Foot | out",
+      "date": "2026-11-13T00:06Z",
+      "team_match": "feed"
+    },
     {
       "id": "",
       "injury_record_id": "538836",
@@ -74,17 +85,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Back | day-to-day",
       "date": "2026-11-12T23:04Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-58751",
-      "name": "Mouhamed Gueye",
-      "team": "ATL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Fracture | Foot | out",
-      "date": "2026-10-19T19:38Z",
       "team_match": "feed"
     },
     {
@@ -859,6 +859,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60797",
+      "name": "Joel Embiid",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Knee | day-to-day",
+      "date": "2026-11-13T00:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538794",
       "name": "LeBron James",
       "team": "PHI",
@@ -963,7 +974,7 @@
       "team": "SAC",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Bruise | Lower Leg | day-to-day",
+      "reason": "Soreness | Ankle | day-to-day",
       "date": "2026-11-11T14:44Z",
       "team_match": "feed"
     },
