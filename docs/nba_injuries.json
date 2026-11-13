@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T17:03:45.798195+00:00",
+  "generated_at": "2026-11-13T17:54:26.378120+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -771,35 +771,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "538823",
-      "name": "Tristan da Silva",
-      "team": "ORL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Strain | Calf | day-to-day",
-      "date": "2026-11-12T22:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538822",
+      "injury_record_id": "538903",
       "name": "Jamal Cain",
       "team": "ORL",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Bruise | Shoulder | day-to-day",
-      "date": "2026-11-12T22:04Z",
+      "date": "2026-11-13T17:12Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "538821",
+      "injury_record_id": "538901",
+      "name": "Tristan da Silva",
+      "team": "ORL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Strain | Calf | day-to-day",
+      "date": "2026-11-13T17:09Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538900",
       "name": "Jalen Suggs",
       "team": "ORL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Knee | out",
-      "date": "2026-11-12T22:03Z",
+      "date": "2026-11-13T17:08Z",
       "team_match": "feed"
     },
     {
