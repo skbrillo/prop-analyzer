@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>NBA Prop Analyzer</title>
+<title>NBA Edge Model — 7% Threshold</title>
 <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
 <style>
 *{box-sizing:border-box}
@@ -115,17 +115,17 @@ tbody tr:hover{background:#1d3048}
 <body>
 <main>
 
-<h1>NBA Prop Analyzer</h1>
-<div class="muted">ESPN Statistics + DraftKings Odds | Experimental Edge Model</div>
+<h1>NBA Edge Model</h1>
+<div class="muted">7% minimum estimated probability edge | -125 or better | 10+ games</div>
 
 <div class="warn">
- Model probabilities, Edge Scores and expected values are experimental estimates,
+ Model probabilities and estimated edge percentages are experimental,
  not proven betting advantages. Only American odds of -125 or better are displayed.
 </div>
 
 <div class="stats">
  <div class="stat">Eligible Outcomes<b id="count">--</b></div>
- <div class="stat">Top 25 Picks<b id="positive">--</b></div>
+ <div class="stat">Qualifying Picks<b id="positive">--</b></div>
  <div class="stat">Games Analyzed<b id="games">--</b></div>
  <div class="stat">Historical Wins<b id="total-wins" class="green">--</b></div>
  <div class="stat">Historical Losses<b id="total-losses" class="red">--</b></div>
@@ -133,7 +133,7 @@ tbody tr:hover{background:#1d3048}
 </div>
 
 <!-- HISTORICAL PERFORMANCE COMPARISON -->
-<section class="section" id="historical-comparison">
+<section class="section" id="historical-comparison" style="display:none">
  <div class="head"><h2>Historical Performance — Three Groups</h2></div>
  <div class="compare-actions">
   <label for="comparison-period">Period</label>
@@ -146,13 +146,13 @@ tbody tr:hover{background:#1d3048}
  </div>
  <div class="compare-grid" id="comparison-grid"></div>
  <div class="note" id="comparison-status">Loading saved grading and Top 25 archive...</div>
- <div class="note">All Model Picks counts only the highest-EV eligible side per game/player/market (EV may be negative). Qualified Picks requires positive EV and odds of -125 or better, but does not independently apply every Edge Model filter. Top 25 counts only archived Edge Model picks. Historical selections are reconstructed, hypothetical results, not verified wagers.</div>
+ <div class="note">All Model Picks counts only the highest-EV eligible side per game/player/market (EV may be negative). Qualified Picks requires positive EV and odds of -125 or better, but does not independently apply every Edge Model filter. Official tracking counts only locked threshold-qualified picks. Historical selections are reconstructed, hypothetical results, not verified wagers.</div>
 </section>
 
 <!-- MONTHLY TOP 25 PERFORMANCE -->
 <section class="monthly-panel">
  <div class="monthly-head">
-  <h2>Top 25 Edge Model — Monthly Performance</h2>
+  <h2>Official Edge Model — Performance</h2>
   <div class="monthly-actions">
    <select id="monthly-select" aria-label="Select month">
     <option value="">Loading months...</option>
@@ -162,7 +162,7 @@ tbody tr:hover{background:#1d3048}
  </div>
 
  <div class="monthly-stats">
-  <div class="stat">Archived Picks<b id="month-picks">--</b></div>
+  <div class="stat">Official Picks<b id="month-picks">--</b></div>
   <div class="stat">Wins<b id="month-wins" class="green">--</b></div>
   <div class="stat">Losses<b id="month-losses" class="red">--</b></div>
   <div class="stat">Win Rate<b id="month-winrate">--</b></div>
@@ -204,25 +204,25 @@ tbody tr:hover{background:#1d3048}
  </details>
 
  <div class="monthly-note">
-  Separate from the historical model. Only archived Top 25 selections count.
+  Separate from the historical model. Only validated locked threshold-qualified selections count.
   Win rate excludes pushes, DNP and pending picks. ROI assumes one unit
   risked per settled win/loss bet. Results are hypothetical, not verified wagers.
  </div>
 </section>
 
 <div class="tabs">
- <button id="view-edge" class="active">Top 25 Edge Model</button>
- <button id="view-all">All Predictions</button>
+ <button id="view-edge" class="active">Edge Model — Qualifying Picks</button>
+ <button id="view-all" style="display:none">All Predictions</button>
  <button id="tab-today" class="active">Today</button>
  <button id="tab-yesterday">Yesterday</button>
- <button id="download-edge">Download Top 25 CSV</button>
+ <button id="download-edge">Download Qualifying Picks CSV</button>
  <button id="download-excel">Download Excel — All History</button>
 </div>
 
 <div id="export-status" class="muted"></div>
 
 <div class="head">
- <h2 id="table-heading">Top 25 Edge Model</h2>
+ <h2 id="table-heading">Edge Model — Qualifying Picks</h2>
  <span id="edge-status" class="muted">Loading rankings...</span>
 </div>
 
@@ -255,7 +255,7 @@ tbody tr:hover{background:#1d3048}
   <option value="Volatile">Volatile Only</option>
   <option value="exclude-volatile">Hide Volatile</option>
  </select>
- <select id="selection-filter">
+ <select id="selection-filter" style="display:none">
   <option value="">All Predictions</option>
   <option value="selected">Model Picks</option>
   <option value="not_selected">Not Selected</option>
@@ -320,7 +320,7 @@ tbody tr:hover{background:#1d3048}
  <div id="game-lines-grid" class="gamecards"></div>
 </section>
 
-<section class="section">
+<section class="section" style="display:none">
  <h2>Live Betting Performance</h2>
  <div class="muted">
   Saved historical model selections graded against ESPN.
@@ -365,12 +365,12 @@ tbody tr:hover{background:#1d3048}
   </p>
   <p>
    Performance shown here belongs to the saved historical selection
-   strategy, not necessarily the new Top 25 Edge Model.
+   strategy, not necessarily the new Edge Model — Qualifying Picks.
   </p>
  </div>
 </section>
 
-<section class="section">
+<section class="section" style="display:none">
  <h2>Model Performance</h2>
  <div class="muted">Historical prediction accuracy using ESPN game logs.</div>
  <div id="backtest-status" class="muted"></div>
@@ -825,7 +825,7 @@ function renderComparison(){
  const groups=[
   {title:"All Model Picks",rows:Array.isArray(all)?compareRows(all,period,date):null},
   {title:"Qualified Picks",rows:Array.isArray(selected)?compareRows(selected,period,date):null},
-  {title:"Top 25 Edge Model",summary:summarizeEdgeArchive(compareEdgePicks(period,date))}
+  {title:"Edge Model — Qualifying Picks",summary:summarizeEdgeArchive(compareEdgePicks(period,date))}
  ];
  for(const g of groups){
   const card=addText(grid,"div","","compare-card");
@@ -943,7 +943,7 @@ function renderMonthly(){
    (s.dnp??0)+" DNP | "+
    (s.invalid??0)+" invalid | "+
    "1-unit risk per settled bet"
-  :"No archived Top 25 selections for "+monthLabel(selectedMonth)+".";
+  :"No archived qualifying selections for "+monthLabel(selectedMonth)+".";
 }
 
 async function loadMonthly(){
@@ -974,6 +974,7 @@ async function loadMonthly(){
   select.value=selectedMonth;
   renderMonthly();
   renderComparison();
+  if(viewMode==="edge")switchDay(activeDay);
 
  }catch(e){
   console.warn("Monthly tracking:",e);
@@ -1047,7 +1048,7 @@ function updateTabs(){
  $("tab-today").classList.toggle("active",activeDay==="today");
  $("tab-yesterday").classList.toggle("active",activeDay==="yesterday");
  $("table-heading").textContent=
-  viewMode==="edge"?"Top 25 Edge Model":"All Predictions";
+  viewMode==="edge"?"Edge Model — Qualifying Picks":"All Predictions";
 
  document.querySelectorAll(".edge-only").forEach(node=>{
   node.style.display=viewMode==="edge"?"":"none";
@@ -1119,7 +1120,7 @@ function switchDay(day){
   (day==="today"?"Today: "+todayDate:
    "Yesterday: "+yesterdayDate)+
   " | "+(viewMode==="edge"?
-   (day==="today"?"Ranked Edge Model":"Archived Top 25 Edge Model selections"):
+   (day==="today"?"Ranked Edge Model":"Archived Edge Model — Qualifying Picks selections"):
    "Saved predictions");
 
  if(viewMode==="edge"){
@@ -1132,7 +1133,7 @@ function switchDay(day){
      :"Loading Top 25 archive (or archive unavailable).";
   }else{
    $("edge-status").textContent=edgeData.length
-    ?edgeData.length+" ranked selections | "+
+    ?edgeData.length+" qualifying selections | "+
      (edgeReport?.counts?.eligible??"--")+
      " eligible candidates | Experimental"
     :"No current matching Edge Model rankings available.";
@@ -1428,8 +1429,8 @@ async function loadData(){
    edgeReport&&
    edgeReport.prediction_generated_at===json.generated_at;
 
-  edgeData=matchingRun&&Array.isArray(edgeReport.top25)
-   ?edgeReport.top25.map(r=>({
+  edgeData=matchingRun&&Array.isArray(edgeReport.qualifying||edgeReport.top25)
+   ?(edgeReport.qualifying||edgeReport.top25).map(r=>({
     ...currentRow(r),
     rank:r.rank,
     edge_score:r.edge_score,
@@ -1438,18 +1439,11 @@ async function loadData(){
    }))
    :[];
 
-  // Edge Top 25 selections are independent of the original engine's
-  // selected/not_selected flag. Never display NOT_SELECTED for an Edge pick.
-  // Only transfer a genuinely settled outcome from the graded history.
-  // Official locked archive results are shown separately in the monthly panel.
   for(const r of edgeData){
    const match=saved.get(predictionKey(r));
-   if(match && ["win","loss","push","dnp","invalid"].includes(match.result)){
-    r.result=match.result;
+   if(match){
+    if(match.result!=="not_selected")r.result=match.result;
     r.actual=match.actual;
-   }else{
-    r.result="pending";
-    r.actual=null;
    }
   }
 
@@ -1900,7 +1894,7 @@ async function downloadExcel(){
 
 function downloadEdge(){
  if(!edgeData.length){
-  alert("No current Top 25 Edge Model data available.");
+  alert("No current Edge Model — Qualifying Picks data available.");
   return;
  }
  window.location.href="./edge_top25.csv?t="+Date.now();
