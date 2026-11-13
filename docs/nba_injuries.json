@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-13T02:33:02.808998+00:00",
+  "generated_at": "2026-11-13T03:29:41.139219+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 101,
+  "player_count": 102,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 101,
+  "players_with_team": 102,
   "players_without_team": 0,
   "status_counts": {
-    "O": 74,
+    "O": 75,
     "T": 26,
     "U": 1
   },
@@ -1108,6 +1108,17 @@
       "raw_status": "Out",
       "reason": "Not Specified | Knee | out",
       "date": "2026-10-27T19:25Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538853",
+      "name": "Bub Carrington",
+      "team": "WAS",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Chest | out",
+      "date": "2026-11-13T03:04Z",
       "team_match": "feed"
     },
     {
