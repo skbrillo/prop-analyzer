@@ -175,7 +175,7 @@ tbody tr:hover{background:#1d3048}
 
  <details class="monthly-details" id="monthly-details">
   <summary>View daily performance and individual picks</summary>
-  <h3>Daily Top 25 Results</h3>
+  <h3>Daily Official Edge Results</h3>
   <div class="tablewrap">
    <table>
     <thead>
@@ -409,7 +409,7 @@ let yesterdayDate="";
 let sortKey="rank";
 let sortAscending=true;
 let lineupData={games:{}};
-let monthlyReport={months:{}};
+let monthlyReport={months:{},legacy_months:{},preview_months:{}};
 let selectedMonth="";
 let movementData={baseline:{},current:{}};
 let comparisonPeriod="all";
@@ -876,6 +876,25 @@ function monthlyCell(tr,value,cls=""){
  return addText(tr,"td",String(value),cls);
 }
 
+function renderUnofficial(){
+ const body=$("unofficial-rows");
+ body.replaceChildren();
+ const entries=[];
+ for(const [field,label] of [["legacy_months","Legacy"],["preview_months","Pregame preview"]]){
+  for(const month of Object.values(monthlyReport[field]||{})){
+   for(const p of month.picks||[])entries.push({p,label});
+  }
+ }
+ entries.sort((a,b)=>String(b.p.date).localeCompare(String(a.p.date))||Number(a.p.rank||999)-Number(b.p.rank||999));
+ $("unofficial-status").textContent=entries.length+" saved historical/preview selections; excluded from official performance.";
+ for(const {p,label} of entries){
+  const tr=document.createElement("tr");
+  [p.date,label,p.player,marketName(p.market),sideName(p.side),number(p.line),american(p.odds),number(p.actual),String(p.result||"pending").toUpperCase()].forEach(v=>monthlyCell(tr,v??"--"));
+  body.appendChild(tr);
+ }
+ if(!entries.length){const tr=document.createElement("tr");const td=monthlyCell(tr,"No earlier selections or pregame previews saved.");td.colSpan=9;body.appendChild(tr);}
+}
+
 function renderMonthly(){
  const month=monthlyReport.months?.[selectedMonth];
  const s=month?.summary||{};
@@ -973,12 +992,13 @@ async function loadMonthly(){
   selectedMonth=months.includes(previous)?previous:current;
   select.value=selectedMonth;
   renderMonthly();
+  renderUnofficial();
   renderComparison();
   if(viewMode==="edge")switchDay(activeDay);
 
  }catch(e){
   console.warn("Monthly tracking:",e);
-  monthlyReport={months:{}};
+  monthlyReport={months:{},legacy_months:{},preview_months:{}};
   selectedMonth=new Intl.DateTimeFormat("en-CA",{
    timeZone:"America/Chicago",
    year:"numeric",month:"2-digit"
@@ -996,6 +1016,7 @@ async function loadMonthly(){
 
   $("monthly-daily-rows").replaceChildren();
   $("monthly-pick-rows").replaceChildren();
+  renderUnofficial();
   renderComparison();
   status.textContent=
    "Monthly data not available yet. The scheduled workflow must "+
@@ -1417,9 +1438,7 @@ async function loadData(){
   const dates=todayData.map(r=>r.date)
    .filter(Boolean).sort();
 
-  todayDate=dates.at(-1)||
-   String(json.generated_at||"").slice(0,10);
-
+  todayDate=comparePeriodDate();
   yesterdayDate=previousDate(todayDate);
 
   edgeReport=edge.status==="fulfilled"
