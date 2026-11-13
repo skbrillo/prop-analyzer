@@ -1438,11 +1438,18 @@ async function loadData(){
    }))
    :[];
 
+  // Edge Top 25 selections are independent of the original engine's
+  // selected/not_selected flag. Never display NOT_SELECTED for an Edge pick.
+  // Only transfer a genuinely settled outcome from the graded history.
+  // Official locked archive results are shown separately in the monthly panel.
   for(const r of edgeData){
    const match=saved.get(predictionKey(r));
-   if(match){
+   if(match && ["win","loss","push","dnp","invalid"].includes(match.result)){
     r.result=match.result;
     r.actual=match.actual;
+   }else{
+    r.result="pending";
+    r.actual=null;
    }
   }
 
