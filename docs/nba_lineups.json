@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T17:51:21.171788+00:00",
+  "generated_at": "2026-11-14T18:29:13.478322+00:00",
   "source": "RotoWire",
   "games": {
     "401909296": {
@@ -1131,8 +1131,8 @@
       "tipoff": "2026-11-15T00:00:00+00:00",
       "home": "NOP",
       "away": "DEN",
-      "checked_at": "2026-11-14T17:51:21.171788+00:00",
-      "minutes_before_tipoff": 368.6,
+      "checked_at": "2026-11-14T18:29:13.478322+00:00",
+      "minutes_before_tipoff": 330.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1148,15 +1148,15 @@
           "team": "NOP"
         },
         {
-          "name": "Trey Murphy",
-          "team": "NOP"
-        },
-        {
           "name": "Saddiq Bey",
           "team": "NOP"
         },
         {
-          "name": "Karlo Matkovic",
+          "name": "Zion Williamson",
+          "team": "NOP"
+        },
+        {
+          "name": "Yves Missi",
           "team": "NOP"
         }
       ],
@@ -1184,12 +1184,22 @@
       ],
       "home_out": [
         {
+          "name": "Bryce McGowens",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
           "name": "Trey Murphy",
           "team": "NOP",
           "status": "out"
         },
         {
           "name": "Dejounte Murray",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Trendon Watford",
           "team": "NOP",
           "status": "out"
         }
@@ -1203,12 +1213,22 @@
       ],
       "out_players": [
         {
+          "name": "Bryce McGowens",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
           "name": "Trey Murphy",
           "team": "NOP",
           "status": "out"
         },
         {
           "name": "Dejounte Murray",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Trendon Watford",
           "team": "NOP",
           "status": "out"
         },
@@ -1226,8 +1246,8 @@
       "tipoff": "2026-11-15T00:30:00+00:00",
       "home": "CLE",
       "away": "DAL",
-      "checked_at": "2026-11-14T17:51:21.171788+00:00",
-      "minutes_before_tipoff": 398.6,
+      "checked_at": "2026-11-14T18:29:13.478322+00:00",
+      "minutes_before_tipoff": 360.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1247,7 +1267,7 @@
           "team": "CLE"
         },
         {
-          "name": "Evan Mobley",
+          "name": "Jaylon Tyson",
           "team": "CLE"
         },
         {
@@ -1341,8 +1361,8 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MIA",
       "away": "DET",
-      "checked_at": "2026-11-14T17:51:21.171788+00:00",
-      "minutes_before_tipoff": 428.6,
+      "checked_at": "2026-11-14T18:29:13.478322+00:00",
+      "minutes_before_tipoff": 390.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1358,7 +1378,7 @@
           "team": "MIA"
         },
         {
-          "name": "Pelle Larsson",
+          "name": "Myron Gardner",
           "team": "MIA"
         },
         {
@@ -1425,8 +1445,8 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MEM",
       "away": "BKN",
-      "checked_at": "2026-11-14T17:51:21.171788+00:00",
-      "minutes_before_tipoff": 428.6,
+      "checked_at": "2026-11-14T18:29:13.478322+00:00",
+      "minutes_before_tipoff": 390.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1499,8 +1519,8 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MIN",
       "away": "CHI",
-      "checked_at": "2026-11-14T17:51:21.171788+00:00",
-      "minutes_before_tipoff": 428.6,
+      "checked_at": "2026-11-14T18:29:13.478322+00:00",
+      "minutes_before_tipoff": 390.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1564,6 +1584,11 @@
       ],
       "away_out": [
         {
+          "name": "Tobe Awaka",
+          "team": "CHI",
+          "status": "out"
+        },
+        {
           "name": "Caleb Wilson",
           "team": "CHI",
           "status": "out"
@@ -1578,6 +1603,11 @@
         {
           "name": "Anthony Edwards",
           "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Tobe Awaka",
+          "team": "CHI",
           "status": "out"
         },
         {
