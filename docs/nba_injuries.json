@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T01:44:24.092238+00:00",
+  "generated_at": "2026-11-14T02:28:54.669602+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 99,
+  "player_count": 96,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 99,
+  "players_with_team": 96,
   "players_without_team": 0,
   "status_counts": {
     "O": 78,
-    "T": 20,
+    "T": 17,
     "U": 1
   },
   "players": [
@@ -316,17 +316,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T16:05Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538828",
-      "name": "Charles Bassey",
-      "team": "GSW",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Toe | day-to-day",
-      "date": "2026-11-12T22:18Z",
       "team_match": "feed"
     },
     {
@@ -932,28 +921,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-21T04:22Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538833",
-      "name": "Devin Vassell",
-      "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Groin | day-to-day",
-      "date": "2026-11-12T23:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538832",
-      "name": "De'Aaron Fox",
-      "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-12T23:05Z",
       "team_match": "feed"
     },
     {
