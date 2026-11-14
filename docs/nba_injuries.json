@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T22:58:00.439529+00:00",
+  "generated_at": "2026-11-14T23:25:49.221773+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,20 +38,20 @@
   "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
-    "T": 33,
-    "O": 76,
+    "O": 82,
+    "T": 27,
     "U": 1
   },
   "players": [
     {
       "id": "",
-      "injury_record_id": "538982",
+      "injury_record_id": "539147",
       "name": "Kingston Flemings",
       "team": "ATL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-14T03:20Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Back | out",
+      "date": "2026-11-14T23:08Z",
       "team_match": "feed"
     },
     {
@@ -96,6 +96,17 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-09-21T19:50Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-60880",
+      "name": "Michael Porter Jr.",
+      "team": "BKN",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Personal | day-to-day",
+      "date": "2026-11-14T23:14Z",
       "team_match": "feed"
     },
     {
@@ -210,6 +221,39 @@
     },
     {
       "id": "",
+      "injury_record_id": "539143",
+      "name": "Peyton Watson",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-14T22:59Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539142",
+      "name": "James Harden",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Calf | out",
+      "date": "2026-11-14T22:57Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539141",
+      "name": "Donovan Mitchell",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Knee | out",
+      "date": "2026-11-14T22:56Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539140",
       "name": "Jarrett Allen",
       "team": "CLE",
@@ -221,17 +265,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539097",
-      "name": "Peyton Watson",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-14T18:38Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539094",
       "name": "Evan Mobley",
       "team": "CLE",
@@ -239,28 +272,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Toe | out",
       "date": "2026-11-14T18:33Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539092",
-      "name": "Donovan Mitchell",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Knee | day-to-day",
-      "date": "2026-11-14T18:31Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539091",
-      "name": "James Harden",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Calf | day-to-day",
-      "date": "2026-11-14T18:28Z",
       "team_match": "feed"
     },
     {
@@ -287,24 +298,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539089",
+      "injury_record_id": "539144",
       "name": "Max Christie",
       "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-14T18:23Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538934",
-      "name": "Morez Johnson Jr.",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Lower Leg | day-to-day",
-      "date": "2026-11-13T22:05Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-14T23:02Z",
       "team_match": "feed"
     },
     {
@@ -705,17 +705,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539081",
-      "name": "Giannis Antetokounmpo",
-      "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Wrist | day-to-day",
-      "date": "2026-11-14T18:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539139",
       "name": "Ousmane Dieng",
       "team": "MIL",
@@ -745,6 +734,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-05T20:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539146",
+      "name": "Bennedict Mathurin",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Plantar Fasciitis | Foot | out",
+      "date": "2026-11-14T23:06Z",
       "team_match": "feed"
     },
     {
