@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T19:30:20.007950+00:00",
+  "generated_at": "2026-11-14T20:14:33.786962+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 108,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 106,
+  "players_with_team": 108,
   "players_without_team": 0,
   "status_counts": {
     "T": 34,
-    "O": 71,
+    "O": 73,
     "U": 1
   },
   "players": [
@@ -617,24 +617,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60842",
+      "injury_record_id": "539107",
       "name": "Quinten Post",
       "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Concussion | day-to-day",
-      "date": "2026-11-14T15:02Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Concussion | out",
+      "date": "2026-11-14T19:47Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-60840",
+      "injury_record_id": "539106",
+      "name": "Jerami Grant",
+      "team": "MEM",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Head | day-to-day",
+      "date": "2026-11-14T19:46Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539105",
       "name": "Zach Edey",
       "team": "MEM",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Ankle | day-to-day",
-      "date": "2026-11-14T15:02Z",
+      "date": "2026-11-14T19:45Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539104",
+      "name": "Ty Jerome",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-14T19:44Z",
       "team_match": "feed"
     },
     {
