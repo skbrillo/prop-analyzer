@@ -404,8 +404,8 @@ let currentJson=null;
 let data=[];
 let viewMode="edge";
 let activeDay="today";
-let todayDate="";
-let yesterdayDate="";
+let todayDate=comparePeriodDate();
+let yesterdayDate=previousDate(todayDate);
 let sortKey="rank";
 let sortAscending=true;
 let lineupData={games:{}};
@@ -878,6 +878,7 @@ function monthlyCell(tr,value,cls=""){
 
 function renderUnofficial(){
  const body=$("unofficial-rows");
+ if(!body||!$("unofficial-status"))return;
  body.replaceChildren();
  const entries=[];
  for(const [field,label] of [["legacy_months","Legacy"],["preview_months","Pregame preview"]]){
@@ -967,61 +968,29 @@ function renderMonthly(){
 
 async function loadMonthly(){
  const status=$("monthly-status");
+ let json;
  try{
-  const json=await fetchJson("edge_monthly.json");
+  json=await fetchJson("edge_monthly.json");
   if(!json||typeof json.months!=="object"||!json.months)
    throw Error("Invalid monthly report");
-
-  monthlyReport=json;
-
-  const available=Object.keys(json.months).sort().reverse();
-  const current=new Intl.DateTimeFormat("en-CA",{
-   timeZone:"America/Chicago",
-   year:"numeric",month:"2-digit"
-  }).format(new Date()).replace("/","-");
-
-  const months=[...new Set([current,...available])].sort().reverse();
-  const select=$("monthly-select");
-  const previous=selectedMonth;
-
-  select.replaceChildren();
-
-  for(const month of months)
-   select.add(new Option(monthLabel(month),month));
-
-  selectedMonth=months.includes(previous)?previous:current;
-  select.value=selectedMonth;
-  renderMonthly();
-  renderUnofficial();
-  renderComparison();
-  if(viewMode==="edge")switchDay(activeDay);
-
  }catch(e){
-  console.warn("Monthly tracking:",e);
-  monthlyReport={months:{},legacy_months:{},preview_months:{}};
-  selectedMonth=new Intl.DateTimeFormat("en-CA",{
-   timeZone:"America/Chicago",
-   year:"numeric",month:"2-digit"
-  }).format(new Date()).replace("/","-");
-
-  const select=$("monthly-select");
-  select.replaceChildren(
-   new Option(monthLabel(selectedMonth),selectedMonth)
-  );
-
-  for(const id of [
-   "month-picks","month-wins","month-losses",
-   "month-winrate","month-roi","month-profit","month-pending"
-  ])$(id).textContent="--";
-
-  $("monthly-daily-rows").replaceChildren();
-  $("monthly-pick-rows").replaceChildren();
-  renderUnofficial();
-  renderComparison();
-  status.textContent=
-   "Monthly data not available yet. The scheduled workflow must "+
-   "create docs/edge_monthly.json. "+e.message;
+  console.warn("Monthly archive fetch:",e);
+  status.textContent="Archive refresh failed: "+e.message+". Previously loaded results retained.";
+  return;
  }
+ monthlyReport=json;
+ const current=comparePeriodDate().slice(0,7);
+ const months=[...new Set([current,...Object.keys(json.months)])].sort().reverse();
+ const select=$("monthly-select");
+ const previous=selectedMonth;
+ select.replaceChildren();
+ for(const month of months)select.add(new Option(monthLabel(month),month));
+ selectedMonth=months.includes(previous)?previous:current;
+ select.value=selectedMonth;
+ for(const render of [renderMonthly,renderUnofficial,renderComparison]){
+  try{render();}catch(e){console.warn("Archive display:",e);}
+ }
+ if(viewMode==="edge")switchDay(activeDay);
 }
 
 function csvValue(v){
@@ -1157,8 +1126,9 @@ function switchDay(day){
  if(viewMode==="edge"){
   if(day==="yesterday"){
    const archiveReady=["months","legacy_months","preview_months"].some(k=>Object.keys(monthlyReport[k]||{}).length>0);
+   const daily=summarizeEdgeArchive(data);
    $("edge-status").textContent=data.length
-    ?data.length+" archived Edge Model selections ("+(data[0]?.archive_type||"Historical")+"; excluded from official performance unless locked)"
+    ?data.length+" archived Edge Model selections ("+(data[0]?.archive_type||"Historical")+"; excluded from official performance unless locked) | "+daily.wins+" W / "+daily.losses+" L / "+daily.pending+" pending | Win rate "+monthlyPct(daily.win_rate)+" | ROI "+monthlyPct(daily.hypothetical_roi)+" | "+monthlyUnits(daily.hypothetical_profit/100)
     :archiveReady
      ?"No archived Edge Model selections found for this date."
      :"No archive data loaded yet; check docs/edge_monthly.json.";
@@ -1224,7 +1194,7 @@ function draw(){
    (!game||gameKey(r)===game)&&
    (!market||r.market===market)&&
    (!side||r.side===side)&&
-   Number(r.odds)>=oddsLimit&&
+   ((activeDay==="yesterday"&&viewMode==="edge"&&oddsLimit===MIN_ODDS)||Number(r.odds)>=oddsLimit)&&
    (!selection||r.selection_status===selection)&&
    (!result||r.result===result)&&
    (!riskFilter||
