@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T20:14:33.786962+00:00",
+  "generated_at": "2026-11-14T20:48:31.737613+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 108,
+  "player_count": 107,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 108,
+  "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "T": 34,
+    "T": 33,
     "O": 73,
     "U": 1
   },
@@ -573,6 +573,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "539113",
+      "name": "Collin Sexton",
+      "team": "LAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Head | day-to-day",
+      "date": "2026-11-14T20:25Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539110",
+      "name": "Austin Reaves",
+      "team": "LAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Heel | day-to-day",
+      "date": "2026-11-14T20:15Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538933",
       "name": "Quentin Grimes",
       "team": "LAL",
@@ -580,39 +602,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Finger | day-to-day",
       "date": "2026-11-13T21:26Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538931",
-      "name": "Austin Reaves",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Heel | day-to-day",
-      "date": "2026-11-13T20:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538930",
-      "name": "Luka Doncic",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
-      "date": "2026-11-13T20:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538719",
-      "name": "Collin Sexton",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Head | day-to-day",
-      "date": "2026-11-12T04:40Z",
       "team_match": "feed"
     },
     {
