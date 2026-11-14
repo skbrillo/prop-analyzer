@@ -1916,11 +1916,11 @@ function render8910(){
  const rows=archive8910.filter(r=>period==='all'||r.game_date===(period==='today'?today:dateKey(yesterday)));
  const grid=$('stats8910');grid.replaceChildren();
  for(const bucket of [8,9,10,'Combined']){
-  const a=rows.filter(r=>bucket==='Combined'||r.bucket===bucket), settled=a.filter(r=>r.status==='graded');
+  const a=rows.filter(r=>bucket==='Combined'||Number(r.bucket)===bucket), settled=a.filter(r=>r.status==='graded');
   const w=settled.filter(r=>r.outcome==='win').length,l=settled.filter(r=>r.outcome==='loss').length;
   const profit=settled.reduce((s,r)=>s+Number(r.profit||0),0), stake=settled.reduce((s,r)=>s+Number(r.stake||0),0);
   const box=document.createElement('div');box.className='stat';box.append(bucket==='Combined'?bucket:bucket+'/10');
-  const b=document.createElement('b');b.textContent=w+' – '+l;box.append(b);
+  const b=document.createElement('b');b.textContent=a.length+' picks';box.append(b); const record=document.createElement('div');record.textContent='W–L: '+w+' – '+l;box.append(record);
   const detail=document.createElement('div');detail.className='muted';detail.textContent='Win '+(w+l?(100*w/(w+l)).toFixed(1)+'%':'—')+' | ROI '+(stake?(100*profit/stake).toFixed(1)+'%':'—')+' | '+(profit/100).toFixed(2)+'u | Pending '+a.filter(r=>r.status==='pending').length+' | Push '+settled.filter(r=>r.outcome==='push').length+' | DNP '+a.filter(r=>r.status==='dnp').length;box.append(detail);grid.append(box);
  }
  const body=$('rows8910');body.replaceChildren();
@@ -1929,7 +1929,7 @@ function render8910(){
  }
  $('status8910').textContent=rows.length+' tracked selections';
 }
-async function load8910(){try{const data=await fetchJson('8910_history.json');archive8910=Object.values(data.picks);render8910();}catch(e){$('status8910').textContent='8910 archive not available yet';}}
+async function load8910(){try{const data=await fetchJson('8910_history.json');if(!data.picks||typeof data.picks!=='object')throw new Error('Missing picks');archive8910=Object.values(data.picks);render8910();$('status8910').textContent+=' | Archive updated: '+(data.updated_at||'unknown');}catch(e){$('status8910').textContent='8910 archive error: '+e.message;}}
 $('period8910').addEventListener('change',render8910);
 
 function refreshAll(){
