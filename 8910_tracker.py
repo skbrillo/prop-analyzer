@@ -29,7 +29,7 @@ def main():
                 continue
             if tip.astimezone(ZoneInfo('America/Chicago')).date().isoformat() != today:
                 continue
-            if hits not in (8,9,10) or sample is None or sample < 10 or odds is None or not (-125 <= odds <= -100 or odds >= 100):
+            if hits not in (8,9,10) or (sample is not None and sample < 10) or odds is None or not (-125 <= odds <= -100 or odds >= 100):
                 continue
             if g.number(row.get('line')) is None or str(row.get('side','')).lower() not in ('over','under') or str(row.get('market','')).lower() not in ('points','rebounds','assists'):
                 continue
