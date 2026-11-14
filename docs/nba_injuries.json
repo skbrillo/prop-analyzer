@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T22:25:31.078319+00:00",
+  "generated_at": "2026-11-14T22:58:00.439529+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -20,6 +20,7 @@
     "LAL",
     "MEM",
     "MIA",
+    "MIL",
     "MIN",
     "NOP",
     "OKC",
@@ -33,12 +34,12 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 27,
+  "teams_count": 28,
   "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
-    "T": 34,
-    "O": 75,
+    "T": 33,
+    "O": 76,
     "U": 1
   },
   "players": [
@@ -209,6 +210,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539140",
+      "name": "Jarrett Allen",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Knee | out",
+      "date": "2026-11-14T22:52Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539097",
       "name": "Peyton Watson",
       "team": "CLE",
@@ -227,17 +239,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Toe | out",
       "date": "2026-11-14T18:33Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539093",
-      "name": "Jarrett Allen",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-14T18:31Z",
       "team_match": "feed"
     },
     {
@@ -715,6 +716,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539139",
+      "name": "Ousmane Dieng",
+      "team": "MIL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Finger | out",
+      "date": "2026-11-14T22:40Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "536718",
       "name": "Anthony Edwards",
       "team": "MIN",
@@ -733,17 +745,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-05T20:53Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539079",
-      "name": "Yves Missi",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Knee | out",
-      "date": "2026-11-14T18:01Z",
       "team_match": "feed"
     },
     {
