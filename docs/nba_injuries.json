@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T23:58:49.716787+00:00",
+  "generated_at": "2026-11-14T00:39:53.987866+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,8 +38,8 @@
   "players_with_team": 99,
   "players_without_team": 0,
   "status_counts": {
-    "O": 77,
-    "T": 21,
+    "O": 78,
+    "T": 20,
     "U": 1
   },
   "players": [
@@ -155,6 +155,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538955",
+      "name": "Dailyn Swain",
+      "team": "CHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-14T00:17Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538820",
       "name": "Tobe Awaka",
       "team": "CHI",
@@ -162,17 +173,6 @@
       "raw_status": "Out",
       "reason": "Back | out",
       "date": "2026-11-12T21:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538819",
-      "name": "Dailyn Swain",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-12T21:38Z",
       "team_match": "feed"
     },
     {
