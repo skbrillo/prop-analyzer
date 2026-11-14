@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T03:15:51.642700+00:00",
+  "generated_at": "2026-11-14T04:16:35.764364+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 98,
+  "player_count": 100,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,14 +35,25 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 98,
+  "players_with_team": 100,
   "players_without_team": 0,
   "status_counts": {
+    "T": 20,
     "O": 79,
-    "T": 18,
     "U": 1
   },
   "players": [
+    {
+      "id": "",
+      "injury_record_id": "538982",
+      "name": "Kingston Flemings",
+      "team": "ATL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-14T03:20Z",
+      "team_match": "feed"
+    },
     {
       "id": "",
       "injury_record_id": "538842",
@@ -151,6 +162,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T22:26Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538991",
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hand | day-to-day",
+      "date": "2026-11-14T03:50Z",
       "team_match": "feed"
     },
     {
