@@ -319,6 +319,13 @@ tbody tr:hover{background:#1d3048}
  <div id="game-lines-status" class="muted"></div>
  <div id="game-lines-grid" class="gamecards"></div>
 </section>
+<section class="monthly-panel" id="tracker8910">
+ <div class="monthly-head"><h2>8910 — Performance Tracker</h2><select id="period8910"><option value="all">All History</option><option value="today">Today</option><option value="yesterday">Yesterday</option></select></div>
+ <div class="monthly-stats" id="stats8910" style="grid-template-columns:repeat(auto-fit,minmax(145px,1fr))"></div>
+ <div class="muted" id="status8910">Loading 8910...</div>
+ <details><summary>View individual picks</summary><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div></details>
+ <div class="note">Independent hypothetical results. First qualifying pregame snapshot; one pick per player, date and market. Odds -125 or better; no EV filter.</div>
+</section>
 
 <section class="section" style="display:none">
  <h2>Live Betting Performance</h2>
@@ -1899,7 +1906,34 @@ function downloadEdge(){
  window.location.href="./edge_top25.csv?t="+Date.now();
 }
 
+
+let archive8910=[];
+function render8910(){
+ const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'});
+ const dateKey=d=>{const a=Object.fromEntries(fmt.formatToParts(d).map(p=>[p.type,p.value]));return a.year+'-'+a.month+'-'+a.day;};
+ const today=dateKey(new Date()); const yesterday=new Date(today+'T12:00:00Z'); yesterday.setUTCDate(yesterday.getUTCDate()-1);
+ const period=$('period8910').value;
+ const rows=archive8910.filter(r=>period==='all'||r.game_date===(period==='today'?today:dateKey(yesterday)));
+ const grid=$('stats8910');grid.replaceChildren();
+ for(const bucket of [8,9,10,'Combined']){
+  const a=rows.filter(r=>bucket==='Combined'||r.bucket===bucket), settled=a.filter(r=>r.status==='graded');
+  const w=settled.filter(r=>r.outcome==='win').length,l=settled.filter(r=>r.outcome==='loss').length;
+  const profit=settled.reduce((s,r)=>s+Number(r.profit||0),0), stake=settled.reduce((s,r)=>s+Number(r.stake||0),0);
+  const box=document.createElement('div');box.className='stat';box.append(bucket==='Combined'?bucket:bucket+'/10');
+  const b=document.createElement('b');b.textContent=w+' – '+l;box.append(b);
+  const detail=document.createElement('div');detail.className='muted';detail.textContent='Win '+(w+l?(100*w/(w+l)).toFixed(1)+'%':'—')+' | ROI '+(stake?(100*profit/stake).toFixed(1)+'%':'—')+' | '+(profit/100).toFixed(2)+'u | Pending '+a.filter(r=>r.status==='pending').length+' | Push '+settled.filter(r=>r.outcome==='push').length+' | DNP '+a.filter(r=>r.status==='dnp').length;box.append(detail);grid.append(box);
+ }
+ const body=$('rows8910');body.replaceChildren();
+ for(const r of rows.slice().sort((a,b)=>String(b.game_date).localeCompare(String(a.game_date)))){
+  const tr=document.createElement('tr');for(const v of [r.game_date,r.player,r.market,r.side,r.line,r.odds,r.bucket+'/10',r.actual,r.outcome||r.status]){const td=document.createElement('td');td.textContent=v??'—';tr.append(td);}body.append(tr);
+ }
+ $('status8910').textContent=rows.length+' tracked selections';
+}
+async function load8910(){try{const data=await fetchJson('8910_history.json');archive8910=Object.values(data.picks);render8910();}catch(e){$('status8910').textContent='8910 archive not available yet';}}
+$('period8910').addEventListener('change',render8910);
+
 function refreshAll(){
+ load8910();
  loadData();
  loadMovement();
  loadTracking();
