@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T07:35:08.383178+00:00",
+  "generated_at": "2026-11-14T08:27:36.537272+00:00",
   "source": "RotoWire",
   "games": {
     "401909976": {
@@ -1561,12 +1561,14 @@
       "tipoff": "2026-11-15T00:00:00+00:00",
       "home": "NOP",
       "away": "DEN",
-      "checked_at": "2026-11-14T07:35:08.383178+00:00",
-      "minutes_before_tipoff": 984.9,
+      "checked_at": "2026-11-14T08:27:36.537272+00:00",
+      "minutes_before_tipoff": 932.4,
       "status": "unverified",
-      "home_status": "confirmed",
+      "home_status": "unverified",
       "away_status": "unverified",
-      "home_starters": [
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
         {
           "name": "Jeremiah Fears",
           "team": "NOP"
@@ -1576,21 +1578,40 @@
           "team": "NOP"
         },
         {
+          "name": "Trey Murphy",
+          "team": "NOP"
+        },
+        {
           "name": "Saddiq Bey",
           "team": "NOP"
         },
         {
-          "name": "Zion Williamson",
-          "team": "NOP"
-        },
-        {
-          "name": "DeAndre Jordan",
+          "name": "Karlo Matkovic",
           "team": "NOP"
         }
       ],
-      "away_starters": [],
-      "home_projected": [],
-      "away_projected": [],
+      "away_projected": [
+        {
+          "name": "Jamal Murray",
+          "team": "DEN"
+        },
+        {
+          "name": "Christian Braun",
+          "team": "DEN"
+        },
+        {
+          "name": "Cameron Johnson",
+          "team": "DEN"
+        },
+        {
+          "name": "Aaron Gordon",
+          "team": "DEN"
+        },
+        {
+          "name": "Nikola Jokic",
+          "team": "DEN"
+        }
+      ],
       "home_out": [
         {
           "name": "Bryce McGowens",
@@ -1618,7 +1639,13 @@
           "status": "out"
         }
       ],
-      "away_out": [],
+      "away_out": [
+        {
+          "name": "Julian Strawther",
+          "team": "DEN",
+          "status": "out"
+        }
+      ],
       "out_players": [
         {
           "name": "Bryce McGowens",
@@ -1644,6 +1671,11 @@
           "name": "Trendon Watford",
           "team": "NOP",
           "status": "out"
+        },
+        {
+          "name": "Julian Strawther",
+          "team": "DEN",
+          "status": "out"
         }
       ],
       "source": "RotoWire"
@@ -1654,12 +1686,14 @@
       "tipoff": "2026-11-15T00:30:00+00:00",
       "home": "CLE",
       "away": "DAL",
-      "checked_at": "2026-11-14T07:35:08.383178+00:00",
-      "minutes_before_tipoff": 1014.9,
+      "checked_at": "2026-11-14T08:27:36.537272+00:00",
+      "minutes_before_tipoff": 962.4,
       "status": "unverified",
-      "home_status": "confirmed",
+      "home_status": "unverified",
       "away_status": "unverified",
-      "home_starters": [
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
         {
           "name": "James Harden",
           "team": "CLE"
@@ -1673,7 +1707,7 @@
           "team": "CLE"
         },
         {
-          "name": "Jaylon Tyson",
+          "name": "Evan Mobley",
           "team": "CLE"
         },
         {
@@ -1681,9 +1715,28 @@
           "team": "CLE"
         }
       ],
-      "away_starters": [],
-      "home_projected": [],
-      "away_projected": [],
+      "away_projected": [
+        {
+          "name": "Kyrie Irving",
+          "team": "DAL"
+        },
+        {
+          "name": "Caleb Martin",
+          "team": "DAL"
+        },
+        {
+          "name": "Cooper Flagg",
+          "team": "DAL"
+        },
+        {
+          "name": "P.J. Washington",
+          "team": "DAL"
+        },
+        {
+          "name": "Daniel Gafford",
+          "team": "DAL"
+        }
+      ],
       "home_out": [
         {
           "name": "Sam Merrill",
@@ -1701,7 +1754,23 @@
           "status": "out"
         }
       ],
-      "away_out": [],
+      "away_out": [
+        {
+          "name": "Tarik Biberovic",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Sergio de Larrea",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Dereck Lively",
+          "team": "DAL",
+          "status": "out"
+        }
+      ],
       "out_players": [
         {
           "name": "Sam Merrill",
@@ -1716,6 +1785,21 @@
         {
           "name": "Nae'Qwan Tomlin",
           "team": "CLE",
+          "status": "out"
+        },
+        {
+          "name": "Tarik Biberovic",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Sergio de Larrea",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Dereck Lively",
+          "team": "DAL",
           "status": "out"
         }
       ],
@@ -1727,22 +1811,24 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MIA",
       "away": "DET",
-      "checked_at": "2026-11-14T07:35:08.383178+00:00",
-      "minutes_before_tipoff": 1044.9,
+      "checked_at": "2026-11-14T08:27:36.537272+00:00",
+      "minutes_before_tipoff": 992.4,
       "status": "unverified",
-      "home_status": "confirmed",
+      "home_status": "unverified",
       "away_status": "unverified",
-      "home_starters": [
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
         {
           "name": "Davion Mitchell",
           "team": "MIA"
         },
         {
-          "name": "Tim Hardaway",
+          "name": "Klay Thompson",
           "team": "MIA"
         },
         {
-          "name": "Myron Gardner",
+          "name": "Pelle Larsson",
           "team": "MIA"
         },
         {
@@ -1754,9 +1840,28 @@
           "team": "MIA"
         }
       ],
-      "away_starters": [],
-      "home_projected": [],
-      "away_projected": [],
+      "away_projected": [
+        {
+          "name": "Cade Cunningham",
+          "team": "DET"
+        },
+        {
+          "name": "Daniss Jenkins",
+          "team": "DET"
+        },
+        {
+          "name": "Duncan Robinson",
+          "team": "DET"
+        },
+        {
+          "name": "Ausar Thompson",
+          "team": "DET"
+        },
+        {
+          "name": "John Collins",
+          "team": "DET"
+        }
+      ],
       "home_out": [
         {
           "name": "Pelle Larsson",
@@ -1769,7 +1874,18 @@
           "status": "out"
         }
       ],
-      "away_out": [],
+      "away_out": [
+        {
+          "name": "Jalen Duren",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Isaiah Joe",
+          "team": "DET",
+          "status": "out"
+        }
+      ],
       "out_players": [
         {
           "name": "Pelle Larsson",
@@ -1779,6 +1895,16 @@
         {
           "name": "Klay Thompson",
           "team": "MIA",
+          "status": "out"
+        },
+        {
+          "name": "Jalen Duren",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Isaiah Joe",
+          "team": "DET",
           "status": "out"
         }
       ],
@@ -1790,12 +1916,14 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MEM",
       "away": "BKN",
-      "checked_at": "2026-11-14T07:35:08.383178+00:00",
-      "minutes_before_tipoff": 1044.9,
+      "checked_at": "2026-11-14T08:27:36.537272+00:00",
+      "minutes_before_tipoff": 992.4,
       "status": "unverified",
-      "home_status": "confirmed",
+      "home_status": "unverified",
       "away_status": "unverified",
-      "home_starters": [
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
         {
           "name": "Ty Jerome",
           "team": "MEM"
@@ -1813,13 +1941,32 @@
           "team": "MEM"
         },
         {
-          "name": "Isaiah Stewart",
+          "name": "Zach Edey",
           "team": "MEM"
         }
       ],
-      "away_starters": [],
-      "home_projected": [],
-      "away_projected": [],
+      "away_projected": [
+        {
+          "name": "Nolan Traore",
+          "team": "BKN"
+        },
+        {
+          "name": "Egor Demin",
+          "team": "BKN"
+        },
+        {
+          "name": "Michael Porter",
+          "team": "BKN"
+        },
+        {
+          "name": "Julius Randle",
+          "team": "BKN"
+        },
+        {
+          "name": "Day'Ron Sharpe",
+          "team": "BKN"
+        }
+      ],
       "home_out": [
         {
           "name": "Zach Edey",
@@ -1863,13 +2010,36 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MIN",
       "away": "CHI",
-      "checked_at": "2026-11-14T07:35:08.383178+00:00",
-      "minutes_before_tipoff": 1044.9,
+      "checked_at": "2026-11-14T08:27:36.537272+00:00",
+      "minutes_before_tipoff": 992.4,
       "status": "unverified",
       "home_status": "unverified",
-      "away_status": "confirmed",
+      "away_status": "unverified",
       "home_starters": [],
-      "away_starters": [
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "LaMelo Ball",
+          "team": "MIN"
+        },
+        {
+          "name": "Ayo Dosunmu",
+          "team": "MIN"
+        },
+        {
+          "name": "Jonathan Kuminga",
+          "team": "MIN"
+        },
+        {
+          "name": "Jaden McDaniels",
+          "team": "MIN"
+        },
+        {
+          "name": "Rudy Gobert",
+          "team": "MIN"
+        }
+      ],
+      "away_projected": [
         {
           "name": "Josh Giddey",
           "team": "CHI"
@@ -1891,9 +2061,18 @@
           "team": "CHI"
         }
       ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [],
+      "home_out": [
+        {
+          "name": "Donte DiVincenzo",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Anthony Edwards",
+          "team": "MIN",
+          "status": "out"
+        }
+      ],
       "away_out": [
         {
           "name": "Tobe Awaka",
@@ -1912,6 +2091,16 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Donte DiVincenzo",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Anthony Edwards",
+          "team": "MIN",
+          "status": "out"
+        },
         {
           "name": "Tobe Awaka",
           "team": "CHI",
