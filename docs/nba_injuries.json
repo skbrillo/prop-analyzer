@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T02:28:54.669602+00:00",
+  "generated_at": "2026-11-14T03:15:51.642700+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 96,
+  "player_count": 98,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 96,
+  "players_with_team": 98,
   "players_without_team": 0,
   "status_counts": {
-    "O": 78,
-    "T": 17,
+    "O": 79,
+    "T": 18,
     "U": 1
   },
   "players": [
@@ -408,6 +408,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538979",
+      "name": "Aaron Nesmith",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hand | day-to-day",
+      "date": "2026-11-14T03:02Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538646",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -672,6 +683,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "538973",
+      "name": "Ajay Mitchell",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-14T02:34Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538849",
       "name": "Thomas Sorber",
       "team": "OKC",
@@ -679,17 +701,6 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-11-13T01:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538846",
-      "name": "Ajay Mitchell",
-      "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-13T01:03Z",
       "team_match": "feed"
     },
     {
@@ -998,6 +1009,17 @@
       "raw_status": "Out",
       "reason": "Fracture | Foot | out",
       "date": "2026-11-08T21:20Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "538978",
+      "name": "Jaxson Hayes",
+      "team": "UTA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Knee | day-to-day",
+      "date": "2026-11-14T02:58Z",
       "team_match": "feed"
     },
     {
