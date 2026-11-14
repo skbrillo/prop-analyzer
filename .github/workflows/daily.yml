@@ -8,8 +8,8 @@ on:
     - cron: '0 17,18 * * *'
     # 4 PM Central
     - cron: '0 21,22 * * *'
-    # 11:30 PM Central
-    - cron: '30 4,5 * * *'
+    # 3:00 AM Central
+    - cron: '0 8,9 * * *'
   workflow_dispatch:
     inputs:
       run_mode:
@@ -75,7 +75,7 @@ jobs:
                   '0 10,11 * * *': (10, 11, 0, 5, 0, 'morning'),
                   '0 17,18 * * *': (17, 18, 0, 12, 0, 'midday'),
                   '0 21,22 * * *': (21, 22, 0, 16, 0, 'afternoon'),
-                  '30 4,5 * * *': (4, 5, 30, 23, 30, 'grading'),
+                  '0 8,9 * * *': (8, 9, 0, 3, 0, 'grading'),
               }
               if schedule in cron_slots:
                   h1, h2, minute, local_hour, local_minute, kind = cron_slots[schedule]
