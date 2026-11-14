@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T22:45:50.980087+00:00",
+  "generated_at": "2026-11-14T23:21:53.286236+00:00",
   "source": "RotoWire",
   "games": {
     "401909296": {
@@ -1131,8 +1131,8 @@
       "tipoff": "2026-11-15T00:00:00+00:00",
       "home": "NOP",
       "away": "DEN",
-      "checked_at": "2026-11-14T22:45:50.980087+00:00",
-      "minutes_before_tipoff": 74.2,
+      "checked_at": "2026-11-14T23:21:53.286236+00:00",
+      "minutes_before_tipoff": 38.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1184,6 +1184,11 @@
       ],
       "home_out": [
         {
+          "name": "Bennedict Mathurin",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
           "name": "Bryce McGowens",
           "team": "NOP",
           "status": "out"
@@ -1212,6 +1217,11 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Bennedict Mathurin",
+          "team": "NOP",
+          "status": "out"
+        },
         {
           "name": "Bryce McGowens",
           "team": "NOP",
@@ -1246,8 +1256,8 @@
       "tipoff": "2026-11-15T00:30:00+00:00",
       "home": "CLE",
       "away": "DAL",
-      "checked_at": "2026-11-14T22:45:50.980087+00:00",
-      "minutes_before_tipoff": 104.2,
+      "checked_at": "2026-11-14T23:21:53.286236+00:00",
+      "minutes_before_tipoff": 68.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1255,15 +1265,11 @@
       "away_starters": [],
       "home_projected": [
         {
-          "name": "James Harden",
+          "name": "Craig Porter",
           "team": "CLE"
         },
         {
-          "name": "Donovan Mitchell",
-          "team": "CLE"
-        },
-        {
-          "name": "Peyton Watson",
+          "name": "Meleek Thomas",
           "team": "CLE"
         },
         {
@@ -1271,7 +1277,11 @@
           "team": "CLE"
         },
         {
-          "name": "Jarrett Allen",
+          "name": "Mario Hezonja",
+          "team": "CLE"
+        },
+        {
+          "name": "Thomas Bryant",
           "team": "CLE"
         }
       ],
@@ -1299,7 +1309,22 @@
       ],
       "home_out": [
         {
+          "name": "Jarrett Allen",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
+          "name": "James Harden",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
           "name": "Sam Merrill",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
+          "name": "Donovan Mitchell",
           "team": "CLE",
           "status": "out"
         },
@@ -1312,11 +1337,21 @@
           "name": "Nae'Qwan Tomlin",
           "team": "CLE",
           "status": "out"
+        },
+        {
+          "name": "Peyton Watson",
+          "team": "CLE",
+          "status": "out"
         }
       ],
       "away_out": [
         {
           "name": "Tarik Biberovic",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Max Christie",
           "team": "DAL",
           "status": "out"
         },
@@ -1333,7 +1368,22 @@
       ],
       "out_players": [
         {
+          "name": "Jarrett Allen",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
+          "name": "James Harden",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
           "name": "Sam Merrill",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
+          "name": "Donovan Mitchell",
           "team": "CLE",
           "status": "out"
         },
@@ -1348,7 +1398,17 @@
           "status": "out"
         },
         {
+          "name": "Peyton Watson",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
           "name": "Tarik Biberovic",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Max Christie",
           "team": "DAL",
           "status": "out"
         },
@@ -1371,8 +1431,8 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MIA",
       "away": "DET",
-      "checked_at": "2026-11-14T22:45:50.980087+00:00",
-      "minutes_before_tipoff": 134.2,
+      "checked_at": "2026-11-14T23:21:53.286236+00:00",
+      "minutes_before_tipoff": 98.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1455,8 +1515,8 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MEM",
       "away": "BKN",
-      "checked_at": "2026-11-14T22:45:50.980087+00:00",
-      "minutes_before_tipoff": 134.2,
+      "checked_at": "2026-11-14T23:21:53.286236+00:00",
+      "minutes_before_tipoff": 98.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1549,8 +1609,8 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MIN",
       "away": "CHI",
-      "checked_at": "2026-11-14T22:45:50.980087+00:00",
-      "minutes_before_tipoff": 134.2,
+      "checked_at": "2026-11-14T23:21:53.286236+00:00",
+      "minutes_before_tipoff": 98.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
