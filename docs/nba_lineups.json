@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T01:41:14.130558+00:00",
+  "generated_at": "2026-11-14T02:31:19.677898+00:00",
   "source": "RotoWire",
   "games": {
     "401909976": {
@@ -438,8 +438,8 @@
       "tipoff": "2026-11-14T00:00:00+00:00",
       "home": "IND",
       "away": "NYK",
-      "checked_at": "2026-11-14T01:41:14.130558+00:00",
-      "minutes_before_tipoff": -101.2,
+      "checked_at": "2026-11-14T02:31:19.677898+00:00",
+      "minutes_before_tipoff": -151.3,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -532,8 +532,8 @@
       "tipoff": "2026-11-14T00:00:00+00:00",
       "home": "ORL",
       "away": "MIL",
-      "checked_at": "2026-11-14T01:41:14.130558+00:00",
-      "minutes_before_tipoff": -101.2,
+      "checked_at": "2026-11-14T02:31:19.677898+00:00",
+      "minutes_before_tipoff": -151.3,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -636,8 +636,8 @@
       "tipoff": "2026-11-14T01:00:00+00:00",
       "home": "MIA",
       "away": "CLE",
-      "checked_at": "2026-11-14T01:41:14.130558+00:00",
-      "minutes_before_tipoff": -41.2,
+      "checked_at": "2026-11-14T02:31:19.677898+00:00",
+      "minutes_before_tipoff": -91.3,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -751,8 +751,8 @@
       "tipoff": "2026-11-14T01:00:00+00:00",
       "home": "CHI",
       "away": "ATL",
-      "checked_at": "2026-11-14T01:41:14.130558+00:00",
-      "minutes_before_tipoff": -41.2,
+      "checked_at": "2026-11-14T02:31:19.677898+00:00",
+      "minutes_before_tipoff": -91.3,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -876,8 +876,8 @@
       "tipoff": "2026-11-14T01:00:00+00:00",
       "home": "NOP",
       "away": "MEM",
-      "checked_at": "2026-11-14T01:41:14.130558+00:00",
-      "minutes_before_tipoff": -41.2,
+      "checked_at": "2026-11-14T02:31:19.677898+00:00",
+      "minutes_before_tipoff": -91.3,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1021,8 +1021,8 @@
       "tipoff": "2026-11-14T01:30:00+00:00",
       "home": "HOU",
       "away": "UTA",
-      "checked_at": "2026-11-14T01:41:14.130558+00:00",
-      "minutes_before_tipoff": -11.2,
+      "checked_at": "2026-11-14T02:31:19.677898+00:00",
+      "minutes_before_tipoff": -61.3,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1146,14 +1146,12 @@
       "tipoff": "2026-11-14T02:30:00+00:00",
       "home": "SAS",
       "away": "GSW",
-      "checked_at": "2026-11-14T01:41:14.130558+00:00",
-      "minutes_before_tipoff": 48.8,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-14T02:31:19.677898+00:00",
+      "minutes_before_tipoff": -1.3,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "De'Aaron Fox",
           "team": "SAS"
@@ -1175,9 +1173,13 @@
           "team": "SAS"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Brandin Podziemski",
+          "team": "GSW"
+        },
+        {
+          "name": "Will Richard",
           "team": "GSW"
         },
         {
@@ -1189,14 +1191,12 @@
           "team": "GSW"
         },
         {
-          "name": "Gui Santos",
-          "team": "GSW"
-        },
-        {
           "name": "Draymond Green",
           "team": "GSW"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Tobias Harris",
@@ -1281,8 +1281,8 @@
       "tipoff": "2026-11-14T03:00:00+00:00",
       "home": "SAC",
       "away": "POR",
-      "checked_at": "2026-11-14T01:41:14.130558+00:00",
-      "minutes_before_tipoff": 78.8,
+      "checked_at": "2026-11-14T02:31:19.677898+00:00",
+      "minutes_before_tipoff": 28.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1406,8 +1406,8 @@
       "tipoff": "2026-11-14T03:30:00+00:00",
       "home": "LAC",
       "away": "OKC",
-      "checked_at": "2026-11-14T01:41:14.130558+00:00",
-      "minutes_before_tipoff": 108.8,
+      "checked_at": "2026-11-14T02:31:19.677898+00:00",
+      "minutes_before_tipoff": 58.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
