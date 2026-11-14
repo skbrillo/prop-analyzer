@@ -1,13 +1,12 @@
 {
-  "generated_at": "2026-11-14T21:57:55.565145+00:00",
+  "generated_at": "2026-11-14T22:25:31.078319+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 112,
+  "player_count": 110,
   "teams_reported": [
     "ATL",
     "BKN",
-    "BOS",
     "CHA",
     "CHI",
     "CLE",
@@ -34,12 +33,12 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 28,
-  "players_with_team": 112,
+  "teams_count": 27,
+  "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
-    "T": 37,
-    "O": 74,
+    "T": 34,
+    "O": 75,
     "U": 1
   },
   "players": [
@@ -96,17 +95,6 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-09-21T19:50Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60747",
-      "name": "Paul George",
-      "team": "BOS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-12T03:01Z",
       "team_match": "feed"
     },
     {
@@ -452,13 +440,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60865",
+      "injury_record_id": "539132",
+      "name": "Clint Capela",
+      "team": "HOU",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-14T21:54Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539131",
+      "name": "Steven Adams",
+      "team": "HOU",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Calf | out",
+      "date": "2026-11-14T21:52Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539130",
       "name": "Fred VanVleet",
       "team": "HOU",
       "status": "O",
       "raw_status": "Out",
       "reason": "Knee | out",
-      "date": "2026-11-14T21:50Z",
+      "date": "2026-11-14T21:52Z",
       "team_match": "feed"
     },
     {
@@ -470,28 +480,6 @@
       "raw_status": "Suspension",
       "reason": "Suspension",
       "date": "2026-11-12T22:45Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538372",
-      "name": "Clint Capela",
-      "team": "HOU",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-09T23:56Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538371",
-      "name": "Steven Adams",
-      "team": "HOU",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Calf | out",
-      "date": "2026-11-09T23:55Z",
       "team_match": "feed"
     },
     {
@@ -914,13 +902,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60803",
-      "name": "LeBron James",
+      "injury_record_id": "539135",
+      "name": "Joel Embiid",
       "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-13T03:28Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Foot | out",
+      "date": "2026-11-14T22:05Z",
       "team_match": "feed"
     },
     {
@@ -1090,6 +1078,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539134",
+      "name": "Nate Bittle",
+      "team": "TOR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Fracture | Foot | out",
+      "date": "2026-11-14T21:59Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539070",
       "name": "Scottie Barnes",
       "team": "TOR",
@@ -1112,17 +1111,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60802",
-      "name": "Trayce Jackson-Davis",
-      "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-13T03:27Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538648",
       "name": "Kawhi Leonard",
       "team": "TOR",
@@ -1130,17 +1118,6 @@
       "raw_status": "Out",
       "reason": "Inflammation | Knee | out",
       "date": "2026-11-11T22:33Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538181",
-      "name": "Nate Bittle",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Fracture | Foot | out",
-      "date": "2026-11-08T21:20Z",
       "team_match": "feed"
     },
     {
