@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T17:00:17.894003+00:00",
+  "generated_at": "2026-11-14T17:41:55.844454+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -111,13 +111,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538937",
+      "injury_record_id": "539067",
       "name": "Mikel Brown Jr.",
       "team": "BKN",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Not Specified | Illness | day-to-day",
-      "date": "2026-11-13T22:08Z",
+      "date": "2026-11-14T17:19Z",
       "team_match": "feed"
     },
     {
@@ -1007,7 +1007,7 @@
       "team": "TOR",
       "status": "O",
       "raw_status": "Out",
-      "reason": "Soreness | Groin | out",
+      "reason": "Strain | Groin | out",
       "date": "2026-11-12T18:05Z",
       "team_match": "feed"
     },
