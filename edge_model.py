@@ -449,6 +449,8 @@ def run():
         f"Eligible: {len(eligible)} | "
         f"Rejected: {len(rejected)}"
     )
+    print("Edge rejection reasons (non-exclusive):", dict(Counter(reason for row in rejected for reason in row["reasons"]).most_common()))
+    print("Eligible outcomes removed by one-player rule:", len(eligible) - len(selected))
     print(f"Lineup statuses: {dict(lineup_counts)}")
     print(f"Qualifying selections (7% probability gap): {len(selected)}")
     print(f"Saved: {OUTPUT} and {CSV_OUTPUT}")
