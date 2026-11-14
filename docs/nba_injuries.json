@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T23:25:49.221773+00:00",
+  "generated_at": "2026-11-14T23:56:48.383581+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 110,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 110,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
-    "O": 82,
-    "T": 27,
+    "O": 85,
+    "T": 20,
     "U": 1
   },
   "players": [
@@ -100,35 +100,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60880",
+      "injury_record_id": "539148",
       "name": "Michael Porter Jr.",
       "team": "BKN",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Personal | day-to-day",
-      "date": "2026-11-14T23:14Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539067",
-      "name": "Mikel Brown Jr.",
-      "team": "BKN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Illness | day-to-day",
-      "date": "2026-11-14T17:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538936",
-      "name": "Nolan Traore",
-      "team": "BKN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Calf | day-to-day",
-      "date": "2026-11-13T22:07Z",
+      "date": "2026-11-14T23:19Z",
       "team_match": "feed"
     },
     {
@@ -166,6 +144,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "539155",
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Finger | out",
+      "date": "2026-11-14T23:40Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539154",
+      "name": "Nic Claxton",
+      "team": "CHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-14T23:39Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539084",
       "name": "Tobe Awaka",
       "team": "CHI",
@@ -173,39 +173,6 @@
       "raw_status": "Out",
       "reason": "Back | out",
       "date": "2026-11-14T18:10Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539082",
-      "name": "Nic Claxton",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-14T18:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539078",
-      "name": "Jalen Smith",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Finger | day-to-day",
-      "date": "2026-11-14T18:00Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539076",
-      "name": "Norman Powell",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-14T17:57Z",
       "team_match": "feed"
     },
     {
@@ -683,24 +650,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539086",
+      "injury_record_id": "539151",
       "name": "Pelle Larsson",
       "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-14T18:12Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539083",
-      "name": "Klay Thompson",
-      "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-14T18:10Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-14T23:26Z",
       "team_match": "feed"
     },
     {
