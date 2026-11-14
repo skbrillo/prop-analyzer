@@ -779,7 +779,10 @@ def save_line_movement(rows):
     baseline = existing.get("baseline", {})
     if not isinstance(baseline, dict):
         baseline = {}
-    current = {}
+    current = existing.get("current", {})
+    if not isinstance(current, dict):
+        current = {}
+    seen_this_run = set()
     timestamp = datetime.now(timezone.utc).isoformat()
     for row in rows:
         # Ignore the line when matching, because it is expected to move.
@@ -792,8 +795,9 @@ def save_line_movement(rows):
         }
         # In the rare event of multiple lines for the same player/market,
         # prefer the first consistently; avoid mixing alternate lines.
-        if key not in current:
+        if key not in seen_this_run:
             current[key] = record
+            seen_this_run.add(key)
         if key not in baseline:
             baseline[key] = record
     # Limit historical storage to recent dates to keep the dashboard fast.
@@ -802,6 +806,7 @@ def save_line_movement(rows):
         from datetime import timedelta
         cutoff = (datetime.fromisoformat(dates[-1]).date() - timedelta(days=14)).isoformat()
         baseline = {k:v for k,v in baseline.items() if isinstance(v,dict) and str(v.get("game_date", "")) >= cutoff}
+        current = {k:v for k,v in current.items() if isinstance(v,dict) and str(v.get("game_date", "")) >= cutoff}
     payload = {"updated_at": timestamp, "baseline": baseline, "current": current}
     fd, tmp = tempfile.mkstemp(prefix="line_movement_", suffix=".json", dir=str(MOVEMENT_OUTPUT.parent))
     try:
@@ -813,7 +818,8 @@ def save_line_movement(rows):
         if os.path.exists(tmp):
             os.unlink(tmp)
     print("Line movement baseline entries:", len(baseline))
-    print("Line movement current entries:", len(current))
+    print("Line movement current entries (retained):", len(current))
+    print("Line movement entries refreshed this run:", len(seen_this_run))
 
 def main():
     api_key = os.environ.get(
@@ -1034,6 +1040,7 @@ def main():
             cost,
         )
 
+        print("Props pagination:", {k: usage.get(k) for k in ("has_more", "next_offset", "truncated", "degraded")})
         if usage["truncated"]:
             print(
                 "WARNING: ParlayAPI reports "
@@ -1154,6 +1161,13 @@ def main():
         )
     )
 
+    print("Valid props by team:", dict(sorted(Counter(r["team"] for r in rows).items())))
+    print("Valid props by market:", dict(sorted(Counter(r["market"] for r in rows).items())))
+    coverage = Counter(r["matchup"] for r in rows)
+    for event in slate:
+        details = event_details(event)
+        if details:
+            print("Slate coverage:", details["matchup"], "| props:", coverage[details["matchup"]])
     save_rows(rows)
     save_line_movement(rows)
 
