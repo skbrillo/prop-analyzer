@@ -1,23 +1,37 @@
 {
-  "generated_at": "2026-11-14T20:39:09.095042+00:00",
+  "generated_at": "2026-11-14T22:37:20.885107+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
     "2026-11": {
       "summary": {
-        "picks": 12,
+        "picks": 13,
         "wins": 9,
         "losses": 3,
         "pushes": 0,
         "dnp": 0,
         "invalid": 0,
-        "pending": 0,
+        "pending": 1,
         "settled": 12,
         "win_rate": 75.0,
         "roi": 41.41,
         "profit_units": 4.969
       },
       "days": [
+        {
+          "date": "2026-11-14",
+          "picks": 1,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 1,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        },
         {
           "date": "2026-11-13",
           "picks": 12,
@@ -225,6 +239,22 @@
           "actual": 6.0,
           "profit_units": 0.90909,
           "saved_at": "2026-11-13T22:43:03.509571+00:00"
+        },
+        {
+          "date": "2026-11-14",
+          "rank": 1,
+          "player": "Aaron Gordon",
+          "team": "Denver Nuggets",
+          "opponent": "New Orleans Pelicans",
+          "market": "Points",
+          "side": "Under",
+          "line": 13.5,
+          "odds": -112,
+          "edge_score": 53.4,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-14T22:37:20.647517+00:00"
         }
       ]
     }
@@ -1366,109 +1396,7 @@
       ]
     }
   },
-  "preview_months": {
-    "2026-11": {
-      "summary": {
-        "picks": 4,
-        "wins": 0,
-        "losses": 0,
-        "pushes": 0,
-        "dnp": 0,
-        "invalid": 0,
-        "pending": 4,
-        "settled": 0,
-        "win_rate": null,
-        "roi": null,
-        "profit_units": 0
-      },
-      "days": [
-        {
-          "date": "2026-11-14",
-          "picks": 4,
-          "wins": 0,
-          "losses": 0,
-          "pushes": 0,
-          "dnp": 0,
-          "invalid": 0,
-          "pending": 4,
-          "settled": 0,
-          "win_rate": null,
-          "roi": null,
-          "profit_units": 0
-        }
-      ],
-      "picks": [
-        {
-          "date": "2026-11-14",
-          "rank": 1,
-          "player": "Matas Buzelis",
-          "team": "Chicago Bulls",
-          "opponent": "Minnesota Timberwolves",
-          "market": "Points",
-          "side": "Under",
-          "line": 16.5,
-          "odds": -121,
-          "edge_score": 73.7,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-14T20:29:45.730613+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-14",
-          "rank": 2,
-          "player": "Josh Giddey",
-          "team": "Chicago Bulls",
-          "opponent": "Minnesota Timberwolves",
-          "market": "Rebounds",
-          "side": "Under",
-          "line": 6.5,
-          "odds": 103,
-          "edge_score": 73.6,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-14T20:29:45.730613+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-14",
-          "rank": 3,
-          "player": "Cameron Boozer",
-          "team": "Memphis Grizzlies",
-          "opponent": "Brooklyn Nets",
-          "market": "Points",
-          "side": "Under",
-          "line": 19.5,
-          "odds": -121,
-          "edge_score": 71.3,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-14T20:29:45.730613+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-14",
-          "rank": 4,
-          "player": "Rudy Gobert",
-          "team": "Minnesota Timberwolves",
-          "opponent": "Chicago Bulls",
-          "market": "Points",
-          "side": "Under",
-          "line": 10.5,
-          "odds": -125,
-          "edge_score": 56.5,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-14T20:29:45.730613+00:00",
-          "official": false
-        }
-      ]
-    }
-  },
+  "preview_months": {},
   "archive_audit": [
     {
       "date": "2026-11-11",
@@ -1486,6 +1414,11 @@
       "date": "2026-11-13",
       "classification": "official",
       "count": 12
+    },
+    {
+      "date": "2026-11-14",
+      "classification": "official",
+      "count": 1
     }
   ],
   "validation_errors": 0
