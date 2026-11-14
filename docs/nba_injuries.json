@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T17:41:55.844454+00:00",
+  "generated_at": "2026-11-14T18:13:53.334123+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 100,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 100,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
     "T": 31,
-    "O": 68,
+    "O": 69,
     "U": 1
   },
   "players": [
@@ -166,6 +166,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60847",
+      "name": "Norman Powell",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-14T17:55Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60837",
       "name": "Dailyn Swain",
       "team": "CHI",
@@ -193,7 +204,7 @@
       "team": "CHI",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Hand | day-to-day",
+      "reason": "Sprain | Finger | day-to-day",
       "date": "2026-11-14T03:50Z",
       "team_match": "feed"
     },
@@ -650,13 +661,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60835",
+      "injury_record_id": "539075",
       "name": "Bryce McGowens",
       "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Infection | Elbow | day-to-day",
-      "date": "2026-11-14T14:59Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Infection | Elbow | out",
+      "date": "2026-11-14T17:55Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539073",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Tendinitis | Knee | out",
+      "date": "2026-11-14T17:53Z",
       "team_match": "feed"
     },
     {
@@ -679,17 +701,6 @@
       "raw_status": "Out",
       "reason": "Bruise | Knee | out",
       "date": "2026-11-13T18:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538912",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Tendinitis | Knee | out",
-      "date": "2026-11-13T18:07Z",
       "team_match": "feed"
     },
     {
@@ -771,6 +782,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539071",
+      "name": "Noah Penda",
+      "team": "ORL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-14T17:33Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538362",
       "name": "Jonathan Isaac",
       "team": "ORL",
@@ -789,17 +811,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-10-24T16:47Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "535097",
-      "name": "Noah Penda",
-      "team": "ORL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Hamstring | out",
-      "date": "2026-10-17T22:19Z",
       "team_match": "feed"
     },
     {
@@ -980,6 +991,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539070",
+      "name": "Scottie Barnes",
+      "team": "TOR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Groin | out",
+      "date": "2026-11-14T17:33Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60805",
       "name": "Kevin McCullar Jr.",
       "team": "TOR",
@@ -998,17 +1020,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
       "date": "2026-11-13T03:27Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538793",
-      "name": "Scottie Barnes",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Groin | out",
-      "date": "2026-11-12T18:05Z",
       "team_match": "feed"
     },
     {
