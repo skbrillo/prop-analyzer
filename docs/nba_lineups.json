@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T05:25:10.034076+00:00",
+  "generated_at": "2026-11-14T06:22:07.081631+00:00",
   "source": "RotoWire",
   "games": {
     "401909976": {
@@ -1550,6 +1550,381 @@
         {
           "name": "Jaylin Williams",
           "team": "OKC",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909980": {
+      "game_id": "401909980",
+      "game": "Denver Nuggets at New Orleans Pelicans",
+      "tipoff": "2026-11-15T00:00:00+00:00",
+      "home": "NOP",
+      "away": "DEN",
+      "checked_at": "2026-11-14T06:22:07.081631+00:00",
+      "minutes_before_tipoff": 1057.9,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Jeremiah Fears",
+          "team": "NOP"
+        },
+        {
+          "name": "Herbert Jones",
+          "team": "NOP"
+        },
+        {
+          "name": "Saddiq Bey",
+          "team": "NOP"
+        },
+        {
+          "name": "Zion Williamson",
+          "team": "NOP"
+        },
+        {
+          "name": "DeAndre Jordan",
+          "team": "NOP"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Bryce McGowens",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Yves Missi",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Trey Murphy",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Dejounte Murray",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Trendon Watford",
+          "team": "NOP",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Bryce McGowens",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Yves Missi",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Trey Murphy",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Dejounte Murray",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Trendon Watford",
+          "team": "NOP",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909981": {
+      "game_id": "401909981",
+      "game": "Dallas Mavericks at Cleveland Cavaliers",
+      "tipoff": "2026-11-15T00:30:00+00:00",
+      "home": "CLE",
+      "away": "DAL",
+      "checked_at": "2026-11-14T06:22:07.081631+00:00",
+      "minutes_before_tipoff": 1087.9,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "James Harden",
+          "team": "CLE"
+        },
+        {
+          "name": "Donovan Mitchell",
+          "team": "CLE"
+        },
+        {
+          "name": "Peyton Watson",
+          "team": "CLE"
+        },
+        {
+          "name": "Jaylon Tyson",
+          "team": "CLE"
+        },
+        {
+          "name": "Jarrett Allen",
+          "team": "CLE"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Sam Merrill",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
+          "name": "Evan Mobley",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
+          "name": "Nae'Qwan Tomlin",
+          "team": "CLE",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Sam Merrill",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
+          "name": "Evan Mobley",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
+          "name": "Nae'Qwan Tomlin",
+          "team": "CLE",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909982": {
+      "game_id": "401909982",
+      "game": "Detroit Pistons at Miami Heat",
+      "tipoff": "2026-11-15T01:00:00+00:00",
+      "home": "MIA",
+      "away": "DET",
+      "checked_at": "2026-11-14T06:22:07.081631+00:00",
+      "minutes_before_tipoff": 1117.9,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Davion Mitchell",
+          "team": "MIA"
+        },
+        {
+          "name": "Tim Hardaway",
+          "team": "MIA"
+        },
+        {
+          "name": "Myron Gardner",
+          "team": "MIA"
+        },
+        {
+          "name": "Giannis Antetokounmpo",
+          "team": "MIA"
+        },
+        {
+          "name": "Bam Adebayo",
+          "team": "MIA"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Pelle Larsson",
+          "team": "MIA",
+          "status": "out"
+        },
+        {
+          "name": "Klay Thompson",
+          "team": "MIA",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Pelle Larsson",
+          "team": "MIA",
+          "status": "out"
+        },
+        {
+          "name": "Klay Thompson",
+          "team": "MIA",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909983": {
+      "game_id": "401909983",
+      "game": "Brooklyn Nets at Memphis Grizzlies",
+      "tipoff": "2026-11-15T01:00:00+00:00",
+      "home": "MEM",
+      "away": "BKN",
+      "checked_at": "2026-11-14T06:22:07.081631+00:00",
+      "minutes_before_tipoff": 1117.9,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Ty Jerome",
+          "team": "MEM"
+        },
+        {
+          "name": "Cedric Coward",
+          "team": "MEM"
+        },
+        {
+          "name": "Jaylen Wells",
+          "team": "MEM"
+        },
+        {
+          "name": "Cameron Boozer",
+          "team": "MEM"
+        },
+        {
+          "name": "Isaiah Stewart",
+          "team": "MEM"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Zach Edey",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Scotty Pippen",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Quinten Post",
+          "team": "MEM",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Zach Edey",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Scotty Pippen",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Quinten Post",
+          "team": "MEM",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909984": {
+      "game_id": "401909984",
+      "game": "Chicago Bulls at Minnesota Timberwolves",
+      "tipoff": "2026-11-15T01:00:00+00:00",
+      "home": "MIN",
+      "away": "CHI",
+      "checked_at": "2026-11-14T06:22:07.081631+00:00",
+      "minutes_before_tipoff": 1117.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Josh Giddey",
+          "team": "CHI"
+        },
+        {
+          "name": "Norman Powell",
+          "team": "CHI"
+        },
+        {
+          "name": "Isaac Okoro",
+          "team": "CHI"
+        },
+        {
+          "name": "Matas Buzelis",
+          "team": "CHI"
+        },
+        {
+          "name": "Jalen Smith",
+          "team": "CHI"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Tobe Awaka",
+          "team": "CHI",
+          "status": "out"
+        },
+        {
+          "name": "Dailyn Swain",
+          "team": "CHI",
+          "status": "out"
+        },
+        {
+          "name": "Caleb Wilson",
+          "team": "CHI",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Tobe Awaka",
+          "team": "CHI",
+          "status": "out"
+        },
+        {
+          "name": "Dailyn Swain",
+          "team": "CHI",
+          "status": "out"
+        },
+        {
+          "name": "Caleb Wilson",
+          "team": "CHI",
           "status": "out"
         }
       ],
