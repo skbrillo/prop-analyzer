@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T15:01:45.404247+00:00",
+  "generated_at": "2026-11-14T15:43:14.887636+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,8 +38,8 @@
   "players_with_team": 100,
   "players_without_team": 0,
   "status_counts": {
-    "T": 20,
-    "O": 79,
+    "T": 31,
+    "O": 68,
     "U": 1
   },
   "players": [
@@ -166,6 +166,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60837",
+      "name": "Dailyn Swain",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-14T15:00Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-60836",
+      "name": "Tobe Awaka",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-14T15:00Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538991",
       "name": "Jalen Smith",
       "team": "CHI",
@@ -173,28 +195,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Hand | day-to-day",
       "date": "2026-11-14T03:50Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538955",
-      "name": "Dailyn Swain",
-      "team": "CHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Back | out",
-      "date": "2026-11-14T00:17Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538820",
-      "name": "Tobe Awaka",
-      "team": "CHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Back | out",
-      "date": "2026-11-12T21:40Z",
       "team_match": "feed"
     },
     {
@@ -210,13 +210,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538824",
+      "injury_record_id": "-60838",
       "name": "Evan Mobley",
       "team": "CLE",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Toe | out",
-      "date": "2026-11-12T22:08Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Toe | day-to-day",
+      "date": "2026-11-14T15:01Z",
       "team_match": "feed"
     },
     {
@@ -562,24 +562,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "538838",
+      "injury_record_id": "-60842",
       "name": "Quinten Post",
       "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Concussion | out",
-      "date": "2026-11-12T23:17Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Concussion | day-to-day",
+      "date": "2026-11-14T15:02Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "538837",
+      "injury_record_id": "-60840",
       "name": "Zach Edey",
       "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Ankle | out",
-      "date": "2026-11-12T23:16Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-14T15:02Z",
       "team_match": "feed"
     },
     {
@@ -606,24 +606,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "538946",
-      "name": "Klay Thompson",
+      "injury_record_id": "-60841",
+      "name": "Pelle Larsson",
       "team": "MIA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Ankle | out",
-      "date": "2026-11-13T23:21Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-14T15:02Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "538943",
-      "name": "Pelle Larsson",
+      "injury_record_id": "-60839",
+      "name": "Klay Thompson",
       "team": "MIA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-13T23:04Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Ankle | day-to-day",
+      "date": "2026-11-14T15:01Z",
       "team_match": "feed"
     },
     {
@@ -650,6 +650,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60835",
+      "name": "Bryce McGowens",
+      "team": "NOP",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Infection | Elbow | day-to-day",
+      "date": "2026-11-14T14:59Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538929",
       "name": "Dejounte Murray",
       "team": "NOP",
@@ -657,17 +668,6 @@
       "raw_status": "Out",
       "reason": "Ankle | out",
       "date": "2026-11-13T20:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538917",
-      "name": "Bryce McGowens",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Infection | Elbow | out",
-      "date": "2026-11-13T18:12Z",
       "team_match": "feed"
     },
     {
@@ -705,13 +705,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538973",
+      "injury_record_id": "-60845",
       "name": "Ajay Mitchell",
       "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-14T02:34Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-14T15:07Z",
       "team_match": "feed"
     },
     {
@@ -881,13 +881,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538848",
+      "injury_record_id": "-60844",
       "name": "Chris Youngblood",
       "team": "POR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Foot | out",
-      "date": "2026-11-13T01:06Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Foot | day-to-day",
+      "date": "2026-11-14T15:05Z",
       "team_match": "feed"
     },
     {
@@ -925,13 +925,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538932",
+      "injury_record_id": "-60843",
       "name": "Precious Achiuwa",
       "team": "SAC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Ankle | out",
-      "date": "2026-11-13T21:20Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Ankle | day-to-day",
+      "date": "2026-11-14T15:05Z",
       "team_match": "feed"
     },
     {
