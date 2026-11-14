@@ -7,30 +7,27 @@ permissions:
   contents: write
 
 concurrency:
-  group: grade-predictions-only
+  group: daily-prop-analyzer
   cancel-in-progress: false
 
 jobs:
   grade:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
           persist-credentials: true
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: "3.11"
-
+          python-version: '3.11'
       - name: Grade predictions
         run: python grade_predictions.py
-
       - name: Update Top 25 monthly performance
         run: python edge_monthly_tracker.py --grade-only
-
+      - name: Update 8910 performance
+        run: python 8910_tracker.py --capture
       - name: Show updated Top Edge summary
         run: |
           python - <<'PY'
@@ -45,14 +42,14 @@ jobs:
               for day in info.get('days', []):
                   print(f'  {day.get("date")}: {day}')
           PY
-
       - name: Commit grading and Top Edge results
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/graded_predictions.json docs/edge_monthly.json
+          git add docs/graded_predictions.json docs/edge_monthly.json docs/8910_history.json
           if ! git diff --cached --quiet; then
-            git commit -m "Update graded predictions and Top Edge results"
+            git commit -m "Update graded predictions, Top Edge and 8910 results"
+            git pull --rebase origin main
             git push
           else
             echo "No grading changes to commit"
