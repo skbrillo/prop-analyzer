@@ -1,36 +1,36 @@
 {
-  "generated_at": "2026-11-14T22:37:20.885107+00:00",
+  "generated_at": "2026-11-15T09:42:00.599123+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
     "2026-11": {
       "summary": {
         "picks": 13,
-        "wins": 9,
+        "wins": 10,
         "losses": 3,
         "pushes": 0,
         "dnp": 0,
         "invalid": 0,
-        "pending": 1,
-        "settled": 12,
-        "win_rate": 75.0,
-        "roi": 41.41,
-        "profit_units": 4.969
+        "pending": 0,
+        "settled": 13,
+        "win_rate": 76.92,
+        "roi": 45.09,
+        "profit_units": 5.862
       },
       "days": [
         {
           "date": "2026-11-14",
           "picks": 1,
-          "wins": 0,
+          "wins": 1,
           "losses": 0,
           "pushes": 0,
           "dnp": 0,
           "invalid": 0,
-          "pending": 1,
-          "settled": 0,
-          "win_rate": null,
-          "roi": null,
-          "profit_units": 0
+          "pending": 0,
+          "settled": 1,
+          "win_rate": 100.0,
+          "roi": 89.3,
+          "profit_units": 0.893
         },
         {
           "date": "2026-11-13",
@@ -251,9 +251,9 @@
           "line": 13.5,
           "odds": -112,
           "edge_score": 53.4,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
+          "result": "win",
+          "actual": 11.0,
+          "profit_units": 0.89286,
           "saved_at": "2026-11-14T22:37:20.647517+00:00"
         }
       ]
