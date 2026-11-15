@@ -133,6 +133,7 @@ tbody tr:hover{background:#1d3048}
 #rows8910 td.dnp,#rows8910 td.push {color:var(--muted) !important;}
 #stats8910 .stat b.green {color:var(--green) !important;}
 #stats8910 .stat b.red {color:var(--red) !important;}
+#rows8910 .date8910 td{background:var(--card);color:var(--text);font-weight:700;padding:10px 6px;border-top:2px solid var(--border)}
 </style>
 </head>
 <body>
@@ -343,7 +344,7 @@ tbody tr:hover{background:#1d3048}
  <div id="game-lines-grid" class="gamecards"></div>
 </section>
 <section class="monthly-panel" id="tracker8910">
- <div class="monthly-head"><h2>8910 — Performance Tracker</h2><select id="period8910"><option value="all">All History</option><option value="today">Today</option><option value="yesterday">Yesterday</option></select></div>
+ <div class="monthly-head"><h2>8910 — Performance Tracker</h2><select id="period8910"><option value="today" selected>Today</option><option value="yesterday">Yesterday</option><option value="month">This Month</option><option value="all">All History</option></select></div>
  <div class="monthly-stats" id="stats8910" style="grid-template-columns:repeat(auto-fit,minmax(145px,1fr))"></div>
  <div class="muted" id="status8910">Loading 8910...</div>
  <h3>Daily Results — Individual Picks</h3><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Team</th><th>Opp</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div>
@@ -1931,12 +1932,13 @@ function downloadEdge(){
 
 
 let archive8910=[];
+let updated8910='';
 function render8910(){
  const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'});
  const dateKey=d=>{const a=Object.fromEntries(fmt.formatToParts(d).map(p=>[p.type,p.value]));return a.year+'-'+a.month+'-'+a.day;};
  const today=dateKey(new Date()); const yesterday=new Date(today+'T12:00:00Z'); yesterday.setUTCDate(yesterday.getUTCDate()-1);
  const period=$('period8910').value;
- const rows=archive8910.filter(r=>period==='all'||r.game_date===(period==='today'?today:dateKey(yesterday)));
+ const rows=archive8910.filter(r=>period==='all'||(period==='month'?String(r.game_date).startsWith(today.slice(0,7)):r.game_date===(period==='today'?today:dateKey(yesterday))));
  const grid=$('stats8910');grid.replaceChildren();
  for(const bucket of [8,9,10,'Combined']){
   const a=rows.filter(r=>bucket==='Combined'||Number(r.bucket)===bucket), settled=a.filter(r=>r.status==='graded');
@@ -1959,14 +1961,17 @@ function render8910(){
   grid.append(box);
  }
  const body=$('rows8910');body.replaceChildren();
+ let lastDate=null;
+ if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=11;td.textContent='No picks archived for this period.';}
  for(const r of rows.slice().sort((a,b)=>String(b.game_date).localeCompare(String(a.game_date)))){
+  if(r.game_date!==lastDate){lastDate=r.game_date;const group=body.insertRow();group.className='date8910';const td=group.insertCell();td.colSpan=11;td.textContent=(lastDate===today?'Today — ':lastDate===dateKey(yesterday)?'Yesterday — ':'')+lastDate;}
   const tr=document.createElement('tr');const result=String(r.outcome||r.status||'pending').toLowerCase();
   const values=[r.game_date,r.player,r.team||r.verified_team,r.opponent||r.verified_opponent,r.market,r.side,r.line,r.odds,r.bucket+'/10',r.actual,result];
   values.forEach((v,i)=>{const td=document.createElement('td');td.textContent=i===10?String(v).toUpperCase():(v??'—');if(i===10)td.className=['win','loss','pending','dnp','push'].includes(result)?result:'muted';if(i===5&&['over','under'].includes(String(v).toLowerCase()))td.className=String(v).toLowerCase();tr.append(td);});body.append(tr);
  }
- $('status8910').textContent=rows.length+' tracked selections';
+ $('status8910').textContent=rows.length+' tracked selections | '+(period==='today'?today:period==='yesterday'?dateKey(yesterday):period==='month'?today.slice(0,7):'All History')+(updated8910?' | Archive updated: '+updated8910:'');
 }
-async function load8910(){try{const data=await fetchJson('8910_history.json');if(!data.picks||typeof data.picks!=='object')throw new Error('Missing picks');archive8910=Object.values(data.picks);render8910();$('status8910').textContent+=' | Archive updated: '+(data.updated_at||'unknown');}catch(e){$('status8910').textContent='8910 archive error: '+e.message;}}
+async function load8910(){try{const data=await fetchJson('8910_history.json');if(!data.picks||typeof data.picks!=='object')throw new Error('Missing picks');archive8910=Object.values(data.picks);updated8910=data.updated_at||'unknown';render8910();}catch(e){$('status8910').textContent='8910 archive error: '+e.message;}}
 $('period8910').addEventListener('change',render8910);
 
 function refreshAll(){
