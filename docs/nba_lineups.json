@@ -1,195 +1,7 @@
 {
-  "generated_at": "2026-11-15T11:58:02.829820+00:00",
+  "generated_at": "2026-11-15T12:50:42.730599+00:00",
   "source": "RotoWire",
   "games": {
-    "401909296": {
-      "game_id": "401909296",
-      "game": "New York Knicks at Indiana Pacers",
-      "tipoff": "2026-11-14T00:00:00+00:00",
-      "home": "IND",
-      "away": "NYK",
-      "checked_at": "2026-11-14T05:25:10.034076+00:00",
-      "minutes_before_tipoff": -325.2,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Andrew Nembhard",
-          "team": "IND"
-        },
-        {
-          "name": "Kelly Oubre",
-          "team": "IND"
-        },
-        {
-          "name": "Aaron Nesmith",
-          "team": "IND"
-        },
-        {
-          "name": "Pascal Siakam",
-          "team": "IND"
-        },
-        {
-          "name": "Ivica Zubac",
-          "team": "IND"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Jalen Brunson",
-          "team": "NYK"
-        },
-        {
-          "name": "Mikal Bridges",
-          "team": "NYK"
-        },
-        {
-          "name": "Josh Hart",
-          "team": "NYK"
-        },
-        {
-          "name": "OG Anunoby",
-          "team": "NYK"
-        },
-        {
-          "name": "Karl-Anthony Towns",
-          "team": "NYK"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Johnny Furphy",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Haliburton",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Ben Sheppard",
-          "team": "IND",
-          "status": "out"
-        }
-      ],
-      "away_out": [],
-      "out_players": [
-        {
-          "name": "Johnny Furphy",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Haliburton",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Ben Sheppard",
-          "team": "IND",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401909297": {
-      "game_id": "401909297",
-      "game": "Milwaukee Bucks at Orlando Magic",
-      "tipoff": "2026-11-14T00:00:00+00:00",
-      "home": "ORL",
-      "away": "MIL",
-      "checked_at": "2026-11-14T05:25:10.034076+00:00",
-      "minutes_before_tipoff": -325.2,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Anthony Black",
-          "team": "ORL"
-        },
-        {
-          "name": "Desmond Bane",
-          "team": "ORL"
-        },
-        {
-          "name": "Tristan da Silva",
-          "team": "ORL"
-        },
-        {
-          "name": "Franz Wagner",
-          "team": "ORL"
-        },
-        {
-          "name": "Wendell Carter",
-          "team": "ORL"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Brayden Burries",
-          "team": "MIL"
-        },
-        {
-          "name": "Tyler Herro",
-          "team": "MIL"
-        },
-        {
-          "name": "Ousmane Dieng",
-          "team": "MIL"
-        },
-        {
-          "name": "Kyle Kuzma",
-          "team": "MIL"
-        },
-        {
-          "name": "Myles Turner",
-          "team": "MIL"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Paolo Banchero",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Izaiyah Nelson",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Noah Penda",
-          "team": "ORL",
-          "status": "out"
-        }
-      ],
-      "away_out": [],
-      "out_players": [
-        {
-          "name": "Paolo Banchero",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Izaiyah Nelson",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Noah Penda",
-          "team": "ORL",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909298": {
       "game_id": "401909298",
       "game": "Cleveland Cavaliers at Miami Heat",
@@ -1806,8 +1618,8 @@
       "tipoff": "2026-11-15T18:00:00+00:00",
       "home": "PHI",
       "away": "IND",
-      "checked_at": "2026-11-15T11:58:02.829820+00:00",
-      "minutes_before_tipoff": 362.0,
+      "checked_at": "2026-11-15T12:50:42.730599+00:00",
+      "minutes_before_tipoff": 309.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1931,8 +1743,8 @@
       "tipoff": "2026-11-15T21:00:00+00:00",
       "home": "PHX",
       "away": "LAL",
-      "checked_at": "2026-11-15T11:58:02.829820+00:00",
-      "minutes_before_tipoff": 542.0,
+      "checked_at": "2026-11-15T12:50:42.730599+00:00",
+      "minutes_before_tipoff": 489.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2026,8 +1838,8 @@
       "tipoff": "2026-11-15T21:30:00+00:00",
       "home": "LAC",
       "away": "CHA",
-      "checked_at": "2026-11-15T11:58:02.829820+00:00",
-      "minutes_before_tipoff": 572.0,
+      "checked_at": "2026-11-15T12:50:42.730599+00:00",
+      "minutes_before_tipoff": 519.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2151,8 +1963,8 @@
       "tipoff": "2026-11-15T22:00:00+00:00",
       "home": "UTA",
       "away": "SAS",
-      "checked_at": "2026-11-15T11:58:02.829820+00:00",
-      "minutes_before_tipoff": 602.0,
+      "checked_at": "2026-11-15T12:50:42.730599+00:00",
+      "minutes_before_tipoff": 549.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2276,8 +2088,8 @@
       "tipoff": "2026-11-15T23:00:00+00:00",
       "home": "BOS",
       "away": "DAL",
-      "checked_at": "2026-11-15T11:58:02.829820+00:00",
-      "minutes_before_tipoff": 662.0,
+      "checked_at": "2026-11-15T12:50:42.730599+00:00",
+      "minutes_before_tipoff": 609.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2390,8 +2202,8 @@
       "tipoff": "2026-11-15T23:00:00+00:00",
       "home": "TOR",
       "away": "NYK",
-      "checked_at": "2026-11-15T11:58:02.829820+00:00",
-      "minutes_before_tipoff": 662.0,
+      "checked_at": "2026-11-15T12:50:42.730599+00:00",
+      "minutes_before_tipoff": 609.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2474,8 +2286,8 @@
       "tipoff": "2026-11-16T00:00:00+00:00",
       "home": "WAS",
       "away": "HOU",
-      "checked_at": "2026-11-15T11:58:02.829820+00:00",
-      "minutes_before_tipoff": 722.0,
+      "checked_at": "2026-11-15T12:50:42.730599+00:00",
+      "minutes_before_tipoff": 669.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2609,8 +2421,8 @@
       "tipoff": "2026-11-16T01:00:00+00:00",
       "home": "MIL",
       "away": "ATL",
-      "checked_at": "2026-11-15T11:58:02.829820+00:00",
-      "minutes_before_tipoff": 782.0,
+      "checked_at": "2026-11-15T12:50:42.730599+00:00",
+      "minutes_before_tipoff": 729.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2724,8 +2536,8 @@
       "tipoff": "2026-11-16T02:00:00+00:00",
       "home": "SAC",
       "away": "OKC",
-      "checked_at": "2026-11-15T11:58:02.829820+00:00",
-      "minutes_before_tipoff": 842.0,
+      "checked_at": "2026-11-15T12:50:42.730599+00:00",
+      "minutes_before_tipoff": 789.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
