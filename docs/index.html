@@ -114,8 +114,12 @@ tbody tr:hover{background:#1d3048}
 #stats8910{grid-template-columns:repeat(4,minmax(0,1fr)) !important}
 #stats8910 .bucket8910{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:9px;min-width:0}
 #stats8910 .bucket8910 h3{margin:0 0 7px;color:var(--text)}
-#stats8910 .metrics8910{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
-#stats8910 .metrics8910 .stat{padding:6px;border:0}
+#stats8910 .metrics8910{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px}
+#stats8910 .metrics8910 .stat{padding:2px 5px;border:0}
+#stats8910 .metrics8910 .stat b{margin-top:1px;line-height:1.15}
+#stats8910 .bucket8910{padding:8px}
+#stats8910 .bucket8910 h3{margin:0 0 4px}
+@media(max-width:600px){#stats8910 .metrics8910{grid-template-columns:repeat(3,minmax(0,1fr))}}
 #stats8910 .stat b.pending{color:var(--yellow)}
 #stats8910 .stat b.muted{color:var(--muted)}
 #rows8910 td:last-child{font-weight:700;text-transform:capitalize}
@@ -342,7 +346,7 @@ tbody tr:hover{background:#1d3048}
  <div class="monthly-head"><h2>8910 — Performance Tracker</h2><select id="period8910"><option value="all">All History</option><option value="today">Today</option><option value="yesterday">Yesterday</option></select></div>
  <div class="monthly-stats" id="stats8910" style="grid-template-columns:repeat(auto-fit,minmax(145px,1fr))"></div>
  <div class="muted" id="status8910">Loading 8910...</div>
- <details><summary>View individual picks</summary><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Team</th><th>Opp</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div></details>
+ <h3>Daily Results — Individual Picks</h3><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Team</th><th>Opp</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div>
  <div class="note">Independent hypothetical results. First qualifying pregame snapshot; one pick per player, date and market. Odds -125 or better; no EV filter.</div>
 </section>
 
