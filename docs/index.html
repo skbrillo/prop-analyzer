@@ -323,7 +323,7 @@ tbody tr:hover{background:#1d3048}
  <div class="monthly-head"><h2>8910 — Performance Tracker</h2><select id="period8910"><option value="all">All History</option><option value="today">Today</option><option value="yesterday">Yesterday</option></select></div>
  <div class="monthly-stats" id="stats8910" style="grid-template-columns:repeat(auto-fit,minmax(145px,1fr))"></div>
  <div class="muted" id="status8910">Loading 8910...</div>
- <details><summary>View individual picks</summary><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div></details>
+ <details><summary>View individual picks</summary><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Team</th><th>Opp</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div></details>
  <div class="note">Independent hypothetical results. First qualifying pregame snapshot; one pick per player, date and market. Odds -125 or better; no EV filter.</div>
 </section>
 
@@ -1925,7 +1925,7 @@ function render8910(){
  }
  const body=$('rows8910');body.replaceChildren();
  for(const r of rows.slice().sort((a,b)=>String(b.game_date).localeCompare(String(a.game_date)))){
-  const tr=document.createElement('tr');for(const v of [r.game_date,r.player,r.market,r.side,r.line,r.odds,r.bucket+'/10',r.actual,r.outcome||r.status]){const td=document.createElement('td');td.textContent=v??'—';tr.append(td);}body.append(tr);
+  const tr=document.createElement('tr');for(const v of [r.game_date,r.player,r.team||r.verified_team,r.opponent||r.verified_opponent,r.market,r.side,r.line,r.odds,r.bucket+'/10',r.actual,r.outcome||r.status]){const td=document.createElement('td');td.textContent=v??'—';tr.append(td);}body.append(tr);
  }
  $('status8910').textContent=rows.length+' tracked selections';
 }
