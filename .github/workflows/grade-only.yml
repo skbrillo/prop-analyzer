@@ -26,8 +26,8 @@ jobs:
         run: python grade_predictions.py
       - name: Update Top 25 monthly performance
         run: python edge_monthly_tracker.py --grade-only
-      - name: Grade 8910 performance
-        run: python 8910_tracker.py
+      - name: Capture and grade 8910 performance
+        run: python 8910_tracker.py --capture
       - name: Show updated Top Edge summary
         run: |
           python - <<'PY'
