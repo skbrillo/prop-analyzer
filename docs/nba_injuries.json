@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-15T18:26:29.786654+00:00",
+  "generated_at": "2026-11-15T19:13:13.807217+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 111,
+  "player_count": 112,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 111,
+  "players_with_team": 112,
   "players_without_team": 0,
   "status_counts": {
-    "T": 36,
+    "T": 37,
     "O": 74,
     "U": 1
   },
@@ -265,24 +265,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60929",
+      "injury_record_id": "539253",
       "name": "Santi Aldama",
       "team": "DAL",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-15T18:15Z",
+      "date": "2026-11-15T18:19Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-60928",
+      "injury_record_id": "539251",
+      "name": "Max Christie",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-15T18:18Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539250",
       "name": "Kyrie Irving",
       "team": "DAL",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Knee | day-to-day",
-      "date": "2026-11-15T18:11Z",
+      "date": "2026-11-15T18:14Z",
       "team_match": "feed"
     },
     {
@@ -294,17 +305,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Stinger | Shoulder | day-to-day",
       "date": "2026-11-15T18:09Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60903",
-      "name": "Max Christie",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-15T15:22Z",
       "team_match": "feed"
     },
     {
@@ -1064,6 +1064,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-21T04:22Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539255",
+      "name": "De'Aaron Fox",
+      "team": "SAS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hip | day-to-day",
+      "date": "2026-11-15T18:27Z",
       "team_match": "feed"
     },
     {
