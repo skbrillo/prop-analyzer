@@ -344,7 +344,7 @@ tbody tr:hover{background:#1d3048}
  <div id="game-lines-grid" class="gamecards"></div>
 </section>
 <section class="monthly-panel" id="tracker8910">
- <div class="monthly-head"><h2>8910 — Performance Tracker</h2><select id="period8910"><option value="today" selected>Today</option><option value="yesterday">Yesterday</option><option value="month">This Month</option><option value="all">All History</option></select></div>
+ <div class="monthly-head"><h2>8910 — Performance Tracker</h2><div class="tabs" id="period8910" aria-label="8910 reporting period"><button type="button" data-period="today" class="active" aria-pressed="true">Today</button><button type="button" data-period="yesterday" aria-pressed="false">Yesterday</button><button type="button" data-period="month" aria-pressed="false">This Month</button><button type="button" data-period="all" aria-pressed="false">All History</button></div></div>
  <div class="monthly-stats" id="stats8910" style="grid-template-columns:repeat(auto-fit,minmax(145px,1fr))"></div>
  <div class="muted" id="status8910">Loading 8910...</div>
  <h3>Daily Results — Individual Picks</h3><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Team</th><th>Opp</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div>
@@ -1933,11 +1933,12 @@ function downloadEdge(){
 
 let archive8910=[];
 let updated8910='';
+let period8910='today';
 function render8910(){
  const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'});
  const dateKey=d=>{const a=Object.fromEntries(fmt.formatToParts(d).map(p=>[p.type,p.value]));return a.year+'-'+a.month+'-'+a.day;};
  const today=dateKey(new Date()); const yesterday=new Date(today+'T12:00:00Z'); yesterday.setUTCDate(yesterday.getUTCDate()-1);
- const period=$('period8910').value;
+ const period=period8910;
  const rows=archive8910.filter(r=>period==='all'||(period==='month'?String(r.game_date).startsWith(today.slice(0,7)):r.game_date===(period==='today'?today:dateKey(yesterday))));
  const grid=$('stats8910');grid.replaceChildren();
  for(const bucket of [8,9,10,'Combined']){
@@ -1972,7 +1973,11 @@ function render8910(){
  $('status8910').textContent=rows.length+' tracked selections | '+(period==='today'?today:period==='yesterday'?dateKey(yesterday):period==='month'?today.slice(0,7):'All History')+(updated8910?' | Archive updated: '+updated8910:'');
 }
 async function load8910(){try{const data=await fetchJson('8910_history.json');if(!data.picks||typeof data.picks!=='object')throw new Error('Missing picks');archive8910=Object.values(data.picks);updated8910=data.updated_at||'unknown';render8910();}catch(e){$('status8910').textContent='8910 archive error: '+e.message;}}
-$('period8910').addEventListener('change',render8910);
+$('period8910').querySelectorAll('button[data-period]').forEach(button=>button.addEventListener('click',()=>{
+ period8910=button.dataset.period;
+ $('period8910').querySelectorAll('button[data-period]').forEach(b=>{b.classList.toggle('active',b===button);b.setAttribute('aria-pressed',String(b===button));});
+ render8910();
+}));
 
 function refreshAll(){
  load8910();
