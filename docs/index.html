@@ -118,7 +118,12 @@ tbody tr:hover{background:#1d3048}
 #stats8910 .metrics8910 .stat{padding:2px 5px;border:0}
 #stats8910 .metrics8910 .stat b{margin-top:1px;line-height:1.15}
 #stats8910 .bucket8910{padding:8px}
-#stats8910 .bucket8910 h3{margin:0 0 4px}
+#stats8910 .bucket8910 h3{margin:0}
+#stats8910 .heading8910{display:flex;align-items:center;justify-content:space-between;gap:6px;margin-bottom:8px}
+#stats8910 .count8910{font-size:11px;color:var(--muted)}
+#stats8910 .metrics8910 .stat:nth-child(5){grid-column:span 2}
+#stats8910 .footer8910{border-top:1px solid var(--border);margin-top:8px;padding:7px 5px 0;display:flex;flex-wrap:wrap;gap:5px 12px;font-size:11px;color:var(--muted)}
+#stats8910 .metrics8910 .stat b{font-size:21px}
 @media(max-width:600px){#stats8910 .metrics8910{grid-template-columns:repeat(3,minmax(0,1fr))}}
 #stats8910 .stat b.pending{color:var(--yellow)}
 #stats8910 .stat b.muted{color:var(--muted)}
@@ -1946,19 +1951,21 @@ function render8910(){
   const w=settled.filter(r=>r.outcome==='win').length,l=settled.filter(r=>r.outcome==='loss').length;
   const profit=settled.reduce((s,r)=>s+Number(r.profit||0),0), stake=settled.reduce((s,r)=>s+Number(r.stake||0),0);
   const box=document.createElement('div');box.className='bucket8910';
-  const title=document.createElement('h3');title.textContent=bucket==='Combined'?bucket:bucket+'/10';box.append(title);
+  const heading=addText(box,'div','','heading8910');addText(heading,'h3',bucket==='Combined'?bucket:bucket+'/10');addText(heading,'span',a.length+' picks','count8910');
   const metrics=document.createElement('div');metrics.className='metrics8910';box.append(metrics);
   const tone=v=>v>0?'green':v<0?'red':'muted';
   const signed=(v,d)=> (v>0?'+':'')+v.toFixed(d);
   const pending=a.filter(r=>r.status==='pending').length;
   for(const [label,value,color] of [
-   ['Picks',a.length,''],['Win Rate',w+l?(100*w/(w+l)).toFixed(1)+'%':'—',''],
    ['Wins',w,'green'],['Losses',l,'red'],
+   ['Win Rate',w+l?(100*w/(w+l)).toFixed(1)+'%':'—',''],
    ['ROI',stake?signed(100*profit/stake,1)+'%':'—',stake?tone(profit):'muted'],
-   ['Profit / Loss',signed(profit/100,2)+'u',tone(profit)],
-   ['Pending',pending,pending?'pending':'muted'],['Push',settled.filter(r=>r.outcome==='push').length,'muted'],
-   ['DNP',a.filter(r=>r.status==='dnp').length,'muted']
+   ['Profit / Loss',signed(profit/100,2)+'u',tone(profit)]
   ]){const cell=document.createElement('div');cell.className='stat';cell.append(label);const valueEl=document.createElement('b');valueEl.className=color;valueEl.textContent=value;cell.append(valueEl);metrics.append(cell);}
+  const footer=addText(box,'div','','footer8910');
+  addText(footer,'span','Pending: '+pending,pending?'pending':'');
+  addText(footer,'span','Push: '+settled.filter(r=>r.outcome==='push').length);
+  addText(footer,'span','DNP: '+a.filter(r=>r.status==='dnp').length);
   grid.append(box);
  }
  const body=$('rows8910');body.replaceChildren();
