@@ -2,13 +2,9 @@ name: Daily Prop Analyzer
 
 on:
   schedule:
-    # 5 AM Central, accounting for CST/CDT
     - cron: '0 10,11 * * *'
-    # 12 PM Central
     - cron: '0 17,18 * * *'
-    # 4 PM Central
     - cron: '0 21,22 * * *'
-    # 3:00 AM Central
     - cron: '0 8,9 * * *'
   workflow_dispatch:
     inputs:
@@ -21,29 +17,23 @@ on:
           - full_model
           - statistics_only
           - grading_only
-
 permissions:
   contents: write
-
 concurrency:
   group: daily-prop-analyzer
   cancel-in-progress: false
-
 jobs:
   analyze:
     runs-on: ubuntu-latest
     env:
       TZ: America/Chicago
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-
       - name: Determine run type
         id: schedule
         shell: bash
@@ -56,20 +46,14 @@ jobs:
           import os
           from datetime import datetime, timedelta, timezone
           from zoneinfo import ZoneInfo
-
           event = os.environ['EVENT_NAME']
           schedule = os.environ.get('SCHEDULE', '')
           requested = os.environ.get('REQUESTED_MODE', '')
           now = datetime.now(timezone.utc)
           central = ZoneInfo('America/Chicago')
           run_type = 'skip'
-
           if event == 'workflow_dispatch':
-              run_type = {
-                  'full_model': 'manual',
-                  'statistics_only': 'statistics_only',
-                  'grading_only': 'grading_only',
-              }.get(requested, 'manual')
+              run_type = {'full_model': 'manual', 'statistics_only': 'statistics_only', 'grading_only': 'grading_only'}.get(requested, 'manual')
           elif event == 'schedule':
               cron_slots = {
                   '0 10,11 * * *': (10, 11, 0, 5, 0, 'morning'),
@@ -83,8 +67,7 @@ jobs:
                   for offset in (0, -1, -2):
                       date = (now + timedelta(days=offset)).date()
                       for hour in (h1, h2):
-                          slot = datetime(date.year, date.month, date.day,
-                                          hour, minute, tzinfo=timezone.utc)
+                          slot = datetime(date.year, date.month, date.day, hour, minute, tzinfo=timezone.utc)
                           local = slot.astimezone(central)
                           if (local.hour, local.minute) == (local_hour, local_minute):
                               delay = (now - slot).total_seconds()
@@ -92,12 +75,9 @@ jobs:
                                   candidates.append((delay, slot))
                   if candidates:
                       run_type = kind
-
           run_predictions = run_type in ('morning', 'midday', 'afternoon', 'manual')
-          run_stats = run_type in ('morning', 'midday', 'afternoon',
-                                   'grading', 'manual', 'statistics_only')
-          run_grading = run_type in ('morning', 'midday', 'afternoon',
-                                     'grading', 'manual', 'grading_only')
+          run_stats = run_type in ('morning', 'midday', 'afternoon', 'grading', 'manual', 'statistics_only', 'grading_only')
+          run_grading = run_type in ('morning', 'midday', 'afternoon', 'grading', 'manual', 'grading_only')
           with open(os.environ['GITHUB_OUTPUT'], 'a') as f:
               f.write(f'run_type={run_type}\n')
               f.write(f'run_predictions={str(run_predictions).lower()}\n')
@@ -108,71 +88,61 @@ jobs:
           print('Update ESPN stats:', run_stats)
           print('Grade predictions:', run_grading)
           PY
-
       - name: Show run information
         run: |
           echo "Run type: ${{ steps.schedule.outputs.run_type }}"
           echo "Predictions: ${{ steps.schedule.outputs.run_predictions }}"
           echo "ESPN stats: ${{ steps.schedule.outputs.run_stats }}"
           echo "Grading: ${{ steps.schedule.outputs.run_grading }}"
-
       - name: Download real NBA statistics
         if: steps.schedule.outputs.run_stats == 'true'
         run: python update_nba_stats.py
-
       - name: Build NBA team defense statistics
         if: steps.schedule.outputs.run_stats == 'true'
         run: python build_team_defense.py
-
       - name: Back up previous odds
         if: steps.schedule.outputs.run_predictions == 'true'
-        shell: bash
         run: |
           if [ -f data/sample_odds.csv ]; then
             cp data/sample_odds.csv /tmp/previous_sample_odds.csv
           fi
-
       - name: Download DraftKings odds from ParlayAPI
         if: steps.schedule.outputs.run_predictions == 'true'
         env:
           PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
         run: python update_odds.py
-
       - name: Run prediction engine
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python engine.py
-
       - name: Run Top 25 Edge Model
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python edge_model.py
-
       - name: Save pregame predictions
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python save_predictions.py
-
       - name: Update automatic prop tracking
         if: steps.schedule.outputs.run_grading == 'true'
         run: python track_results.py
-
       - name: Grade completed predictions
         if: steps.schedule.outputs.run_grading == 'true'
         run: python grade_predictions.py
-
+      - name: Capture and grade 8910 performance
+        if: steps.schedule.outputs.run_predictions == 'true'
+        run: python 8910_tracker.py --capture
+      - name: Grade existing 8910 performance
+        if: steps.schedule.outputs.run_grading == 'true' && steps.schedule.outputs.run_predictions != 'true'
+        run: python 8910_tracker.py
       - name: Update Top 25 monthly performance
         if: steps.schedule.outputs.run_predictions == 'true' || steps.schedule.outputs.run_grading == 'true'
         run: python edge_monthly_tracker.py
-
       - name: Backtest historical NBA projections
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python backtest.py
-
       - name: Save updated data and results
         if: steps.schedule.outputs.run_type != 'skip'
-        shell: bash
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-
           git add -A -- \
             data/game_logs.csv \
             data/game_dnp.json \
@@ -188,8 +158,8 @@ jobs:
             docs/edge_top25.csv \
             docs/edge_archive/ \
             docs/edge_monthly.json \
-            docs/line_movement.json
-
+            docs/line_movement.json \
+            docs/8910_history.json
           if ! git diff --cached --quiet; then
             git commit -m 'Update NBA predictions, statistics and grading results'
             git pull --rebase origin main
