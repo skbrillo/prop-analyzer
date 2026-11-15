@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T02:10:00.054212+00:00",
+  "generated_at": "2026-11-15T03:01:36.091984+00:00",
   "source": "RotoWire",
   "games": {
     "401909296": {
@@ -1131,8 +1131,8 @@
       "tipoff": "2026-11-15T00:00:00+00:00",
       "home": "NOP",
       "away": "DEN",
-      "checked_at": "2026-11-15T02:10:00.054212+00:00",
-      "minutes_before_tipoff": -130.0,
+      "checked_at": "2026-11-15T03:01:36.091984+00:00",
+      "minutes_before_tipoff": -181.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1256,8 +1256,8 @@
       "tipoff": "2026-11-15T00:30:00+00:00",
       "home": "CLE",
       "away": "DAL",
-      "checked_at": "2026-11-15T02:10:00.054212+00:00",
-      "minutes_before_tipoff": -100.0,
+      "checked_at": "2026-11-15T03:01:36.091984+00:00",
+      "minutes_before_tipoff": -151.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1361,6 +1361,11 @@
           "status": "out"
         },
         {
+          "name": "Daniel Gafford",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
           "name": "Dereck Lively",
           "team": "DAL",
           "status": "out"
@@ -1418,6 +1423,11 @@
           "status": "out"
         },
         {
+          "name": "Daniel Gafford",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
           "name": "Dereck Lively",
           "team": "DAL",
           "status": "out"
@@ -1431,8 +1441,8 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MIA",
       "away": "DET",
-      "checked_at": "2026-11-15T02:10:00.054212+00:00",
-      "minutes_before_tipoff": -70.0,
+      "checked_at": "2026-11-15T03:01:36.091984+00:00",
+      "minutes_before_tipoff": -121.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1526,8 +1536,8 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MEM",
       "away": "BKN",
-      "checked_at": "2026-11-15T02:10:00.054212+00:00",
-      "minutes_before_tipoff": -70.0,
+      "checked_at": "2026-11-15T03:01:36.091984+00:00",
+      "minutes_before_tipoff": -121.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1661,8 +1671,8 @@
       "tipoff": "2026-11-15T01:00:00+00:00",
       "home": "MIN",
       "away": "CHI",
-      "checked_at": "2026-11-15T02:10:00.054212+00:00",
-      "minutes_before_tipoff": -70.0,
+      "checked_at": "2026-11-15T03:01:36.091984+00:00",
+      "minutes_before_tipoff": -121.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
