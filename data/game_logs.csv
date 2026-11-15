@@ -2657,7 +2657,7 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-04,Caleb Martin,3138160,Dallas Mavericks,DAL,6,0,3,2,20.0,401909933,San Antonio Spurs,SA
 2026-11-04,De'Aaron Fox,4066259,San Antonio Spurs,SA,24,10,3,4,33.0,401909933,Dallas Mavericks,DAL
 2026-11-04,Daniel Gafford,4278049,Dallas Mavericks,DAL,6,2,4,1,18.0,401909933,San Antonio Spurs,SA
-2026-11-04,P.J. Washington,4278078,Dallas Mavericks,DAL,6,21,9,3,39.0,401909933,San Antonio Spurs,SA
+2026-11-04,P.J. Washington,4278078,Dallas Mavericks,DAL,6,21,10,3,39.0,401909933,San Antonio Spurs,SA
 2026-11-04,Naji Marshall,4278594,Dallas Mavericks,DAL,6,22,5,3,26.0,401909933,San Antonio Spurs,SA
 2026-11-04,Devin Vassell,4395630,San Antonio Spurs,SA,24,2,7,4,36.0,401909933,Dallas Mavericks,DAL
 2026-11-04,Keldon Johnson,4395723,San Antonio Spurs,SA,24,4,5,2,19.0,401909933,Dallas Mavericks,DAL
@@ -2851,7 +2851,7 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-06,Isaiah Collier,4683766,Utah Jazz,UTAH,26,4,3,3,13.0,401909290,Dallas Mavericks,DAL
 2026-11-06,Kyle Filipowski,4684793,Utah Jazz,UTAH,26,0,0,0,1.0,401909290,Dallas Mavericks,DAL
 2026-11-06,Moussa Cisse,4701208,Dallas Mavericks,DAL,6,0,0,0,1.0,401909290,Utah Jazz,UTAH
-2026-11-06,Ace Bailey,4873138,Utah Jazz,UTAH,26,12,5,0,29.0,401909290,Dallas Mavericks,DAL
+2026-11-06,Ace Bailey,4873138,Utah Jazz,UTAH,26,12,6,0,29.0,401909290,Dallas Mavericks,DAL
 2026-11-06,Morez Johnson Jr.,4873153,Dallas Mavericks,DAL,6,13,17,2,24.0,401909290,Utah Jazz,UTAH
 2026-11-06,Walter Clayton Jr.,4896372,Dallas Mavericks,DAL,6,12,4,2,23.0,401909290,Utah Jazz,UTAH
 2026-11-06,Cooper Flagg,5041939,Dallas Mavericks,DAL,6,21,10,7,33.0,401909290,Utah Jazz,UTAH
@@ -3175,8 +3175,8 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-08,Jonathan Kuminga,4433247,Minnesota Timberwolves,MIN,16,4,0,0,25.0,401909947,Utah Jazz,UTAH
 2026-11-08,Keyonte George,4433627,Utah Jazz,UTAH,26,19,5,8,30.0,401909947,Minnesota Timberwolves,MIN
 2026-11-08,Bones Hyland,4592492,Minnesota Timberwolves,MIN,16,14,2,2,13.0,401909947,Utah Jazz,UTAH
-2026-11-08,Isaiah Collier,4683766,Utah Jazz,UTAH,26,6,4,2,16.0,401909947,Minnesota Timberwolves,MIN
-2026-11-08,Kyle Filipowski,4684793,Utah Jazz,UTAH,26,9,6,1,15.0,401909947,Minnesota Timberwolves,MIN
+2026-11-08,Isaiah Collier,4683766,Utah Jazz,UTAH,26,6,4,3,16.0,401909947,Minnesota Timberwolves,MIN
+2026-11-08,Kyle Filipowski,4684793,Utah Jazz,UTAH,26,9,6,0,15.0,401909947,Minnesota Timberwolves,MIN
 2026-11-08,Ace Bailey,4873138,Utah Jazz,UTAH,26,7,2,3,32.0,401909947,Minnesota Timberwolves,MIN
 2026-11-08,Cody Williams,4895758,Minnesota Timberwolves,MIN,16,0,0,0,2.0,401909947,Utah Jazz,UTAH
 2026-11-08,Darryn Peterson,5041955,Utah Jazz,UTAH,26,26,6,4,35.0,401909947,Minnesota Timberwolves,MIN
@@ -3212,7 +3212,7 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-08,Nolan Traore,5279130,Brooklyn Nets,BKN,17,14,1,2,21.0,401909948,Dallas Mavericks,DAL
 2026-11-08,Kyrie Irving,6442,Dallas Mavericks,DAL,6,21,3,4,29.0,401909948,Brooklyn Nets,BKN
 2026-11-08,Derrick White,3078576,Boston Celtics,BOS,2,9,3,7,27.0,401909949,Milwaukee Bucks,MIL
-2026-11-08,Myles Turner,3133628,Milwaukee Bucks,MIL,15,3,5,7,24.0,401909949,Boston Celtics,BOS
+2026-11-08,Myles Turner,3133628,Milwaukee Bucks,MIL,15,3,6,7,24.0,401909949,Boston Celtics,BOS
 2026-11-08,Kyle Kuzma,3134907,Milwaukee Bucks,MIL,15,27,4,0,31.0,401909949,Boston Celtics,BOS
 2026-11-08,Mike Conley,3195,Boston Celtics,BOS,2,3,3,1,10.0,401909949,Milwaukee Bucks,MIL
 2026-11-08,Jayson Tatum,4065648,Boston Celtics,BOS,2,21,4,6,29.0,401909949,Milwaukee Bucks,MIL
@@ -3224,10 +3224,10 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-08,Mitchell Robinson,4351852,Boston Celtics,BOS,2,12,7,2,18.0,401909949,Milwaukee Bucks,MIL
 2026-11-08,Tyler Herro,4395725,Milwaukee Bucks,MIL,15,13,1,2,27.0,401909949,Boston Celtics,BOS
 2026-11-08,Ron Harper Jr.,4397251,Boston Celtics,BOS,2,2,0,0,4.0,401909949,Milwaukee Bucks,MIL
-2026-11-08,Neemias Queta,4397424,Boston Celtics,BOS,2,13,9,4,22.0,401909949,Milwaukee Bucks,MIL
+2026-11-08,Neemias Queta,4397424,Boston Celtics,BOS,2,13,8,4,22.0,401909949,Milwaukee Bucks,MIL
 2026-11-08,AJ Green,4397475,Milwaukee Bucks,MIL,15,5,1,1,18.0,401909949,Boston Celtics,BOS
 2026-11-08,Jaime Jaquez Jr.,4432848,Milwaukee Bucks,MIL,15,4,2,2,23.0,401909949,Boston Celtics,BOS
-2026-11-08,Ryan Rollins,4591725,Milwaukee Bucks,MIL,15,7,5,6,20.0,401909949,Boston Celtics,BOS
+2026-11-08,Ryan Rollins,4591725,Milwaukee Bucks,MIL,15,7,4,6,20.0,401909949,Boston Celtics,BOS
 2026-11-08,Baylor Scheierman,4593841,Boston Celtics,BOS,2,7,1,0,19.0,401909949,Milwaukee Bucks,MIL
 2026-11-08,Jordan Walsh,4683689,Boston Celtics,BOS,2,0,3,0,11.0,401909949,Milwaukee Bucks,MIL
 2026-11-08,Ousmane Dieng,4997526,Milwaukee Bucks,MIL,15,10,1,0,15.0,401909949,Boston Celtics,BOS
@@ -3501,7 +3501,7 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-10,Dean Wade,3912848,Philadelphia 76ers,PHI,20,8,9,0,23.0,401909961,Boston Celtics,BOS
 2026-11-10,Jaylen Brown,3917376,Philadelphia 76ers,PHI,20,13,5,2,26.0,401909961,Boston Celtics,BOS
 2026-11-10,Jayson Tatum,4065648,Boston Celtics,BOS,2,21,6,4,32.0,401909961,Philadelphia 76ers,PHI
-2026-11-10,Sam Hauser,4065804,Boston Celtics,BOS,2,12,5,2,18.0,401909961,Philadelphia 76ers,PHI
+2026-11-10,Sam Hauser,4065804,Boston Celtics,BOS,2,12,4,2,18.0,401909961,Philadelphia 76ers,PHI
 2026-11-10,Payton Pritchard,4066354,Boston Celtics,BOS,2,18,6,5,30.0,401909961,Philadelphia 76ers,PHI
 2026-11-10,Paul George,4251,Boston Celtics,BOS,2,36,5,1,30.0,401909961,Philadelphia 76ers,PHI
 2026-11-10,Luka Garza,4277951,Boston Celtics,BOS,2,2,0,2,9.0,401909961,Philadelphia 76ers,PHI
@@ -3517,7 +3517,7 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-10,Labaron Philon Jr.,4873090,Philadelphia 76ers,PHI,20,2,1,3,6.0,401909961,Boston Celtics,BOS
 2026-11-10,Rayan Rupert,5099752,Philadelphia 76ers,PHI,20,0,1,1,6.0,401909961,Boston Celtics,BOS
 2026-11-10,VJ Edgecombe,5124612,Philadelphia 76ers,PHI,20,8,4,5,32.0,401909961,Boston Celtics,BOS
-2026-11-10,Hugo Gonzalez,5175647,Boston Celtics,BOS,2,10,2,2,19.0,401909961,Philadelphia 76ers,PHI
+2026-11-10,Hugo Gonzalez,5175647,Boston Celtics,BOS,2,10,3,2,19.0,401909961,Philadelphia 76ers,PHI
 2026-11-10,Kris Dunn,2991139,LA Clippers,LAC,12,3,2,3,19.0,401909962,Phoenix Suns,PHX
 2026-11-10,Devin Booker,3136193,Phoenix Suns,PHX,21,17,3,5,29.0,401909962,LA Clippers,LAC
 2026-11-10,Dillon Brooks,3155526,Phoenix Suns,PHX,21,8,4,2,22.0,401909962,LA Clippers,LAC
@@ -3647,7 +3647,7 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-11,Tyrese Proctor,5023693,Cleveland Cavaliers,CLE,5,15,3,1,23.0,401909967,New York Knicks,NY
 2026-11-11,Meleek Thomas,5041951,Cleveland Cavaliers,CLE,5,14,4,1,22.0,401909967,New York Knicks,NY
 2026-11-11,Mohamed Diawara,5289900,New York Knicks,NY,18,2,0,0,11.0,401909967,Cleveland Cavaliers,CLE
-2026-11-11,Andre Drummond,6585,New York Knicks,NY,18,0,4,3,14.0,401909967,Cleveland Cavaliers,CLE
+2026-11-11,Andre Drummond,6585,New York Knicks,NY,18,0,5,3,14.0,401909967,Cleveland Cavaliers,CLE
 2026-11-11,Kyle Anderson,2993874,Toronto Raptors,TOR,28,2,3,4,11.0,401909968,Boston Celtics,BOS
 2026-11-11,Derrick White,3078576,Boston Celtics,BOS,2,19,1,7,38.0,401909968,Toronto Raptors,TOR
 2026-11-11,Jakob Poeltl,3134908,Toronto Raptors,TOR,28,6,9,1,32.0,401909968,Boston Celtics,BOS
@@ -4137,7 +4137,7 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-14,Caleb Martin,3138160,Dallas Mavericks,DAL,6,15,8,3,33.0,401909981,Cleveland Cavaliers,CLE
 2026-11-14,Thomas Bryant,3934723,Cleveland Cavaliers,CLE,5,19,11,3,27.0,401909981,Dallas Mavericks,DAL
 2026-11-14,Daniel Gafford,4278049,Dallas Mavericks,DAL,6,10,3,1,17.0,401909981,Cleveland Cavaliers,CLE
-2026-11-14,P.J. Washington,4278078,Dallas Mavericks,DAL,6,10,4,1,26.0,401909981,Cleveland Cavaliers,CLE
+2026-11-14,P.J. Washington,4278078,Dallas Mavericks,DAL,6,10,3,1,26.0,401909981,Cleveland Cavaliers,CLE
 2026-11-14,Naji Marshall,4278594,Dallas Mavericks,DAL,6,12,3,5,30.0,401909981,Cleveland Cavaliers,CLE
 2026-11-14,Santi Aldama,4593125,Dallas Mavericks,DAL,6,7,2,1,16.0,401909981,Cleveland Cavaliers,CLE
 2026-11-14,Jaylon Tyson,4683747,Cleveland Cavaliers,CLE,5,18,4,4,34.0,401909981,Dallas Mavericks,DAL
@@ -4205,9 +4205,9 @@ date,player,player_id,team,team_abbr,team_id,points,rebounds,assists,minutes,gam
 2026-11-14,Buddy Hield,2990984,Chicago Bulls,CHI,4,16,4,2,20.0,401909984,Minnesota Timberwolves,MIN
 2026-11-14,Rudy Gobert,3032976,Minnesota Timberwolves,MIN,16,1,10,4,27.0,401909984,Chicago Bulls,CHI
 2026-11-14,Trey Lyles,3136196,Minnesota Timberwolves,MIN,16,5,1,2,19.0,401909984,Chicago Bulls,CHI
-2026-11-14,Zach Collins,4066650,Chicago Bulls,CHI,4,8,5,4,28.0,401909984,Minnesota Timberwolves,MIN
+2026-11-14,Zach Collins,4066650,Chicago Bulls,CHI,4,8,6,4,28.0,401909984,Minnesota Timberwolves,MIN
 2026-11-14,Tre Jones,4395626,Chicago Bulls,CHI,4,16,0,4,24.0,401909984,Minnesota Timberwolves,MIN
-2026-11-14,Ayo Dosunmu,4397002,Minnesota Timberwolves,MIN,16,24,5,0,33.0,401909984,Chicago Bulls,CHI
+2026-11-14,Ayo Dosunmu,4397002,Minnesota Timberwolves,MIN,16,24,4,0,33.0,401909984,Chicago Bulls,CHI
 2026-11-14,Jaden McDaniels,4431671,Minnesota Timberwolves,MIN,16,18,5,6,37.0,401909984,Chicago Bulls,CHI
 2026-11-14,Patrick Williams,4431687,Chicago Bulls,CHI,4,14,5,1,26.0,401909984,Minnesota Timberwolves,MIN
 2026-11-14,Jaylen Clark,4432247,Minnesota Timberwolves,MIN,16,0,0,0,3.0,401909984,Chicago Bulls,CHI
