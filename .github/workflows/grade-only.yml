@@ -1,18 +1,16 @@
 name: Grade Predictions Only
-
 on:
   workflow_dispatch:
-
 permissions:
   contents: write
-
 concurrency:
   group: daily-prop-analyzer
   cancel-in-progress: false
-
 jobs:
   grade:
     runs-on: ubuntu-latest
+    env:
+      TZ: America/Chicago
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -22,12 +20,14 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Refresh ESPN statistics
+        run: python update_nba_stats.py
       - name: Grade predictions
         run: python grade_predictions.py
       - name: Update Top 25 monthly performance
         run: python edge_monthly_tracker.py --grade-only
-      - name: Update 8910 performance
-        run: python 8910_tracker.py --capture
+      - name: Grade 8910 performance
+        run: python 8910_tracker.py
       - name: Show updated Top Edge summary
         run: |
           python - <<'PY'
@@ -46,7 +46,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add docs/graded_predictions.json docs/edge_monthly.json docs/8910_history.json
+          git add data/game_logs.csv data/game_dnp.json data/game_logs_audit.json docs/graded_predictions.json docs/edge_monthly.json docs/8910_history.json
           if ! git diff --cached --quiet; then
             git commit -m "Update graded predictions, Top Edge and 8910 results"
             git pull --rebase origin main
