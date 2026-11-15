@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-15T22:16:54.803457+00:00",
+  "generated_at": "2026-11-15T22:58:27.750549+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 106,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "T": 26,
-    "O": 79,
+    "T": 17,
+    "O": 83,
     "U": 1
   },
   "players": [
@@ -165,13 +165,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60945",
+      "injury_record_id": "539292",
       "name": "Jaylon Tyson",
       "team": "CLE",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Ankle | day-to-day",
-      "date": "2026-11-15T22:06Z",
+      "date": "2026-11-15T22:09Z",
       "team_match": "feed"
     },
     {
@@ -209,39 +209,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60911",
-      "name": "Jarrett Allen",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-15T15:26Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60908",
-      "name": "Donovan Mitchell",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Knee | day-to-day",
-      "date": "2026-11-15T15:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60907",
-      "name": "James Harden",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Calf | day-to-day",
-      "date": "2026-11-15T15:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "535193",
       "name": "Nae'Qwan Tomlin",
       "team": "CLE",
@@ -249,6 +216,17 @@
       "raw_status": "Out",
       "reason": "Back | out",
       "date": "2026-10-20T15:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539304",
+      "name": "Santi Aldama",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-15T22:27Z",
       "team_match": "feed"
     },
     {
@@ -271,28 +249,6 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-11-15T21:20Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539253",
-      "name": "Santi Aldama",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-15T18:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539249",
-      "name": "Daniel Gafford",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Stinger | Shoulder | day-to-day",
-      "date": "2026-11-15T18:09Z",
       "team_match": "feed"
     },
     {
@@ -572,57 +528,57 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60916",
-      "name": "Zach Edey",
-      "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
-      "date": "2026-11-15T15:29Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60915",
-      "name": "Ty Jerome",
-      "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-15T15:28Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60914",
+      "injury_record_id": "539297",
       "name": "GG Jackson",
       "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Foot | day-to-day",
-      "date": "2026-11-15T15:28Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Foot | out",
+      "date": "2026-11-15T22:16Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-60913",
-      "name": "Jerami Grant",
+      "injury_record_id": "539296",
+      "name": "Isaiah Stewart",
       "team": "MEM",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Head | day-to-day",
-      "date": "2026-11-15T15:28Z",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-15T22:15Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539107",
+      "injury_record_id": "539295",
+      "name": "Ty Jerome",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-15T22:13Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539294",
       "name": "Quinten Post",
       "team": "MEM",
       "status": "O",
       "raw_status": "Out",
       "reason": "Concussion | out",
-      "date": "2026-11-14T19:47Z",
+      "date": "2026-11-15T22:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539293",
+      "name": "Zach Edey",
+      "team": "MEM",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-15T22:11Z",
       "team_match": "feed"
     },
     {
@@ -649,13 +605,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60912",
+      "injury_record_id": "539314",
       "name": "Pelle Larsson",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-15T15:26Z",
+      "date": "2026-11-15T22:47Z",
       "team_match": "feed"
     },
     {
@@ -682,13 +638,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60921",
+      "injury_record_id": "-60958",
       "name": "Jaylen Clark",
       "team": "MIN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Hamstring | day-to-day",
-      "date": "2026-11-15T15:31Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Hamstring | out",
+      "date": "2026-11-15T22:33Z",
       "team_match": "feed"
     },
     {
@@ -715,6 +671,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539315",
+      "name": "Trendon Watford",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-15T22:52Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60947",
       "name": "Bryce McGowens",
       "team": "NOP",
@@ -733,17 +700,6 @@
       "raw_status": "Out",
       "reason": "Plantar Fasciitis | Foot | out",
       "date": "2026-11-15T22:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539077",
-      "name": "Trendon Watford",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-14T17:58Z",
       "team_match": "feed"
     },
     {
@@ -1056,17 +1012,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539284",
-      "name": "Scottie Barnes",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Groin | out",
-      "date": "2026-11-15T21:43Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539134",
       "name": "Nate Bittle",
       "team": "TOR",
@@ -1155,13 +1100,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60861",
+      "injury_record_id": "539305",
       "name": "Tre Johnson",
       "team": "WAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-14T21:09Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-15T22:31Z",
       "team_match": "feed"
     },
     {
