@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-15T22:58:27.750549+00:00",
+  "generated_at": "2026-11-15T23:36:44.485267+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 101,
+  "player_count": 102,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,23 +34,23 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 101,
+  "players_with_team": 102,
   "players_without_team": 0,
   "status_counts": {
-    "T": 17,
-    "O": 83,
+    "O": 86,
+    "T": 15,
     "U": 1
   },
   "players": [
     {
       "id": "",
-      "injury_record_id": "539247",
+      "injury_record_id": "539323",
       "name": "Jock Landale",
       "team": "ATL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Inflammation | Hip | day-to-day",
-      "date": "2026-11-15T17:55Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Hip | out",
+      "date": "2026-11-15T23:22Z",
       "team_match": "feed"
     },
     {
@@ -341,6 +341,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539318",
+      "name": "Gui Santos",
+      "team": "GSW",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Inflammation | Ankle | day-to-day",
+      "date": "2026-11-15T23:03Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538781",
       "name": "Stephen Curry",
       "team": "GSW",
@@ -616,6 +627,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539322",
+      "name": "Ryan Rollins",
+      "team": "MIL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-15T23:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539272",
       "name": "Ousmane Dieng",
       "team": "MIL",
@@ -627,24 +649,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539240",
-      "name": "Ryan Rollins",
-      "team": "MIL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-15T17:23Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60958",
+      "injury_record_id": "539308",
       "name": "Jaylen Clark",
       "team": "MIN",
       "status": "O",
       "raw_status": "Out",
       "reason": "Not Specified | Hamstring | out",
-      "date": "2026-11-15T22:33Z",
+      "date": "2026-11-15T22:40Z",
       "team_match": "feed"
     },
     {
@@ -671,6 +682,39 @@
     },
     {
       "id": "",
+      "injury_record_id": "539320",
+      "name": "Bryce McGowens",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Infection | Elbow | out",
+      "date": "2026-11-15T23:10Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539319",
+      "name": "Bennedict Mathurin",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Plantar Fasciitis | Foot | out",
+      "date": "2026-11-15T23:06Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539316",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Tendinitis | Knee | out",
+      "date": "2026-11-15T22:57Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539315",
       "name": "Trendon Watford",
       "team": "NOP",
@@ -678,39 +722,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-11-15T22:52Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60947",
-      "name": "Bryce McGowens",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Infection | Elbow | out",
-      "date": "2026-11-15T22:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60944",
-      "name": "Bennedict Mathurin",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Plantar Fasciitis | Foot | out",
-      "date": "2026-11-15T22:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539073",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Tendinitis | Knee | out",
-      "date": "2026-11-14T17:53Z",
       "team_match": "feed"
     },
     {
@@ -902,13 +913,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60844",
+      "injury_record_id": "539317",
       "name": "Chris Youngblood",
       "team": "POR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Foot | day-to-day",
-      "date": "2026-11-14T15:05Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Foot | out",
+      "date": "2026-11-15T23:02Z",
       "team_match": "feed"
     },
     {
