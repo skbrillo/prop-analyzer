@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-15T18:31:17.712390+00:00",
+  "generated_at_utc": "2026-11-15T22:38:24.808527+00:00",
   "regular_season_only": true,
-  "games_validated": 188,
-  "accepted_rows": 4222,
-  "explicit_dnp_rows": 801,
+  "games_validated": 189,
+  "accepted_rows": 4244,
+  "explicit_dnp_rows": 804,
   "rejection_counts": {
     "non_regular_season_game": 67,
     "invalid_stats_or_minutes": 12
@@ -1889,6 +1889,16 @@
       ],
       "player_logs": 20,
       "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-15",
+      "game_id": "401909985",
+      "teams": [
+        "PHI",
+        "IND"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 3
     }
   ],
   "status": "accepted"

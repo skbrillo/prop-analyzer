@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-15T18:31:17.712390+00:00",
+  "generated_at_utc": "2026-11-15T22:38:24.808527+00:00",
   "records": [
     {
       "date": "2026-10-20",
@@ -9611,6 +9611,42 @@
       "game_id": "401909984",
       "opponent": "Chicago Bulls",
       "opponent_abbr": "CHI",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-15",
+      "player": "Caleb Love",
+      "player_id": "4433144",
+      "team": "Philadelphia 76ers",
+      "team_abbr": "PHI",
+      "team_id": "20",
+      "game_id": "401909985",
+      "opponent": "Indiana Pacers",
+      "opponent_abbr": "IND",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-15",
+      "player": "Justin Edwards",
+      "player_id": "4711297",
+      "team": "Philadelphia 76ers",
+      "team_abbr": "PHI",
+      "team_id": "20",
+      "game_id": "401909985",
+      "opponent": "Indiana Pacers",
+      "opponent_abbr": "IND",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-15",
+      "player": "Braden Smith",
+      "player_id": "5105854",
+      "team": "Indiana Pacers",
+      "team_abbr": "IND",
+      "team_id": "11",
+      "game_id": "401909985",
+      "opponent": "Philadelphia 76ers",
+      "opponent_abbr": "PHI",
       "reason": "COACH'S DECISION"
     }
   ]
