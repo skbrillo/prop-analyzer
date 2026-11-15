@@ -1,172 +1,7 @@
 {
-  "generated_at": "2026-11-15T15:17:38.223399+00:00",
+  "generated_at": "2026-11-15T16:01:29.004648+00:00",
   "source": "RotoWire",
   "games": {
-    "401909304": {
-      "game_id": "401909304",
-      "game": "Oklahoma City Thunder at LA Clippers",
-      "tipoff": "2026-11-14T03:30:00+00:00",
-      "home": "LAC",
-      "away": "OKC",
-      "checked_at": "2026-11-14T05:25:10.034076+00:00",
-      "minutes_before_tipoff": -115.2,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Darius Garland",
-          "team": "LAC"
-        },
-        {
-          "name": "Kris Dunn",
-          "team": "LAC"
-        },
-        {
-          "name": "Derrick Jones",
-          "team": "LAC"
-        },
-        {
-          "name": "Rui Hachimura",
-          "team": "LAC"
-        },
-        {
-          "name": "Brook Lopez",
-          "team": "LAC"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Shai Gilgeous-Alexander",
-          "team": "OKC"
-        },
-        {
-          "name": "Jared McCain",
-          "team": "OKC"
-        },
-        {
-          "name": "Kenrich Williams",
-          "team": "OKC"
-        },
-        {
-          "name": "Aday Mara",
-          "team": "OKC"
-        },
-        {
-          "name": "Isaiah Hartenstein",
-          "team": "OKC"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Bradley Beal",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Brandon Ingram",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Jordan Miller",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Yanic Konan Niederhauser",
-          "team": "LAC",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Chet Holmgren",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Ajay Mitchell",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Thomas Sorber",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Cason Wallace",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Williams",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jaylin Williams",
-          "team": "OKC",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Bradley Beal",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Brandon Ingram",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Jordan Miller",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Yanic Konan Niederhauser",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Chet Holmgren",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Ajay Mitchell",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Thomas Sorber",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Cason Wallace",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Williams",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jaylin Williams",
-          "team": "OKC",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909980": {
       "game_id": "401909980",
       "game": "Denver Nuggets at New Orleans Pelicans",
@@ -848,8 +683,8 @@
       "tipoff": "2026-11-15T18:00:00+00:00",
       "home": "PHI",
       "away": "IND",
-      "checked_at": "2026-11-15T15:17:38.223399+00:00",
-      "minutes_before_tipoff": 162.4,
+      "checked_at": "2026-11-15T16:01:29.004648+00:00",
+      "minutes_before_tipoff": 118.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -973,8 +808,8 @@
       "tipoff": "2026-11-15T21:00:00+00:00",
       "home": "PHX",
       "away": "LAL",
-      "checked_at": "2026-11-15T15:17:38.223399+00:00",
-      "minutes_before_tipoff": 342.4,
+      "checked_at": "2026-11-15T16:01:29.004648+00:00",
+      "minutes_before_tipoff": 298.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1068,8 +903,8 @@
       "tipoff": "2026-11-15T21:30:00+00:00",
       "home": "LAC",
       "away": "CHA",
-      "checked_at": "2026-11-15T15:17:38.223399+00:00",
-      "minutes_before_tipoff": 372.4,
+      "checked_at": "2026-11-15T16:01:29.004648+00:00",
+      "minutes_before_tipoff": 328.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1193,8 +1028,8 @@
       "tipoff": "2026-11-15T22:00:00+00:00",
       "home": "UTA",
       "away": "SAS",
-      "checked_at": "2026-11-15T15:17:38.223399+00:00",
-      "minutes_before_tipoff": 402.4,
+      "checked_at": "2026-11-15T16:01:29.004648+00:00",
+      "minutes_before_tipoff": 358.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1318,8 +1153,8 @@
       "tipoff": "2026-11-15T23:00:00+00:00",
       "home": "BOS",
       "away": "DAL",
-      "checked_at": "2026-11-15T15:17:38.223399+00:00",
-      "minutes_before_tipoff": 462.4,
+      "checked_at": "2026-11-15T16:01:29.004648+00:00",
+      "minutes_before_tipoff": 418.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1331,7 +1166,7 @@
           "team": "BOS"
         },
         {
-          "name": "Jordan Walsh",
+          "name": "Baylor Scheierman",
           "team": "BOS"
         },
         {
@@ -1377,17 +1212,7 @@
           "status": "out"
         },
         {
-          "name": "Max Christie",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
           "name": "Sergio de Larrea",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Daniel Gafford",
           "team": "DAL",
           "status": "out"
         },
@@ -1404,17 +1229,7 @@
           "status": "out"
         },
         {
-          "name": "Max Christie",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
           "name": "Sergio de Larrea",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Daniel Gafford",
           "team": "DAL",
           "status": "out"
         },
@@ -1432,8 +1247,8 @@
       "tipoff": "2026-11-15T23:00:00+00:00",
       "home": "TOR",
       "away": "NYK",
-      "checked_at": "2026-11-15T15:17:38.223399+00:00",
-      "minutes_before_tipoff": 462.4,
+      "checked_at": "2026-11-15T16:01:29.004648+00:00",
+      "minutes_before_tipoff": 418.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1516,8 +1331,8 @@
       "tipoff": "2026-11-16T00:00:00+00:00",
       "home": "WAS",
       "away": "HOU",
-      "checked_at": "2026-11-15T15:17:38.223399+00:00",
-      "minutes_before_tipoff": 522.4,
+      "checked_at": "2026-11-15T16:01:29.004648+00:00",
+      "minutes_before_tipoff": 478.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1651,8 +1466,8 @@
       "tipoff": "2026-11-16T01:00:00+00:00",
       "home": "MIL",
       "away": "ATL",
-      "checked_at": "2026-11-15T15:17:38.223399+00:00",
-      "minutes_before_tipoff": 582.4,
+      "checked_at": "2026-11-15T16:01:29.004648+00:00",
+      "minutes_before_tipoff": 538.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1766,8 +1581,8 @@
       "tipoff": "2026-11-16T02:00:00+00:00",
       "home": "SAC",
       "away": "OKC",
-      "checked_at": "2026-11-15T15:17:38.223399+00:00",
-      "minutes_before_tipoff": 642.4,
+      "checked_at": "2026-11-15T16:01:29.004648+00:00",
+      "minutes_before_tipoff": 598.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
