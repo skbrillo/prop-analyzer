@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T20:24:37.905338+00:00",
+  "generated_at": "2026-11-15T21:00:16.580726+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,8 +38,8 @@
   "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "T": 32,
-    "O": 74,
+    "T": 33,
+    "O": 73,
     "U": 1
   },
   "players": [
@@ -485,13 +485,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539233",
+      "injury_record_id": "-60937",
       "name": "Andrew Nembhard",
       "team": "IND",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Hip | out",
-      "date": "2026-11-15T16:44Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hip | day-to-day",
+      "date": "2026-11-15T20:57Z",
       "team_match": "feed"
     },
     {
@@ -672,6 +672,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539272",
+      "name": "Ousmane Dieng",
+      "team": "MIL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Fracture | Finger | out",
+      "date": "2026-11-15T20:13Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539240",
       "name": "Ryan Rollins",
       "team": "MIL",
@@ -679,17 +690,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
       "date": "2026-11-15T17:23Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539139",
-      "name": "Ousmane Dieng",
-      "team": "MIL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Fracture | Finger | out",
-      "date": "2026-11-14T22:40Z",
       "team_match": "feed"
     },
     {
@@ -892,13 +892,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539135",
+      "injury_record_id": "-60938",
       "name": "Joel Embiid",
       "team": "PHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Foot | out",
-      "date": "2026-11-14T22:05Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Foot | day-to-day",
+      "date": "2026-11-15T20:58Z",
       "team_match": "feed"
     },
     {
@@ -1035,13 +1035,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539255",
+      "injury_record_id": "539273",
       "name": "De'Aaron Fox",
       "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hip | day-to-day",
-      "date": "2026-11-15T18:27Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hip | out",
+      "date": "2026-11-15T20:33Z",
       "team_match": "feed"
     },
     {
