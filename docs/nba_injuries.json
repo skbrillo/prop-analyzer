@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-15T21:00:16.580726+00:00",
+  "generated_at": "2026-11-15T21:42:44.708998+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 107,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 107,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
-    "T": 33,
-    "O": 73,
+    "T": 29,
+    "O": 76,
     "U": 1
   },
   "players": [
@@ -144,34 +144,23 @@
     },
     {
       "id": "",
+      "injury_record_id": "-60941",
+      "name": "Tobe Awaka",
+      "team": "CHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-15T21:27Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60920",
       "name": "Jalen Smith",
       "team": "CHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Sprain | Finger | day-to-day",
-      "date": "2026-11-15T15:30Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60919",
-      "name": "Nic Claxton",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-15T15:30Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60918",
-      "name": "Tobe Awaka",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
       "date": "2026-11-15T15:30Z",
       "team_match": "feed"
     },
@@ -265,6 +254,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "539279",
+      "name": "Max Christie",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-15T21:24Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539278",
+      "name": "Kyrie Irving",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Knee | out",
+      "date": "2026-11-15T21:20Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539253",
       "name": "Santi Aldama",
       "team": "DAL",
@@ -272,28 +283,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Sprain | Ankle | day-to-day",
       "date": "2026-11-15T18:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539251",
-      "name": "Max Christie",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-15T18:18Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539250",
-      "name": "Kyrie Irving",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-15T18:14Z",
       "team_match": "feed"
     },
     {
