@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-15T02:37:21.580754+00:00",
+  "generated_at": "2026-11-15T03:28:19.962499+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 109,
+  "player_count": 110,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 109,
+  "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
-    "O": 92,
+    "O": 93,
     "T": 16,
     "U": 1
   },
@@ -254,13 +254,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539185",
+      "injury_record_id": "539186",
       "name": "Daniel Gafford",
       "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Face | day-to-day",
-      "date": "2026-11-15T02:14Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Face | out",
+      "date": "2026-11-15T02:31Z",
       "team_match": "feed"
     },
     {
@@ -316,6 +316,17 @@
       "raw_status": "Out",
       "reason": "Sprain | Knee | out",
       "date": "2026-10-17T00:52Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539187",
+      "name": "Duncan Robinson",
+      "team": "DET",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Thigh | day-to-day",
+      "date": "2026-11-15T02:40Z",
       "team_match": "feed"
     },
     {
