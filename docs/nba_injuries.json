@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-15T19:13:13.807217+00:00",
+  "generated_at": "2026-11-15T19:49:37.242137+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 112,
+  "player_count": 107,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 112,
+  "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "T": 37,
+    "T": 32,
     "O": 74,
     "U": 1
   },
@@ -573,28 +573,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539171",
-      "name": "Adou Thiero",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-15T00:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539167",
-      "name": "Collin Sexton",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Head | day-to-day",
-      "date": "2026-11-15T00:27Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539164",
       "name": "Austin Reaves",
       "team": "LAL",
@@ -1035,17 +1013,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539177",
-      "name": "Keegan Murray",
-      "team": "SAC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-15T01:00Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539176",
       "name": "Precious Achiuwa",
       "team": "SAC",
@@ -1200,17 +1167,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539127",
-      "name": "Alex Sarr",
-      "team": "WAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-14T21:24Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "-60861",
       "name": "Tre Johnson",
       "team": "WAS",
@@ -1218,17 +1174,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Back | day-to-day",
       "date": "2026-11-14T21:09Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539123",
-      "name": "Bub Carrington",
-      "team": "WAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Chest | day-to-day",
-      "date": "2026-11-14T21:05Z",
       "team_match": "feed"
     },
     {
