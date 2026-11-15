@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-14T23:56:48.383581+00:00",
+  "generated_at": "2026-11-15T00:32:00.263657+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 105,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 106,
+  "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "O": 85,
-    "T": 20,
+    "O": 88,
+    "T": 16,
     "U": 1
   },
   "players": [
@@ -100,13 +100,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539148",
+      "injury_record_id": "539163",
       "name": "Michael Porter Jr.",
       "team": "BKN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Personal | day-to-day",
-      "date": "2026-11-14T23:19Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Personal | out",
+      "date": "2026-11-15T00:15Z",
       "team_match": "feed"
     },
     {
@@ -551,6 +551,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539164",
+      "name": "Austin Reaves",
+      "team": "LAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Heel | out",
+      "date": "2026-11-15T00:17Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539113",
       "name": "Collin Sexton",
       "team": "LAL",
@@ -558,28 +569,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Head | day-to-day",
       "date": "2026-11-14T20:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539110",
-      "name": "Austin Reaves",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Heel | day-to-day",
-      "date": "2026-11-14T20:15Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538933",
-      "name": "Quentin Grimes",
-      "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Finger | day-to-day",
-      "date": "2026-11-13T21:26Z",
       "team_match": "feed"
     },
     {
@@ -1079,13 +1068,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "538978",
+      "injury_record_id": "539158",
       "name": "Jaxson Hayes",
       "team": "UTA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-14T02:58Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Knee | out",
+      "date": "2026-11-15T00:07Z",
       "team_match": "feed"
     },
     {
