@@ -1,13 +1,13 @@
 {
   "model": "edge-v2-7pct-threshold",
-  "generated_at": "2026-11-14T22:37:20.052895+00:00",
+  "generated_at": "2026-11-15T11:28:00.098657+00:00",
   "prediction_model": "v7-live-injury-screen-experimental",
-  "prediction_generated_at": "2026-11-14T22:37:19.990472+00:00",
+  "prediction_generated_at": "2026-11-15T11:28:00.028832+00:00",
   "status": "experimental_not_validated",
   "warning": "Scores and probabilities are not calibrated. RotoWire lineup statuses may change.",
   "lineup_source": "RotoWire",
   "lineup_counts": {
-    "U": 37
+    "U": 199
   },
   "filters": {
     "minimum_ev": 0.02,
@@ -20,65 +20,65 @@
     "exclude_rotowire_out": true
   },
   "counts": {
-    "outcomes": 37,
-    "eligible": 1,
-    "rejected": 36,
-    "top25": 1,
-    "qualifying": 1
+    "outcomes": 199,
+    "eligible": 9,
+    "rejected": 190,
+    "top25": 8,
+    "qualifying": 8
   },
   "top25": [
     {
-      "player": "Aaron Gordon",
-      "team": "Denver Nuggets",
-      "team_abbr": "DEN",
-      "team_id": "7",
-      "opponent": "New Orleans Pelicans",
-      "date": "2026-11-14",
-      "game_date": "2026-11-14",
-      "game_time": "07:10 PM ET",
-      "commence_time": "2026-11-15T00:10:00Z",
-      "event_id": "4be35122e1e321a6c1616ec1e18e86b9",
-      "home_team": "New Orleans Pelicans",
-      "away_team": "Denver Nuggets",
-      "matchup": "Denver Nuggets @ New Orleans Pelicans",
-      "home_spread": 12.5,
-      "away_spread": -12.5,
-      "game_total": 235.5,
-      "home_implied_total": 111.5,
-      "away_implied_total": 124.0,
+      "player": "Quentin Grimes",
+      "team": "Los Angeles Lakers",
+      "team_abbr": "LAL",
+      "team_id": "13",
+      "opponent": "Phoenix Suns",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "04:00 PM ET",
+      "commence_time": "2026-11-15T21:00:00Z",
+      "event_id": "6ff9196cf31c70d4af35fe658d913a6d",
+      "home_team": "Phoenix Suns",
+      "away_team": "Los Angeles Lakers",
+      "matchup": "Los Angeles Lakers @ Phoenix Suns",
+      "home_spread": 2.5,
+      "away_spread": -2.5,
+      "game_total": 228.5,
+      "home_implied_total": 113.0,
+      "away_implied_total": 115.5,
       "market": "Points",
       "side": "Under",
-      "line": 13.5,
-      "odds": -112,
-      "projection": 11.25,
-      "probability": 0.575,
+      "line": 11.5,
+      "odds": -119,
+      "projection": 7.11,
+      "probability": 0.6312,
       "push_probability": 0.0,
-      "model_probability_raw": 0.651,
-      "market_probability_no_vig": 0.499,
-      "sigma_estimate": 5.798,
-      "implied_probability": 0.5283,
-      "ev": 0.0884,
-      "minutes_reliability": "Stable",
-      "minutes_reliability_score": 71,
-      "minutes_sd_last10": 3.5,
-      "minutes_min_last10": 25.0,
-      "minutes_max_last10": 37.0,
-      "minutes_average_last10": 29.0,
+      "model_probability_raw": 0.7498,
+      "market_probability_no_vig": 0.5125,
+      "sigma_estimate": 6.511,
+      "implied_probability": 0.5434,
+      "ev": 0.1615,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 49,
+      "minutes_sd_last10": 6.11,
+      "minutes_min_last10": 19.0,
+      "minutes_max_last10": 38.0,
+      "minutes_average_last10": 26.0,
       "minutes_sample_last10": 10,
-      "last10": 6,
-      "sample_size": 10,
-      "minutes_projection": 28.1,
-      "per_minute_projection": 0.3797,
-      "minutes_last5": 27.8,
-      "minutes_last10": 29.0,
-      "minutes_long_term": 29.0,
-      "minutes_trend_adjustment": -0.36,
-      "opponent_factor": 1.055,
-      "opponent_sample_size": 13,
-      "opponent_defense_factor": 1.055,
-      "opponent_defense_games": 13,
-      "opponent_defense_average": 125.62,
-      "league_defense_average": 113.59,
+      "last10": 7,
+      "sample_size": 11,
+      "minutes_projection": 25.4,
+      "per_minute_projection": 0.269,
+      "minutes_last5": 25.2,
+      "minutes_last10": 26.0,
+      "minutes_long_term": 26.1,
+      "minutes_trend_adjustment": -0.22,
+      "opponent_factor": 1.01,
+      "opponent_sample_size": 11,
+      "opponent_defense_factor": 1.01,
+      "opponent_defense_games": 11,
+      "opponent_defense_average": 116.09,
+      "league_defense_average": 113.72,
       "defense_status": "applied",
       "injury_status": "unverified",
       "injury_minutes_multiplier": 1.0,
@@ -87,81 +87,648 @@
       "live_injury_reason": "",
       "injury_uncertainty": false,
       "odds_cutoff": -125,
-      "market_no_vig_probability": 0.499,
-      "model_market_gap": -2.25,
-      "baseline_projection": 10.64,
+      "market_no_vig_probability": 0.5125,
+      "model_market_gap": -4.39,
+      "baseline_projection": 7.66,
       "model": "v7-live-injury-screen-experimental",
       "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
       "lineup_status": "U",
-      "edge_score": 53.4,
-      "edge_ev": 0.0884,
-      "edge_probability_gap": 0.076,
-      "edge_projection_z": 0.388,
+      "edge_score": 73.5,
+      "edge_ev": 0.1616,
+      "edge_probability_gap": 0.1187,
+      "edge_projection_z": 0.674,
       "edge_components": {
-        "ev": 13.3,
-        "market_gap": 12.7,
-        "projection": 5.8,
-        "minutes": 10.6,
-        "last10": 6.0,
+        "ev": 24.2,
+        "market_gap": 19.8,
+        "projection": 10.1,
+        "minutes": 7.3,
+        "last10": 7.0,
         "injury": 5
       },
       "edge_status": "experimental_unverified",
       "rank": 1
+    },
+    {
+      "player": "Aaron Wiggins",
+      "team": "Atlanta Hawks",
+      "team_abbr": "ATL",
+      "team_id": "1",
+      "opponent": "Milwaukee Bucks",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "08:10 PM ET",
+      "commence_time": "2026-11-16T01:10:00Z",
+      "event_id": "86956138608be1d45ba8d6204dceaa3e",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Atlanta Hawks",
+      "matchup": "Atlanta Hawks @ Milwaukee Bucks",
+      "home_spread": 7.5,
+      "away_spread": -7.5,
+      "game_total": 234.5,
+      "home_implied_total": 113.5,
+      "away_implied_total": 121.0,
+      "market": "Assists",
+      "side": "Over",
+      "line": 2.5,
+      "odds": 118,
+      "projection": 3.04,
+      "probability": 0.5361,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6428,
+      "market_probability_no_vig": 0.4295,
+      "sigma_estimate": 1.479,
+      "implied_probability": 0.4587,
+      "ev": 0.1687,
+      "minutes_reliability": "Stable",
+      "minutes_reliability_score": 81,
+      "minutes_sd_last10": 2.27,
+      "minutes_min_last10": 23.0,
+      "minutes_max_last10": 29.0,
+      "minutes_average_last10": 25.5,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 13,
+      "minutes_projection": 26.4,
+      "per_minute_projection": 0.1117,
+      "minutes_last5": 26.6,
+      "minutes_last10": 25.5,
+      "minutes_long_term": 26.0,
+      "minutes_trend_adjustment": 0.33,
+      "opponent_factor": 1.0377,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 1.0377,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 28.23,
+      "league_defense_average": 26.32,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4295,
+      "model_market_gap": 0.54,
+      "baseline_projection": 2.87,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 72.7,
+      "edge_ev": 0.1687,
+      "edge_probability_gap": 0.1066,
+      "edge_projection_z": 0.365,
+      "edge_components": {
+        "ev": 25.3,
+        "market_gap": 17.8,
+        "projection": 5.5,
+        "minutes": 12.2,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 2
+    },
+    {
+      "player": "Sam Hauser",
+      "team": "Boston Celtics",
+      "team_abbr": "BOS",
+      "team_id": "2",
+      "opponent": "Dallas Mavericks",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "06:10 PM ET",
+      "commence_time": "2026-11-15T23:10:00Z",
+      "event_id": "4db454dae115172875ab241aa9db860f",
+      "home_team": "Boston Celtics",
+      "away_team": "Dallas Mavericks",
+      "matchup": "Dallas Mavericks @ Boston Celtics",
+      "home_spread": -13.5,
+      "away_spread": 13.5,
+      "game_total": 216.5,
+      "home_implied_total": 115.0,
+      "away_implied_total": 101.5,
+      "market": "Points",
+      "side": "Over",
+      "line": 6.5,
+      "odds": -113,
+      "projection": 8.6,
+      "probability": 0.6039,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.7078,
+      "market_probability_no_vig": 0.5,
+      "sigma_estimate": 3.835,
+      "implied_probability": 0.5305,
+      "ev": 0.1383,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 64,
+      "minutes_sd_last10": 4.28,
+      "minutes_min_last10": 17.0,
+      "minutes_max_last10": 30.0,
+      "minutes_average_last10": 21.1,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 12,
+      "minutes_projection": 22.1,
+      "per_minute_projection": 0.3952,
+      "minutes_last5": 22.4,
+      "minutes_last10": 21.1,
+      "minutes_long_term": 21.0,
+      "minutes_trend_adjustment": 0.39,
+      "opponent_factor": 0.9981,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 0.9981,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 113.31,
+      "league_defense_average": 113.72,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.5,
+      "model_market_gap": 2.1,
+      "baseline_projection": 8.31,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 67.9,
+      "edge_ev": 0.1383,
+      "edge_probability_gap": 0.1039,
+      "edge_projection_z": 0.548,
+      "edge_components": {
+        "ev": 20.7,
+        "market_gap": 17.3,
+        "projection": 8.2,
+        "minutes": 9.6,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 3
+    },
+    {
+      "player": "Darius Acuff Jr.",
+      "team": "Sacramento Kings",
+      "team_abbr": "SAC",
+      "team_id": "23",
+      "opponent": "Oklahoma City Thunder",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "09:00 PM ET",
+      "commence_time": "2026-11-16T02:00:00Z",
+      "event_id": "f54ead334bb1187b5f98422d559309b0",
+      "home_team": "Sacramento Kings",
+      "away_team": "Oklahoma City Thunder",
+      "matchup": "Oklahoma City Thunder @ Sacramento Kings",
+      "home_spread": 10.5,
+      "away_spread": -10.5,
+      "game_total": 222.5,
+      "home_implied_total": 106.0,
+      "away_implied_total": 116.5,
+      "market": "Assists",
+      "side": "Over",
+      "line": 6.5,
+      "odds": 112,
+      "projection": 7.49,
+      "probability": 0.5287,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6159,
+      "market_probability_no_vig": 0.4415,
+      "sigma_estimate": 3.345,
+      "implied_probability": 0.4717,
+      "ev": 0.1208,
+      "minutes_reliability": "Stable",
+      "minutes_reliability_score": 74,
+      "minutes_sd_last10": 3.16,
+      "minutes_min_last10": 33.0,
+      "minutes_max_last10": 42.0,
+      "minutes_average_last10": 37.3,
+      "minutes_sample_last10": 10,
+      "last10": 5,
+      "sample_size": 12,
+      "minutes_projection": 37.6,
+      "per_minute_projection": 0.2059,
+      "minutes_last5": 37.8,
+      "minutes_last10": 37.3,
+      "minutes_long_term": 37.1,
+      "minutes_trend_adjustment": 0.15,
+      "opponent_factor": 0.9652,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 0.9652,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 24.54,
+      "league_defense_average": 26.3,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4415,
+      "model_market_gap": 0.99,
+      "baseline_projection": 7.78,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 58.2,
+      "edge_ev": 0.1208,
+      "edge_probability_gap": 0.0872,
+      "edge_projection_z": 0.296,
+      "edge_components": {
+        "ev": 18.1,
+        "market_gap": 14.5,
+        "projection": 4.4,
+        "minutes": 11.1,
+        "last10": 5.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 4
+    },
+    {
+      "player": "Cooper Flagg",
+      "team": "Dallas Mavericks",
+      "team_abbr": "DAL",
+      "team_id": "6",
+      "opponent": "Boston Celtics",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "06:10 PM ET",
+      "commence_time": "2026-11-15T23:10:00Z",
+      "event_id": "4db454dae115172875ab241aa9db860f",
+      "home_team": "Boston Celtics",
+      "away_team": "Dallas Mavericks",
+      "matchup": "Dallas Mavericks @ Boston Celtics",
+      "home_spread": -13.5,
+      "away_spread": 13.5,
+      "game_total": 216.5,
+      "home_implied_total": 115.0,
+      "away_implied_total": 101.5,
+      "market": "Assists",
+      "side": "Over",
+      "line": 5.5,
+      "odds": 103,
+      "projection": 6.56,
+      "probability": 0.5454,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6291,
+      "market_probability_no_vig": 0.4616,
+      "sigma_estimate": 3.204,
+      "implied_probability": 0.4926,
+      "ev": 0.1071,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 58,
+      "minutes_sd_last10": 5.08,
+      "minutes_min_last10": 27.0,
+      "minutes_max_last10": 40.0,
+      "minutes_average_last10": 35.7,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 12,
+      "minutes_projection": 33.5,
+      "per_minute_projection": 0.2006,
+      "minutes_last5": 33.0,
+      "minutes_last10": 35.7,
+      "minutes_long_term": 33.9,
+      "minutes_trend_adjustment": -0.81,
+      "opponent_factor": 0.9769,
+      "opponent_sample_size": 12,
+      "opponent_defense_factor": 0.9769,
+      "opponent_defense_games": 12,
+      "opponent_defense_average": 25.08,
+      "league_defense_average": 26.3,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4616,
+      "model_market_gap": 1.06,
+      "baseline_projection": 6.7,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 55.7,
+      "edge_ev": 0.1072,
+      "edge_probability_gap": 0.0838,
+      "edge_projection_z": 0.331,
+      "edge_components": {
+        "ev": 16.1,
+        "market_gap": 14.0,
+        "projection": 5.0,
+        "minutes": 8.7,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 5
+    },
+    {
+      "player": "Jared McCain",
+      "team": "Oklahoma City Thunder",
+      "team_abbr": "OKC",
+      "team_id": "25",
+      "opponent": "Sacramento Kings",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "09:00 PM ET",
+      "commence_time": "2026-11-16T02:00:00Z",
+      "event_id": "f54ead334bb1187b5f98422d559309b0",
+      "home_team": "Sacramento Kings",
+      "away_team": "Oklahoma City Thunder",
+      "matchup": "Oklahoma City Thunder @ Sacramento Kings",
+      "home_spread": 10.5,
+      "away_spread": -10.5,
+      "game_total": 222.5,
+      "home_implied_total": 106.0,
+      "away_implied_total": 116.5,
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "odds": 100,
+      "projection": 4.24,
+      "probability": 0.5431,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6176,
+      "market_probability_no_vig": 0.4686,
+      "sigma_estimate": 2.465,
+      "implied_probability": 0.5,
+      "ev": 0.0862,
+      "minutes_reliability": "Stable",
+      "minutes_reliability_score": 77,
+      "minutes_sd_last10": 2.72,
+      "minutes_min_last10": 23.0,
+      "minutes_max_last10": 31.0,
+      "minutes_average_last10": 28.4,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 13,
+      "minutes_projection": 28.5,
+      "per_minute_projection": 0.1498,
+      "minutes_last5": 29.0,
+      "minutes_last10": 28.4,
+      "minutes_long_term": 26.5,
+      "minutes_trend_adjustment": 0.18,
+      "opponent_factor": 0.997,
+      "opponent_sample_size": 12,
+      "opponent_defense_factor": 0.997,
+      "opponent_defense_games": 12,
+      "opponent_defense_average": 43.58,
+      "league_defense_average": 43.85,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4686,
+      "model_market_gap": 0.74,
+      "baseline_projection": 4.2,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 53.4,
+      "edge_ev": 0.0862,
+      "edge_probability_gap": 0.0745,
+      "edge_projection_z": 0.3,
+      "edge_components": {
+        "ev": 12.9,
+        "market_gap": 12.4,
+        "projection": 4.5,
+        "minutes": 11.6,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 6
+    },
+    {
+      "player": "Zaccharie Risacher",
+      "team": "Dallas Mavericks",
+      "team_abbr": "DAL",
+      "team_id": "6",
+      "opponent": "Boston Celtics",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "06:10 PM ET",
+      "commence_time": "2026-11-15T23:10:00Z",
+      "event_id": "4db454dae115172875ab241aa9db860f",
+      "home_team": "Boston Celtics",
+      "away_team": "Dallas Mavericks",
+      "matchup": "Dallas Mavericks @ Boston Celtics",
+      "home_spread": -13.5,
+      "away_spread": 13.5,
+      "game_total": 216.5,
+      "home_implied_total": 115.0,
+      "away_implied_total": 101.5,
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "odds": 112,
+      "projection": 4.14,
+      "probability": 0.5221,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6027,
+      "market_probability_no_vig": 0.4415,
+      "sigma_estimate": 2.446,
+      "implied_probability": 0.4717,
+      "ev": 0.1069,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 50,
+      "minutes_sd_last10": 6.06,
+      "minutes_min_last10": 14.0,
+      "minutes_max_last10": 30.0,
+      "minutes_average_last10": 21.5,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 13,
+      "minutes_projection": 19.4,
+      "per_minute_projection": 0.2082,
+      "minutes_last5": 18.2,
+      "minutes_last10": 21.5,
+      "minutes_long_term": 23.5,
+      "minutes_trend_adjustment": -0.99,
+      "opponent_factor": 0.9927,
+      "opponent_sample_size": 12,
+      "opponent_defense_factor": 0.9927,
+      "opponent_defense_games": 12,
+      "opponent_defense_average": 43.25,
+      "league_defense_average": 43.89,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4415,
+      "model_market_gap": 0.64,
+      "baseline_projection": 4.53,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 52.9,
+      "edge_ev": 0.1069,
+      "edge_probability_gap": 0.0806,
+      "edge_projection_z": 0.262,
+      "edge_components": {
+        "ev": 16.0,
+        "market_gap": 13.4,
+        "projection": 3.9,
+        "minutes": 7.5,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 7
+    },
+    {
+      "player": "Khaman Maluach",
+      "team": "Phoenix Suns",
+      "team_abbr": "PHX",
+      "team_id": "21",
+      "opponent": "Los Angeles Lakers",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "04:00 PM ET",
+      "commence_time": "2026-11-15T21:00:00Z",
+      "event_id": "6ff9196cf31c70d4af35fe658d913a6d",
+      "home_team": "Phoenix Suns",
+      "away_team": "Los Angeles Lakers",
+      "matchup": "Los Angeles Lakers @ Phoenix Suns",
+      "home_spread": 2.5,
+      "away_spread": -2.5,
+      "game_total": 228.5,
+      "home_implied_total": 113.0,
+      "away_implied_total": 115.5,
+      "market": "Points",
+      "side": "Over",
+      "line": 6.5,
+      "odds": -120,
+      "projection": 8.09,
+      "probability": 0.5859,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6572,
+      "market_probability_no_vig": 0.5146,
+      "sigma_estimate": 3.929,
+      "implied_probability": 0.5455,
+      "ev": 0.0741,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 61,
+      "minutes_sd_last10": 4.73,
+      "minutes_min_last10": 13.0,
+      "minutes_max_last10": 28.0,
+      "minutes_average_last10": 19.8,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 11,
+      "minutes_projection": 19.6,
+      "per_minute_projection": 0.4105,
+      "minutes_last5": 19.6,
+      "minutes_last10": 19.8,
+      "minutes_long_term": 19.5,
+      "minutes_trend_adjustment": -0.06,
+      "opponent_factor": 1.0023,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 1.0023,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 114.23,
+      "league_defense_average": 113.72,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.5146,
+      "model_market_gap": 1.59,
+      "baseline_projection": 8.15,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 50.2,
+      "edge_ev": 0.0741,
+      "edge_probability_gap": 0.0713,
+      "edge_projection_z": 0.405,
+      "edge_components": {
+        "ev": 11.1,
+        "market_gap": 11.9,
+        "projection": 6.1,
+        "minutes": 9.2,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 8
     }
   ],
   "qualifying": [
     {
-      "player": "Aaron Gordon",
-      "team": "Denver Nuggets",
-      "team_abbr": "DEN",
-      "team_id": "7",
-      "opponent": "New Orleans Pelicans",
-      "date": "2026-11-14",
-      "game_date": "2026-11-14",
-      "game_time": "07:10 PM ET",
-      "commence_time": "2026-11-15T00:10:00Z",
-      "event_id": "4be35122e1e321a6c1616ec1e18e86b9",
-      "home_team": "New Orleans Pelicans",
-      "away_team": "Denver Nuggets",
-      "matchup": "Denver Nuggets @ New Orleans Pelicans",
-      "home_spread": 12.5,
-      "away_spread": -12.5,
-      "game_total": 235.5,
-      "home_implied_total": 111.5,
-      "away_implied_total": 124.0,
+      "player": "Quentin Grimes",
+      "team": "Los Angeles Lakers",
+      "team_abbr": "LAL",
+      "team_id": "13",
+      "opponent": "Phoenix Suns",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "04:00 PM ET",
+      "commence_time": "2026-11-15T21:00:00Z",
+      "event_id": "6ff9196cf31c70d4af35fe658d913a6d",
+      "home_team": "Phoenix Suns",
+      "away_team": "Los Angeles Lakers",
+      "matchup": "Los Angeles Lakers @ Phoenix Suns",
+      "home_spread": 2.5,
+      "away_spread": -2.5,
+      "game_total": 228.5,
+      "home_implied_total": 113.0,
+      "away_implied_total": 115.5,
       "market": "Points",
       "side": "Under",
-      "line": 13.5,
-      "odds": -112,
-      "projection": 11.25,
-      "probability": 0.575,
+      "line": 11.5,
+      "odds": -119,
+      "projection": 7.11,
+      "probability": 0.6312,
       "push_probability": 0.0,
-      "model_probability_raw": 0.651,
-      "market_probability_no_vig": 0.499,
-      "sigma_estimate": 5.798,
-      "implied_probability": 0.5283,
-      "ev": 0.0884,
-      "minutes_reliability": "Stable",
-      "minutes_reliability_score": 71,
-      "minutes_sd_last10": 3.5,
-      "minutes_min_last10": 25.0,
-      "minutes_max_last10": 37.0,
-      "minutes_average_last10": 29.0,
+      "model_probability_raw": 0.7498,
+      "market_probability_no_vig": 0.5125,
+      "sigma_estimate": 6.511,
+      "implied_probability": 0.5434,
+      "ev": 0.1615,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 49,
+      "minutes_sd_last10": 6.11,
+      "minutes_min_last10": 19.0,
+      "minutes_max_last10": 38.0,
+      "minutes_average_last10": 26.0,
       "minutes_sample_last10": 10,
-      "last10": 6,
-      "sample_size": 10,
-      "minutes_projection": 28.1,
-      "per_minute_projection": 0.3797,
-      "minutes_last5": 27.8,
-      "minutes_last10": 29.0,
-      "minutes_long_term": 29.0,
-      "minutes_trend_adjustment": -0.36,
-      "opponent_factor": 1.055,
-      "opponent_sample_size": 13,
-      "opponent_defense_factor": 1.055,
-      "opponent_defense_games": 13,
-      "opponent_defense_average": 125.62,
-      "league_defense_average": 113.59,
+      "last10": 7,
+      "sample_size": 11,
+      "minutes_projection": 25.4,
+      "per_minute_projection": 0.269,
+      "minutes_last5": 25.2,
+      "minutes_last10": 26.0,
+      "minutes_long_term": 26.1,
+      "minutes_trend_adjustment": -0.22,
+      "opponent_factor": 1.01,
+      "opponent_sample_size": 11,
+      "opponent_defense_factor": 1.01,
+      "opponent_defense_games": 11,
+      "opponent_defense_average": 116.09,
+      "league_defense_average": 113.72,
       "defense_status": "applied",
       "injury_status": "unverified",
       "injury_minutes_multiplier": 1.0,
@@ -170,81 +737,79 @@
       "live_injury_reason": "",
       "injury_uncertainty": false,
       "odds_cutoff": -125,
-      "market_no_vig_probability": 0.499,
-      "model_market_gap": -2.25,
-      "baseline_projection": 10.64,
+      "market_no_vig_probability": 0.5125,
+      "model_market_gap": -4.39,
+      "baseline_projection": 7.66,
       "model": "v7-live-injury-screen-experimental",
       "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
       "lineup_status": "U",
-      "edge_score": 53.4,
-      "edge_ev": 0.0884,
-      "edge_probability_gap": 0.076,
-      "edge_projection_z": 0.388,
+      "edge_score": 73.5,
+      "edge_ev": 0.1616,
+      "edge_probability_gap": 0.1187,
+      "edge_projection_z": 0.674,
       "edge_components": {
-        "ev": 13.3,
-        "market_gap": 12.7,
-        "projection": 5.8,
-        "minutes": 10.6,
-        "last10": 6.0,
+        "ev": 24.2,
+        "market_gap": 19.8,
+        "projection": 10.1,
+        "minutes": 7.3,
+        "last10": 7.0,
         "injury": 5
       },
       "edge_status": "experimental_unverified",
       "rank": 1
-    }
-  ],
-  "eligible": [
+    },
     {
-      "player": "Aaron Gordon",
-      "team": "Denver Nuggets",
-      "team_abbr": "DEN",
-      "team_id": "7",
-      "opponent": "New Orleans Pelicans",
-      "date": "2026-11-14",
-      "game_date": "2026-11-14",
-      "game_time": "07:10 PM ET",
-      "commence_time": "2026-11-15T00:10:00Z",
-      "event_id": "4be35122e1e321a6c1616ec1e18e86b9",
-      "home_team": "New Orleans Pelicans",
-      "away_team": "Denver Nuggets",
-      "matchup": "Denver Nuggets @ New Orleans Pelicans",
-      "home_spread": 12.5,
-      "away_spread": -12.5,
-      "game_total": 235.5,
-      "home_implied_total": 111.5,
-      "away_implied_total": 124.0,
-      "market": "Points",
-      "side": "Under",
-      "line": 13.5,
-      "odds": -112,
-      "projection": 11.25,
-      "probability": 0.575,
+      "player": "Aaron Wiggins",
+      "team": "Atlanta Hawks",
+      "team_abbr": "ATL",
+      "team_id": "1",
+      "opponent": "Milwaukee Bucks",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "08:10 PM ET",
+      "commence_time": "2026-11-16T01:10:00Z",
+      "event_id": "86956138608be1d45ba8d6204dceaa3e",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Atlanta Hawks",
+      "matchup": "Atlanta Hawks @ Milwaukee Bucks",
+      "home_spread": 7.5,
+      "away_spread": -7.5,
+      "game_total": 234.5,
+      "home_implied_total": 113.5,
+      "away_implied_total": 121.0,
+      "market": "Assists",
+      "side": "Over",
+      "line": 2.5,
+      "odds": 118,
+      "projection": 3.04,
+      "probability": 0.5361,
       "push_probability": 0.0,
-      "model_probability_raw": 0.651,
-      "market_probability_no_vig": 0.499,
-      "sigma_estimate": 5.798,
-      "implied_probability": 0.5283,
-      "ev": 0.0884,
+      "model_probability_raw": 0.6428,
+      "market_probability_no_vig": 0.4295,
+      "sigma_estimate": 1.479,
+      "implied_probability": 0.4587,
+      "ev": 0.1687,
       "minutes_reliability": "Stable",
-      "minutes_reliability_score": 71,
-      "minutes_sd_last10": 3.5,
-      "minutes_min_last10": 25.0,
-      "minutes_max_last10": 37.0,
-      "minutes_average_last10": 29.0,
+      "minutes_reliability_score": 81,
+      "minutes_sd_last10": 2.27,
+      "minutes_min_last10": 23.0,
+      "minutes_max_last10": 29.0,
+      "minutes_average_last10": 25.5,
       "minutes_sample_last10": 10,
-      "last10": 6,
-      "sample_size": 10,
-      "minutes_projection": 28.1,
-      "per_minute_projection": 0.3797,
-      "minutes_last5": 27.8,
-      "minutes_last10": 29.0,
-      "minutes_long_term": 29.0,
-      "minutes_trend_adjustment": -0.36,
-      "opponent_factor": 1.055,
+      "last10": 7,
+      "sample_size": 13,
+      "minutes_projection": 26.4,
+      "per_minute_projection": 0.1117,
+      "minutes_last5": 26.6,
+      "minutes_last10": 25.5,
+      "minutes_long_term": 26.0,
+      "minutes_trend_adjustment": 0.33,
+      "opponent_factor": 1.0377,
       "opponent_sample_size": 13,
-      "opponent_defense_factor": 1.055,
+      "opponent_defense_factor": 1.0377,
       "opponent_defense_games": 13,
-      "opponent_defense_average": 125.62,
-      "league_defense_average": 113.59,
+      "opponent_defense_average": 28.23,
+      "league_defense_average": 26.32,
       "defense_status": "applied",
       "injury_status": "unverified",
       "injury_minutes_multiplier": 1.0,
@@ -253,22 +818,1231 @@
       "live_injury_reason": "",
       "injury_uncertainty": false,
       "odds_cutoff": -125,
-      "market_no_vig_probability": 0.499,
-      "model_market_gap": -2.25,
-      "baseline_projection": 10.64,
+      "market_no_vig_probability": 0.4295,
+      "model_market_gap": 0.54,
+      "baseline_projection": 2.87,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 72.7,
+      "edge_ev": 0.1687,
+      "edge_probability_gap": 0.1066,
+      "edge_projection_z": 0.365,
+      "edge_components": {
+        "ev": 25.3,
+        "market_gap": 17.8,
+        "projection": 5.5,
+        "minutes": 12.2,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 2
+    },
+    {
+      "player": "Sam Hauser",
+      "team": "Boston Celtics",
+      "team_abbr": "BOS",
+      "team_id": "2",
+      "opponent": "Dallas Mavericks",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "06:10 PM ET",
+      "commence_time": "2026-11-15T23:10:00Z",
+      "event_id": "4db454dae115172875ab241aa9db860f",
+      "home_team": "Boston Celtics",
+      "away_team": "Dallas Mavericks",
+      "matchup": "Dallas Mavericks @ Boston Celtics",
+      "home_spread": -13.5,
+      "away_spread": 13.5,
+      "game_total": 216.5,
+      "home_implied_total": 115.0,
+      "away_implied_total": 101.5,
+      "market": "Points",
+      "side": "Over",
+      "line": 6.5,
+      "odds": -113,
+      "projection": 8.6,
+      "probability": 0.6039,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.7078,
+      "market_probability_no_vig": 0.5,
+      "sigma_estimate": 3.835,
+      "implied_probability": 0.5305,
+      "ev": 0.1383,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 64,
+      "minutes_sd_last10": 4.28,
+      "minutes_min_last10": 17.0,
+      "minutes_max_last10": 30.0,
+      "minutes_average_last10": 21.1,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 12,
+      "minutes_projection": 22.1,
+      "per_minute_projection": 0.3952,
+      "minutes_last5": 22.4,
+      "minutes_last10": 21.1,
+      "minutes_long_term": 21.0,
+      "minutes_trend_adjustment": 0.39,
+      "opponent_factor": 0.9981,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 0.9981,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 113.31,
+      "league_defense_average": 113.72,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.5,
+      "model_market_gap": 2.1,
+      "baseline_projection": 8.31,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 67.9,
+      "edge_ev": 0.1383,
+      "edge_probability_gap": 0.1039,
+      "edge_projection_z": 0.548,
+      "edge_components": {
+        "ev": 20.7,
+        "market_gap": 17.3,
+        "projection": 8.2,
+        "minutes": 9.6,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 3
+    },
+    {
+      "player": "Darius Acuff Jr.",
+      "team": "Sacramento Kings",
+      "team_abbr": "SAC",
+      "team_id": "23",
+      "opponent": "Oklahoma City Thunder",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "09:00 PM ET",
+      "commence_time": "2026-11-16T02:00:00Z",
+      "event_id": "f54ead334bb1187b5f98422d559309b0",
+      "home_team": "Sacramento Kings",
+      "away_team": "Oklahoma City Thunder",
+      "matchup": "Oklahoma City Thunder @ Sacramento Kings",
+      "home_spread": 10.5,
+      "away_spread": -10.5,
+      "game_total": 222.5,
+      "home_implied_total": 106.0,
+      "away_implied_total": 116.5,
+      "market": "Assists",
+      "side": "Over",
+      "line": 6.5,
+      "odds": 112,
+      "projection": 7.49,
+      "probability": 0.5287,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6159,
+      "market_probability_no_vig": 0.4415,
+      "sigma_estimate": 3.345,
+      "implied_probability": 0.4717,
+      "ev": 0.1208,
+      "minutes_reliability": "Stable",
+      "minutes_reliability_score": 74,
+      "minutes_sd_last10": 3.16,
+      "minutes_min_last10": 33.0,
+      "minutes_max_last10": 42.0,
+      "minutes_average_last10": 37.3,
+      "minutes_sample_last10": 10,
+      "last10": 5,
+      "sample_size": 12,
+      "minutes_projection": 37.6,
+      "per_minute_projection": 0.2059,
+      "minutes_last5": 37.8,
+      "minutes_last10": 37.3,
+      "minutes_long_term": 37.1,
+      "minutes_trend_adjustment": 0.15,
+      "opponent_factor": 0.9652,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 0.9652,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 24.54,
+      "league_defense_average": 26.3,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4415,
+      "model_market_gap": 0.99,
+      "baseline_projection": 7.78,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 58.2,
+      "edge_ev": 0.1208,
+      "edge_probability_gap": 0.0872,
+      "edge_projection_z": 0.296,
+      "edge_components": {
+        "ev": 18.1,
+        "market_gap": 14.5,
+        "projection": 4.4,
+        "minutes": 11.1,
+        "last10": 5.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 4
+    },
+    {
+      "player": "Cooper Flagg",
+      "team": "Dallas Mavericks",
+      "team_abbr": "DAL",
+      "team_id": "6",
+      "opponent": "Boston Celtics",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "06:10 PM ET",
+      "commence_time": "2026-11-15T23:10:00Z",
+      "event_id": "4db454dae115172875ab241aa9db860f",
+      "home_team": "Boston Celtics",
+      "away_team": "Dallas Mavericks",
+      "matchup": "Dallas Mavericks @ Boston Celtics",
+      "home_spread": -13.5,
+      "away_spread": 13.5,
+      "game_total": 216.5,
+      "home_implied_total": 115.0,
+      "away_implied_total": 101.5,
+      "market": "Assists",
+      "side": "Over",
+      "line": 5.5,
+      "odds": 103,
+      "projection": 6.56,
+      "probability": 0.5454,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6291,
+      "market_probability_no_vig": 0.4616,
+      "sigma_estimate": 3.204,
+      "implied_probability": 0.4926,
+      "ev": 0.1071,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 58,
+      "minutes_sd_last10": 5.08,
+      "minutes_min_last10": 27.0,
+      "minutes_max_last10": 40.0,
+      "minutes_average_last10": 35.7,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 12,
+      "minutes_projection": 33.5,
+      "per_minute_projection": 0.2006,
+      "minutes_last5": 33.0,
+      "minutes_last10": 35.7,
+      "minutes_long_term": 33.9,
+      "minutes_trend_adjustment": -0.81,
+      "opponent_factor": 0.9769,
+      "opponent_sample_size": 12,
+      "opponent_defense_factor": 0.9769,
+      "opponent_defense_games": 12,
+      "opponent_defense_average": 25.08,
+      "league_defense_average": 26.3,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4616,
+      "model_market_gap": 1.06,
+      "baseline_projection": 6.7,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 55.7,
+      "edge_ev": 0.1072,
+      "edge_probability_gap": 0.0838,
+      "edge_projection_z": 0.331,
+      "edge_components": {
+        "ev": 16.1,
+        "market_gap": 14.0,
+        "projection": 5.0,
+        "minutes": 8.7,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 5
+    },
+    {
+      "player": "Jared McCain",
+      "team": "Oklahoma City Thunder",
+      "team_abbr": "OKC",
+      "team_id": "25",
+      "opponent": "Sacramento Kings",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "09:00 PM ET",
+      "commence_time": "2026-11-16T02:00:00Z",
+      "event_id": "f54ead334bb1187b5f98422d559309b0",
+      "home_team": "Sacramento Kings",
+      "away_team": "Oklahoma City Thunder",
+      "matchup": "Oklahoma City Thunder @ Sacramento Kings",
+      "home_spread": 10.5,
+      "away_spread": -10.5,
+      "game_total": 222.5,
+      "home_implied_total": 106.0,
+      "away_implied_total": 116.5,
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "odds": 100,
+      "projection": 4.24,
+      "probability": 0.5431,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6176,
+      "market_probability_no_vig": 0.4686,
+      "sigma_estimate": 2.465,
+      "implied_probability": 0.5,
+      "ev": 0.0862,
+      "minutes_reliability": "Stable",
+      "minutes_reliability_score": 77,
+      "minutes_sd_last10": 2.72,
+      "minutes_min_last10": 23.0,
+      "minutes_max_last10": 31.0,
+      "minutes_average_last10": 28.4,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 13,
+      "minutes_projection": 28.5,
+      "per_minute_projection": 0.1498,
+      "minutes_last5": 29.0,
+      "minutes_last10": 28.4,
+      "minutes_long_term": 26.5,
+      "minutes_trend_adjustment": 0.18,
+      "opponent_factor": 0.997,
+      "opponent_sample_size": 12,
+      "opponent_defense_factor": 0.997,
+      "opponent_defense_games": 12,
+      "opponent_defense_average": 43.58,
+      "league_defense_average": 43.85,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4686,
+      "model_market_gap": 0.74,
+      "baseline_projection": 4.2,
       "model": "v7-live-injury-screen-experimental",
       "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
       "lineup_status": "U",
       "edge_score": 53.4,
-      "edge_ev": 0.0884,
-      "edge_probability_gap": 0.076,
-      "edge_projection_z": 0.388,
+      "edge_ev": 0.0862,
+      "edge_probability_gap": 0.0745,
+      "edge_projection_z": 0.3,
       "edge_components": {
-        "ev": 13.3,
-        "market_gap": 12.7,
-        "projection": 5.8,
-        "minutes": 10.6,
-        "last10": 6.0,
+        "ev": 12.9,
+        "market_gap": 12.4,
+        "projection": 4.5,
+        "minutes": 11.6,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 6
+    },
+    {
+      "player": "Zaccharie Risacher",
+      "team": "Dallas Mavericks",
+      "team_abbr": "DAL",
+      "team_id": "6",
+      "opponent": "Boston Celtics",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "06:10 PM ET",
+      "commence_time": "2026-11-15T23:10:00Z",
+      "event_id": "4db454dae115172875ab241aa9db860f",
+      "home_team": "Boston Celtics",
+      "away_team": "Dallas Mavericks",
+      "matchup": "Dallas Mavericks @ Boston Celtics",
+      "home_spread": -13.5,
+      "away_spread": 13.5,
+      "game_total": 216.5,
+      "home_implied_total": 115.0,
+      "away_implied_total": 101.5,
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "odds": 112,
+      "projection": 4.14,
+      "probability": 0.5221,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6027,
+      "market_probability_no_vig": 0.4415,
+      "sigma_estimate": 2.446,
+      "implied_probability": 0.4717,
+      "ev": 0.1069,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 50,
+      "minutes_sd_last10": 6.06,
+      "minutes_min_last10": 14.0,
+      "minutes_max_last10": 30.0,
+      "minutes_average_last10": 21.5,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 13,
+      "minutes_projection": 19.4,
+      "per_minute_projection": 0.2082,
+      "minutes_last5": 18.2,
+      "minutes_last10": 21.5,
+      "minutes_long_term": 23.5,
+      "minutes_trend_adjustment": -0.99,
+      "opponent_factor": 0.9927,
+      "opponent_sample_size": 12,
+      "opponent_defense_factor": 0.9927,
+      "opponent_defense_games": 12,
+      "opponent_defense_average": 43.25,
+      "league_defense_average": 43.89,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4415,
+      "model_market_gap": 0.64,
+      "baseline_projection": 4.53,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 52.9,
+      "edge_ev": 0.1069,
+      "edge_probability_gap": 0.0806,
+      "edge_projection_z": 0.262,
+      "edge_components": {
+        "ev": 16.0,
+        "market_gap": 13.4,
+        "projection": 3.9,
+        "minutes": 7.5,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 7
+    },
+    {
+      "player": "Khaman Maluach",
+      "team": "Phoenix Suns",
+      "team_abbr": "PHX",
+      "team_id": "21",
+      "opponent": "Los Angeles Lakers",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "04:00 PM ET",
+      "commence_time": "2026-11-15T21:00:00Z",
+      "event_id": "6ff9196cf31c70d4af35fe658d913a6d",
+      "home_team": "Phoenix Suns",
+      "away_team": "Los Angeles Lakers",
+      "matchup": "Los Angeles Lakers @ Phoenix Suns",
+      "home_spread": 2.5,
+      "away_spread": -2.5,
+      "game_total": 228.5,
+      "home_implied_total": 113.0,
+      "away_implied_total": 115.5,
+      "market": "Points",
+      "side": "Over",
+      "line": 6.5,
+      "odds": -120,
+      "projection": 8.09,
+      "probability": 0.5859,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6572,
+      "market_probability_no_vig": 0.5146,
+      "sigma_estimate": 3.929,
+      "implied_probability": 0.5455,
+      "ev": 0.0741,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 61,
+      "minutes_sd_last10": 4.73,
+      "minutes_min_last10": 13.0,
+      "minutes_max_last10": 28.0,
+      "minutes_average_last10": 19.8,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 11,
+      "minutes_projection": 19.6,
+      "per_minute_projection": 0.4105,
+      "minutes_last5": 19.6,
+      "minutes_last10": 19.8,
+      "minutes_long_term": 19.5,
+      "minutes_trend_adjustment": -0.06,
+      "opponent_factor": 1.0023,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 1.0023,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 114.23,
+      "league_defense_average": 113.72,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.5146,
+      "model_market_gap": 1.59,
+      "baseline_projection": 8.15,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 50.2,
+      "edge_ev": 0.0741,
+      "edge_probability_gap": 0.0713,
+      "edge_projection_z": 0.405,
+      "edge_components": {
+        "ev": 11.1,
+        "market_gap": 11.9,
+        "projection": 6.1,
+        "minutes": 9.2,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified",
+      "rank": 8
+    }
+  ],
+  "eligible": [
+    {
+      "player": "Quentin Grimes",
+      "team": "Los Angeles Lakers",
+      "team_abbr": "LAL",
+      "team_id": "13",
+      "opponent": "Phoenix Suns",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "04:00 PM ET",
+      "commence_time": "2026-11-15T21:00:00Z",
+      "event_id": "6ff9196cf31c70d4af35fe658d913a6d",
+      "home_team": "Phoenix Suns",
+      "away_team": "Los Angeles Lakers",
+      "matchup": "Los Angeles Lakers @ Phoenix Suns",
+      "home_spread": 2.5,
+      "away_spread": -2.5,
+      "game_total": 228.5,
+      "home_implied_total": 113.0,
+      "away_implied_total": 115.5,
+      "market": "Points",
+      "side": "Under",
+      "line": 11.5,
+      "odds": -119,
+      "projection": 7.11,
+      "probability": 0.6312,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.7498,
+      "market_probability_no_vig": 0.5125,
+      "sigma_estimate": 6.511,
+      "implied_probability": 0.5434,
+      "ev": 0.1615,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 49,
+      "minutes_sd_last10": 6.11,
+      "minutes_min_last10": 19.0,
+      "minutes_max_last10": 38.0,
+      "minutes_average_last10": 26.0,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 11,
+      "minutes_projection": 25.4,
+      "per_minute_projection": 0.269,
+      "minutes_last5": 25.2,
+      "minutes_last10": 26.0,
+      "minutes_long_term": 26.1,
+      "minutes_trend_adjustment": -0.22,
+      "opponent_factor": 1.01,
+      "opponent_sample_size": 11,
+      "opponent_defense_factor": 1.01,
+      "opponent_defense_games": 11,
+      "opponent_defense_average": 116.09,
+      "league_defense_average": 113.72,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.5125,
+      "model_market_gap": -4.39,
+      "baseline_projection": 7.66,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 73.5,
+      "edge_ev": 0.1616,
+      "edge_probability_gap": 0.1187,
+      "edge_projection_z": 0.674,
+      "edge_components": {
+        "ev": 24.2,
+        "market_gap": 19.8,
+        "projection": 10.1,
+        "minutes": 7.3,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified"
+    },
+    {
+      "player": "Aaron Wiggins",
+      "team": "Atlanta Hawks",
+      "team_abbr": "ATL",
+      "team_id": "1",
+      "opponent": "Milwaukee Bucks",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "08:10 PM ET",
+      "commence_time": "2026-11-16T01:10:00Z",
+      "event_id": "86956138608be1d45ba8d6204dceaa3e",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Atlanta Hawks",
+      "matchup": "Atlanta Hawks @ Milwaukee Bucks",
+      "home_spread": 7.5,
+      "away_spread": -7.5,
+      "game_total": 234.5,
+      "home_implied_total": 113.5,
+      "away_implied_total": 121.0,
+      "market": "Assists",
+      "side": "Over",
+      "line": 2.5,
+      "odds": 118,
+      "projection": 3.04,
+      "probability": 0.5361,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6428,
+      "market_probability_no_vig": 0.4295,
+      "sigma_estimate": 1.479,
+      "implied_probability": 0.4587,
+      "ev": 0.1687,
+      "minutes_reliability": "Stable",
+      "minutes_reliability_score": 81,
+      "minutes_sd_last10": 2.27,
+      "minutes_min_last10": 23.0,
+      "minutes_max_last10": 29.0,
+      "minutes_average_last10": 25.5,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 13,
+      "minutes_projection": 26.4,
+      "per_minute_projection": 0.1117,
+      "minutes_last5": 26.6,
+      "minutes_last10": 25.5,
+      "minutes_long_term": 26.0,
+      "minutes_trend_adjustment": 0.33,
+      "opponent_factor": 1.0377,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 1.0377,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 28.23,
+      "league_defense_average": 26.32,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4295,
+      "model_market_gap": 0.54,
+      "baseline_projection": 2.87,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 72.7,
+      "edge_ev": 0.1687,
+      "edge_probability_gap": 0.1066,
+      "edge_projection_z": 0.365,
+      "edge_components": {
+        "ev": 25.3,
+        "market_gap": 17.8,
+        "projection": 5.5,
+        "minutes": 12.2,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified"
+    },
+    {
+      "player": "Aaron Wiggins",
+      "team": "Atlanta Hawks",
+      "team_abbr": "ATL",
+      "team_id": "1",
+      "opponent": "Milwaukee Bucks",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "08:10 PM ET",
+      "commence_time": "2026-11-16T01:10:00Z",
+      "event_id": "86956138608be1d45ba8d6204dceaa3e",
+      "home_team": "Milwaukee Bucks",
+      "away_team": "Atlanta Hawks",
+      "matchup": "Atlanta Hawks @ Milwaukee Bucks",
+      "home_spread": 7.5,
+      "away_spread": -7.5,
+      "game_total": 234.5,
+      "home_implied_total": 113.5,
+      "away_implied_total": 121.0,
+      "market": "Points",
+      "side": "Over",
+      "line": 12.5,
+      "odds": -104,
+      "projection": 14.98,
+      "probability": 0.5898,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6983,
+      "market_probability_no_vig": 0.4812,
+      "sigma_estimate": 4.776,
+      "implied_probability": 0.5098,
+      "ev": 0.1568,
+      "minutes_reliability": "Stable",
+      "minutes_reliability_score": 81,
+      "minutes_sd_last10": 2.27,
+      "minutes_min_last10": 23.0,
+      "minutes_max_last10": 29.0,
+      "minutes_average_last10": 25.5,
+      "minutes_sample_last10": 10,
+      "last10": 5,
+      "sample_size": 13,
+      "minutes_projection": 26.4,
+      "per_minute_projection": 0.5536,
+      "minutes_last5": 26.6,
+      "minutes_last10": 25.5,
+      "minutes_long_term": 26.0,
+      "minutes_trend_adjustment": 0.33,
+      "opponent_factor": 1.0298,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 1.0298,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 120.23,
+      "league_defense_average": 113.72,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4812,
+      "model_market_gap": 2.48,
+      "baseline_projection": 14.31,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 71.6,
+      "edge_ev": 0.1569,
+      "edge_probability_gap": 0.1086,
+      "edge_projection_z": 0.519,
+      "edge_components": {
+        "ev": 23.5,
+        "market_gap": 18.1,
+        "projection": 7.8,
+        "minutes": 12.2,
+        "last10": 5.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified"
+    },
+    {
+      "player": "Sam Hauser",
+      "team": "Boston Celtics",
+      "team_abbr": "BOS",
+      "team_id": "2",
+      "opponent": "Dallas Mavericks",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "06:10 PM ET",
+      "commence_time": "2026-11-15T23:10:00Z",
+      "event_id": "4db454dae115172875ab241aa9db860f",
+      "home_team": "Boston Celtics",
+      "away_team": "Dallas Mavericks",
+      "matchup": "Dallas Mavericks @ Boston Celtics",
+      "home_spread": -13.5,
+      "away_spread": 13.5,
+      "game_total": 216.5,
+      "home_implied_total": 115.0,
+      "away_implied_total": 101.5,
+      "market": "Points",
+      "side": "Over",
+      "line": 6.5,
+      "odds": -113,
+      "projection": 8.6,
+      "probability": 0.6039,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.7078,
+      "market_probability_no_vig": 0.5,
+      "sigma_estimate": 3.835,
+      "implied_probability": 0.5305,
+      "ev": 0.1383,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 64,
+      "minutes_sd_last10": 4.28,
+      "minutes_min_last10": 17.0,
+      "minutes_max_last10": 30.0,
+      "minutes_average_last10": 21.1,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 12,
+      "minutes_projection": 22.1,
+      "per_minute_projection": 0.3952,
+      "minutes_last5": 22.4,
+      "minutes_last10": 21.1,
+      "minutes_long_term": 21.0,
+      "minutes_trend_adjustment": 0.39,
+      "opponent_factor": 0.9981,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 0.9981,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 113.31,
+      "league_defense_average": 113.72,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.5,
+      "model_market_gap": 2.1,
+      "baseline_projection": 8.31,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 67.9,
+      "edge_ev": 0.1383,
+      "edge_probability_gap": 0.1039,
+      "edge_projection_z": 0.548,
+      "edge_components": {
+        "ev": 20.7,
+        "market_gap": 17.3,
+        "projection": 8.2,
+        "minutes": 9.6,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified"
+    },
+    {
+      "player": "Darius Acuff Jr.",
+      "team": "Sacramento Kings",
+      "team_abbr": "SAC",
+      "team_id": "23",
+      "opponent": "Oklahoma City Thunder",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "09:00 PM ET",
+      "commence_time": "2026-11-16T02:00:00Z",
+      "event_id": "f54ead334bb1187b5f98422d559309b0",
+      "home_team": "Sacramento Kings",
+      "away_team": "Oklahoma City Thunder",
+      "matchup": "Oklahoma City Thunder @ Sacramento Kings",
+      "home_spread": 10.5,
+      "away_spread": -10.5,
+      "game_total": 222.5,
+      "home_implied_total": 106.0,
+      "away_implied_total": 116.5,
+      "market": "Assists",
+      "side": "Over",
+      "line": 6.5,
+      "odds": 112,
+      "projection": 7.49,
+      "probability": 0.5287,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6159,
+      "market_probability_no_vig": 0.4415,
+      "sigma_estimate": 3.345,
+      "implied_probability": 0.4717,
+      "ev": 0.1208,
+      "minutes_reliability": "Stable",
+      "minutes_reliability_score": 74,
+      "minutes_sd_last10": 3.16,
+      "minutes_min_last10": 33.0,
+      "minutes_max_last10": 42.0,
+      "minutes_average_last10": 37.3,
+      "minutes_sample_last10": 10,
+      "last10": 5,
+      "sample_size": 12,
+      "minutes_projection": 37.6,
+      "per_minute_projection": 0.2059,
+      "minutes_last5": 37.8,
+      "minutes_last10": 37.3,
+      "minutes_long_term": 37.1,
+      "minutes_trend_adjustment": 0.15,
+      "opponent_factor": 0.9652,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 0.9652,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 24.54,
+      "league_defense_average": 26.3,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4415,
+      "model_market_gap": 0.99,
+      "baseline_projection": 7.78,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 58.2,
+      "edge_ev": 0.1208,
+      "edge_probability_gap": 0.0872,
+      "edge_projection_z": 0.296,
+      "edge_components": {
+        "ev": 18.1,
+        "market_gap": 14.5,
+        "projection": 4.4,
+        "minutes": 11.1,
+        "last10": 5.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified"
+    },
+    {
+      "player": "Cooper Flagg",
+      "team": "Dallas Mavericks",
+      "team_abbr": "DAL",
+      "team_id": "6",
+      "opponent": "Boston Celtics",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "06:10 PM ET",
+      "commence_time": "2026-11-15T23:10:00Z",
+      "event_id": "4db454dae115172875ab241aa9db860f",
+      "home_team": "Boston Celtics",
+      "away_team": "Dallas Mavericks",
+      "matchup": "Dallas Mavericks @ Boston Celtics",
+      "home_spread": -13.5,
+      "away_spread": 13.5,
+      "game_total": 216.5,
+      "home_implied_total": 115.0,
+      "away_implied_total": 101.5,
+      "market": "Assists",
+      "side": "Over",
+      "line": 5.5,
+      "odds": 103,
+      "projection": 6.56,
+      "probability": 0.5454,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6291,
+      "market_probability_no_vig": 0.4616,
+      "sigma_estimate": 3.204,
+      "implied_probability": 0.4926,
+      "ev": 0.1071,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 58,
+      "minutes_sd_last10": 5.08,
+      "minutes_min_last10": 27.0,
+      "minutes_max_last10": 40.0,
+      "minutes_average_last10": 35.7,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 12,
+      "minutes_projection": 33.5,
+      "per_minute_projection": 0.2006,
+      "minutes_last5": 33.0,
+      "minutes_last10": 35.7,
+      "minutes_long_term": 33.9,
+      "minutes_trend_adjustment": -0.81,
+      "opponent_factor": 0.9769,
+      "opponent_sample_size": 12,
+      "opponent_defense_factor": 0.9769,
+      "opponent_defense_games": 12,
+      "opponent_defense_average": 25.08,
+      "league_defense_average": 26.3,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4616,
+      "model_market_gap": 1.06,
+      "baseline_projection": 6.7,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 55.7,
+      "edge_ev": 0.1072,
+      "edge_probability_gap": 0.0838,
+      "edge_projection_z": 0.331,
+      "edge_components": {
+        "ev": 16.1,
+        "market_gap": 14.0,
+        "projection": 5.0,
+        "minutes": 8.7,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified"
+    },
+    {
+      "player": "Jared McCain",
+      "team": "Oklahoma City Thunder",
+      "team_abbr": "OKC",
+      "team_id": "25",
+      "opponent": "Sacramento Kings",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "09:00 PM ET",
+      "commence_time": "2026-11-16T02:00:00Z",
+      "event_id": "f54ead334bb1187b5f98422d559309b0",
+      "home_team": "Sacramento Kings",
+      "away_team": "Oklahoma City Thunder",
+      "matchup": "Oklahoma City Thunder @ Sacramento Kings",
+      "home_spread": 10.5,
+      "away_spread": -10.5,
+      "game_total": 222.5,
+      "home_implied_total": 106.0,
+      "away_implied_total": 116.5,
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "odds": 100,
+      "projection": 4.24,
+      "probability": 0.5431,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6176,
+      "market_probability_no_vig": 0.4686,
+      "sigma_estimate": 2.465,
+      "implied_probability": 0.5,
+      "ev": 0.0862,
+      "minutes_reliability": "Stable",
+      "minutes_reliability_score": 77,
+      "minutes_sd_last10": 2.72,
+      "minutes_min_last10": 23.0,
+      "minutes_max_last10": 31.0,
+      "minutes_average_last10": 28.4,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 13,
+      "minutes_projection": 28.5,
+      "per_minute_projection": 0.1498,
+      "minutes_last5": 29.0,
+      "minutes_last10": 28.4,
+      "minutes_long_term": 26.5,
+      "minutes_trend_adjustment": 0.18,
+      "opponent_factor": 0.997,
+      "opponent_sample_size": 12,
+      "opponent_defense_factor": 0.997,
+      "opponent_defense_games": 12,
+      "opponent_defense_average": 43.58,
+      "league_defense_average": 43.85,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4686,
+      "model_market_gap": 0.74,
+      "baseline_projection": 4.2,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 53.4,
+      "edge_ev": 0.0862,
+      "edge_probability_gap": 0.0745,
+      "edge_projection_z": 0.3,
+      "edge_components": {
+        "ev": 12.9,
+        "market_gap": 12.4,
+        "projection": 4.5,
+        "minutes": 11.6,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified"
+    },
+    {
+      "player": "Zaccharie Risacher",
+      "team": "Dallas Mavericks",
+      "team_abbr": "DAL",
+      "team_id": "6",
+      "opponent": "Boston Celtics",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "06:10 PM ET",
+      "commence_time": "2026-11-15T23:10:00Z",
+      "event_id": "4db454dae115172875ab241aa9db860f",
+      "home_team": "Boston Celtics",
+      "away_team": "Dallas Mavericks",
+      "matchup": "Dallas Mavericks @ Boston Celtics",
+      "home_spread": -13.5,
+      "away_spread": 13.5,
+      "game_total": 216.5,
+      "home_implied_total": 115.0,
+      "away_implied_total": 101.5,
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "odds": 112,
+      "projection": 4.14,
+      "probability": 0.5221,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6027,
+      "market_probability_no_vig": 0.4415,
+      "sigma_estimate": 2.446,
+      "implied_probability": 0.4717,
+      "ev": 0.1069,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 50,
+      "minutes_sd_last10": 6.06,
+      "minutes_min_last10": 14.0,
+      "minutes_max_last10": 30.0,
+      "minutes_average_last10": 21.5,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 13,
+      "minutes_projection": 19.4,
+      "per_minute_projection": 0.2082,
+      "minutes_last5": 18.2,
+      "minutes_last10": 21.5,
+      "minutes_long_term": 23.5,
+      "minutes_trend_adjustment": -0.99,
+      "opponent_factor": 0.9927,
+      "opponent_sample_size": 12,
+      "opponent_defense_factor": 0.9927,
+      "opponent_defense_games": 12,
+      "opponent_defense_average": 43.25,
+      "league_defense_average": 43.89,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.4415,
+      "model_market_gap": 0.64,
+      "baseline_projection": 4.53,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 52.9,
+      "edge_ev": 0.1069,
+      "edge_probability_gap": 0.0806,
+      "edge_projection_z": 0.262,
+      "edge_components": {
+        "ev": 16.0,
+        "market_gap": 13.4,
+        "projection": 3.9,
+        "minutes": 7.5,
+        "last10": 7.0,
+        "injury": 5
+      },
+      "edge_status": "experimental_unverified"
+    },
+    {
+      "player": "Khaman Maluach",
+      "team": "Phoenix Suns",
+      "team_abbr": "PHX",
+      "team_id": "21",
+      "opponent": "Los Angeles Lakers",
+      "date": "2026-11-15",
+      "game_date": "2026-11-15",
+      "game_time": "04:00 PM ET",
+      "commence_time": "2026-11-15T21:00:00Z",
+      "event_id": "6ff9196cf31c70d4af35fe658d913a6d",
+      "home_team": "Phoenix Suns",
+      "away_team": "Los Angeles Lakers",
+      "matchup": "Los Angeles Lakers @ Phoenix Suns",
+      "home_spread": 2.5,
+      "away_spread": -2.5,
+      "game_total": 228.5,
+      "home_implied_total": 113.0,
+      "away_implied_total": 115.5,
+      "market": "Points",
+      "side": "Over",
+      "line": 6.5,
+      "odds": -120,
+      "projection": 8.09,
+      "probability": 0.5859,
+      "push_probability": 0.0,
+      "model_probability_raw": 0.6572,
+      "market_probability_no_vig": 0.5146,
+      "sigma_estimate": 3.929,
+      "implied_probability": 0.5455,
+      "ev": 0.0741,
+      "minutes_reliability": "Moderate",
+      "minutes_reliability_score": 61,
+      "minutes_sd_last10": 4.73,
+      "minutes_min_last10": 13.0,
+      "minutes_max_last10": 28.0,
+      "minutes_average_last10": 19.8,
+      "minutes_sample_last10": 10,
+      "last10": 7,
+      "sample_size": 11,
+      "minutes_projection": 19.6,
+      "per_minute_projection": 0.4105,
+      "minutes_last5": 19.6,
+      "minutes_last10": 19.8,
+      "minutes_long_term": 19.5,
+      "minutes_trend_adjustment": -0.06,
+      "opponent_factor": 1.0023,
+      "opponent_sample_size": 13,
+      "opponent_defense_factor": 1.0023,
+      "opponent_defense_games": 13,
+      "opponent_defense_average": 114.23,
+      "league_defense_average": 113.72,
+      "defense_status": "applied",
+      "injury_status": "unverified",
+      "injury_minutes_multiplier": 1.0,
+      "live_injury_status": "not_reported",
+      "live_injury_feed": "fresh",
+      "live_injury_reason": "",
+      "injury_uncertainty": false,
+      "odds_cutoff": -125,
+      "market_no_vig_probability": 0.5146,
+      "model_market_gap": 1.59,
+      "baseline_projection": 8.15,
+      "model": "v7-live-injury-screen-experimental",
+      "data_source": "ESPN player and team game logs / DraftKings odds via The Odds API",
+      "lineup_status": "U",
+      "edge_score": 50.2,
+      "edge_ev": 0.0741,
+      "edge_probability_gap": 0.0713,
+      "edge_projection_z": 0.405,
+      "edge_components": {
+        "ev": 11.1,
+        "market_gap": 11.9,
+        "projection": 6.1,
+        "minutes": 9.2,
+        "last10": 7.0,
         "injury": 5
       },
       "edge_status": "experimental_unverified"
@@ -276,19 +2050,273 @@
   ],
   "rejected": [
     {
-      "player": "Peyton Watson",
-      "team": "Cleveland Cavaliers",
+      "player": "Collin Sexton",
+      "team": "Los Angeles Lakers",
       "market": "Points",
       "side": "Under",
-      "line": 13.5,
+      "line": 14.5,
       "lineup_status": "U",
       "reasons": [
         "unresolved_injury"
       ]
     },
     {
-      "player": "Bobby Portis",
-      "team": "Miami Heat",
+      "player": "Morez Johnson Jr.",
+      "team": "Dallas Mavericks",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Luka Doncic",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Over",
+      "line": 36.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Cooper Flagg",
+      "team": "Dallas Mavericks",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "CJ McCollum",
+      "team": "Atlanta Hawks",
+      "market": "Points",
+      "side": "Under",
+      "line": 15.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Aaron Wiggins",
+      "team": "Atlanta Hawks",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Brook Lopez",
+      "team": "Los Angeles Clippers",
+      "market": "Points",
+      "side": "Over",
+      "line": 12.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Kris Dunn",
+      "team": "Los Angeles Clippers",
+      "market": "Assists",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "OG Anunoby",
+      "team": "New York Knicks",
+      "market": "Points",
+      "side": "Under",
+      "line": 17.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "De'Aaron Fox",
+      "team": "San Antonio Spurs",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Morez Johnson Jr.",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Under",
+      "line": 7.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Tyrese Maxey",
+      "team": "Philadelphia 76ers",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Nickeil Alexander-Walker",
+      "team": "Atlanta Hawks",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Brayden Burries",
+      "team": "Milwaukee Bucks",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Jalen Brunson",
+      "team": "New York Knicks",
+      "market": "Points",
+      "side": "Over",
+      "line": 25.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Quentin Grimes",
+      "team": "Los Angeles Lakers",
+      "market": "Assists",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "De'Andre Hunter",
+      "team": "Sacramento Kings",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Julian Champagnie",
+      "team": "San Antonio Spurs",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Matisse Thybulle",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Under",
+      "line": 7.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Devin Vassell",
+      "team": "San Antonio Spurs",
+      "market": "Assists",
+      "side": "Over",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Ace Bailey",
+      "team": "Utah Jazz",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Jalen Green",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Under",
+      "line": 12.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Tyrese Maxey",
+      "team": "Philadelphia 76ers",
+      "market": "Assists",
+      "side": "Over",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Sion James",
+      "team": "Charlotte Hornets",
+      "market": "Points",
+      "side": "Over",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points"
+      ]
+    },
+    {
+      "player": "Jake LaRavia",
+      "team": "Los Angeles Lakers",
       "market": "Points",
       "side": "Under",
       "line": 6.5,
@@ -298,67 +2326,229 @@
       ]
     },
     {
-      "player": "Davion Mitchell",
-      "team": "Miami Heat",
-      "market": "Assists",
-      "side": "Over",
-      "line": 8.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points"
-      ]
-    },
-    {
-      "player": "Davion Mitchell",
-      "team": "Miami Heat",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 2.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points"
-      ]
-    },
-    {
-      "player": "Andrew Wiggins",
-      "team": "Miami Heat",
+      "player": "Dyson Daniels",
+      "team": "Atlanta Hawks",
       "market": "Points",
       "side": "Under",
       "line": 9.5,
       "lineup_status": "U",
       "reasons": [
-        "edge_below_7_percentage_points"
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
       ]
     },
     {
-      "player": "Paul Reed",
-      "team": "Detroit Pistons",
+      "player": "Payton Pritchard",
+      "team": "Boston Celtics",
       "market": "Rebounds",
       "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jaime Jaquez Jr.",
+      "team": "Milwaukee Bucks",
+      "market": "Points",
+      "side": "Over",
+      "line": 14.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kenrich Williams",
+      "team": "Oklahoma City Thunder",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Paul George",
+      "team": "Boston Celtics",
+      "market": "Assists",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jalen Johnson",
+      "team": "Atlanta Hawks",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 9.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "De'Aaron Fox",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Under",
+      "line": 13.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Zach LaVine",
+      "team": "Sacramento Kings",
+      "market": "Assists",
+      "side": "Over",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Sion James",
+      "team": "Charlotte Hornets",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Miles Bridges",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Under",
+      "line": 14.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Ja'Kobe Walter",
+      "team": "Toronto Raptors",
+      "market": "Assists",
+      "side": "Over",
+      "line": 1.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kyrie Irving",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Over",
+      "line": 20.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jalen Johnson",
+      "team": "Atlanta Hawks",
+      "market": "Points",
+      "side": "Under",
+      "line": 21.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Mikal Bridges",
+      "team": "New York Knicks",
+      "market": "Points",
+      "side": "Under",
       "line": 7.5,
       "lineup_status": "U",
       "reasons": [
-        "edge_below_7_percentage_points"
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
       ]
     },
     {
-      "player": "Giannis Antetokounmpo",
-      "team": "Miami Heat",
-      "market": "Assists",
+      "player": "Collin Gillespie",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Under",
+      "line": 8.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Ryan Kalkbrenner",
+      "team": "Charlotte Hornets",
+      "market": "Points",
       "side": "Under",
       "line": 5.5,
       "lineup_status": "U",
       "reasons": [
         "edge_below_7_percentage_points",
-        "unresolved_injury"
+        "ev_below_2_percent"
       ]
     },
     {
-      "player": "Klay Thompson",
-      "team": "Miami Heat",
+      "player": "Kris Dunn",
+      "team": "Los Angeles Clippers",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Victor Wembanyama",
+      "team": "San Antonio Spurs",
       "market": "Points",
       "side": "Over",
-      "line": 13.5,
+      "line": 27.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Ajay Mitchell",
+      "team": "Oklahoma City Thunder",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
       "lineup_status": "U",
       "reasons": [
         "edge_below_7_percentage_points",
@@ -367,8 +2557,166 @@
       ]
     },
     {
-      "player": "Ausar Thompson",
-      "team": "Detroit Pistons",
+      "player": "Nickeil Alexander-Walker",
+      "team": "Atlanta Hawks",
+      "market": "Points",
+      "side": "Over",
+      "line": 21.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Naz Reid",
+      "team": "Charlotte Hornets",
+      "market": "Points",
+      "side": "Over",
+      "line": 17.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "P.J. Washington",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Over",
+      "line": 11.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Kyrie Irving",
+      "team": "Dallas Mavericks",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kyle Kuzma",
+      "team": "Milwaukee Bucks",
+      "market": "Points",
+      "side": "Under",
+      "line": 12.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jayson Tatum",
+      "team": "Boston Celtics",
+      "market": "Points",
+      "side": "Under",
+      "line": 27.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Shai Gilgeous-Alexander",
+      "team": "Oklahoma City Thunder",
+      "market": "Points",
+      "side": "Under",
+      "line": 32.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Darryn Peterson",
+      "team": "Utah Jazz",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Darius Garland",
+      "team": "Los Angeles Clippers",
+      "market": "Points",
+      "side": "Under",
+      "line": 20.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Brayden Burries",
+      "team": "Milwaukee Bucks",
+      "market": "Assists",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Ja'Kobe Walter",
+      "team": "Toronto Raptors",
+      "market": "Points",
+      "side": "Under",
+      "line": 11.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kris Dunn",
+      "team": "Los Angeles Clippers",
+      "market": "Points",
+      "side": "Over",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kyle Kuzma",
+      "team": "Milwaukee Bucks",
+      "market": "Assists",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Derrick Jones Jr.",
+      "team": "Los Angeles Clippers",
       "market": "Points",
       "side": "Over",
       "line": 10.5,
@@ -379,168 +2727,9 @@
       ]
     },
     {
-      "player": "Jonathan Kuminga",
-      "team": "Minnesota Timberwolves",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 5.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Javonte Green",
-      "team": "Detroit Pistons",
-      "market": "Points",
-      "side": "Under",
-      "line": 5.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Aaron Gordon",
-      "team": "Denver Nuggets",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 4.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Cade Cunningham",
-      "team": "Detroit Pistons",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 5.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent",
-        "volatile_minutes"
-      ]
-    },
-    {
-      "player": "Cooper Flagg",
-      "team": "Dallas Mavericks",
-      "market": "Points",
-      "side": "Under",
-      "line": 24.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent",
-        "volatile_minutes"
-      ]
-    },
-    {
-      "player": "Cooper Flagg",
-      "team": "Dallas Mavericks",
-      "market": "Points",
-      "side": "Over",
-      "line": 24.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent",
-        "volatile_minutes"
-      ]
-    },
-    {
-      "player": "Jaylen Wells",
-      "team": "Memphis Grizzlies",
+      "player": "VJ Edgecombe",
+      "team": "Philadelphia 76ers",
       "market": "Assists",
-      "side": "Over",
-      "line": 1.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Zion Williamson",
-      "team": "New Orleans Pelicans",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 5.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Javonte Green",
-      "team": "Detroit Pistons",
-      "market": "Points",
-      "side": "Over",
-      "line": 5.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Julius Randle",
-      "team": "Brooklyn Nets",
-      "market": "Assists",
-      "side": "Under",
-      "line": 4.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Christian Braun",
-      "team": "Denver Nuggets",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 3.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Jeremiah Fears",
-      "team": "New Orleans Pelicans",
-      "market": "Assists",
-      "side": "Under",
-      "line": 5.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Jonathan Kuminga",
-      "team": "Minnesota Timberwolves",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 5.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Andrew Wiggins",
-      "team": "Miami Heat",
-      "market": "Rebounds",
       "side": "Over",
       "line": 3.5,
       "lineup_status": "U",
@@ -550,62 +2739,11 @@
       ]
     },
     {
-      "player": "Klay Thompson",
-      "team": "Miami Heat",
-      "market": "Points",
-      "side": "Under",
-      "line": 13.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent",
-        "unresolved_injury"
-      ]
-    },
-    {
-      "player": "P.J. Washington",
-      "team": "Dallas Mavericks",
-      "market": "Assists",
-      "side": "Over",
-      "line": 1.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent",
-        "volatile_minutes"
-      ]
-    },
-    {
-      "player": "Cedric Coward",
-      "team": "Memphis Grizzlies",
-      "market": "Assists",
-      "side": "Under",
-      "line": 2.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent"
-      ]
-    },
-    {
-      "player": "Giannis Antetokounmpo",
-      "team": "Miami Heat",
-      "market": "Assists",
-      "side": "Over",
-      "line": 5.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent",
-        "unresolved_injury"
-      ]
-    },
-    {
-      "player": "LaMelo Ball",
-      "team": "Minnesota Timberwolves",
+      "player": "Aday Mara",
+      "team": "Oklahoma City Thunder",
       "market": "Rebounds",
       "side": "Over",
-      "line": 4.5,
+      "line": 6.5,
       "lineup_status": "U",
       "reasons": [
         "edge_below_7_percentage_points",
@@ -613,8 +2751,20 @@
       ]
     },
     {
-      "player": "Paul Reed",
-      "team": "Detroit Pistons",
+      "player": "Devin Vassell",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Over",
+      "line": 11.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Neemias Queta",
+      "team": "Boston Celtics",
       "market": "Rebounds",
       "side": "Under",
       "line": 7.5,
@@ -625,24 +2775,11 @@
       ]
     },
     {
-      "player": "Giannis Antetokounmpo",
-      "team": "Miami Heat",
-      "market": "Rebounds",
-      "side": "Under",
-      "line": 11.5,
-      "lineup_status": "U",
-      "reasons": [
-        "edge_below_7_percentage_points",
-        "ev_below_2_percent",
-        "unresolved_injury"
-      ]
-    },
-    {
-      "player": "Andrew Wiggins",
-      "team": "Miami Heat",
+      "player": "Payton Pritchard",
+      "team": "Boston Celtics",
       "market": "Points",
-      "side": "Over",
-      "line": 9.5,
+      "side": "Under",
+      "line": 14.5,
       "lineup_status": "U",
       "reasons": [
         "edge_below_7_percentage_points",
@@ -650,8 +2787,105 @@
       ]
     },
     {
-      "player": "Bobby Portis",
-      "team": "Miami Heat",
+      "player": "Dillon Brooks",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Under",
+      "line": 15.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Moussa Diabate",
+      "team": "Charlotte Hornets",
+      "market": "Points",
+      "side": "Over",
+      "line": 8.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Stephon Castle",
+      "team": "San Antonio Spurs",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Devin Booker",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Over",
+      "line": 24.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Sandro Mamukelashvili",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Over",
+      "line": 10.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jakob Poeltl",
+      "team": "Toronto Raptors",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Jordan Walsh",
+      "team": "Boston Celtics",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Keyonte George",
+      "team": "Utah Jazz",
+      "market": "Points",
+      "side": "Over",
+      "line": 19.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Zaccharie Risacher",
+      "team": "Dallas Mavericks",
       "market": "Points",
       "side": "Over",
       "line": 6.5,
@@ -662,11 +2896,11 @@
       ]
     },
     {
-      "player": "Nikola Jokic",
-      "team": "Denver Nuggets",
-      "market": "Rebounds",
-      "side": "Over",
-      "line": 12.5,
+      "player": "Dillon Brooks",
+      "team": "Phoenix Suns",
+      "market": "Assists",
+      "side": "Under",
+      "line": 1.5,
       "lineup_status": "U",
       "reasons": [
         "edge_below_7_percentage_points",
@@ -674,11 +2908,23 @@
       ]
     },
     {
-      "player": "Aaron Gordon",
-      "team": "Denver Nuggets",
+      "player": "Jalen Johnson",
+      "team": "Atlanta Hawks",
+      "market": "Assists",
+      "side": "Over",
+      "line": 7.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Walker Kessler",
+      "team": "Los Angeles Lakers",
       "market": "Points",
       "side": "Over",
-      "line": 13.5,
+      "line": 14.5,
       "lineup_status": "U",
       "reasons": [
         "edge_below_7_percentage_points",
@@ -686,8 +2932,166 @@
       ]
     },
     {
-      "player": "Jamal Murray",
-      "team": "Denver Nuggets",
+      "player": "Josh Okogie",
+      "team": "Utah Jazz",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jared McCain",
+      "team": "Oklahoma City Thunder",
+      "market": "Points",
+      "side": "Over",
+      "line": 15.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Cooper Flagg",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Over",
+      "line": 22.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Grayson Allen",
+      "team": "Charlotte Hornets",
+      "market": "Assists",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Keldon Johnson",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Under",
+      "line": 9.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Josh Okogie",
+      "team": "Utah Jazz",
+      "market": "Points",
+      "side": "Under",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Tyler Herro",
+      "team": "Milwaukee Bucks",
+      "market": "Points",
+      "side": "Over",
+      "line": 21.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Naji Marshall",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Under",
+      "line": 10.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "P.J. Washington",
+      "team": "Dallas Mavericks",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Victor Wembanyama",
+      "team": "San Antonio Spurs",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 11.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jakob Poeltl",
+      "team": "Toronto Raptors",
+      "market": "Points",
+      "side": "Under",
+      "line": 8.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Ryan Rollins",
+      "team": "Milwaukee Bucks",
+      "market": "Points",
+      "side": "Under",
+      "line": 10.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Stephon Castle",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Under",
+      "line": 15.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Devin Vassell",
+      "team": "San Antonio Spurs",
       "market": "Rebounds",
       "side": "Under",
       "line": 3.5,
@@ -698,8 +3102,747 @@
       ]
     },
     {
-      "player": "Peyton Watson",
-      "team": "Cleveland Cavaliers",
+      "player": "Brandon Miller",
+      "team": "Charlotte Hornets",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Stephon Castle",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Over",
+      "line": 15.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Tyler Herro",
+      "team": "Milwaukee Bucks",
+      "market": "Points",
+      "side": "Under",
+      "line": 21.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Ace Bailey",
+      "team": "Utah Jazz",
+      "market": "Points",
+      "side": "Under",
+      "line": 13.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jakob Poeltl",
+      "team": "Toronto Raptors",
+      "market": "Points",
+      "side": "Over",
+      "line": 8.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Ryan Rollins",
+      "team": "Milwaukee Bucks",
+      "market": "Points",
+      "side": "Over",
+      "line": 10.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Naji Marshall",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Over",
+      "line": 10.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Josh Okogie",
+      "team": "Utah Jazz",
+      "market": "Points",
+      "side": "Over",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jalen Brunson",
+      "team": "New York Knicks",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Keldon Johnson",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Over",
+      "line": 9.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Cooper Flagg",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Under",
+      "line": 22.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kenrich Williams",
+      "team": "Oklahoma City Thunder",
+      "market": "Assists",
+      "side": "Under",
+      "line": 1.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Devin Vassell",
+      "team": "San Antonio Spurs",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Brandon Miller",
+      "team": "Charlotte Hornets",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Jared McCain",
+      "team": "Oklahoma City Thunder",
+      "market": "Points",
+      "side": "Under",
+      "line": 15.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Walker Kessler",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Under",
+      "line": 14.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Collin Gillespie",
+      "team": "Phoenix Suns",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "P.J. Washington",
+      "team": "Dallas Mavericks",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Victor Wembanyama",
+      "team": "San Antonio Spurs",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 11.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Naz Reid",
+      "team": "Charlotte Hornets",
+      "market": "Assists",
+      "side": "Under",
+      "line": 1.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Zaccharie Risacher",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Under",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Keyonte George",
+      "team": "Utah Jazz",
+      "market": "Points",
+      "side": "Under",
+      "line": 19.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Sandro Mamukelashvili",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Under",
+      "line": 10.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Onyeka Okongwu",
+      "team": "Atlanta Hawks",
+      "market": "Assists",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Domantas Sabonis",
+      "team": "Sacramento Kings",
+      "market": "Assists",
+      "side": "Over",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Derrick Jones Jr.",
+      "team": "Los Angeles Clippers",
+      "market": "Assists",
+      "side": "Over",
+      "line": 1.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jalen Johnson",
+      "team": "Atlanta Hawks",
+      "market": "Assists",
+      "side": "Under",
+      "line": 7.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Moussa Diabate",
+      "team": "Charlotte Hornets",
+      "market": "Points",
+      "side": "Under",
+      "line": 8.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Devin Booker",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Under",
+      "line": 24.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jalen Green",
+      "team": "Phoenix Suns",
+      "market": "Assists",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Dylan Harper",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Under",
+      "line": 15.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Dillon Brooks",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Over",
+      "line": 15.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Payton Pritchard",
+      "team": "Boston Celtics",
+      "market": "Points",
+      "side": "Over",
+      "line": 14.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Devin Vassell",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Under",
+      "line": 11.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "CJ McCollum",
+      "team": "Atlanta Hawks",
+      "market": "Assists",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Darius Garland",
+      "team": "Los Angeles Clippers",
+      "market": "Points",
+      "side": "Over",
+      "line": 20.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "OG Anunoby",
+      "team": "New York Knicks",
+      "market": "Assists",
+      "side": "Under",
+      "line": 1.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Shai Gilgeous-Alexander",
+      "team": "Oklahoma City Thunder",
+      "market": "Points",
+      "side": "Over",
+      "line": 32.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Derrick Jones Jr.",
+      "team": "Los Angeles Clippers",
+      "market": "Points",
+      "side": "Under",
+      "line": 10.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kyle Kuzma",
+      "team": "Milwaukee Bucks",
+      "market": "Points",
+      "side": "Over",
+      "line": 12.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Naz Reid",
+      "team": "Charlotte Hornets",
+      "market": "Points",
+      "side": "Under",
+      "line": 17.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Keaton Wagler",
+      "team": "Los Angeles Clippers",
+      "market": "Assists",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kris Dunn",
+      "team": "Los Angeles Clippers",
+      "market": "Points",
+      "side": "Under",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Domantas Sabonis",
+      "team": "Sacramento Kings",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 12.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Neemias Queta",
+      "team": "Boston Celtics",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 7.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Ja'Kobe Walter",
+      "team": "Toronto Raptors",
+      "market": "Points",
+      "side": "Over",
+      "line": 11.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jayson Tatum",
+      "team": "Boston Celtics",
+      "market": "Points",
+      "side": "Over",
+      "line": 27.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "P.J. Washington",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Under",
+      "line": 11.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Victor Wembanyama",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Under",
+      "line": 27.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kyle Kuzma",
+      "team": "Milwaukee Bucks",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Collin Gillespie",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Over",
+      "line": 8.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Aday Mara",
+      "team": "Oklahoma City Thunder",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jalen Johnson",
+      "team": "Atlanta Hawks",
+      "market": "Points",
+      "side": "Over",
+      "line": 21.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jared McCain",
+      "team": "Oklahoma City Thunder",
+      "market": "Assists",
+      "side": "Over",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kyrie Irving",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Under",
+      "line": 20.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Nickeil Alexander-Walker",
+      "team": "Atlanta Hawks",
+      "market": "Points",
+      "side": "Under",
+      "line": 21.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kyrie Irving",
+      "team": "Dallas Mavericks",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Ryan Kalkbrenner",
+      "team": "Charlotte Hornets",
+      "market": "Points",
+      "side": "Over",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Miles Bridges",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Over",
+      "line": 14.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Matisse Thybulle",
+      "team": "Los Angeles Lakers",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jaime Jaquez Jr.",
+      "team": "Milwaukee Bucks",
+      "market": "Points",
+      "side": "Under",
+      "line": 14.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "De'Aaron Fox",
+      "team": "San Antonio Spurs",
       "market": "Points",
       "side": "Over",
       "line": 13.5,
@@ -707,7 +3850,477 @@
       "reasons": [
         "edge_below_7_percentage_points",
         "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "CJ McCollum",
+      "team": "Atlanta Hawks",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Sion James",
+      "team": "Charlotte Hornets",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Stephon Castle",
+      "team": "San Antonio Spurs",
+      "market": "Assists",
+      "side": "Over",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jake LaRavia",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Over",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Keyonte George",
+      "team": "Utah Jazz",
+      "market": "Assists",
+      "side": "Under",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jalen Green",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Over",
+      "line": 12.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Victor Wembanyama",
+      "team": "San Antonio Spurs",
+      "market": "Assists",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Sion James",
+      "team": "Charlotte Hornets",
+      "market": "Points",
+      "side": "Under",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Moussa Diabate",
+      "team": "Charlotte Hornets",
+      "market": "Assists",
+      "side": "Under",
+      "line": 1.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Darryn Peterson",
+      "team": "Utah Jazz",
+      "market": "Assists",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kyrie Irving",
+      "team": "Dallas Mavericks",
+      "market": "Assists",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Payton Pritchard",
+      "team": "Boston Celtics",
+      "market": "Assists",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Matisse Thybulle",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Over",
+      "line": 7.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Dylan Harper",
+      "team": "San Antonio Spurs",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Julian Champagnie",
+      "team": "San Antonio Spurs",
+      "market": "Points",
+      "side": "Under",
+      "line": 8.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Jalen Brunson",
+      "team": "New York Knicks",
+      "market": "Points",
+      "side": "Under",
+      "line": 25.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Morez Johnson Jr.",
+      "team": "Dallas Mavericks",
+      "market": "Points",
+      "side": "Over",
+      "line": 7.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Quentin Grimes",
+      "team": "Los Angeles Lakers",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "CJ McCollum",
+      "team": "Atlanta Hawks",
+      "market": "Points",
+      "side": "Over",
+      "line": 15.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "OG Anunoby",
+      "team": "New York Knicks",
+      "market": "Points",
+      "side": "Over",
+      "line": 17.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kris Dunn",
+      "team": "Los Angeles Clippers",
+      "market": "Assists",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Brook Lopez",
+      "team": "Los Angeles Clippers",
+      "market": "Points",
+      "side": "Under",
+      "line": 12.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Luka Doncic",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Under",
+      "line": 36.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "De'Aaron Fox",
+      "team": "San Antonio Spurs",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
+        "volatile_minutes"
+      ]
+    },
+    {
+      "player": "Miles Bridges",
+      "team": "Phoenix Suns",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 5.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Aaron Wiggins",
+      "team": "Atlanta Hawks",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Khaman Maluach",
+      "team": "Phoenix Suns",
+      "market": "Points",
+      "side": "Under",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Dyson Daniels",
+      "team": "Atlanta Hawks",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Naji Marshall",
+      "team": "Dallas Mavericks",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Keyonte George",
+      "team": "Utah Jazz",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 3.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Sam Hauser",
+      "team": "Boston Celtics",
+      "market": "Points",
+      "side": "Under",
+      "line": 6.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Aaron Wiggins",
+      "team": "Atlanta Hawks",
+      "market": "Points",
+      "side": "Under",
+      "line": 12.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Collin Sexton",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Over",
+      "line": 14.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent",
         "unresolved_injury"
+      ]
+    },
+    {
+      "player": "Sam Hauser",
+      "team": "Boston Celtics",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Keldon Johnson",
+      "team": "San Antonio Spurs",
+      "market": "Rebounds",
+      "side": "Under",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Quentin Grimes",
+      "team": "Los Angeles Lakers",
+      "market": "Points",
+      "side": "Over",
+      "line": 11.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Myles Turner",
+      "team": "Milwaukee Bucks",
+      "market": "Points",
+      "side": "Over",
+      "line": 10.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Naji Marshall",
+      "team": "Dallas Mavericks",
+      "market": "Assists",
+      "side": "Under",
+      "line": 2.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
+      ]
+    },
+    {
+      "player": "Kelly Oubre Jr.",
+      "team": "Indiana Pacers",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": 4.5,
+      "lineup_status": "U",
+      "reasons": [
+        "edge_below_7_percentage_points",
+        "ev_below_2_percent"
       ]
     }
   ]
