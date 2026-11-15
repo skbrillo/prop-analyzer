@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-15T01:47:55.323901+00:00",
+  "generated_at": "2026-11-15T02:37:21.580754+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 109,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 106,
+  "players_with_team": 109,
   "players_without_team": 0,
   "status_counts": {
-    "O": 90,
-    "T": 15,
+    "O": 92,
+    "T": 16,
     "U": 1
   },
   "players": [
@@ -250,6 +250,17 @@
       "raw_status": "Out",
       "reason": "Back | out",
       "date": "2026-10-20T15:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539185",
+      "name": "Daniel Gafford",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Face | day-to-day",
+      "date": "2026-11-15T02:14Z",
       "team_match": "feed"
     },
     {
@@ -584,6 +595,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539183",
+      "name": "GG Jackson",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Foot | out",
+      "date": "2026-11-15T01:56Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539172",
       "name": "Zach Edey",
       "team": "MEM",
@@ -668,6 +690,17 @@
       "raw_status": "Out",
       "reason": "Sprain | Finger | out",
       "date": "2026-11-14T22:40Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539184",
+      "name": "Jaylen Clark",
+      "team": "MIN",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Hamstring | out",
+      "date": "2026-11-15T02:08Z",
       "team_match": "feed"
     },
     {
