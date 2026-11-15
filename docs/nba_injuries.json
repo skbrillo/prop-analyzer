@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-15T17:56:36.104964+00:00",
+  "generated_at": "2026-11-15T18:26:29.786654+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 108,
+  "player_count": 111,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,14 +35,25 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 108,
+  "players_with_team": 111,
   "players_without_team": 0,
   "status_counts": {
+    "T": 36,
     "O": 74,
-    "T": 33,
     "U": 1
   },
   "players": [
+    {
+      "id": "",
+      "injury_record_id": "539247",
+      "name": "Jock Landale",
+      "team": "ATL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Inflammation | Hip | day-to-day",
+      "date": "2026-11-15T17:55Z",
+      "team_match": "feed"
+    },
     {
       "id": "",
       "injury_record_id": "539147",
@@ -254,13 +265,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60904",
+      "injury_record_id": "-60929",
+      "name": "Santi Aldama",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-15T18:15Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-60928",
+      "name": "Kyrie Irving",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Knee | day-to-day",
+      "date": "2026-11-15T18:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539249",
       "name": "Daniel Gafford",
       "team": "DAL",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Face | day-to-day",
-      "date": "2026-11-15T15:22Z",
+      "reason": "Stinger | Shoulder | day-to-day",
+      "date": "2026-11-15T18:09Z",
       "team_match": "feed"
     },
     {
@@ -837,6 +870,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539254",
+      "name": "Jonathan Isaac",
+      "team": "ORL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Knee | out",
+      "date": "2026-11-15T18:22Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539071",
       "name": "Noah Penda",
       "team": "ORL",
@@ -844,17 +888,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-14T17:33Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538362",
-      "name": "Jonathan Isaac",
-      "team": "ORL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Not Specified | Knee | out",
-      "date": "2026-11-09T23:10Z",
       "team_match": "feed"
     },
     {
