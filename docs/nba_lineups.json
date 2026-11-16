@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T22:25:37.876963+00:00",
+  "generated_at": "2026-11-16T23:17:01.258837+00:00",
   "source": "RotoWire",
   "games": {
     "401909985": {
@@ -1121,8 +1121,8 @@
       "tipoff": "2026-11-17T00:00:00+00:00",
       "home": "BOS",
       "away": "ORL",
-      "checked_at": "2026-11-16T22:25:37.876963+00:00",
-      "minutes_before_tipoff": 94.4,
+      "checked_at": "2026-11-16T23:17:01.258837+00:00",
+      "minutes_before_tipoff": 43.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1236,8 +1236,8 @@
       "tipoff": "2026-11-17T00:00:00+00:00",
       "home": "CLE",
       "away": "CHI",
-      "checked_at": "2026-11-16T22:25:37.876963+00:00",
-      "minutes_before_tipoff": 94.4,
+      "checked_at": "2026-11-16T23:17:01.258837+00:00",
+      "minutes_before_tipoff": 43.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1302,6 +1302,11 @@
           "name": "Nae'Qwan Tomlin",
           "team": "CLE",
           "status": "out"
+        },
+        {
+          "name": "Jaylon Tyson",
+          "team": "CLE",
+          "status": "out"
         }
       ],
       "away_out": [
@@ -1333,6 +1338,11 @@
           "status": "out"
         },
         {
+          "name": "Jaylon Tyson",
+          "team": "CLE",
+          "status": "out"
+        },
+        {
           "name": "Tobe Awaka",
           "team": "CHI",
           "status": "out"
@@ -1351,8 +1361,8 @@
       "tipoff": "2026-11-17T00:00:00+00:00",
       "home": "WAS",
       "away": "MEM",
-      "checked_at": "2026-11-16T22:25:37.876963+00:00",
-      "minutes_before_tipoff": 94.4,
+      "checked_at": "2026-11-16T23:17:01.258837+00:00",
+      "minutes_before_tipoff": 43.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1496,8 +1506,8 @@
       "tipoff": "2026-11-17T00:30:00+00:00",
       "home": "BKN",
       "away": "PHI",
-      "checked_at": "2026-11-16T22:25:37.876963+00:00",
-      "minutes_before_tipoff": 124.4,
+      "checked_at": "2026-11-16T23:17:01.258837+00:00",
+      "minutes_before_tipoff": 73.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1590,8 +1600,8 @@
       "tipoff": "2026-11-17T00:30:00+00:00",
       "home": "MIA",
       "away": "HOU",
-      "checked_at": "2026-11-16T22:25:37.876963+00:00",
-      "minutes_before_tipoff": 124.4,
+      "checked_at": "2026-11-16T23:17:01.258837+00:00",
+      "minutes_before_tipoff": 73.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1641,7 +1651,18 @@
           "team": "HOU"
         }
       ],
-      "home_out": [],
+      "home_out": [
+        {
+          "name": "Nikola Jovic",
+          "team": "MIA",
+          "status": "out"
+        },
+        {
+          "name": "Pelle Larsson",
+          "team": "MIA",
+          "status": "out"
+        }
+      ],
       "away_out": [
         {
           "name": "Steven Adams",
@@ -1660,6 +1681,16 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Nikola Jovic",
+          "team": "MIA",
+          "status": "out"
+        },
+        {
+          "name": "Pelle Larsson",
+          "team": "MIA",
+          "status": "out"
+        },
         {
           "name": "Steven Adams",
           "team": "HOU",
@@ -1684,8 +1715,8 @@
       "tipoff": "2026-11-17T01:00:00+00:00",
       "home": "MIN",
       "away": "POR",
-      "checked_at": "2026-11-16T22:25:37.876963+00:00",
-      "minutes_before_tipoff": 154.4,
+      "checked_at": "2026-11-16T23:17:01.258837+00:00",
+      "minutes_before_tipoff": 103.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1819,8 +1850,8 @@
       "tipoff": "2026-11-17T01:00:00+00:00",
       "home": "NOP",
       "away": "GSW",
-      "checked_at": "2026-11-16T22:25:37.876963+00:00",
-      "minutes_before_tipoff": 154.4,
+      "checked_at": "2026-11-16T23:17:01.258837+00:00",
+      "minutes_before_tipoff": 103.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1984,8 +2015,8 @@
       "tipoff": "2026-11-17T02:00:00+00:00",
       "home": "DEN",
       "away": "PHX",
-      "checked_at": "2026-11-16T22:25:37.876963+00:00",
-      "minutes_before_tipoff": 214.4,
+      "checked_at": "2026-11-16T23:17:01.258837+00:00",
+      "minutes_before_tipoff": 163.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
