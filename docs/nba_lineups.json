@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T05:04:47.865993+00:00",
+  "generated_at": "2026-11-16T06:21:34.095821+00:00",
   "source": "RotoWire",
   "games": {
     "401909980": {
@@ -1785,6 +1785,389 @@
         {
           "name": "Jaylin Williams",
           "team": "OKC",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909994": {
+      "game_id": "401909994",
+      "game": "Orlando Magic at Boston Celtics",
+      "tipoff": "2026-11-17T00:00:00+00:00",
+      "home": "BOS",
+      "away": "ORL",
+      "checked_at": "2026-11-16T06:21:34.095821+00:00",
+      "minutes_before_tipoff": 1058.4,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Derrick White",
+          "team": "BOS"
+        },
+        {
+          "name": "Jordan Walsh",
+          "team": "BOS"
+        },
+        {
+          "name": "Jayson Tatum",
+          "team": "BOS"
+        },
+        {
+          "name": "Paul George",
+          "team": "BOS"
+        },
+        {
+          "name": "Neemias Queta",
+          "team": "BOS"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401909995": {
+      "game_id": "401909995",
+      "game": "Chicago Bulls at Cleveland Cavaliers",
+      "tipoff": "2026-11-17T00:00:00+00:00",
+      "home": "CLE",
+      "away": "CHI",
+      "checked_at": "2026-11-16T06:21:34.095821+00:00",
+      "minutes_before_tipoff": 1058.4,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401909996": {
+      "game_id": "401909996",
+      "game": "Memphis Grizzlies at Washington Wizards",
+      "tipoff": "2026-11-17T00:00:00+00:00",
+      "home": "WAS",
+      "away": "MEM",
+      "checked_at": "2026-11-16T06:21:34.095821+00:00",
+      "minutes_before_tipoff": 1058.4,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Trae Young",
+          "team": "WAS"
+        },
+        {
+          "name": "Kyshawn George",
+          "team": "WAS"
+        },
+        {
+          "name": "AJ Dybantsa",
+          "team": "WAS"
+        },
+        {
+          "name": "Anthony Davis",
+          "team": "WAS"
+        },
+        {
+          "name": "Alex Sarr",
+          "team": "WAS"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Reece Beekman",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Justin Champagnie",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Tre Johnson",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Tristan Vukcevic",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Jamir Watkins",
+          "team": "WAS",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Reece Beekman",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Justin Champagnie",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Tre Johnson",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Tristan Vukcevic",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Jamir Watkins",
+          "team": "WAS",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909997": {
+      "game_id": "401909997",
+      "game": "Philadelphia 76ers at Brooklyn Nets",
+      "tipoff": "2026-11-17T00:30:00+00:00",
+      "home": "BKN",
+      "away": "PHI",
+      "checked_at": "2026-11-16T06:21:34.095821+00:00",
+      "minutes_before_tipoff": 1088.4,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Tyrese Maxey",
+          "team": "PHI"
+        },
+        {
+          "name": "VJ Edgecombe",
+          "team": "PHI"
+        },
+        {
+          "name": "Jaylen Brown",
+          "team": "PHI"
+        },
+        {
+          "name": "LeBron James",
+          "team": "PHI"
+        },
+        {
+          "name": "Jabari Walker",
+          "team": "PHI"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Dominick Barlow",
+          "team": "PHI",
+          "status": "out"
+        },
+        {
+          "name": "Adem Bona",
+          "team": "PHI",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Dominick Barlow",
+          "team": "PHI",
+          "status": "out"
+        },
+        {
+          "name": "Adem Bona",
+          "team": "PHI",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909998": {
+      "game_id": "401909998",
+      "game": "Houston Rockets at Miami Heat",
+      "tipoff": "2026-11-17T00:30:00+00:00",
+      "home": "MIA",
+      "away": "HOU",
+      "checked_at": "2026-11-16T06:21:34.095821+00:00",
+      "minutes_before_tipoff": 1088.4,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Amen Thompson",
+          "team": "HOU"
+        },
+        {
+          "name": "Kevin Durant",
+          "team": "HOU"
+        },
+        {
+          "name": "Jabari Smith",
+          "team": "HOU"
+        },
+        {
+          "name": "Alperen Sengun",
+          "team": "HOU"
+        },
+        {
+          "name": "Steven Adams",
+          "team": "HOU"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Clint Capela",
+          "team": "HOU",
+          "status": "out"
+        },
+        {
+          "name": "Marcus Smart",
+          "team": "HOU",
+          "status": "out"
+        },
+        {
+          "name": "Fred VanVleet",
+          "team": "HOU",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Clint Capela",
+          "team": "HOU",
+          "status": "out"
+        },
+        {
+          "name": "Marcus Smart",
+          "team": "HOU",
+          "status": "out"
+        },
+        {
+          "name": "Fred VanVleet",
+          "team": "HOU",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909999": {
+      "game_id": "401909999",
+      "game": "Portland Trail Blazers at Minnesota Timberwolves",
+      "tipoff": "2026-11-17T01:00:00+00:00",
+      "home": "MIN",
+      "away": "POR",
+      "checked_at": "2026-11-16T06:21:34.095821+00:00",
+      "minutes_before_tipoff": 1118.4,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910000": {
+      "game_id": "401910000",
+      "game": "Golden State Warriors at New Orleans Pelicans",
+      "tipoff": "2026-11-17T01:00:00+00:00",
+      "home": "NOP",
+      "away": "GSW",
+      "checked_at": "2026-11-16T06:21:34.095821+00:00",
+      "minutes_before_tipoff": 1118.4,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910001": {
+      "game_id": "401910001",
+      "game": "Phoenix Suns at Denver Nuggets",
+      "tipoff": "2026-11-17T02:00:00+00:00",
+      "home": "DEN",
+      "away": "PHX",
+      "checked_at": "2026-11-16T06:21:34.095821+00:00",
+      "minutes_before_tipoff": 1178.4,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Devin Booker",
+          "team": "PHX"
+        },
+        {
+          "name": "Jalen Green",
+          "team": "PHX"
+        },
+        {
+          "name": "Dillon Brooks",
+          "team": "PHX"
+        },
+        {
+          "name": "Miles Bridges",
+          "team": "PHX"
+        },
+        {
+          "name": "Oso Ighodaro",
+          "team": "PHX"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Mark Williams",
+          "team": "PHX",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Mark Williams",
+          "team": "PHX",
           "status": "out"
         }
       ],
