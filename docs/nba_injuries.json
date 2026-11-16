@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-16T21:53:24.204792+00:00",
+  "generated_at": "2026-11-16T22:33:41.091770+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 104,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 106,
+  "players_with_team": 104,
   "players_without_team": 0,
   "status_counts": {
-    "T": 28,
-    "O": 77,
+    "T": 25,
+    "O": 78,
     "U": 1
   },
   "players": [
@@ -100,13 +100,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539430",
+      "injury_record_id": "539449",
       "name": "Neemias Queta",
       "team": "BOS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Rest | day-to-day",
-      "date": "2026-11-16T18:12Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Rest | out",
+      "date": "2026-11-16T22:10Z",
       "team_match": "feed"
     },
     {
@@ -166,6 +166,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539448",
+      "name": "Evan Mobley",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Toe | out",
+      "date": "2026-11-16T22:06Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539417",
       "name": "Jaylon Tyson",
       "team": "CLE",
@@ -184,17 +195,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Abdomen | day-to-day",
       "date": "2026-11-15T22:04Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539289",
-      "name": "Evan Mobley",
-      "team": "CLE",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Toe | out",
-      "date": "2026-11-15T21:58Z",
       "team_match": "feed"
     },
     {
@@ -1046,17 +1046,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60970",
-      "name": "De'Aaron Fox",
-      "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hip | day-to-day",
-      "date": "2026-11-16T14:44Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "533226",
       "name": "Jayden Quaintance",
       "team": "SAS",
@@ -1152,17 +1141,6 @@
       "raw_status": "Out",
       "reason": "Not Specified | Knee | out",
       "date": "2026-10-27T19:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539435",
-      "name": "Tre Johnson",
-      "team": "WAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Back | day-to-day",
-      "date": "2026-11-16T18:18Z",
       "team_match": "feed"
     },
     {
