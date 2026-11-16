@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-16T03:44:27.897370+00:00",
+  "generated_at": "2026-11-16T05:06:50.254558+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 103,
+  "player_count": 102,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,10 +34,10 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 103,
+  "players_with_team": 102,
   "players_without_team": 0,
   "status_counts": {
-    "O": 89,
+    "O": 88,
     "T": 13,
     "U": 1
   },
@@ -73,17 +73,6 @@
       "raw_status": "Out",
       "reason": "Fracture | Foot | out",
       "date": "2026-11-13T00:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538836",
-      "name": "Keshon Gilbert",
-      "team": "ATL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Knee | out",
-      "date": "2026-11-12T23:10Z",
       "team_match": "feed"
     },
     {
