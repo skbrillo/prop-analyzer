@@ -610,7 +610,41 @@
       "team_recovered_from_logs": false,
       "verified_team": "ATL",
       "verified_opponent": "MIL"
+    },
+    "2026-11-16|donovanmitchell|points": {
+      "prediction_id": "6998878bfde0958f4c9c12ef",
+      "saved_at": "2026-11-16T11:06:23.464428+00:00",
+      "game_date": "2026-11-16",
+      "event_id": "1045b77a93dca6c74ed17ab7c55dc0f8",
+      "game_time": "2026-11-17T00:10:00+00:00",
+      "matchup": "Chicago Bulls @ Cleveland Cavaliers",
+      "player": "Donovan Mitchell",
+      "team": "CLE",
+      "opponent": "CHI",
+      "market": "Points",
+      "side": "Under",
+      "line": "25.5",
+      "odds": "-115",
+      "projection": "23.61",
+      "probability": "0.5513",
+      "model_ev": "0.0308",
+      "last10": "8",
+      "model_version": "v7-live-injury-screen-experimental",
+      "bucket": 8,
+      "locked_at": "2026-11-16T11:06:24.228892+00:00",
+      "status": "pending",
+      "actual": null,
+      "outcome": null,
+      "profit": null,
+      "stake": null,
+      "reason": "Waiting for game completion buffer",
+      "diagnostic_category": "waiting",
+      "diagnostic_teams_found": [],
+      "diagnostic_match_count": 0,
+      "team_recovered_from_logs": false,
+      "verified_team": null,
+      "verified_opponent": null
     }
   },
-  "updated_at": "2026-11-16T10:12:41.430100+00:00"
+  "updated_at": "2026-11-16T11:06:24.228892+00:00"
 }
