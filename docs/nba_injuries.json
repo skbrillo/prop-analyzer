@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-16T22:33:41.091770+00:00",
+  "generated_at": "2026-11-16T23:24:11.223381+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 104,
+  "player_count": 103,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 104,
+  "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
-    "T": 25,
-    "O": 78,
+    "T": 19,
+    "O": 83,
     "U": 1
   },
   "players": [
@@ -144,17 +144,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539280",
-      "name": "Jalen Smith",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Finger | day-to-day",
-      "date": "2026-11-15T21:29Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538817",
       "name": "Caleb Wilson",
       "team": "CHI",
@@ -166,6 +155,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539455",
+      "name": "Jaylon Tyson",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Ankle | out",
+      "date": "2026-11-16T22:39Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539448",
       "name": "Evan Mobley",
       "team": "CLE",
@@ -173,28 +173,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Toe | out",
       "date": "2026-11-16T22:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539417",
-      "name": "Jaylon Tyson",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
-      "date": "2026-11-16T17:35Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539290",
-      "name": "Peyton Watson",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Abdomen | day-to-day",
-      "date": "2026-11-15T22:04Z",
       "team_match": "feed"
     },
     {
@@ -298,24 +276,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "539224",
-      "name": "Duncan Robinson",
+      "injury_record_id": "539461",
+      "name": "Taurean Prince",
       "team": "DET",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Thigh | day-to-day",
-      "date": "2026-11-15T15:58Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Knee | out",
+      "date": "2026-11-16T22:58Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "538306",
+      "injury_record_id": "539460",
+      "name": "Ronald Holland II",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Knee | out",
+      "date": "2026-11-16T22:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539456",
       "name": "Isaiah Joe",
       "team": "DET",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Hip | out",
-      "date": "2026-11-09T18:54Z",
+      "date": "2026-11-16T22:40Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539453",
+      "name": "Duncan Robinson",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Quadriceps | out",
+      "date": "2026-11-16T22:37Z",
       "team_match": "feed"
     },
     {
@@ -600,7 +600,7 @@
       "team": "MEM",
       "status": "O",
       "raw_status": "Out",
-      "reason": "Concussion | out",
+      "reason": "out",
       "date": "2026-11-15T22:12Z",
       "team_match": "feed"
     },
@@ -611,7 +611,7 @@
       "team": "MEM",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
+      "reason": "day-to-day",
       "date": "2026-11-15T22:11Z",
       "team_match": "feed"
     },
@@ -628,24 +628,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "539419",
+      "injury_record_id": "539459",
       "name": "Nikola Jovic",
       "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-16T17:41Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-16T22:50Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539418",
+      "injury_record_id": "539458",
       "name": "Pelle Larsson",
       "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-16T17:39Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-16T22:49Z",
       "team_match": "feed"
     },
     {
@@ -1097,17 +1097,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Strain | Knee | day-to-day",
       "date": "2026-11-16T14:44Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60771",
-      "name": "Trey Alexander",
-      "team": "UTA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-12T15:42Z",
       "team_match": "feed"
     },
     {
