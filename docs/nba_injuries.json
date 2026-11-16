@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-16T20:16:26.414872+00:00",
+  "generated_at": "2026-11-16T21:10:53.139514+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 105,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 105,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
-    "T": 27,
+    "T": 28,
     "O": 77,
     "U": 1
   },
@@ -910,6 +910,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-06T19:17Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539445",
+      "name": "Ryan Dunn",
+      "team": "PHX",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Thumb | day-to-day",
+      "date": "2026-11-16T20:18Z",
       "team_match": "feed"
     },
     {
