@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-15T22:38:24.808527+00:00",
+  "generated_at_utc": "2026-11-16T10:12:40.639669+00:00",
   "regular_season_only": true,
-  "games_validated": 189,
-  "accepted_rows": 4244,
-  "explicit_dnp_rows": 804,
+  "games_validated": 197,
+  "accepted_rows": 4421,
+  "explicit_dnp_rows": 833,
   "rejection_counts": {
     "non_regular_season_game": 67,
     "invalid_stats_or_minutes": 12
@@ -1899,6 +1899,86 @@
       ],
       "player_logs": 22,
       "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-15",
+      "game_id": "401909986",
+      "teams": [
+        "PHX",
+        "LAL"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 9
+    },
+    {
+      "date": "2026-11-15",
+      "game_id": "401909987",
+      "teams": [
+        "LAC",
+        "CHA"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-15",
+      "game_id": "401909988",
+      "teams": [
+        "UTAH",
+        "SA"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-15",
+      "game_id": "401909989",
+      "teams": [
+        "BOS",
+        "DAL"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-15",
+      "game_id": "401909990",
+      "teams": [
+        "TOR",
+        "NY"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-15",
+      "game_id": "401909991",
+      "teams": [
+        "WSH",
+        "HOU"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-15",
+      "game_id": "401909992",
+      "teams": [
+        "MIL",
+        "ATL"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-15",
+      "game_id": "401909993",
+      "teams": [
+        "SAC",
+        "OKC"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 2
     }
   ],
   "status": "accepted"
