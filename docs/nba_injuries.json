@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T18:29:20.525661+00:00",
+  "generated_at": "2026-11-16T19:28:22.226615+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -1145,6 +1145,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539435",
+      "name": "Tre Johnson",
+      "team": "WAS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Back | day-to-day",
+      "date": "2026-11-16T18:18Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539432",
       "name": "Tristan Vukcevic",
       "team": "WAS",
@@ -1152,17 +1163,6 @@
       "raw_status": "Out",
       "reason": "Pinched Nerve | Hip | out",
       "date": "2026-11-16T18:14Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60977",
-      "name": "Tre Johnson",
-      "team": "WAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-16T14:47Z",
       "team_match": "feed"
     },
     {
