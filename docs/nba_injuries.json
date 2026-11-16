@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T19:28:22.226615+00:00",
+  "generated_at": "2026-11-16T20:16:26.414872+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -1024,6 +1024,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539444",
+      "name": "Tobias Harris",
+      "team": "SAS",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Calf | out",
+      "date": "2026-11-16T19:26Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60970",
       "name": "De'Aaron Fox",
       "team": "SAS",
@@ -1031,17 +1042,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Hip | day-to-day",
       "date": "2026-11-16T14:44Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538502",
-      "name": "Tobias Harris",
-      "team": "SAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Calf | out",
-      "date": "2026-11-10T22:46Z",
       "team_match": "feed"
     },
     {
