@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-11-16T17:37:20.321147+00:00",
+  "generated_at": "2026-11-16T18:29:20.525661+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 101,
+  "player_count": 105,
   "teams_reported": [
     "ATL",
+    "BOS",
     "CHA",
     "CHI",
     "CLE",
@@ -33,12 +34,12 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 27,
-  "players_with_team": 101,
+  "teams_count": 28,
+  "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "T": 26,
-    "O": 74,
+    "T": 27,
+    "O": 77,
     "U": 1
   },
   "players": [
@@ -99,6 +100,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539430",
+      "name": "Neemias Queta",
+      "team": "BOS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Rest | day-to-day",
+      "date": "2026-11-16T18:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538194",
       "name": "Kon Knueppel",
       "team": "CHA",
@@ -154,13 +166,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539292",
+      "injury_record_id": "539417",
       "name": "Jaylon Tyson",
       "team": "CLE",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Ankle | day-to-day",
-      "date": "2026-11-15T22:09Z",
+      "date": "2026-11-16T17:35Z",
       "team_match": "feed"
     },
     {
@@ -385,6 +397,39 @@
     },
     {
       "id": "",
+      "injury_record_id": "539431",
+      "name": "Amen Thompson",
+      "team": "HOU",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Knee | day-to-day",
+      "date": "2026-11-16T18:13Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539429",
+      "name": "Clint Capela",
+      "team": "HOU",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-16T18:09Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539426",
+      "name": "Steven Adams",
+      "team": "HOU",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Calf | out",
+      "date": "2026-11-16T18:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60983",
       "name": "Julian Phillips",
       "team": "HOU",
@@ -392,28 +437,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Wrist | day-to-day",
       "date": "2026-11-16T15:28Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60975",
-      "name": "Fred VanVleet",
-      "team": "HOU",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-16T14:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539132",
-      "name": "Clint Capela",
-      "team": "HOU",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-14T21:54Z",
       "team_match": "feed"
     },
     {
@@ -528,6 +551,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539424",
+      "name": "Isaiah Stewart",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-16T18:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539414",
       "name": "Scotty Pippen Jr.",
       "team": "MEM",
@@ -546,17 +580,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Foot | out",
       "date": "2026-11-16T17:12Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539296",
-      "name": "Isaiah Stewart",
-      "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-15T22:15Z",
       "team_match": "feed"
     },
     {
@@ -605,13 +628,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "539314",
+      "injury_record_id": "539419",
+      "name": "Nikola Jovic",
+      "team": "MIA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-16T17:41Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539418",
       "name": "Pelle Larsson",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-15T22:47Z",
+      "date": "2026-11-16T17:39Z",
       "team_match": "feed"
     },
     {
@@ -825,13 +859,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60938",
+      "injury_record_id": "539427",
       "name": "Joel Embiid",
       "team": "PHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Foot | day-to-day",
-      "date": "2026-11-15T20:58Z",
+      "date": "2026-11-16T18:09Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539425",
+      "name": "LeBron James",
+      "team": "PHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-16T18:07Z",
       "team_match": "feed"
     },
     {
@@ -1100,6 +1145,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539432",
+      "name": "Tristan Vukcevic",
+      "team": "WAS",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Pinched Nerve | Hip | out",
+      "date": "2026-11-16T18:14Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-60977",
       "name": "Tre Johnson",
       "team": "WAS",
@@ -1107,17 +1163,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Back | day-to-day",
       "date": "2026-11-16T14:47Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538189",
-      "name": "Tristan Vukcevic",
-      "team": "WAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Pinched Nerve | Hip | out",
-      "date": "2026-11-08T22:17Z",
       "team_match": "feed"
     },
     {
