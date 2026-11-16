@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T00:28:04.954251+00:00",
+  "generated_at": "2026-11-16T01:53:08.255384+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,8 +37,8 @@
   "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
-    "O": 86,
-    "T": 16,
+    "O": 89,
+    "T": 13,
     "U": 1
   },
   "players": [
@@ -748,17 +748,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539180",
-      "name": "Ajay Mitchell",
-      "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-15T01:10Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538849",
       "name": "Thomas Sorber",
       "team": "OKC",
@@ -957,13 +946,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60964",
+      "injury_record_id": "539341",
       "name": "De'Andre Hunter",
       "team": "SAC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-16T00:18Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-16T01:18Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539340",
+      "name": "Zach LaVine",
+      "team": "SAC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-16T01:06Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539336",
+      "name": "Precious Achiuwa",
+      "team": "SAC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Ankle | out",
+      "date": "2026-11-16T00:24Z",
       "team_match": "feed"
     },
     {
@@ -975,17 +986,6 @@
       "raw_status": "Out",
       "reason": "Dislocated | Knee | out",
       "date": "2026-11-15T01:00Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539176",
-      "name": "Precious Achiuwa",
-      "team": "SAC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-15T00:57Z",
       "team_match": "feed"
     },
     {
