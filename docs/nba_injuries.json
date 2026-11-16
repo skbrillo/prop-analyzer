@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-16T16:20:10.079993+00:00",
+  "generated_at": "2026-11-16T17:37:20.321147+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 103,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,10 +34,10 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 103,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "T": 28,
+    "T": 26,
     "O": 74,
     "U": 1
   },
@@ -297,17 +297,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60698",
-      "name": "Ugonna Onyenso",
-      "team": "DET",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Foot | day-to-day",
-      "date": "2026-11-11T15:16Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538306",
       "name": "Isaiah Joe",
       "team": "DET",
@@ -539,13 +528,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "539297",
+      "injury_record_id": "539414",
+      "name": "Scotty Pippen Jr.",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Back | out",
+      "date": "2026-11-16T17:16Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539413",
       "name": "GG Jackson",
       "team": "MEM",
       "status": "O",
       "raw_status": "Out",
-      "reason": "Foot | out",
-      "date": "2026-11-15T22:16Z",
+      "reason": "Surgery | Foot | out",
+      "date": "2026-11-16T17:12Z",
       "team_match": "feed"
     },
     {
@@ -590,17 +590,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Ankle | day-to-day",
       "date": "2026-11-15T22:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538511",
-      "name": "Scotty Pippen Jr.",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Back | out",
-      "date": "2026-11-10T23:09Z",
       "team_match": "feed"
     },
     {
@@ -876,17 +865,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-06T19:17Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60807",
-      "name": "Drew Timme",
-      "team": "PHX",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hand | day-to-day",
-      "date": "2026-11-13T16:22Z",
       "team_match": "feed"
     },
     {
