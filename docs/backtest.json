@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T11:06:24.976126+00:00",
+  "generated_at": "2026-11-16T18:45:46.072795+00:00",
   "model": "Version 4 - Smarter Minutes",
   "method": "Paired historical walk-forward comparison of Version 3 and Version 4 minutes projections. Both versions use identical earlier-game data.",
   "markets": {
@@ -78,8 +78,8 @@
   "minutes_comparison": {
     "version3": {
       "predictions_tested": 592,
-      "mean_absolute_error": 4.802,
-      "root_mean_squared_error": 6.064,
+      "mean_absolute_error": 4.801,
+      "root_mean_squared_error": 6.063,
       "mean_signed_error": -0.198
     },
     "version4": {
@@ -89,8 +89,8 @@
       "mean_signed_error": -0.174
     },
     "winner": "Version 3",
-    "mae_improvement": -0.014,
-    "mae_improvement_percent": -0.29
+    "mae_improvement": -0.015,
+    "mae_improvement_percent": -0.31
   },
   "skipped": {
     "insufficient_history": 0,
