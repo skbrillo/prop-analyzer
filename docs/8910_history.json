@@ -1216,7 +1216,42 @@
       "verified_team": null,
       "verified_opponent": null,
       "actual_minutes": null
+    },
+    "2026-11-17|derrickjonesjr|points": {
+      "prediction_id": "2747251f3a15303ecaebe8b7",
+      "saved_at": "2026-11-17T18:49:56.602153+00:00",
+      "game_date": "2026-11-17",
+      "event_id": "5ed859f47cd2892ab4aed6530037d901",
+      "game_time": "2026-11-18T03:40:00+00:00",
+      "matchup": "Utah Jazz @ LA Clippers",
+      "player": "Derrick Jones Jr.",
+      "team": "LAC",
+      "opponent": "UTA",
+      "market": "Points",
+      "side": "Over",
+      "line": "9.5",
+      "odds": "-124",
+      "projection": "12.02",
+      "probability": "0.6329",
+      "model_ev": "0.1434",
+      "last10": "8",
+      "model_version": "v7-live-injury-screen-experimental",
+      "bucket": 8,
+      "locked_at": "2026-11-17T18:49:57.391183+00:00",
+      "status": "pending",
+      "actual": null,
+      "actual_minutes": null,
+      "outcome": null,
+      "profit": null,
+      "stake": null,
+      "reason": "Waiting for game completion buffer",
+      "diagnostic_category": "waiting",
+      "diagnostic_teams_found": [],
+      "diagnostic_match_count": 0,
+      "team_recovered_from_logs": false,
+      "verified_team": null,
+      "verified_opponent": null
     }
   },
-  "updated_at": "2026-11-17T14:57:48.495323+00:00"
+  "updated_at": "2026-11-17T18:49:57.391183+00:00"
 }
