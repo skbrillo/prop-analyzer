@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T16:39:02.282716+00:00",
+  "generated_at": "2026-11-17T17:39:54.153933+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 105,
+  "player_count": 107,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 105,
+  "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "T": 28,
+    "T": 30,
     "O": 77
   },
   "players": [
@@ -308,6 +308,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539572",
+      "name": "Duncan Robinson",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Quadriceps | out",
+      "date": "2026-11-17T16:25Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539461",
       "name": "Taurean Prince",
       "team": "DET",
@@ -337,17 +348,6 @@
       "raw_status": "Out",
       "reason": "Bruise | Hip | out",
       "date": "2026-11-16T22:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539453",
-      "name": "Duncan Robinson",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Quadriceps | out",
-      "date": "2026-11-16T22:37Z",
       "team_match": "feed"
     },
     {
@@ -1078,6 +1078,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61039",
+      "name": "Scottie Barnes",
+      "team": "TOR",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-17T17:28Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539134",
       "name": "Nate Bittle",
       "team": "TOR",
@@ -1151,6 +1162,17 @@
       "raw_status": "Out",
       "reason": "Not Specified | Knee | out",
       "date": "2026-10-27T19:25Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61037",
+      "name": "Felix Okpara",
+      "team": "WAS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Strain | Back | day-to-day",
+      "date": "2026-11-17T16:38Z",
       "team_match": "feed"
     },
     {
