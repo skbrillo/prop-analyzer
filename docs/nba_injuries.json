@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-11-17T02:20:35.759381+00:00",
+  "generated_at": "2026-11-17T03:12:14.691996+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 102,
+  "player_count": 104,
   "teams_reported": [
     "ATL",
+    "BKN",
     "BOS",
     "CHA",
     "CHI",
@@ -34,11 +35,11 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 28,
-  "players_with_team": 102,
+  "teams_count": 29,
+  "players_with_team": 104,
   "players_without_team": 0,
   "status_counts": {
-    "T": 15,
+    "T": 17,
     "O": 86,
     "U": 1
   },
@@ -111,6 +112,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61022",
+      "name": "Julius Randle",
+      "team": "BKN",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Mouth | day-to-day",
+      "date": "2026-11-17T02:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538194",
       "name": "Kon Knueppel",
       "team": "CHA",
@@ -133,13 +145,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61017",
+      "injury_record_id": "-61023",
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Undisclosed | day-to-day",
+      "date": "2026-11-17T02:58Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539495",
       "name": "Patrick Williams",
       "team": "CHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Finger | day-to-day",
-      "date": "2026-11-17T02:07Z",
+      "date": "2026-11-17T02:12Z",
       "team_match": "feed"
     },
     {
@@ -166,13 +189,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61019",
+      "injury_record_id": "-61024",
       "name": "Peyton Watson",
       "team": "CLE",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Not Specified | Head | day-to-day",
-      "date": "2026-11-17T02:18Z",
+      "date": "2026-11-17T02:58Z",
       "team_match": "feed"
     },
     {
@@ -628,13 +651,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539494",
+      "injury_record_id": "539498",
       "name": "Bam Adebayo",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Hip | day-to-day",
-      "date": "2026-11-17T02:05Z",
+      "date": "2026-11-17T02:31Z",
       "team_match": "feed"
     },
     {
