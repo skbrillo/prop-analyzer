@@ -1,122 +1,7 @@
 {
-  "generated_at": "2026-11-17T05:28:55.818351+00:00",
+  "generated_at": "2026-11-17T06:35:46.646478+00:00",
   "source": "RotoWire",
   "games": {
-    "401909985": {
-      "game_id": "401909985",
-      "game": "Indiana Pacers at Philadelphia 76ers",
-      "tipoff": "2026-11-15T18:00:00+00:00",
-      "home": "PHI",
-      "away": "IND",
-      "checked_at": "2026-11-16T05:04:47.865993+00:00",
-      "minutes_before_tipoff": -664.8,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Tyrese Maxey",
-          "team": "PHI"
-        },
-        {
-          "name": "VJ Edgecombe",
-          "team": "PHI"
-        },
-        {
-          "name": "Jaylen Brown",
-          "team": "PHI"
-        },
-        {
-          "name": "LeBron James",
-          "team": "PHI"
-        },
-        {
-          "name": "Jabari Walker",
-          "team": "PHI"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Quenton Jackson",
-          "team": "IND"
-        },
-        {
-          "name": "Kelly Oubre",
-          "team": "IND"
-        },
-        {
-          "name": "Aaron Nesmith",
-          "team": "IND"
-        },
-        {
-          "name": "Pascal Siakam",
-          "team": "IND"
-        },
-        {
-          "name": "Ivica Zubac",
-          "team": "IND"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Dominick Barlow",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Adem Bona",
-          "team": "PHI",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Johnny Furphy",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Haliburton",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Ben Sheppard",
-          "team": "IND",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Dominick Barlow",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Adem Bona",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Johnny Furphy",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Haliburton",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Ben Sheppard",
-          "team": "IND",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909986": {
       "game_id": "401909986",
       "game": "Los Angeles Lakers at Phoenix Suns",
@@ -1888,6 +1773,211 @@
           "status": "out"
         }
       ],
+      "source": "RotoWire"
+    },
+    "401910002": {
+      "game_id": "401910002",
+      "game": "New York Knicks at Toronto Raptors",
+      "tipoff": "2026-11-18T00:30:00+00:00",
+      "home": "TOR",
+      "away": "NYK",
+      "checked_at": "2026-11-17T06:35:46.646478+00:00",
+      "minutes_before_tipoff": 1074.2,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910003": {
+      "game_id": "401910003",
+      "game": "Portland Trail Blazers at Minnesota Timberwolves",
+      "tipoff": "2026-11-18T01:00:00+00:00",
+      "home": "MIN",
+      "away": "POR",
+      "checked_at": "2026-11-17T06:35:46.646478+00:00",
+      "minutes_before_tipoff": 1104.2,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
+        {
+          "name": "LaMelo Ball",
+          "team": "MIN"
+        },
+        {
+          "name": "Ayo Dosunmu",
+          "team": "MIN"
+        },
+        {
+          "name": "Jonathan Kuminga",
+          "team": "MIN"
+        },
+        {
+          "name": "Jaden McDaniels",
+          "team": "MIN"
+        },
+        {
+          "name": "Rudy Gobert",
+          "team": "MIN"
+        }
+      ],
+      "away_starters": [
+        {
+          "name": "Damian Lillard",
+          "team": "POR"
+        },
+        {
+          "name": "Sidy Cissoko",
+          "team": "POR"
+        },
+        {
+          "name": "Toumani Camara",
+          "team": "POR"
+        },
+        {
+          "name": "Deni Avdija",
+          "team": "POR"
+        },
+        {
+          "name": "Donovan Clingan",
+          "team": "POR"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Jaylen Clark",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Donte DiVincenzo",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Anthony Edwards",
+          "team": "MIN",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Vit Krejci",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Ja Morant",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Shaedon Sharpe",
+          "team": "POR",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Jaylen Clark",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Donte DiVincenzo",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Anthony Edwards",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Vit Krejci",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Ja Morant",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Shaedon Sharpe",
+          "team": "POR",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910004": {
+      "game_id": "401910004",
+      "game": "Detroit Pistons at San Antonio Spurs",
+      "tipoff": "2026-11-18T01:00:00+00:00",
+      "home": "SAS",
+      "away": "DET",
+      "checked_at": "2026-11-17T06:35:46.646478+00:00",
+      "minutes_before_tipoff": 1104.2,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910006": {
+      "game_id": "401910006",
+      "game": "Utah Jazz at LA Clippers",
+      "tipoff": "2026-11-18T03:30:00+00:00",
+      "home": "LAC",
+      "away": "UTA",
+      "checked_at": "2026-11-17T06:35:46.646478+00:00",
+      "minutes_before_tipoff": 1254.2,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910005": {
+      "game_id": "401910005",
+      "game": "Charlotte Hornets at Los Angeles Lakers",
+      "tipoff": "2026-11-18T04:00:00+00:00",
+      "home": "LAL",
+      "away": "CHA",
+      "checked_at": "2026-11-17T06:35:46.646478+00:00",
+      "minutes_before_tipoff": 1284.2,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
       "source": "RotoWire"
     }
   }
