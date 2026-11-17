@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T21:17:27.824417+00:00",
+  "generated_at": "2026-11-17T22:17:15.164806+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 107,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,13 +35,24 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 107,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
-    "O": 81,
-    "T": 26
+    "O": 82,
+    "T": 24
   },
   "players": [
+    {
+      "id": "",
+      "injury_record_id": "539622",
+      "name": "Asa Newell",
+      "team": "ATL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Toe | out",
+      "date": "2026-11-17T21:16Z",
+      "team_match": "feed"
+    },
     {
       "id": "",
       "injury_record_id": "539621",
@@ -84,17 +95,6 @@
       "raw_status": "Out",
       "reason": "Fracture | Foot | out",
       "date": "2026-11-13T00:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538835",
-      "name": "Asa Newell",
-      "team": "ATL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Toe | out",
-      "date": "2026-11-12T23:08Z",
       "team_match": "feed"
     },
     {
@@ -192,7 +192,7 @@
       "team": "CLE",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Head | day-to-day",
+      "reason": "Bruise | Back | day-to-day",
       "date": "2026-11-17T02:58Z",
       "team_match": "feed"
     },
@@ -561,24 +561,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61027",
+      "injury_record_id": "539632",
       "name": "Isaiah Stewart",
       "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-17T03:35Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-17T22:10Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61026",
+      "injury_record_id": "539629",
       "name": "Ty Jerome",
       "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-17T03:35Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hip | out",
+      "date": "2026-11-17T22:07Z",
       "team_match": "feed"
     },
     {
@@ -616,46 +616,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61033",
+      "injury_record_id": "539627",
+      "name": "Myron Gardner",
+      "team": "MIA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hamstring | day-to-day",
+      "date": "2026-11-17T21:35Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539626",
       "name": "Nikola Jovic",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-17T03:40Z",
+      "date": "2026-11-17T21:34Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539514",
+      "injury_record_id": "539624",
       "name": "Bam Adebayo",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Hip | day-to-day",
-      "date": "2026-11-17T03:34Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539458",
-      "name": "Pelle Larsson",
-      "team": "MIA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-16T22:49Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60979",
-      "name": "Ryan Rollins",
-      "team": "MIL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-16T14:47Z",
+      "date": "2026-11-17T21:32Z",
       "team_match": "feed"
     },
     {
@@ -836,6 +825,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539623",
+      "name": "Izaiyah Nelson",
+      "team": "ORL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Surgery | Ankle | out",
+      "date": "2026-11-17T21:22Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539254",
       "name": "Jonathan Isaac",
       "team": "ORL",
@@ -869,17 +869,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "-57605",
-      "name": "Izaiyah Nelson",
-      "team": "ORL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Ankle | out",
-      "date": "2026-09-28T21:33Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539522",
       "name": "Jaylen Brown",
       "team": "PHI",
@@ -896,7 +885,7 @@
       "team": "PHI",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
+      "reason": "day-to-day",
       "date": "2026-11-17T03:41Z",
       "team_match": "feed"
     },
