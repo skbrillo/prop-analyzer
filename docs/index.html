@@ -229,7 +229,7 @@ tbody tr:hover{background:#1d3048}
      <tr>
       <th>Date</th><th>Rank</th><th>Player</th><th>Market</th>
       <th>Side</th><th>Line</th><th>Odds</th><th>Score</th>
-      <th>Actual</th><th>Result</th><th>Units</th>
+      <th>Actual</th><th>Diff</th><th>Actual Min</th><th>Result</th><th>Units</th>
      </tr>
     </thead>
     <tbody id="monthly-pick-rows"></tbody>
@@ -338,8 +338,9 @@ tbody tr:hover{background:#1d3048}
  <th data-sort="edge_score" class="edge-only">Score</th>
  <th data-sort="last10">L10</th>
  <th data-sort="minutes_reliability">Min Risk</th>
- <th data-sort="minutes_projection">Min</th>
+ <th data-sort="minutes_projection">Proj Min</th>
  <th data-sort="actual">Act</th>
+ <th data-sort="diff">Diff</th><th data-sort="actual_minutes">Actual Min</th>
  <th data-sort="result">Result</th>
 </tr>
 </thead>
@@ -360,7 +361,7 @@ tbody tr:hover{background:#1d3048}
  <h3>Market &amp; Side Performance Breakdown</h3>
  <div class="tablewrap"><table><thead><tr><th>Category</th><th>Picks</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>ROI</th><th>Profit / Loss</th><th>Pending</th><th>Push</th><th>DNP</th></tr></thead><tbody id="market8910-rows"></tbody></table></div>
  <div class="note">Combined 8910 selections for the selected period. Overall side totals overlap the individual market rows. ROI follows the tracker stake and profit calculation.</div>
- <h3>Daily Results — Individual Picks</h3><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Team</th><th>Opp</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div>
+ <h3>Daily Results — Individual Picks</h3><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Team</th><th>Opp</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Diff</th><th>Actual Min</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div>
  <div class="note">Independent hypothetical results. First qualifying pregame snapshot; one pick per player, date and market. Odds -125 or better; no EV filter.</div>
 </section>
 
@@ -594,6 +595,21 @@ function minutes(r){
   sd,
   projection:numeric(r,["minutes_projection"])
  };
+}
+
+function diffValue(r){
+ const a=numeric(r,["actual"]), l=numeric(r,["line"]);
+ return a===null||l===null?null:a-l;
+}
+function diffText(r){const d=diffValue(r);return d===null?"—":(d>0?"+":"")+d.toFixed(1);}
+function diffClass(r){const d=diffValue(r),s=String(r.side||"").toLowerCase();return d===null||d===0?"muted":(s==="over"?d>0:d<0)?"green":"red";}
+function actualMin(r){
+ if(r.actual===null||r.actual===undefined||r.actual==="")return "—";
+ const direct=numeric(r,["actual_minutes"]);if(direct!==null)return number(direct);
+ const key=x=>[x.game_date||x.date,String(x.player||"").trim().toLowerCase(),marketName(x.market),sideName(x.side),numeric(x,["line"]),numeric(x,["actual"])].join("|");
+ const matches=(gradedReport?.all_outcomes_predictions||[]).filter(x=>x.status==="graded"&&key(x)===key(r)&&(!r.team||team(r.team)===team(x.verified_team||x.team)));
+ const vals=[...new Set(matches.map(x=>numeric(x,["actual_minutes"])).filter(x=>x!==null))];
+ return vals.length===1?number(vals[0]):"—";
 }
 
 function currentRow(r){
@@ -997,11 +1013,11 @@ function renderMonthly(){
    p.date,p.rank??"--",p.player||"--",
    marketName(p.market),p.side,
    number(p.line),american(p.odds),
-   p.edge_score??"--",number(p.actual),
+   p.edge_score??"--",number(p.actual),diffText(p),actualMin(p),
    String(p.result||"pending").toUpperCase(),
    monthlyUnits(p.profit_units)
   ].forEach((v,i)=>{
-   monthlyCell(tr,v??"--",i===9?String(p.result||"pending"):"");
+   monthlyCell(tr,v??"--",i===9?diffClass(p):i===11?String(p.result||"pending"):"");
   });
   picks.appendChild(tr);
  }
@@ -1016,7 +1032,7 @@ function renderMonthly(){
  if(!month?.picks?.length){
   const tr=document.createElement("tr");
   const td=monthlyCell(tr,"No archived picks available.");
-  td.colSpan=11;
+  td.colSpan=13;
   picks.appendChild(tr);
  }
 
@@ -1222,6 +1238,8 @@ function updateSummary(){
 }
 
 function sortValue(r){
+ if(sortKey==="diff")return diffValue(r);
+ if(sortKey==="actual_minutes")return numeric({v:actualMin(r)},["v"]);
  if(sortKey==="movement")return movementInfo(r).sort;
  if(sortKey==="minutes_reliability"){
   return {Stable:3,Moderate:2,Volatile:1}[
@@ -1311,7 +1329,7 @@ function draw(){
    r.last10==null?"--":r.last10+"/10",
    m.label,
    number(m.projection),
-   number(r.actual),
+   number(r.actual),diffText(r),actualMin(r),
    String(r.result||"pending").toUpperCase()
   ];
 
@@ -1357,7 +1375,8 @@ function draw(){
      "Minutes SD: "+number(m.sd);
     td.replaceChildren(pill);
    }
-   if(i===20)
+   if(i===20)td.className=diffClass(r);
+   if(i===22)
     td.className=String(r.result||"pending").toLowerCase();
    if(viewMode!=="edge"&&(i===0||i===15))
     td.style.display="none";
@@ -1476,6 +1495,7 @@ async function loadData(){
    if(match){
     r.result=match.result;
     r.actual=match.actual;
+    r.actual_minutes=match.actual_minutes;
     r.selection_status=match.selection_status;
    }
   }
@@ -1508,6 +1528,7 @@ async function loadData(){
    if(match){
     if(match.result!=="not_selected")r.result=match.result;
     r.actual=match.actual;
+    r.actual_minutes=match.actual_minutes;
    }
   }
 
@@ -1526,6 +1547,8 @@ async function loadData(){
   }
 
   switchDay(activeDay);
+  renderMonthly();
+  render8910();
 
  }catch(e){
   console.error(e);
@@ -2017,12 +2040,12 @@ function render8910(){
  }
  const body=$('rows8910');body.replaceChildren();
  let lastDate=null;
- if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=11;td.textContent='No picks archived for this period.';}
+ if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=13;td.textContent='No picks archived for this period.';}
  for(const r of rows.slice().sort((a,b)=>String(b.game_date).localeCompare(String(a.game_date)))){
-  if(r.game_date!==lastDate){lastDate=r.game_date;const group=body.insertRow();group.className='date8910';const td=group.insertCell();td.colSpan=11;td.textContent=(lastDate===today?'Today — ':lastDate===dateKey(yesterday)?'Yesterday — ':'')+lastDate;}
+  if(r.game_date!==lastDate){lastDate=r.game_date;const group=body.insertRow();group.className='date8910';const td=group.insertCell();td.colSpan=13;td.textContent=(lastDate===today?'Today — ':lastDate===dateKey(yesterday)?'Yesterday — ':'')+lastDate;}
   const tr=document.createElement('tr');const result=String(r.outcome||r.status||'pending').toLowerCase();
-  const values=[r.game_date,r.player,r.team||r.verified_team,r.opponent||r.verified_opponent,r.market,r.side,r.line,r.odds,r.bucket+'/10',r.actual,result];
-  values.forEach((v,i)=>{const td=document.createElement('td');td.textContent=i===10?String(v).toUpperCase():(v??'—');if(i===10)td.className=['win','loss','pending','dnp','push'].includes(result)?result:'muted';if(i===5&&['over','under'].includes(String(v).toLowerCase()))td.className=String(v).toLowerCase();tr.append(td);});body.append(tr);
+  const values=[r.game_date,r.player,r.team||r.verified_team,r.opponent||r.verified_opponent,r.market,r.side,r.line,r.odds,r.bucket+'/10',r.actual,diffText(r),actualMin(r),result];
+  values.forEach((v,i)=>{const td=document.createElement('td');td.textContent=i===12?String(v).toUpperCase():(v??'—');if(i===10)td.className=diffClass(r);if(i===12)td.className=['win','loss','pending','dnp','push'].includes(result)?result:'muted';if(i===5&&['over','under'].includes(String(v).toLowerCase()))td.className=String(v).toLowerCase();tr.append(td);});body.append(tr);
  }
  $('status8910').textContent=rows.length+' tracked selections | '+(period==='today'?today:period==='yesterday'?dateKey(yesterday):period==='month'?today.slice(0,7):'All History')+(updated8910?' | Archive updated: '+updated8910:'');
 }
