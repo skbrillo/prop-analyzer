@@ -222,6 +222,7 @@ def dnp(result):
     result.update({
         "status": "dnp",
         "actual": None,
+        "actual_minutes": None,
         "outcome": "dnp",
         "profit": 0.0,
         "stake": 0.0,
@@ -238,6 +239,19 @@ def invalid(result, reason):
     return result
 
 
+def actual_minutes(log):
+    for key in ("minutes", "min", "MIN", "minutes_played"):
+        raw = log.get(key)
+        value = number(raw)
+        if value is not None and value >= 0:
+            return value
+        if isinstance(raw, str) and re.fullmatch(r"\d+:\d{2}", raw):
+            m, sec = map(int, raw.split(":"))
+            if sec < 60:
+                return round(m + sec / 60, 2)
+    return None
+
+
 def grade_one(
     row,
     stats,
@@ -252,6 +266,7 @@ def grade_one(
     result.update({
         "status": "pending",
         "actual": None,
+        "actual_minutes": None,
         "outcome": None,
         "profit": None,
         "stake": None,
@@ -478,6 +493,7 @@ def grade_one(
     result.update({
         "status": "graded",
         "actual": actual,
+        "actual_minutes": actual_minutes(matches[0]),
         "outcome": outcome,
         "profit": profit,
         "stake": 100.0,
@@ -552,6 +568,7 @@ def not_selected(row):
     result.update({
         "status": "not_selected",
         "actual": None,
+        "actual_minutes": None,
         "outcome": None,
         "profit": None,
         "stake": None,
