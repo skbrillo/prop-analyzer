@@ -202,6 +202,11 @@ tbody tr:hover{background:#1d3048}
 
  <div id="monthly-status" class="monthly-status">Loading monthly Edge Model performance...</div>
 
+ <h3>Market &amp; Side Performance Breakdown</h3>
+ <div class="tablewrap"><table id="edge-market-breakdown">
+ <thead><tr><th>Category</th><th>Picks</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>ROI</th><th>Profit / Loss</th><th>Pending</th></tr></thead>
+ <tbody id="edge-market-breakdown-rows"></tbody></table></div>
+ <div class="note">Official locked picks only; overall side totals overlap the market rows. Win rate and ROI use settled wins and losses.</div>
  <details class="monthly-details" id="monthly-details">
   <summary>View daily performance and individual picks</summary>
   <h3>Daily Official Edge Results</h3>
@@ -932,9 +937,30 @@ function renderUnofficial(){
  if(!entries.length){const tr=document.createElement("tr");const td=monthlyCell(tr,"No earlier selections or pregame previews saved.");td.colSpan=9;body.appendChild(tr);}
 }
 
+function renderEdgeMarketBreakdown(picks){
+ const body=$("edge-market-breakdown-rows");
+ body.replaceChildren();
+ const color=n=>n>0?"green":n<0?"red":"";
+ const groups=[["All Overs",null,"Over"],["All Unders",null,"Under"]];
+ for(const market of ["Points","Rebounds","Assists"]){
+  for(const side of ["Over","Under"])groups.push([market+" "+side,market,side]);
+ }
+ for(const [label,market,side] of groups){
+  const rows=picks.filter(p=>(!market||marketName(p.market)===market)&&sideName(p.side)===side);
+  const a=summarizeEdgeArchive(rows);
+  const tr=document.createElement("tr");
+  const cells=[[label,""],[rows.length,""],[a.wins,"green"],[a.losses,"red"],
+   [monthlyPct(a.win_rate),""],[monthlyPct(a.hypothetical_roi),color(a.hypothetical_roi)],
+   [monthlyUnits(a.hypothetical_profit/100),color(a.hypothetical_profit)],[a.pending,"pending"]];
+  for(const [value,cls] of cells)monthlyCell(tr,value,cls);
+  body.appendChild(tr);
+ }
+}
+
 function renderMonthly(){
  const month=monthlyReport.months?.[selectedMonth];
  const s=month?.summary||{};
+ renderEdgeMarketBreakdown(Array.isArray(month?.picks)?month.picks:[]);
 
  $("month-picks").textContent=s.picks??0;
  $("month-wins").textContent=s.wins??0;
