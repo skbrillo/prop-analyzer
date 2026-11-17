@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T01:12:42.360415+00:00",
+  "generated_at": "2026-11-17T02:20:35.759381+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 100,
+  "player_count": 102,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 100,
+  "players_with_team": 102,
   "players_without_team": 0,
   "status_counts": {
-    "T": 14,
-    "O": 85,
+    "T": 15,
+    "O": 86,
     "U": 1
   },
   "players": [
@@ -133,6 +133,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61017",
+      "name": "Patrick Williams",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Finger | day-to-day",
+      "date": "2026-11-17T02:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539281",
       "name": "Tobe Awaka",
       "team": "CHI",
@@ -151,6 +162,17 @@
       "raw_status": "Out",
       "reason": "Hand | out",
       "date": "2026-11-12T21:35Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61019",
+      "name": "Peyton Watson",
+      "team": "CLE",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Head | day-to-day",
+      "date": "2026-11-17T02:18Z",
       "team_match": "feed"
     },
     {
@@ -529,24 +551,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61014",
+      "injury_record_id": "539490",
       "name": "Austin Reaves",
       "team": "LAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
-      "date": "2026-11-17T01:06Z",
+      "date": "2026-11-17T01:11Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61013",
+      "injury_record_id": "539489",
       "name": "Walker Kessler",
       "team": "LAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Soreness | Lower Leg | out",
-      "date": "2026-11-17T01:05Z",
+      "date": "2026-11-17T01:10Z",
       "team_match": "feed"
     },
     {
@@ -602,6 +624,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-11-07T17:24Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539494",
+      "name": "Bam Adebayo",
+      "team": "MIA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hip | day-to-day",
+      "date": "2026-11-17T02:05Z",
       "team_match": "feed"
     },
     {
@@ -881,17 +914,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539445",
-      "name": "Ryan Dunn",
-      "team": "PHX",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "day-to-day",
-      "date": "2026-11-16T20:18Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "532554",
       "name": "Mark Williams",
       "team": "PHX",
@@ -1057,13 +1079,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60971",
+      "injury_record_id": "539488",
       "name": "Jaxson Hayes",
       "team": "UTA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Strain | Knee | day-to-day",
-      "date": "2026-11-16T14:44Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Knee | out",
+      "date": "2026-11-17T01:08Z",
       "team_match": "feed"
     },
     {
