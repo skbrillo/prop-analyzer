@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-16T22:46:07.495355+00:00",
+  "generated_at_utc": "2026-11-17T09:56:56.922915+00:00",
   "regular_season_only": true,
-  "games_validated": 197,
-  "accepted_rows": 4421,
-  "explicit_dnp_rows": 833,
+  "games_validated": 205,
+  "accepted_rows": 4604,
+  "explicit_dnp_rows": 859,
   "rejection_counts": {
     "non_regular_season_game": 67,
-    "invalid_stats_or_minutes": 12
+    "invalid_stats_or_minutes": 15
   },
   "fetch_failures": [],
   "game_coverage": [
@@ -1979,6 +1979,86 @@
       ],
       "player_logs": 22,
       "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-16",
+      "game_id": "401909994",
+      "teams": [
+        "BOS",
+        "ORL"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-16",
+      "game_id": "401909995",
+      "teams": [
+        "CLE",
+        "CHI"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-16",
+      "game_id": "401909996",
+      "teams": [
+        "WSH",
+        "MEM"
+      ],
+      "player_logs": 26,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-16",
+      "game_id": "401909997",
+      "teams": [
+        "BKN",
+        "PHI"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-16",
+      "game_id": "401909998",
+      "teams": [
+        "MIA",
+        "HOU"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-16",
+      "game_id": "401909999",
+      "teams": [
+        "MIN",
+        "POR"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-16",
+      "game_id": "401910000",
+      "teams": [
+        "NO",
+        "GS"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-16",
+      "game_id": "401910001",
+      "teams": [
+        "DEN",
+        "PHX"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 6
     }
   ],
   "status": "accepted"
