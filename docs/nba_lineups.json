@@ -1,215 +1,7 @@
 {
-  "generated_at": "2026-11-17T10:06:48.635064+00:00",
+  "generated_at": "2026-11-17T11:11:41.993074+00:00",
   "source": "RotoWire",
   "games": {
-    "401909989": {
-      "game_id": "401909989",
-      "game": "Dallas Mavericks at Boston Celtics",
-      "tipoff": "2026-11-15T23:00:00+00:00",
-      "home": "BOS",
-      "away": "DAL",
-      "checked_at": "2026-11-16T05:04:47.865993+00:00",
-      "minutes_before_tipoff": -364.8,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Derrick White",
-          "team": "BOS"
-        },
-        {
-          "name": "Jordan Walsh",
-          "team": "BOS"
-        },
-        {
-          "name": "Jayson Tatum",
-          "team": "BOS"
-        },
-        {
-          "name": "Paul George",
-          "team": "BOS"
-        },
-        {
-          "name": "Neemias Queta",
-          "team": "BOS"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Cooper Flagg",
-          "team": "DAL"
-        },
-        {
-          "name": "Caleb Martin",
-          "team": "DAL"
-        },
-        {
-          "name": "Naji Marshall",
-          "team": "DAL"
-        },
-        {
-          "name": "P.J. Washington",
-          "team": "DAL"
-        },
-        {
-          "name": "Daniel Gafford",
-          "team": "DAL"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [],
-      "away_out": [
-        {
-          "name": "Santi Aldama",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Tarik Biberovic",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Max Christie",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Sergio de Larrea",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Kyrie Irving",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Dereck Lively",
-          "team": "DAL",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Santi Aldama",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Tarik Biberovic",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Max Christie",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Sergio de Larrea",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Kyrie Irving",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Dereck Lively",
-          "team": "DAL",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401909990": {
-      "game_id": "401909990",
-      "game": "New York Knicks at Toronto Raptors",
-      "tipoff": "2026-11-15T23:00:00+00:00",
-      "home": "TOR",
-      "away": "NYK",
-      "checked_at": "2026-11-16T05:04:47.865993+00:00",
-      "minutes_before_tipoff": -364.8,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Immanuel Quickley",
-          "team": "TOR"
-        },
-        {
-          "name": "RJ Barrett",
-          "team": "TOR"
-        },
-        {
-          "name": "Ja'Kobe Walter",
-          "team": "TOR"
-        },
-        {
-          "name": "Scottie Barnes",
-          "team": "TOR"
-        },
-        {
-          "name": "Collin Murray-Boyles",
-          "team": "TOR"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Jalen Brunson",
-          "team": "NYK"
-        },
-        {
-          "name": "Mikal Bridges",
-          "team": "NYK"
-        },
-        {
-          "name": "Josh Hart",
-          "team": "NYK"
-        },
-        {
-          "name": "OG Anunoby",
-          "team": "NYK"
-        },
-        {
-          "name": "Karl-Anthony Towns",
-          "team": "NYK"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Nate Bittle",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Kawhi Leonard",
-          "team": "TOR",
-          "status": "out"
-        }
-      ],
-      "away_out": [],
-      "out_players": [
-        {
-          "name": "Nate Bittle",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Kawhi Leonard",
-          "team": "TOR",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909991": {
       "game_id": "401909991",
       "game": "Houston Rockets at Washington Wizards",
@@ -1426,8 +1218,8 @@
       "tipoff": "2026-11-18T00:30:00+00:00",
       "home": "TOR",
       "away": "NYK",
-      "checked_at": "2026-11-17T10:06:48.635064+00:00",
-      "minutes_before_tipoff": 863.2,
+      "checked_at": "2026-11-17T11:11:41.993074+00:00",
+      "minutes_before_tipoff": 798.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1510,8 +1302,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "MIN",
       "away": "POR",
-      "checked_at": "2026-11-17T10:06:48.635064+00:00",
-      "minutes_before_tipoff": 893.2,
+      "checked_at": "2026-11-17T11:11:41.993074+00:00",
+      "minutes_before_tipoff": 828.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1635,8 +1427,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "SAS",
       "away": "DET",
-      "checked_at": "2026-11-17T10:06:48.635064+00:00",
-      "minutes_before_tipoff": 893.2,
+      "checked_at": "2026-11-17T11:11:41.993074+00:00",
+      "minutes_before_tipoff": 828.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1760,8 +1552,8 @@
       "tipoff": "2026-11-18T03:30:00+00:00",
       "home": "LAC",
       "away": "UTA",
-      "checked_at": "2026-11-17T10:06:48.635064+00:00",
-      "minutes_before_tipoff": 1043.2,
+      "checked_at": "2026-11-17T11:11:41.993074+00:00",
+      "minutes_before_tipoff": 978.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1905,8 +1697,8 @@
       "tipoff": "2026-11-18T04:00:00+00:00",
       "home": "LAL",
       "away": "CHA",
-      "checked_at": "2026-11-17T10:06:48.635064+00:00",
-      "minutes_before_tipoff": 1073.2,
+      "checked_at": "2026-11-17T11:11:41.993074+00:00",
+      "minutes_before_tipoff": 1008.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
