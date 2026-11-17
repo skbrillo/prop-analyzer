@@ -1,362 +1,7 @@
 {
-  "generated_at": "2026-11-17T08:59:56.297350+00:00",
+  "generated_at": "2026-11-17T10:06:48.635064+00:00",
   "source": "RotoWire",
   "games": {
-    "401909986": {
-      "game_id": "401909986",
-      "game": "Los Angeles Lakers at Phoenix Suns",
-      "tipoff": "2026-11-15T21:00:00+00:00",
-      "home": "PHX",
-      "away": "LAL",
-      "checked_at": "2026-11-16T05:04:47.865993+00:00",
-      "minutes_before_tipoff": -484.8,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Devin Booker",
-          "team": "PHX"
-        },
-        {
-          "name": "Jalen Green",
-          "team": "PHX"
-        },
-        {
-          "name": "Dillon Brooks",
-          "team": "PHX"
-        },
-        {
-          "name": "Miles Bridges",
-          "team": "PHX"
-        },
-        {
-          "name": "Oso Ighodaro",
-          "team": "PHX"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Luka Doncic",
-          "team": "LAL"
-        },
-        {
-          "name": "Quentin Grimes",
-          "team": "LAL"
-        },
-        {
-          "name": "Matisse Thybulle",
-          "team": "LAL"
-        },
-        {
-          "name": "Jake LaRavia",
-          "team": "LAL"
-        },
-        {
-          "name": "Walker Kessler",
-          "team": "LAL"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Mark Williams",
-          "team": "PHX",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Cameron Carr",
-          "team": "LAL",
-          "status": "out"
-        },
-        {
-          "name": "Austin Reaves",
-          "team": "LAL",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Mark Williams",
-          "team": "PHX",
-          "status": "out"
-        },
-        {
-          "name": "Cameron Carr",
-          "team": "LAL",
-          "status": "out"
-        },
-        {
-          "name": "Austin Reaves",
-          "team": "LAL",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401909987": {
-      "game_id": "401909987",
-      "game": "Charlotte Hornets at LA Clippers",
-      "tipoff": "2026-11-15T21:30:00+00:00",
-      "home": "LAC",
-      "away": "CHA",
-      "checked_at": "2026-11-16T05:04:47.865993+00:00",
-      "minutes_before_tipoff": -454.8,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Darius Garland",
-          "team": "LAC"
-        },
-        {
-          "name": "Kris Dunn",
-          "team": "LAC"
-        },
-        {
-          "name": "Derrick Jones",
-          "team": "LAC"
-        },
-        {
-          "name": "Rui Hachimura",
-          "team": "LAC"
-        },
-        {
-          "name": "Brook Lopez",
-          "team": "LAC"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Coby White",
-          "team": "CHA"
-        },
-        {
-          "name": "Sion James",
-          "team": "CHA"
-        },
-        {
-          "name": "Brandon Miller",
-          "team": "CHA"
-        },
-        {
-          "name": "Naz Reid",
-          "team": "CHA"
-        },
-        {
-          "name": "Moussa Diabate",
-          "team": "CHA"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Bradley Beal",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Brandon Ingram",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Jordan Miller",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Yanic Konan Niederhauser",
-          "team": "LAC",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Kon Knueppel",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Dennis Schroder",
-          "team": "CHA",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Bradley Beal",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Brandon Ingram",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Jordan Miller",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Yanic Konan Niederhauser",
-          "team": "LAC",
-          "status": "out"
-        },
-        {
-          "name": "Kon Knueppel",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Dennis Schroder",
-          "team": "CHA",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401909988": {
-      "game_id": "401909988",
-      "game": "San Antonio Spurs at Utah Jazz",
-      "tipoff": "2026-11-15T22:00:00+00:00",
-      "home": "UTA",
-      "away": "SAS",
-      "checked_at": "2026-11-16T05:04:47.865993+00:00",
-      "minutes_before_tipoff": -424.8,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Keyonte George",
-          "team": "UTA"
-        },
-        {
-          "name": "Darryn Peterson",
-          "team": "UTA"
-        },
-        {
-          "name": "Josh Green",
-          "team": "UTA"
-        },
-        {
-          "name": "Ace Bailey",
-          "team": "UTA"
-        },
-        {
-          "name": "Mo Bamba",
-          "team": "UTA"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Stephon Castle",
-          "team": "SAS"
-        },
-        {
-          "name": "Dylan Harper",
-          "team": "SAS"
-        },
-        {
-          "name": "Julian Champagnie",
-          "team": "SAS"
-        },
-        {
-          "name": "Devin Vassell",
-          "team": "SAS"
-        },
-        {
-          "name": "Victor Wembanyama",
-          "team": "SAS"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Jaxson Hayes",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Jaren Jackson",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Lauri Markkanen",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Jusuf Nurkic",
-          "team": "UTA",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "De'Aaron Fox",
-          "team": "SAS",
-          "status": "out"
-        },
-        {
-          "name": "Tobias Harris",
-          "team": "SAS",
-          "status": "out"
-        },
-        {
-          "name": "Jayden Quaintance",
-          "team": "SAS",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Jaxson Hayes",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Jaren Jackson",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Lauri Markkanen",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Jusuf Nurkic",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "De'Aaron Fox",
-          "team": "SAS",
-          "status": "out"
-        },
-        {
-          "name": "Tobias Harris",
-          "team": "SAS",
-          "status": "out"
-        },
-        {
-          "name": "Jayden Quaintance",
-          "team": "SAS",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909989": {
       "game_id": "401909989",
       "game": "Dallas Mavericks at Boston Celtics",
@@ -1781,8 +1426,8 @@
       "tipoff": "2026-11-18T00:30:00+00:00",
       "home": "TOR",
       "away": "NYK",
-      "checked_at": "2026-11-17T08:59:56.297350+00:00",
-      "minutes_before_tipoff": 930.1,
+      "checked_at": "2026-11-17T10:06:48.635064+00:00",
+      "minutes_before_tipoff": 863.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1865,8 +1510,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "MIN",
       "away": "POR",
-      "checked_at": "2026-11-17T08:59:56.297350+00:00",
-      "minutes_before_tipoff": 960.1,
+      "checked_at": "2026-11-17T10:06:48.635064+00:00",
+      "minutes_before_tipoff": 893.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1990,8 +1635,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "SAS",
       "away": "DET",
-      "checked_at": "2026-11-17T08:59:56.297350+00:00",
-      "minutes_before_tipoff": 960.1,
+      "checked_at": "2026-11-17T10:06:48.635064+00:00",
+      "minutes_before_tipoff": 893.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2115,8 +1760,8 @@
       "tipoff": "2026-11-18T03:30:00+00:00",
       "home": "LAC",
       "away": "UTA",
-      "checked_at": "2026-11-17T08:59:56.297350+00:00",
-      "minutes_before_tipoff": 1110.1,
+      "checked_at": "2026-11-17T10:06:48.635064+00:00",
+      "minutes_before_tipoff": 1043.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2260,8 +1905,8 @@
       "tipoff": "2026-11-18T04:00:00+00:00",
       "home": "LAL",
       "away": "CHA",
-      "checked_at": "2026-11-17T08:59:56.297350+00:00",
-      "minutes_before_tipoff": 1140.1,
+      "checked_at": "2026-11-17T10:06:48.635064+00:00",
+      "minutes_before_tipoff": 1073.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
