@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T20:27:42.492962+00:00",
+  "generated_at": "2026-11-17T21:17:27.824417+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 109,
+  "player_count": 107,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,13 +35,24 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 109,
+  "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "T": 30,
-    "O": 79
+    "O": 81,
+    "T": 26
   },
   "players": [
+    {
+      "id": "",
+      "injury_record_id": "539621",
+      "name": "CJ McCollum",
+      "team": "ATL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Calf | out",
+      "date": "2026-11-17T21:08Z",
+      "team_match": "feed"
+    },
     {
       "id": "",
       "injury_record_id": "539597",
@@ -132,35 +143,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61023",
-      "name": "Jalen Smith",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Head | day-to-day",
-      "date": "2026-11-17T02:58Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539495",
+      "injury_record_id": "539620",
       "name": "Patrick Williams",
       "team": "CHI",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Finger | day-to-day",
-      "date": "2026-11-17T02:12Z",
+      "reason": "Dislocated | Finger | day-to-day",
+      "date": "2026-11-17T21:04Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539281",
+      "injury_record_id": "539613",
       "name": "Tobe Awaka",
       "team": "CHI",
       "status": "O",
       "raw_status": "Out",
       "reason": "Back | out",
-      "date": "2026-11-15T21:30Z",
+      "date": "2026-11-17T20:53Z",
       "team_match": "feed"
     },
     {
@@ -418,46 +418,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61032",
-      "name": "Amen Thompson",
-      "team": "HOU",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Knee | day-to-day",
-      "date": "2026-11-17T03:39Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61031",
-      "name": "Marcus Smart",
-      "team": "HOU",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Suspension | day-to-day",
-      "date": "2026-11-17T03:39Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61030",
-      "name": "Steven Adams",
-      "team": "HOU",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Calf | day-to-day",
-      "date": "2026-11-17T03:38Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539429",
+      "injury_record_id": "539617",
       "name": "Clint Capela",
       "team": "HOU",
       "status": "O",
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
-      "date": "2026-11-16T18:09Z",
+      "date": "2026-11-17T20:58Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539611",
+      "name": "Amen Thompson",
+      "team": "HOU",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Knee | day-to-day",
+      "date": "2026-11-17T20:49Z",
       "team_match": "feed"
     },
     {
@@ -748,46 +726,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61035",
+      "injury_record_id": "539618",
       "name": "Bennedict Mathurin",
       "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Plantar Fasciitis | Foot | day-to-day",
-      "date": "2026-11-17T03:48Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Plantar Fasciitis | Foot | out",
+      "date": "2026-11-17T20:59Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539320",
+      "injury_record_id": "539616",
       "name": "Bryce McGowens",
       "team": "NOP",
       "status": "O",
       "raw_status": "Out",
       "reason": "Infection | Elbow | out",
-      "date": "2026-11-15T23:10Z",
+      "date": "2026-11-17T20:57Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539316",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Tendinitis | Knee | out",
-      "date": "2026-11-15T22:57Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539315",
+      "injury_record_id": "539614",
       "name": "Trendon Watford",
       "team": "NOP",
       "status": "O",
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
-      "date": "2026-11-15T22:52Z",
+      "date": "2026-11-17T20:55Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539612",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Tendinitis | Knee | out",
+      "date": "2026-11-17T20:51Z",
       "team_match": "feed"
     },
     {
