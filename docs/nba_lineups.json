@@ -1,142 +1,7 @@
 {
-  "generated_at": "2026-11-17T12:06:11.545016+00:00",
+  "generated_at": "2026-11-17T13:18:57.188789+00:00",
   "source": "RotoWire",
   "games": {
-    "401909992": {
-      "game_id": "401909992",
-      "game": "Atlanta Hawks at Milwaukee Bucks",
-      "tipoff": "2026-11-16T01:00:00+00:00",
-      "home": "MIL",
-      "away": "ATL",
-      "checked_at": "2026-11-16T05:04:47.865993+00:00",
-      "minutes_before_tipoff": -244.8,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Brayden Burries",
-          "team": "MIL"
-        },
-        {
-          "name": "Tyler Herro",
-          "team": "MIL"
-        },
-        {
-          "name": "Kyle Kuzma",
-          "team": "MIL"
-        },
-        {
-          "name": "Jericho Sims",
-          "team": "MIL"
-        },
-        {
-          "name": "Myles Turner",
-          "team": "MIL"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "CJ McCollum",
-          "team": "ATL"
-        },
-        {
-          "name": "Nickeil Alexander-Walker",
-          "team": "ATL"
-        },
-        {
-          "name": "Dyson Daniels",
-          "team": "ATL"
-        },
-        {
-          "name": "Jalen Johnson",
-          "team": "ATL"
-        },
-        {
-          "name": "Onyeka Okongwu",
-          "team": "ATL"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Ousmane Dieng",
-          "team": "MIL",
-          "status": "out"
-        },
-        {
-          "name": "Ryan Rollins",
-          "team": "MIL",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Kingston Flemings",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Keshon Gilbert",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Mouhamed Gueye",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Jock Landale",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Asa Newell",
-          "team": "ATL",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Ousmane Dieng",
-          "team": "MIL",
-          "status": "out"
-        },
-        {
-          "name": "Ryan Rollins",
-          "team": "MIL",
-          "status": "out"
-        },
-        {
-          "name": "Kingston Flemings",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Keshon Gilbert",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Mouhamed Gueye",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Jock Landale",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Asa Newell",
-          "team": "ATL",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909993": {
       "game_id": "401909993",
       "game": "Oklahoma City Thunder at Sacramento Kings",
@@ -1073,8 +938,8 @@
       "tipoff": "2026-11-18T00:30:00+00:00",
       "home": "TOR",
       "away": "NYK",
-      "checked_at": "2026-11-17T12:06:11.545016+00:00",
-      "minutes_before_tipoff": 743.8,
+      "checked_at": "2026-11-17T13:18:57.188789+00:00",
+      "minutes_before_tipoff": 671.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1157,8 +1022,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "MIN",
       "away": "POR",
-      "checked_at": "2026-11-17T12:06:11.545016+00:00",
-      "minutes_before_tipoff": 773.8,
+      "checked_at": "2026-11-17T13:18:57.188789+00:00",
+      "minutes_before_tipoff": 701.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1282,8 +1147,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "SAS",
       "away": "DET",
-      "checked_at": "2026-11-17T12:06:11.545016+00:00",
-      "minutes_before_tipoff": 773.8,
+      "checked_at": "2026-11-17T13:18:57.188789+00:00",
+      "minutes_before_tipoff": 701.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1407,8 +1272,8 @@
       "tipoff": "2026-11-18T03:30:00+00:00",
       "home": "LAC",
       "away": "UTA",
-      "checked_at": "2026-11-17T12:06:11.545016+00:00",
-      "minutes_before_tipoff": 923.8,
+      "checked_at": "2026-11-17T13:18:57.188789+00:00",
+      "minutes_before_tipoff": 851.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1552,8 +1417,8 @@
       "tipoff": "2026-11-18T04:00:00+00:00",
       "home": "LAL",
       "away": "CHA",
-      "checked_at": "2026-11-17T12:06:11.545016+00:00",
-      "minutes_before_tipoff": 953.8,
+      "checked_at": "2026-11-17T13:18:57.188789+00:00",
+      "minutes_before_tipoff": 881.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
