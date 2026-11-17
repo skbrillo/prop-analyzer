@@ -1,23 +1,37 @@
 {
-  "generated_at": "2026-11-17T18:49:57.763805+00:00",
+  "generated_at": "2026-11-17T22:53:27.736037+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
     "2026-11": {
       "summary": {
-        "picks": 35,
+        "picks": 44,
         "wins": 18,
         "losses": 17,
         "pushes": 0,
         "dnp": 0,
         "invalid": 0,
-        "pending": 0,
+        "pending": 9,
         "settled": 35,
         "win_rate": 51.43,
         "roi": -1.71,
         "profit_units": -0.597
       },
       "days": [
+        {
+          "date": "2026-11-17",
+          "picks": 9,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 9,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        },
         {
           "date": "2026-11-16",
           "picks": 8,
@@ -635,6 +649,150 @@
           "actual": 17.0,
           "profit_units": 0.90909,
           "saved_at": "2026-11-16T22:46:10.201666+00:00"
+        },
+        {
+          "date": "2026-11-17",
+          "rank": 1,
+          "player": "Jamal Shead",
+          "team": "Toronto Raptors",
+          "opponent": "New York Knicks",
+          "market": "Assists",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -107,
+          "edge_score": 85.6,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-17T22:53:27.531955+00:00"
+        },
+        {
+          "date": "2026-11-17",
+          "rank": 2,
+          "player": "Keldon Johnson",
+          "team": "San Antonio Spurs",
+          "opponent": "Detroit Pistons",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 5.5,
+          "odds": 106,
+          "edge_score": 74.5,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-17T22:53:27.531955+00:00"
+        },
+        {
+          "date": "2026-11-17",
+          "rank": 3,
+          "player": "Scoot Henderson",
+          "team": "Portland Trail Blazers",
+          "opponent": "Minnesota Timberwolves",
+          "market": "Points",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -123,
+          "edge_score": 70.6,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-17T22:53:27.531955+00:00"
+        },
+        {
+          "date": "2026-11-17",
+          "rank": 4,
+          "player": "Karl-Anthony Towns",
+          "team": "New York Knicks",
+          "opponent": "Toronto Raptors",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -108,
+          "edge_score": 70.0,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-17T22:53:27.531955+00:00"
+        },
+        {
+          "date": "2026-11-17",
+          "rank": 5,
+          "player": "Damian Lillard",
+          "team": "Portland Trail Blazers",
+          "opponent": "Minnesota Timberwolves",
+          "market": "Points",
+          "side": "Under",
+          "line": 21.5,
+          "odds": -114,
+          "edge_score": 61.1,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-17T22:53:27.531955+00:00"
+        },
+        {
+          "date": "2026-11-17",
+          "rank": 6,
+          "player": "Ja'Kobe Walter",
+          "team": "Toronto Raptors",
+          "opponent": "New York Knicks",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 106,
+          "edge_score": 58.8,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-17T22:53:27.531955+00:00"
+        },
+        {
+          "date": "2026-11-17",
+          "rank": 7,
+          "player": "Donovan Clingan",
+          "team": "Portland Trail Blazers",
+          "opponent": "Minnesota Timberwolves",
+          "market": "Points",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -113,
+          "edge_score": 53.5,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-17T22:53:27.531955+00:00"
+        },
+        {
+          "date": "2026-11-17",
+          "rank": 8,
+          "player": "Jalen Brunson",
+          "team": "New York Knicks",
+          "opponent": "Toronto Raptors",
+          "market": "Points",
+          "side": "Over",
+          "line": 25.5,
+          "odds": -111,
+          "edge_score": 51.8,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-17T22:53:27.531955+00:00"
+        },
+        {
+          "date": "2026-11-17",
+          "rank": 9,
+          "player": "RJ Barrett",
+          "team": "Toronto Raptors",
+          "opponent": "New York Knicks",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 5.5,
+          "odds": -121,
+          "edge_score": 50.3,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-17T22:53:27.531955+00:00"
         }
       ]
     }
@@ -1776,75 +1934,7 @@
       ]
     }
   },
-  "preview_months": {
-    "2026-11": {
-      "summary": {
-        "picks": 2,
-        "wins": 0,
-        "losses": 0,
-        "pushes": 0,
-        "dnp": 0,
-        "invalid": 0,
-        "pending": 2,
-        "settled": 0,
-        "win_rate": null,
-        "roi": null,
-        "profit_units": 0
-      },
-      "days": [
-        {
-          "date": "2026-11-17",
-          "picks": 2,
-          "wins": 0,
-          "losses": 0,
-          "pushes": 0,
-          "dnp": 0,
-          "invalid": 0,
-          "pending": 2,
-          "settled": 0,
-          "win_rate": null,
-          "roi": null,
-          "profit_units": 0
-        }
-      ],
-      "picks": [
-        {
-          "date": "2026-11-17",
-          "rank": 1,
-          "player": "Derrick Jones Jr.",
-          "team": "Los Angeles Clippers",
-          "opponent": "Utah Jazz",
-          "market": "Points",
-          "side": "Over",
-          "line": 9.5,
-          "odds": -124,
-          "edge_score": 72.8,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-17T18:49:57.495133+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-17",
-          "rank": 2,
-          "player": "Darius Garland",
-          "team": "Los Angeles Clippers",
-          "opponent": "Utah Jazz",
-          "market": "Points",
-          "side": "Under",
-          "line": 23.5,
-          "odds": -106,
-          "edge_score": 48.2,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-17T18:49:57.495133+00:00",
-          "official": false
-        }
-      ]
-    }
-  },
+  "preview_months": {},
   "archive_audit": [
     {
       "date": "2026-11-11",
@@ -1877,6 +1967,11 @@
       "date": "2026-11-16",
       "classification": "official",
       "count": 8
+    },
+    {
+      "date": "2026-11-17",
+      "classification": "official",
+      "count": 9
     }
   ],
   "validation_errors": 0
