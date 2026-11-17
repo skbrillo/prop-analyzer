@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-17T18:37:58.801143+00:00",
+  "generated_at": "2026-11-17T19:46:46.300105+00:00",
   "source": "RotoWire",
   "games": {
     "401909994": {
@@ -783,8 +783,8 @@
       "tipoff": "2026-11-18T00:30:00+00:00",
       "home": "TOR",
       "away": "NYK",
-      "checked_at": "2026-11-17T18:37:58.801143+00:00",
-      "minutes_before_tipoff": 352.0,
+      "checked_at": "2026-11-17T19:46:46.300105+00:00",
+      "minutes_before_tipoff": 283.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -867,8 +867,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "MIN",
       "away": "POR",
-      "checked_at": "2026-11-17T18:37:58.801143+00:00",
-      "minutes_before_tipoff": 382.0,
+      "checked_at": "2026-11-17T19:46:46.300105+00:00",
+      "minutes_before_tipoff": 313.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -884,7 +884,7 @@
           "team": "MIN"
         },
         {
-          "name": "Jonathan Kuminga",
+          "name": "Terrence Shannon",
           "team": "MIN"
         },
         {
@@ -933,6 +933,16 @@
           "name": "Anthony Edwards",
           "team": "MIN",
           "status": "out"
+        },
+        {
+          "name": "Jonathan Kuminga",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Zyon Pullin",
+          "team": "MIN",
+          "status": "out"
         }
       ],
       "away_out": [
@@ -948,6 +958,11 @@
         },
         {
           "name": "Shaedon Sharpe",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Chris Youngblood",
           "team": "POR",
           "status": "out"
         }
@@ -969,6 +984,16 @@
           "status": "out"
         },
         {
+          "name": "Jonathan Kuminga",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Zyon Pullin",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
           "name": "Vit Krejci",
           "team": "POR",
           "status": "out"
@@ -982,6 +1007,11 @@
           "name": "Shaedon Sharpe",
           "team": "POR",
           "status": "out"
+        },
+        {
+          "name": "Chris Youngblood",
+          "team": "POR",
+          "status": "out"
         }
       ],
       "source": "RotoWire"
@@ -992,8 +1022,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "SAS",
       "away": "DET",
-      "checked_at": "2026-11-17T18:37:58.801143+00:00",
-      "minutes_before_tipoff": 382.0,
+      "checked_at": "2026-11-17T19:46:46.300105+00:00",
+      "minutes_before_tipoff": 313.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1127,8 +1157,8 @@
       "tipoff": "2026-11-18T03:30:00+00:00",
       "home": "LAC",
       "away": "UTA",
-      "checked_at": "2026-11-17T18:37:58.801143+00:00",
-      "minutes_before_tipoff": 532.0,
+      "checked_at": "2026-11-17T19:46:46.300105+00:00",
+      "minutes_before_tipoff": 463.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1272,8 +1302,8 @@
       "tipoff": "2026-11-18T04:00:00+00:00",
       "home": "LAL",
       "away": "CHA",
-      "checked_at": "2026-11-17T18:37:58.801143+00:00",
-      "minutes_before_tipoff": 562.0,
+      "checked_at": "2026-11-17T19:46:46.300105+00:00",
+      "minutes_before_tipoff": 493.2,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
