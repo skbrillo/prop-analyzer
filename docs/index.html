@@ -357,6 +357,9 @@ tbody tr:hover{background:#1d3048}
  <div class="monthly-head"><h2>8910 — Performance Tracker</h2><div class="tabs" id="period8910" aria-label="8910 reporting period"><button type="button" data-period="today" class="active" aria-pressed="true">Today</button><button type="button" data-period="yesterday" aria-pressed="false">Yesterday</button><button type="button" data-period="month" aria-pressed="false">This Month</button><button type="button" data-period="all" aria-pressed="false">All History</button></div></div>
  <div class="monthly-stats" id="stats8910" style="grid-template-columns:repeat(auto-fit,minmax(145px,1fr))"></div>
  <div class="muted" id="status8910">Loading 8910...</div>
+ <h3>Market &amp; Side Performance Breakdown</h3>
+ <div class="tablewrap"><table><thead><tr><th>Category</th><th>Picks</th><th>Wins</th><th>Losses</th><th>Win Rate</th><th>ROI</th><th>Profit / Loss</th><th>Pending</th><th>Push</th><th>DNP</th></tr></thead><tbody id="market8910-rows"></tbody></table></div>
+ <div class="note">Combined 8910 selections for the selected period. Overall side totals overlap the individual market rows. ROI follows the tracker stake and profit calculation.</div>
  <h3>Daily Results — Individual Picks</h3><div class="tablewrap"><table><thead><tr><th>Date</th><th>Player</th><th>Team</th><th>Opp</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>L10</th><th>Actual</th><th>Result</th></tr></thead><tbody id="rows8910"></tbody></table></div>
  <div class="note">Independent hypothetical results. First qualifying pregame snapshot; one pick per player, date and market. Odds -125 or better; no EV filter.</div>
 </section>
@@ -1965,12 +1968,30 @@ function downloadEdge(){
 let archive8910=[];
 let updated8910='';
 let period8910='today';
+function render8910MarketBreakdown(rows){
+ const body=$('market8910-rows');body.replaceChildren();
+ const groups=[['All Overs',null,'Over'],['All Unders',null,'Under']];
+ for(const market of ['Points','Rebounds','Assists'])for(const side of ['Over','Under'])groups.push([market+' '+side,market,side]);
+ const tone=v=>v>0?'green':v<0?'red':'muted';
+ const signed=(v,d)=>(v>0?'+':'')+v.toFixed(d);
+ for(const [label,market,side] of groups){
+  const a=rows.filter(r=>(!market||marketName(r.market)===market)&&sideName(r.side)===side);
+  const settled=a.filter(r=>r.status==='graded');
+  const w=settled.filter(r=>r.outcome==='win').length,l=settled.filter(r=>r.outcome==='loss').length;
+  const profit=settled.reduce((s,r)=>s+Number(r.profit||0),0),stake=settled.reduce((s,r)=>s+Number(r.stake||0),0);
+  const pending=a.filter(r=>r.status==='pending').length;
+  const tr=document.createElement('tr');
+  for(const [value,cls] of [[label,''],[a.length,''],[w,'green'],[l,'red'],[w+l?(100*w/(w+l)).toFixed(1)+'%':'—',''],[stake?signed(100*profit/stake,1)+'%':'—',stake?tone(profit):'muted'],[signed(profit/100,2)+'u',tone(profit)],[pending,pending?'pending':'muted'],[settled.filter(r=>r.outcome==='push').length,'muted'],[a.filter(r=>r.status==='dnp').length,'muted']])monthlyCell(tr,value,cls);
+  body.appendChild(tr);
+ }
+}
 function render8910(){
  const fmt=new Intl.DateTimeFormat('en-CA',{timeZone:'America/Chicago',year:'numeric',month:'2-digit',day:'2-digit'});
  const dateKey=d=>{const a=Object.fromEntries(fmt.formatToParts(d).map(p=>[p.type,p.value]));return a.year+'-'+a.month+'-'+a.day;};
  const today=dateKey(new Date()); const yesterday=new Date(today+'T12:00:00Z'); yesterday.setUTCDate(yesterday.getUTCDate()-1);
  const period=period8910;
  const rows=archive8910.filter(r=>period==='all'||(period==='month'?String(r.game_date).startsWith(today.slice(0,7)):r.game_date===(period==='today'?today:dateKey(yesterday))));
+ render8910MarketBreakdown(rows);
  const grid=$('stats8910');grid.replaceChildren();
  for(const bucket of [8,9,10,'Combined']){
   const a=rows.filter(r=>bucket==='Combined'||Number(r.bucket)===bucket), settled=a.filter(r=>r.status==='graded');
