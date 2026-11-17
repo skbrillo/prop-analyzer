@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T03:58:40.441506+00:00",
+  "generated_at": "2026-11-17T04:49:21.354180+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 104,
+  "player_count": 105,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 104,
+  "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "T": 26,
-    "O": 78
+    "T": 28,
+    "O": 77
   },
   "players": [
     {
@@ -137,7 +137,7 @@
       "team": "CHI",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Undisclosed | day-to-day",
+      "reason": "Head | day-to-day",
       "date": "2026-11-17T02:58Z",
       "team_match": "feed"
     },
@@ -737,6 +737,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61035",
+      "name": "Bennedict Mathurin",
+      "team": "NOP",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Plantar Fasciitis | Foot | day-to-day",
+      "date": "2026-11-17T03:48Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539320",
       "name": "Bryce McGowens",
       "team": "NOP",
@@ -744,17 +755,6 @@
       "raw_status": "Out",
       "reason": "Infection | Elbow | out",
       "date": "2026-11-15T23:10Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539319",
-      "name": "Bennedict Mathurin",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Plantar Fasciitis | Foot | out",
-      "date": "2026-11-15T23:06Z",
       "team_match": "feed"
     },
     {
@@ -887,6 +887,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Ankle | out",
       "date": "2026-09-28T21:33Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61036",
+      "name": "Jaylen Brown",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Hamstring | day-to-day",
+      "date": "2026-11-17T04:28Z",
       "team_match": "feed"
     },
     {
