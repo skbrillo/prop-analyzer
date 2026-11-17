@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-16T23:24:11.223381+00:00",
+  "generated_at": "2026-11-17T00:02:06.469442+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 103,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 103,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "T": 19,
+    "T": 17,
     "O": 83,
     "U": 1
   },
@@ -397,13 +397,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539431",
+      "injury_record_id": "539473",
       "name": "Amen Thompson",
       "team": "HOU",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Knee | day-to-day",
-      "date": "2026-11-16T18:13Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Knee | out",
+      "date": "2026-11-16T23:48Z",
       "team_match": "feed"
     },
     {
@@ -591,28 +591,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Hip | out",
       "date": "2026-11-15T22:13Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539294",
-      "name": "Quinten Post",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "out",
-      "date": "2026-11-15T22:12Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539293",
-      "name": "Zach Edey",
-      "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "day-to-day",
-      "date": "2026-11-15T22:11Z",
       "team_match": "feed"
     },
     {
@@ -859,6 +837,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539471",
+      "name": "Dominick Barlow",
+      "team": "PHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Fracture | Back | out",
+      "date": "2026-11-16T23:45Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539427",
       "name": "Joel Embiid",
       "team": "PHI",
@@ -877,17 +866,6 @@
       "raw_status": "Out",
       "reason": "Back | out",
       "date": "2026-11-16T18:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538766",
-      "name": "Dominick Barlow",
-      "team": "PHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Fracture | Back | out",
-      "date": "2026-11-12T16:37Z",
       "team_match": "feed"
     },
     {
