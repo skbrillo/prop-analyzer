@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-17T22:17:15.164806+00:00",
+  "generated_at": "2026-11-17T23:15:17.923459+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 107,
   "teams_reported": [
     "ATL",
     "BOS",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 106,
+  "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "O": 82,
+    "O": 83,
     "T": 24
   },
   "players": [
@@ -176,24 +176,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61029",
+      "injury_record_id": "539637",
+      "name": "Nae'Qwan Tomlin",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-17T22:18Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539636",
       "name": "Jaylon Tyson",
       "team": "CLE",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Ankle | day-to-day",
-      "date": "2026-11-17T03:37Z",
+      "date": "2026-11-17T22:15Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61024",
+      "injury_record_id": "539635",
+      "name": "Sam Merrill",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Elbow | out",
+      "date": "2026-11-17T22:15Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539634",
       "name": "Peyton Watson",
       "team": "CLE",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Bruise | Back | day-to-day",
-      "date": "2026-11-17T02:58Z",
+      "date": "2026-11-17T22:13Z",
       "team_match": "feed"
     },
     {
@@ -209,90 +231,79 @@
     },
     {
       "id": "",
-      "injury_record_id": "539283",
-      "name": "Sam Merrill",
-      "team": "CLE",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Elbow | out",
-      "date": "2026-11-15T21:39Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "535193",
-      "name": "Nae'Qwan Tomlin",
-      "team": "CLE",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Back | out",
-      "date": "2026-10-20T15:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539596",
-      "name": "Max Christie",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-17T18:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539595",
-      "name": "Santi Aldama",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-17T18:22Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60972",
-      "name": "Kyrie Irving",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-16T14:44Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538641",
-      "name": "Dereck Lively II",
-      "team": "DAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Foot | out",
-      "date": "2026-11-11T22:13Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538640",
-      "name": "Tarik Biberovic",
-      "team": "DAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Heel | out",
-      "date": "2026-11-11T22:12Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538639",
+      "injury_record_id": "539649",
       "name": "Sergio de Larrea",
       "team": "DAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Knee | out",
-      "date": "2026-11-11T22:10Z",
+      "date": "2026-11-17T22:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539648",
+      "name": "Walter Clayton Jr.",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-17T22:47Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539647",
+      "name": "Dereck Lively II",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Surgery | Foot | out",
+      "date": "2026-11-17T22:45Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539646",
+      "name": "Tobi Lawal",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Groin | day-to-day",
+      "date": "2026-11-17T22:45Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539645",
+      "name": "Tarik Biberovic",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Heel | out",
+      "date": "2026-11-17T22:42Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539643",
+      "name": "Max Christie",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-17T22:38Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539642",
+      "name": "Santi Aldama",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-17T22:36Z",
       "team_match": "feed"
     },
     {
@@ -359,6 +370,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T16:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539639",
+      "name": "Al Horford",
+      "team": "GSW",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-17T22:21Z",
       "team_match": "feed"
     },
     {
@@ -451,6 +473,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "539640",
+      "name": "T.J. McConnell",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hamstring | day-to-day",
+      "date": "2026-11-17T22:24Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539638",
+      "name": "Andrew Nembhard",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hip | day-to-day",
+      "date": "2026-11-17T22:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539603",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -458,17 +502,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-17T18:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60937",
-      "name": "Andrew Nembhard",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-15T20:57Z",
       "team_match": "feed"
     },
     {
@@ -869,35 +902,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "539522",
-      "name": "Jaylen Brown",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Hamstring | day-to-day",
-      "date": "2026-11-17T04:56Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61034",
-      "name": "LeBron James",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "day-to-day",
-      "date": "2026-11-17T03:41Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539471",
+      "injury_record_id": "539633",
       "name": "Dominick Barlow",
       "team": "PHI",
       "status": "O",
       "raw_status": "Out",
       "reason": "Fracture | Back | out",
-      "date": "2026-11-16T23:45Z",
+      "date": "2026-11-17T22:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539630",
+      "name": "Jaylen Brown",
+      "team": "PHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Hamstring | out",
+      "date": "2026-11-17T22:08Z",
       "team_match": "feed"
     },
     {
@@ -1067,13 +1089,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539587",
-      "name": "Scottie Barnes",
+      "injury_record_id": "539641",
+      "name": "Kawhi Leonard",
       "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-17T17:29Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Knee | out",
+      "date": "2026-11-17T22:25Z",
       "team_match": "feed"
     },
     {
@@ -1096,17 +1118,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
       "date": "2026-11-13T15:37Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538648",
-      "name": "Kawhi Leonard",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Knee | out",
-      "date": "2026-11-11T22:33Z",
       "team_match": "feed"
     },
     {
