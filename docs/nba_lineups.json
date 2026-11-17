@@ -1,152 +1,7 @@
 {
-  "generated_at": "2026-11-17T11:11:41.993074+00:00",
+  "generated_at": "2026-11-17T12:06:11.545016+00:00",
   "source": "RotoWire",
   "games": {
-    "401909991": {
-      "game_id": "401909991",
-      "game": "Houston Rockets at Washington Wizards",
-      "tipoff": "2026-11-16T00:00:00+00:00",
-      "home": "WAS",
-      "away": "HOU",
-      "checked_at": "2026-11-16T05:04:47.865993+00:00",
-      "minutes_before_tipoff": -304.8,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Trae Young",
-          "team": "WAS"
-        },
-        {
-          "name": "Kyshawn George",
-          "team": "WAS"
-        },
-        {
-          "name": "AJ Dybantsa",
-          "team": "WAS"
-        },
-        {
-          "name": "Anthony Davis",
-          "team": "WAS"
-        },
-        {
-          "name": "Alex Sarr",
-          "team": "WAS"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Amen Thompson",
-          "team": "HOU"
-        },
-        {
-          "name": "Kevin Durant",
-          "team": "HOU"
-        },
-        {
-          "name": "Jabari Smith",
-          "team": "HOU"
-        },
-        {
-          "name": "Alperen Sengun",
-          "team": "HOU"
-        },
-        {
-          "name": "Steven Adams",
-          "team": "HOU"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Reece Beekman",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Justin Champagnie",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Tre Johnson",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Tristan Vukcevic",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Jamir Watkins",
-          "team": "WAS",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Clint Capela",
-          "team": "HOU",
-          "status": "out"
-        },
-        {
-          "name": "Marcus Smart",
-          "team": "HOU",
-          "status": "out"
-        },
-        {
-          "name": "Fred VanVleet",
-          "team": "HOU",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Reece Beekman",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Justin Champagnie",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Tre Johnson",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Tristan Vukcevic",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Jamir Watkins",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Clint Capela",
-          "team": "HOU",
-          "status": "out"
-        },
-        {
-          "name": "Marcus Smart",
-          "team": "HOU",
-          "status": "out"
-        },
-        {
-          "name": "Fred VanVleet",
-          "team": "HOU",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909992": {
       "game_id": "401909992",
       "game": "Atlanta Hawks at Milwaukee Bucks",
@@ -1218,8 +1073,8 @@
       "tipoff": "2026-11-18T00:30:00+00:00",
       "home": "TOR",
       "away": "NYK",
-      "checked_at": "2026-11-17T11:11:41.993074+00:00",
-      "minutes_before_tipoff": 798.3,
+      "checked_at": "2026-11-17T12:06:11.545016+00:00",
+      "minutes_before_tipoff": 743.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1302,8 +1157,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "MIN",
       "away": "POR",
-      "checked_at": "2026-11-17T11:11:41.993074+00:00",
-      "minutes_before_tipoff": 828.3,
+      "checked_at": "2026-11-17T12:06:11.545016+00:00",
+      "minutes_before_tipoff": 773.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1427,8 +1282,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "SAS",
       "away": "DET",
-      "checked_at": "2026-11-17T11:11:41.993074+00:00",
-      "minutes_before_tipoff": 828.3,
+      "checked_at": "2026-11-17T12:06:11.545016+00:00",
+      "minutes_before_tipoff": 773.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1552,8 +1407,8 @@
       "tipoff": "2026-11-18T03:30:00+00:00",
       "home": "LAC",
       "away": "UTA",
-      "checked_at": "2026-11-17T11:11:41.993074+00:00",
-      "minutes_before_tipoff": 978.3,
+      "checked_at": "2026-11-17T12:06:11.545016+00:00",
+      "minutes_before_tipoff": 923.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1697,8 +1552,8 @@
       "tipoff": "2026-11-18T04:00:00+00:00",
       "home": "LAL",
       "away": "CHA",
-      "checked_at": "2026-11-17T11:11:41.993074+00:00",
-      "minutes_before_tipoff": 1008.3,
+      "checked_at": "2026-11-17T12:06:11.545016+00:00",
+      "minutes_before_tipoff": 953.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
