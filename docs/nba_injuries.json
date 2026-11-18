@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T14:40:26.685105+00:00",
+  "generated_at": "2026-11-18T15:34:01.955937+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,8 +37,8 @@
   "players_with_team": 108,
   "players_without_team": 0,
   "status_counts": {
-    "O": 87,
-    "T": 21
+    "O": 78,
+    "T": 30
   },
   "players": [
     {
@@ -109,13 +109,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539665",
+      "injury_record_id": "-61080",
       "name": "Grayson Allen",
       "team": "CHA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Concussion | out",
-      "date": "2026-11-18T02:19Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Concussion | day-to-day",
+      "date": "2026-11-18T15:07Z",
       "team_match": "feed"
     },
     {
@@ -318,6 +318,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61079",
+      "name": "Taurean Prince",
+      "team": "DET",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Knee | day-to-day",
+      "date": "2026-11-18T15:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61078",
+      "name": "Ronald Holland II",
+      "team": "DET",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Knee | day-to-day",
+      "date": "2026-11-18T15:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539600",
       "name": "Isaiah Joe",
       "team": "DET",
@@ -336,28 +358,6 @@
       "raw_status": "Out",
       "reason": "Strain | Quadriceps | out",
       "date": "2026-11-17T16:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539461",
-      "name": "Taurean Prince",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Knee | out",
-      "date": "2026-11-16T22:58Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539460",
-      "name": "Ronald Holland II",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Knee | out",
-      "date": "2026-11-16T22:53Z",
       "team_match": "feed"
     },
     {
@@ -582,24 +582,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "539666",
-      "name": "Walker Kessler",
+      "injury_record_id": "-61074",
+      "name": "Austin Reaves",
       "team": "LAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Lower Leg | out",
-      "date": "2026-11-18T02:57Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Heel | day-to-day",
+      "date": "2026-11-18T15:02Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539490",
-      "name": "Austin Reaves",
+      "injury_record_id": "-61073",
+      "name": "Walker Kessler",
       "team": "LAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Heel | out",
-      "date": "2026-11-17T01:11Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Lower Leg | day-to-day",
+      "date": "2026-11-18T15:02Z",
       "team_match": "feed"
     },
     {
@@ -703,24 +703,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "539607",
+      "injury_record_id": "-61077",
       "name": "Zyon Pullin",
       "team": "MIN",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Quadriceps | out",
-      "date": "2026-11-17T19:05Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Quadriceps | day-to-day",
+      "date": "2026-11-18T15:04Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539606",
+      "injury_record_id": "-61076",
       "name": "Jonathan Kuminga",
       "team": "MIN",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Shoulder | out",
-      "date": "2026-11-17T19:03Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Shoulder | day-to-day",
+      "date": "2026-11-18T15:04Z",
       "team_match": "feed"
     },
     {
@@ -967,13 +967,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539657",
+      "injury_record_id": "-61075",
       "name": "Deni Avdija",
       "team": "POR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Foot | out",
-      "date": "2026-11-18T00:28Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Foot | day-to-day",
+      "date": "2026-11-18T15:04Z",
       "team_match": "feed"
     },
     {
@@ -1132,13 +1132,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539488",
+      "injury_record_id": "-61072",
       "name": "Jaxson Hayes",
       "team": "UTA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Knee | out",
-      "date": "2026-11-17T01:08Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Strain | Knee | day-to-day",
+      "date": "2026-11-18T14:59Z",
       "team_match": "feed"
     },
     {
