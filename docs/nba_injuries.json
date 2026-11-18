@@ -1,12 +1,11 @@
 {
-  "generated_at": "2026-11-17T23:15:17.923459+00:00",
+  "generated_at": "2026-11-18T00:09:23.171578+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 107,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
-    "BOS",
     "CHA",
     "CHI",
     "CLE",
@@ -34,14 +33,36 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 28,
-  "players_with_team": 107,
+  "teams_count": 27,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
-    "O": 83,
-    "T": 24
+    "O": 85,
+    "T": 21
   },
   "players": [
+    {
+      "id": "",
+      "injury_record_id": "539652",
+      "name": "Jock Landale",
+      "team": "ATL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Hip | out",
+      "date": "2026-11-17T23:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539651",
+      "name": "Kingston Flemings",
+      "team": "ATL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Back | out",
+      "date": "2026-11-17T23:06Z",
+      "team_match": "feed"
+    },
     {
       "id": "",
       "injury_record_id": "539622",
@@ -66,28 +87,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539597",
-      "name": "Kingston Flemings",
-      "team": "ATL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Strain | Back | day-to-day",
-      "date": "2026-11-17T18:28Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60978",
-      "name": "Jock Landale",
-      "team": "ATL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Inflammation | Hip | day-to-day",
-      "date": "2026-11-16T14:47Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538842",
       "name": "Mouhamed Gueye",
       "team": "ATL",
@@ -106,17 +105,6 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-09-21T19:50Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61028",
-      "name": "Neemias Queta",
-      "team": "BOS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Rest | day-to-day",
-      "date": "2026-11-17T03:37Z",
       "team_match": "feed"
     },
     {
@@ -594,6 +582,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539654",
+      "name": "GG Jackson",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Surgery | Foot | out",
+      "date": "2026-11-17T23:18Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539632",
       "name": "Isaiah Stewart",
       "team": "MEM",
@@ -623,17 +622,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Back | out",
       "date": "2026-11-16T17:16Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539413",
-      "name": "GG Jackson",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Foot | out",
-      "date": "2026-11-16T17:12Z",
       "team_match": "feed"
     },
     {
@@ -803,13 +791,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539182",
+      "injury_record_id": "539653",
       "name": "Jaylin Williams",
       "team": "OKC",
       "status": "O",
       "raw_status": "Out",
       "reason": "Spasms | Back | out",
-      "date": "2026-11-15T01:14Z",
+      "date": "2026-11-17T23:08Z",
       "team_match": "feed"
     },
     {
