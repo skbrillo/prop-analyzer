@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T04:21:55.482391+00:00",
+  "generated_at": "2026-11-18T05:26:06.817056+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,8 +37,8 @@
   "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "O": 88,
-    "T": 19
+    "O": 87,
+    "T": 20
   },
   "players": [
     {
@@ -1055,13 +1055,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539678",
+      "injury_record_id": "-61070",
       "name": "Dylan Harper",
       "team": "SAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Undisclosed | out",
-      "date": "2026-11-18T03:49Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Undisclosed | day-to-day",
+      "date": "2026-11-18T05:07Z",
       "team_match": "feed"
     },
     {
