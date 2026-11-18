@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-18T18:27:28.857420+00:00",
+  "generated_at": "2026-11-18T19:25:43.067457+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 109,
+  "player_count": 110,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 109,
+  "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
-    "O": 81,
-    "T": 28
+    "O": 84,
+    "T": 26
   },
   "players": [
     {
@@ -175,6 +175,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "539786",
+      "name": "Peyton Watson",
+      "team": "CLE",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Back | day-to-day",
+      "date": "2026-11-18T18:24Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539784",
+      "name": "Jaylon Tyson",
+      "team": "CLE",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Ankle | out",
+      "date": "2026-11-18T18:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539637",
       "name": "Nae'Qwan Tomlin",
       "team": "CLE",
@@ -186,17 +208,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539636",
-      "name": "Jaylon Tyson",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
-      "date": "2026-11-17T22:15Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539635",
       "name": "Sam Merrill",
       "team": "CLE",
@@ -204,17 +215,6 @@
       "raw_status": "Out",
       "reason": "Elbow | out",
       "date": "2026-11-17T22:15Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539634",
-      "name": "Peyton Watson",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Back | day-to-day",
-      "date": "2026-11-17T22:13Z",
       "team_match": "feed"
     },
     {
@@ -318,35 +318,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61079",
-      "name": "Taurean Prince",
+      "injury_record_id": "539800",
+      "name": "Cade Cunningham",
       "team": "DET",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Knee | day-to-day",
-      "date": "2026-11-18T15:05Z",
+      "date": "2026-11-18T19:09Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61078",
-      "name": "Ronald Holland II",
-      "team": "DET",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Knee | day-to-day",
-      "date": "2026-11-18T15:05Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539600",
+      "injury_record_id": "539799",
       "name": "Isaiah Joe",
       "team": "DET",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Hip | out",
-      "date": "2026-11-17T18:33Z",
+      "date": "2026-11-18T19:08Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539798",
+      "name": "Taurean Prince",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Knee | out",
+      "date": "2026-11-18T19:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539797",
+      "name": "Ronald Holland II",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Knee | out",
+      "date": "2026-11-18T19:04Z",
       "team_match": "feed"
     },
     {
