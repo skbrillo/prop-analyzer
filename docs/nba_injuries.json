@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T16:40:37.221995+00:00",
+  "generated_at": "2026-11-18T17:35:17.496834+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -373,6 +373,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539762",
+      "name": "Brandon Williams",
+      "team": "GSW",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-18T17:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539683",
       "name": "Draymond Green",
       "team": "GSW",
@@ -402,17 +413,6 @@
       "raw_status": "Out",
       "reason": "Abdomen | out",
       "date": "2026-11-12T17:03Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538486",
-      "name": "Brandon Williams",
-      "team": "GSW",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Not Specified | Hamstring | out",
-      "date": "2026-11-10T21:24Z",
       "team_match": "feed"
     },
     {
