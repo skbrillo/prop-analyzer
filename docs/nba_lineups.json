@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T02:44:18.696599+00:00",
+  "generated_at": "2026-11-18T03:41:07.652050+00:00",
   "source": "RotoWire",
   "games": {
     "401909994": {
@@ -783,8 +783,8 @@
       "tipoff": "2026-11-18T00:30:00+00:00",
       "home": "TOR",
       "away": "NYK",
-      "checked_at": "2026-11-18T02:44:18.696599+00:00",
-      "minutes_before_tipoff": -134.3,
+      "checked_at": "2026-11-18T03:41:07.652050+00:00",
+      "minutes_before_tipoff": -191.1,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -867,8 +867,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "MIN",
       "away": "POR",
-      "checked_at": "2026-11-18T02:44:18.696599+00:00",
-      "minutes_before_tipoff": -104.3,
+      "checked_at": "2026-11-18T03:41:07.652050+00:00",
+      "minutes_before_tipoff": -161.1,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1032,8 +1032,8 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "SAS",
       "away": "DET",
-      "checked_at": "2026-11-18T02:44:18.696599+00:00",
-      "minutes_before_tipoff": -104.3,
+      "checked_at": "2026-11-18T03:41:07.652050+00:00",
+      "minutes_before_tipoff": -161.1,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1167,14 +1167,12 @@
       "tipoff": "2026-11-18T03:30:00+00:00",
       "home": "LAC",
       "away": "UTA",
-      "checked_at": "2026-11-18T02:44:18.696599+00:00",
-      "minutes_before_tipoff": 45.7,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-18T03:41:07.652050+00:00",
+      "minutes_before_tipoff": -11.1,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Darius Garland",
           "team": "LAC"
@@ -1196,7 +1194,7 @@
           "team": "LAC"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Keyonte George",
           "team": "UTA"
@@ -1218,6 +1216,8 @@
           "team": "UTA"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Bradley Beal",
@@ -1312,14 +1312,12 @@
       "tipoff": "2026-11-18T04:00:00+00:00",
       "home": "LAL",
       "away": "CHA",
-      "checked_at": "2026-11-18T02:44:18.696599+00:00",
-      "minutes_before_tipoff": 75.7,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-18T03:41:07.652050+00:00",
+      "minutes_before_tipoff": 18.9,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Luka Doncic",
           "team": "LAL"
@@ -1337,21 +1335,21 @@
           "team": "LAL"
         },
         {
-          "name": "Sandro Mamukelashvili",
+          "name": "Kevon Looney",
           "team": "LAL"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Coby White",
           "team": "CHA"
         },
         {
-          "name": "Sion James",
+          "name": "Brandon Miller",
           "team": "CHA"
         },
         {
-          "name": "Brandon Miller",
+          "name": "Grant Williams",
           "team": "CHA"
         },
         {
@@ -1363,6 +1361,8 @@
           "team": "CHA"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Walker Kessler",
