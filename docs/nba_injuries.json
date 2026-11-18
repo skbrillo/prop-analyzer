@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T22:59:16.483594+00:00",
+  "generated_at": "2026-11-18T23:42:15.144867+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,8 +37,8 @@
   "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
-    "O": 86,
-    "T": 17
+    "O": 90,
+    "T": 13
   },
   "players": [
     {
@@ -164,13 +164,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539786",
+      "injury_record_id": "539824",
       "name": "Peyton Watson",
       "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Back | day-to-day",
-      "date": "2026-11-18T18:24Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Back | out",
+      "date": "2026-11-18T23:17Z",
       "team_match": "feed"
     },
     {
@@ -193,17 +193,6 @@
       "raw_status": "Out",
       "reason": "Back | out",
       "date": "2026-11-17T22:18Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539635",
-      "name": "Sam Merrill",
-      "team": "CLE",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Elbow | out",
-      "date": "2026-11-17T22:15Z",
       "team_match": "feed"
     },
     {
@@ -373,6 +362,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61114",
+      "name": "Al Horford",
+      "team": "GSW",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-18T23:39Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539762",
       "name": "Brandon Williams",
       "team": "GSW",
@@ -380,28 +380,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-18T17:12Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539683",
-      "name": "Draymond Green",
-      "team": "GSW",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Inflammation | Elbow | day-to-day",
-      "date": "2026-11-18T05:49Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539639",
-      "name": "Al Horford",
-      "team": "GSW",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-17T22:21Z",
       "team_match": "feed"
     },
     {
@@ -505,24 +483,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539487",
-      "name": "Yanic Konan Niederhauser",
-      "team": "LAC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Foot | out",
-      "date": "2026-11-17T01:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538813",
+      "injury_record_id": "539822",
       "name": "Brandon Ingram",
       "team": "LAC",
       "status": "O",
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
-      "date": "2026-11-12T21:05Z",
+      "date": "2026-11-18T23:11Z",
       "team_match": "feed"
     },
     {
@@ -648,24 +615,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61077",
+      "injury_record_id": "539823",
       "name": "Zyon Pullin",
       "team": "MIN",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Bruise | Quadriceps | day-to-day",
-      "date": "2026-11-18T15:04Z",
+      "date": "2026-11-18T23:11Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61076",
+      "injury_record_id": "539819",
       "name": "Jonathan Kuminga",
       "team": "MIN",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Shoulder | day-to-day",
-      "date": "2026-11-18T15:04Z",
+      "date": "2026-11-18T23:04Z",
       "team_match": "feed"
     },
     {
@@ -857,6 +824,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "539826",
+      "name": "Dean Wade",
+      "team": "PHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hamstring | out",
+      "date": "2026-11-18T23:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539818",
+      "name": "Tyrese Maxey",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Foot | day-to-day",
+      "date": "2026-11-18T22:59Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539809",
       "name": "Jaylen Brown",
       "team": "PHI",
@@ -864,17 +853,6 @@
       "raw_status": "Out",
       "reason": "Not Specified | Hamstring | out",
       "date": "2026-11-18T22:21Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539780",
-      "name": "Dean Wade",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hamstring | day-to-day",
-      "date": "2026-11-18T18:06Z",
       "team_match": "feed"
     },
     {
@@ -923,13 +901,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61075",
+      "injury_record_id": "539817",
+      "name": "Robert Williams III",
+      "team": "POR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Rest | out",
+      "date": "2026-11-18T22:58Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539815",
       "name": "Deni Avdija",
       "team": "POR",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Foot | day-to-day",
-      "date": "2026-11-18T15:04Z",
+      "date": "2026-11-18T22:54Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539814",
+      "name": "Toumani Camara",
+      "team": "POR",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Rest | day-to-day",
+      "date": "2026-11-18T22:53Z",
       "team_match": "feed"
     },
     {
@@ -1000,13 +1000,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61070",
+      "injury_record_id": "539820",
       "name": "Dylan Harper",
       "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Undisclosed | day-to-day",
-      "date": "2026-11-18T05:07Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-18T23:05Z",
       "team_match": "feed"
     },
     {
@@ -1033,13 +1033,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539776",
+      "injury_record_id": "539816",
       "name": "RJ Barrett",
       "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hamstring | day-to-day",
-      "date": "2026-11-18T17:49Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hamstring | out",
+      "date": "2026-11-18T22:55Z",
       "team_match": "feed"
     },
     {
