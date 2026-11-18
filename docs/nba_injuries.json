@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-18T02:26:13.141009+00:00",
+  "generated_at": "2026-11-18T03:15:59.614353+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 105,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,10 +34,10 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 105,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
-    "O": 86,
+    "O": 87,
     "T": 19
   },
   "players": [
@@ -105,6 +105,17 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-09-21T19:50Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539665",
+      "name": "Grayson Allen",
+      "team": "CHA",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Concussion | out",
+      "date": "2026-11-18T02:19Z",
       "team_match": "feed"
     },
     {
@@ -560,6 +571,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539666",
+      "name": "Walker Kessler",
+      "team": "LAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Lower Leg | out",
+      "date": "2026-11-18T02:57Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539490",
       "name": "Austin Reaves",
       "team": "LAL",
@@ -567,17 +589,6 @@
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
       "date": "2026-11-17T01:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539489",
-      "name": "Walker Kessler",
-      "team": "LAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Lower Leg | out",
-      "date": "2026-11-17T01:10Z",
       "team_match": "feed"
     },
     {
