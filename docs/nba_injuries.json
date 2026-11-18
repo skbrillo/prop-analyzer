@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-18T22:14:08.665346+00:00",
+  "generated_at": "2026-11-18T22:59:16.483594+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 103,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 106,
+  "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
-    "O": 85,
-    "T": 21
+    "O": 86,
+    "T": 17
   },
   "players": [
     {
@@ -138,17 +138,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T22:26Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539620",
-      "name": "Patrick Williams",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Dislocated | Finger | day-to-day",
-      "date": "2026-11-17T21:04Z",
       "team_match": "feed"
     },
     {
@@ -472,35 +461,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539611",
-      "name": "Amen Thompson",
-      "team": "HOU",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Knee | day-to-day",
-      "date": "2026-11-17T20:49Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539640",
-      "name": "T.J. McConnell",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-17T22:24Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539638",
+      "injury_record_id": "539810",
       "name": "Andrew Nembhard",
       "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-17T22:19Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-18T22:27Z",
       "team_match": "feed"
     },
     {
@@ -890,6 +857,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539809",
+      "name": "Jaylen Brown",
+      "team": "PHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Hamstring | out",
+      "date": "2026-11-18T22:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539780",
       "name": "Dean Wade",
       "team": "PHI",
@@ -908,17 +886,6 @@
       "raw_status": "Out",
       "reason": "Fracture | Back | out",
       "date": "2026-11-17T22:12Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539630",
-      "name": "Jaylen Brown",
-      "team": "PHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Not Specified | Hamstring | out",
-      "date": "2026-11-17T22:08Z",
       "team_match": "feed"
     },
     {
