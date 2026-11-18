@@ -1,257 +1,7 @@
 {
-  "generated_at": "2026-11-18T12:36:27.061439+00:00",
+  "generated_at": "2026-11-18T13:55:51.883293+00:00",
   "source": "RotoWire",
   "games": {
-    "401909999": {
-      "game_id": "401909999",
-      "game": "Portland Trail Blazers at Minnesota Timberwolves",
-      "tipoff": "2026-11-17T01:00:00+00:00",
-      "home": "MIN",
-      "away": "POR",
-      "checked_at": "2026-11-17T05:28:55.818351+00:00",
-      "minutes_before_tipoff": -268.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "LaMelo Ball",
-          "team": "MIN"
-        },
-        {
-          "name": "Ayo Dosunmu",
-          "team": "MIN"
-        },
-        {
-          "name": "Jonathan Kuminga",
-          "team": "MIN"
-        },
-        {
-          "name": "Jaden McDaniels",
-          "team": "MIN"
-        },
-        {
-          "name": "Rudy Gobert",
-          "team": "MIN"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Damian Lillard",
-          "team": "POR"
-        },
-        {
-          "name": "Sidy Cissoko",
-          "team": "POR"
-        },
-        {
-          "name": "Toumani Camara",
-          "team": "POR"
-        },
-        {
-          "name": "Deni Avdija",
-          "team": "POR"
-        },
-        {
-          "name": "Donovan Clingan",
-          "team": "POR"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Jaylen Clark",
-          "team": "MIN",
-          "status": "out"
-        },
-        {
-          "name": "Donte DiVincenzo",
-          "team": "MIN",
-          "status": "out"
-        },
-        {
-          "name": "Anthony Edwards",
-          "team": "MIN",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Vit Krejci",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Ja Morant",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Shaedon Sharpe",
-          "team": "POR",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Jaylen Clark",
-          "team": "MIN",
-          "status": "out"
-        },
-        {
-          "name": "Donte DiVincenzo",
-          "team": "MIN",
-          "status": "out"
-        },
-        {
-          "name": "Anthony Edwards",
-          "team": "MIN",
-          "status": "out"
-        },
-        {
-          "name": "Vit Krejci",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Ja Morant",
-          "team": "POR",
-          "status": "out"
-        },
-        {
-          "name": "Shaedon Sharpe",
-          "team": "POR",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401910000": {
-      "game_id": "401910000",
-      "game": "Golden State Warriors at New Orleans Pelicans",
-      "tipoff": "2026-11-17T01:00:00+00:00",
-      "home": "NOP",
-      "away": "GSW",
-      "checked_at": "2026-11-17T05:28:55.818351+00:00",
-      "minutes_before_tipoff": -268.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Jeremiah Fears",
-          "team": "NOP"
-        },
-        {
-          "name": "Herbert Jones",
-          "team": "NOP"
-        },
-        {
-          "name": "Saddiq Bey",
-          "team": "NOP"
-        },
-        {
-          "name": "Zion Williamson",
-          "team": "NOP"
-        },
-        {
-          "name": "Yves Missi",
-          "team": "NOP"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Brandin Podziemski",
-          "team": "GSW"
-        },
-        {
-          "name": "LJ Cryer",
-          "team": "GSW"
-        },
-        {
-          "name": "Yaxel Lendeborg",
-          "team": "GSW"
-        },
-        {
-          "name": "Draymond Green",
-          "team": "GSW"
-        },
-        {
-          "name": "Al Horford",
-          "team": "GSW"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Dejounte Murray",
-          "team": "NOP",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Jimmy Butler",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Stephen Curry",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Moses Moody",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Kristaps Porzingis",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Brandon Williams",
-          "team": "GSW",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Dejounte Murray",
-          "team": "NOP",
-          "status": "out"
-        },
-        {
-          "name": "Jimmy Butler",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Stephen Curry",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Moses Moody",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Kristaps Porzingis",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Brandon Williams",
-          "team": "GSW",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401910001": {
       "game_id": "401910001",
       "game": "Phoenix Suns at Denver Nuggets",
@@ -987,8 +737,8 @@
       "tipoff": "2026-11-19T00:00:00+00:00",
       "home": "CLE",
       "away": "MEM",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 683.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 604.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1112,8 +862,8 @@
       "tipoff": "2026-11-19T00:00:00+00:00",
       "home": "IND",
       "away": "HOU",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 683.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 604.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1217,8 +967,8 @@
       "tipoff": "2026-11-19T00:00:00+00:00",
       "home": "MIA",
       "away": "MIL",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 683.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 604.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1291,8 +1041,8 @@
       "tipoff": "2026-11-19T00:00:00+00:00",
       "home": "ORL",
       "away": "PHI",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 683.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 604.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1426,8 +1176,8 @@
       "tipoff": "2026-11-19T00:30:00+00:00",
       "home": "BKN",
       "away": "CHI",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 713.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 634.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1510,8 +1260,8 @@
       "tipoff": "2026-11-19T00:30:00+00:00",
       "home": "TOR",
       "away": "WAS",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 713.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 634.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1635,8 +1385,8 @@
       "tipoff": "2026-11-19T01:00:00+00:00",
       "home": "NOP",
       "away": "DET",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 743.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 664.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1800,8 +1550,8 @@
       "tipoff": "2026-11-19T01:00:00+00:00",
       "home": "OKC",
       "away": "ATL",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 743.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 664.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1955,8 +1705,8 @@
       "tipoff": "2026-11-19T01:00:00+00:00",
       "home": "DAL",
       "away": "GSW",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 743.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 664.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2100,8 +1850,8 @@
       "tipoff": "2026-11-19T02:30:00+00:00",
       "home": "DEN",
       "away": "BOS",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 833.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 754.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2174,8 +1924,8 @@
       "tipoff": "2026-11-19T03:00:00+00:00",
       "home": "LAL",
       "away": "UTA",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 863.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 784.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2299,8 +2049,8 @@
       "tipoff": "2026-11-19T03:00:00+00:00",
       "home": "SAC",
       "away": "PHX",
-      "checked_at": "2026-11-18T12:36:27.061439+00:00",
-      "minutes_before_tipoff": 863.5,
+      "checked_at": "2026-11-18T13:55:51.883293+00:00",
+      "minutes_before_tipoff": 784.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
