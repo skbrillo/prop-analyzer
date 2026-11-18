@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-18T00:09:23.171578+00:00",
+  "generated_at": "2026-11-18T01:18:21.580847+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 105,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 106,
+  "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "O": 85,
-    "T": 21
+    "O": 86,
+    "T": 19
   },
   "players": [
     {
@@ -791,6 +791,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539656",
+      "name": "Thomas Sorber",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Knee | out",
+      "date": "2026-11-18T00:01Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539653",
       "name": "Jaylin Williams",
       "team": "OKC",
@@ -798,17 +809,6 @@
       "raw_status": "Out",
       "reason": "Spasms | Back | out",
       "date": "2026-11-17T23:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538849",
-      "name": "Thomas Sorber",
-      "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Knee | out",
-      "date": "2026-11-13T01:07Z",
       "team_match": "feed"
     },
     {
@@ -945,13 +945,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539609",
+      "injury_record_id": "539657",
       "name": "Deni Avdija",
       "team": "POR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Foot | day-to-day",
-      "date": "2026-11-17T19:20Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Foot | out",
+      "date": "2026-11-18T00:28Z",
       "team_match": "feed"
     },
     {
@@ -1000,35 +1000,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-60982",
-      "name": "Zach LaVine",
-      "team": "SAC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-16T14:48Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60981",
+      "injury_record_id": "539659",
       "name": "De'Andre Hunter",
       "team": "SAC",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-16T14:48Z",
+      "date": "2026-11-18T00:33Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-60980",
+      "injury_record_id": "539658",
       "name": "Precious Achiuwa",
       "team": "SAC",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-16T14:48Z",
+      "date": "2026-11-18T00:29Z",
       "team_match": "feed"
     },
     {
