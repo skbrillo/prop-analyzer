@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-18T17:35:17.496834+00:00",
+  "generated_at": "2026-11-18T18:27:28.857420+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 107,
+  "player_count": 109,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 107,
+  "players_with_team": 109,
   "players_without_team": 0,
   "status_counts": {
-    "O": 78,
-    "T": 29
+    "O": 81,
+    "T": 28
   },
   "players": [
     {
@@ -648,35 +648,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "539627",
+      "injury_record_id": "539782",
       "name": "Myron Gardner",
       "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-17T21:35Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-18T18:09Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539626",
-      "name": "Nikola Jovic",
-      "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-17T21:34Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539624",
-      "name": "Bam Adebayo",
-      "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hip | day-to-day",
-      "date": "2026-11-17T21:32Z",
+      "injury_record_id": "539783",
+      "name": "Ryan Rollins",
+      "team": "MIL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-18T18:10Z",
       "team_match": "feed"
     },
     {
@@ -857,13 +846,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539623",
+      "injury_record_id": "539769",
       "name": "Izaiyah Nelson",
       "team": "ORL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Surgery | Ankle | out",
-      "date": "2026-11-17T21:22Z",
+      "date": "2026-11-18T17:25Z",
       "team_match": "feed"
     },
     {
@@ -897,6 +886,17 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-10-24T16:47Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539780",
+      "name": "Dean Wade",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hamstring | day-to-day",
+      "date": "2026-11-18T18:06Z",
       "team_match": "feed"
     },
     {
@@ -1084,6 +1084,28 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-10-05T21:43Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539776",
+      "name": "RJ Barrett",
+      "team": "TOR",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hamstring | day-to-day",
+      "date": "2026-11-18T17:49Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539775",
+      "name": "Scottie Barnes",
+      "team": "TOR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Groin | out",
+      "date": "2026-11-18T17:46Z",
       "team_match": "feed"
     },
     {
