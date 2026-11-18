@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-18T05:26:06.817056+00:00",
+  "generated_at": "2026-11-18T06:26:37.186612+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 107,
+  "player_count": 108,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 107,
+  "players_with_team": 108,
   "players_without_team": 0,
   "status_counts": {
     "O": 87,
-    "T": 20
+    "T": 21
   },
   "players": [
     {
@@ -369,6 +369,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T16:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "539683",
+      "name": "Draymond Green",
+      "team": "GSW",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Inflammation | Elbow | day-to-day",
+      "date": "2026-11-18T05:49Z",
       "team_match": "feed"
     },
     {
@@ -1011,6 +1022,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539684",
+      "name": "Maxime Raynaud",
+      "team": "SAC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Dislocated | Knee | out",
+      "date": "2026-11-18T05:54Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539659",
       "name": "De'Andre Hunter",
       "team": "SAC",
@@ -1029,17 +1051,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Ankle | day-to-day",
       "date": "2026-11-18T00:29Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539178",
-      "name": "Maxime Raynaud",
-      "team": "SAC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Dislocated | Knee | out",
-      "date": "2026-11-15T01:00Z",
       "team_match": "feed"
     },
     {
