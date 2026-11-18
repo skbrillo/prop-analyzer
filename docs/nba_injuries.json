@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T20:20:24.179474+00:00",
+  "generated_at": "2026-11-18T21:15:45.966140+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,8 +37,8 @@
   "players_with_team": 109,
   "players_without_team": 0,
   "status_counts": {
-    "O": 84,
-    "T": 25
+    "O": 85,
+    "T": 24
   },
   "players": [
     {
@@ -582,13 +582,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61074",
+      "injury_record_id": "-61095",
       "name": "Austin Reaves",
       "team": "LAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Heel | day-to-day",
-      "date": "2026-11-18T15:02Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Heel | out",
+      "date": "2026-11-18T21:02Z",
       "team_match": "feed"
     },
     {
@@ -1143,13 +1143,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61072",
+      "injury_record_id": "539805",
       "name": "Jaxson Hayes",
       "team": "UTA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Strain | Knee | day-to-day",
-      "date": "2026-11-18T14:59Z",
+      "date": "2026-11-18T21:05Z",
       "team_match": "feed"
     },
     {
