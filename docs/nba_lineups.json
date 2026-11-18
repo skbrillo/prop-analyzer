@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T00:24:09.782976+00:00",
+  "generated_at": "2026-11-18T01:51:09.708038+00:00",
   "source": "RotoWire",
   "games": {
     "401909994": {
@@ -783,8 +783,8 @@
       "tipoff": "2026-11-18T00:30:00+00:00",
       "home": "TOR",
       "away": "NYK",
-      "checked_at": "2026-11-18T00:24:09.782976+00:00",
-      "minutes_before_tipoff": 5.8,
+      "checked_at": "2026-11-18T01:51:09.708038+00:00",
+      "minutes_before_tipoff": -81.2,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -867,14 +867,12 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "MIN",
       "away": "POR",
-      "checked_at": "2026-11-18T00:24:09.782976+00:00",
-      "minutes_before_tipoff": 35.8,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-18T01:51:09.708038+00:00",
+      "minutes_before_tipoff": -51.2,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "LaMelo Ball",
           "team": "MIN"
@@ -884,7 +882,7 @@
           "team": "MIN"
         },
         {
-          "name": "Terrence Shannon",
+          "name": "Cody Williams",
           "team": "MIN"
         },
         {
@@ -896,13 +894,13 @@
           "team": "MIN"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Damian Lillard",
           "team": "POR"
         },
         {
-          "name": "Sidy Cissoko",
+          "name": "Jayson Kent",
           "team": "POR"
         },
         {
@@ -910,7 +908,7 @@
           "team": "POR"
         },
         {
-          "name": "Deni Avdija",
+          "name": "Sidy Cissoko",
           "team": "POR"
         },
         {
@@ -918,6 +916,8 @@
           "team": "POR"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Jaylen Clark",
@@ -946,6 +946,11 @@
         }
       ],
       "away_out": [
+        {
+          "name": "Deni Avdija",
+          "team": "POR",
+          "status": "out"
+        },
         {
           "name": "Vit Krejci",
           "team": "POR",
@@ -994,6 +999,11 @@
           "status": "out"
         },
         {
+          "name": "Deni Avdija",
+          "team": "POR",
+          "status": "out"
+        },
+        {
           "name": "Vit Krejci",
           "team": "POR",
           "status": "out"
@@ -1022,14 +1032,12 @@
       "tipoff": "2026-11-18T01:00:00+00:00",
       "home": "SAS",
       "away": "DET",
-      "checked_at": "2026-11-18T00:24:09.782976+00:00",
-      "minutes_before_tipoff": 35.8,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-18T01:51:09.708038+00:00",
+      "minutes_before_tipoff": -51.2,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "De'Aaron Fox",
           "team": "SAS"
@@ -1051,7 +1059,7 @@
           "team": "SAS"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Cade Cunningham",
           "team": "DET"
@@ -1073,6 +1081,8 @@
           "team": "DET"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Tobias Harris",
@@ -1157,8 +1167,8 @@
       "tipoff": "2026-11-18T03:30:00+00:00",
       "home": "LAC",
       "away": "UTA",
-      "checked_at": "2026-11-18T00:24:09.782976+00:00",
-      "minutes_before_tipoff": 185.8,
+      "checked_at": "2026-11-18T01:51:09.708038+00:00",
+      "minutes_before_tipoff": 98.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1302,8 +1312,8 @@
       "tipoff": "2026-11-18T04:00:00+00:00",
       "home": "LAL",
       "away": "CHA",
-      "checked_at": "2026-11-18T00:24:09.782976+00:00",
-      "minutes_before_tipoff": 215.8,
+      "checked_at": "2026-11-18T01:51:09.708038+00:00",
+      "minutes_before_tipoff": 128.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
