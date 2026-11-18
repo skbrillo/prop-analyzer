@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-18T05:49:28.925325+00:00",
+  "generated_at": "2026-11-18T06:54:59.903724+00:00",
   "source": "RotoWire",
   "games": {
     "401909994": {
@@ -1419,6 +1419,467 @@
           "status": "out"
         }
       ],
+      "source": "RotoWire"
+    },
+    "401910007": {
+      "game_id": "401910007",
+      "game": "Memphis Grizzlies at Cleveland Cavaliers",
+      "tipoff": "2026-11-19T00:00:00+00:00",
+      "home": "CLE",
+      "away": "MEM",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1025.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910008": {
+      "game_id": "401910008",
+      "game": "Houston Rockets at Indiana Pacers",
+      "tipoff": "2026-11-19T00:00:00+00:00",
+      "home": "IND",
+      "away": "HOU",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1025.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910009": {
+      "game_id": "401910009",
+      "game": "Milwaukee Bucks at Miami Heat",
+      "tipoff": "2026-11-19T00:00:00+00:00",
+      "home": "MIA",
+      "away": "MIL",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1025.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910010": {
+      "game_id": "401910010",
+      "game": "Philadelphia 76ers at Orlando Magic",
+      "tipoff": "2026-11-19T00:00:00+00:00",
+      "home": "ORL",
+      "away": "PHI",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1025.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910011": {
+      "game_id": "401910011",
+      "game": "Chicago Bulls at Brooklyn Nets",
+      "tipoff": "2026-11-19T00:30:00+00:00",
+      "home": "BKN",
+      "away": "CHI",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1055.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910012": {
+      "game_id": "401910012",
+      "game": "Washington Wizards at Toronto Raptors",
+      "tipoff": "2026-11-19T00:30:00+00:00",
+      "home": "TOR",
+      "away": "WAS",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1055.0,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Immanuel Quickley",
+          "team": "TOR"
+        },
+        {
+          "name": "RJ Barrett",
+          "team": "TOR"
+        },
+        {
+          "name": "Ja'Kobe Walter",
+          "team": "TOR"
+        },
+        {
+          "name": "Scottie Barnes",
+          "team": "TOR"
+        },
+        {
+          "name": "Collin Murray-Boyles",
+          "team": "TOR"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Nate Bittle",
+          "team": "TOR",
+          "status": "out"
+        },
+        {
+          "name": "Kawhi Leonard",
+          "team": "TOR",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Nate Bittle",
+          "team": "TOR",
+          "status": "out"
+        },
+        {
+          "name": "Kawhi Leonard",
+          "team": "TOR",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910013": {
+      "game_id": "401910013",
+      "game": "Detroit Pistons at New Orleans Pelicans",
+      "tipoff": "2026-11-19T01:00:00+00:00",
+      "home": "NOP",
+      "away": "DET",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1085.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Cade Cunningham",
+          "team": "DET"
+        },
+        {
+          "name": "Daniss Jenkins",
+          "team": "DET"
+        },
+        {
+          "name": "Kevin Huerter",
+          "team": "DET"
+        },
+        {
+          "name": "Ausar Thompson",
+          "team": "DET"
+        },
+        {
+          "name": "John Collins",
+          "team": "DET"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Jalen Duren",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Ronald Holland",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Isaiah Joe",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Taurean Prince",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Duncan Robinson",
+          "team": "DET",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Jalen Duren",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Ronald Holland",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Isaiah Joe",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Taurean Prince",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Duncan Robinson",
+          "team": "DET",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910014": {
+      "game_id": "401910014",
+      "game": "Atlanta Hawks at Oklahoma City Thunder",
+      "tipoff": "2026-11-19T01:00:00+00:00",
+      "home": "OKC",
+      "away": "ATL",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1085.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910016": {
+      "game_id": "401910016",
+      "game": "Golden State Warriors at Dallas Mavericks",
+      "tipoff": "2026-11-19T01:00:00+00:00",
+      "home": "DAL",
+      "away": "GSW",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1085.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910015": {
+      "game_id": "401910015",
+      "game": "Boston Celtics at Denver Nuggets",
+      "tipoff": "2026-11-19T02:30:00+00:00",
+      "home": "DEN",
+      "away": "BOS",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1175.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910017": {
+      "game_id": "401910017",
+      "game": "Utah Jazz at Los Angeles Lakers",
+      "tipoff": "2026-11-19T03:00:00+00:00",
+      "home": "LAL",
+      "away": "UTA",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1205.0,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
+        {
+          "name": "Luka Doncic",
+          "team": "LAL"
+        },
+        {
+          "name": "Quentin Grimes",
+          "team": "LAL"
+        },
+        {
+          "name": "Matisse Thybulle",
+          "team": "LAL"
+        },
+        {
+          "name": "Jake LaRavia",
+          "team": "LAL"
+        },
+        {
+          "name": "Kevon Looney",
+          "team": "LAL"
+        }
+      ],
+      "away_starters": [
+        {
+          "name": "Keyonte George",
+          "team": "UTA"
+        },
+        {
+          "name": "Darryn Peterson",
+          "team": "UTA"
+        },
+        {
+          "name": "Josh Green",
+          "team": "UTA"
+        },
+        {
+          "name": "Ace Bailey",
+          "team": "UTA"
+        },
+        {
+          "name": "Mo Bamba",
+          "team": "UTA"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Walker Kessler",
+          "team": "LAL",
+          "status": "out"
+        },
+        {
+          "name": "Austin Reaves",
+          "team": "LAL",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Jaxson Hayes",
+          "team": "UTA",
+          "status": "out"
+        },
+        {
+          "name": "Jaren Jackson",
+          "team": "UTA",
+          "status": "out"
+        },
+        {
+          "name": "Lauri Markkanen",
+          "team": "UTA",
+          "status": "out"
+        },
+        {
+          "name": "Jusuf Nurkic",
+          "team": "UTA",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Walker Kessler",
+          "team": "LAL",
+          "status": "out"
+        },
+        {
+          "name": "Austin Reaves",
+          "team": "LAL",
+          "status": "out"
+        },
+        {
+          "name": "Jaxson Hayes",
+          "team": "UTA",
+          "status": "out"
+        },
+        {
+          "name": "Jaren Jackson",
+          "team": "UTA",
+          "status": "out"
+        },
+        {
+          "name": "Lauri Markkanen",
+          "team": "UTA",
+          "status": "out"
+        },
+        {
+          "name": "Jusuf Nurkic",
+          "team": "UTA",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910018": {
+      "game_id": "401910018",
+      "game": "Phoenix Suns at Sacramento Kings",
+      "tipoff": "2026-11-19T03:00:00+00:00",
+      "home": "SAC",
+      "away": "PHX",
+      "checked_at": "2026-11-18T06:54:59.903724+00:00",
+      "minutes_before_tipoff": 1205.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
       "source": "RotoWire"
     }
   }
