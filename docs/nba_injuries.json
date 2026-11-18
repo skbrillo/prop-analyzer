@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-18T15:34:01.955937+00:00",
+  "generated_at": "2026-11-18T16:40:37.221995+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 108,
+  "player_count": 107,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 108,
+  "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
     "O": 78,
-    "T": 30
+    "T": 29
   },
   "players": [
     {
@@ -468,17 +468,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Knee | day-to-day",
       "date": "2026-11-17T20:49Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-60983",
-      "name": "Julian Phillips",
-      "team": "HOU",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Wrist | day-to-day",
-      "date": "2026-11-16T15:28Z",
       "team_match": "feed"
     },
     {
