@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T20:32:19.312326+00:00",
+  "generated_at": "2026-11-19T21:27:17.256907+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,8 +38,8 @@
   "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "T": 27,
-    "O": 78
+    "T": 25,
+    "O": 80
   },
   "players": [
     {
@@ -110,13 +110,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61146",
+      "injury_record_id": "-61158",
       "name": "Grant Nelson",
       "team": "BKN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-19T15:45Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-19T21:17Z",
       "team_match": "feed"
     },
     {
@@ -693,13 +693,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "539618",
+      "injury_record_id": "540041",
+      "name": "Trendon Watford",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-19T21:09Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540040",
       "name": "Bennedict Mathurin",
       "team": "NOP",
       "status": "O",
       "raw_status": "Out",
       "reason": "Plantar Fasciitis | Foot | out",
-      "date": "2026-11-17T20:59Z",
+      "date": "2026-11-19T21:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540039",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Tendinitis | Knee | out",
+      "date": "2026-11-19T21:05Z",
       "team_match": "feed"
     },
     {
@@ -711,28 +733,6 @@
       "raw_status": "Out",
       "reason": "Infection | Elbow | out",
       "date": "2026-11-17T20:57Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539614",
-      "name": "Trendon Watford",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-17T20:55Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539612",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Tendinitis | Knee | out",
-      "date": "2026-11-17T20:51Z",
       "team_match": "feed"
     },
     {
@@ -1056,13 +1056,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61136",
+      "injury_record_id": "540042",
       "name": "RJ Barrett",
       "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hamstring | day-to-day",
-      "date": "2026-11-19T14:48Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-19T21:13Z",
       "team_match": "feed"
     },
     {
