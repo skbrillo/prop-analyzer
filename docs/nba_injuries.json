@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-19T02:40:29.012413+00:00",
+  "generated_at": "2026-11-19T03:31:23.742171+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 99,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 99,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "O": 91,
-    "T": 8
+    "O": 92,
+    "T": 9
   },
   "players": [
     {
@@ -406,6 +406,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "539860",
+      "name": "Braden Smith",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-19T02:52Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539810",
       "name": "Andrew Nembhard",
       "team": "IND",
@@ -688,6 +699,17 @@
       "raw_status": "Out",
       "reason": "Ankle | out",
       "date": "2026-11-13T20:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61126",
+      "name": "Alex Caruso",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-19T03:13Z",
       "team_match": "feed"
     },
     {
