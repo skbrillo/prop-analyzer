@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-19T18:32:51.259191+00:00",
+  "generated_at": "2026-11-19T19:41:57.488391+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 104,
+  "player_count": 105,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 104,
+  "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "T": 30,
-    "O": 74
+    "T": 27,
+    "O": 78
   },
   "players": [
     {
@@ -341,24 +341,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61145",
+      "injury_record_id": "540015",
       "name": "Draymond Green",
       "team": "GSW",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Rest | day-to-day",
-      "date": "2026-11-19T14:59Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Rest | out",
+      "date": "2026-11-19T18:51Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61143",
-      "name": "Al Horford",
+      "injury_record_id": "540013",
+      "name": "LJ Cryer",
       "team": "GSW",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Back | day-to-day",
-      "date": "2026-11-19T14:51Z",
+      "date": "2026-11-19T18:46Z",
       "team_match": "feed"
     },
     {
@@ -539,13 +539,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61127",
+      "injury_record_id": "540023",
       "name": "Isaiah Stewart",
       "team": "MEM",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-19T14:44Z",
+      "date": "2026-11-19T19:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540022",
+      "name": "Zach Edey",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Ankle | out",
+      "date": "2026-11-19T19:09Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540021",
+      "name": "Ty Jerome",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hip | out",
+      "date": "2026-11-19T19:07Z",
       "team_match": "feed"
     },
     {
@@ -557,17 +579,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Foot | out",
       "date": "2026-11-17T23:18Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539629",
-      "name": "Ty Jerome",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Hip | out",
-      "date": "2026-11-17T22:07Z",
       "team_match": "feed"
     },
     {
@@ -605,13 +616,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61131",
-      "name": "Ryan Rollins",
+      "injury_record_id": "540026",
+      "name": "Kyle Kuzma",
       "team": "MIL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-19T14:45Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Shoulder | out",
+      "date": "2026-11-19T19:20Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540024",
+      "name": "Myles Turner",
+      "team": "MIL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Shoulder | out",
+      "date": "2026-11-19T19:15Z",
       "team_match": "feed"
     },
     {
@@ -623,17 +645,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Finger | out",
       "date": "2026-11-15T23:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539823",
-      "name": "Zyon Pullin",
-      "team": "MIN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Quadriceps | day-to-day",
-      "date": "2026-11-18T23:11Z",
       "team_match": "feed"
     },
     {
