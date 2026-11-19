@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T05:52:51.264089+00:00",
+  "generated_at": "2026-11-19T07:03:27.876818+00:00",
   "source": "RotoWire",
   "games": {
     "401910002": {
@@ -2152,6 +2152,274 @@
           "status": "out"
         }
       ],
+      "source": "RotoWire"
+    },
+    "401910019": {
+      "game_id": "401910019",
+      "game": "Golden State Warriors at Memphis Grizzlies",
+      "tipoff": "2026-11-20T01:00:00+00:00",
+      "home": "MEM",
+      "away": "GSW",
+      "checked_at": "2026-11-19T07:03:27.876818+00:00",
+      "minutes_before_tipoff": 1076.5,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
+        {
+          "name": "Cam Spencer",
+          "team": "MEM"
+        },
+        {
+          "name": "Cedric Coward",
+          "team": "MEM"
+        },
+        {
+          "name": "Jaylen Wells",
+          "team": "MEM"
+        },
+        {
+          "name": "Cameron Boozer",
+          "team": "MEM"
+        },
+        {
+          "name": "Zach Edey",
+          "team": "MEM"
+        }
+      ],
+      "away_starters": [
+        {
+          "name": "LJ Cryer",
+          "team": "GSW"
+        },
+        {
+          "name": "Brandin Podziemski",
+          "team": "GSW"
+        },
+        {
+          "name": "Yaxel Lendeborg",
+          "team": "GSW"
+        },
+        {
+          "name": "Draymond Green",
+          "team": "GSW"
+        },
+        {
+          "name": "Charles Bassey",
+          "team": "GSW"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "GG Jackson",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Ty Jerome",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Scotty Pippen",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Isaiah Stewart",
+          "team": "MEM",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Jimmy Butler",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Stephen Curry",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Al Horford",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Moses Moody",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Kristaps Porzingis",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Brandon Williams",
+          "team": "GSW",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "GG Jackson",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Ty Jerome",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Scotty Pippen",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Isaiah Stewart",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Jimmy Butler",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Stephen Curry",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Al Horford",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Moses Moody",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Kristaps Porzingis",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Brandon Williams",
+          "team": "GSW",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910020": {
+      "game_id": "401910020",
+      "game": "Portland Trail Blazers at Milwaukee Bucks",
+      "tipoff": "2026-11-20T01:00:00+00:00",
+      "home": "MIL",
+      "away": "POR",
+      "checked_at": "2026-11-19T07:03:27.876818+00:00",
+      "minutes_before_tipoff": 1076.5,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Brayden Burries",
+          "team": "MIL"
+        },
+        {
+          "name": "Tyler Herro",
+          "team": "MIL"
+        },
+        {
+          "name": "Kyle Kuzma",
+          "team": "MIL"
+        },
+        {
+          "name": "Jericho Sims",
+          "team": "MIL"
+        },
+        {
+          "name": "Myles Turner",
+          "team": "MIL"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Ousmane Dieng",
+          "team": "MIL",
+          "status": "out"
+        },
+        {
+          "name": "Ryan Rollins",
+          "team": "MIL",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Ousmane Dieng",
+          "team": "MIL",
+          "status": "out"
+        },
+        {
+          "name": "Ryan Rollins",
+          "team": "MIL",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910021": {
+      "game_id": "401910021",
+      "game": "New York Knicks at Minnesota Timberwolves",
+      "tipoff": "2026-11-20T01:00:00+00:00",
+      "home": "MIN",
+      "away": "NYK",
+      "checked_at": "2026-11-19T07:03:27.876818+00:00",
+      "minutes_before_tipoff": 1076.5,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910022": {
+      "game_id": "401910022",
+      "game": "LA Clippers at San Antonio Spurs",
+      "tipoff": "2026-11-20T01:00:00+00:00",
+      "home": "SAS",
+      "away": "LAC",
+      "checked_at": "2026-11-19T07:03:27.876818+00:00",
+      "minutes_before_tipoff": 1076.5,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
       "source": "RotoWire"
     }
   }
