@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-19T01:55:03.002771+00:00",
+  "generated_at": "2026-11-19T02:40:29.012413+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 100,
+  "player_count": 99,
   "teams_reported": [
     "ATL",
     "CHA",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 100,
+  "players_with_team": 99,
   "players_without_team": 0,
   "status_counts": {
     "O": 91,
-    "T": 9
+    "T": 8
   },
   "players": [
     {
@@ -1040,17 +1040,6 @@
       "raw_status": "Out",
       "reason": "Fracture | Foot | out",
       "date": "2026-11-14T21:59Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539805",
-      "name": "Jaxson Hayes",
-      "team": "UTA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Strain | Knee | day-to-day",
-      "date": "2026-11-18T21:05Z",
       "team_match": "feed"
     },
     {
