@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-19T22:15:11.568823+00:00",
+  "generated_at": "2026-11-19T23:08:14.286613+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 108,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,33 +35,33 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 106,
+  "players_with_team": 108,
   "players_without_team": 0,
   "status_counts": {
-    "T": 20,
-    "O": 86
+    "O": 88,
+    "T": 20
   },
   "players": [
     {
       "id": "",
-      "injury_record_id": "-61142",
+      "injury_record_id": "540056",
       "name": "Jock Landale",
       "team": "ATL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Inflammation | Hip | day-to-day",
-      "date": "2026-11-19T14:50Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Hip | out",
+      "date": "2026-11-19T22:07Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61141",
+      "injury_record_id": "540055",
       "name": "Kingston Flemings",
       "team": "ATL",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Strain | Back | day-to-day",
-      "date": "2026-11-19T14:50Z",
+      "date": "2026-11-19T22:05Z",
       "team_match": "feed"
     },
     {
@@ -121,6 +121,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540061",
+      "name": "Grant Williams",
+      "team": "CHA",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-19T22:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540053",
       "name": "Grayson Allen",
       "team": "CHA",
@@ -154,13 +165,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61169",
+      "injury_record_id": "540058",
       "name": "Noa Essengue",
       "team": "CHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Wrist | day-to-day",
-      "date": "2026-11-19T22:11Z",
+      "date": "2026-11-19T22:12Z",
       "team_match": "feed"
     },
     {
@@ -462,24 +473,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61130",
+      "injury_record_id": "540059",
+      "name": "T.J. McConnell",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Strain | Hamstring | day-to-day",
+      "date": "2026-11-19T22:14Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540057",
       "name": "Andrew Nembhard",
       "team": "IND",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-19T14:45Z",
+      "date": "2026-11-19T22:07Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539860",
+      "injury_record_id": "540054",
       "name": "Braden Smith",
       "team": "IND",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-19T02:52Z",
+      "date": "2026-11-19T22:05Z",
       "team_match": "feed"
     },
     {
