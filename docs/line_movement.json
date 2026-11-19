@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-19T18:50:43.334734+00:00",
+  "updated_at": "2026-11-19T22:48:26.248145+00:00",
   "baseline": {
     "2026-11-11|baylor scheierman|points": {
       "game_date": "2026-11-11",
@@ -19390,6 +19390,206 @@
       "over_odds": 114,
       "under_odds": -151,
       "captured_at": "2026-11-19T18:50:43.334734+00:00"
+    },
+    "2026-11-19|cam spencer|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Cam Spencer",
+      "team": "Memphis Grizzlies",
+      "market": "rebounds",
+      "line": 3.5,
+      "over_odds": 124,
+      "under_odds": -163,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|cedric coward|points": {
+      "game_date": "2026-11-19",
+      "player": "Cedric Coward",
+      "team": "Memphis Grizzlies",
+      "market": "points",
+      "line": 15.5,
+      "over_odds": -102,
+      "under_odds": -125,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|jaden mcdaniels|assists": {
+      "game_date": "2026-11-19",
+      "player": "Jaden McDaniels",
+      "team": "Minnesota Timberwolves",
+      "market": "assists",
+      "line": 3.5,
+      "over_odds": 120,
+      "under_odds": -159,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|miles mcbride|points": {
+      "game_date": "2026-11-19",
+      "player": "Miles McBride",
+      "team": "New York Knicks",
+      "market": "points",
+      "line": 5.5,
+      "over_odds": -106,
+      "under_odds": -121,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|brook lopez|assists": {
+      "game_date": "2026-11-19",
+      "player": "Brook Lopez",
+      "team": "LA Clippers",
+      "market": "assists",
+      "line": 1.5,
+      "over_odds": -122,
+      "under_odds": -107,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|brook lopez|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Brook Lopez",
+      "team": "LA Clippers",
+      "market": "rebounds",
+      "line": 4.5,
+      "over_odds": -126,
+      "under_odds": -104,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|darius garland|points": {
+      "game_date": "2026-11-19",
+      "player": "Darius Garland",
+      "team": "LA Clippers",
+      "market": "points",
+      "line": 19.5,
+      "over_odds": -103,
+      "under_odds": -124,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|darius garland|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Darius Garland",
+      "team": "LA Clippers",
+      "market": "rebounds",
+      "line": 2.5,
+      "over_odds": 100,
+      "under_odds": -132,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|de'aaron fox|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "De'Aaron Fox",
+      "team": "San Antonio Spurs",
+      "market": "rebounds",
+      "line": 3.5,
+      "over_odds": -158,
+      "under_odds": 120,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|julian champagnie|assists": {
+      "game_date": "2026-11-19",
+      "player": "Julian Champagnie",
+      "team": "San Antonio Spurs",
+      "market": "assists",
+      "line": 1.5,
+      "over_odds": -105,
+      "under_odds": -126,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|keaton wagler|assists": {
+      "game_date": "2026-11-19",
+      "player": "Keaton Wagler",
+      "team": "LA Clippers",
+      "market": "assists",
+      "line": 2.5,
+      "over_odds": -101,
+      "under_odds": -130,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|keaton wagler|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Keaton Wagler",
+      "team": "LA Clippers",
+      "market": "rebounds",
+      "line": 2.5,
+      "over_odds": -152,
+      "under_odds": 115,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|keldon johnson|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Keldon Johnson",
+      "team": "San Antonio Spurs",
+      "market": "rebounds",
+      "line": 5.5,
+      "over_odds": 109,
+      "under_odds": -143,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|rui hachimura|assists": {
+      "game_date": "2026-11-19",
+      "player": "Rui Hachimura",
+      "team": "LA Clippers",
+      "market": "assists",
+      "line": 1.5,
+      "over_odds": 152,
+      "under_odds": -203,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|victor wembanyama|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Victor Wembanyama",
+      "team": "San Antonio Spurs",
+      "market": "rebounds",
+      "line": 11.5,
+      "over_odds": -127,
+      "under_odds": -104,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|kel'el ware|points": {
+      "game_date": "2026-11-19",
+      "player": "Kel'el Ware",
+      "team": "Milwaukee Bucks",
+      "market": "points",
+      "line": 10.5,
+      "over_odds": -127,
+      "under_odds": -101,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|kel'el ware|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Kel'el Ware",
+      "team": "Milwaukee Bucks",
+      "market": "rebounds",
+      "line": 7.5,
+      "over_odds": -140,
+      "under_odds": 106,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|ryan rollins|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Ryan Rollins",
+      "team": "Milwaukee Bucks",
+      "market": "rebounds",
+      "line": 3.5,
+      "over_odds": -155,
+      "under_odds": 118,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|sidy cissoko|points": {
+      "game_date": "2026-11-19",
+      "player": "Sidy Cissoko",
+      "team": "Portland Trail Blazers",
+      "market": "points",
+      "line": 8.5,
+      "over_odds": 107,
+      "under_odds": -136,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|sidy cissoko|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Sidy Cissoko",
+      "team": "Portland Trail Blazers",
+      "market": "rebounds",
+      "line": 3.5,
+      "over_odds": -120,
+      "under_odds": -110,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     }
   },
   "current": {
@@ -29999,9 +30199,9 @@
       "team": "Golden State Warriors",
       "market": "rebounds",
       "line": 4.5,
-      "over_odds": -129,
-      "under_odds": -102,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "over_odds": -126,
+      "under_odds": -104,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|cameron boozer|points": {
       "game_date": "2026-11-19",
@@ -30088,10 +30288,10 @@
       "player": "Mikal Bridges",
       "team": "New York Knicks",
       "market": "points",
-      "line": 10.5,
-      "over_odds": 102,
-      "under_odds": -131,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "line": 9.5,
+      "over_odds": -116,
+      "under_odds": -110,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|og anunoby|rebounds": {
       "game_date": "2026-11-19",
@@ -30118,10 +30318,10 @@
       "player": "Rudy Gobert",
       "team": "Minnesota Timberwolves",
       "market": "rebounds",
-      "line": 10.5,
-      "over_odds": 108,
-      "under_odds": -143,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "line": 9.5,
+      "over_odds": -130,
+      "under_odds": -101,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|terrence shannon jr.|points": {
       "game_date": "2026-11-19",
@@ -30149,19 +30349,19 @@
       "team": "LA Clippers",
       "market": "assists",
       "line": 6.5,
-      "over_odds": -132,
-      "under_odds": 100,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "over_odds": -117,
+      "under_odds": -113,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|de'aaron fox|points": {
       "game_date": "2026-11-19",
       "player": "De'Aaron Fox",
       "team": "San Antonio Spurs",
       "market": "points",
-      "line": 14.5,
+      "line": 15.5,
       "over_odds": -111,
       "under_odds": -114,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|derrick jones jr.|rebounds": {
       "game_date": "2026-11-19",
@@ -30169,9 +30369,9 @@
       "team": "LA Clippers",
       "market": "rebounds",
       "line": 3.5,
-      "over_odds": -147,
-      "under_odds": 112,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "over_odds": -124,
+      "under_odds": -106,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|julian champagnie|points": {
       "game_date": "2026-11-19",
@@ -30179,19 +30379,19 @@
       "team": "San Antonio Spurs",
       "market": "points",
       "line": 10.5,
-      "over_odds": -121,
-      "under_odds": -106,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "over_odds": -109,
+      "under_odds": -117,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|keaton wagler|points": {
       "game_date": "2026-11-19",
       "player": "Keaton Wagler",
       "team": "LA Clippers",
       "market": "points",
-      "line": 10.5,
-      "over_odds": -108,
-      "under_odds": -118,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "line": 9.5,
+      "over_odds": -123,
+      "under_odds": -104,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|keldon johnson|points": {
       "game_date": "2026-11-19",
@@ -30199,9 +30399,9 @@
       "team": "San Antonio Spurs",
       "market": "points",
       "line": 11.5,
-      "over_odds": -118,
-      "under_odds": -108,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "over_odds": -103,
+      "under_odds": -124,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|kris dunn|assists": {
       "game_date": "2026-11-19",
@@ -30229,9 +30429,9 @@
       "team": "LA Clippers",
       "market": "assists",
       "line": 2.5,
-      "over_odds": 129,
-      "under_odds": -170,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "over_odds": 116,
+      "under_odds": -152,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|max strus|points": {
       "game_date": "2026-11-19",
@@ -30239,9 +30439,9 @@
       "team": "LA Clippers",
       "market": "points",
       "line": 7.5,
-      "over_odds": -127,
-      "under_odds": 100,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "over_odds": -120,
+      "under_odds": -106,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|max strus|rebounds": {
       "game_date": "2026-11-19",
@@ -30249,9 +30449,9 @@
       "team": "LA Clippers",
       "market": "rebounds",
       "line": 3.5,
-      "over_odds": 101,
-      "under_odds": -133,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "over_odds": 104,
+      "under_odds": -137,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|rui hachimura|points": {
       "game_date": "2026-11-19",
@@ -30268,10 +30468,10 @@
       "player": "Stephon Castle",
       "team": "San Antonio Spurs",
       "market": "assists",
-      "line": 7.5,
-      "over_odds": 106,
-      "under_odds": -140,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "line": 6.5,
+      "over_odds": -152,
+      "under_odds": 115,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|stephon castle|points": {
       "game_date": "2026-11-19",
@@ -30279,9 +30479,9 @@
       "team": "San Antonio Spurs",
       "market": "points",
       "line": 17.5,
-      "over_odds": -119,
-      "under_odds": -107,
-      "captured_at": "2026-11-19T11:45:18.129805+00:00"
+      "over_odds": -126,
+      "under_odds": -101,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|brayden burries|points": {
       "game_date": "2026-11-19",
@@ -30309,9 +30509,9 @@
       "team": "Portland Trail Blazers",
       "market": "points",
       "line": 13.5,
-      "over_odds": -113,
-      "under_odds": -113,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "over_odds": -121,
+      "under_odds": -105,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|kyle kuzma|assists": {
       "game_date": "2026-11-19",
@@ -30359,9 +30559,9 @@
       "team": "Golden State Warriors",
       "market": "assists",
       "line": 4.5,
-      "over_odds": 107,
-      "under_odds": -141,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "over_odds": -105,
+      "under_odds": -125,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|brandin podziemski|points": {
       "game_date": "2026-11-19",
@@ -30389,19 +30589,19 @@
       "team": "Golden State Warriors",
       "market": "points",
       "line": 8.5,
-      "over_odds": -111,
-      "under_odds": -115,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "over_odds": -121,
+      "under_odds": -106,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|charles bassey|rebounds": {
       "game_date": "2026-11-19",
       "player": "Charles Bassey",
       "team": "Golden State Warriors",
       "market": "rebounds",
-      "line": 6.5,
-      "over_odds": -144,
-      "under_odds": 109,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "line": 7.5,
+      "over_odds": 108,
+      "under_odds": -143,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|gui santos|assists": {
       "game_date": "2026-11-19",
@@ -30429,9 +30629,9 @@
       "team": "Memphis Grizzlies",
       "market": "rebounds",
       "line": 2.5,
-      "over_odds": -155,
-      "under_odds": 117,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "over_odds": -160,
+      "under_odds": 121,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|yaxel lendeborg|assists": {
       "game_date": "2026-11-19",
@@ -30448,10 +30648,10 @@
       "player": "Yaxel Lendeborg",
       "team": "Golden State Warriors",
       "market": "points",
-      "line": 22.5,
-      "over_odds": -105,
-      "under_odds": -121,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "line": 21.5,
+      "over_odds": -123,
+      "under_odds": -104,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|yaxel lendeborg|rebounds": {
       "game_date": "2026-11-19",
@@ -30469,9 +30669,9 @@
       "team": "Minnesota Timberwolves",
       "market": "assists",
       "line": 3.5,
-      "over_odds": -167,
-      "under_odds": 126,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "over_odds": -153,
+      "under_odds": 116,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|ayo dosunmu|rebounds": {
       "game_date": "2026-11-19",
@@ -30578,10 +30778,10 @@
       "player": "Damian Lillard",
       "team": "Portland Trail Blazers",
       "market": "points",
-      "line": 22.5,
-      "over_odds": -115,
-      "under_odds": -111,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "line": 23.5,
+      "over_odds": -107,
+      "under_odds": -119,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|deni avdija|assists": {
       "game_date": "2026-11-19",
@@ -30598,10 +30798,10 @@
       "player": "Deni Avdija",
       "team": "Portland Trail Blazers",
       "market": "points",
-      "line": 24.5,
-      "over_odds": -109,
-      "under_odds": -117,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "line": 23.5,
+      "over_odds": -121,
+      "under_odds": -105,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|deni avdija|rebounds": {
       "game_date": "2026-11-19",
@@ -30701,7 +30901,7 @@
       "line": 11.5,
       "over_odds": -102,
       "under_odds": -125,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|scoot henderson|rebounds": {
       "game_date": "2026-11-19",
@@ -30719,9 +30919,9 @@
       "team": "Portland Trail Blazers",
       "market": "points",
       "line": 12.5,
-      "over_odds": -128,
-      "under_odds": 100,
-      "captured_at": "2026-11-19T18:50:43.334734+00:00"
+      "over_odds": -122,
+      "under_odds": -104,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     },
     "2026-11-19|toumani camara|rebounds": {
       "game_date": "2026-11-19",
@@ -30762,6 +30962,206 @@
       "over_odds": 114,
       "under_odds": -151,
       "captured_at": "2026-11-19T18:50:43.334734+00:00"
+    },
+    "2026-11-19|cam spencer|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Cam Spencer",
+      "team": "Memphis Grizzlies",
+      "market": "rebounds",
+      "line": 3.5,
+      "over_odds": 124,
+      "under_odds": -163,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|cedric coward|points": {
+      "game_date": "2026-11-19",
+      "player": "Cedric Coward",
+      "team": "Memphis Grizzlies",
+      "market": "points",
+      "line": 15.5,
+      "over_odds": -102,
+      "under_odds": -125,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|jaden mcdaniels|assists": {
+      "game_date": "2026-11-19",
+      "player": "Jaden McDaniels",
+      "team": "Minnesota Timberwolves",
+      "market": "assists",
+      "line": 3.5,
+      "over_odds": 120,
+      "under_odds": -159,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|miles mcbride|points": {
+      "game_date": "2026-11-19",
+      "player": "Miles McBride",
+      "team": "New York Knicks",
+      "market": "points",
+      "line": 5.5,
+      "over_odds": -106,
+      "under_odds": -121,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|brook lopez|assists": {
+      "game_date": "2026-11-19",
+      "player": "Brook Lopez",
+      "team": "LA Clippers",
+      "market": "assists",
+      "line": 1.5,
+      "over_odds": -122,
+      "under_odds": -107,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|brook lopez|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Brook Lopez",
+      "team": "LA Clippers",
+      "market": "rebounds",
+      "line": 4.5,
+      "over_odds": -126,
+      "under_odds": -104,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|darius garland|points": {
+      "game_date": "2026-11-19",
+      "player": "Darius Garland",
+      "team": "LA Clippers",
+      "market": "points",
+      "line": 19.5,
+      "over_odds": -103,
+      "under_odds": -124,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|darius garland|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Darius Garland",
+      "team": "LA Clippers",
+      "market": "rebounds",
+      "line": 2.5,
+      "over_odds": 100,
+      "under_odds": -132,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|de'aaron fox|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "De'Aaron Fox",
+      "team": "San Antonio Spurs",
+      "market": "rebounds",
+      "line": 3.5,
+      "over_odds": -158,
+      "under_odds": 120,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|julian champagnie|assists": {
+      "game_date": "2026-11-19",
+      "player": "Julian Champagnie",
+      "team": "San Antonio Spurs",
+      "market": "assists",
+      "line": 1.5,
+      "over_odds": -105,
+      "under_odds": -126,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|keaton wagler|assists": {
+      "game_date": "2026-11-19",
+      "player": "Keaton Wagler",
+      "team": "LA Clippers",
+      "market": "assists",
+      "line": 2.5,
+      "over_odds": -101,
+      "under_odds": -130,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|keaton wagler|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Keaton Wagler",
+      "team": "LA Clippers",
+      "market": "rebounds",
+      "line": 2.5,
+      "over_odds": -152,
+      "under_odds": 115,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|keldon johnson|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Keldon Johnson",
+      "team": "San Antonio Spurs",
+      "market": "rebounds",
+      "line": 5.5,
+      "over_odds": 109,
+      "under_odds": -143,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|rui hachimura|assists": {
+      "game_date": "2026-11-19",
+      "player": "Rui Hachimura",
+      "team": "LA Clippers",
+      "market": "assists",
+      "line": 1.5,
+      "over_odds": 152,
+      "under_odds": -203,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|victor wembanyama|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Victor Wembanyama",
+      "team": "San Antonio Spurs",
+      "market": "rebounds",
+      "line": 11.5,
+      "over_odds": -127,
+      "under_odds": -104,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|kel'el ware|points": {
+      "game_date": "2026-11-19",
+      "player": "Kel'el Ware",
+      "team": "Milwaukee Bucks",
+      "market": "points",
+      "line": 10.5,
+      "over_odds": -127,
+      "under_odds": -101,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|kel'el ware|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Kel'el Ware",
+      "team": "Milwaukee Bucks",
+      "market": "rebounds",
+      "line": 7.5,
+      "over_odds": -140,
+      "under_odds": 106,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|ryan rollins|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Ryan Rollins",
+      "team": "Milwaukee Bucks",
+      "market": "rebounds",
+      "line": 3.5,
+      "over_odds": -155,
+      "under_odds": 118,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|sidy cissoko|points": {
+      "game_date": "2026-11-19",
+      "player": "Sidy Cissoko",
+      "team": "Portland Trail Blazers",
+      "market": "points",
+      "line": 8.5,
+      "over_odds": 107,
+      "under_odds": -136,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
+    },
+    "2026-11-19|sidy cissoko|rebounds": {
+      "game_date": "2026-11-19",
+      "player": "Sidy Cissoko",
+      "team": "Portland Trail Blazers",
+      "market": "rebounds",
+      "line": 3.5,
+      "over_odds": -120,
+      "under_odds": -110,
+      "captured_at": "2026-11-19T22:48:26.248145+00:00"
     }
   }
 }
