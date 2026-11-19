@@ -1,11 +1,12 @@
 {
-  "generated_at": "2026-11-19T15:36:43.160117+00:00",
+  "generated_at": "2026-11-19T16:40:49.620937+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 102,
+  "player_count": 104,
   "teams_reported": [
     "ATL",
+    "BKN",
     "CHA",
     "CHI",
     "CLE",
@@ -33,11 +34,11 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 27,
-  "players_with_team": 102,
+  "teams_count": 28,
+  "players_with_team": 104,
   "players_without_team": 0,
   "status_counts": {
-    "T": 28,
+    "T": 30,
     "O": 74
   },
   "players": [
@@ -105,6 +106,17 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-09-21T19:50Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61146",
+      "name": "Grant Nelson",
+      "team": "BKN",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-19T15:45Z",
       "team_match": "feed"
     },
     {
@@ -259,6 +271,17 @@
       "raw_status": "Out",
       "reason": "Sprain | Knee | out",
       "date": "2026-10-17T00:52Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61148",
+      "name": "Ugonna Onyenso",
+      "team": "DET",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Foot | day-to-day",
+      "date": "2026-11-19T16:15Z",
       "team_match": "feed"
     },
     {
