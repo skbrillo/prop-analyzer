@@ -1,91 +1,7 @@
 {
-  "generated_at": "2026-11-19T11:39:14.367523+00:00",
+  "generated_at": "2026-11-19T12:46:03.567891+00:00",
   "source": "RotoWire",
   "games": {
-    "401910002": {
-      "game_id": "401910002",
-      "game": "New York Knicks at Toronto Raptors",
-      "tipoff": "2026-11-18T00:30:00+00:00",
-      "home": "TOR",
-      "away": "NYK",
-      "checked_at": "2026-11-18T05:49:28.925325+00:00",
-      "minutes_before_tipoff": -319.5,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Immanuel Quickley",
-          "team": "TOR"
-        },
-        {
-          "name": "RJ Barrett",
-          "team": "TOR"
-        },
-        {
-          "name": "Ja'Kobe Walter",
-          "team": "TOR"
-        },
-        {
-          "name": "Scottie Barnes",
-          "team": "TOR"
-        },
-        {
-          "name": "Collin Murray-Boyles",
-          "team": "TOR"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Jalen Brunson",
-          "team": "NYK"
-        },
-        {
-          "name": "Mikal Bridges",
-          "team": "NYK"
-        },
-        {
-          "name": "Josh Hart",
-          "team": "NYK"
-        },
-        {
-          "name": "OG Anunoby",
-          "team": "NYK"
-        },
-        {
-          "name": "Karl-Anthony Towns",
-          "team": "NYK"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Nate Bittle",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Kawhi Leonard",
-          "team": "TOR",
-          "status": "out"
-        }
-      ],
-      "away_out": [],
-      "out_players": [
-        {
-          "name": "Nate Bittle",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Kawhi Leonard",
-          "team": "TOR",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401910003": {
       "game_id": "401910003",
       "game": "Portland Trail Blazers at Minnesota Timberwolves",
@@ -2160,8 +2076,8 @@
       "tipoff": "2026-11-20T01:00:00+00:00",
       "home": "MEM",
       "away": "GSW",
-      "checked_at": "2026-11-19T11:39:14.367523+00:00",
-      "minutes_before_tipoff": 800.8,
+      "checked_at": "2026-11-19T12:46:03.567891+00:00",
+      "minutes_before_tipoff": 733.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2325,8 +2241,8 @@
       "tipoff": "2026-11-20T01:00:00+00:00",
       "home": "MIL",
       "away": "POR",
-      "checked_at": "2026-11-19T11:39:14.367523+00:00",
-      "minutes_before_tipoff": 800.8,
+      "checked_at": "2026-11-19T12:46:03.567891+00:00",
+      "minutes_before_tipoff": 733.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2450,8 +2366,8 @@
       "tipoff": "2026-11-20T01:00:00+00:00",
       "home": "MIN",
       "away": "NYK",
-      "checked_at": "2026-11-19T11:39:14.367523+00:00",
-      "minutes_before_tipoff": 800.8,
+      "checked_at": "2026-11-19T12:46:03.567891+00:00",
+      "minutes_before_tipoff": 733.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2544,8 +2460,8 @@
       "tipoff": "2026-11-20T01:00:00+00:00",
       "home": "SAS",
       "away": "LAC",
-      "checked_at": "2026-11-19T11:39:14.367523+00:00",
-      "minutes_before_tipoff": 800.8,
+      "checked_at": "2026-11-19T12:46:03.567891+00:00",
+      "minutes_before_tipoff": 733.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
