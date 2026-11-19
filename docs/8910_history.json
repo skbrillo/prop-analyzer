@@ -1888,7 +1888,42 @@
       "team_recovered_from_logs": false,
       "verified_team": null,
       "verified_opponent": null
+    },
+    "2026-11-19|scoothenderson|points": {
+      "prediction_id": "01b50265ccd753944a1e268a",
+      "saved_at": "2026-11-19T18:50:43.544408+00:00",
+      "game_date": "2026-11-19",
+      "event_id": "07472f248dc4339c8cfd43940945b708",
+      "game_time": "2026-11-20T01:00:00+00:00",
+      "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
+      "player": "Scoot Henderson",
+      "team": "POR",
+      "opponent": "MIL",
+      "market": "Points",
+      "side": "Under",
+      "line": "11.5",
+      "odds": "-125",
+      "projection": "9.06",
+      "probability": "0.6177",
+      "model_ev": "0.1119",
+      "last10": "8",
+      "model_version": "v7-live-injury-screen-experimental",
+      "bucket": 8,
+      "locked_at": "2026-11-19T18:50:44.321516+00:00",
+      "status": "pending",
+      "actual": null,
+      "actual_minutes": null,
+      "outcome": null,
+      "profit": null,
+      "stake": null,
+      "reason": "Waiting for game completion buffer",
+      "diagnostic_category": "waiting",
+      "diagnostic_teams_found": [],
+      "diagnostic_match_count": 0,
+      "team_recovered_from_logs": false,
+      "verified_team": null,
+      "verified_opponent": null
     }
   },
-  "updated_at": "2026-11-19T11:45:19.223780+00:00"
+  "updated_at": "2026-11-19T18:50:44.321516+00:00"
 }

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T11:45:19.966885+00:00",
+  "generated_at": "2026-11-19T18:50:45.064477+00:00",
   "model": "Version 4 - Smarter Minutes",
   "method": "Paired historical walk-forward comparison of Version 3 and Version 4 minutes projections. Both versions use identical earlier-game data.",
   "markets": {
@@ -11,8 +11,8 @@
     },
     "rebounds": {
       "predictions_tested": 988,
-      "mean_absolute_error": 1.984,
-      "root_mean_squared_error": 2.554,
+      "mean_absolute_error": 1.982,
+      "root_mean_squared_error": 2.553,
       "mean_signed_error": 0.106
     },
     "assists": {
@@ -43,14 +43,14 @@
     "rebounds": {
       "version3": {
         "predictions_tested": 988,
-        "mean_absolute_error": 1.992,
-        "root_mean_squared_error": 2.562,
+        "mean_absolute_error": 1.99,
+        "root_mean_squared_error": 2.56,
         "mean_signed_error": 0.111
       },
       "version4": {
         "predictions_tested": 988,
-        "mean_absolute_error": 1.984,
-        "root_mean_squared_error": 2.554,
+        "mean_absolute_error": 1.982,
+        "root_mean_squared_error": 2.553,
         "mean_signed_error": 0.106
       },
       "winner": "Version 4",
