@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T09:59:29.731641+00:00",
+  "generated_at": "2026-11-19T11:45:19.541693+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
@@ -2188,7 +2188,126 @@
       ]
     }
   },
-  "preview_months": {},
+  "preview_months": {
+    "2026-11": {
+      "summary": {
+        "picks": 5,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "dnp": 0,
+        "invalid": 0,
+        "pending": 5,
+        "settled": 0,
+        "win_rate": null,
+        "roi": null,
+        "profit_units": 0
+      },
+      "days": [
+        {
+          "date": "2026-11-19",
+          "picks": 5,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 5,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        }
+      ],
+      "picks": [
+        {
+          "date": "2026-11-19",
+          "rank": 1,
+          "player": "Keldon Johnson",
+          "team": "San Antonio Spurs",
+          "opponent": "LA Clippers",
+          "market": "Points",
+          "side": "Under",
+          "line": 11.5,
+          "odds": -108,
+          "edge_score": 75.8,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-19T11:45:19.312433+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-19",
+          "rank": 2,
+          "player": "Gui Santos",
+          "team": "Golden State Warriors",
+          "opponent": "Memphis Grizzlies",
+          "market": "Points",
+          "side": "Under",
+          "line": 7.5,
+          "odds": 102,
+          "edge_score": 64.4,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-19T11:45:19.312433+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-19",
+          "rank": 3,
+          "player": "Keaton Wagler",
+          "team": "Los Angeles Clippers",
+          "opponent": "San Antonio Spurs",
+          "market": "Points",
+          "side": "Over",
+          "line": 10.5,
+          "odds": -108,
+          "edge_score": 56.4,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-19T11:45:19.312433+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-19",
+          "rank": 4,
+          "player": "Kyle Kuzma",
+          "team": "Milwaukee Bucks",
+          "opponent": "Portland Trail Blazers",
+          "market": "Assists",
+          "side": "Under",
+          "line": 2.5,
+          "odds": 105,
+          "edge_score": 52.6,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-19T11:45:19.312433+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-19",
+          "rank": 5,
+          "player": "Rudy Gobert",
+          "team": "Minnesota Timberwolves",
+          "opponent": "New York Knicks",
+          "market": "Points",
+          "side": "Under",
+          "line": 8.5,
+          "odds": -101,
+          "edge_score": 51.7,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-19T11:45:19.312433+00:00",
+          "official": false
+        }
+      ]
+    }
+  },
   "archive_audit": [
     {
       "date": "2026-11-11",
