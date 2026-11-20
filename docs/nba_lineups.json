@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T22:29:16.772086+00:00",
+  "generated_at": "2026-11-20T23:24:16.894849+00:00",
   "source": "RotoWire",
   "games": {
     "401910019": {
@@ -447,8 +447,8 @@
       "tipoff": "2026-11-21T00:00:00+00:00",
       "home": "ATL",
       "away": "CHA",
-      "checked_at": "2026-11-20T22:29:16.772086+00:00",
-      "minutes_before_tipoff": 90.7,
+      "checked_at": "2026-11-20T23:24:16.894849+00:00",
+      "minutes_before_tipoff": 35.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -602,8 +602,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "BKN",
       "away": "ORL",
-      "checked_at": "2026-11-20T22:29:16.772086+00:00",
-      "minutes_before_tipoff": 120.7,
+      "checked_at": "2026-11-20T23:24:16.894849+00:00",
+      "minutes_before_tipoff": 65.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -717,8 +717,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "CLE",
       "away": "IND",
-      "checked_at": "2026-11-20T22:29:16.772086+00:00",
-      "minutes_before_tipoff": 120.7,
+      "checked_at": "2026-11-20T23:24:16.894849+00:00",
+      "minutes_before_tipoff": 65.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -842,8 +842,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "DET",
       "away": "TOR",
-      "checked_at": "2026-11-20T22:29:16.772086+00:00",
-      "minutes_before_tipoff": 120.7,
+      "checked_at": "2026-11-20T23:24:16.894849+00:00",
+      "minutes_before_tipoff": 65.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -977,8 +977,8 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "CHI",
       "away": "WAS",
-      "checked_at": "2026-11-20T22:29:16.772086+00:00",
-      "minutes_before_tipoff": 150.7,
+      "checked_at": "2026-11-20T23:24:16.894849+00:00",
+      "minutes_before_tipoff": 95.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1002,7 +1002,7 @@
           "team": "CHI"
         },
         {
-          "name": "Jalen Smith",
+          "name": "Nic Claxton",
           "team": "CHI"
         }
       ],
@@ -1029,6 +1029,11 @@
         }
       ],
       "home_out": [
+        {
+          "name": "Jalen Smith",
+          "team": "CHI",
+          "status": "out"
+        },
         {
           "name": "Caleb Wilson",
           "team": "CHI",
@@ -1058,6 +1063,11 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Jalen Smith",
+          "team": "CHI",
+          "status": "out"
+        },
         {
           "name": "Caleb Wilson",
           "team": "CHI",
@@ -1092,8 +1102,8 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "OKC",
       "away": "NOP",
-      "checked_at": "2026-11-20T22:29:16.772086+00:00",
-      "minutes_before_tipoff": 150.7,
+      "checked_at": "2026-11-20T23:24:16.894849+00:00",
+      "minutes_before_tipoff": 95.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1145,6 +1155,11 @@
       ],
       "home_out": [
         {
+          "name": "Alex Caruso",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
           "name": "Chet Holmgren",
           "team": "OKC",
           "status": "out"
@@ -1193,6 +1208,11 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Alex Caruso",
+          "team": "OKC",
+          "status": "out"
+        },
         {
           "name": "Chet Holmgren",
           "team": "OKC",
@@ -1247,8 +1267,8 @@
       "tipoff": "2026-11-21T02:30:00+00:00",
       "home": "UTA",
       "away": "PHX",
-      "checked_at": "2026-11-20T22:29:16.772086+00:00",
-      "minutes_before_tipoff": 240.7,
+      "checked_at": "2026-11-20T23:24:16.894849+00:00",
+      "minutes_before_tipoff": 185.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1352,8 +1372,8 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "DEN",
       "away": "HOU",
-      "checked_at": "2026-11-20T22:29:16.772086+00:00",
-      "minutes_before_tipoff": 270.7,
+      "checked_at": "2026-11-20T23:24:16.894849+00:00",
+      "minutes_before_tipoff": 215.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1437,8 +1457,8 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "LAL",
       "away": "SAC",
-      "checked_at": "2026-11-20T22:29:16.772086+00:00",
-      "minutes_before_tipoff": 270.7,
+      "checked_at": "2026-11-20T23:24:16.894849+00:00",
+      "minutes_before_tipoff": 215.7,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
