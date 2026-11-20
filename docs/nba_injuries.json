@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-20T22:37:29.286059+00:00",
+  "generated_at": "2026-11-20T23:26:12.130800+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 109,
+  "player_count": 111,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -36,11 +36,11 @@
     "WAS"
   ],
   "teams_count": 29,
-  "players_with_team": 109,
+  "players_with_team": 111,
   "players_without_team": 0,
   "status_counts": {
-    "O": 87,
-    "T": 22
+    "O": 90,
+    "T": 21
   },
   "players": [
     {
@@ -166,13 +166,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540173",
+      "injury_record_id": "-61209",
       "name": "Jalen Smith",
       "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-20T17:41Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-20T23:19Z",
       "team_match": "feed"
     },
     {
@@ -254,6 +254,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "540205",
+      "name": "P.J. Washington",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Shoulder | day-to-day",
+      "date": "2026-11-20T22:40Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540204",
+      "name": "Walter Clayton Jr.",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Knee | day-to-day",
+      "date": "2026-11-20T22:35Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540185",
       "name": "Dereck Lively II",
       "team": "DAL",
@@ -309,6 +331,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540207",
+      "name": "Taurean Prince",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Surgery | Knee | out",
+      "date": "2026-11-20T23:02Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540174",
       "name": "Ronald Holland II",
       "team": "DET",
@@ -316,17 +349,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Bruise | Knee | day-to-day",
       "date": "2026-11-20T17:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540051",
-      "name": "Taurean Prince",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Knee | out",
-      "date": "2026-11-19T21:53Z",
       "team_match": "feed"
     },
     {
@@ -507,23 +529,12 @@
     },
     {
       "id": "",
-      "injury_record_id": "540057",
-      "name": "Andrew Nembhard",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-19T22:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540054",
       "name": "Braden Smith",
       "team": "IND",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
+      "reason": "day-to-day",
       "date": "2026-11-19T22:05Z",
       "team_match": "feed"
     },
@@ -595,13 +606,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61182",
-      "name": "Zach Edey",
+      "injury_record_id": "540212",
+      "name": "Javon Small",
       "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
-      "date": "2026-11-20T03:53Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Personal | out",
+      "date": "2026-11-20T23:14Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540210",
+      "name": "Cameron Boozer",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Ankle | out",
+      "date": "2026-11-20T23:12Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540209",
+      "name": "Ty Jerome",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hip | out",
+      "date": "2026-11-20T23:11Z",
       "team_match": "feed"
     },
     {
@@ -613,17 +646,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Not Specified | Calf | day-to-day",
       "date": "2026-11-20T02:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540021",
-      "name": "Ty Jerome",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Hip | out",
-      "date": "2026-11-19T19:07Z",
       "team_match": "feed"
     },
     {
@@ -1156,13 +1178,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540069",
+      "injury_record_id": "540206",
       "name": "Jusuf Nurkic",
       "team": "UTA",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Foot | out",
-      "date": "2026-11-20T00:05Z",
+      "date": "2026-11-20T22:40Z",
       "team_match": "feed"
     },
     {
