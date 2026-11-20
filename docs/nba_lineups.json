@@ -1,746 +1,7 @@
 {
-  "generated_at": "2026-11-20T11:33:32.925424+00:00",
+  "generated_at": "2026-11-20T12:37:52.106368+00:00",
   "source": "RotoWire",
   "games": {
-    "401910007": {
-      "game_id": "401910007",
-      "game": "Memphis Grizzlies at Cleveland Cavaliers",
-      "tipoff": "2026-11-19T00:00:00+00:00",
-      "home": "CLE",
-      "away": "MEM",
-      "checked_at": "2026-11-19T05:52:51.264089+00:00",
-      "minutes_before_tipoff": -352.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "James Harden",
-          "team": "CLE"
-        },
-        {
-          "name": "Donovan Mitchell",
-          "team": "CLE"
-        },
-        {
-          "name": "Tyrese Proctor",
-          "team": "CLE"
-        },
-        {
-          "name": "Mario Hezonja",
-          "team": "CLE"
-        },
-        {
-          "name": "Jarrett Allen",
-          "team": "CLE"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Cam Spencer",
-          "team": "MEM"
-        },
-        {
-          "name": "Cedric Coward",
-          "team": "MEM"
-        },
-        {
-          "name": "Jaylen Wells",
-          "team": "MEM"
-        },
-        {
-          "name": "Cameron Boozer",
-          "team": "MEM"
-        },
-        {
-          "name": "Zach Edey",
-          "team": "MEM"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Evan Mobley",
-          "team": "CLE",
-          "status": "out"
-        },
-        {
-          "name": "Nae'Qwan Tomlin",
-          "team": "CLE",
-          "status": "out"
-        },
-        {
-          "name": "Jaylon Tyson",
-          "team": "CLE",
-          "status": "out"
-        },
-        {
-          "name": "Peyton Watson",
-          "team": "CLE",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "GG Jackson",
-          "team": "MEM",
-          "status": "out"
-        },
-        {
-          "name": "Ty Jerome",
-          "team": "MEM",
-          "status": "out"
-        },
-        {
-          "name": "Scotty Pippen",
-          "team": "MEM",
-          "status": "out"
-        },
-        {
-          "name": "Isaiah Stewart",
-          "team": "MEM",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Evan Mobley",
-          "team": "CLE",
-          "status": "out"
-        },
-        {
-          "name": "Nae'Qwan Tomlin",
-          "team": "CLE",
-          "status": "out"
-        },
-        {
-          "name": "Jaylon Tyson",
-          "team": "CLE",
-          "status": "out"
-        },
-        {
-          "name": "Peyton Watson",
-          "team": "CLE",
-          "status": "out"
-        },
-        {
-          "name": "GG Jackson",
-          "team": "MEM",
-          "status": "out"
-        },
-        {
-          "name": "Ty Jerome",
-          "team": "MEM",
-          "status": "out"
-        },
-        {
-          "name": "Scotty Pippen",
-          "team": "MEM",
-          "status": "out"
-        },
-        {
-          "name": "Isaiah Stewart",
-          "team": "MEM",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401910008": {
-      "game_id": "401910008",
-      "game": "Houston Rockets at Indiana Pacers",
-      "tipoff": "2026-11-19T00:00:00+00:00",
-      "home": "IND",
-      "away": "HOU",
-      "checked_at": "2026-11-19T05:52:51.264089+00:00",
-      "minutes_before_tipoff": -352.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Quenton Jackson",
-          "team": "IND"
-        },
-        {
-          "name": "Kelly Oubre",
-          "team": "IND"
-        },
-        {
-          "name": "Aaron Nesmith",
-          "team": "IND"
-        },
-        {
-          "name": "Pascal Siakam",
-          "team": "IND"
-        },
-        {
-          "name": "Ivica Zubac",
-          "team": "IND"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Fred VanVleet",
-          "team": "HOU"
-        },
-        {
-          "name": "Amen Thompson",
-          "team": "HOU"
-        },
-        {
-          "name": "Kevin Durant",
-          "team": "HOU"
-        },
-        {
-          "name": "Jabari Smith",
-          "team": "HOU"
-        },
-        {
-          "name": "Alperen Sengun",
-          "team": "HOU"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Johnny Furphy",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Haliburton",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Andrew Nembhard",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Ben Sheppard",
-          "team": "IND",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Clint Capela",
-          "team": "HOU",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Johnny Furphy",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Haliburton",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Andrew Nembhard",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Ben Sheppard",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Clint Capela",
-          "team": "HOU",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401910009": {
-      "game_id": "401910009",
-      "game": "Milwaukee Bucks at Miami Heat",
-      "tipoff": "2026-11-19T00:00:00+00:00",
-      "home": "MIA",
-      "away": "MIL",
-      "checked_at": "2026-11-19T05:52:51.264089+00:00",
-      "minutes_before_tipoff": -352.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Davion Mitchell",
-          "team": "MIA"
-        },
-        {
-          "name": "Klay Thompson",
-          "team": "MIA"
-        },
-        {
-          "name": "Pelle Larsson",
-          "team": "MIA"
-        },
-        {
-          "name": "Giannis Antetokounmpo",
-          "team": "MIA"
-        },
-        {
-          "name": "Bam Adebayo",
-          "team": "MIA"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Brayden Burries",
-          "team": "MIL"
-        },
-        {
-          "name": "Tyler Herro",
-          "team": "MIL"
-        },
-        {
-          "name": "Kyle Kuzma",
-          "team": "MIL"
-        },
-        {
-          "name": "Jericho Sims",
-          "team": "MIL"
-        },
-        {
-          "name": "Myles Turner",
-          "team": "MIL"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Myron Gardner",
-          "team": "MIA",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Ousmane Dieng",
-          "team": "MIL",
-          "status": "out"
-        },
-        {
-          "name": "Ryan Rollins",
-          "team": "MIL",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Myron Gardner",
-          "team": "MIA",
-          "status": "out"
-        },
-        {
-          "name": "Ousmane Dieng",
-          "team": "MIL",
-          "status": "out"
-        },
-        {
-          "name": "Ryan Rollins",
-          "team": "MIL",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401910010": {
-      "game_id": "401910010",
-      "game": "Philadelphia 76ers at Orlando Magic",
-      "tipoff": "2026-11-19T00:00:00+00:00",
-      "home": "ORL",
-      "away": "PHI",
-      "checked_at": "2026-11-19T05:52:51.264089+00:00",
-      "minutes_before_tipoff": -352.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Jalen Suggs",
-          "team": "ORL"
-        },
-        {
-          "name": "Anthony Black",
-          "team": "ORL"
-        },
-        {
-          "name": "Desmond Bane",
-          "team": "ORL"
-        },
-        {
-          "name": "Franz Wagner",
-          "team": "ORL"
-        },
-        {
-          "name": "Wendell Carter",
-          "team": "ORL"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Anfernee Simons",
-          "team": "PHI"
-        },
-        {
-          "name": "VJ Edgecombe",
-          "team": "PHI"
-        },
-        {
-          "name": "Kentavious Caldwell-Pope",
-          "team": "PHI"
-        },
-        {
-          "name": "LeBron James",
-          "team": "PHI"
-        },
-        {
-          "name": "Joel Embiid",
-          "team": "PHI"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Paolo Banchero",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Jonathan Isaac",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Izaiyah Nelson",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Noah Penda",
-          "team": "ORL",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Dominick Barlow",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Adem Bona",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Jaylen Brown",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Maxey",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Dean Wade",
-          "team": "PHI",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Paolo Banchero",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Jonathan Isaac",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Izaiyah Nelson",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Noah Penda",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Dominick Barlow",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Adem Bona",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Jaylen Brown",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Maxey",
-          "team": "PHI",
-          "status": "out"
-        },
-        {
-          "name": "Dean Wade",
-          "team": "PHI",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401910011": {
-      "game_id": "401910011",
-      "game": "Chicago Bulls at Brooklyn Nets",
-      "tipoff": "2026-11-19T00:30:00+00:00",
-      "home": "BKN",
-      "away": "CHI",
-      "checked_at": "2026-11-19T05:52:51.264089+00:00",
-      "minutes_before_tipoff": -322.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Nolan Traore",
-          "team": "BKN"
-        },
-        {
-          "name": "Egor Demin",
-          "team": "BKN"
-        },
-        {
-          "name": "Michael Porter",
-          "team": "BKN"
-        },
-        {
-          "name": "Julius Randle",
-          "team": "BKN"
-        },
-        {
-          "name": "Day'Ron Sharpe",
-          "team": "BKN"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Josh Giddey",
-          "team": "CHI"
-        },
-        {
-          "name": "Norman Powell",
-          "team": "CHI"
-        },
-        {
-          "name": "Isaac Okoro",
-          "team": "CHI"
-        },
-        {
-          "name": "Matas Buzelis",
-          "team": "CHI"
-        },
-        {
-          "name": "Jalen Smith",
-          "team": "CHI"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [],
-      "away_out": [
-        {
-          "name": "Tobe Awaka",
-          "team": "CHI",
-          "status": "out"
-        },
-        {
-          "name": "Caleb Wilson",
-          "team": "CHI",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Tobe Awaka",
-          "team": "CHI",
-          "status": "out"
-        },
-        {
-          "name": "Caleb Wilson",
-          "team": "CHI",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401910012": {
-      "game_id": "401910012",
-      "game": "Washington Wizards at Toronto Raptors",
-      "tipoff": "2026-11-19T00:30:00+00:00",
-      "home": "TOR",
-      "away": "WAS",
-      "checked_at": "2026-11-19T05:52:51.264089+00:00",
-      "minutes_before_tipoff": -322.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Immanuel Quickley",
-          "team": "TOR"
-        },
-        {
-          "name": "Ja'Kobe Walter",
-          "team": "TOR"
-        },
-        {
-          "name": "Jamison Battle",
-          "team": "TOR"
-        },
-        {
-          "name": "Collin Murray-Boyles",
-          "team": "TOR"
-        },
-        {
-          "name": "Jakob Poeltl",
-          "team": "TOR"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Trae Young",
-          "team": "WAS"
-        },
-        {
-          "name": "Kyshawn George",
-          "team": "WAS"
-        },
-        {
-          "name": "AJ Dybantsa",
-          "team": "WAS"
-        },
-        {
-          "name": "Anthony Davis",
-          "team": "WAS"
-        },
-        {
-          "name": "Alex Sarr",
-          "team": "WAS"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Scottie Barnes",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "RJ Barrett",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Nate Bittle",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Kawhi Leonard",
-          "team": "TOR",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Reece Beekman",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Justin Champagnie",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Tristan Vukcevic",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Jamir Watkins",
-          "team": "WAS",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Scottie Barnes",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "RJ Barrett",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Nate Bittle",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Kawhi Leonard",
-          "team": "TOR",
-          "status": "out"
-        },
-        {
-          "name": "Reece Beekman",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Justin Champagnie",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Tristan Vukcevic",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Jamir Watkins",
-          "team": "WAS",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401910013": {
       "game_id": "401910013",
       "game": "Detroit Pistons at New Orleans Pelicans",
@@ -1955,8 +1216,8 @@
       "tipoff": "2026-11-21T00:00:00+00:00",
       "home": "ATL",
       "away": "CHA",
-      "checked_at": "2026-11-20T11:33:32.925424+00:00",
-      "minutes_before_tipoff": 746.5,
+      "checked_at": "2026-11-20T12:37:52.106368+00:00",
+      "minutes_before_tipoff": 682.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2100,8 +1361,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "BKN",
       "away": "ORL",
-      "checked_at": "2026-11-20T11:33:32.925424+00:00",
-      "minutes_before_tipoff": 776.5,
+      "checked_at": "2026-11-20T12:37:52.106368+00:00",
+      "minutes_before_tipoff": 712.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2215,8 +1476,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "CLE",
       "away": "IND",
-      "checked_at": "2026-11-20T11:33:32.925424+00:00",
-      "minutes_before_tipoff": 776.5,
+      "checked_at": "2026-11-20T12:37:52.106368+00:00",
+      "minutes_before_tipoff": 712.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2340,8 +1601,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "DET",
       "away": "TOR",
-      "checked_at": "2026-11-20T11:33:32.925424+00:00",
-      "minutes_before_tipoff": 776.5,
+      "checked_at": "2026-11-20T12:37:52.106368+00:00",
+      "minutes_before_tipoff": 712.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2485,8 +1746,8 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "CHI",
       "away": "WAS",
-      "checked_at": "2026-11-20T11:33:32.925424+00:00",
-      "minutes_before_tipoff": 806.5,
+      "checked_at": "2026-11-20T12:37:52.106368+00:00",
+      "minutes_before_tipoff": 742.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2600,8 +1861,8 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "OKC",
       "away": "NOP",
-      "checked_at": "2026-11-20T11:33:32.925424+00:00",
-      "minutes_before_tipoff": 806.5,
+      "checked_at": "2026-11-20T12:37:52.106368+00:00",
+      "minutes_before_tipoff": 742.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2755,8 +2016,8 @@
       "tipoff": "2026-11-21T02:30:00+00:00",
       "home": "UTA",
       "away": "PHX",
-      "checked_at": "2026-11-20T11:33:32.925424+00:00",
-      "minutes_before_tipoff": 896.5,
+      "checked_at": "2026-11-20T12:37:52.106368+00:00",
+      "minutes_before_tipoff": 832.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2860,8 +2121,8 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "DEN",
       "away": "HOU",
-      "checked_at": "2026-11-20T11:33:32.925424+00:00",
-      "minutes_before_tipoff": 926.5,
+      "checked_at": "2026-11-20T12:37:52.106368+00:00",
+      "minutes_before_tipoff": 862.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2945,8 +2206,8 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "LAL",
       "away": "SAC",
-      "checked_at": "2026-11-20T11:33:32.925424+00:00",
-      "minutes_before_tipoff": 926.5,
+      "checked_at": "2026-11-20T12:37:52.106368+00:00",
+      "minutes_before_tipoff": 862.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
