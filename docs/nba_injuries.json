@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-20T01:51:39.236682+00:00",
+  "generated_at": "2026-11-20T02:39:42.468306+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 107,
+  "player_count": 108,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 107,
+  "players_with_team": 108,
   "players_without_team": 0,
   "status_counts": {
     "O": 89,
-    "T": 18
+    "T": 19
   },
   "players": [
     {
@@ -579,6 +579,17 @@
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
       "date": "2026-11-20T01:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540094",
+      "name": "Jerami Grant",
+      "team": "MEM",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Calf | day-to-day",
+      "date": "2026-11-20T02:08Z",
       "team_match": "feed"
     },
     {
