@@ -1,23 +1,37 @@
 {
-  "generated_at": "2026-11-20T18:50:53.677236+00:00",
+  "generated_at": "2026-11-20T22:47:11.728835+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
     "2026-11": {
       "summary": {
-        "picks": 66,
+        "picks": 75,
         "wins": 33,
         "losses": 32,
         "pushes": 0,
         "dnp": 1,
         "invalid": 0,
-        "pending": 0,
+        "pending": 9,
         "settled": 65,
         "win_rate": 50.77,
         "roi": -2.58,
         "profit_units": -1.676
       },
       "days": [
+        {
+          "date": "2026-11-20",
+          "picks": 9,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 9,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        },
         {
           "date": "2026-11-19",
           "picks": 7,
@@ -1173,6 +1187,150 @@
           "actual": 4.0,
           "profit_units": -1,
           "saved_at": "2026-11-19T22:48:26.960192+00:00"
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 1,
+          "player": "Tristan da Silva",
+          "team": "Orlando Magic",
+          "opponent": "Brooklyn Nets",
+          "market": "Points",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -105,
+          "edge_score": 69.8,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T22:47:11.547105+00:00"
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 2,
+          "player": "Nolan Traore",
+          "team": "Brooklyn Nets",
+          "opponent": "Orlando Magic",
+          "market": "Points",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -102,
+          "edge_score": 66.5,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T22:47:11.547105+00:00"
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 3,
+          "player": "Moritz Wagner",
+          "team": "Brooklyn Nets",
+          "opponent": "Orlando Magic",
+          "market": "Points",
+          "side": "Over",
+          "line": 7.5,
+          "odds": -113,
+          "edge_score": 66.5,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T22:47:11.547105+00:00"
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 4,
+          "player": "Saddiq Bey",
+          "team": "New Orleans Pelicans",
+          "opponent": "Oklahoma City Thunder",
+          "market": "Assists",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 133,
+          "edge_score": 65.8,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T22:47:11.547105+00:00"
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 5,
+          "player": "Franz Wagner",
+          "team": "Orlando Magic",
+          "opponent": "Brooklyn Nets",
+          "market": "Assists",
+          "side": "Over",
+          "line": 7.5,
+          "odds": -106,
+          "edge_score": 62.8,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T22:47:11.547105+00:00"
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 6,
+          "player": "Walker Kessler",
+          "team": "Los Angeles Lakers",
+          "opponent": "Sacramento Kings",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 10.5,
+          "odds": -103,
+          "edge_score": 61.4,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T22:47:11.547105+00:00"
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 7,
+          "player": "Sam Merrill",
+          "team": "Cleveland Cavaliers",
+          "opponent": "Indiana Pacers",
+          "market": "Assists",
+          "side": "Over",
+          "line": 1.5,
+          "odds": 125,
+          "edge_score": 61.2,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T22:47:11.547105+00:00"
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 8,
+          "player": "Dyson Daniels",
+          "team": "Atlanta Hawks",
+          "opponent": "Charlotte Hornets",
+          "market": "Points",
+          "side": "Under",
+          "line": 10.5,
+          "odds": -107,
+          "edge_score": 57.1,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T22:47:11.547105+00:00"
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 9,
+          "player": "Jordan Goodwin",
+          "team": "Phoenix Suns",
+          "opponent": "Utah Jazz",
+          "market": "Points",
+          "side": "Over",
+          "line": 7.5,
+          "odds": -113,
+          "edge_score": 54.0,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T22:47:11.547105+00:00"
         }
       ]
     }
@@ -2314,109 +2472,7 @@
       ]
     }
   },
-  "preview_months": {
-    "2026-11": {
-      "summary": {
-        "picks": 4,
-        "wins": 0,
-        "losses": 0,
-        "pushes": 0,
-        "dnp": 0,
-        "invalid": 0,
-        "pending": 4,
-        "settled": 0,
-        "win_rate": null,
-        "roi": null,
-        "profit_units": 0
-      },
-      "days": [
-        {
-          "date": "2026-11-20",
-          "picks": 4,
-          "wins": 0,
-          "losses": 0,
-          "pushes": 0,
-          "dnp": 0,
-          "invalid": 0,
-          "pending": 4,
-          "settled": 0,
-          "win_rate": null,
-          "roi": null,
-          "profit_units": 0
-        }
-      ],
-      "picks": [
-        {
-          "date": "2026-11-20",
-          "rank": 1,
-          "player": "Walker Kessler",
-          "team": "Los Angeles Lakers",
-          "opponent": "Sacramento Kings",
-          "market": "Assists",
-          "side": "Over",
-          "line": 1.5,
-          "odds": 101,
-          "edge_score": 77.0,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-20T18:50:53.360965+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-20",
-          "rank": 2,
-          "player": "Tristan da Silva",
-          "team": "Orlando Magic",
-          "opponent": "Brooklyn Nets",
-          "market": "Points",
-          "side": "Over",
-          "line": 11.5,
-          "odds": -124,
-          "edge_score": 76.0,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-20T18:50:53.360965+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-20",
-          "rank": 3,
-          "player": "Jared McCain",
-          "team": "Oklahoma City Thunder",
-          "opponent": "New Orleans Pelicans",
-          "market": "Rebounds",
-          "side": "Over",
-          "line": 3.5,
-          "odds": 120,
-          "edge_score": 53.2,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-20T18:50:53.360965+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-20",
-          "rank": 4,
-          "player": "Darius Acuff Jr.",
-          "team": "Sacramento Kings",
-          "opponent": "Los Angeles Lakers",
-          "market": "Assists",
-          "side": "Over",
-          "line": 6.5,
-          "odds": 100,
-          "edge_score": 49.7,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-20T18:50:53.360965+00:00",
-          "official": false
-        }
-      ]
-    }
-  },
+  "preview_months": {},
   "archive_audit": [
     {
       "date": "2026-11-11",
@@ -2464,6 +2520,11 @@
       "date": "2026-11-19",
       "classification": "official",
       "count": 7
+    },
+    {
+      "date": "2026-11-20",
+      "classification": "official",
+      "count": 9
     }
   ],
   "validation_errors": 0
