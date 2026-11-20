@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-20T00:32:53.204791+00:00",
+  "generated_at": "2026-11-20T01:51:39.236682+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 105,
+  "player_count": 107,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 105,
+  "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
     "O": 89,
-    "T": 16
+    "T": 18
   },
   "players": [
     {
@@ -572,13 +572,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539852",
+      "injury_record_id": "540088",
       "name": "Austin Reaves",
       "team": "LAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
-      "date": "2026-11-19T01:38Z",
+      "date": "2026-11-20T01:05Z",
       "team_match": "feed"
     },
     {
@@ -1008,6 +1008,28 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-08-24T20:23Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540091",
+      "name": "Precious Achiuwa",
+      "team": "SAC",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Lower Leg | day-to-day",
+      "date": "2026-11-20T01:22Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540090",
+      "name": "De'Andre Hunter",
+      "team": "SAC",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hip | day-to-day",
+      "date": "2026-11-20T01:21Z",
       "team_match": "feed"
     },
     {
