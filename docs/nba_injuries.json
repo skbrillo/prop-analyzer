@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T03:28:23.018393+00:00",
+  "generated_at": "2026-11-20T04:24:45.460222+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -38,8 +38,8 @@
   "players_with_team": 108,
   "players_without_team": 0,
   "status_counts": {
-    "O": 89,
-    "T": 19
+    "O": 83,
+    "T": 25
   },
   "players": [
     {
@@ -374,13 +374,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540015",
+      "injury_record_id": "-61183",
       "name": "Draymond Green",
       "team": "GSW",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Rest | out",
-      "date": "2026-11-19T18:51Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Rest | day-to-day",
+      "date": "2026-11-20T03:53Z",
       "team_match": "feed"
     },
     {
@@ -583,6 +583,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61182",
+      "name": "Zach Edey",
+      "team": "MEM",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-20T03:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540094",
       "name": "Jerami Grant",
       "team": "MEM",
@@ -590,17 +601,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Not Specified | Calf | day-to-day",
       "date": "2026-11-20T02:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540022",
-      "name": "Zach Edey",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Ankle | out",
-      "date": "2026-11-19T19:09Z",
       "team_match": "feed"
     },
     {
@@ -660,24 +660,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540026",
-      "name": "Kyle Kuzma",
+      "injury_record_id": "-61186",
+      "name": "Myles Turner",
       "team": "MIL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Shoulder | out",
-      "date": "2026-11-19T19:20Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Shoulder | day-to-day",
+      "date": "2026-11-20T03:55Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540024",
-      "name": "Myles Turner",
+      "injury_record_id": "-61185",
+      "name": "Kyle Kuzma",
       "team": "MIL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Shoulder | out",
-      "date": "2026-11-19T19:15Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Shoulder | day-to-day",
+      "date": "2026-11-20T03:55Z",
       "team_match": "feed"
     },
     {
@@ -957,13 +957,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540072",
+      "injury_record_id": "-61187",
+      "name": "Robert Williams III",
+      "team": "POR",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Rest | day-to-day",
+      "date": "2026-11-20T03:55Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61184",
       "name": "Deni Avdija",
       "team": "POR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Foot | out",
-      "date": "2026-11-20T00:21Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Foot | day-to-day",
+      "date": "2026-11-20T03:55Z",
       "team_match": "feed"
     },
     {
@@ -975,17 +986,6 @@
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
       "date": "2026-11-19T15:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539817",
-      "name": "Robert Williams III",
-      "team": "POR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Rest | out",
-      "date": "2026-11-18T22:58Z",
       "team_match": "feed"
     },
     {
