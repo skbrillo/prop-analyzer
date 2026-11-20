@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-20T17:35:58.585043+00:00",
+  "generated_at": "2026-11-20T18:35:08.527282+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 108,
+  "player_count": 109,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 108,
+  "players_with_team": 109,
   "players_without_team": 0,
   "status_counts": {
-    "O": 84,
-    "T": 24
+    "O": 83,
+    "T": 26
   },
   "players": [
     {
@@ -161,6 +161,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T22:26Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540173",
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-20T17:41Z",
       "team_match": "feed"
     },
     {
@@ -297,6 +308,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540174",
+      "name": "Ronald Holland II",
+      "team": "DET",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Knee | day-to-day",
+      "date": "2026-11-20T17:46Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540051",
       "name": "Taurean Prince",
       "team": "DET",
@@ -315,17 +337,6 @@
       "raw_status": "Out",
       "reason": "Strain | Oblique | out",
       "date": "2026-11-19T21:43Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540048",
-      "name": "Ronald Holland II",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Knee | out",
-      "date": "2026-11-19T21:41Z",
       "team_match": "feed"
     },
     {
@@ -891,6 +902,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "540172",
+      "name": "Adem Bona",
+      "team": "PHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Back | out",
+      "date": "2026-11-20T17:33Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540170",
+      "name": "Tyrese Maxey",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Foot | day-to-day",
+      "date": "2026-11-20T17:28Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540169",
       "name": "Jaylen Brown",
       "team": "PHI",
@@ -909,28 +942,6 @@
       "raw_status": "Out",
       "reason": "Fracture | Back | out",
       "date": "2026-11-20T17:20Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61133",
-      "name": "Tyrese Maxey",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Foot | day-to-day",
-      "date": "2026-11-19T14:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538765",
-      "name": "Adem Bona",
-      "team": "PHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Back | out",
-      "date": "2026-11-12T16:36Z",
       "team_match": "feed"
     },
     {
