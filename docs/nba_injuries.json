@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T19:39:21.706714+00:00",
+  "generated_at": "2026-11-20T20:26:12.649184+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -253,6 +253,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540185",
+      "name": "Dereck Lively II",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Surgery | Foot | out",
+      "date": "2026-11-20T19:31Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-61144",
       "name": "Tobi Lawal",
       "team": "DAL",
@@ -271,17 +282,6 @@
       "raw_status": "Out",
       "reason": "Strain | Knee | out",
       "date": "2026-11-17T22:53Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539647",
-      "name": "Dereck Lively II",
-      "team": "DAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Foot | out",
-      "date": "2026-11-17T22:45Z",
       "team_match": "feed"
     },
     {
