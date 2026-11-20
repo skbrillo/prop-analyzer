@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-19T23:49:21.266337+00:00",
+  "generated_at": "2026-11-20T00:32:53.204791+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 109,
+  "player_count": 105,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 109,
+  "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "O": 88,
-    "T": 21
+    "O": 89,
+    "T": 16
   },
   "players": [
     {
@@ -385,17 +385,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540013",
-      "name": "LJ Cryer",
-      "team": "GSW",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-19T18:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539762",
       "name": "Brandon Williams",
       "team": "GSW",
@@ -594,17 +583,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540023",
-      "name": "Isaiah Stewart",
-      "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-19T19:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540022",
       "name": "Zach Edey",
       "team": "MEM",
@@ -700,17 +678,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Finger | out",
       "date": "2026-11-15T23:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539819",
-      "name": "Jonathan Kuminga",
-      "team": "MIN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Shoulder | day-to-day",
-      "date": "2026-11-18T23:04Z",
       "team_match": "feed"
     },
     {
@@ -979,6 +946,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540072",
+      "name": "Deni Avdija",
+      "team": "POR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Foot | out",
+      "date": "2026-11-20T00:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "539902",
       "name": "Chris Youngblood",
       "team": "POR",
@@ -997,28 +975,6 @@
       "raw_status": "Out",
       "reason": "Rest | out",
       "date": "2026-11-18T22:58Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539815",
-      "name": "Deni Avdija",
-      "team": "POR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Foot | day-to-day",
-      "date": "2026-11-18T22:54Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539814",
-      "name": "Toumani Camara",
-      "team": "POR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Rest | day-to-day",
-      "date": "2026-11-18T22:53Z",
       "team_match": "feed"
     },
     {
@@ -1155,6 +1111,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540069",
+      "name": "Jusuf Nurkic",
+      "team": "UTA",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Foot | out",
+      "date": "2026-11-20T00:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "538611",
       "name": "Lauri Markkanen",
       "team": "UTA",
@@ -1162,17 +1129,6 @@
       "raw_status": "Out",
       "reason": "Fracture | Hand | out",
       "date": "2026-11-11T18:22Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "537851",
-      "name": "Jusuf Nurkic",
-      "team": "UTA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Foot | out",
-      "date": "2026-11-06T18:20Z",
       "team_match": "feed"
     },
     {
