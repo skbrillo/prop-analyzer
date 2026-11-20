@@ -1,85 +1,85 @@
 {
-  "updated_at": "2026-11-19T22:48:26.453664+00:00",
+  "updated_at": "2026-11-20T09:54:49.320829+00:00",
   "notes": "1-unit flat stake per prediction. Both sides are tracked independently; do not combine as a betting strategy. ROI excludes pushes. No closing-line data.",
   "summary": {
     "predictions": 3998,
-    "settled": 3593,
-    "pending": 405,
-    "wins": 1722,
-    "losses": 1871,
+    "settled": 3704,
+    "pending": 294,
+    "wins": 1776,
+    "losses": 1928,
     "pushes": 0,
-    "win_rate": 0.4793,
-    "profit_units": -274.174,
-    "roi": -0.0763
+    "win_rate": 0.4795,
+    "profit_units": -278.876,
+    "roi": -0.0753
   },
   "positive_ev": {
     "predictions": 1151,
-    "settled": 1022,
-    "pending": 129,
-    "wins": 525,
-    "losses": 497,
+    "settled": 1058,
+    "pending": 93,
+    "wins": 541,
+    "losses": 517,
     "pushes": 0,
-    "win_rate": 0.5137,
-    "profit_units": -6.222,
-    "roi": -0.0061
+    "win_rate": 0.5113,
+    "profit_units": -11.047,
+    "roi": -0.0104
   },
   "by_market": {
     "points": {
       "predictions": 1916,
-      "settled": 1727,
-      "pending": 189,
-      "wins": 859,
-      "losses": 868,
+      "settled": 1784,
+      "pending": 132,
+      "wins": 887,
+      "losses": 897,
       "pushes": 0,
-      "win_rate": 0.4974,
-      "profit_units": -99.056,
-      "roi": -0.0574
+      "win_rate": 0.4972,
+      "profit_units": -102.744,
+      "roi": -0.0576
     },
     "rebounds": {
       "predictions": 1171,
-      "settled": 1054,
-      "pending": 117,
-      "wins": 507,
-      "losses": 547,
+      "settled": 1087,
+      "pending": 84,
+      "wins": 526,
+      "losses": 561,
       "pushes": 0,
-      "win_rate": 0.481,
-      "profit_units": -63.936,
-      "roi": -0.0607
+      "win_rate": 0.4839,
+      "profit_units": -57.723,
+      "roi": -0.0531
     },
     "assists": {
       "predictions": 911,
-      "settled": 812,
-      "pending": 99,
-      "wins": 356,
-      "losses": 456,
+      "settled": 833,
+      "pending": 78,
+      "wins": 363,
+      "losses": 470,
       "pushes": 0,
-      "win_rate": 0.4384,
-      "profit_units": -111.181,
-      "roi": -0.1369
+      "win_rate": 0.4358,
+      "profit_units": -118.409,
+      "roi": -0.1421
     }
   },
   "by_side": {
     "over": {
       "predictions": 2057,
-      "settled": 1851,
-      "pending": 206,
-      "wins": 834,
-      "losses": 1017,
+      "settled": 1907,
+      "pending": 150,
+      "wins": 859,
+      "losses": 1048,
       "pushes": 0,
-      "win_rate": 0.4506,
-      "profit_units": -238.808,
-      "roi": -0.129
+      "win_rate": 0.4504,
+      "profit_units": -245.821,
+      "roi": -0.1289
     },
     "under": {
       "predictions": 1941,
-      "settled": 1742,
-      "pending": 199,
-      "wins": 888,
-      "losses": 854,
+      "settled": 1797,
+      "pending": 144,
+      "wins": 917,
+      "losses": 880,
       "pushes": 0,
-      "win_rate": 0.5098,
-      "profit_units": -35.366,
-      "roi": -0.0203
+      "win_rate": 0.5103,
+      "profit_units": -33.055,
+      "roi": -0.0184
     }
   },
   "predictions": [
@@ -84522,9 +84522,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.9259259259259259,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -84543,9 +84544,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -84564,9 +84566,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -84627,9 +84630,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 9.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -84648,9 +84652,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -84690,9 +84695,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.8849557522123894,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -84711,9 +84717,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -84732,9 +84739,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.14,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -84753,9 +84761,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 16.0,
+      "profit_units": 0.9174311926605505,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -84774,9 +84783,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -84816,9 +84826,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -84837,9 +84848,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 20.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -84858,9 +84870,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 14.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -84879,9 +84892,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 22.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -84942,9 +84956,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -84963,9 +84978,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -85005,9 +85021,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -85047,9 +85064,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 22.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85068,9 +85086,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85089,9 +85108,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 14.0,
+      "profit_units": 0.9803921568627451,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -85110,9 +85130,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 20.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -85152,9 +85173,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85173,9 +85195,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 21.0,
+      "profit_units": 0.8620689655172413,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85194,9 +85217,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.14,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -85236,9 +85260,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85257,9 +85282,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -85278,9 +85304,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -85299,9 +85326,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 21.0,
+      "profit_units": 0.8403361344537815,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85320,9 +85348,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -85362,9 +85391,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -85404,9 +85434,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -85425,9 +85456,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -85446,9 +85478,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T11:45:18.264557+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 1.06,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -85467,9 +85500,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85488,9 +85522,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -85509,9 +85544,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85551,9 +85587,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 27.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85572,9 +85609,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -85593,9 +85631,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -85614,9 +85653,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85635,9 +85675,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85656,9 +85697,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.16,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -85677,9 +85719,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 13.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85698,9 +85741,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85719,9 +85763,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 18.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85740,9 +85785,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 33.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85782,9 +85828,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 16.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85803,9 +85850,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85845,9 +85893,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 15.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85866,9 +85915,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85887,9 +85937,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -85908,9 +85959,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -85929,9 +85981,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.19,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85950,9 +86003,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 22.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -85971,9 +86025,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -85992,9 +86047,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86055,9 +86111,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86118,9 +86175,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -86139,9 +86197,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 22.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -86160,9 +86219,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86181,9 +86241,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 0.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -86202,9 +86263,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 1.14,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86244,9 +86306,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 15.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86265,9 +86328,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86286,9 +86350,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86307,9 +86372,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 33.0,
+      "profit_units": 0.8695652173913043,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86328,9 +86394,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 1.09,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -86349,9 +86416,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86370,9 +86438,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.14,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86391,9 +86460,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86412,9 +86482,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.21,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -86433,9 +86504,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 23.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -86454,9 +86526,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 9.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -86475,9 +86548,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 21.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86496,9 +86570,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86517,9 +86592,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.8547008547008547,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86559,9 +86635,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86601,9 +86678,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 1.04,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86622,9 +86700,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86643,9 +86722,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 27.0,
+      "profit_units": 0.9803921568627451,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86685,9 +86765,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 1.04,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86706,9 +86787,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86727,9 +86809,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86748,9 +86831,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T18:50:43.544408+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -86769,9 +86853,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -86790,9 +86875,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 1.06,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -86832,9 +86918,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86853,9 +86940,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.8,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -86874,9 +86962,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 12.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -86895,9 +86984,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -86916,9 +87006,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -86937,9 +87028,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -86979,9 +87071,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 33.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -87000,9 +87093,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.8333333333333334,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -87105,9 +87199,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 13.0,
+      "profit_units": 1.07,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -87126,9 +87221,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -87210,9 +87306,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -87231,9 +87328,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.9900990099009901,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -87252,9 +87350,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 19.0,
+      "profit_units": 0.9803921568627451,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -87294,9 +87393,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "cca2a0b4758eb03efab1d01fb02bcd81",
@@ -87315,9 +87415,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 19.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -87357,9 +87458,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -87378,9 +87480,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -87399,9 +87502,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.2,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -87462,9 +87566,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 13.0,
+      "profit_units": 1.08,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -87483,9 +87588,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -87504,9 +87610,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.18,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "dafdda4d42cda9bd0d48895ea9f38098",
@@ -87525,9 +87632,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New York Knicks @ Minnesota Timberwolves",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "07472f248dc4339c8cfd43940945b708",
@@ -87546,9 +87654,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Portland Trail Blazers @ Milwaukee Bucks",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 33.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -87588,9 +87697,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Golden State Warriors @ Memphis Grizzlies",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     },
     {
       "event_id": "7f6c539d1707fdaa826c7a8e5b87790b",
@@ -87630,9 +87740,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "LA Clippers @ San Antonio Spurs",
       "predicted_at": "2026-11-19T22:48:26.339821+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-20T09:54:49.320829+00:00"
     }
   ]
 }
