@@ -1,197 +1,7 @@
 {
-  "generated_at": "2026-11-20T14:54:35.116596+00:00",
+  "generated_at": "2026-11-20T15:54:24.160937+00:00",
   "source": "RotoWire",
   "games": {
-    "401910017": {
-      "game_id": "401910017",
-      "game": "Utah Jazz at Los Angeles Lakers",
-      "tipoff": "2026-11-19T03:00:00+00:00",
-      "home": "LAL",
-      "away": "UTA",
-      "checked_at": "2026-11-19T05:52:51.264089+00:00",
-      "minutes_before_tipoff": -172.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Luka Doncic",
-          "team": "LAL"
-        },
-        {
-          "name": "Quentin Grimes",
-          "team": "LAL"
-        },
-        {
-          "name": "Matisse Thybulle",
-          "team": "LAL"
-        },
-        {
-          "name": "Ziaire Williams",
-          "team": "LAL"
-        },
-        {
-          "name": "Walker Kessler",
-          "team": "LAL"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Keyonte George",
-          "team": "UTA"
-        },
-        {
-          "name": "Darryn Peterson",
-          "team": "UTA"
-        },
-        {
-          "name": "Josh Green",
-          "team": "UTA"
-        },
-        {
-          "name": "Ace Bailey",
-          "team": "UTA"
-        },
-        {
-          "name": "Mo Bamba",
-          "team": "UTA"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Austin Reaves",
-          "team": "LAL",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Jaren Jackson",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Lauri Markkanen",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Jusuf Nurkic",
-          "team": "UTA",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Austin Reaves",
-          "team": "LAL",
-          "status": "out"
-        },
-        {
-          "name": "Jaren Jackson",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Lauri Markkanen",
-          "team": "UTA",
-          "status": "out"
-        },
-        {
-          "name": "Jusuf Nurkic",
-          "team": "UTA",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401910018": {
-      "game_id": "401910018",
-      "game": "Phoenix Suns at Sacramento Kings",
-      "tipoff": "2026-11-19T03:00:00+00:00",
-      "home": "SAC",
-      "away": "PHX",
-      "checked_at": "2026-11-19T05:52:51.264089+00:00",
-      "minutes_before_tipoff": -172.9,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Darius Acuff",
-          "team": "SAC"
-        },
-        {
-          "name": "Zach LaVine",
-          "team": "SAC"
-        },
-        {
-          "name": "De'Andre Hunter",
-          "team": "SAC"
-        },
-        {
-          "name": "Keegan Murray",
-          "team": "SAC"
-        },
-        {
-          "name": "Domantas Sabonis",
-          "team": "SAC"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Devin Booker",
-          "team": "PHX"
-        },
-        {
-          "name": "Jalen Green",
-          "team": "PHX"
-        },
-        {
-          "name": "Dillon Brooks",
-          "team": "PHX"
-        },
-        {
-          "name": "Miles Bridges",
-          "team": "PHX"
-        },
-        {
-          "name": "Oso Ighodaro",
-          "team": "PHX"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Maxime Raynaud",
-          "team": "SAC",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Mark Williams",
-          "team": "PHX",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Maxime Raynaud",
-          "team": "SAC",
-          "status": "out"
-        },
-        {
-          "name": "Mark Williams",
-          "team": "PHX",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401910019": {
       "game_id": "401910019",
       "game": "Golden State Warriors at Memphis Grizzlies",
@@ -637,8 +447,8 @@
       "tipoff": "2026-11-21T00:00:00+00:00",
       "home": "ATL",
       "away": "CHA",
-      "checked_at": "2026-11-20T14:54:35.116596+00:00",
-      "minutes_before_tipoff": 545.4,
+      "checked_at": "2026-11-20T15:54:24.160937+00:00",
+      "minutes_before_tipoff": 485.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -782,8 +592,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "BKN",
       "away": "ORL",
-      "checked_at": "2026-11-20T14:54:35.116596+00:00",
-      "minutes_before_tipoff": 575.4,
+      "checked_at": "2026-11-20T15:54:24.160937+00:00",
+      "minutes_before_tipoff": 515.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -897,8 +707,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "CLE",
       "away": "IND",
-      "checked_at": "2026-11-20T14:54:35.116596+00:00",
-      "minutes_before_tipoff": 575.4,
+      "checked_at": "2026-11-20T15:54:24.160937+00:00",
+      "minutes_before_tipoff": 515.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1022,8 +832,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "DET",
       "away": "TOR",
-      "checked_at": "2026-11-20T14:54:35.116596+00:00",
-      "minutes_before_tipoff": 575.4,
+      "checked_at": "2026-11-20T15:54:24.160937+00:00",
+      "minutes_before_tipoff": 515.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1167,8 +977,8 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "CHI",
       "away": "WAS",
-      "checked_at": "2026-11-20T14:54:35.116596+00:00",
-      "minutes_before_tipoff": 605.4,
+      "checked_at": "2026-11-20T15:54:24.160937+00:00",
+      "minutes_before_tipoff": 545.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1282,8 +1092,8 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "OKC",
       "away": "NOP",
-      "checked_at": "2026-11-20T14:54:35.116596+00:00",
-      "minutes_before_tipoff": 605.4,
+      "checked_at": "2026-11-20T15:54:24.160937+00:00",
+      "minutes_before_tipoff": 545.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1303,7 +1113,7 @@
           "team": "OKC"
         },
         {
-          "name": "Kenrich Williams",
+          "name": "Aday Mara",
           "team": "OKC"
         },
         {
@@ -1321,7 +1131,7 @@
           "team": "NOP"
         },
         {
-          "name": "Herbert Jones",
+          "name": "Saddiq Bey",
           "team": "NOP"
         },
         {
@@ -1437,8 +1247,8 @@
       "tipoff": "2026-11-21T02:30:00+00:00",
       "home": "UTA",
       "away": "PHX",
-      "checked_at": "2026-11-20T14:54:35.116596+00:00",
-      "minutes_before_tipoff": 695.4,
+      "checked_at": "2026-11-20T15:54:24.160937+00:00",
+      "minutes_before_tipoff": 635.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1542,8 +1352,8 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "DEN",
       "away": "HOU",
-      "checked_at": "2026-11-20T14:54:35.116596+00:00",
-      "minutes_before_tipoff": 725.4,
+      "checked_at": "2026-11-20T15:54:24.160937+00:00",
+      "minutes_before_tipoff": 665.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1627,8 +1437,8 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "LAL",
       "away": "SAC",
-      "checked_at": "2026-11-20T14:54:35.116596+00:00",
-      "minutes_before_tipoff": 725.4,
+      "checked_at": "2026-11-20T15:54:24.160937+00:00",
+      "minutes_before_tipoff": 665.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
