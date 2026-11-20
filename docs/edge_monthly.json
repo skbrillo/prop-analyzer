@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T09:54:50.077081+00:00",
+  "generated_at": "2026-11-20T11:45:43.090171+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
@@ -2314,7 +2314,109 @@
       ]
     }
   },
-  "preview_months": {},
+  "preview_months": {
+    "2026-11": {
+      "summary": {
+        "picks": 4,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "dnp": 0,
+        "invalid": 0,
+        "pending": 4,
+        "settled": 0,
+        "win_rate": null,
+        "roi": null,
+        "profit_units": 0
+      },
+      "days": [
+        {
+          "date": "2026-11-20",
+          "picks": 4,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 4,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        }
+      ],
+      "picks": [
+        {
+          "date": "2026-11-20",
+          "rank": 1,
+          "player": "Saddiq Bey",
+          "team": "New Orleans Pelicans",
+          "opponent": "Oklahoma City Thunder",
+          "market": "Assists",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 140,
+          "edge_score": 70.0,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T11:45:42.897063+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 2,
+          "player": "Josh Giddey",
+          "team": "Chicago Bulls",
+          "opponent": "Washington Wizards",
+          "market": "Points",
+          "side": "Under",
+          "line": 13.5,
+          "odds": -102,
+          "edge_score": 63.5,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T11:45:42.897063+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 3,
+          "player": "Kyshawn George",
+          "team": "Washington Wizards",
+          "opponent": "Chicago Bulls",
+          "market": "Points",
+          "side": "Over",
+          "line": 16.5,
+          "odds": -116,
+          "edge_score": 50.7,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T11:45:42.897063+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-20",
+          "rank": 4,
+          "player": "Jalen Green",
+          "team": "Phoenix Suns",
+          "opponent": "Utah Jazz",
+          "market": "Points",
+          "side": "Under",
+          "line": 14.5,
+          "odds": -109,
+          "edge_score": 48.6,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-20T11:45:42.897063+00:00",
+          "official": false
+        }
+      ]
+    }
+  },
   "archive_audit": [
     {
       "date": "2026-11-11",
