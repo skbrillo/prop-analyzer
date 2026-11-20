@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T20:26:12.649184+00:00",
+  "generated_at": "2026-11-20T21:14:45.759524+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -484,6 +484,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540188",
+      "name": "Tyrese Haliburton",
+      "team": "IND",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-20T20:41Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540059",
       "name": "T.J. McConnell",
       "team": "IND",
@@ -517,17 +528,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "539603",
-      "name": "Tyrese Haliburton",
-      "team": "IND",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Hamstring | out",
-      "date": "2026-11-17T18:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "536814",
       "name": "Johnny Furphy",
       "team": "IND",
@@ -550,13 +550,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539822",
+      "injury_record_id": "540187",
       "name": "Brandon Ingram",
       "team": "LAC",
       "status": "O",
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
-      "date": "2026-11-18T23:11Z",
+      "date": "2026-11-20T20:20Z",
       "team_match": "feed"
     },
     {
@@ -1111,6 +1111,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540189",
+      "name": "Kawhi Leonard",
+      "team": "TOR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Knee | out",
+      "date": "2026-11-20T20:42Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540047",
       "name": "Collin Murray-Boyles",
       "team": "TOR",
@@ -1129,17 +1140,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-19T21:13Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539641",
-      "name": "Kawhi Leonard",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Knee | out",
-      "date": "2026-11-17T22:25Z",
       "team_match": "feed"
     },
     {
