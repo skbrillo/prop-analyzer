@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-20T21:14:45.759524+00:00",
+  "generated_at": "2026-11-20T21:57:53.438365+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 109,
+  "player_count": 107,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 109,
+  "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "O": 83,
-    "T": 26
+    "O": 84,
+    "T": 23
   },
   "players": [
     {
@@ -671,28 +671,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61186",
-      "name": "Myles Turner",
-      "team": "MIL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Shoulder | day-to-day",
-      "date": "2026-11-20T03:55Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61185",
-      "name": "Kyle Kuzma",
-      "team": "MIL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Shoulder | day-to-day",
-      "date": "2026-11-20T03:55Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539324",
       "name": "Ousmane Dieng",
       "team": "MIL",
@@ -1034,13 +1012,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540091",
+      "injury_record_id": "540192",
       "name": "Precious Achiuwa",
       "team": "SAC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-20T01:22Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Lower Leg | out",
+      "date": "2026-11-20T21:21Z",
       "team_match": "feed"
     },
     {
