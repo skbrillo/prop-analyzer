@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-21T18:34:40.924143+00:00",
+  "generated_at_utc": "2026-11-21T22:40:44.122554+00:00",
   "regular_season_only": true,
-  "games_validated": 235,
-  "accepted_rows": 5254,
-  "explicit_dnp_rows": 975,
+  "games_validated": 236,
+  "accepted_rows": 5274,
+  "explicit_dnp_rows": 980,
   "rejection_counts": {
     "non_regular_season_game": 67,
     "invalid_stats_or_minutes": 17
@@ -2359,6 +2359,16 @@
       ],
       "player_logs": 19,
       "explicit_dnps": 7
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "401910023",
+      "teams": [
+        "PHI",
+        "MIL"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 5
     }
   ],
   "status": "accepted"

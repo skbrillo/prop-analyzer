@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-21T18:34:40.924143+00:00",
+  "generated_at_utc": "2026-11-21T22:40:44.122554+00:00",
   "records": [
     {
       "date": "2026-10-20",
@@ -11699,6 +11699,66 @@
       "game_id": "401909313",
       "opponent": "Sacramento Kings",
       "opponent_abbr": "SAC",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-21",
+      "player": "Tacko Fall",
+      "player_id": "3904625",
+      "team": "Philadelphia 76ers",
+      "team_abbr": "PHI",
+      "team_id": "20",
+      "game_id": "401910023",
+      "opponent": "Milwaukee Bucks",
+      "opponent_abbr": "MIL",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-21",
+      "player": "Gary Trent Jr.",
+      "player_id": "4277843",
+      "team": "Milwaukee Bucks",
+      "team_abbr": "MIL",
+      "team_id": "15",
+      "game_id": "401910023",
+      "opponent": "Philadelphia 76ers",
+      "opponent_abbr": "PHI",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-21",
+      "player": "Jericho Sims",
+      "player_id": "4277922",
+      "team": "Milwaukee Bucks",
+      "team_abbr": "MIL",
+      "team_id": "15",
+      "game_id": "401910023",
+      "opponent": "Philadelphia 76ers",
+      "opponent_abbr": "PHI",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-21",
+      "player": "Caleb Love",
+      "player_id": "4433144",
+      "team": "Philadelphia 76ers",
+      "team_abbr": "PHI",
+      "team_id": "20",
+      "game_id": "401910023",
+      "opponent": "Milwaukee Bucks",
+      "opponent_abbr": "MIL",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-21",
+      "player": "Justin Edwards",
+      "player_id": "4711297",
+      "team": "Philadelphia 76ers",
+      "team_abbr": "PHI",
+      "team_id": "20",
+      "game_id": "401910023",
+      "opponent": "Milwaukee Bucks",
+      "opponent_abbr": "MIL",
       "reason": "COACH'S DECISION"
     }
   ]
