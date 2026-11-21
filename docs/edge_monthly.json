@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T09:43:25.077733+00:00",
+  "generated_at": "2026-11-21T11:33:06.419251+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
@@ -2472,7 +2472,109 @@
       ]
     }
   },
-  "preview_months": {},
+  "preview_months": {
+    "2026-11": {
+      "summary": {
+        "picks": 4,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "dnp": 0,
+        "invalid": 0,
+        "pending": 4,
+        "settled": 0,
+        "win_rate": null,
+        "roi": null,
+        "profit_units": 0
+      },
+      "days": [
+        {
+          "date": "2026-11-21",
+          "picks": 4,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 4,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        }
+      ],
+      "picks": [
+        {
+          "date": "2026-11-21",
+          "rank": 1,
+          "player": "Karl-Anthony Towns",
+          "team": "New York Knicks",
+          "opponent": "Portland Trail Blazers",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 12.5,
+          "odds": -119,
+          "edge_score": 60.3,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-21T11:33:06.215271+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-21",
+          "rank": 2,
+          "player": "Cam Spencer",
+          "team": "Memphis Grizzlies",
+          "opponent": "Minnesota Timberwolves",
+          "market": "Assists",
+          "side": "Over",
+          "line": 5.5,
+          "odds": 119,
+          "edge_score": 56.6,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-21T11:33:06.215271+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-21",
+          "rank": 3,
+          "player": "Jeremiah Fears",
+          "team": "New Orleans Pelicans",
+          "opponent": "San Antonio Spurs",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 4.5,
+          "odds": -115,
+          "edge_score": 55.6,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-21T11:33:06.215271+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-21",
+          "rank": 4,
+          "player": "Victor Wembanyama",
+          "team": "San Antonio Spurs",
+          "opponent": "New Orleans Pelicans",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 11.5,
+          "odds": -102,
+          "edge_score": 48.0,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-21T11:33:06.215271+00:00",
+          "official": false
+        }
+      ]
+    }
+  },
   "archive_audit": [
     {
       "date": "2026-11-11",

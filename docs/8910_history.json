@@ -2375,7 +2375,42 @@
       "team_recovered_from_logs": false,
       "verified_team": "ATL",
       "verified_opponent": "CHA"
+    },
+    "2026-11-21|zionwilliamson|points": {
+      "prediction_id": "9ce334abcc5a0115e094d6c7",
+      "saved_at": "2026-11-21T11:33:05.342052+00:00",
+      "game_date": "2026-11-21",
+      "event_id": "fdb2f7469742fd139f190d05ec2a7b56",
+      "game_time": "2026-11-22T01:00:00+00:00",
+      "matchup": "New Orleans Pelicans @ San Antonio Spurs",
+      "player": "Zion Williamson",
+      "team": "NOP",
+      "opponent": "SAS",
+      "market": "Points",
+      "side": "Over",
+      "line": "19.5",
+      "odds": "-117",
+      "projection": "20.93",
+      "probability": "0.5631",
+      "model_ev": "0.0443",
+      "last10": "8",
+      "model_version": "v7-live-injury-screen-experimental",
+      "bucket": 8,
+      "locked_at": "2026-11-21T11:33:06.143879+00:00",
+      "status": "pending",
+      "actual": null,
+      "actual_minutes": null,
+      "outcome": null,
+      "profit": null,
+      "stake": null,
+      "reason": "Waiting for game completion buffer",
+      "diagnostic_category": "waiting",
+      "diagnostic_teams_found": [],
+      "diagnostic_match_count": 0,
+      "team_recovered_from_logs": false,
+      "verified_team": null,
+      "verified_opponent": null
     }
   },
-  "updated_at": "2026-11-21T09:43:24.722176+00:00"
+  "updated_at": "2026-11-21T11:33:06.143879+00:00"
 }
