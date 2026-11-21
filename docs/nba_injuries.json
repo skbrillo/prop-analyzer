@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T21:26:11.084936+00:00",
+  "generated_at": "2026-11-21T22:05:14.083635+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -40,8 +40,8 @@
   "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "O": 86,
-    "T": 21
+    "O": 87,
+    "T": 20
   },
   "players": [
     {
@@ -772,13 +772,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540326",
+      "injury_record_id": "540373",
       "name": "OG Anunoby",
       "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Calf | day-to-day",
-      "date": "2026-11-21T16:09Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Calf | out",
+      "date": "2026-11-21T21:49Z",
       "team_match": "feed"
     },
     {
