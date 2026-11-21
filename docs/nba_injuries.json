@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T02:16:26.896593+00:00",
+  "generated_at": "2026-11-21T03:10:05.694464+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -40,8 +40,8 @@
   "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "O": 92,
-    "T": 13
+    "O": 93,
+    "T": 12
   },
   "players": [
     {
@@ -134,6 +134,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540244",
+      "name": "Nolan Traore",
+      "team": "BKN",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-21T02:25Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540044",
       "name": "Grant Nelson",
       "team": "BKN",
@@ -141,17 +152,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-11-19T21:18Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61217",
-      "name": "Brandon Miller",
-      "team": "CHA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Ankle | day-to-day",
-      "date": "2026-11-21T00:35Z",
       "team_match": "feed"
     },
     {
