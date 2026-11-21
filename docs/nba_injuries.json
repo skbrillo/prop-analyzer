@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T17:49:53.750349+00:00",
+  "generated_at": "2026-11-21T18:26:49.463289+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -40,8 +40,8 @@
   "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
-    "O": 83,
-    "T": 23
+    "O": 84,
+    "T": 22
   },
   "players": [
     {
@@ -706,6 +706,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "540348",
+      "name": "Trendon Watford",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-21T18:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61252",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Knee | out",
+      "date": "2026-11-21T18:20Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540043",
       "name": "Bryce McGowens",
       "team": "NOP",
@@ -713,17 +735,6 @@
       "raw_status": "Out",
       "reason": "Infection | Elbow | out",
       "date": "2026-11-19T21:15Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540041",
-      "name": "Trendon Watford",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-19T21:09Z",
       "team_match": "feed"
     },
     {
@@ -1153,17 +1164,6 @@
       "raw_status": "Out",
       "reason": "Not Specified | Knee | out",
       "date": "2026-10-27T19:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61237",
-      "name": "Felix Okpara",
-      "team": "WAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Strain | Back | day-to-day",
-      "date": "2026-11-21T14:54Z",
       "team_match": "feed"
     },
     {
