@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T14:16:44.023169+00:00",
+  "generated_at": "2026-11-21T15:11:06.775302+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -40,8 +40,8 @@
   "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "O": 96,
-    "T": 11
+    "O": 83,
+    "T": 24
   },
   "players": [
     {
@@ -134,46 +134,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "540244",
+      "injury_record_id": "-61233",
       "name": "Nolan Traore",
       "team": "BKN",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Hamstring | out",
-      "date": "2026-11-21T02:25Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hamstring | day-to-day",
+      "date": "2026-11-21T14:51Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540044",
+      "injury_record_id": "-61232",
       "name": "Grant Nelson",
       "team": "BKN",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-19T21:18Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-21T14:51Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540061",
+      "injury_record_id": "-61230",
       "name": "Grant Williams",
       "team": "CHA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Hamstring | out",
-      "date": "2026-11-19T22:21Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hamstring | day-to-day",
+      "date": "2026-11-21T14:49Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540053",
+      "injury_record_id": "-61229",
       "name": "Grayson Allen",
       "team": "CHA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Concussion | out",
-      "date": "2026-11-19T22:02Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Concussion | day-to-day",
+      "date": "2026-11-21T14:49Z",
       "team_match": "feed"
     },
     {
@@ -200,13 +200,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540214",
+      "injury_record_id": "-61238",
       "name": "Jalen Smith",
       "team": "CHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-20T23:19Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-21T14:54Z",
       "team_match": "feed"
     },
     {
@@ -343,6 +343,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61235",
+      "name": "Ebuka Okorie",
+      "team": "DET",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Strain | Oblique | day-to-day",
+      "date": "2026-11-21T14:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540229",
       "name": "Ronald Holland II",
       "team": "DET",
@@ -361,17 +372,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-11-20T23:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540049",
-      "name": "Ebuka Okorie",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Oblique | out",
-      "date": "2026-11-19T21:43Z",
       "team_match": "feed"
     },
     {
@@ -486,13 +486,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61227",
+      "injury_record_id": "-61231",
       "name": "T.J. McConnell",
       "team": "IND",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Hamstring | out",
-      "date": "2026-11-21T04:58Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hamstring | day-to-day",
+      "date": "2026-11-21T14:51Z",
       "team_match": "feed"
     },
     {
@@ -772,24 +772,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540215",
-      "name": "Alex Caruso",
+      "injury_record_id": "-61239",
+      "name": "Nikola Topic",
       "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Hip | out",
-      "date": "2026-11-20T23:24Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hip | day-to-day",
+      "date": "2026-11-21T14:54Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61190",
-      "name": "Nikola Topic",
+      "injury_record_id": "-61236",
+      "name": "Alex Caruso",
       "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Hip | out",
-      "date": "2026-11-20T17:02Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hip | day-to-day",
+      "date": "2026-11-21T14:54Z",
       "team_match": "feed"
     },
     {
@@ -948,13 +948,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540261",
+      "injury_record_id": "-61241",
       "name": "Ryan Dunn",
       "team": "PHX",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Quadriceps | out",
-      "date": "2026-11-21T04:06Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Quadriceps | day-to-day",
+      "date": "2026-11-21T14:55Z",
       "team_match": "feed"
     },
     {
@@ -1025,13 +1025,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540192",
+      "injury_record_id": "-61240",
       "name": "Precious Achiuwa",
       "team": "SAC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Lower Leg | out",
-      "date": "2026-11-20T21:21Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Lower Leg | day-to-day",
+      "date": "2026-11-21T14:55Z",
       "team_match": "feed"
     },
     {
@@ -1091,6 +1091,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61234",
+      "name": "Collin Murray-Boyles",
+      "team": "TOR",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Concussion | day-to-day",
+      "date": "2026-11-21T14:52Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540189",
       "name": "Kawhi Leonard",
       "team": "TOR",
@@ -1098,17 +1109,6 @@
       "raw_status": "Out",
       "reason": "Inflammation | Knee | out",
       "date": "2026-11-20T20:42Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540047",
-      "name": "Collin Murray-Boyles",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Concussion | out",
-      "date": "2026-11-19T21:41Z",
       "team_match": "feed"
     },
     {
@@ -1168,13 +1168,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61218",
+      "injury_record_id": "-61237",
       "name": "Felix Okpara",
       "team": "WAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Back | out",
-      "date": "2026-11-21T00:43Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Strain | Back | day-to-day",
+      "date": "2026-11-21T14:54Z",
       "team_match": "feed"
     },
     {
