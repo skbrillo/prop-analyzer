@@ -1,12 +1,13 @@
 {
-  "generated_at": "2026-11-21T00:10:10.268404+00:00",
+  "generated_at": "2026-11-21T01:13:57.717666+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 108,
   "teams_reported": [
     "ATL",
     "BKN",
+    "BOS",
     "CHA",
     "CHI",
     "CLE",
@@ -35,11 +36,11 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 29,
-  "players_with_team": 106,
+  "teams_count": 30,
+  "players_with_team": 108,
   "players_without_team": 0,
   "status_counts": {
-    "O": 90,
+    "O": 92,
     "T": 16
   },
   "players": [
@@ -111,6 +112,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61220",
+      "name": "Derrick White",
+      "team": "BOS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Shoulder | day-to-day",
+      "date": "2026-11-21T00:57Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61219",
+      "name": "Jayson Tatum",
+      "team": "BOS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Rest | day-to-day",
+      "date": "2026-11-21T00:56Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540044",
       "name": "Grant Nelson",
       "team": "BKN",
@@ -118,6 +141,17 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-11-19T21:18Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61217",
+      "name": "Brandon Miller",
+      "team": "CHA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Ankle | day-to-day",
+      "date": "2026-11-21T00:35Z",
       "team_match": "feed"
     },
     {
@@ -309,6 +343,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540229",
+      "name": "Ronald Holland II",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Knee | out",
+      "date": "2026-11-21T00:34Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540207",
       "name": "Taurean Prince",
       "team": "DET",
@@ -320,17 +365,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540174",
-      "name": "Ronald Holland II",
-      "team": "DET",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Knee | day-to-day",
-      "date": "2026-11-20T17:46Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540049",
       "name": "Ebuka Okorie",
       "team": "DET",
@@ -338,17 +372,6 @@
       "raw_status": "Out",
       "reason": "Strain | Oblique | out",
       "date": "2026-11-19T21:43Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540045",
-      "name": "Cade Cunningham",
-      "team": "DET",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Knee | day-to-day",
-      "date": "2026-11-19T21:36Z",
       "team_match": "feed"
     },
     {
@@ -1156,13 +1179,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61037",
+      "injury_record_id": "-61218",
       "name": "Felix Okpara",
       "team": "WAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Strain | Back | day-to-day",
-      "date": "2026-11-17T16:38Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Back | out",
+      "date": "2026-11-21T00:43Z",
       "team_match": "feed"
     },
     {
