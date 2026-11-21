@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T04:44:26.580902+00:00",
+  "generated_at": "2026-11-21T05:38:19.378324+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 107,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,10 +37,10 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 106,
+  "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "O": 94,
+    "O": 95,
     "T": 12
   },
   "players": [
@@ -482,6 +482,17 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-11-19T23:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61227",
+      "name": "T.J. McConnell",
+      "team": "IND",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-21T04:58Z",
       "team_match": "feed"
     },
     {
