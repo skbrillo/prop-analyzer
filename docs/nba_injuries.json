@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T20:04:59.891365+00:00",
+  "generated_at": "2026-11-21T20:46:40.658529+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 105,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,11 +37,11 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 105,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
     "O": 83,
-    "T": 22
+    "T": 23
   },
   "players": [
     {
@@ -640,13 +640,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61129",
+      "injury_record_id": "540365",
       "name": "Myron Gardner",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Hamstring | day-to-day",
-      "date": "2026-11-19T14:45Z",
+      "date": "2026-11-21T20:35Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540364",
+      "name": "Giannis Antetokounmpo",
+      "team": "MIA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Groin | day-to-day",
+      "date": "2026-11-21T20:33Z",
       "team_match": "feed"
     },
     {
