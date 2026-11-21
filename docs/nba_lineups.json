@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T23:06:10.238636+00:00",
+  "generated_at": "2026-11-21T23:47:55.316993+00:00",
   "source": "RotoWire",
   "games": {
     "401909305": {
@@ -1163,8 +1163,8 @@
       "tipoff": "2026-11-21T18:00:00+00:00",
       "home": "PHI",
       "away": "MIL",
-      "checked_at": "2026-11-21T23:06:10.238636+00:00",
-      "minutes_before_tipoff": -306.2,
+      "checked_at": "2026-11-21T23:47:55.316993+00:00",
+      "minutes_before_tipoff": -347.9,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1268,8 +1268,8 @@
       "tipoff": "2026-11-22T00:30:00+00:00",
       "home": "NYK",
       "away": "POR",
-      "checked_at": "2026-11-21T23:06:10.238636+00:00",
-      "minutes_before_tipoff": 83.8,
+      "checked_at": "2026-11-21T23:47:55.316993+00:00",
+      "minutes_before_tipoff": 42.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1403,8 +1403,8 @@
       "tipoff": "2026-11-22T01:00:00+00:00",
       "home": "DAL",
       "away": "LAC",
-      "checked_at": "2026-11-21T23:06:10.238636+00:00",
-      "minutes_before_tipoff": 113.8,
+      "checked_at": "2026-11-21T23:47:55.316993+00:00",
+      "minutes_before_tipoff": 72.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1474,6 +1474,11 @@
           "name": "Dereck Lively",
           "team": "DAL",
           "status": "out"
+        },
+        {
+          "name": "P.J. Washington",
+          "team": "DAL",
+          "status": "out"
         }
       ],
       "away_out": [
@@ -1515,6 +1520,11 @@
           "status": "out"
         },
         {
+          "name": "P.J. Washington",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
           "name": "Bradley Beal",
           "team": "LAC",
           "status": "out"
@@ -1538,8 +1548,8 @@
       "tipoff": "2026-11-22T01:00:00+00:00",
       "home": "MIN",
       "away": "MEM",
-      "checked_at": "2026-11-21T23:06:10.238636+00:00",
-      "minutes_before_tipoff": 113.8,
+      "checked_at": "2026-11-21T23:47:55.316993+00:00",
+      "minutes_before_tipoff": 72.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1683,8 +1693,8 @@
       "tipoff": "2026-11-22T01:00:00+00:00",
       "home": "SAS",
       "away": "NOP",
-      "checked_at": "2026-11-21T23:06:10.238636+00:00",
-      "minutes_before_tipoff": 113.8,
+      "checked_at": "2026-11-21T23:47:55.316993+00:00",
+      "minutes_before_tipoff": 72.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1828,8 +1838,8 @@
       "tipoff": "2026-11-22T03:00:00+00:00",
       "home": "SAC",
       "away": "BOS",
-      "checked_at": "2026-11-21T23:06:10.238636+00:00",
-      "minutes_before_tipoff": 233.8,
+      "checked_at": "2026-11-21T23:47:55.316993+00:00",
+      "minutes_before_tipoff": 192.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
