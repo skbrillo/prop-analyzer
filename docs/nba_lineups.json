@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T00:17:24.285968+00:00",
+  "generated_at": "2026-11-21T01:41:42.795518+00:00",
   "source": "RotoWire",
   "games": {
     "401910019": {
@@ -447,8 +447,8 @@
       "tipoff": "2026-11-21T00:00:00+00:00",
       "home": "ATL",
       "away": "CHA",
-      "checked_at": "2026-11-21T00:17:24.285968+00:00",
-      "minutes_before_tipoff": -17.4,
+      "checked_at": "2026-11-21T01:41:42.795518+00:00",
+      "minutes_before_tipoff": -101.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -602,8 +602,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "BKN",
       "away": "ORL",
-      "checked_at": "2026-11-21T00:17:24.285968+00:00",
-      "minutes_before_tipoff": 12.6,
+      "checked_at": "2026-11-21T01:41:42.795518+00:00",
+      "minutes_before_tipoff": -71.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -717,8 +717,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "CLE",
       "away": "IND",
-      "checked_at": "2026-11-21T00:17:24.285968+00:00",
-      "minutes_before_tipoff": 12.6,
+      "checked_at": "2026-11-21T01:41:42.795518+00:00",
+      "minutes_before_tipoff": -71.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -842,14 +842,12 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "DET",
       "away": "TOR",
-      "checked_at": "2026-11-21T00:17:24.285968+00:00",
-      "minutes_before_tipoff": 12.6,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-21T01:41:42.795518+00:00",
+      "minutes_before_tipoff": -71.7,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Cade Cunningham",
           "team": "DET"
@@ -871,7 +869,7 @@
           "team": "DET"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Immanuel Quickley",
           "team": "TOR"
@@ -881,7 +879,7 @@
           "team": "TOR"
         },
         {
-          "name": "Jamison Battle",
+          "name": "Allen Graves",
           "team": "TOR"
         },
         {
@@ -893,9 +891,16 @@
           "team": "TOR"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Jalen Duren",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Ronald Holland",
           "team": "DET",
           "status": "out"
         },
@@ -935,6 +940,11 @@
       "out_players": [
         {
           "name": "Jalen Duren",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Ronald Holland",
           "team": "DET",
           "status": "out"
         },
@@ -977,14 +987,12 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "CHI",
       "away": "WAS",
-      "checked_at": "2026-11-21T00:17:24.285968+00:00",
-      "minutes_before_tipoff": 42.6,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-21T01:41:42.795518+00:00",
+      "minutes_before_tipoff": -41.7,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Josh Giddey",
           "team": "CHI"
@@ -1006,7 +1014,7 @@
           "team": "CHI"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Trae Young",
           "team": "WAS"
@@ -1028,6 +1036,8 @@
           "team": "WAS"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Jalen Smith",
@@ -1048,6 +1058,11 @@
         },
         {
           "name": "Justin Champagnie",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Felix Okpara",
           "team": "WAS",
           "status": "out"
         },
@@ -1084,6 +1099,11 @@
           "status": "out"
         },
         {
+          "name": "Felix Okpara",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
           "name": "Tristan Vukcevic",
           "team": "WAS",
           "status": "out"
@@ -1102,14 +1122,12 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "OKC",
       "away": "NOP",
-      "checked_at": "2026-11-21T00:17:24.285968+00:00",
-      "minutes_before_tipoff": 42.6,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-21T01:41:42.795518+00:00",
+      "minutes_before_tipoff": -41.7,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Shai Gilgeous-Alexander",
           "team": "OKC"
@@ -1131,17 +1149,17 @@
           "team": "OKC"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Jeremiah Fears",
           "team": "NOP"
         },
         {
-          "name": "Trey Murphy",
+          "name": "Saddiq Bey",
           "team": "NOP"
         },
         {
-          "name": "Saddiq Bey",
+          "name": "Herbert Jones",
           "team": "NOP"
         },
         {
@@ -1153,6 +1171,8 @@
           "team": "NOP"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Alex Caruso",
@@ -1267,8 +1287,8 @@
       "tipoff": "2026-11-21T02:30:00+00:00",
       "home": "UTA",
       "away": "PHX",
-      "checked_at": "2026-11-21T00:17:24.285968+00:00",
-      "minutes_before_tipoff": 132.6,
+      "checked_at": "2026-11-21T01:41:42.795518+00:00",
+      "minutes_before_tipoff": 48.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1372,8 +1392,8 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "DEN",
       "away": "HOU",
-      "checked_at": "2026-11-21T00:17:24.285968+00:00",
-      "minutes_before_tipoff": 162.6,
+      "checked_at": "2026-11-21T01:41:42.795518+00:00",
+      "minutes_before_tipoff": 78.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1457,8 +1477,8 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "LAL",
       "away": "SAC",
-      "checked_at": "2026-11-21T00:17:24.285968+00:00",
-      "minutes_before_tipoff": 162.6,
+      "checked_at": "2026-11-21T01:41:42.795518+00:00",
+      "minutes_before_tipoff": 78.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
