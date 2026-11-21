@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T17:13:11.367137+00:00",
+  "generated_at": "2026-11-21T17:49:53.750349+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 108,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,11 +37,11 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 108,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
-    "O": 84,
-    "T": 24
+    "O": 83,
+    "T": 23
   },
   "players": [
     {
@@ -889,28 +889,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-10-24T16:47Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540328",
-      "name": "Tyrese Maxey",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Foot | day-to-day",
-      "date": "2026-11-21T16:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540199",
-      "name": "Dominick Barlow",
-      "team": "PHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Fracture | Back | out",
-      "date": "2026-11-20T22:13Z",
       "team_match": "feed"
     },
     {
