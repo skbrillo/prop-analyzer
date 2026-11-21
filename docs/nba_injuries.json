@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T22:46:14.074255+00:00",
+  "generated_at": "2026-11-21T23:25:29.019841+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -40,8 +40,8 @@
   "players_with_team": 109,
   "players_without_team": 0,
   "status_counts": {
-    "O": 91,
-    "T": 18
+    "O": 94,
+    "T": 15
   },
   "players": [
     {
@@ -277,13 +277,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540358",
+      "injury_record_id": "-61269",
       "name": "P.J. Washington",
       "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-21T19:22Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-21T23:10Z",
       "team_match": "feed"
     },
     {
@@ -295,17 +295,6 @@
       "raw_status": "Out",
       "reason": "Groin | out",
       "date": "2026-11-21T15:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540204",
-      "name": "Walter Clayton Jr.",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-20T22:35Z",
       "team_match": "feed"
     },
     {
@@ -354,6 +343,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540386",
+      "name": "Ronald Holland II",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Knee | out",
+      "date": "2026-11-21T23:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540382",
       "name": "Ebuka Okorie",
       "team": "DET",
@@ -372,17 +372,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Knee | day-to-day",
       "date": "2026-11-21T22:23Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540229",
-      "name": "Ronald Holland II",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Knee | out",
-      "date": "2026-11-21T00:34Z",
       "team_match": "feed"
     },
     {
@@ -794,6 +783,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540385",
+      "name": "Karl-Anthony Towns",
+      "team": "NYK",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-21T22:51Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540373",
       "name": "OG Anunoby",
       "team": "NYK",
@@ -801,17 +801,6 @@
       "raw_status": "Out",
       "reason": "Calf | out",
       "date": "2026-11-21T21:49Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540324",
-      "name": "Karl-Anthony Towns",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-21T16:05Z",
       "team_match": "feed"
     },
     {
@@ -827,13 +816,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61264",
+      "injury_record_id": "540384",
+      "name": "Shai Gilgeous-Alexander",
+      "team": "OKC",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Back | day-to-day",
+      "date": "2026-11-21T22:45Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540383",
+      "name": "Nikola Topic",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-21T22:39Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540381",
       "name": "Jaylin Williams",
       "team": "OKC",
       "status": "O",
       "raw_status": "Out",
       "reason": "Spasms | Back | out",
-      "date": "2026-11-21T22:32Z",
+      "date": "2026-11-21T22:34Z",
       "team_match": "feed"
     },
     {
@@ -845,17 +856,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Hip | out",
       "date": "2026-11-21T22:29Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61239",
-      "name": "Nikola Topic",
-      "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-21T14:54Z",
       "team_match": "feed"
     },
     {
