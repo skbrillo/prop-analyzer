@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T17:35:40.868367+00:00",
+  "generated_at": "2026-11-21T18:20:09.524242+00:00",
   "source": "RotoWire",
   "games": {
     "401909305": {
@@ -1163,8 +1163,8 @@
       "tipoff": "2026-11-21T18:00:00+00:00",
       "home": "PHI",
       "away": "MIL",
-      "checked_at": "2026-11-21T17:35:40.868367+00:00",
-      "minutes_before_tipoff": 24.3,
+      "checked_at": "2026-11-21T18:20:09.524242+00:00",
+      "minutes_before_tipoff": -20.2,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1192,7 +1192,7 @@
       ],
       "away_starters": [
         {
-          "name": "Brayden Burries",
+          "name": "Ryan Rollins",
           "team": "MIL"
         },
         {
@@ -1200,11 +1200,11 @@
           "team": "MIL"
         },
         {
-          "name": "Kyle Kuzma",
+          "name": "Jaime Jaquez",
           "team": "MIL"
         },
         {
-          "name": "Jericho Sims",
+          "name": "Kyle Kuzma",
           "team": "MIL"
         },
         {
@@ -1268,8 +1268,8 @@
       "tipoff": "2026-11-22T00:30:00+00:00",
       "home": "NYK",
       "away": "POR",
-      "checked_at": "2026-11-21T17:35:40.868367+00:00",
-      "minutes_before_tipoff": 414.3,
+      "checked_at": "2026-11-21T18:20:09.524242+00:00",
+      "minutes_before_tipoff": 369.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1383,8 +1383,8 @@
       "tipoff": "2026-11-22T01:00:00+00:00",
       "home": "DAL",
       "away": "LAC",
-      "checked_at": "2026-11-21T17:35:40.868367+00:00",
-      "minutes_before_tipoff": 444.3,
+      "checked_at": "2026-11-21T18:20:09.524242+00:00",
+      "minutes_before_tipoff": 399.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1518,8 +1518,8 @@
       "tipoff": "2026-11-22T01:00:00+00:00",
       "home": "MIN",
       "away": "MEM",
-      "checked_at": "2026-11-21T17:35:40.868367+00:00",
-      "minutes_before_tipoff": 444.3,
+      "checked_at": "2026-11-21T18:20:09.524242+00:00",
+      "minutes_before_tipoff": 399.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1663,8 +1663,8 @@
       "tipoff": "2026-11-22T01:00:00+00:00",
       "home": "SAS",
       "away": "NOP",
-      "checked_at": "2026-11-21T17:35:40.868367+00:00",
-      "minutes_before_tipoff": 444.3,
+      "checked_at": "2026-11-21T18:20:09.524242+00:00",
+      "minutes_before_tipoff": 399.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1743,6 +1743,11 @@
           "status": "out"
         },
         {
+          "name": "Trey Murphy",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
           "name": "Dejounte Murray",
           "team": "NOP",
           "status": "out"
@@ -1780,6 +1785,11 @@
           "status": "out"
         },
         {
+          "name": "Trey Murphy",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
           "name": "Dejounte Murray",
           "team": "NOP",
           "status": "out"
@@ -1798,8 +1808,8 @@
       "tipoff": "2026-11-22T03:00:00+00:00",
       "home": "SAC",
       "away": "BOS",
-      "checked_at": "2026-11-21T17:35:40.868367+00:00",
-      "minutes_before_tipoff": 564.3,
+      "checked_at": "2026-11-21T18:20:09.524242+00:00",
+      "minutes_before_tipoff": 519.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
