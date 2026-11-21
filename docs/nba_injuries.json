@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T16:30:02.904070+00:00",
+  "generated_at": "2026-11-21T17:13:11.367137+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -893,6 +893,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540328",
+      "name": "Tyrese Maxey",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Foot | day-to-day",
+      "date": "2026-11-21T16:25Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540199",
       "name": "Dominick Barlow",
       "team": "PHI",
@@ -911,17 +922,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Hamstring | out",
       "date": "2026-11-20T22:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540195",
-      "name": "Tyrese Maxey",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Foot | day-to-day",
-      "date": "2026-11-20T22:07Z",
       "team_match": "feed"
     },
     {
