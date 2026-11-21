@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T18:26:49.463289+00:00",
+  "generated_at": "2026-11-21T19:17:46.081921+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 105,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,10 +37,10 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 106,
+  "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "O": 84,
+    "O": 83,
     "T": 22
   },
   "players": [
@@ -607,17 +607,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540209",
-      "name": "Ty Jerome",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Hip | out",
-      "date": "2026-11-20T23:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539654",
       "name": "GG Jackson",
       "team": "MEM",
@@ -706,6 +695,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540349",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Knee | out",
+      "date": "2026-11-21T18:22Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540348",
       "name": "Trendon Watford",
       "team": "NOP",
@@ -713,17 +713,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-11-21T18:21Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61252",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Knee | out",
-      "date": "2026-11-21T18:20Z",
       "team_match": "feed"
     },
     {
