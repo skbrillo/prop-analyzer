@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-21T01:13:57.717666+00:00",
+  "generated_at": "2026-11-21T02:16:26.896593+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 108,
+  "player_count": 105,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,11 +37,11 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 108,
+  "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
     "O": 92,
-    "T": 16
+    "T": 13
   },
   "players": [
     {
@@ -112,24 +112,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61220",
-      "name": "Derrick White",
-      "team": "BOS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Shoulder | day-to-day",
-      "date": "2026-11-21T00:57Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61219",
+      "injury_record_id": "540235",
       "name": "Jayson Tatum",
       "team": "BOS",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Rest | day-to-day",
-      "date": "2026-11-21T00:56Z",
+      "date": "2026-11-21T01:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540234",
+      "name": "Derrick White",
+      "team": "BOS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Shoulder | day-to-day",
+      "date": "2026-11-21T01:00Z",
       "team_match": "feed"
     },
     {
@@ -475,17 +475,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540066",
-      "name": "Steven Adams",
-      "team": "HOU",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Quadriceps | day-to-day",
-      "date": "2026-11-19T23:22Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540064",
       "name": "Clint Capela",
       "team": "HOU",
@@ -493,17 +482,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-11-19T23:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540063",
-      "name": "Alperen Sengun",
-      "team": "HOU",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Eye | day-to-day",
-      "date": "2026-11-19T23:17Z",
       "team_match": "feed"
     },
     {
@@ -574,13 +552,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540088",
+      "injury_record_id": "540236",
       "name": "Austin Reaves",
       "team": "LAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
-      "date": "2026-11-20T01:05Z",
+      "date": "2026-11-21T01:26Z",
       "team_match": "feed"
     },
     {
@@ -1032,17 +1010,6 @@
       "raw_status": "Out",
       "reason": "Bruise | Lower Leg | out",
       "date": "2026-11-20T21:21Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540090",
-      "name": "De'Andre Hunter",
-      "team": "SAC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-20T01:21Z",
       "team_match": "feed"
     },
     {
