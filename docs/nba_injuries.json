@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-20T23:26:12.130800+00:00",
+  "generated_at": "2026-11-21T00:10:10.268404+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 111,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -36,11 +36,11 @@
     "WAS"
   ],
   "teams_count": 29,
-  "players_with_team": 111,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
     "O": 90,
-    "T": 21
+    "T": 16
   },
   "players": [
     {
@@ -166,24 +166,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61209",
+      "injury_record_id": "540214",
       "name": "Jalen Smith",
       "team": "CHI",
       "status": "O",
       "raw_status": "Out",
       "reason": "Illness | out",
       "date": "2026-11-20T23:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540058",
-      "name": "Noa Essengue",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Wrist | day-to-day",
-      "date": "2026-11-19T22:12Z",
       "team_match": "feed"
     },
     {
@@ -217,17 +206,6 @@
       "raw_status": "Out",
       "reason": "Ankle | out",
       "date": "2026-11-19T21:55Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540050",
-      "name": "Peyton Watson",
-      "team": "CLE",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Back | day-to-day",
-      "date": "2026-11-19T21:50Z",
       "team_match": "feed"
     },
     {
@@ -518,28 +496,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540059",
-      "name": "T.J. McConnell",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Strain | Hamstring | day-to-day",
-      "date": "2026-11-19T22:14Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540054",
-      "name": "Braden Smith",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "day-to-day",
-      "date": "2026-11-19T22:05Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "536814",
       "name": "Johnny Furphy",
       "team": "IND",
@@ -771,17 +727,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540039",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Tendinitis | Knee | out",
-      "date": "2026-11-19T21:05Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "538929",
       "name": "Dejounte Murray",
       "team": "NOP",
@@ -815,6 +760,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540215",
+      "name": "Alex Caruso",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-20T23:24Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-61190",
       "name": "Nikola Topic",
       "team": "OKC",
@@ -822,17 +778,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Hip | out",
       "date": "2026-11-20T17:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540065",
-      "name": "Alex Caruso",
-      "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-19T23:21Z",
       "team_match": "feed"
     },
     {
