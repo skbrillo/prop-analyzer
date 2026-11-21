@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T23:25:29.019841+00:00",
+  "generated_at": "2026-11-21T23:58:32.540579+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -277,13 +277,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61269",
+      "injury_record_id": "540388",
       "name": "P.J. Washington",
       "team": "DAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Illness | out",
-      "date": "2026-11-21T23:10Z",
+      "date": "2026-11-21T23:14Z",
       "team_match": "feed"
     },
     {
