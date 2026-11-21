@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T15:11:06.775302+00:00",
+  "generated_at": "2026-11-21T15:51:06.747654+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -40,8 +40,8 @@
   "players_with_team": 107,
   "players_without_team": 0,
   "status_counts": {
-    "O": 83,
-    "T": 24
+    "O": 84,
+    "T": 23
   },
   "players": [
     {
@@ -266,6 +266,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540309",
+      "name": "Tobi Lawal",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Groin | out",
+      "date": "2026-11-21T15:08Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540205",
       "name": "P.J. Washington",
       "team": "DAL",
@@ -295,17 +306,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Foot | out",
       "date": "2026-11-20T19:31Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61144",
-      "name": "Tobi Lawal",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Groin | day-to-day",
-      "date": "2026-11-19T14:51Z",
       "team_match": "feed"
     },
     {
