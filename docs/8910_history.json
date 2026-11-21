@@ -2410,7 +2410,42 @@
       "team_recovered_from_logs": false,
       "verified_team": null,
       "verified_opponent": null
+    },
+    "2026-11-21|domantassabonis|rebounds": {
+      "prediction_id": "ab14dc3a52d8d506a02a7c57",
+      "saved_at": "2026-11-21T18:34:43.363975+00:00",
+      "game_date": "2026-11-21",
+      "event_id": "5faed09692dfc626a1985ce70f13ec86",
+      "game_time": "2026-11-22T03:10:00+00:00",
+      "matchup": "Boston Celtics @ Sacramento Kings",
+      "player": "Domantas Sabonis",
+      "team": "SAC",
+      "opponent": "BOS",
+      "market": "Rebounds",
+      "side": "Over",
+      "line": "11.5",
+      "odds": "-105",
+      "projection": "11.7",
+      "probability": "0.4981",
+      "model_ev": "-0.0276",
+      "last10": "8",
+      "model_version": "v7-live-injury-screen-experimental",
+      "bucket": 8,
+      "locked_at": "2026-11-21T18:34:44.085090+00:00",
+      "status": "pending",
+      "actual": null,
+      "actual_minutes": null,
+      "outcome": null,
+      "profit": null,
+      "stake": null,
+      "reason": "Waiting for game completion buffer",
+      "diagnostic_category": "waiting",
+      "diagnostic_teams_found": [],
+      "diagnostic_match_count": 0,
+      "team_recovered_from_logs": false,
+      "verified_team": null,
+      "verified_opponent": null
     }
   },
-  "updated_at": "2026-11-21T11:33:06.143879+00:00"
+  "updated_at": "2026-11-21T18:34:44.085090+00:00"
 }
