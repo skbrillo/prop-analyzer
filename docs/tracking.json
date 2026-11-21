@@ -1,85 +1,85 @@
 {
-  "updated_at": "2026-11-20T22:47:10.874889+00:00",
+  "updated_at": "2026-11-21T09:43:24.046166+00:00",
   "notes": "1-unit flat stake per prediction. Both sides are tracked independently; do not combine as a betting strategy. ROI excludes pushes. No closing-line data.",
   "summary": {
     "predictions": 4359,
-    "settled": 3704,
-    "pending": 655,
-    "wins": 1776,
-    "losses": 1928,
+    "settled": 4060,
+    "pending": 299,
+    "wins": 1940,
+    "losses": 2120,
     "pushes": 0,
-    "win_rate": 0.4795,
-    "profit_units": -278.876,
-    "roi": -0.0753
+    "win_rate": 0.4778,
+    "profit_units": -315.134,
+    "roi": -0.0776
   },
   "positive_ev": {
     "predictions": 1239,
-    "settled": 1058,
-    "pending": 181,
-    "wins": 541,
-    "losses": 517,
+    "settled": 1146,
+    "pending": 93,
+    "wins": 579,
+    "losses": 567,
     "pushes": 0,
-    "win_rate": 0.5113,
-    "profit_units": -11.047,
-    "roi": -0.0104
+    "win_rate": 0.5052,
+    "profit_units": -24.135,
+    "roi": -0.0211
   },
   "by_market": {
     "points": {
       "predictions": 2098,
-      "settled": 1784,
-      "pending": 314,
-      "wins": 887,
-      "losses": 897,
+      "settled": 1966,
+      "pending": 132,
+      "wins": 980,
+      "losses": 986,
       "pushes": 0,
-      "win_rate": 0.4972,
-      "profit_units": -102.744,
-      "roi": -0.0576
+      "win_rate": 0.4985,
+      "profit_units": -107.46,
+      "roi": -0.0547
     },
     "rebounds": {
       "predictions": 1268,
-      "settled": 1087,
-      "pending": 181,
-      "wins": 526,
-      "losses": 561,
+      "settled": 1182,
+      "pending": 86,
+      "wins": 565,
+      "losses": 617,
       "pushes": 0,
-      "win_rate": 0.4839,
-      "profit_units": -57.723,
-      "roi": -0.0531
+      "win_rate": 0.478,
+      "profit_units": -74.26,
+      "roi": -0.0628
     },
     "assists": {
       "predictions": 993,
-      "settled": 833,
-      "pending": 160,
-      "wins": 363,
-      "losses": 470,
+      "settled": 912,
+      "pending": 81,
+      "wins": 395,
+      "losses": 517,
       "pushes": 0,
-      "win_rate": 0.4358,
-      "profit_units": -118.409,
-      "roi": -0.1421
+      "win_rate": 0.4331,
+      "profit_units": -133.413,
+      "roi": -0.1463
     }
   },
   "by_side": {
     "over": {
       "predictions": 2238,
-      "settled": 1907,
-      "pending": 331,
-      "wins": 859,
-      "losses": 1048,
+      "settled": 2086,
+      "pending": 152,
+      "wins": 942,
+      "losses": 1144,
       "pushes": 0,
-      "win_rate": 0.4504,
-      "profit_units": -245.821,
-      "roi": -0.1289
+      "win_rate": 0.4516,
+      "profit_units": -262.157,
+      "roi": -0.1257
     },
     "under": {
       "predictions": 2121,
-      "settled": 1797,
-      "pending": 324,
-      "wins": 917,
-      "losses": 880,
+      "settled": 1974,
+      "pending": 147,
+      "wins": 998,
+      "losses": 976,
       "pushes": 0,
-      "win_rate": 0.5103,
-      "profit_units": -33.055,
-      "roi": -0.0184
+      "win_rate": 0.5056,
+      "profit_units": -52.977,
+      "roi": -0.0268
     }
   },
   "predictions": [
@@ -87762,9 +87762,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.4,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -87783,9 +87784,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -87804,9 +87806,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.9803921568627451,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -87825,9 +87828,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.8333333333333334,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -87846,9 +87850,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 14.0,
+      "profit_units": 0.9174311926605505,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -87867,9 +87872,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -87888,9 +87894,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -87909,9 +87916,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 25.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -87930,9 +87938,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 1.1,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -87951,9 +87960,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 40.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -87972,9 +87982,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -87993,9 +88004,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 9.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -88014,9 +88026,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -88035,9 +88048,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -88056,9 +88070,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 13.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -88077,9 +88092,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -88098,9 +88114,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.09,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -88119,9 +88136,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 1.04,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -88140,9 +88158,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 30.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -88161,9 +88180,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -88182,9 +88202,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.8064516129032258,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -88203,9 +88224,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 36.0,
+      "profit_units": 0.9174311926605505,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -88224,9 +88246,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 22.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -88245,9 +88268,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -88266,9 +88290,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.9174311926605505,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -88287,9 +88312,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -88308,9 +88334,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -88329,9 +88356,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -88350,9 +88378,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -88371,9 +88400,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 22.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -88392,9 +88422,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 1.27,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -88413,9 +88444,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.13,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -88434,9 +88466,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.8130081300813008,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -88455,9 +88488,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 15.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -88476,9 +88510,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -88497,9 +88532,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 15.0,
+      "profit_units": 0.9433962264150944,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -88518,9 +88554,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -88539,9 +88576,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -88560,9 +88598,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.9433962264150944,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -88581,9 +88620,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -88602,9 +88642,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -88623,9 +88664,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 51.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -88644,9 +88686,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 16.0,
+      "profit_units": 0.8333333333333334,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -88665,9 +88708,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 22.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -88686,9 +88730,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 23.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -88707,9 +88752,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -88728,9 +88774,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -88749,9 +88796,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 18.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -88791,9 +88839,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 15.0,
+      "profit_units": 0.8849557522123894,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -88812,9 +88861,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 9.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -88833,9 +88883,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -88854,9 +88905,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 16.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -88875,9 +88927,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -88896,9 +88949,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.8064516129032258,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -88917,9 +88971,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -88938,9 +88993,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -88959,9 +89015,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -88980,9 +89037,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -89001,9 +89059,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89022,9 +89081,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.8849557522123894,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -89043,9 +89103,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -89064,9 +89125,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -89085,9 +89147,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 14.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -89106,9 +89169,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 1.01,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89127,9 +89191,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 1.17,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89148,9 +89213,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -89169,9 +89235,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -89190,9 +89257,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89232,9 +89300,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.06,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -89253,9 +89322,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 13.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -89274,9 +89344,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -89295,9 +89366,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 1.08,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -89316,9 +89388,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 14.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89337,9 +89410,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89358,9 +89432,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 12.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -89379,9 +89454,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -89400,9 +89476,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -89421,9 +89498,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 9.0,
+      "profit_units": 0.9900990099009901,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89442,9 +89520,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -89463,9 +89542,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -89484,9 +89564,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -89505,9 +89586,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89526,9 +89608,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89547,9 +89630,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 9.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -89568,9 +89652,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -89589,9 +89674,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -89610,9 +89696,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -89631,9 +89718,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 23.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89652,9 +89740,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -89673,9 +89762,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -89694,9 +89784,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 22.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -89715,9 +89806,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 15.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89736,9 +89828,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.8620689655172413,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -89757,9 +89850,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -89778,9 +89872,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -89820,9 +89915,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 51.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -89841,9 +89937,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 15.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -89862,9 +89959,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 22.0,
+      "profit_units": 0.8,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -89883,9 +89981,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -89904,9 +90003,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -89925,9 +90025,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.8,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -89946,9 +90047,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 15.0,
+      "profit_units": 0.8695652173913043,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -89967,9 +90069,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -89988,9 +90091,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -90009,9 +90113,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -90030,9 +90135,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -90051,9 +90157,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.05,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -90072,9 +90179,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 22.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -90093,9 +90201,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 36.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90114,9 +90223,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -90135,9 +90245,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 9.0,
+      "profit_units": 1.07,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -90156,9 +90267,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -90177,9 +90289,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -90198,9 +90311,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90219,9 +90333,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 30.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90240,9 +90355,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 13.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90261,9 +90377,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -90282,9 +90399,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 40.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -90303,9 +90421,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.09,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90324,9 +90443,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9433962264150944,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90345,9 +90465,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 9.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -90366,9 +90487,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90387,9 +90509,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 25.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -90408,9 +90531,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 1.04,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -90429,9 +90553,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 14.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -90450,9 +90575,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 14.0,
+      "profit_units": 1.03,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -90471,9 +90597,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -90492,9 +90619,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -90513,9 +90641,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -90534,9 +90663,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 1.09,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -90555,9 +90685,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T11:45:42.033358+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90576,9 +90707,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.01,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -90597,9 +90729,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90618,9 +90751,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90639,9 +90773,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -90660,9 +90795,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -90681,9 +90817,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.8333333333333334,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -90702,9 +90839,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.9174311926605505,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -90723,9 +90861,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 1.09,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -90744,9 +90883,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 22.0,
+      "profit_units": 0.9174311926605505,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -90765,9 +90905,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.12,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -90786,9 +90927,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -90807,9 +90949,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 14.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -90828,9 +90971,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 35.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -90849,9 +90993,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -90870,9 +91015,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -90891,9 +91037,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 12.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -90912,9 +91059,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 15.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -90933,9 +91081,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -90954,9 +91103,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -90975,9 +91125,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 17.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -90996,9 +91147,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 9.0,
+      "profit_units": 0.8064516129032258,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91017,9 +91169,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -91038,9 +91191,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -91059,9 +91213,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -91080,9 +91235,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91101,9 +91257,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 13.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -91122,9 +91279,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 26.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -91143,9 +91301,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -91164,9 +91323,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 19.0,
+      "profit_units": 0.8620689655172413,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -91185,9 +91345,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91206,9 +91367,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -91227,9 +91389,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 21.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91248,9 +91411,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 21.0,
+      "profit_units": 0.9803921568627451,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91269,9 +91433,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 18.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91290,9 +91455,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -91311,9 +91477,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 9.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -91332,9 +91499,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -91353,9 +91521,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91374,9 +91543,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 0.847457627118644,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -91395,9 +91565,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91416,9 +91587,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -91437,9 +91609,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91458,9 +91631,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 27.0,
+      "profit_units": 0.9433962264150944,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -91479,9 +91653,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -91500,9 +91675,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 17.0,
+      "profit_units": 0.9433962264150944,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91521,9 +91697,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -91542,9 +91719,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.02,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -91563,9 +91741,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91584,9 +91763,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 20.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91605,9 +91785,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91626,9 +91807,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 0.8547008547008547,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91647,9 +91829,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 18.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91668,9 +91851,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.05,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -91689,9 +91873,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -91710,9 +91895,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.05,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91731,9 +91917,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 20.0,
+      "profit_units": 0.8064516129032258,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -91752,9 +91939,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91773,9 +91961,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 16.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -91794,9 +91983,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 17.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91815,9 +92005,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 1.12,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -91836,9 +92027,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 21.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91857,9 +92049,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 27.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -91878,9 +92071,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -91899,9 +92093,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 0.0,
+      "profit_units": 0.8064516129032258,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91920,9 +92115,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 18.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -91941,9 +92137,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -91962,9 +92159,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 9.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -91983,9 +92181,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 0.8333333333333334,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92004,9 +92203,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92025,9 +92225,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -92046,9 +92247,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92067,9 +92269,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -92088,9 +92291,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.9803921568627451,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92109,9 +92313,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.8620689655172413,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -92130,9 +92335,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 18.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -92151,9 +92357,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 19.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -92172,9 +92379,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92193,9 +92401,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 21.0,
+      "profit_units": 0.8130081300813008,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92214,9 +92423,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 13.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -92235,9 +92445,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 26.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92256,9 +92467,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -92277,9 +92489,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 9.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -92298,9 +92511,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92319,9 +92533,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -92340,9 +92555,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 10.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92361,9 +92577,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 10.0,
+      "profit_units": 0.8403361344537815,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -92382,9 +92599,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 1.09,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -92403,9 +92621,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 9.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -92424,9 +92643,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 1.03,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92445,9 +92665,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92466,9 +92687,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 0.819672131147541,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -92487,9 +92709,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.8130081300813008,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92508,9 +92731,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 15.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92529,9 +92753,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 35.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92550,9 +92775,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -92571,9 +92797,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 1.3,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -92592,9 +92819,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 22.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92613,9 +92841,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92634,9 +92863,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -92655,9 +92885,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 1.23,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92676,9 +92907,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -92697,9 +92929,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92718,9 +92951,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -92739,9 +92973,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -92760,9 +92995,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -92781,9 +93017,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -92802,9 +93039,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92823,9 +93061,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92844,9 +93083,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.01,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92865,9 +93105,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 9.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -92886,9 +93127,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92907,9 +93149,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T18:50:52.282795+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -92928,9 +93171,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -92949,9 +93193,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.15,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -92970,9 +93215,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -92991,9 +93237,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -93012,9 +93259,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -93033,9 +93281,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -93054,9 +93303,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -93075,9 +93325,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -93096,9 +93347,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -93117,9 +93369,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 12.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -93138,9 +93391,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 16.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -93159,9 +93413,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 25.0,
+      "profit_units": 0.8849557522123894,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -93180,9 +93435,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -93201,9 +93457,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -93222,9 +93479,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 51.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -93243,9 +93501,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 21.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -93264,9 +93523,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 19.0,
+      "profit_units": 0.8620689655172413,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -93285,9 +93545,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 9.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -93306,9 +93567,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 23.0,
+      "profit_units": 0.8403361344537815,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -93327,9 +93589,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -93348,9 +93611,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -93369,9 +93633,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.9009009009009009,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -93390,9 +93655,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -93411,9 +93677,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 1.03,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -93432,9 +93699,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -93453,9 +93721,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.9900990099009901,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -93474,9 +93743,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 1.37,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -93495,9 +93765,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 0.8333333333333334,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -93516,9 +93787,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9090909090909091,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -93537,9 +93809,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 16.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -93558,9 +93831,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 7.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -93579,9 +93853,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 1.07,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -93600,9 +93875,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 19.0,
+      "profit_units": 0.8547008547008547,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -93621,9 +93897,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -93642,9 +93919,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 20.0,
+      "profit_units": 0.8130081300813008,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -93663,9 +93941,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 27.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -93684,9 +93963,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 1.01,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -93705,9 +93985,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 20.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -93726,9 +94007,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -93747,9 +94029,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -93768,9 +94051,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 19.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -93789,9 +94073,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 19.0,
+      "profit_units": 1.01,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -93810,9 +94095,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -93831,9 +94117,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 1.28,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -93852,9 +94139,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 0.8064516129032258,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -93873,9 +94161,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 14.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -93894,9 +94183,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Washington Wizards @ Chicago Bulls",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.05,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -93936,9 +94226,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -93957,9 +94248,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 0.8547008547008547,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -93978,9 +94270,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.8,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -93999,9 +94292,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -94020,9 +94314,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 22.0,
+      "profit_units": 0.9523809523809523,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -94041,9 +94336,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -94062,9 +94358,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 12.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -94083,9 +94380,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -94104,9 +94402,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 8.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -94125,9 +94424,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 3.0,
+      "profit_units": 0.8771929824561403,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -94146,9 +94446,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -94167,9 +94468,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -94188,9 +94490,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.9900990099009901,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -94209,9 +94512,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 0.9345794392523364,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -94230,9 +94534,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -94251,9 +94556,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -94272,9 +94578,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.9259259259259259,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -94293,9 +94600,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 22.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -94314,9 +94622,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -94335,9 +94644,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 11.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -94356,9 +94666,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 20.0,
+      "profit_units": 0.9900990099009901,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -94377,9 +94688,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -94398,9 +94710,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 18.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -94419,9 +94732,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 13.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -94440,9 +94754,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 14.0,
+      "profit_units": 0.9174311926605505,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -94461,9 +94776,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.8928571428571429,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -94482,9 +94798,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 1.0,
+      "profit_units": 1.23,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -94503,9 +94820,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 12.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -94524,9 +94842,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 19.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -94545,9 +94864,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 4.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -94566,9 +94886,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 20.0,
+      "profit_units": 0.8849557522123894,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -94587,9 +94908,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 27.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "d19a0a6284a64ddb38057f0519aa2b01",
@@ -94608,9 +94930,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Sacramento Kings @ Los Angeles Lakers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 19.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -94629,9 +94952,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -94650,9 +94974,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 20.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -94671,9 +94996,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -94692,9 +95018,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -94713,9 +95040,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 18.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -94734,9 +95062,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 14.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -94755,9 +95084,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 17.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -94776,9 +95106,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 2.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -94797,9 +95128,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 9.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -94818,9 +95150,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 18.0,
+      "profit_units": 1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -94839,9 +95172,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -94860,9 +95194,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 23.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -94881,9 +95216,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 17.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -94902,9 +95238,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 19.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -94923,9 +95260,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 15.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "61e87fc9a9f50b5f4a91ef49545cde2a",
@@ -94944,9 +95282,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "New Orleans Pelicans @ Oklahoma City Thunder",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 0.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -94965,9 +95304,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 51.0,
+      "profit_units": 0.9615384615384616,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -94986,9 +95326,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.970873786407767,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -95007,9 +95348,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 3.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -95028,9 +95370,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 25.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -95049,9 +95392,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 16.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -95070,9 +95414,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 8.0,
+      "profit_units": 1.17,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -95091,9 +95436,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 5.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -95112,9 +95458,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 1.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "a1a1e0c1f1ca5d5e95de9ee76a1e7fe7",
@@ -95133,9 +95480,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Indiana Pacers @ Cleveland Cavaliers",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 12.0,
+      "profit_units": 0.9803921568627451,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "f29e44168f4bcaf5ca30d9fb754afdfb",
@@ -95154,9 +95502,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Houston Rockets @ Denver Nuggets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 2.0,
+      "profit_units": 1.25,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bb86fa4ce951acddd1d9a4ca0624857a",
@@ -95175,9 +95524,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Charlotte Hornets @ Atlanta Hawks",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 11.0,
+      "profit_units": 0.8403361344537815,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "74fe380b956582e479a222449cb44f6e",
@@ -95196,9 +95546,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Phoenix Suns @ Utah Jazz",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.8849557522123894,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -95217,9 +95568,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 7.0,
+      "profit_units": 0.8064516129032258,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "971ce980e1ae17728ed3c8ef2ab908be",
@@ -95238,9 +95590,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Toronto Raptors @ Detroit Pistons",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 5.0,
+      "profit_units": 0.9259259259259259,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -95259,9 +95612,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 4.0,
+      "profit_units": 0.8,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "02a1f04a809d93bdb1fce31389145064",
@@ -95301,9 +95655,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "win",
+      "actual": 6.0,
+      "profit_units": 0.8264462809917356,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     },
     {
       "event_id": "bbb7e6ff76fced86f842e6ec54fde0bb",
@@ -95322,9 +95677,10 @@
       "model": "v7-live-injury-screen-experimental",
       "matchup": "Orlando Magic @ Brooklyn Nets",
       "predicted_at": "2026-11-20T22:47:10.736579+00:00",
-      "result": "pending",
-      "actual": null,
-      "profit_units": null
+      "result": "loss",
+      "actual": 6.0,
+      "profit_units": -1.0,
+      "settled_at": "2026-11-21T09:43:24.046166+00:00"
     }
   ]
 }

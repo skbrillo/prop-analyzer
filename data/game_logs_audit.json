@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-20T22:47:08.463024+00:00",
+  "generated_at_utc": "2026-11-21T09:43:23.910626+00:00",
   "regular_season_only": true,
-  "games_validated": 226,
-  "accepted_rows": 5073,
-  "explicit_dnp_rows": 930,
+  "games_validated": 235,
+  "accepted_rows": 5254,
+  "explicit_dnp_rows": 975,
   "rejection_counts": {
     "non_regular_season_game": 67,
     "invalid_stats_or_minutes": 17
@@ -2269,6 +2269,96 @@
       ],
       "player_logs": 24,
       "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-20",
+      "game_id": "401909305",
+      "teams": [
+        "ATL",
+        "CHA"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 4
+    },
+    {
+      "date": "2026-11-20",
+      "game_id": "401909306",
+      "teams": [
+        "BKN",
+        "ORL"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-11-20",
+      "game_id": "401909307",
+      "teams": [
+        "CLE",
+        "IND"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-20",
+      "game_id": "401909308",
+      "teams": [
+        "DET",
+        "TOR"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-20",
+      "game_id": "401909309",
+      "teams": [
+        "CHI",
+        "WSH"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 4
+    },
+    {
+      "date": "2026-11-20",
+      "game_id": "401909310",
+      "teams": [
+        "OKC",
+        "NO"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 4
+    },
+    {
+      "date": "2026-11-20",
+      "game_id": "401909311",
+      "teams": [
+        "UTAH",
+        "PHX"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-20",
+      "game_id": "401909312",
+      "teams": [
+        "DEN",
+        "HOU"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-20",
+      "game_id": "401909313",
+      "teams": [
+        "LAL",
+        "SAC"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 7
     }
   ],
   "status": "accepted"
