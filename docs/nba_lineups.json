@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T05:37:44.611836+00:00",
+  "generated_at": "2026-11-21T06:41:56.076901+00:00",
   "source": "RotoWire",
   "games": {
     "401910019": {
@@ -1583,6 +1583,232 @@
           "team": "LAL",
           "status": "out"
         },
+        {
+          "name": "Precious Achiuwa",
+          "team": "SAC",
+          "status": "out"
+        },
+        {
+          "name": "Maxime Raynaud",
+          "team": "SAC",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910023": {
+      "game_id": "401910023",
+      "game": "Milwaukee Bucks at Philadelphia 76ers",
+      "tipoff": "2026-11-21T18:00:00+00:00",
+      "home": "PHI",
+      "away": "MIL",
+      "checked_at": "2026-11-21T06:41:56.076901+00:00",
+      "minutes_before_tipoff": 678.1,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910024": {
+      "game_id": "401910024",
+      "game": "Portland Trail Blazers at New York Knicks",
+      "tipoff": "2026-11-22T00:30:00+00:00",
+      "home": "NYK",
+      "away": "POR",
+      "checked_at": "2026-11-21T06:41:56.076901+00:00",
+      "minutes_before_tipoff": 1068.1,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910025": {
+      "game_id": "401910025",
+      "game": "LA Clippers at Dallas Mavericks",
+      "tipoff": "2026-11-22T01:00:00+00:00",
+      "home": "DAL",
+      "away": "LAC",
+      "checked_at": "2026-11-21T06:41:56.076901+00:00",
+      "minutes_before_tipoff": 1098.1,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910026": {
+      "game_id": "401910026",
+      "game": "Memphis Grizzlies at Minnesota Timberwolves",
+      "tipoff": "2026-11-22T01:00:00+00:00",
+      "home": "MIN",
+      "away": "MEM",
+      "checked_at": "2026-11-21T06:41:56.076901+00:00",
+      "minutes_before_tipoff": 1098.1,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910027": {
+      "game_id": "401910027",
+      "game": "New Orleans Pelicans at San Antonio Spurs",
+      "tipoff": "2026-11-22T01:00:00+00:00",
+      "home": "SAS",
+      "away": "NOP",
+      "checked_at": "2026-11-21T06:41:56.076901+00:00",
+      "minutes_before_tipoff": 1098.1,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Jeremiah Fears",
+          "team": "NOP"
+        },
+        {
+          "name": "Saddiq Bey",
+          "team": "NOP"
+        },
+        {
+          "name": "Herbert Jones",
+          "team": "NOP"
+        },
+        {
+          "name": "Zion Williamson",
+          "team": "NOP"
+        },
+        {
+          "name": "Yves Missi",
+          "team": "NOP"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Bennedict Mathurin",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Bryce McGowens",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Dejounte Murray",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Trendon Watford",
+          "team": "NOP",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Bennedict Mathurin",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Bryce McGowens",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Dejounte Murray",
+          "team": "NOP",
+          "status": "out"
+        },
+        {
+          "name": "Trendon Watford",
+          "team": "NOP",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910028": {
+      "game_id": "401910028",
+      "game": "Boston Celtics at Sacramento Kings",
+      "tipoff": "2026-11-22T03:00:00+00:00",
+      "home": "SAC",
+      "away": "BOS",
+      "checked_at": "2026-11-21T06:41:56.076901+00:00",
+      "minutes_before_tipoff": 1218.1,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Darius Acuff",
+          "team": "SAC"
+        },
+        {
+          "name": "Zach LaVine",
+          "team": "SAC"
+        },
+        {
+          "name": "De'Andre Hunter",
+          "team": "SAC"
+        },
+        {
+          "name": "Keegan Murray",
+          "team": "SAC"
+        },
+        {
+          "name": "Domantas Sabonis",
+          "team": "SAC"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Precious Achiuwa",
+          "team": "SAC",
+          "status": "out"
+        },
+        {
+          "name": "Maxime Raynaud",
+          "team": "SAC",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
         {
           "name": "Precious Achiuwa",
           "team": "SAC",
