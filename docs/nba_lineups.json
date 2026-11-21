@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T01:41:42.795518+00:00",
+  "generated_at": "2026-11-21T02:36:57.496815+00:00",
   "source": "RotoWire",
   "games": {
     "401910019": {
@@ -447,8 +447,8 @@
       "tipoff": "2026-11-21T00:00:00+00:00",
       "home": "ATL",
       "away": "CHA",
-      "checked_at": "2026-11-21T01:41:42.795518+00:00",
-      "minutes_before_tipoff": -101.7,
+      "checked_at": "2026-11-21T02:36:57.496815+00:00",
+      "minutes_before_tipoff": -157.0,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -602,8 +602,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "BKN",
       "away": "ORL",
-      "checked_at": "2026-11-21T01:41:42.795518+00:00",
-      "minutes_before_tipoff": -71.7,
+      "checked_at": "2026-11-21T02:36:57.496815+00:00",
+      "minutes_before_tipoff": -127.0,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -658,6 +658,11 @@
           "name": "Grant Nelson",
           "team": "BKN",
           "status": "out"
+        },
+        {
+          "name": "Nolan Traore",
+          "team": "BKN",
+          "status": "out"
         }
       ],
       "away_out": [
@@ -685,6 +690,11 @@
       "out_players": [
         {
           "name": "Grant Nelson",
+          "team": "BKN",
+          "status": "out"
+        },
+        {
+          "name": "Nolan Traore",
           "team": "BKN",
           "status": "out"
         },
@@ -717,8 +727,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "CLE",
       "away": "IND",
-      "checked_at": "2026-11-21T01:41:42.795518+00:00",
-      "minutes_before_tipoff": -71.7,
+      "checked_at": "2026-11-21T02:36:57.496815+00:00",
+      "minutes_before_tipoff": -127.0,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -842,8 +852,8 @@
       "tipoff": "2026-11-21T00:30:00+00:00",
       "home": "DET",
       "away": "TOR",
-      "checked_at": "2026-11-21T01:41:42.795518+00:00",
-      "minutes_before_tipoff": -71.7,
+      "checked_at": "2026-11-21T02:36:57.496815+00:00",
+      "minutes_before_tipoff": -127.0,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -987,8 +997,8 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "CHI",
       "away": "WAS",
-      "checked_at": "2026-11-21T01:41:42.795518+00:00",
-      "minutes_before_tipoff": -41.7,
+      "checked_at": "2026-11-21T02:36:57.496815+00:00",
+      "minutes_before_tipoff": -97.0,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1122,8 +1132,8 @@
       "tipoff": "2026-11-21T01:00:00+00:00",
       "home": "OKC",
       "away": "NOP",
-      "checked_at": "2026-11-21T01:41:42.795518+00:00",
-      "minutes_before_tipoff": -41.7,
+      "checked_at": "2026-11-21T02:36:57.496815+00:00",
+      "minutes_before_tipoff": -97.0,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1287,14 +1297,12 @@
       "tipoff": "2026-11-21T02:30:00+00:00",
       "home": "UTA",
       "away": "PHX",
-      "checked_at": "2026-11-21T01:41:42.795518+00:00",
-      "minutes_before_tipoff": 48.3,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-21T02:36:57.496815+00:00",
+      "minutes_before_tipoff": -7.0,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Keyonte George",
           "team": "UTA"
@@ -1316,7 +1324,7 @@
           "team": "UTA"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Devin Booker",
           "team": "PHX"
@@ -1338,6 +1346,8 @@
           "team": "PHX"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Jaren Jackson",
@@ -1392,14 +1402,12 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "DEN",
       "away": "HOU",
-      "checked_at": "2026-11-21T01:41:42.795518+00:00",
-      "minutes_before_tipoff": 78.3,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-21T02:36:57.496815+00:00",
+      "minutes_before_tipoff": 23.0,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Jamal Murray",
           "team": "DEN"
@@ -1421,7 +1429,7 @@
           "team": "DEN"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Fred VanVleet",
           "team": "HOU"
@@ -1443,6 +1451,8 @@
           "team": "HOU"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Julian Strawther",
@@ -1477,14 +1487,12 @@
       "tipoff": "2026-11-21T03:00:00+00:00",
       "home": "LAL",
       "away": "SAC",
-      "checked_at": "2026-11-21T01:41:42.795518+00:00",
-      "minutes_before_tipoff": 78.3,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-21T02:36:57.496815+00:00",
+      "minutes_before_tipoff": 23.0,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Luka Doncic",
           "team": "LAL"
@@ -1506,7 +1514,7 @@
           "team": "LAL"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Darius Acuff",
           "team": "SAC"
@@ -1528,6 +1536,8 @@
           "team": "SAC"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Austin Reaves",
