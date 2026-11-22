@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T05:42:40.733486+00:00",
+  "generated_at": "2026-11-22T06:43:18.882861+00:00",
   "source": "RotoWire",
   "games": {
     "401909305": {
@@ -1898,6 +1898,293 @@
           "team": "SAC",
           "status": "out"
         },
+        {
+          "name": "Mitchell Robinson",
+          "team": "BOS",
+          "status": "out"
+        },
+        {
+          "name": "Jayson Tatum",
+          "team": "BOS",
+          "status": "out"
+        },
+        {
+          "name": "Derrick White",
+          "team": "BOS",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910029": {
+      "game_id": "401910029",
+      "game": "Detroit Pistons at Atlanta Hawks",
+      "tipoff": "2026-11-22T20:30:00+00:00",
+      "home": "ATL",
+      "away": "DET",
+      "checked_at": "2026-11-22T06:43:18.882861+00:00",
+      "minutes_before_tipoff": 826.7,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910030": {
+      "game_id": "401910030",
+      "game": "Oklahoma City Thunder at Miami Heat",
+      "tipoff": "2026-11-22T23:00:00+00:00",
+      "home": "MIA",
+      "away": "OKC",
+      "checked_at": "2026-11-22T06:43:18.882861+00:00",
+      "minutes_before_tipoff": 976.7,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910031": {
+      "game_id": "401910031",
+      "game": "Orlando Magic at Washington Wizards",
+      "tipoff": "2026-11-23T00:00:00+00:00",
+      "home": "WAS",
+      "away": "ORL",
+      "checked_at": "2026-11-22T06:43:18.882861+00:00",
+      "minutes_before_tipoff": 1036.7,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910032": {
+      "game_id": "401910032",
+      "game": "Denver Nuggets at Chicago Bulls",
+      "tipoff": "2026-11-23T00:00:00+00:00",
+      "home": "CHI",
+      "away": "DEN",
+      "checked_at": "2026-11-22T06:43:18.882861+00:00",
+      "minutes_before_tipoff": 1036.7,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910033": {
+      "game_id": "401910033",
+      "game": "Dallas Mavericks at Utah Jazz",
+      "tipoff": "2026-11-23T00:00:00+00:00",
+      "home": "UTA",
+      "away": "DAL",
+      "checked_at": "2026-11-22T06:43:18.882861+00:00",
+      "minutes_before_tipoff": 1036.7,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Kyrie Irving",
+          "team": "DAL"
+        },
+        {
+          "name": "Caleb Martin",
+          "team": "DAL"
+        },
+        {
+          "name": "Cooper Flagg",
+          "team": "DAL"
+        },
+        {
+          "name": "Zaccharie Risacher",
+          "team": "DAL"
+        },
+        {
+          "name": "Daniel Gafford",
+          "team": "DAL"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Tarik Biberovic",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Sergio de Larrea",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Tobi Lawal",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Dereck Lively",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "P.J. Washington",
+          "team": "DAL",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Tarik Biberovic",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Sergio de Larrea",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Tobi Lawal",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Dereck Lively",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "P.J. Washington",
+          "team": "DAL",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910034": {
+      "game_id": "401910034",
+      "game": "Indiana Pacers at New York Knicks",
+      "tipoff": "2026-11-23T01:00:00+00:00",
+      "home": "NYK",
+      "away": "IND",
+      "checked_at": "2026-11-22T06:43:18.882861+00:00",
+      "minutes_before_tipoff": 1096.7,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Jalen Brunson",
+          "team": "NYK"
+        },
+        {
+          "name": "Landry Shamet",
+          "team": "NYK"
+        },
+        {
+          "name": "Josh Hart",
+          "team": "NYK"
+        },
+        {
+          "name": "Mikal Bridges",
+          "team": "NYK"
+        },
+        {
+          "name": "Andre Drummond",
+          "team": "NYK"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910035": {
+      "game_id": "401910035",
+      "game": "Boston Celtics at Golden State Warriors",
+      "tipoff": "2026-11-23T01:30:00+00:00",
+      "home": "GSW",
+      "away": "BOS",
+      "checked_at": "2026-11-22T06:43:18.882861+00:00",
+      "minutes_before_tipoff": 1126.7,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Payton Pritchard",
+          "team": "BOS"
+        },
+        {
+          "name": "Sam Hauser",
+          "team": "BOS"
+        },
+        {
+          "name": "Hugo Gonzalez",
+          "team": "BOS"
+        },
+        {
+          "name": "Paul George",
+          "team": "BOS"
+        },
+        {
+          "name": "Neemias Queta",
+          "team": "BOS"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Mitchell Robinson",
+          "team": "BOS",
+          "status": "out"
+        },
+        {
+          "name": "Jayson Tatum",
+          "team": "BOS",
+          "status": "out"
+        },
+        {
+          "name": "Derrick White",
+          "team": "BOS",
+          "status": "out"
+        }
+      ],
+      "out_players": [
         {
           "name": "Mitchell Robinson",
           "team": "BOS",
