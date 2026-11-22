@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-22T01:50:45.744520+00:00",
+  "generated_at": "2026-11-22T02:40:28.349099+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 111,
+  "player_count": 110,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,11 +37,11 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 111,
+  "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
     "O": 95,
-    "T": 16
+    "T": 15
   },
   "players": [
     {
@@ -1076,17 +1076,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-08-24T20:23Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540372",
-      "name": "Precious Achiuwa",
-      "team": "SAC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-21T21:19Z",
       "team_match": "feed"
     },
     {
