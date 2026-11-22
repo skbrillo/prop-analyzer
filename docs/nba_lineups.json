@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T15:08:52.378893+00:00",
+  "generated_at": "2026-11-22T15:57:21.532434+00:00",
   "source": "RotoWire",
   "games": {
     "401910023": {
@@ -767,8 +767,8 @@
       "tipoff": "2026-11-22T20:30:00+00:00",
       "home": "ATL",
       "away": "DET",
-      "checked_at": "2026-11-22T15:08:52.378893+00:00",
-      "minutes_before_tipoff": 321.1,
+      "checked_at": "2026-11-22T15:57:21.532434+00:00",
+      "minutes_before_tipoff": 272.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -912,8 +912,8 @@
       "tipoff": "2026-11-22T23:00:00+00:00",
       "home": "MIA",
       "away": "OKC",
-      "checked_at": "2026-11-22T15:08:52.378893+00:00",
-      "minutes_before_tipoff": 471.1,
+      "checked_at": "2026-11-22T15:57:21.532434+00:00",
+      "minutes_before_tipoff": 422.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1046,8 +1046,8 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "WAS",
       "away": "ORL",
-      "checked_at": "2026-11-22T15:08:52.378893+00:00",
-      "minutes_before_tipoff": 531.1,
+      "checked_at": "2026-11-22T15:57:21.532434+00:00",
+      "minutes_before_tipoff": 482.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1191,8 +1191,8 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "CHI",
       "away": "DEN",
-      "checked_at": "2026-11-22T15:08:52.378893+00:00",
-      "minutes_before_tipoff": 531.1,
+      "checked_at": "2026-11-22T15:57:21.532434+00:00",
+      "minutes_before_tipoff": 482.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1204,15 +1204,15 @@
           "team": "CHI"
         },
         {
-          "name": "Norman Powell",
-          "team": "CHI"
-        },
-        {
           "name": "Isaac Okoro",
           "team": "CHI"
         },
         {
           "name": "Matas Buzelis",
+          "team": "CHI"
+        },
+        {
+          "name": "Noa Essengue",
           "team": "CHI"
         },
         {
@@ -1244,6 +1244,11 @@
       ],
       "home_out": [
         {
+          "name": "Norman Powell",
+          "team": "CHI",
+          "status": "out"
+        },
+        {
           "name": "Caleb Wilson",
           "team": "CHI",
           "status": "out"
@@ -1257,6 +1262,11 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Norman Powell",
+          "team": "CHI",
+          "status": "out"
+        },
         {
           "name": "Caleb Wilson",
           "team": "CHI",
@@ -1276,8 +1286,8 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "UTA",
       "away": "DAL",
-      "checked_at": "2026-11-22T15:08:52.378893+00:00",
-      "minutes_before_tipoff": 531.1,
+      "checked_at": "2026-11-22T15:57:21.532434+00:00",
+      "minutes_before_tipoff": 482.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1401,8 +1411,8 @@
       "tipoff": "2026-11-23T01:00:00+00:00",
       "home": "NYK",
       "away": "IND",
-      "checked_at": "2026-11-22T15:08:52.378893+00:00",
-      "minutes_before_tipoff": 591.1,
+      "checked_at": "2026-11-22T15:57:21.532434+00:00",
+      "minutes_before_tipoff": 542.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1505,8 +1515,8 @@
       "tipoff": "2026-11-23T01:30:00+00:00",
       "home": "GSW",
       "away": "BOS",
-      "checked_at": "2026-11-22T15:08:52.378893+00:00",
-      "minutes_before_tipoff": 621.1,
+      "checked_at": "2026-11-22T15:57:21.532434+00:00",
+      "minutes_before_tipoff": 572.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
