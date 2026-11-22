@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T20:06:40.096187+00:00",
+  "generated_at": "2026-11-22T20:53:29.586325+00:00",
   "source": "RotoWire",
   "games": {
     "401910023": {
@@ -767,14 +767,12 @@
       "tipoff": "2026-11-22T20:30:00+00:00",
       "home": "ATL",
       "away": "DET",
-      "checked_at": "2026-11-22T20:06:40.096187+00:00",
-      "minutes_before_tipoff": 23.3,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-22T20:53:29.586325+00:00",
+      "minutes_before_tipoff": -23.5,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Kingston Flemings",
           "team": "ATL"
@@ -796,7 +794,7 @@
           "team": "ATL"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Cade Cunningham",
           "team": "DET"
@@ -818,6 +816,8 @@
           "team": "DET"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Mouhamed Gueye",
@@ -912,8 +912,8 @@
       "tipoff": "2026-11-22T23:00:00+00:00",
       "home": "MIA",
       "away": "OKC",
-      "checked_at": "2026-11-22T20:06:40.096187+00:00",
-      "minutes_before_tipoff": 173.3,
+      "checked_at": "2026-11-22T20:53:29.586325+00:00",
+      "minutes_before_tipoff": 126.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1046,8 +1046,8 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "WAS",
       "away": "ORL",
-      "checked_at": "2026-11-22T20:06:40.096187+00:00",
-      "minutes_before_tipoff": 233.3,
+      "checked_at": "2026-11-22T20:53:29.586325+00:00",
+      "minutes_before_tipoff": 186.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1191,8 +1191,8 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "CHI",
       "away": "DEN",
-      "checked_at": "2026-11-22T20:06:40.096187+00:00",
-      "minutes_before_tipoff": 233.3,
+      "checked_at": "2026-11-22T20:53:29.586325+00:00",
+      "minutes_before_tipoff": 186.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1244,6 +1244,11 @@
       ],
       "home_out": [
         {
+          "name": "Nic Claxton",
+          "team": "CHI",
+          "status": "out"
+        },
+        {
           "name": "Norman Powell",
           "team": "CHI",
           "status": "out"
@@ -1262,6 +1267,11 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Nic Claxton",
+          "team": "CHI",
+          "status": "out"
+        },
         {
           "name": "Norman Powell",
           "team": "CHI",
@@ -1286,8 +1296,8 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "UTA",
       "away": "DAL",
-      "checked_at": "2026-11-22T20:06:40.096187+00:00",
-      "minutes_before_tipoff": 233.3,
+      "checked_at": "2026-11-22T20:53:29.586325+00:00",
+      "minutes_before_tipoff": 186.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1421,8 +1431,8 @@
       "tipoff": "2026-11-23T01:00:00+00:00",
       "home": "NYK",
       "away": "IND",
-      "checked_at": "2026-11-22T20:06:40.096187+00:00",
-      "minutes_before_tipoff": 293.3,
+      "checked_at": "2026-11-22T20:53:29.586325+00:00",
+      "minutes_before_tipoff": 246.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1546,8 +1556,8 @@
       "tipoff": "2026-11-23T01:30:00+00:00",
       "home": "GSW",
       "away": "BOS",
-      "checked_at": "2026-11-22T20:06:40.096187+00:00",
-      "minutes_before_tipoff": 323.3,
+      "checked_at": "2026-11-22T20:53:29.586325+00:00",
+      "minutes_before_tipoff": 276.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1589,7 +1599,7 @@
           "team": "BOS"
         },
         {
-          "name": "Paul George",
+          "name": "Sam Hauser",
           "team": "BOS"
         },
         {
