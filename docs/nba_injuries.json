@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T18:52:55.375650+00:00",
+  "generated_at": "2026-11-22T19:38:53.563561+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -288,24 +288,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61281",
+      "injury_record_id": "540496",
       "name": "P.J. Washington",
       "team": "DAL",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-22T15:02Z",
+      "date": "2026-11-22T19:07Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61279",
-      "name": "Tobi Lawal",
+      "injury_record_id": "540495",
+      "name": "Walter Clayton Jr.",
       "team": "DAL",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Groin | day-to-day",
-      "date": "2026-11-22T15:02Z",
+      "reason": "Tendinitis | Knee | day-to-day",
+      "date": "2026-11-22T19:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540493",
+      "name": "Tobi Lawal",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Groin | out",
+      "date": "2026-11-22T19:04Z",
       "team_match": "feed"
     },
     {
@@ -350,17 +361,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Knee | out",
       "date": "2026-10-17T00:52Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540386",
-      "name": "Ronald Holland II",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Knee | out",
-      "date": "2026-11-21T23:05Z",
       "team_match": "feed"
     },
     {
