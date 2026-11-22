@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T14:37:17.781251+00:00",
+  "generated_at": "2026-11-22T15:25:04.666234+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -40,8 +40,8 @@
   "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
-    "O": 92,
-    "T": 18
+    "O": 80,
+    "T": 30
   },
   "players": [
     {
@@ -112,35 +112,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "540370",
-      "name": "Mitchell Robinson",
-      "team": "BOS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-21T20:55Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540369",
+      "injury_record_id": "-61283",
       "name": "Derrick White",
       "team": "BOS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Shoulder | out",
-      "date": "2026-11-21T20:53Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Shoulder | day-to-day",
+      "date": "2026-11-22T15:03Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540368",
+      "injury_record_id": "-61282",
+      "name": "Mitchell Robinson",
+      "team": "BOS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-22T15:03Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61280",
       "name": "Jayson Tatum",
       "team": "BOS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Rest | out",
-      "date": "2026-11-21T20:51Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Rest | day-to-day",
+      "date": "2026-11-22T15:02Z",
       "team_match": "feed"
     },
     {
@@ -299,24 +299,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540388",
+      "injury_record_id": "-61281",
       "name": "P.J. Washington",
       "team": "DAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-21T23:14Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-22T15:02Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540309",
+      "injury_record_id": "-61279",
       "name": "Tobi Lawal",
       "team": "DAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Groin | out",
-      "date": "2026-11-21T15:08Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Groin | day-to-day",
+      "date": "2026-11-22T15:02Z",
       "team_match": "feed"
     },
     {
@@ -607,35 +607,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "540281",
-      "name": "Jerami Grant",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Not Specified | Calf | out",
-      "date": "2026-11-21T08:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540212",
+      "injury_record_id": "-61290",
       "name": "Javon Small",
       "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Personal | out",
-      "date": "2026-11-20T23:14Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Personal | day-to-day",
+      "date": "2026-11-22T15:09Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540210",
+      "injury_record_id": "-61289",
       "name": "Cameron Boozer",
       "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Ankle | out",
-      "date": "2026-11-20T23:12Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-22T15:09Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61288",
+      "name": "Jerami Grant",
+      "team": "MEM",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Calf | day-to-day",
+      "date": "2026-11-22T15:08Z",
       "team_match": "feed"
     },
     {
@@ -739,24 +739,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540398",
+      "injury_record_id": "-61287",
       "name": "Zion Williamson",
       "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Thigh | out",
-      "date": "2026-11-22T00:39Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Thigh | day-to-day",
+      "date": "2026-11-22T15:07Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540349",
+      "injury_record_id": "-61286",
       "name": "Trey Murphy III",
       "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Knee | out",
-      "date": "2026-11-21T18:22Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Knee | day-to-day",
+      "date": "2026-11-22T15:07Z",
       "team_match": "feed"
     },
     {
@@ -970,13 +970,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540198",
+      "injury_record_id": "-61285",
       "name": "Dean Wade",
       "team": "PHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Hamstring | out",
-      "date": "2026-11-20T22:11Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hamstring | day-to-day",
+      "date": "2026-11-22T15:06Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61284",
+      "name": "Jaylen Brown",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Hamstring | day-to-day",
+      "date": "2026-11-22T15:05Z",
       "team_match": "feed"
     },
     {
@@ -988,17 +999,6 @@
       "raw_status": "Out",
       "reason": "Sprain | Back | out",
       "date": "2026-11-20T17:33Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540169",
-      "name": "Jaylen Brown",
-      "team": "PHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Not Specified | Hamstring | out",
-      "date": "2026-11-20T17:26Z",
       "team_match": "feed"
     },
     {
