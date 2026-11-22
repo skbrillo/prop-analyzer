@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T01:49:21.081292+00:00",
+  "generated_at": "2026-11-22T02:42:42.059773+00:00",
   "source": "RotoWire",
   "games": {
     "401909305": {
@@ -1163,8 +1163,8 @@
       "tipoff": "2026-11-21T18:00:00+00:00",
       "home": "PHI",
       "away": "MIL",
-      "checked_at": "2026-11-22T01:49:21.081292+00:00",
-      "minutes_before_tipoff": -469.4,
+      "checked_at": "2026-11-22T02:42:42.059773+00:00",
+      "minutes_before_tipoff": -522.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1268,8 +1268,8 @@
       "tipoff": "2026-11-22T00:30:00+00:00",
       "home": "NYK",
       "away": "POR",
-      "checked_at": "2026-11-22T01:49:21.081292+00:00",
-      "minutes_before_tipoff": -79.4,
+      "checked_at": "2026-11-22T02:42:42.059773+00:00",
+      "minutes_before_tipoff": -132.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1403,8 +1403,8 @@
       "tipoff": "2026-11-22T01:00:00+00:00",
       "home": "DAL",
       "away": "LAC",
-      "checked_at": "2026-11-22T01:49:21.081292+00:00",
-      "minutes_before_tipoff": -49.4,
+      "checked_at": "2026-11-22T02:42:42.059773+00:00",
+      "minutes_before_tipoff": -102.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1548,8 +1548,8 @@
       "tipoff": "2026-11-22T01:00:00+00:00",
       "home": "MIN",
       "away": "MEM",
-      "checked_at": "2026-11-22T01:49:21.081292+00:00",
-      "minutes_before_tipoff": -49.4,
+      "checked_at": "2026-11-22T02:42:42.059773+00:00",
+      "minutes_before_tipoff": -102.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1693,8 +1693,8 @@
       "tipoff": "2026-11-22T01:00:00+00:00",
       "home": "SAS",
       "away": "NOP",
-      "checked_at": "2026-11-22T01:49:21.081292+00:00",
-      "minutes_before_tipoff": -49.4,
+      "checked_at": "2026-11-22T02:42:42.059773+00:00",
+      "minutes_before_tipoff": -102.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1848,14 +1848,12 @@
       "tipoff": "2026-11-22T03:00:00+00:00",
       "home": "SAC",
       "away": "BOS",
-      "checked_at": "2026-11-22T01:49:21.081292+00:00",
-      "minutes_before_tipoff": 70.6,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-22T02:42:42.059773+00:00",
+      "minutes_before_tipoff": 17.3,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Darius Acuff",
           "team": "SAC"
@@ -1877,17 +1875,17 @@
           "team": "SAC"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Payton Pritchard",
           "team": "BOS"
         },
         {
-          "name": "Jordan Walsh",
+          "name": "Sam Hauser",
           "team": "BOS"
         },
         {
-          "name": "Baylor Scheierman",
+          "name": "Hugo Gonzalez",
           "team": "BOS"
         },
         {
@@ -1899,6 +1897,8 @@
           "team": "BOS"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Maxime Raynaud",
