@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T05:23:29.627454+00:00",
+  "generated_at": "2026-11-22T06:18:26.716927+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -207,6 +207,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T22:26Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540427",
+      "name": "Patrick Williams",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Thumb | day-to-day",
+      "date": "2026-11-22T06:06Z",
       "team_match": "feed"
     },
     {
@@ -431,24 +442,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61183",
-      "name": "Draymond Green",
-      "team": "GSW",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Rest | day-to-day",
-      "date": "2026-11-20T03:53Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539762",
+      "injury_record_id": "540428",
       "name": "Brandon Williams",
       "team": "GSW",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
-      "date": "2026-11-18T17:12Z",
+      "date": "2026-11-22T06:10Z",
       "team_match": "feed"
     },
     {
