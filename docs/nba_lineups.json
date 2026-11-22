@@ -1,162 +1,7 @@
 {
-  "generated_at": "2026-11-22T11:24:02.055362+00:00",
+  "generated_at": "2026-11-22T12:13:00.663451+00:00",
   "source": "RotoWire",
   "games": {
-    "401909305": {
-      "game_id": "401909305",
-      "game": "Charlotte Hornets at Atlanta Hawks",
-      "tipoff": "2026-11-21T00:00:00+00:00",
-      "home": "ATL",
-      "away": "CHA",
-      "checked_at": "2026-11-21T05:37:44.611836+00:00",
-      "minutes_before_tipoff": -337.7,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Nickeil Alexander-Walker",
-          "team": "ATL"
-        },
-        {
-          "name": "Dyson Daniels",
-          "team": "ATL"
-        },
-        {
-          "name": "Aaron Wiggins",
-          "team": "ATL"
-        },
-        {
-          "name": "Jalen Johnson",
-          "team": "ATL"
-        },
-        {
-          "name": "Onyeka Okongwu",
-          "team": "ATL"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Coby White",
-          "team": "CHA"
-        },
-        {
-          "name": "Brandon Miller",
-          "team": "CHA"
-        },
-        {
-          "name": "Sion James",
-          "team": "CHA"
-        },
-        {
-          "name": "Naz Reid",
-          "team": "CHA"
-        },
-        {
-          "name": "Moussa Diabate",
-          "team": "CHA"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Kingston Flemings",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Mouhamed Gueye",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Jock Landale",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "CJ McCollum",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Asa Newell",
-          "team": "ATL",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Grayson Allen",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Kon Knueppel",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Dennis Schroder",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Grant Williams",
-          "team": "CHA",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Kingston Flemings",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Mouhamed Gueye",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Jock Landale",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "CJ McCollum",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Asa Newell",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Grayson Allen",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Kon Knueppel",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Dennis Schroder",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Grant Williams",
-          "team": "CHA",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909306": {
       "game_id": "401909306",
       "game": "Orlando Magic at Brooklyn Nets",
@@ -1922,8 +1767,8 @@
       "tipoff": "2026-11-22T20:30:00+00:00",
       "home": "ATL",
       "away": "DET",
-      "checked_at": "2026-11-22T11:24:02.055362+00:00",
-      "minutes_before_tipoff": 546.0,
+      "checked_at": "2026-11-22T12:13:00.663451+00:00",
+      "minutes_before_tipoff": 497.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2067,8 +1912,8 @@
       "tipoff": "2026-11-22T23:00:00+00:00",
       "home": "MIA",
       "away": "OKC",
-      "checked_at": "2026-11-22T11:24:02.055362+00:00",
-      "minutes_before_tipoff": 696.0,
+      "checked_at": "2026-11-22T12:13:00.663451+00:00",
+      "minutes_before_tipoff": 647.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2201,8 +2046,8 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "WAS",
       "away": "ORL",
-      "checked_at": "2026-11-22T11:24:02.055362+00:00",
-      "minutes_before_tipoff": 756.0,
+      "checked_at": "2026-11-22T12:13:00.663451+00:00",
+      "minutes_before_tipoff": 707.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2346,8 +2191,8 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "CHI",
       "away": "DEN",
-      "checked_at": "2026-11-22T11:24:02.055362+00:00",
-      "minutes_before_tipoff": 756.0,
+      "checked_at": "2026-11-22T12:13:00.663451+00:00",
+      "minutes_before_tipoff": 707.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2431,8 +2276,8 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "UTA",
       "away": "DAL",
-      "checked_at": "2026-11-22T11:24:02.055362+00:00",
-      "minutes_before_tipoff": 756.0,
+      "checked_at": "2026-11-22T12:13:00.663451+00:00",
+      "minutes_before_tipoff": 707.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2576,8 +2421,8 @@
       "tipoff": "2026-11-23T01:00:00+00:00",
       "home": "NYK",
       "away": "IND",
-      "checked_at": "2026-11-22T11:24:02.055362+00:00",
-      "minutes_before_tipoff": 816.0,
+      "checked_at": "2026-11-22T12:13:00.663451+00:00",
+      "minutes_before_tipoff": 767.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2680,8 +2525,8 @@
       "tipoff": "2026-11-23T01:30:00+00:00",
       "home": "GSW",
       "away": "BOS",
-      "checked_at": "2026-11-22T11:24:02.055362+00:00",
-      "minutes_before_tipoff": 846.0,
+      "checked_at": "2026-11-22T12:13:00.663451+00:00",
+      "minutes_before_tipoff": 797.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
