@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T02:40:28.349099+00:00",
+  "generated_at": "2026-11-22T03:29:46.502566+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -40,8 +40,8 @@
   "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
-    "O": 95,
-    "T": 15
+    "O": 92,
+    "T": 18
   },
   "players": [
     {
@@ -805,35 +805,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "540385",
+      "injury_record_id": "-61276",
       "name": "Karl-Anthony Towns",
       "team": "NYK",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-21T22:51Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-22T03:05Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540373",
-      "name": "OG Anunoby",
-      "team": "NYK",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Calf | out",
-      "date": "2026-11-21T21:49Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540203",
+      "injury_record_id": "-61275",
       "name": "Jordan Clarkson",
       "team": "NYK",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Plantar Fasciitis | Foot | out",
-      "date": "2026-11-20T22:21Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Plantar Fasciitis | Foot | day-to-day",
+      "date": "2026-11-22T03:05Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61274",
+      "name": "OG Anunoby",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Calf | day-to-day",
+      "date": "2026-11-22T03:04Z",
       "team_match": "feed"
     },
     {
