@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-22T17:29:46.992836+00:00",
+  "generated_at": "2026-11-22T18:08:07.613574+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 109,
+  "player_count": 110,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,11 +37,11 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 109,
+  "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
     "O": 80,
-    "T": 29
+    "T": 30
   },
   "players": [
     {
@@ -211,13 +211,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61295",
+      "injury_record_id": "540468",
       "name": "Nic Claxton",
       "team": "CHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-22T17:23Z",
+      "date": "2026-11-22T17:24Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540466",
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-22T17:22Z",
       "team_match": "feed"
     },
     {
@@ -240,17 +251,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Thumb | day-to-day",
       "date": "2026-11-22T06:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61238",
-      "name": "Jalen Smith",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-21T14:54Z",
       "team_match": "feed"
     },
     {
@@ -1197,6 +1197,17 @@
       "raw_status": "Out",
       "reason": "Not Specified | Knee | out",
       "date": "2026-10-27T19:25Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540470",
+      "name": "Deandre Ayton",
+      "team": "WAS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-22T17:28Z",
       "team_match": "feed"
     },
     {
