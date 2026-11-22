@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-22T19:38:53.563561+00:00",
+  "generated_at": "2026-11-22T20:24:52.299738+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 110,
+  "player_count": 109,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,11 +37,11 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 110,
+  "players_with_team": 109,
   "players_without_team": 0,
   "status_counts": {
     "O": 81,
-    "T": 29
+    "T": 28
   },
   "players": [
     {
@@ -372,17 +372,6 @@
       "raw_status": "Out",
       "reason": "Strain | Oblique | out",
       "date": "2026-11-21T22:34Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540377",
-      "name": "Cade Cunningham",
-      "team": "DET",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Knee | day-to-day",
-      "date": "2026-11-21T22:23Z",
       "team_match": "feed"
     },
     {
