@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-22T22:30:18.742823+00:00",
+  "generated_at": "2026-11-22T23:23:13.806636+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 103,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -36,11 +36,11 @@
     "WAS"
   ],
   "teams_count": 29,
-  "players_with_team": 103,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "O": 90,
-    "T": 13
+    "O": 89,
+    "T": 12
   },
   "players": [
     {
@@ -331,13 +331,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540382",
+      "injury_record_id": "-61325",
       "name": "Ebuka Okorie",
       "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Oblique | out",
-      "date": "2026-11-21T22:34Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Strain | Oblique | day-to-day",
+      "date": "2026-11-22T22:57Z",
       "team_match": "feed"
     },
     {
@@ -481,17 +481,6 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-10-28T21:41Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540187",
-      "name": "Brandon Ingram",
-      "team": "LAC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Achilles | out",
-      "date": "2026-11-20T20:20Z",
       "team_match": "feed"
     },
     {
@@ -738,6 +727,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540548",
+      "name": "Aday Mara",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Lower Leg | out",
+      "date": "2026-11-22T22:35Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540527",
       "name": "Shai Gilgeous-Alexander",
       "team": "OKC",
@@ -870,6 +870,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "540543",
+      "name": "Adem Bona",
+      "team": "PHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Back | out",
+      "date": "2026-11-22T22:22Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540540",
+      "name": "Jaylen Brown",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Hamstring | day-to-day",
+      "date": "2026-11-22T22:17Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540539",
       "name": "Dean Wade",
       "team": "PHI",
@@ -877,28 +899,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Hamstring | day-to-day",
       "date": "2026-11-22T22:15Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61284",
-      "name": "Jaylen Brown",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Hamstring | day-to-day",
-      "date": "2026-11-22T15:05Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540172",
-      "name": "Adem Bona",
-      "team": "PHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Back | out",
-      "date": "2026-11-20T17:33Z",
       "team_match": "feed"
     },
     {
@@ -1108,28 +1108,6 @@
       "raw_status": "Out",
       "reason": "Not Specified | Knee | out",
       "date": "2026-10-27T19:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540485",
-      "name": "Bub Carrington",
-      "team": "WAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-22T18:21Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540470",
-      "name": "Deandre Ayton",
-      "team": "WAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-22T17:28Z",
       "team_match": "feed"
     },
     {
