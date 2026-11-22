@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-22T21:06:51.821143+00:00",
+  "generated_at": "2026-11-22T21:47:38.217468+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 108,
+  "player_count": 106,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -15,7 +15,6 @@
     "DEN",
     "DET",
     "GSW",
-    "HOU",
     "IND",
     "LAC",
     "LAL",
@@ -36,12 +35,12 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 30,
-  "players_with_team": 108,
+  "teams_count": 29,
+  "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
     "O": 85,
-    "T": 23
+    "T": 21
   },
   "players": [
     {
@@ -453,17 +452,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540064",
-      "name": "Clint Capela",
-      "team": "HOU",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-19T23:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540380",
       "name": "T.J. McConnell",
       "team": "IND",
@@ -629,17 +617,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540365",
-      "name": "Myron Gardner",
-      "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-21T20:35Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540364",
       "name": "Giannis Antetokounmpo",
       "team": "MIA",
@@ -651,13 +628,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539324",
+      "injury_record_id": "540528",
       "name": "Ousmane Dieng",
       "team": "MIL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Surgery | Finger | out",
-      "date": "2026-11-15T23:46Z",
+      "date": "2026-11-22T21:37Z",
       "team_match": "feed"
     },
     {
@@ -695,6 +672,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540522",
+      "name": "Trey Murphy III",
+      "team": "NOP",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Knee | day-to-day",
+      "date": "2026-11-22T21:02Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540516",
       "name": "Bryce McGowens",
       "team": "NOP",
@@ -713,17 +701,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Bruise | Thigh | day-to-day",
       "date": "2026-11-22T20:50Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61286",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-22T15:07Z",
       "team_match": "feed"
     },
     {
@@ -794,13 +771,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540384",
+      "injury_record_id": "540527",
       "name": "Shai Gilgeous-Alexander",
       "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Back | day-to-day",
-      "date": "2026-11-21T22:45Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Back | out",
+      "date": "2026-11-22T21:35Z",
       "team_match": "feed"
     },
     {
@@ -1091,13 +1068,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540461",
+      "injury_record_id": "540524",
       "name": "Collin Murray-Boyles",
       "team": "TOR",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Concussion | day-to-day",
-      "date": "2026-11-22T17:10Z",
+      "date": "2026-11-22T21:15Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540523",
+      "name": "Nate Bittle",
+      "team": "TOR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Fracture | Foot | out",
+      "date": "2026-11-22T21:13Z",
       "team_match": "feed"
     },
     {
@@ -1120,17 +1108,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-19T21:13Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539134",
-      "name": "Nate Bittle",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Fracture | Foot | out",
-      "date": "2026-11-14T21:59Z",
       "team_match": "feed"
     },
     {
