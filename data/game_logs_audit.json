@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-21T22:40:44.122554+00:00",
+  "generated_at_utc": "2026-11-22T09:43:42.385022+00:00",
   "regular_season_only": true,
-  "games_validated": 236,
-  "accepted_rows": 5274,
-  "explicit_dnp_rows": 980,
+  "games_validated": 241,
+  "accepted_rows": 5380,
+  "explicit_dnp_rows": 999,
   "rejection_counts": {
     "non_regular_season_game": 67,
     "invalid_stats_or_minutes": 17
@@ -2369,6 +2369,56 @@
       ],
       "player_logs": 20,
       "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "401910024",
+      "teams": [
+        "NY",
+        "POR"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "401910025",
+      "teams": [
+        "DAL",
+        "LAC"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "401910026",
+      "teams": [
+        "MIN",
+        "MEM"
+      ],
+      "player_logs": 19,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "401910027",
+      "teams": [
+        "SA",
+        "NO"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-21",
+      "game_id": "401910028",
+      "teams": [
+        "SAC",
+        "BOS"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 4
     }
   ],
   "status": "accepted"
