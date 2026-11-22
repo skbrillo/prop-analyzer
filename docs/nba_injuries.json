@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-22T00:39:58.844540+00:00",
+  "generated_at": "2026-11-22T01:50:45.744520+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 110,
+  "player_count": 111,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,10 +37,10 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 110,
+  "players_with_team": 111,
   "players_without_team": 0,
   "status_counts": {
-    "O": 94,
+    "O": 95,
     "T": 16
   },
   "players": [
@@ -735,6 +735,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-05T20:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540398",
+      "name": "Zion Williamson",
+      "team": "NOP",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Thigh | out",
+      "date": "2026-11-22T00:39Z",
       "team_match": "feed"
     },
     {
