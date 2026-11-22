@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T09:43:43.864559+00:00",
+  "generated_at": "2026-11-22T11:33:39.852578+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
@@ -2662,7 +2662,75 @@
       ]
     }
   },
-  "preview_months": {},
+  "preview_months": {
+    "2026-11": {
+      "summary": {
+        "picks": 2,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "dnp": 0,
+        "invalid": 0,
+        "pending": 2,
+        "settled": 0,
+        "win_rate": null,
+        "roi": null,
+        "profit_units": 0
+      },
+      "days": [
+        {
+          "date": "2026-11-22",
+          "picks": 2,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 2,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        }
+      ],
+      "picks": [
+        {
+          "date": "2026-11-22",
+          "rank": 1,
+          "player": "Josh Hart",
+          "team": "New York Knicks",
+          "opponent": "Indiana Pacers",
+          "market": "Points",
+          "side": "Under",
+          "line": 9.5,
+          "odds": -101,
+          "edge_score": 93.0,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-22T11:33:39.522673+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-22",
+          "rank": 2,
+          "player": "Jared McCain",
+          "team": "Oklahoma City Thunder",
+          "opponent": "Miami Heat",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 122,
+          "edge_score": 51.1,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-22T11:33:39.522673+00:00",
+          "official": false
+        }
+      ]
+    }
+  },
   "archive_audit": [
     {
       "date": "2026-11-11",
