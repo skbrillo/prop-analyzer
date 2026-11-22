@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T15:25:04.666234+00:00",
+  "generated_at": "2026-11-22T16:06:35.771375+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -40,8 +40,8 @@
   "players_with_team": 110,
   "players_without_team": 0,
   "status_counts": {
-    "O": 80,
-    "T": 30
+    "O": 81,
+    "T": 29
   },
   "players": [
     {
@@ -211,6 +211,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540448",
+      "name": "Norman Powell",
+      "team": "CHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-22T15:25Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540427",
       "name": "Patrick Williams",
       "team": "CHI",
@@ -218,17 +229,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Thumb | day-to-day",
       "date": "2026-11-22T06:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540393",
-      "name": "Norman Powell",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-22T00:11Z",
       "team_match": "feed"
     },
     {
