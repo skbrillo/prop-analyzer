@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-22T16:51:11.867044+00:00",
+  "generated_at": "2026-11-22T17:29:46.992836+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 110,
+  "player_count": 109,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -37,10 +37,10 @@
     "WAS"
   ],
   "teams_count": 30,
-  "players_with_team": 110,
+  "players_with_team": 109,
   "players_without_team": 0,
   "status_counts": {
-    "O": 81,
+    "O": 80,
     "T": 29
   },
   "players": [
@@ -211,6 +211,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61295",
+      "name": "Nic Claxton",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-22T17:23Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540448",
       "name": "Norman Powell",
       "team": "CHI",
@@ -240,17 +251,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
       "date": "2026-11-21T14:54Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539613",
-      "name": "Tobe Awaka",
-      "team": "CHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Back | out",
-      "date": "2026-11-17T20:53Z",
       "team_match": "feed"
     },
     {
@@ -405,17 +405,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-11-20T23:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61148",
-      "name": "Ugonna Onyenso",
-      "team": "DET",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Foot | day-to-day",
-      "date": "2026-11-19T16:15Z",
       "team_match": "feed"
     },
     {
@@ -1135,13 +1124,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61234",
+      "injury_record_id": "540461",
       "name": "Collin Murray-Boyles",
       "team": "TOR",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Concussion | day-to-day",
-      "date": "2026-11-21T14:52Z",
+      "date": "2026-11-22T17:10Z",
       "team_match": "feed"
     },
     {
