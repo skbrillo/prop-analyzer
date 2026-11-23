@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T23:17:53.260036+00:00",
+  "generated_at": "2026-11-23T00:02:40.432510+00:00",
   "source": "RotoWire",
   "games": {
     "401910023": {
@@ -767,8 +767,8 @@
       "tipoff": "2026-11-22T20:30:00+00:00",
       "home": "ATL",
       "away": "DET",
-      "checked_at": "2026-11-22T23:17:53.260036+00:00",
-      "minutes_before_tipoff": -167.9,
+      "checked_at": "2026-11-23T00:02:40.432510+00:00",
+      "minutes_before_tipoff": -212.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -882,8 +882,8 @@
       "tipoff": "2026-11-22T23:00:00+00:00",
       "home": "MIA",
       "away": "OKC",
-      "checked_at": "2026-11-22T23:17:53.260036+00:00",
-      "minutes_before_tipoff": -17.9,
+      "checked_at": "2026-11-23T00:02:40.432510+00:00",
+      "minutes_before_tipoff": -62.7,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1047,14 +1047,12 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "WAS",
       "away": "ORL",
-      "checked_at": "2026-11-22T23:17:53.260036+00:00",
-      "minutes_before_tipoff": 42.1,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-23T00:02:40.432510+00:00",
+      "minutes_before_tipoff": -2.7,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Trae Young",
           "team": "WAS"
@@ -1076,7 +1074,7 @@
           "team": "WAS"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Jalen Suggs",
           "team": "ORL"
@@ -1098,6 +1096,8 @@
           "team": "ORL"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Reece Beekman",
@@ -1192,14 +1192,12 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "CHI",
       "away": "DEN",
-      "checked_at": "2026-11-22T23:17:53.260036+00:00",
-      "minutes_before_tipoff": 42.1,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-23T00:02:40.432510+00:00",
+      "minutes_before_tipoff": -2.7,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Josh Giddey",
           "team": "CHI"
@@ -1221,7 +1219,7 @@
           "team": "CHI"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Jamal Murray",
           "team": "DEN"
@@ -1243,6 +1241,8 @@
           "team": "DEN"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Nic Claxton",
@@ -1297,14 +1297,12 @@
       "tipoff": "2026-11-23T00:00:00+00:00",
       "home": "UTA",
       "away": "DAL",
-      "checked_at": "2026-11-22T23:17:53.260036+00:00",
-      "minutes_before_tipoff": 42.1,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-23T00:02:40.432510+00:00",
+      "minutes_before_tipoff": -2.7,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Keyonte George",
           "team": "UTA"
@@ -1326,7 +1324,7 @@
           "team": "UTA"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Kyrie Irving",
           "team": "DAL"
@@ -1348,6 +1346,8 @@
           "team": "DAL"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Jaren Jackson",
@@ -1442,8 +1442,8 @@
       "tipoff": "2026-11-23T01:00:00+00:00",
       "home": "NYK",
       "away": "IND",
-      "checked_at": "2026-11-22T23:17:53.260036+00:00",
-      "minutes_before_tipoff": 102.1,
+      "checked_at": "2026-11-23T00:02:40.432510+00:00",
+      "minutes_before_tipoff": 57.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1567,8 +1567,8 @@
       "tipoff": "2026-11-23T01:30:00+00:00",
       "home": "GSW",
       "away": "BOS",
-      "checked_at": "2026-11-22T23:17:53.260036+00:00",
-      "minutes_before_tipoff": 132.1,
+      "checked_at": "2026-11-23T00:02:40.432510+00:00",
+      "minutes_before_tipoff": 87.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
