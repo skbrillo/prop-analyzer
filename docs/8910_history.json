@@ -3470,7 +3470,42 @@
       "team_recovered_from_logs": false,
       "verified_team": null,
       "verified_opponent": null
+    },
+    "2026-11-23|deaaronfox|points": {
+      "prediction_id": "c8ed326e601501ecb8e54dd2",
+      "saved_at": "2026-11-23T22:52:35.824434+00:00",
+      "game_date": "2026-11-23",
+      "event_id": "b725fd0d7e19da62f358e8517b45d498",
+      "game_time": "2026-11-24T03:00:00+00:00",
+      "matchup": "San Antonio Spurs @ Sacramento Kings",
+      "player": "De'Aaron Fox",
+      "team": "SAS",
+      "opponent": "SAC",
+      "market": "Points",
+      "side": "Under",
+      "line": "14.5",
+      "odds": "-106",
+      "projection": "10.92",
+      "probability": "0.6121",
+      "model_ev": "0.1896",
+      "last10": "8",
+      "model_version": "v7-live-injury-screen-experimental",
+      "bucket": 8,
+      "locked_at": "2026-11-23T22:52:36.893166+00:00",
+      "status": "pending",
+      "actual": null,
+      "actual_minutes": null,
+      "outcome": null,
+      "profit": null,
+      "stake": null,
+      "reason": "Waiting for game completion buffer",
+      "diagnostic_category": "waiting",
+      "diagnostic_teams_found": [],
+      "diagnostic_match_count": 0,
+      "team_recovered_from_logs": false,
+      "verified_team": null,
+      "verified_opponent": null
     }
   },
-  "updated_at": "2026-11-23T18:51:04.905157+00:00"
+  "updated_at": "2026-11-23T22:52:36.893166+00:00"
 }

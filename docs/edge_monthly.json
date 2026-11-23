@@ -1,23 +1,37 @@
 {
-  "generated_at": "2026-11-23T18:51:05.218914+00:00",
+  "generated_at": "2026-11-23T22:52:37.369328+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
     "2026-11": {
       "summary": {
-        "picks": 100,
+        "picks": 105,
         "wins": 47,
         "losses": 52,
         "pushes": 0,
         "dnp": 1,
         "invalid": 0,
-        "pending": 0,
+        "pending": 5,
         "settled": 99,
         "win_rate": 47.47,
         "roi": -8.88,
         "profit_units": -8.788
       },
       "days": [
+        {
+          "date": "2026-11-23",
+          "picks": 5,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 5,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        },
         {
           "date": "2026-11-22",
           "picks": 14,
@@ -1759,6 +1773,86 @@
           "actual": 18.0,
           "profit_units": 0.91743,
           "saved_at": "2026-11-22T22:44:10.930717+00:00"
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 1,
+          "player": "VJ Edgecombe",
+          "team": "Philadelphia 76ers",
+          "opponent": "Portland Trail Blazers",
+          "market": "Assists",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 110,
+          "edge_score": 81.8,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T22:52:37.006935+00:00"
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 2,
+          "player": "Josh Giddey",
+          "team": "Chicago Bulls",
+          "opponent": "Cleveland Cavaliers",
+          "market": "Points",
+          "side": "Under",
+          "line": 13.5,
+          "odds": -101,
+          "edge_score": 59.1,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T22:52:37.006935+00:00"
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 3,
+          "player": "Devin Vassell",
+          "team": "San Antonio Spurs",
+          "opponent": "Sacramento Kings",
+          "market": "Points",
+          "side": "Under",
+          "line": 13.5,
+          "odds": -112,
+          "edge_score": 51.7,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T22:52:37.006935+00:00"
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 4,
+          "player": "Tyrese Maxey",
+          "team": "Philadelphia 76ers",
+          "opponent": "Portland Trail Blazers",
+          "market": "Rebounds",
+          "side": "Under",
+          "line": 3.5,
+          "odds": -120,
+          "edge_score": 50.3,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T22:52:37.006935+00:00"
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 5,
+          "player": "Jaden McDaniels",
+          "team": "Minnesota Timberwolves",
+          "opponent": "Brooklyn Nets",
+          "market": "Assists",
+          "side": "Over",
+          "line": 3.5,
+          "odds": 121,
+          "edge_score": 48.0,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T22:52:37.006935+00:00"
         }
       ]
     }
@@ -2900,143 +2994,7 @@
       ]
     }
   },
-  "preview_months": {
-    "2026-11": {
-      "summary": {
-        "picks": 6,
-        "wins": 0,
-        "losses": 0,
-        "pushes": 0,
-        "dnp": 0,
-        "invalid": 0,
-        "pending": 6,
-        "settled": 0,
-        "win_rate": null,
-        "roi": null,
-        "profit_units": 0
-      },
-      "days": [
-        {
-          "date": "2026-11-23",
-          "picks": 6,
-          "wins": 0,
-          "losses": 0,
-          "pushes": 0,
-          "dnp": 0,
-          "invalid": 0,
-          "pending": 6,
-          "settled": 0,
-          "win_rate": null,
-          "roi": null,
-          "profit_units": 0
-        }
-      ],
-      "picks": [
-        {
-          "date": "2026-11-23",
-          "rank": 1,
-          "player": "Brook Lopez",
-          "team": "Los Angeles Clippers",
-          "opponent": "Houston Rockets",
-          "market": "Points",
-          "side": "Over",
-          "line": 11.5,
-          "odds": -121,
-          "edge_score": 78.1,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-23T18:51:04.989406+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-23",
-          "rank": 2,
-          "player": "Saddiq Bey",
-          "team": "New Orleans Pelicans",
-          "opponent": "Phoenix Suns",
-          "market": "Assists",
-          "side": "Over",
-          "line": 2.5,
-          "odds": 114,
-          "edge_score": 69.6,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-23T18:51:04.989406+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-23",
-          "rank": 3,
-          "player": "Tyrese Proctor",
-          "team": "Cleveland Cavaliers",
-          "opponent": "Chicago Bulls",
-          "market": "Points",
-          "side": "Over",
-          "line": 8.5,
-          "odds": -124,
-          "edge_score": 59.3,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-23T18:51:04.989406+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-23",
-          "rank": 4,
-          "player": "Isaiah Hartenstein",
-          "team": "Oklahoma City Thunder",
-          "opponent": "Indiana Pacers",
-          "market": "Points",
-          "side": "Under",
-          "line": 9.5,
-          "odds": -112,
-          "edge_score": 54.9,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-23T18:51:04.989406+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-23",
-          "rank": 5,
-          "player": "Derik Queen",
-          "team": "New Orleans Pelicans",
-          "opponent": "Phoenix Suns",
-          "market": "Points",
-          "side": "Over",
-          "line": 10.5,
-          "odds": -102,
-          "edge_score": 51.8,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-23T18:51:04.989406+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-23",
-          "rank": 6,
-          "player": "Jonathan Kuminga",
-          "team": "Minnesota Timberwolves",
-          "opponent": "Brooklyn Nets",
-          "market": "Assists",
-          "side": "Over",
-          "line": 2.5,
-          "odds": 109,
-          "edge_score": 50.2,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-23T18:51:04.989406+00:00",
-          "official": false
-        }
-      ]
-    }
-  },
+  "preview_months": {},
   "archive_audit": [
     {
       "date": "2026-11-11",
@@ -3099,6 +3057,11 @@
       "date": "2026-11-22",
       "classification": "official",
       "count": 14
+    },
+    {
+      "date": "2026-11-23",
+      "classification": "official",
+      "count": 5
     }
   ],
   "validation_errors": 0
