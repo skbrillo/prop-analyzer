@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T18:30:26.448003+00:00",
+  "generated_at": "2026-11-23T19:41:36.618936+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 106,
+  "player_count": 103,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 106,
+  "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
-    "O": 80,
-    "T": 26
+    "O": 83,
+    "T": 20
   },
   "players": [
     {
@@ -187,13 +187,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61345",
+      "injury_record_id": "540668",
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-23T18:40Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540666",
       "name": "Nic Claxton",
       "team": "CHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-23T15:06Z",
+      "date": "2026-11-23T18:35Z",
       "team_match": "feed"
     },
     {
@@ -418,35 +429,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61358",
-      "name": "Aaron Nesmith",
-      "team": "IND",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Foot | out",
-      "date": "2026-11-23T18:21Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61357",
+      "injury_record_id": "540663",
       "name": "T.J. McConnell",
       "team": "IND",
       "status": "O",
       "raw_status": "Out",
       "reason": "Hamstring | out",
-      "date": "2026-11-23T18:21Z",
+      "date": "2026-11-23T18:25Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61356",
+      "injury_record_id": "540662",
+      "name": "Aaron Nesmith",
+      "team": "IND",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Foot | out",
+      "date": "2026-11-23T18:22Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540661",
       "name": "Pascal Siakam",
       "team": "IND",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Not Specified | Hip | day-to-day",
-      "date": "2026-11-23T18:20Z",
+      "date": "2026-11-23T18:22Z",
       "team_match": "feed"
     },
     {
@@ -616,28 +627,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540522",
-      "name": "Trey Murphy III",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-22T21:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540516",
-      "name": "Bryce McGowens",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Infection | Elbow | out",
-      "date": "2026-11-22T20:53Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540515",
       "name": "Zion Williamson",
       "team": "NOP",
@@ -715,57 +704,57 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61343",
-      "name": "Aday Mara",
-      "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-23T15:04Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61341",
+      "injury_record_id": "540679",
       "name": "Jaylin Williams",
       "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Spasms | Back | day-to-day",
-      "date": "2026-11-23T15:03Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Spasms | Back | out",
+      "date": "2026-11-23T19:09Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61340",
+      "injury_record_id": "540675",
       "name": "Nikola Topic",
       "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-23T15:03Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hip | out",
+      "date": "2026-11-23T18:49Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61339",
-      "name": "Shai Gilgeous-Alexander",
+      "injury_record_id": "540673",
+      "name": "Aday Mara",
       "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Back | day-to-day",
-      "date": "2026-11-23T15:03Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Lower Leg | out",
+      "date": "2026-11-23T18:45Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61338",
+      "injury_record_id": "540671",
+      "name": "Jalen Williams",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Fracture | Leg | out",
+      "date": "2026-11-23T18:43Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540667",
       "name": "Alex Caruso",
       "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-23T15:03Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-23T18:38Z",
       "team_match": "feed"
     },
     {
@@ -799,17 +788,6 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-10-31T01:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "536553",
-      "name": "Jalen Williams",
-      "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Fracture | Leg | out",
-      "date": "2026-10-28T23:41Z",
       "team_match": "feed"
     },
     {
@@ -909,17 +887,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-06T19:17Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540556",
-      "name": "Ryan Dunn",
-      "team": "PHX",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Quadriceps | day-to-day",
-      "date": "2026-11-22T23:24Z",
       "team_match": "feed"
     },
     {
