@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T18:16:22.423016+00:00",
+  "generated_at": "2026-11-23T19:26:12.011069+00:00",
   "source": "RotoWire",
   "games": {
     "401910029": {
@@ -963,8 +963,8 @@
       "tipoff": "2026-11-24T00:00:00+00:00",
       "home": "CHA",
       "away": "MEM",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 343.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 273.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1108,8 +1108,8 @@
       "tipoff": "2026-11-24T00:00:00+00:00",
       "home": "PHI",
       "away": "POR",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 343.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 273.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1212,8 +1212,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "IND",
       "away": "OKC",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 373.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 303.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1225,11 +1225,11 @@
           "team": "IND"
         },
         {
-          "name": "Kelly Oubre",
+          "name": "Quenton Jackson",
           "team": "IND"
         },
         {
-          "name": "Aaron Nesmith",
+          "name": "Kelly Oubre",
           "team": "IND"
         },
         {
@@ -1255,7 +1255,7 @@
           "team": "OKC"
         },
         {
-          "name": "Aday Mara",
+          "name": "Kenrich Williams",
           "team": "OKC"
         },
         {
@@ -1275,6 +1275,16 @@
           "status": "out"
         },
         {
+          "name": "T.J. McConnell",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Aaron Nesmith",
+          "team": "IND",
+          "status": "out"
+        },
+        {
           "name": "Ben Sheppard",
           "team": "IND",
           "status": "out"
@@ -1282,12 +1292,27 @@
       ],
       "away_out": [
         {
+          "name": "Alex Caruso",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
           "name": "Chet Holmgren",
           "team": "OKC",
           "status": "out"
         },
         {
+          "name": "Aday Mara",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
           "name": "Thomas Sorber",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Nikola Topic",
           "team": "OKC",
           "status": "out"
         },
@@ -1298,6 +1323,11 @@
         },
         {
           "name": "Jalen Williams",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Jaylin Williams",
           "team": "OKC",
           "status": "out"
         }
@@ -1314,8 +1344,23 @@
           "status": "out"
         },
         {
+          "name": "T.J. McConnell",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Aaron Nesmith",
+          "team": "IND",
+          "status": "out"
+        },
+        {
           "name": "Ben Sheppard",
           "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Alex Caruso",
+          "team": "OKC",
           "status": "out"
         },
         {
@@ -1324,7 +1369,17 @@
           "status": "out"
         },
         {
+          "name": "Aday Mara",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
           "name": "Thomas Sorber",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Nikola Topic",
           "team": "OKC",
           "status": "out"
         },
@@ -1337,6 +1392,11 @@
           "name": "Jalen Williams",
           "team": "OKC",
           "status": "out"
+        },
+        {
+          "name": "Jaylin Williams",
+          "team": "OKC",
+          "status": "out"
         }
       ],
       "source": "RotoWire"
@@ -1347,8 +1407,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "TOR",
       "away": "MIL",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 373.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 303.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1431,8 +1491,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "MIN",
       "away": "BKN",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 373.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 303.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1536,8 +1596,8 @@
       "tipoff": "2026-11-24T01:00:00+00:00",
       "home": "CHI",
       "away": "CLE",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 403.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 333.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1641,8 +1701,8 @@
       "tipoff": "2026-11-24T01:00:00+00:00",
       "home": "NOP",
       "away": "PHX",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 403.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 333.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1746,8 +1806,8 @@
       "tipoff": "2026-11-24T01:30:00+00:00",
       "home": "HOU",
       "away": "LAC",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 433.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 363.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1830,8 +1890,8 @@
       "tipoff": "2026-11-24T03:00:00+00:00",
       "home": "LAL",
       "away": "UTA",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 523.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 453.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1935,8 +1995,8 @@
       "tipoff": "2026-11-24T03:00:00+00:00",
       "home": "SAC",
       "away": "SAS",
-      "checked_at": "2026-11-23T18:16:22.423016+00:00",
-      "minutes_before_tipoff": 523.6,
+      "checked_at": "2026-11-23T19:26:12.011069+00:00",
+      "minutes_before_tipoff": 453.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
