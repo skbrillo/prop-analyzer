@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T20:27:53.284419+00:00",
+  "generated_at": "2026-11-23T21:16:53.642781+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 103,
+  "player_count": 102,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 103,
+  "players_with_team": 102,
   "players_without_team": 0,
   "status_counts": {
-    "O": 83,
-    "T": 20
+    "O": 84,
+    "T": 18
   },
   "players": [
     {
@@ -99,24 +99,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61349",
-      "name": "Paul George",
-      "team": "BOS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Rest | day-to-day",
-      "date": "2026-11-23T15:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540519",
+      "injury_record_id": "540686",
       "name": "Mitchell Robinson",
       "team": "BOS",
       "status": "O",
       "raw_status": "Out",
       "reason": "Illness | out",
-      "date": "2026-11-22T20:58Z",
+      "date": "2026-11-23T21:09Z",
       "team_match": "feed"
     },
     {
@@ -374,13 +363,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540428",
+      "injury_record_id": "540684",
       "name": "Brandon Williams",
       "team": "GSW",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
-      "date": "2026-11-22T06:10Z",
+      "date": "2026-11-23T20:52Z",
       "team_match": "feed"
     },
     {
@@ -1089,13 +1078,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61346",
+      "injury_record_id": "540685",
       "name": "Jaxson Hayes",
       "team": "UTA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Knee | day-to-day",
-      "date": "2026-11-23T15:06Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Knee | out",
+      "date": "2026-11-23T21:04Z",
       "team_match": "feed"
     },
     {
