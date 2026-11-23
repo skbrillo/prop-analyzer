@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T00:02:02.477635+00:00",
+  "generated_at": "2026-11-23T01:15:41.908138+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -39,8 +39,8 @@
   "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "O": 89,
-    "T": 12
+    "O": 90,
+    "T": 11
   },
   "players": [
     {
@@ -441,17 +441,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540376",
-      "name": "Pascal Siakam",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-21T22:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540188",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -694,6 +683,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540559",
+      "name": "Miles McBride",
+      "team": "NYK",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Abdomen | out",
+      "date": "2026-11-23T00:04Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540483",
       "name": "OG Anunoby",
       "team": "NYK",
@@ -701,17 +701,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Calf | out",
       "date": "2026-11-22T18:13Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540482",
-      "name": "Karl-Anthony Towns",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-22T18:09Z",
       "team_match": "feed"
     },
     {
@@ -1075,6 +1064,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-19T21:13Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540563",
+      "name": "Jaxson Hayes",
+      "team": "UTA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Knee | day-to-day",
+      "date": "2026-11-23T01:04Z",
       "team_match": "feed"
     },
     {
