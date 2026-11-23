@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T22:14:59.916180+00:00",
+  "generated_at": "2026-11-23T23:03:26.415209+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 102,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 102,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "O": 84,
-    "T": 18
+    "O": 86,
+    "T": 15
   },
   "players": [
     {
@@ -127,17 +127,6 @@
       "status": "O",
       "raw_status": "Out",
       "reason": "Concussion | out",
-      "date": "2026-11-22T22:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61317",
-      "name": "Brandon Miller",
-      "team": "CHA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Knee | day-to-day",
       "date": "2026-11-22T22:08Z",
       "team_match": "feed"
     },
@@ -319,13 +308,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61325",
+      "injury_record_id": "540690",
       "name": "Ebuka Okorie",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Oblique | out",
+      "date": "2026-11-23T22:10Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540689",
+      "name": "Jalen Duren",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-23T22:08Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540688",
+      "name": "Cade Cunningham",
       "team": "DET",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Strain | Oblique | day-to-day",
-      "date": "2026-11-22T22:57Z",
+      "reason": "Knee | day-to-day",
+      "date": "2026-11-23T22:07Z",
       "team_match": "feed"
     },
     {
@@ -348,17 +359,6 @@
       "raw_status": "Out",
       "reason": "Strain | Quadriceps | out",
       "date": "2026-11-17T16:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538124",
-      "name": "Jalen Duren",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Hamstring | out",
-      "date": "2026-11-08T16:05Z",
       "team_match": "feed"
     },
     {
@@ -435,17 +435,6 @@
       "status": "O",
       "raw_status": "Out",
       "reason": "Foot | out",
-      "date": "2026-11-23T18:22Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540661",
-      "name": "Pascal Siakam",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Hip | day-to-day",
       "date": "2026-11-23T18:22Z",
       "team_match": "feed"
     },
@@ -825,13 +814,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540627",
+      "injury_record_id": "540693",
       "name": "Joel Embiid",
       "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-23T16:49Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-23T22:49Z",
       "team_match": "feed"
     },
     {
@@ -1028,7 +1017,7 @@
       "team": "TOR",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
+      "reason": "day-to-day",
       "date": "2026-11-23T17:37Z",
       "team_match": "feed"
     },
@@ -1122,13 +1111,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "539432",
+      "injury_record_id": "540691",
       "name": "Tristan Vukcevic",
       "team": "WAS",
       "status": "O",
       "raw_status": "Out",
       "reason": "Pinched Nerve | Hip | out",
-      "date": "2026-11-16T18:14Z",
+      "date": "2026-11-23T22:10Z",
       "team_match": "feed"
     },
     {
