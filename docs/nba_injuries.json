@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T04:36:59.532414+00:00",
+  "generated_at": "2026-11-23T05:44:05.894988+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 103,
+  "player_count": 104,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -36,11 +36,11 @@
     "WAS"
   ],
   "teams_count": 29,
-  "players_with_team": 103,
+  "players_with_team": 104,
   "players_without_team": 0,
   "status_counts": {
     "O": 92,
-    "T": 11
+    "T": 12
   },
   "players": [
     {
@@ -987,6 +987,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-21T04:22Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61337",
+      "name": "Victor Wembanyama",
+      "team": "SAS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-23T04:52Z",
       "team_match": "feed"
     },
     {
