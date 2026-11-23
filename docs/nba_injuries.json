@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T01:15:41.908138+00:00",
+  "generated_at": "2026-11-23T02:28:29.048341+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 101,
+  "player_count": 103,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -36,11 +36,11 @@
     "WAS"
   ],
   "teams_count": 29,
-  "players_with_team": 101,
+  "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
-    "O": 90,
-    "T": 11
+    "O": 91,
+    "T": 12
   },
   "players": [
     {
@@ -496,24 +496,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540511",
+      "injury_record_id": "540564",
       "name": "Austin Reaves",
       "team": "LAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
-      "date": "2026-11-22T20:25Z",
+      "date": "2026-11-23T01:09Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540542",
+      "injury_record_id": "540566",
       "name": "Jerami Grant",
       "team": "MEM",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Not Specified | Calf | day-to-day",
-      "date": "2026-11-22T22:21Z",
+      "date": "2026-11-23T01:14Z",
       "team_match": "feed"
     },
     {
@@ -991,6 +991,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "540571",
+      "name": "De'Aaron Fox",
+      "team": "SAS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Lower Leg | day-to-day",
+      "date": "2026-11-23T01:39Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540570",
+      "name": "Jordan McLaughlin",
+      "team": "SAS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Shoulder | day-to-day",
+      "date": "2026-11-23T01:38Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540037",
       "name": "Dylan Harper",
       "team": "SAS",
@@ -1068,13 +1090,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540563",
+      "injury_record_id": "540567",
       "name": "Jaxson Hayes",
       "team": "UTA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Knee | day-to-day",
-      "date": "2026-11-23T01:04Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Knee | out",
+      "date": "2026-11-23T01:16Z",
       "team_match": "feed"
     },
     {
