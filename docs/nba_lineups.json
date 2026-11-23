@@ -1,112 +1,7 @@
 {
-  "generated_at": "2026-11-23T13:55:39.110371+00:00",
+  "generated_at": "2026-11-23T15:00:03.270271+00:00",
   "source": "RotoWire",
   "games": {
-    "401910028": {
-      "game_id": "401910028",
-      "game": "Boston Celtics at Sacramento Kings",
-      "tipoff": "2026-11-22T03:00:00+00:00",
-      "home": "SAC",
-      "away": "BOS",
-      "checked_at": "2026-11-22T05:42:40.733486+00:00",
-      "minutes_before_tipoff": -162.7,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Darius Acuff",
-          "team": "SAC"
-        },
-        {
-          "name": "Zach LaVine",
-          "team": "SAC"
-        },
-        {
-          "name": "De'Andre Hunter",
-          "team": "SAC"
-        },
-        {
-          "name": "Keegan Murray",
-          "team": "SAC"
-        },
-        {
-          "name": "Domantas Sabonis",
-          "team": "SAC"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Payton Pritchard",
-          "team": "BOS"
-        },
-        {
-          "name": "Sam Hauser",
-          "team": "BOS"
-        },
-        {
-          "name": "Hugo Gonzalez",
-          "team": "BOS"
-        },
-        {
-          "name": "Paul George",
-          "team": "BOS"
-        },
-        {
-          "name": "Neemias Queta",
-          "team": "BOS"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Maxime Raynaud",
-          "team": "SAC",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Mitchell Robinson",
-          "team": "BOS",
-          "status": "out"
-        },
-        {
-          "name": "Jayson Tatum",
-          "team": "BOS",
-          "status": "out"
-        },
-        {
-          "name": "Derrick White",
-          "team": "BOS",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Maxime Raynaud",
-          "team": "SAC",
-          "status": "out"
-        },
-        {
-          "name": "Mitchell Robinson",
-          "team": "BOS",
-          "status": "out"
-        },
-        {
-          "name": "Jayson Tatum",
-          "team": "BOS",
-          "status": "out"
-        },
-        {
-          "name": "Derrick White",
-          "team": "BOS",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401910029": {
       "game_id": "401910029",
       "game": "Detroit Pistons at Atlanta Hawks",
@@ -1068,8 +963,8 @@
       "tipoff": "2026-11-24T00:00:00+00:00",
       "home": "CHA",
       "away": "MEM",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 604.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 539.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1213,8 +1108,8 @@
       "tipoff": "2026-11-24T00:00:00+00:00",
       "home": "PHI",
       "away": "POR",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 604.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 539.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1317,8 +1212,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "IND",
       "away": "OKC",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 634.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 569.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1512,8 +1407,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "TOR",
       "away": "MIL",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 634.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 569.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1596,8 +1491,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "MIN",
       "away": "BKN",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 634.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 569.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1701,8 +1596,8 @@
       "tipoff": "2026-11-24T01:00:00+00:00",
       "home": "CHI",
       "away": "CLE",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 664.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 599.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1816,8 +1711,8 @@
       "tipoff": "2026-11-24T01:00:00+00:00",
       "home": "NOP",
       "away": "PHX",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 664.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 599.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1921,8 +1816,8 @@
       "tipoff": "2026-11-24T01:30:00+00:00",
       "home": "HOU",
       "away": "LAC",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 694.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 629.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2005,8 +1900,8 @@
       "tipoff": "2026-11-24T03:00:00+00:00",
       "home": "LAL",
       "away": "UTA",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 784.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 719.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2120,8 +2015,8 @@
       "tipoff": "2026-11-24T03:00:00+00:00",
       "home": "SAC",
       "away": "SAS",
-      "checked_at": "2026-11-23T13:55:39.110371+00:00",
-      "minutes_before_tipoff": 784.3,
+      "checked_at": "2026-11-23T15:00:03.270271+00:00",
+      "minutes_before_tipoff": 719.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
