@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T09:16:15.638055+00:00",
+  "generated_at": "2026-11-23T11:43:00.080564+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
@@ -2900,7 +2900,160 @@
       ]
     }
   },
-  "preview_months": {},
+  "preview_months": {
+    "2026-11": {
+      "summary": {
+        "picks": 7,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "dnp": 0,
+        "invalid": 0,
+        "pending": 7,
+        "settled": 0,
+        "win_rate": null,
+        "roi": null,
+        "profit_units": 0
+      },
+      "days": [
+        {
+          "date": "2026-11-23",
+          "picks": 7,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 7,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        }
+      ],
+      "picks": [
+        {
+          "date": "2026-11-23",
+          "rank": 1,
+          "player": "Meleek Thomas",
+          "team": "Cleveland Cavaliers",
+          "opponent": "Chicago Bulls",
+          "market": "Points",
+          "side": "Over",
+          "line": 9.5,
+          "odds": -110,
+          "edge_score": 84.3,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T11:42:59.732741+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 2,
+          "player": "Andrew Nembhard",
+          "team": "Indiana Pacers",
+          "opponent": "Oklahoma City Thunder",
+          "market": "Assists",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -118,
+          "edge_score": 61.1,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T11:42:59.732741+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 3,
+          "player": "Royce O'Neale",
+          "team": "Charlotte Hornets",
+          "opponent": "Memphis Grizzlies",
+          "market": "Assists",
+          "side": "Under",
+          "line": 1.5,
+          "odds": -119,
+          "edge_score": 59.0,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T11:42:59.732741+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 4,
+          "player": "Scottie Barnes",
+          "team": "Toronto Raptors",
+          "opponent": "Milwaukee Bucks",
+          "market": "Assists",
+          "side": "Under",
+          "line": 5.5,
+          "odds": -106,
+          "edge_score": 54.7,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T11:42:59.732741+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 5,
+          "player": "Jaden McDaniels",
+          "team": "Minnesota Timberwolves",
+          "opponent": "Brooklyn Nets",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 5.5,
+          "odds": 120,
+          "edge_score": 53.3,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T11:42:59.732741+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 6,
+          "player": "Aaron Nesmith",
+          "team": "Indiana Pacers",
+          "opponent": "Oklahoma City Thunder",
+          "market": "Points",
+          "side": "Under",
+          "line": 12.5,
+          "odds": -120,
+          "edge_score": 53.1,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T11:42:59.732741+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-23",
+          "rank": 7,
+          "player": "Terrence Shannon Jr.",
+          "team": "Minnesota Timberwolves",
+          "opponent": "Brooklyn Nets",
+          "market": "Assists",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -114,
+          "edge_score": 47.4,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-23T11:42:59.732741+00:00",
+          "official": false
+        }
+      ]
+    }
+  },
   "archive_audit": [
     {
       "date": "2026-11-11",
