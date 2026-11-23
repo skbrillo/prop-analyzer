@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T03:24:23.563685+00:00",
+  "generated_at": "2026-11-23T04:36:59.532414+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -39,8 +39,8 @@
   "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
-    "O": 91,
-    "T": 12
+    "O": 92,
+    "T": 11
   },
   "players": [
     {
@@ -507,13 +507,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540566",
+      "injury_record_id": "-61336",
       "name": "Jerami Grant",
       "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Calf | day-to-day",
-      "date": "2026-11-23T01:14Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Calf | out",
+      "date": "2026-11-23T04:04Z",
       "team_match": "feed"
     },
     {
