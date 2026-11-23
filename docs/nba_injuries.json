@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T23:23:13.806636+00:00",
+  "generated_at": "2026-11-23T00:02:02.477635+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -914,13 +914,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540487",
+      "injury_record_id": "540556",
       "name": "Ryan Dunn",
       "team": "PHX",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Quadriceps | day-to-day",
-      "date": "2026-11-22T18:34Z",
+      "reason": "Soreness | Quadriceps | day-to-day",
+      "date": "2026-11-22T23:24Z",
       "team_match": "feed"
     },
     {
