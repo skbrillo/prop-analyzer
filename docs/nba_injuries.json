@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T23:03:26.415209+00:00",
+  "generated_at": "2026-11-23T23:55:08.900673+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 101,
+  "player_count": 94,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,11 +35,11 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 101,
+  "players_with_team": 94,
   "players_without_team": 0,
   "status_counts": {
-    "O": 86,
-    "T": 15
+    "O": 85,
+    "T": 9
   },
   "players": [
     {
@@ -165,28 +165,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540668",
-      "name": "Jalen Smith",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-23T18:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540666",
-      "name": "Nic Claxton",
-      "team": "CHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-23T18:35Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540448",
       "name": "Norman Powell",
       "team": "CHI",
@@ -242,24 +220,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61344",
-      "name": "P.J. Washington",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-23T15:05Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540493",
+      "injury_record_id": "540706",
       "name": "Tobi Lawal",
       "team": "DAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Groin | out",
-      "date": "2026-11-22T19:04Z",
+      "date": "2026-11-23T23:25Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540703",
+      "name": "P.J. Washington",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-23T23:21Z",
       "team_match": "feed"
     },
     {
@@ -506,6 +484,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540698",
+      "name": "Cameron Boozer",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Sprain | Ankle | out",
+      "date": "2026-11-23T23:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-61336",
       "name": "Jerami Grant",
       "team": "MEM",
@@ -513,17 +502,6 @@
       "raw_status": "Out",
       "reason": "Not Specified | Calf | out",
       "date": "2026-11-23T04:04Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540541",
-      "name": "Cameron Boozer",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-22T22:18Z",
       "team_match": "feed"
     },
     {
@@ -825,39 +803,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540543",
-      "name": "Adem Bona",
-      "team": "PHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Back | out",
-      "date": "2026-11-22T22:22Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540540",
-      "name": "Jaylen Brown",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Hamstring | day-to-day",
-      "date": "2026-11-22T22:17Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540539",
-      "name": "Dean Wade",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hamstring | day-to-day",
-      "date": "2026-11-22T22:15Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "533362",
       "name": "Ariel Hukporti",
       "team": "PHI",
@@ -1008,28 +953,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-10-05T21:43Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540645",
-      "name": "Jaden Bradley",
-      "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "day-to-day",
-      "date": "2026-11-23T17:37Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540524",
-      "name": "Collin Murray-Boyles",
-      "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Concussion | day-to-day",
-      "date": "2026-11-22T21:15Z",
       "team_match": "feed"
     },
     {
