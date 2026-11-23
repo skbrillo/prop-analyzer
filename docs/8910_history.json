@@ -3435,7 +3435,42 @@
       "team_recovered_from_logs": false,
       "verified_team": null,
       "verified_opponent": null
+    },
+    "2026-11-23|zionwilliamson|points": {
+      "prediction_id": "eac2876477908a219e3a6c87",
+      "saved_at": "2026-11-23T18:51:03.961318+00:00",
+      "game_date": "2026-11-23",
+      "event_id": "bd3d491defde062fa0a3c7d87e9db0bf",
+      "game_time": "2026-11-24T01:00:00+00:00",
+      "matchup": "Phoenix Suns @ New Orleans Pelicans",
+      "player": "Zion Williamson",
+      "team": "NOP",
+      "opponent": "PHX",
+      "market": "Points",
+      "side": "Over",
+      "line": "21.5",
+      "odds": "-106",
+      "projection": "21.93",
+      "probability": "0.5104",
+      "model_ev": "-0.0082",
+      "last10": "8",
+      "model_version": "v7-live-injury-screen-experimental",
+      "bucket": 8,
+      "locked_at": "2026-11-23T18:51:04.905157+00:00",
+      "status": "pending",
+      "actual": null,
+      "actual_minutes": null,
+      "outcome": null,
+      "profit": null,
+      "stake": null,
+      "reason": "Waiting for game completion buffer",
+      "diagnostic_category": "waiting",
+      "diagnostic_teams_found": [],
+      "diagnostic_match_count": 0,
+      "team_recovered_from_logs": false,
+      "verified_team": null,
+      "verified_opponent": null
     }
   },
-  "updated_at": "2026-11-23T11:42:59.611400+00:00"
+  "updated_at": "2026-11-23T18:51:04.905157+00:00"
 }
