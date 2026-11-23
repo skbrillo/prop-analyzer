@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-23T17:39:10.735561+00:00",
+  "generated_at": "2026-11-23T18:30:26.448003+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -20,7 +20,6 @@
     "LAL",
     "MEM",
     "MIA",
-    "MIL",
     "MIN",
     "NOP",
     "NYK",
@@ -35,12 +34,12 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 29,
+  "teams_count": 28,
   "players_with_team": 106,
   "players_without_team": 0,
   "status_counts": {
-    "O": 79,
-    "T": 27
+    "O": 80,
+    "T": 26
   },
   "players": [
     {
@@ -129,17 +128,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-23T15:22Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540513",
-      "name": "Grant Nelson",
-      "team": "BKN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-22T20:39Z",
       "team_match": "feed"
     },
     {
@@ -430,13 +418,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61347",
+      "injury_record_id": "-61358",
+      "name": "Aaron Nesmith",
+      "team": "IND",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Foot | out",
+      "date": "2026-11-23T18:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61357",
       "name": "T.J. McConnell",
+      "team": "IND",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-23T18:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61356",
+      "name": "Pascal Siakam",
       "team": "IND",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-23T15:06Z",
+      "reason": "Not Specified | Hip | day-to-day",
+      "date": "2026-11-23T18:20Z",
       "team_match": "feed"
     },
     {
@@ -569,17 +579,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Groin | day-to-day",
       "date": "2026-11-23T15:04Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540528",
-      "name": "Ousmane Dieng",
-      "team": "MIL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Finger | out",
-      "date": "2026-11-22T21:37Z",
       "team_match": "feed"
     },
     {
@@ -1068,13 +1067,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61354",
+      "injury_record_id": "540645",
       "name": "Jaden Bradley",
       "team": "TOR",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-23T17:36Z",
+      "date": "2026-11-23T17:37Z",
       "team_match": "feed"
     },
     {
