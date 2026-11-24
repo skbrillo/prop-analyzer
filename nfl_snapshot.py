@@ -11,6 +11,8 @@ Modes
 Writes
     data/nfl_snapshots/<game_date>.csv.gz   appended rows, every book and line
     data/nfl_snapshots/state.json           closing counter + last known credits
+    data/nfl_game_lines.json                spreads and totals by game and book
+                                            (board pulls only, ~2 credits)
 
 One props request costs 3 credits for all markets and books (probe, 11/24).
 """
@@ -33,6 +35,8 @@ import update_odds as uo
 ROOT = Path(__file__).resolve().parent
 SNAP_DIR = ROOT / "data" / "nfl_snapshots"
 STATE_FILE = SNAP_DIR / "state.json"
+LINES_FILE = ROOT / "data" / "nfl_game_lines.json"
+GAME_LINES_COST = 2
 CENTRAL = ZoneInfo("America/Chicago")
 
 SPORT = "americanfootball_nfl"
@@ -133,6 +137,81 @@ def fetch_props(api_key, budget):
             break
         offset = nxt
     return rows, spent, remaining
+
+
+def book_lines(event, book_key):
+    """Spread and total for one book from an odds-API style event."""
+    for book in event.get("bookmakers", []):
+        if uo.norm(book.get("key")) != book_key:
+            continue
+        markets = {m.get("key"): m for m in book.get("markets", [])}
+        home, away = event.get("home_team", ""), event.get("away_team", "")
+        out = {"home_spread": None, "away_spread": None, "home_spread_odds": None,
+               "away_spread_odds": None, "total": None, "over_odds": None, "under_odds": None}
+        for o in markets.get("spreads", {}).get("outcomes", []):
+            point, price = uo.number(o.get("point")), uo.valid_american_odds(o.get("price"))
+            if uo.norm(o.get("name")) == uo.norm(home):
+                out["home_spread"], out["home_spread_odds"] = point, price
+            elif uo.norm(o.get("name")) == uo.norm(away):
+                out["away_spread"], out["away_spread_odds"] = point, price
+        for o in markets.get("totals", {}).get("outcomes", []):
+            side = uo.norm(o.get("name"))
+            if side == "over":
+                out["total"], out["over_odds"] = uo.number(o.get("point")), uo.valid_american_odds(o.get("price"))
+            elif side == "under":
+                out["under_odds"] = uo.valid_american_odds(o.get("price"))
+        if out["total"] is not None and out["home_spread"] is not None:
+            out["home_implied"] = round((out["total"] - out["home_spread"]) / 2, 1)
+            out["away_implied"] = round((out["total"] + out["home_spread"]) / 2, 1)
+        return out if any(v is not None for v in out.values()) else None
+    return None
+
+
+def save_game_lines(api_key, events, now):
+    """One request for every game's spread and total (all books). Keeps the
+    first line seen (opening) and the latest per book."""
+    data, usage = uo.request_json(
+        f"/sports/{SPORT}/odds",
+        {"markets": "spreads,totals", "bookmakers": ",".join(BOOKS), "regions": "us",
+         "oddsFormat": "american", "dateFormat": "iso"},
+        api_key,
+    )
+    print("Game-line credits used:", usage.get("last"))
+    if not isinstance(data, list):
+        print("WARNING: invalid game-lines response")
+        return usage.get("remaining")
+    try:
+        saved = json.loads(LINES_FILE.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        saved = {"games": {}}
+    lookup = uo.make_event_lookup(events)
+    stamp = now.isoformat(timespec="seconds")
+    updated = 0
+    for event in data:
+        if not isinstance(event, dict):
+            continue
+        match = uo.match_event(event, lookup)
+        details = uo.event_details(match) if match else None
+        if not details:
+            continue
+        game = saved["games"].setdefault(details["event_id"], {"opening": {}, "latest": {}})
+        game.update({k: details[k] for k in ("matchup", "home_team", "away_team", "commence_time", "game_date")})
+        for book in BOOKS:
+            lines = book_lines(event, book)
+            if lines:
+                lines["captured_at"] = stamp
+                game["latest"][book] = lines
+                game["opening"].setdefault(book, lines)
+                updated += 1
+    # Drop games more than 3 days old.
+    cutoff = now.timestamp() - 3 * 86400
+    saved["games"] = {k: v for k, v in saved["games"].items()
+                      if (uo.parse_time(v.get("commence_time")) or now).timestamp() > cutoff}
+    saved["updated_at"] = stamp
+    LINES_FILE.parent.mkdir(parents=True, exist_ok=True)
+    LINES_FILE.write_text(json.dumps(saved, indent=1) + "\n", encoding="utf-8")
+    print(f"Game lines saved: {updated} book lines across {len(saved['games'])} games")
+    return usage.get("remaining")
 
 
 def to_rows(props, events, label, captured_at, due_ids=None):
@@ -244,6 +323,13 @@ def run(mode):
         return 0
 
     props, spent, after = fetch_props(api_key, budget)
+    if mode == "board" and budget - spent >= GAME_LINES_COST:
+        try:
+            lines_after = save_game_lines(api_key, events, now)
+            if lines_after is not None:
+                after = lines_after
+        except Exception as exc:  # game lines are optional
+            print("WARNING: game lines not saved:", exc)
     if after is not None:
         state["_credits"] = {"remaining": after, "at": now.isoformat(timespec="seconds")}
     rows, rejected = to_rows(props, events, mode, now, due_ids)

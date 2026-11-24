@@ -22,6 +22,7 @@ from nfl_snapshot import player_key
 ROOT = Path(__file__).resolve().parent
 SNAP_DIR = ROOT / "data" / "nfl_snapshots"
 OUTPUT = ROOT / "docs" / "nfl_board.json"
+LINES_FILE = ROOT / "data" / "nfl_game_lines.json"
 CENTRAL = ZoneInfo("America/Chicago")
 
 DK = "draftkings"
@@ -153,6 +154,20 @@ def build(now=None):
             continue
         index[(r["event_id"], player_key(r["player"]), r["market"])][r["captured_at"]].append(r)
     study = clv_report.movement_study(index)
+
+    # Game lines (spreads / totals), including games without props yet.
+    try:
+        saved_lines = json.loads(LINES_FILE.read_text(encoding="utf-8")).get("games", {})
+    except (OSError, ValueError):
+        saved_lines = {}
+    for event, g in saved_lines.items():
+        tip = parse_time(g.get("commence_time"))
+        if not tip or tip <= now:
+            continue
+        game = games.setdefault(event, {"event_id": event, "matchup": g.get("matchup"),
+                                        "commence_time": g.get("commence_time")})
+        game.update({"home_team": g.get("home_team"), "away_team": g.get("away_team"),
+                     "lines": g.get("latest", {}), "opening": g.get("opening", {})})
 
     payload = {
         "generated_at": now.isoformat(timespec="seconds"),
