@@ -1,0 +1,60 @@
+name: NFL Stats and Model Grading
+
+# Downloads NFL box scores from ESPN (free, no API credits), then re-runs the
+# model to grade finished paper picks. Runs at 4 AM Central the morning after
+# game days (Sun night, Mon, Tue after Monday night, Fri after Thursday night).
+# The first run fetches two seasons and takes a few minutes.
+
+on:
+  schedule:
+    - cron: "0 10 * * 0,1,2,5"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-prop-lines
+  cancel-in-progress: false
+
+jobs:
+  stats:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/Chicago
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Download NFL box scores
+        run: python update_nfl_stats.py
+
+      - name: Grade and re-project
+        continue-on-error: true
+        run: |
+          if ls data/nfl_snapshots/*.csv.gz >/dev/null 2>&1; then python build_nfl_board.py; fi
+          python nfl_model.py
+
+      - name: Save
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          for path in data/nfl_game_logs.csv docs/nfl_board.json docs/nfl_model.json docs/nfl_paper_picks.json; do
+            if [ -e "$path" ]; then git add "$path"; fi
+          done
+          if git diff --cached --quiet; then
+            echo "Nothing new to save."
+            exit 0
+          fi
+          git commit -m "Update NFL stats and model grading"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin main && exit 0
+            sleep $((attempt * 10))
+          done
+          echo "::error::Could not push NFL stats after 3 attempts"
+          exit 1
