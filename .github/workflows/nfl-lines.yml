@@ -61,7 +61,7 @@ jobs:
         continue-on-error: true
         run: |
           # Only rebuild when this run saved new prices.
-          if [ -n "$(git status --porcelain data/nfl_snapshots)" ]; then
+          if [ -n "$(git status --porcelain data/nfl_snapshots data/nfl_game_lines.json)" ]; then
             python build_nfl_board.py
             if [ -e data/nfl_game_logs.csv ]; then python nfl_model.py; fi
           else
@@ -73,6 +73,7 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/nfl_snapshots/ || true
+          if [ -e data/nfl_game_lines.json ]; then git add data/nfl_game_lines.json; fi
           for path in docs/nfl_board.json docs/nfl_model.json docs/nfl_paper_picks.json; do
             if [ -e "$path" ]; then git add "$path"; fi
           done
