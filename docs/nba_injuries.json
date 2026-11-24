@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T18:16:36.257773+00:00",
+  "generated_at": "2026-11-24T19:27:22.156865+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 92,
+  "player_count": 93,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 92,
+  "players_with_team": 93,
   "players_without_team": 0,
   "status_counts": {
     "O": 75,
-    "T": 17
+    "T": 18
   },
   "players": [
     {
@@ -175,6 +175,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540841",
+      "name": "Jalen Smith",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-24T18:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540448",
       "name": "Norman Powell",
       "team": "CHI",
@@ -274,24 +285,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "540690",
+      "injury_record_id": "540845",
       "name": "Ebuka Okorie",
       "team": "DET",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Oblique | out",
-      "date": "2026-11-23T22:10Z",
+      "date": "2026-11-24T18:37Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540689",
+      "injury_record_id": "540844",
+      "name": "Taurean Prince",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Surgery | Knee | out",
+      "date": "2026-11-24T18:33Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540843",
+      "name": "Duncan Robinson",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Quadriceps | out",
+      "date": "2026-11-24T18:30Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540842",
       "name": "Jalen Duren",
       "team": "DET",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
-      "date": "2026-11-23T22:08Z",
+      "date": "2026-11-24T18:27Z",
       "team_match": "feed"
     },
     {
@@ -303,28 +336,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Knee | day-to-day",
       "date": "2026-11-23T22:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540207",
-      "name": "Taurean Prince",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Knee | out",
-      "date": "2026-11-20T23:02Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539572",
-      "name": "Duncan Robinson",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Quadriceps | out",
-      "date": "2026-11-17T16:25Z",
       "team_match": "feed"
     },
     {
@@ -527,13 +538,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61342",
+      "injury_record_id": "540849",
       "name": "Giannis Antetokounmpo",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Groin | day-to-day",
-      "date": "2026-11-23T15:04Z",
+      "date": "2026-11-24T18:56Z",
       "team_match": "feed"
     },
     {
@@ -604,35 +615,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61350",
-      "name": "Miles McBride",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Abdomen | day-to-day",
-      "date": "2026-11-23T15:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61348",
-      "name": "OG Anunoby",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Calf | day-to-day",
-      "date": "2026-11-23T15:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540480",
+      "injury_record_id": "540848",
       "name": "Jordan Clarkson",
       "team": "NYK",
       "status": "O",
       "raw_status": "Out",
       "reason": "Plantar Fasciitis | Foot | out",
-      "date": "2026-11-22T18:05Z",
+      "date": "2026-11-24T18:48Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540847",
+      "name": "OG Anunoby",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Calf | day-to-day",
+      "date": "2026-11-24T18:42Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540846",
+      "name": "Miles McBride",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Abdomen | day-to-day",
+      "date": "2026-11-24T18:40Z",
       "team_match": "feed"
     },
     {
