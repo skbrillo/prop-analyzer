@@ -54,6 +54,8 @@ tbody tr:hover{background:#1d3048}
 .Volatile{background:#512626;color:#ffb0b0}
 .NA{background:#29384c;color:#a6b5c9}
 .move-good{color:var(--green);font-weight:700}.move-bad{color:var(--red);font-weight:700}.move-flat{color:var(--muted)}
+.bookbadge{font-size:9px;margin-left:5px;padding:1px 4px;border-radius:3px;background:#123f2b;color:#8ef0b4;font-weight:700}
+.board-flag{color:var(--yellow);font-weight:700}.board-alt{color:var(--yellow)}.board-best{color:var(--green);font-weight:700}
 .lineup{font-size:9px;margin-left:4px;padding:1px 4px;border-radius:3px}
 .starter{background:#123f2b;color:#8ef0b4}
 .projected{background:#253d62;color:#a9d0ff}
@@ -354,6 +356,32 @@ tbody tr:hover{background:#1d3048}
  <div id="game-lines-status" class="muted"></div>
  <div id="game-lines-grid" class="gamecards"></div>
 </section>
+<section class="section" id="line-shopping">
+ <div class="head"><h2>Line Shopping — DraftKings vs Other Books</h2><span id="board-status" class="muted">Loading other books...</span></div>
+ <div class="controls">
+  <input id="board-search" type="search" placeholder="Search player or game">
+  <select id="board-game"><option value="">All Games</option></select>
+  <select id="board-market">
+   <option value="">All Markets</option>
+   <option value="points">Points</option>
+   <option value="rebounds">Rebounds</option>
+   <option value="assists">Assists</option>
+  </select>
+  <select id="board-view">
+   <option value="">All Props</option>
+   <option value="flagged">DraftKings Out of Line</option>
+   <option value="better">Better Price Than DraftKings</option>
+  </select>
+ </div>
+ <div class="tablewrap"><table id="board-table"><thead><tr id="board-head"></tr></thead><tbody id="board-rows"></tbody></table></div>
+ <div class="note">
+  Each book shows its main line and Over / Under price; yellow means a different line than DraftKings.
+  Best Over / Best Under compare prices at DraftKings' line only.
+  "Books vs DK" flags props where the other books' no-vig price is 3+ points away from DraftKings at the same line (at least 2 books), or their main line differs by 0.5+.
+  Prices are from the most recent capture (model runs and pre-tip snapshots), not live. Confirm the price at the book before betting.
+ </div>
+</section>
+
 <section class="monthly-panel" id="tracker8910">
  <div class="monthly-head"><h2>8910 — Performance Tracker</h2><div class="tabs" id="period8910" aria-label="8910 reporting period"><button type="button" data-period="today" class="active" aria-pressed="true">Today</button><button type="button" data-period="yesterday" aria-pressed="false">Yesterday</button><button type="button" data-period="month" aria-pressed="false">This Month</button><button type="button" data-period="all" aria-pressed="false">All History</button></div></div>
  <div class="monthly-stats" id="stats8910" style="grid-template-columns:repeat(auto-fit,minmax(145px,1fr))"></div>
@@ -1360,6 +1388,7 @@ function draw(){
     }
    }
    if(i===10){const mv=movementInfo(r);td.className=mv.cls;td.title=mv.title;}
+   if(i===11)addBookBadge(td,r);
    if(i===8)
     td.className=r.side==="Over"?"over":"under";
    if(i===14)
@@ -2045,7 +2074,7 @@ function render8910(){
   if(r.game_date!==lastDate){lastDate=r.game_date;const group=body.insertRow();group.className='date8910';const td=group.insertCell();td.colSpan=13;td.textContent=(lastDate===today?'Today — ':lastDate===dateKey(yesterday)?'Yesterday — ':'')+lastDate;}
   const tr=document.createElement('tr');const result=String(r.outcome||r.status||'pending').toLowerCase();
   const values=[r.game_date,r.player,r.team||r.verified_team,r.opponent||r.verified_opponent,r.market,r.side,r.line,r.odds,r.bucket+'/10',r.actual,diffText(r),actualMin(r),result];
-  values.forEach((v,i)=>{const td=document.createElement('td');td.textContent=i===12?String(v).toUpperCase():(v??'—');if(i===10)td.className=diffClass(r);if(i===12)td.className=['win','loss','pending','dnp','push'].includes(result)?result:'muted';if(i===5&&['over','under'].includes(String(v).toLowerCase()))td.className=String(v).toLowerCase();tr.append(td);});body.append(tr);
+  values.forEach((v,i)=>{const td=document.createElement('td');td.textContent=i===12?String(v).toUpperCase():(v??'—');if(i===7)addBookBadge(td,r);if(i===10)td.className=diffClass(r);if(i===12)td.className=['win','loss','pending','dnp','push'].includes(result)?result:'muted';if(i===5&&['over','under'].includes(String(v).toLowerCase()))td.className=String(v).toLowerCase();tr.append(td);});body.append(tr);
  }
  $('status8910').textContent=rows.length+' tracked selections | '+(period==='today'?today:period==='yesterday'?dateKey(yesterday):period==='month'?today.slice(0,7):'All History')+(updated8910?' | Archive updated: '+updated8910:'');
 }
@@ -2056,7 +2085,96 @@ $('period8910').querySelectorAll('button[data-period]').forEach(button=>button.a
  render8910();
 }));
 
+/* LINE SHOPPING (docs/market_board.json, built by build_market_board.py) */
+let marketBoard=null;
+function boardNorm(v){return String(v||"").toLowerCase().trim().split(/\s+/).join(" ");}
+function decimalOdds(a){a=Number(a);return a>0?1+a/100:1+100/Math.abs(a);}
+function bookLabel(b){return (marketBoard&&marketBoard.book_labels&&marketBoard.book_labels[b])||b;}
+function signed(a){a=Number(a);return a>0?"+"+a:String(a);}
+function boardPrices(r){
+ if(!marketBoard||!marketBoard.lines)return null;
+ const side=String(r.side||"").toLowerCase();
+ if(side!=="over"&&side!=="under")return null;
+ const line=Number(r.line);
+ if(!Number.isFinite(line))return null;
+ const entry=marketBoard.lines[boardNorm(r.player)+"|"+String(r.market||"").toLowerCase()+"|"+String(line)];
+ if(!entry)return null;
+ return Object.entries(entry).map(([book,p])=>({book,odds:p[side]})).sort((a,b)=>decimalOdds(b.odds)-decimalOdds(a.odds));
+}
+function addBookBadge(td,r){
+ const prices=boardPrices(r);
+ if(!prices||!prices.length)return;
+ td.title=prices.map(p=>bookLabel(p.book)+" "+signed(p.odds)).join(" | ")+" (same line, latest capture)";
+ const best=prices[0];
+ if(best.book!=="draftkings"&&decimalOdds(best.odds)>decimalOdds(r.odds)+1e-9){
+  addText(td,"span",bookLabel(best.book)+" "+signed(best.odds),"bookbadge");
+ }
+}
+function renderBoard(){
+ const head=$("board-head"),body=$("board-rows");
+ if(!marketBoard){return;}
+ const books=marketBoard.books||[];
+ const others=books.filter(b=>b!=="draftkings");
+ head.replaceChildren();
+ ["Game","Tip ET","Player","Stat","DK Line","DK O / U",...others.map(bookLabel),"Best Over","Best Under","Books vs DK"].forEach(t=>addText(head,"th",t));
+ const q=$("board-search").value.trim().toLowerCase(),game=$("board-game").value,market=$("board-market").value,view=$("board-view").value;
+ const rows=(marketBoard.props||[]).filter(p=>{
+  if(!p.dk)return false;
+  if(q&&!(p.player+" "+p.matchup).toLowerCase().includes(q))return false;
+  if(game&&p.event_id!==game)return false;
+  if(market&&p.market!==market)return false;
+  if(view==="flagged"&&!p.flag)return false;
+  if(view==="better"&&!((p.best_over&&p.best_over.book!=="draftkings"&&decimalOdds(p.best_over.odds)>decimalOdds(p.dk.over))||(p.best_under&&p.best_under.book!=="draftkings"&&decimalOdds(p.best_under.odds)>decimalOdds(p.dk.under))))return false;
+  return true;
+ });
+ body.replaceChildren();
+ for(const p of rows){
+  const tr=document.createElement("tr");
+  const cell=(text,cls="",title="")=>{const td=document.createElement("td");td.textContent=text;if(cls)td.className=cls;if(title)td.title=title;tr.appendChild(td);return td;};
+  cell(p.matchup);cell(tipoff(p.commence_time));cell(p.player,"player");cell(shortMarket(marketName(p.market)));
+  cell(number(p.dk.line));cell(signed(p.dk.over)+" / "+signed(p.dk.under));
+  for(const b of others){
+   const x=p.books&&p.books[b];
+   if(!x){cell("—","muted");continue;}
+   cell(number(x.line)+"  "+signed(x.over)+" / "+signed(x.under),x.line!==p.dk.line?"board-alt":"",x.line!==p.dk.line?"Different main line than DraftKings":"");
+  }
+  const bo=p.best_over,bu=p.best_under;
+  cell(bo?bookLabel(bo.book)+" "+signed(bo.odds):"—",bo&&bo.book!=="draftkings"&&decimalOdds(bo.odds)>decimalOdds(p.dk.over)?"board-best":"");
+  cell(bu?bookLabel(bu.book)+" "+signed(bu.odds):"—",bu&&bu.book!=="draftkings"&&decimalOdds(bu.odds)>decimalOdds(p.dk.under)?"board-best":"");
+  let note="—",cls="muted";
+  if(p.flag){
+   cls="board-flag";
+   note=p.gap!=null&&Math.abs(p.gap)>=(marketBoard.gap_flag||0.03)
+    ?"Others lean "+p.flag+" "+(Math.abs(p.gap)*100).toFixed(1)+" pts"
+    :"Others' line "+(p.line_diff>0?"+":"")+p.line_diff+" ("+p.flag+")";
+  }else if(p.gap!=null){note=(p.gap>0?"+":"")+(p.gap*100).toFixed(1)+" pts";}
+  cell(note,cls,"Other books' no-vig Over probability minus DraftKings', at DraftKings' line");
+  body.appendChild(tr);
+ }
+ if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=9+others.length;td.textContent=(marketBoard.props||[]).length?"No props match the current filters.":"No upcoming props with other-book prices yet.";}
+ const caps=Object.values(marketBoard.captured_at||{}).sort();
+ $("board-status").textContent=rows.length+" of "+(marketBoard.props||[]).length+" props | "+(books.map(bookLabel).join(", ")||"no books")+(caps.length?" | Latest capture: "+new Date(caps[caps.length-1]).toLocaleString("en-US",{timeZone:"America/Chicago",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit"})+" CT":"");
+}
+async function loadBoard(){
+ try{
+  marketBoard=await fetchJson("market_board.json");
+  const sel=$("board-game"),cur=sel.value,games=new Map();
+  for(const p of marketBoard.props||[])games.set(p.event_id,p.matchup+" — "+tipoff(p.commence_time));
+  sel.replaceChildren();addText(sel,"option","All Games").value="";
+  for(const [id,label] of games){const o=addText(sel,"option",label);o.value=id;}
+  sel.value=games.has(cur)?cur:"";
+  renderBoard();
+  if(typeof draw==="function")draw();
+  if(typeof render8910==="function")render8910();
+ }catch(e){
+  marketBoard=null;
+  $("board-status").textContent="Other-book prices not available yet ("+e.message+").";
+ }
+}
+["board-search","board-game","board-market","board-view"].forEach(id=>$(id).addEventListener(id==="board-search"?"input":"change",renderBoard));
+
 function refreshAll(){
+ loadBoard();
  load8910();
  loadData();
  loadMovement();
