@@ -1,277 +1,7 @@
 {
-  "generated_at": "2026-11-24T12:49:01.160096+00:00",
+  "generated_at": "2026-11-24T14:10:53.445834+00:00",
   "source": "RotoWire",
   "games": {
-    "401910034": {
-      "game_id": "401910034",
-      "game": "Indiana Pacers at New York Knicks",
-      "tipoff": "2026-11-23T01:00:00+00:00",
-      "home": "NYK",
-      "away": "IND",
-      "checked_at": "2026-11-23T05:55:14.416799+00:00",
-      "minutes_before_tipoff": -295.2,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Jalen Brunson",
-          "team": "NYK"
-        },
-        {
-          "name": "Landry Shamet",
-          "team": "NYK"
-        },
-        {
-          "name": "Mikal Bridges",
-          "team": "NYK"
-        },
-        {
-          "name": "Josh Hart",
-          "team": "NYK"
-        },
-        {
-          "name": "Karl-Anthony Towns",
-          "team": "NYK"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Andrew Nembhard",
-          "team": "IND"
-        },
-        {
-          "name": "Kelly Oubre",
-          "team": "IND"
-        },
-        {
-          "name": "Aaron Nesmith",
-          "team": "IND"
-        },
-        {
-          "name": "Pascal Siakam",
-          "team": "IND"
-        },
-        {
-          "name": "Ivica Zubac",
-          "team": "IND"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "OG Anunoby",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Jordan Clarkson",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Miles McBride",
-          "team": "NYK",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Johnny Furphy",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Haliburton",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "T.J. McConnell",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Ben Sheppard",
-          "team": "IND",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "OG Anunoby",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Jordan Clarkson",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Miles McBride",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Johnny Furphy",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Tyrese Haliburton",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "T.J. McConnell",
-          "team": "IND",
-          "status": "out"
-        },
-        {
-          "name": "Ben Sheppard",
-          "team": "IND",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401910035": {
-      "game_id": "401910035",
-      "game": "Boston Celtics at Golden State Warriors",
-      "tipoff": "2026-11-23T01:30:00+00:00",
-      "home": "GSW",
-      "away": "BOS",
-      "checked_at": "2026-11-23T05:55:14.416799+00:00",
-      "minutes_before_tipoff": -265.2,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "De'Anthony Melton",
-          "team": "GSW"
-        },
-        {
-          "name": "Brandin Podziemski",
-          "team": "GSW"
-        },
-        {
-          "name": "Yaxel Lendeborg",
-          "team": "GSW"
-        },
-        {
-          "name": "Draymond Green",
-          "team": "GSW"
-        },
-        {
-          "name": "Charles Bassey",
-          "team": "GSW"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Derrick White",
-          "team": "BOS"
-        },
-        {
-          "name": "Hugo Gonzalez",
-          "team": "BOS"
-        },
-        {
-          "name": "Jayson Tatum",
-          "team": "BOS"
-        },
-        {
-          "name": "Sam Hauser",
-          "team": "BOS"
-        },
-        {
-          "name": "Neemias Queta",
-          "team": "BOS"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Jimmy Butler",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Stephen Curry",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Moses Moody",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Kristaps Porzingis",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Brandon Williams",
-          "team": "GSW",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Paul George",
-          "team": "BOS",
-          "status": "out"
-        },
-        {
-          "name": "Mitchell Robinson",
-          "team": "BOS",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Jimmy Butler",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Stephen Curry",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Moses Moody",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Kristaps Porzingis",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Brandon Williams",
-          "team": "GSW",
-          "status": "out"
-        },
-        {
-          "name": "Paul George",
-          "team": "BOS",
-          "status": "out"
-        },
-        {
-          "name": "Mitchell Robinson",
-          "team": "BOS",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401910036": {
       "game_id": "401910036",
       "game": "Memphis Grizzlies at Charlotte Hornets",
@@ -1345,8 +1075,8 @@
       "tipoff": "2026-11-25T00:00:00+00:00",
       "home": "ORL",
       "away": "DET",
-      "checked_at": "2026-11-24T12:49:01.160096+00:00",
-      "minutes_before_tipoff": 671.0,
+      "checked_at": "2026-11-24T14:10:53.445834+00:00",
+      "minutes_before_tipoff": 589.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1490,8 +1220,8 @@
       "tipoff": "2026-11-25T01:00:00+00:00",
       "home": "WAS",
       "away": "BOS",
-      "checked_at": "2026-11-24T12:49:01.160096+00:00",
-      "minutes_before_tipoff": 731.0,
+      "checked_at": "2026-11-24T14:10:53.445834+00:00",
+      "minutes_before_tipoff": 649.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1605,8 +1335,8 @@
       "tipoff": "2026-11-25T03:00:00+00:00",
       "home": "DEN",
       "away": "DAL",
-      "checked_at": "2026-11-24T12:49:01.160096+00:00",
-      "minutes_before_tipoff": 851.0,
+      "checked_at": "2026-11-24T14:10:53.445834+00:00",
+      "minutes_before_tipoff": 769.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
