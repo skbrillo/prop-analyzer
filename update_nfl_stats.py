@@ -1,12 +1,20 @@
-"""NFL player game logs from ESPN (free, no API credits).
+"""NFL player game logs, game context and injuries from ESPN (free, no API credits).
 
-Writes data/nfl_game_logs.csv: one row per player per game with the usage
-stats the NFL model needs (targets, carries, pass attempts) and team totals.
+    python update_nfl_stats.py              box scores + pregame spread/total
+    python update_nfl_stats.py --injuries   injury report for upcoming games
 
-Incremental: games already saved are not downloaded again. The first run
-fetches the previous and current seasons (about 600 box scores, a few minutes).
+Writes
+    data/nfl_game_logs.csv     one row per player per game (targets, carries,
+                               pass attempts, yards, TDs) plus team totals
+    data/nfl_game_context.csv  DraftKings pregame spread and total per game
+                               (from ESPN's pick center), for model backtests
+    data/nfl_injuries.json     Out / Doubtful / Questionable players for the
+                               upcoming games, plus ESPN team names
+
+Incremental: games already saved are not downloaded again.
 """
 
+import argparse
 import csv
 import json
 import os
@@ -20,6 +28,10 @@ from zoneinfo import ZoneInfo
 
 ROOT = pathlib.Path(__file__).resolve().parent
 OUTPUT = ROOT / "data" / "nfl_game_logs.csv"
+CONTEXT = ROOT / "data" / "nfl_game_context.csv"
+INJURIES = ROOT / "data" / "nfl_injuries.json"
+CONTEXT_FIELDS = ["game_id", "season", "season_type", "week", "date", "home", "away",
+                  "home_spread", "total", "provider"]
 BASE = "https://site.api.espn.com/apis/site/v2/sports/football/nfl"
 ET = ZoneInfo("America/New_York")
 
@@ -115,6 +127,50 @@ def parse_box(summary, meta):
     return rows
 
 
+def parse_context(summary, home, away):
+    """DraftKings (else first provider) pregame spread and total, home perspective."""
+    picks = summary.get("pickcenter") or []
+    if not picks:
+        return None
+    pick = next((p for p in picks if "draftkings" in str((p.get("provider") or {}).get("name", "")).lower()),
+                picks[0])
+    total = num(pick.get("overUnder"))
+    spread = num(pick.get("spread"))
+    if spread is None:
+        return {"home_spread": None, "total": total, "provider": (pick.get("provider") or {}).get("name", "")}
+    home_fav = bool((pick.get("homeTeamOdds") or {}).get("favorite"))
+    away_fav = bool((pick.get("awayTeamOdds") or {}).get("favorite"))
+    if home_fav:
+        home_spread = -abs(spread)
+    elif away_fav:
+        home_spread = abs(spread)
+    else:
+        home_spread = spread
+    return {"home_spread": home_spread, "total": total,
+            "provider": (pick.get("provider") or {}).get("name", "")}
+
+
+def load_csv(path):
+    if not path.exists():
+        return []
+    with path.open(newline="", encoding="utf-8") as f:
+        return list(csv.DictReader(f))
+
+
+def write_csv(path, rows, fields):
+    path.parent.mkdir(parents=True, exist_ok=True)
+    fd, tmp = tempfile.mkstemp(prefix=path.stem + "_", suffix=".csv", dir=str(path.parent))
+    try:
+        with os.fdopen(fd, "w", newline="", encoding="utf-8") as f:
+            writer = csv.DictWriter(f, fieldnames=fields, extrasaction="ignore")
+            writer.writeheader()
+            writer.writerows(rows)
+        os.replace(tmp, path)
+    finally:
+        if os.path.exists(tmp):
+            os.unlink(tmp)
+
+
 def load_existing():
     if not OUTPUT.exists():
         return []
@@ -136,14 +192,77 @@ def write_rows(rows):
             os.unlink(tmp)
 
 
+def update_injuries():
+    """Injury report for this week's and next week's unplayed games."""
+    now = datetime.now(timezone.utc)
+    current = fetch_json(f"{BASE}/scoreboard")
+    week = ((current.get("week") or {}).get("number")) or 1
+    season = ((current.get("season") or {}).get("year")) or current_season(now)
+    stype = ((current.get("season") or {}).get("type")) or 2
+    boards = [current]
+    try:
+        boards.append(fetch_json(f"{BASE}/scoreboard?dates={season}&seasontype={stype}&week={week + 1}"))
+    except Exception as exc:
+        print("WARNING: next week's scoreboard:", exc)
+    teams, games, injuries = {}, [], {}
+    seen = set()
+    for board in boards:
+        for event in board.get("events") or []:
+            gid = str(event.get("id") or "")
+            comp = (event.get("competitions") or [{}])[0]
+            for c in comp.get("competitors", []):
+                t = c.get("team") or {}
+                if t.get("displayName") and t.get("abbreviation"):
+                    teams[t["displayName"]] = t["abbreviation"]
+            done = ((event.get("status") or {}).get("type") or {}).get("completed")
+            if not gid or gid in seen or done:
+                continue
+            seen.add(gid)
+            home = next((c["team"]["abbreviation"] for c in comp.get("competitors", []) if c.get("homeAway") == "home"), "")
+            away = next((c["team"]["abbreviation"] for c in comp.get("competitors", []) if c.get("homeAway") == "away"), "")
+            games.append({"espn_id": gid, "home": home, "away": away, "commence_time": event.get("date")})
+            try:
+                summary = fetch_json(f"{BASE}/summary?event={gid}")
+            except Exception as exc:
+                print(f"WARNING: summary {gid}: {exc}")
+                continue
+            for team in summary.get("injuries") or []:
+                abbr = (team.get("team") or {}).get("abbreviation", "")
+                for item in team.get("injuries") or []:
+                    athlete = item.get("athlete") or {}
+                    name = athlete.get("displayName") or athlete.get("fullName") or ""
+                    status = str(item.get("status") or "")
+                    if abbr and name and status:
+                        injuries.setdefault(abbr, []).append(
+                            {"player": name, "player_id": str(athlete.get("id") or ""), "status": status})
+            time.sleep(0.2)
+    payload = {"updated_at": now.isoformat(timespec="seconds"), "teams": teams, "games": games,
+               "injuries": injuries}
+    INJURIES.parent.mkdir(parents=True, exist_ok=True)
+    INJURIES.write_text(json.dumps(payload, indent=1) + "\n", encoding="utf-8")
+    counts = {}
+    for items in injuries.values():
+        for i in items:
+            counts[i["status"]] = counts.get(i["status"], 0) + 1
+    print(f"Injuries saved for {len(games)} upcoming games: {counts}")
+    return 0
+
+
 def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--injuries", action="store_true", help="only refresh the injury report")
+    if parser.parse_args().injuries:
+        return update_injuries()
+
     now = datetime.now(timezone.utc)
     season = current_season(now)
     rows = load_existing()
     have = {r["game_id"] for r in rows}
-    print(f"Existing rows: {len(rows)} from {len(have)} games | seasons: {season - 1}, {season}")
+    context = {r["game_id"]: r for r in load_csv(CONTEXT)}
+    print(f"Existing rows: {len(rows)} from {len(have)} games | context for {len(context)} games | "
+          f"seasons: {season - 1}, {season}")
 
-    added_games, failed = 0, 0
+    added_games, added_context, failed = 0, 0, 0
     for year in (season - 1, season):
         for season_type, weeks in SEASON_TYPES:
             for week in weeks:
@@ -157,13 +276,15 @@ def main():
                 for event in board.get("events") or []:
                     gid = str(event.get("id") or "")
                     completed = ((event.get("status") or {}).get("type") or {}).get("completed")
-                    if not gid or gid in have or not completed:
+                    if not gid or not completed or (gid in have and gid in context):
                         continue
                     if (event.get("season") or {}).get("year") not in (year, None):
                         continue
                     comp = (event.get("competitions") or [{}])[0]
                     home = next((c.get("team", {}).get("abbreviation") for c in comp.get("competitors", [])
                                  if c.get("homeAway") == "home"), "")
+                    away = next((c.get("team", {}).get("abbreviation") for c in comp.get("competitors", [])
+                                 if c.get("homeAway") == "away"), "")
                     start = datetime.fromisoformat(event["date"].replace("Z", "+00:00"))
                     meta = {"season": year, "season_type": season_type, "week": week,
                             "date": start.astimezone(ET).date().isoformat(), "game_id": gid, "home_team": home}
@@ -173,17 +294,31 @@ def main():
                         print(f"WARNING: box score {gid}: {exc}")
                         failed += 1
                         continue
-                    new = parse_box(summary, meta)
-                    if new:
-                        rows.extend(new)
-                        have.add(gid)
-                        added_games += 1
+                    if gid not in have:
+                        new = parse_box(summary, meta)
+                        if new:
+                            rows.extend(new)
+                            have.add(gid)
+                            added_games += 1
+                    if gid not in context:
+                        ctx = parse_context(summary, home, away) or {}
+                        context[gid] = {"game_id": gid, "season": year, "season_type": season_type,
+                                        "week": week, "date": meta["date"], "home": home, "away": away,
+                                        "home_spread": "" if ctx.get("home_spread") is None else ctx["home_spread"],
+                                        "total": "" if ctx.get("total") is None else ctx["total"],
+                                        "provider": ctx.get("provider", "")}
+                        added_context += 1
                     time.sleep(0.2)
 
     rows.sort(key=lambda r: (int(r["season"]), int(r["season_type"]), int(r["week"]), r["game_id"], r["team"]))
     if added_games or not OUTPUT.exists():
         write_rows(rows)
-    print(f"Added games: {added_games} | failed requests: {failed} | total rows: {len(rows)}")
+    if added_context:
+        write_csv(CONTEXT, sorted(context.values(), key=lambda r: (int(r["season"]), int(r["season_type"]),
+                                                                 int(r["week"]), r["game_id"])), CONTEXT_FIELDS)
+    with_lines = sum(1 for r in context.values() if str(r.get("total", "")) not in ("", "None"))
+    print(f"Added games: {added_games} | context added: {added_context} (with lines: {with_lines}/{len(context)}) "
+          f"| failed requests: {failed} | total rows: {len(rows)}")
     if not rows:
         print("ERROR: no NFL game logs collected.")
         return 1

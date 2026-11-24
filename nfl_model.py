@@ -1,4 +1,9 @@
-"""NFL player-prop model v1 — PAPER TRADING ONLY.
+"""NFL player-prop models — PAPER TRADING ONLY.
+
+This file holds model v1 and runs both v1 and v2 (nfl_model_v2.py) side by side:
+each locks and grades its own paper picks so the two can be compared.
+
+Model v1:
 
 Projects each DraftKings prop on the NFL board from usage and efficiency:
     receptions   = targets/game x catch rate
@@ -309,7 +314,58 @@ def record(picks):
 
 # ---------------------------------------------------------------- main
 
+INJURIES = ROOT / "data" / "nfl_injuries.json"
+OUT_STATUSES = {"out", "doubtful", "injured reserve", "ir", "suspension", "physically unable to perform"}
+TEAM_ABBR = {
+    "Arizona Cardinals": "ARI", "Atlanta Falcons": "ATL", "Baltimore Ravens": "BAL", "Buffalo Bills": "BUF",
+    "Carolina Panthers": "CAR", "Chicago Bears": "CHI", "Cincinnati Bengals": "CIN", "Cleveland Browns": "CLE",
+    "Dallas Cowboys": "DAL", "Denver Broncos": "DEN", "Detroit Lions": "DET", "Green Bay Packers": "GB",
+    "Houston Texans": "HOU", "Indianapolis Colts": "IND", "Jacksonville Jaguars": "JAX", "Kansas City Chiefs": "KC",
+    "Las Vegas Raiders": "LV", "Los Angeles Chargers": "LAC", "Los Angeles Rams": "LAR", "Miami Dolphins": "MIA",
+    "Minnesota Vikings": "MIN", "New England Patriots": "NE", "New Orleans Saints": "NO", "New York Giants": "NYG",
+    "New York Jets": "NYJ", "Philadelphia Eagles": "PHI", "Pittsburgh Steelers": "PIT", "San Francisco 49ers": "SF",
+    "Seattle Seahawks": "SEA", "Tampa Bay Buccaneers": "TB", "Tennessee Titans": "TEN",
+    "Washington Commanders": "WSH",
+}
+
+
+def load_injuries():
+    try:
+        data = json.loads(INJURIES.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}, {}
+    status = {}
+    for team, items in (data.get("injuries") or {}).items():
+        for i in items:
+            status[(team, player_key(i["player"]))] = i["status"]
+    return status, data.get("teams") or {}
+
+
+def pick_key(version, event_id, pkey, market):
+    base = f"{event_id}|{pkey}|{market}"
+    return base if version == MODEL_VERSION else f"{version}|{base}"
+
+
+def profit(result, odds):
+    if result == "push":
+        return 0.0
+    if result == "win":
+        return odds / 100 if odds > 0 else 100 / -odds
+    return -1.0
+
+
+def version_records(all_picks):
+    out = {}
+    for ver in sorted({p.get("model_version", MODEL_VERSION) for p in all_picks}):
+        mine = [p for p in all_picks if p.get("model_version", MODEL_VERSION) == ver]
+        best = [{**p, "profit_units": p.get("profit_units_best", p.get("profit_units", 0))} for p in mine]
+        out[ver] = {"record": record(mine), "record_top": record([p for p in mine if p.get("top")]),
+                    "record_best_price": record(best)}
+    return out
+
+
 def main():
+    import nfl_model_v2 as v2
     now = datetime.now(timezone.utc)
     all_games = load_logs()
     if not all_games:
@@ -318,107 +374,152 @@ def main():
     season = max(int(r["season"]) for rows in all_games.values() for r in rows)
     priors = league_priors(all_games)
     ratios, bt = backtest(all_games, priors)
-    print("Backtest:", json.dumps(bt))
+    print("Backtest v1:", json.dumps(bt))
+
+    data2 = v2.Data(all_games)
+    bt2 = data2.backtest()
+    ratios2 = data2.residual_ratios()
+    print("Backtest v2:", json.dumps(bt2))
+
+    injury_status, espn_teams = load_injuries()
+    abbr_of = {**TEAM_ABBR, **espn_teams}
 
     board = json.loads(BOARD.read_text(encoding="utf-8")) if BOARD.exists() else {"props": []}
+    games = {g["event_id"]: g for g in board.get("games", [])}
     picks = load_picks()
     projections, candidates = {}, []
+    live_order = (9999, 9, 99)
     for prop in board.get("props", []):
         key = player_key(prop["player"])
         history = all_games.get(key)
         tip = parse_time(prop["commence_time"])
         if not history or not tip or tip <= now:
             continue
-        proj = project(history, priors, season)
-        if not proj:
-            continue
         m, dk = prop["market"], prop["dk"]
-        value = proj[m]
+        team = history[-1]["team"]
+        away_name, _, home_name = prop["matchup"].partition(" @ ")
+        home, away = abbr_of.get(home_name, home_name), abbr_of.get(away_name, away_name)
+        opp = away if team == home else home if team == away else None
+        status = injury_status.get((team, key), "")
+        if opp is None:
+            continue   # player's latest team is not in this game (trade / bad match)
+
+        # Game context from the saved DraftKings game line (else another book).
+        T = S = None
+        lines = (games.get(prop["event_id"]) or {}).get("lines") or {}
+        gl = lines.get("draftkings") or next(iter(lines.values()), None)
+        if gl and gl.get("total") is not None and gl.get("home_spread") is not None:
+            hs = gl["home_spread"]
+            T, S = ((gl["total"] - hs) / 2, hs) if team == home else ((gl["total"] + hs) / 2, -hs)
+        out_keys = {k for (t, k), st in injury_status.items() if t == team and st.lower() in OUT_STATUSES}
+
         if m == "anytime_td":
-            p_over = 1 - math.exp(-value)
             market_p = implied(dk["over"])          # includes vig: one-sided price
         else:
-            p_over = prob_over(m, value, dk["line"], ratios)
             market_p = fair_over(dk["over"], dk["under"])
-        pk = f'{prop["event_id"]}|{key}|{m}'
-        projections[pk] = {
-            "projection": round(value, 2 if m in ("pass_tds", "anytime_td") else 1),
-            "p_over": round(p_over, 3), "market_over": round(market_p, 3) if market_p else None,
-            "edge_over": round(p_over - market_p, 3) if market_p else None,
-            "usage": proj["usage"], "games": proj["games"],
-        }
-        if m not in PICK_MARKETS or not market_p:
-            continue
-        for side, edge, odds in (("Over", p_over - market_p, dk["over"]),
-                                 ("Under", market_p - p_over, dk["under"])):
-            if EDGE_MIN <= edge <= EDGE_MAX and ODDS_MIN <= odds <= ODDS_MAX:
-                candidates.append((edge, prop, key, side, odds, p_over if side == "Over" else 1 - p_over))
 
-    # Lock new paper picks: biggest edges first, one per player per game, never re-lock.
+        entry = {"status": status}
+        p1 = project(history, priors, season)
+        p2 = data2.project(key, history, team, opp, live_order, season, T, S, out_keys,
+                           data2.final.get(m, frozenset()))
+        for ver, proj, rat in ((MODEL_VERSION, p1, ratios), (v2.VERSION, p2, ratios2)):
+            if not proj:
+                continue
+            value = proj[m]
+            p_over = 1 - math.exp(-value) if m == "anytime_td" else prob_over(m, value, dk["line"], rat)
+            entry[ver] = {
+                "projection": round(value, 2 if m in ("pass_tds", "anytime_td") else 1),
+                "p_over": round(p_over, 3), "market_over": round(market_p, 3) if market_p else None,
+                "edge_over": round(p_over - market_p, 3) if market_p else None,
+                "usage": proj["usage"], "games": proj["games"],
+            }
+            if m not in PICK_MARKETS or not market_p or status.lower() in OUT_STATUSES:
+                continue
+            for side, edge, odds in (("Over", p_over - market_p, dk["over"]),
+                                     ("Under", market_p - p_over, dk["under"])):
+                if EDGE_MIN <= edge <= EDGE_MAX and ODDS_MIN <= odds <= ODDS_MAX:
+                    best = prop.get("best_over" if side == "Over" else "best_under") or {}
+                    candidates.append((edge, ver, prop, key, side, odds,
+                                       p_over if side == "Over" else 1 - p_over, entry[ver]["projection"], best))
+        projections[f'{prop["event_id"]}|{key}|{m}'] = entry
+
+    # Lock new paper picks per version: biggest edges first, one per player per game, never re-lock.
     per_player = defaultdict(int)
     for p in picks["picks"].values():
-        per_player[(p["event_id"], p["player_key"])] += 1
-    for edge, prop, key, side, odds, model_p in sorted(candidates, key=lambda c: -c[0]):
-        pk = f'{prop["event_id"]}|{key}|{prop["market"]}'
-        if pk in picks["picks"] or per_player[(prop["event_id"], key)] >= MAX_PICKS_PER_PLAYER:
+        per_player[(p.get("model_version", MODEL_VERSION), p["event_id"], p["player_key"])] += 1
+    for edge, ver, prop, key, side, odds, model_p, proj_value, best in sorted(candidates, key=lambda c: -c[0]):
+        pk = pick_key(ver, prop["event_id"], key, prop["market"])
+        slot = (ver, prop["event_id"], key)
+        if pk in picks["picks"] or per_player[slot] >= MAX_PICKS_PER_PLAYER:
             continue
-        per_player[(prop["event_id"], key)] += 1
+        per_player[slot] += 1
+        best_odds = best.get("odds") if best.get("odds") is not None else odds
         picks["picks"][pk] = {
             "locked_at": now.isoformat(timespec="seconds"), "event_id": prop["event_id"],
             "matchup": prop["matchup"], "commence_time": prop["commence_time"],
             "player": prop["player"], "player_key": key, "market": prop["market"],
             "market_label": prop.get("market_label", prop["market"]), "side": side,
-            "line": prop["dk"]["line"], "odds": odds, "model_prob": round(model_p, 3),
-            "edge": round(edge, 3), "projection": projections[pk]["projection"],
-            "model_version": MODEL_VERSION, "result": "pending",
+            "line": prop["dk"]["line"], "odds": odds, "best_book": best.get("book", "draftkings"),
+            "best_odds": best_odds, "model_prob": round(model_p, 3), "edge": round(edge, 3),
+            "projection": proj_value, "model_version": ver, "result": "pending",
         }
-        print(f'Locked paper pick: {prop["player"]} {prop["market"]} {side} {prop["dk"]["line"]} '
-              f'({odds:+d}) edge {edge:.1%}')
+        print(f'Locked {ver} pick: {prop["player"]} {prop["market"]} {side} {prop["dk"]["line"]} '
+              f'({odds:+d}, best {best_odds:+d}) edge {edge:.1%}')
 
-    # Enforce one pick per player per game on picks that have not started yet
-    # (picks locked before this rule existed); keep the bigger edge.
-    best = {}
+    # One pick per player per game per version on picks not yet started; keep the bigger edge.
+    best_slot = {}
     for pk, p in list(picks["picks"].items()):
         tip = parse_time(p["commence_time"])
         if not tip or tip <= now or p.get("result") not in (None, "pending"):
             continue
-        k = (p["event_id"], p["player_key"])
-        if k in best:
-            keep, drop = (pk, best[k]) if p["edge"] > picks["picks"][best[k]]["edge"] else (best[k], pk)
-            print("Removed duplicate-player pick:", picks["picks"][drop]["player"], picks["picks"][drop]["market"])
+        k = (p.get("model_version", MODEL_VERSION), p["event_id"], p["player_key"])
+        if k in best_slot:
+            keep, drop = (pk, best_slot[k]) if p["edge"] > picks["picks"][best_slot[k]]["edge"] else (best_slot[k], pk)
             del picks["picks"][drop]
-            best[k] = keep
+            best_slot[k] = keep
         else:
-            best[k] = pk
+            best_slot[k] = pk
 
-    # Mark the "top" picks: biggest edges in each game (edges are known at lock time).
+    # "Top" picks: biggest edges in each game, per version (edges are known at lock time).
     by_game = defaultdict(list)
     for p in picks["picks"].values():
-        by_game[p["event_id"]].append(p)
+        by_game[(p.get("model_version", MODEL_VERSION), p["event_id"])].append(p)
     for group in by_game.values():
         for rank, p in enumerate(sorted(group, key=lambda x: -x["edge"])):
             p["top"] = rank < TOP_PER_GAME
 
     grade(picks, all_games)
+    for p in picks["picks"].values():
+        if p.get("result") in ("win", "loss", "push"):
+            p["profit_units_best"] = round(profit(p["result"], p.get("best_odds", p["odds"])), 4)
     attach_clv(picks)
     picks["updated_at"] = now.isoformat(timespec="seconds")
     PICKS.write_text(json.dumps(picks, indent=1) + "\n", encoding="utf-8")
 
     all_picks = sorted(picks["picks"].values(), key=lambda p: (p["commence_time"], p["player"]))
+    for p in all_picks:
+        p.setdefault("model_version", MODEL_VERSION)
+    v1_picks = [p for p in all_picks if p["model_version"] == MODEL_VERSION]
     payload = {
         "generated_at": now.isoformat(timespec="seconds"),
-        "model_version": MODEL_VERSION,
+        "model_version": v2.VERSION,
+        "versions_order": [v2.VERSION, MODEL_VERSION],
+        "version_labels": {v2.VERSION: "Model v2", MODEL_VERSION: "Model v1"},
         "rules": {"edge_min": EDGE_MIN, "edge_max": EDGE_MAX, "odds_min": ODDS_MIN, "odds_max": ODDS_MAX,
                   "max_picks_per_player": MAX_PICKS_PER_PLAYER, "top_per_game": TOP_PER_GAME},
         "backtest": bt,
+        "backtest_v2": bt2,
+        "injuries_updated": json.loads(INJURIES.read_text(encoding="utf-8")).get("updated_at") if INJURIES.exists() else None,
         "projections": projections,
-        "record": record(all_picks),
-        "record_top": record([p for p in all_picks if p.get("top")]),
-        "paper_picks": all_picks[-400:],
+        "records": version_records(all_picks),
+        "record": record(v1_picks),
+        "record_top": record([p for p in v1_picks if p.get("top")]),
+        "paper_picks": all_picks[-800:],
     }
     OUTPUT.write_text(json.dumps(payload, separators=(",", ":")) + "\n", encoding="utf-8")
-    print(f"Projected {len(projections)} props | paper picks total {len(all_picks)} | "
-          f"record {json.dumps(payload['record'])}")
+    print(f"Projected {len(projections)} props | paper picks total {len(all_picks)}")
+    for ver, rec in payload["records"].items():
+        print(f"  {ver}: {json.dumps(rec['record'])}")
     return 0
 
 
