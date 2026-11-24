@@ -19,8 +19,12 @@ captures the long right tail of NFL yardage (median below average).
 
 Paper picks: a prop qualifies when the model differs from DraftKings' no-vig
 price by 5 to 15 points (bigger gaps usually mean the model is missing news),
-odds -130 to +130, at most 2 per game, not Anytime TD. A pick locks the first
-time it qualifies and is graded after the game, with closing-line value.
+odds -130 to +130, not Anytime TD, and at most one pick per player per game
+(the bigger edge) so one player's game is never counted twice. Every qualifying
+pick is logged (the model's full record). The two biggest edges in each game are
+also marked "top" - the version you would actually bet - with its own record.
+A pick locks the first time it qualifies and is graded after the game, with
+closing-line value.
 
 Reads   data/nfl_game_logs.csv, docs/nfl_board.json, data/nfl_snapshots/
 Writes  docs/nfl_model.json, docs/nfl_paper_picks.json
@@ -57,7 +61,8 @@ PRIOR = {"catch": 25, "ypt": 40, "ypc": 60, "ypa": 150, "pass_td": 250, "rush_td
 
 EDGE_MIN, EDGE_MAX = 0.05, 0.15
 ODDS_MIN, ODDS_MAX = -130, 130
-MAX_PICKS_PER_GAME = 2
+MAX_PICKS_PER_PLAYER = 1   # per game; keeps the bigger edge
+TOP_PER_GAME = 2           # "top picks" record: biggest edges in each game
 PICK_MARKETS = {"pass_yds", "pass_tds", "rush_yds", "receptions", "rec_yds"}
 EMPIRICAL = {"pass_yds", "rush_yds", "receptions", "rec_yds"}
 
@@ -349,15 +354,15 @@ def main():
             if EDGE_MIN <= edge <= EDGE_MAX and ODDS_MIN <= odds <= ODDS_MAX:
                 candidates.append((edge, prop, key, side, odds, p_over if side == "Over" else 1 - p_over))
 
-    # Lock new paper picks: biggest edges first, max per game, never re-lock.
-    per_game = defaultdict(int)
+    # Lock new paper picks: biggest edges first, one per player per game, never re-lock.
+    per_player = defaultdict(int)
     for p in picks["picks"].values():
-        per_game[p["event_id"]] += 1
+        per_player[(p["event_id"], p["player_key"])] += 1
     for edge, prop, key, side, odds, model_p in sorted(candidates, key=lambda c: -c[0]):
         pk = f'{prop["event_id"]}|{key}|{prop["market"]}'
-        if pk in picks["picks"] or per_game[prop["event_id"]] >= MAX_PICKS_PER_GAME:
+        if pk in picks["picks"] or per_player[(prop["event_id"], key)] >= MAX_PICKS_PER_PLAYER:
             continue
-        per_game[prop["event_id"]] += 1
+        per_player[(prop["event_id"], key)] += 1
         picks["picks"][pk] = {
             "locked_at": now.isoformat(timespec="seconds"), "event_id": prop["event_id"],
             "matchup": prop["matchup"], "commence_time": prop["commence_time"],
@@ -370,6 +375,30 @@ def main():
         print(f'Locked paper pick: {prop["player"]} {prop["market"]} {side} {prop["dk"]["line"]} '
               f'({odds:+d}) edge {edge:.1%}')
 
+    # Enforce one pick per player per game on picks that have not started yet
+    # (picks locked before this rule existed); keep the bigger edge.
+    best = {}
+    for pk, p in list(picks["picks"].items()):
+        tip = parse_time(p["commence_time"])
+        if not tip or tip <= now or p.get("result") not in (None, "pending"):
+            continue
+        k = (p["event_id"], p["player_key"])
+        if k in best:
+            keep, drop = (pk, best[k]) if p["edge"] > picks["picks"][best[k]]["edge"] else (best[k], pk)
+            print("Removed duplicate-player pick:", picks["picks"][drop]["player"], picks["picks"][drop]["market"])
+            del picks["picks"][drop]
+            best[k] = keep
+        else:
+            best[k] = pk
+
+    # Mark the "top" picks: biggest edges in each game (edges are known at lock time).
+    by_game = defaultdict(list)
+    for p in picks["picks"].values():
+        by_game[p["event_id"]].append(p)
+    for group in by_game.values():
+        for rank, p in enumerate(sorted(group, key=lambda x: -x["edge"])):
+            p["top"] = rank < TOP_PER_GAME
+
     grade(picks, all_games)
     attach_clv(picks)
     picks["updated_at"] = now.isoformat(timespec="seconds")
@@ -380,11 +409,12 @@ def main():
         "generated_at": now.isoformat(timespec="seconds"),
         "model_version": MODEL_VERSION,
         "rules": {"edge_min": EDGE_MIN, "edge_max": EDGE_MAX, "odds_min": ODDS_MIN, "odds_max": ODDS_MAX,
-                  "max_picks_per_game": MAX_PICKS_PER_GAME},
+                  "max_picks_per_player": MAX_PICKS_PER_PLAYER, "top_per_game": TOP_PER_GAME},
         "backtest": bt,
         "projections": projections,
         "record": record(all_picks),
-        "paper_picks": all_picks[-200:],
+        "record_top": record([p for p in all_picks if p.get("top")]),
+        "paper_picks": all_picks[-400:],
     }
     OUTPUT.write_text(json.dumps(payload, separators=(",", ":")) + "\n", encoding="utf-8")
     print(f"Projected {len(projections)} props | paper picks total {len(all_picks)} | "
