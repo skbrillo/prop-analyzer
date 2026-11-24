@@ -1,36 +1,36 @@
 {
-  "generated_at": "2026-11-23T22:52:37.369328+00:00",
+  "generated_at": "2026-11-24T10:05:46.138798+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
     "2026-11": {
       "summary": {
         "picks": 105,
-        "wins": 47,
-        "losses": 52,
+        "wins": 51,
+        "losses": 53,
         "pushes": 0,
         "dnp": 1,
         "invalid": 0,
-        "pending": 5,
-        "settled": 99,
-        "win_rate": 47.47,
-        "roi": -8.88,
-        "profit_units": -8.788
+        "pending": 0,
+        "settled": 104,
+        "win_rate": 49.04,
+        "roi": -5.44,
+        "profit_units": -5.655
       },
       "days": [
         {
           "date": "2026-11-23",
           "picks": 5,
-          "wins": 0,
-          "losses": 0,
+          "wins": 4,
+          "losses": 1,
           "pushes": 0,
           "dnp": 0,
           "invalid": 0,
-          "pending": 5,
-          "settled": 0,
-          "win_rate": null,
-          "roi": null,
-          "profit_units": 0
+          "pending": 0,
+          "settled": 5,
+          "win_rate": 80.0,
+          "roi": 62.66,
+          "profit_units": 3.133
         },
         {
           "date": "2026-11-22",
@@ -1785,9 +1785,9 @@
           "line": 3.5,
           "odds": 110,
           "edge_score": 81.8,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
+          "result": "win",
+          "actual": 7.0,
+          "profit_units": 1.1,
           "saved_at": "2026-11-23T22:52:37.006935+00:00"
         },
         {
@@ -1801,9 +1801,9 @@
           "line": 13.5,
           "odds": -101,
           "edge_score": 59.1,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
+          "result": "win",
+          "actual": 4.0,
+          "profit_units": 0.9901,
           "saved_at": "2026-11-23T22:52:37.006935+00:00"
         },
         {
@@ -1817,9 +1817,9 @@
           "line": 13.5,
           "odds": -112,
           "edge_score": 51.7,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
+          "result": "loss",
+          "actual": 16.0,
+          "profit_units": -1,
           "saved_at": "2026-11-23T22:52:37.006935+00:00"
         },
         {
@@ -1833,9 +1833,9 @@
           "line": 3.5,
           "odds": -120,
           "edge_score": 50.3,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
+          "result": "win",
+          "actual": 2.0,
+          "profit_units": 0.83333,
           "saved_at": "2026-11-23T22:52:37.006935+00:00"
         },
         {
@@ -1849,9 +1849,9 @@
           "line": 3.5,
           "odds": 121,
           "edge_score": 48.0,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
+          "result": "win",
+          "actual": 6.0,
+          "profit_units": 1.21,
           "saved_at": "2026-11-23T22:52:37.006935+00:00"
         }
       ]

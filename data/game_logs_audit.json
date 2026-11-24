@@ -1,12 +1,12 @@
 {
-  "generated_at_utc": "2026-11-23T22:52:34.050749+00:00",
+  "generated_at_utc": "2026-11-24T10:05:44.766281+00:00",
   "regular_season_only": true,
-  "games_validated": 248,
-  "accepted_rows": 5529,
-  "explicit_dnp_rows": 1029,
+  "games_validated": 258,
+  "accepted_rows": 5755,
+  "explicit_dnp_rows": 1071,
   "rejection_counts": {
     "non_regular_season_game": 67,
-    "invalid_stats_or_minutes": 17
+    "invalid_stats_or_minutes": 18
   },
   "fetch_failures": [],
   "game_coverage": [
@@ -2489,6 +2489,106 @@
       ],
       "player_logs": 23,
       "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910036",
+      "teams": [
+        "CHA",
+        "MEM"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910037",
+      "teams": [
+        "PHI",
+        "POR"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910038",
+      "teams": [
+        "IND",
+        "OKC"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910039",
+      "teams": [
+        "TOR",
+        "MIL"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910040",
+      "teams": [
+        "MIN",
+        "BKN"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 0
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910041",
+      "teams": [
+        "CHI",
+        "CLE"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 5
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910042",
+      "teams": [
+        "NO",
+        "PHX"
+      ],
+      "player_logs": 20,
+      "explicit_dnps": 8
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910043",
+      "teams": [
+        "HOU",
+        "LAC"
+      ],
+      "player_logs": 22,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910044",
+      "teams": [
+        "LAL",
+        "UTAH"
+      ],
+      "player_logs": 23,
+      "explicit_dnps": 6
+    },
+    {
+      "date": "2026-11-23",
+      "game_id": "401910045",
+      "teams": [
+        "SAC",
+        "SA"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 1
     }
   ],
   "status": "accepted"

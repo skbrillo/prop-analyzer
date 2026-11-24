@@ -1,0 +1,117 @@
+{
+  "generated_at": "2026-11-24T10:05:46+00:00",
+  "settings": {
+    "close_max_minutes": 60,
+    "sharp_books": [
+      "pinnacle",
+      "circa",
+      "bookmaker",
+      "betonline"
+    ]
+  },
+  "coverage": {
+    "picks": 269,
+    "picks_with_close": 2,
+    "picks_with_price_clv": 0,
+    "picks_with_sharp_clv": 0
+  },
+  "by_system": [
+    {
+      "group": "8910",
+      "picks": 1,
+      "with_close": 1,
+      "price_clv_n": 0,
+      "avg_price_clv_pct": null,
+      "beat_close_pct": null,
+      "sharp_clv_n": 0,
+      "avg_sharp_clv_pct": null,
+      "line_moved_for_pct": null,
+      "line_moved_against_pct": null,
+      "avg_line_clv": null
+    },
+    {
+      "group": "edge",
+      "picks": 1,
+      "with_close": 1,
+      "price_clv_n": 0,
+      "avg_price_clv_pct": null,
+      "beat_close_pct": null,
+      "sharp_clv_n": 0,
+      "avg_sharp_clv_pct": null,
+      "line_moved_for_pct": 0.0,
+      "line_moved_against_pct": 100.0,
+      "avg_line_clv": -3.0
+    }
+  ],
+  "by_system_market_side": [
+    {
+      "group": "8910 | points Under",
+      "picks": 1,
+      "with_close": 1,
+      "price_clv_n": 0,
+      "avg_price_clv_pct": null,
+      "beat_close_pct": null,
+      "sharp_clv_n": 0,
+      "avg_sharp_clv_pct": null,
+      "line_moved_for_pct": null,
+      "line_moved_against_pct": null,
+      "avg_line_clv": null
+    },
+    {
+      "group": "edge | points Under",
+      "picks": 1,
+      "with_close": 1,
+      "price_clv_n": 0,
+      "avg_price_clv_pct": null,
+      "beat_close_pct": null,
+      "sharp_clv_n": 0,
+      "avg_sharp_clv_pct": null,
+      "line_moved_for_pct": 0.0,
+      "line_moved_against_pct": 100.0,
+      "avg_line_clv": -3.0
+    }
+  ],
+  "by_system_price": [
+    {
+      "group": "8910 | minus",
+      "picks": 1,
+      "with_close": 1,
+      "price_clv_n": 0,
+      "avg_price_clv_pct": null,
+      "beat_close_pct": null,
+      "sharp_clv_n": 0,
+      "avg_sharp_clv_pct": null,
+      "line_moved_for_pct": null,
+      "line_moved_against_pct": null,
+      "avg_line_clv": null
+    },
+    {
+      "group": "edge | minus",
+      "picks": 1,
+      "with_close": 1,
+      "price_clv_n": 0,
+      "avg_price_clv_pct": null,
+      "beat_close_pct": null,
+      "sharp_clv_n": 0,
+      "avg_sharp_clv_pct": null,
+      "line_moved_for_pct": 0.0,
+      "line_moved_against_pct": 100.0,
+      "avg_line_clv": -3.0
+    }
+  ],
+  "movement_study": {
+    "definition": "Props with a DraftKings open (>= 120 min before tip) and close (<= 60 min). Signal = sharp no-vig differs from DK by >= 3% at the same line, or sharp main line differs by >= 0.5 points.",
+    "all": {
+      "n": 0
+    },
+    "by_market": {},
+    "by_signal_type": {
+      "price": {
+        "n": 0
+      },
+      "line": {
+        "n": 0
+      }
+    }
+  }
+}
