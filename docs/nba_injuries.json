@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T22:20:57.421222+00:00",
+  "generated_at": "2026-11-24T23:15:40.368440+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -120,35 +120,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61392",
-      "name": "Grant Williams",
-      "team": "CHA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-24T04:32Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540731",
+      "injury_record_id": "540868",
       "name": "Ryan Kalkbrenner",
       "team": "CHA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-24T02:14Z",
+      "date": "2026-11-24T22:33Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540534",
+      "injury_record_id": "540867",
+      "name": "Dennis Schroder",
+      "team": "CHA",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-24T22:32Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540866",
+      "name": "Sion James",
+      "team": "CHA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Undisclosed | day-to-day",
+      "date": "2026-11-24T22:30Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540865",
       "name": "Grayson Allen",
       "team": "CHA",
       "status": "O",
       "raw_status": "Out",
       "reason": "Concussion | out",
-      "date": "2026-11-22T22:08Z",
+      "date": "2026-11-24T22:29Z",
       "team_match": "feed"
     },
     {
@@ -160,17 +171,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-08T22:31Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538192",
-      "name": "Dennis Schroder",
-      "team": "CHA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Hamstring | out",
-      "date": "2026-11-08T22:26Z",
       "team_match": "feed"
     },
     {
@@ -483,6 +483,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540870",
+      "name": "Scotty Pippen Jr.",
+      "team": "MEM",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Back | out",
+      "date": "2026-11-24T23:04Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540698",
       "name": "Cameron Boozer",
       "team": "MEM",
@@ -512,17 +523,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Foot | out",
       "date": "2026-11-17T23:18Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539414",
-      "name": "Scotty Pippen Jr.",
-      "team": "MEM",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Back | out",
-      "date": "2026-11-16T17:16Z",
       "team_match": "feed"
     },
     {
@@ -802,13 +802,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61393",
+      "injury_record_id": "540864",
       "name": "Joel Embiid",
       "team": "PHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-24T04:33Z",
+      "date": "2026-11-24T22:09Z",
       "team_match": "feed"
     },
     {
