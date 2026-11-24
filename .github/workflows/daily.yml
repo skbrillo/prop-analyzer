@@ -111,6 +111,13 @@ jobs:
         env:
           PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
         run: python update_odds.py
+      - name: Capture multi-book opening snapshot
+        if: steps.schedule.outputs.run_type == 'morning'
+        continue-on-error: true
+        env:
+          PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
+          MARKET_BOOKS: ${{ vars.MARKET_BOOKS }}
+        run: python market_snapshot.py --open
       - name: Run prediction engine
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python engine.py
@@ -135,6 +142,10 @@ jobs:
       - name: Update Top 25 monthly performance
         if: steps.schedule.outputs.run_predictions == 'true' || steps.schedule.outputs.run_grading == 'true'
         run: python edge_monthly_tracker.py
+      - name: Closing line value report
+        if: steps.schedule.outputs.run_predictions == 'true' || steps.schedule.outputs.run_grading == 'true'
+        continue-on-error: true
+        run: python clv_report.py
       - name: Backtest historical NBA projections
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python backtest.py
@@ -160,6 +171,11 @@ jobs:
             docs/edge_monthly.json \
             docs/line_movement.json \
             docs/8910_history.json
+          # New CLV files may not exist yet; add them separately so a missing
+          # path never blocks the main commit.
+          for path in docs/clv_report.json docs/clv_picks.csv data/market_snapshots; do
+            if [ -e "$path" ]; then git add -A -- "$path"; fi
+          done
           if ! git diff --cached --quiet; then
             git commit -m 'Update NBA predictions, statistics and grading results'
             git pull --rebase origin main
