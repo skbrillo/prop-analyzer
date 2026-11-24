@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T00:37:49.913936+00:00",
+  "generated_at": "2026-11-24T01:56:02.463554+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 93,
+  "player_count": 90,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 93,
+  "players_with_team": 90,
   "players_without_team": 0,
   "status_counts": {
-    "O": 84,
-    "T": 9
+    "O": 85,
+    "T": 5
   },
   "players": [
     {
@@ -182,17 +182,6 @@
       "raw_status": "Out",
       "reason": "Hand | out",
       "date": "2026-11-12T21:35Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540529",
-      "name": "Jaylon Tyson",
-      "team": "CLE",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Ankle | out",
-      "date": "2026-11-22T21:51Z",
       "team_match": "feed"
     },
     {
@@ -461,13 +450,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540564",
+      "injury_record_id": "540726",
       "name": "Austin Reaves",
       "team": "LAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
-      "date": "2026-11-23T01:09Z",
+      "date": "2026-11-24T01:31Z",
       "team_match": "feed"
     },
     {
@@ -567,17 +556,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-05T20:53Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540515",
-      "name": "Zion Williamson",
-      "team": "NOP",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Thigh | day-to-day",
-      "date": "2026-11-22T20:50Z",
       "team_match": "feed"
     },
     {
@@ -879,35 +857,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61337",
-      "name": "Victor Wembanyama",
-      "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-23T04:52Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540571",
+      "injury_record_id": "540725",
       "name": "De'Aaron Fox",
       "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-23T01:39Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Lower Leg | out",
+      "date": "2026-11-24T01:24Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540570",
-      "name": "Jordan McLaughlin",
+      "injury_record_id": "540724",
+      "name": "Victor Wembanyama",
       "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Shoulder | day-to-day",
-      "date": "2026-11-23T01:38Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Back | out",
+      "date": "2026-11-24T01:24Z",
       "team_match": "feed"
     },
     {
