@@ -1,0 +1,164 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Prop Lines — DraftKings vs Other Books</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0b1220;--card:#172338;--border:#293a52;--text:#e8edf6;--muted:#a6b5c9;--green:#75e3a5;--red:#f2a7a7;--yellow:#f8c477}
+body{margin:0;background:var(--bg);color:var(--text);font:13px system-ui,Arial,sans-serif}
+main{width:100%;padding:12px}
+h1{font-size:27px;margin:0 0 3px}
+h2{font-size:18px;margin:0}
+a{color:var(--green)}
+.muted,.note{color:var(--muted);line-height:1.5}
+.note{font-size:11px;margin-top:8px}
+.warn{background:#332c19;color:#ffda8c;padding:9px 12px;border-radius:8px;margin:10px 0;font-size:11px}
+.head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.controls{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+input,select{background:#18273d;color:white;border:1px solid #41516b;border-radius:6px;padding:8px;font:inherit}
+input{flex:1;min-width:150px}
+.controls select{max-width:240px}
+.tablewrap{width:100%;overflow-x:auto;border:1px solid var(--border);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:8px 6px;border-bottom:1px solid #2b3a50;text-align:left;white-space:nowrap;font-size:11px}
+th{background:var(--card);color:var(--muted);position:sticky;top:0}
+tbody tr:hover{background:#1d3048}
+.player{font-weight:700}
+.flag{color:var(--yellow);font-weight:700}.alt{color:var(--yellow)}.best{color:var(--green);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:10px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:10px;font-size:11px;color:var(--muted)}
+.stat b{display:block;color:var(--text);font-size:21px;margin-top:4px}
+.gamehead td{background:var(--card);font-weight:700;color:var(--text);border-top:2px solid var(--border)}
+</style>
+</head>
+<body>
+<main>
+<h1>NFL Prop Lines</h1>
+<div class="muted">DraftKings vs FanDuel, BetMGM and other books | Phase 1: line shopping and closing-line tracking (no model picks) | <a href="index.html">← NBA Edge Model</a></div>
+
+<div class="warn">Prices come from scheduled snapshots (Tue / Thu / Sat / Sun mornings and shortly before each kickoff), not live odds. Confirm the price at the book before betting.</div>
+
+<div class="head"><h2>DraftKings vs the Market — Does DK Move Toward the Other Books?</h2></div>
+<div class="cards" id="study"></div>
+<div class="note" id="study-note">Builds up as opening and closing snapshots accumulate.</div>
+
+<div class="head"><h2>Line Shopping Board</h2><span id="status" class="muted">Loading...</span></div>
+<div class="controls">
+ <input id="search" type="search" placeholder="Search player or game">
+ <select id="game"><option value="">All Games</option></select>
+ <select id="market"><option value="">All Markets</option></select>
+ <select id="view">
+  <option value="">All Props</option>
+  <option value="flagged">DraftKings Out of Line</option>
+  <option value="better">Better Price Than DraftKings</option>
+ </select>
+</div>
+<div class="tablewrap"><table><thead><tr id="headrow"></tr></thead><tbody id="rows"></tbody></table></div>
+<div class="note">
+ Each book shows its main line and Over / Under price (Anytime TD shows the "Yes" price only). Yellow = a different line than DraftKings.
+ Best Over / Best Under compare prices at DraftKings' line. "Books vs DK" flags props where the other books' no-vig price is 4+ points from DraftKings at the same line,
+ or their line differs by 2+ yards (0.5 for receptions and touchdowns).
+</div>
+</main>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+let board=null;
+const add=(p,tag,text,cls="")=>{const n=document.createElement(tag);n.textContent=text;if(cls)n.className=cls;p.appendChild(n);return n;};
+const signed=a=>{a=Number(a);return a>0?"+"+a:String(a);};
+const dec=a=>{a=Number(a);return a>0?1+a/100:1+100/Math.abs(a);};
+const label=b=>(board&&board.book_labels&&board.book_labels[b])||b;
+const fmtLine=v=>{const n=Number(v);return Number.isFinite(n)?String(n):"--";};
+function kickoff(v){const d=new Date(v);if(isNaN(d))return String(v);
+ return new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"2-digit"}).format(d)+" ET";}
+
+function renderStudy(){
+ const box=$("study");box.replaceChildren();
+ const s=board.movement_study||{},a=s.all||{n:0};
+ const items=[
+  ["Props compared",a.n||0],
+  ["DK moved toward others",a.n?a.dk_moved_toward_sharp_pct+"%":"--"],
+  ["DK moved away",a.n?a.dk_moved_away_pct+"%":"--"],
+  ["DK didn't move",a.n?a.dk_no_move_pct+"%":"--"],
+  ["Avg CLV following others",a.follow_sharp_avg_clv_pct==null?"--":(a.follow_sharp_avg_clv_pct>0?"+":"")+a.follow_sharp_avg_clv_pct+"%"]
+ ];
+ for(const [k,v] of items){const c=add(box,"div","","stat");c.append(k);add(c,"b",String(v));}
+ $("study-note").textContent=a.n
+  ?"Props where the other books disagreed with DraftKings at the open (3+ points no-vig, or a different line). If DraftKings mostly moves toward them by kickoff, betting DK early on the side the others favor is the edge."
+  :"No open-and-close pairs yet. This fills in once props have a morning snapshot and a pre-kickoff snapshot.";
+}
+
+function render(){
+ const others=(board.books||[]).filter(b=>b!=="draftkings");
+ const head=$("headrow");head.replaceChildren();
+ ["Kickoff","Player","Market","DK Line","DK O / U",...others.map(label),"Best Over / Yes","Best Under","Books vs DK"].forEach(t=>add(head,"th",t));
+ const q=$("search").value.trim().toLowerCase(),game=$("game").value,market=$("market").value,view=$("view").value;
+ const rows=(board.props||[]).filter(p=>{
+  if(q&&!(p.player+" "+p.matchup).toLowerCase().includes(q))return false;
+  if(game&&p.event_id!==game)return false;
+  if(market&&p.market!==market)return false;
+  if(view==="flagged"&&!p.flag)return false;
+  if(view==="better"){
+   const bo=p.best_over&&p.best_over.book!=="draftkings"&&dec(p.best_over.odds)>dec(p.dk.over);
+   const bu=p.best_under&&p.best_under.book!=="draftkings"&&dec(p.best_under.odds)>dec(p.dk.under);
+   if(!bo&&!bu)return false;
+  }
+  return true;
+ });
+ const body=$("rows");body.replaceChildren();
+ let last=null;
+ for(const p of rows){
+  if(p.event_id!==last){last=p.event_id;const g=body.insertRow();g.className="gamehead";const td=g.insertCell();td.colSpan=8+others.length;td.textContent=p.matchup+" — "+kickoff(p.commence_time);}
+  const tr=body.insertRow();
+  const cell=(t,c="",title="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;if(title)td.title=title;return td;};
+  cell(kickoff(p.commence_time));cell(p.player,"player");cell(p.market_label);
+  if(p.one_sided){
+   cell("—");cell("Yes "+signed(p.dk.over));
+   for(const b of others){const x=p.books[b];cell(x?"Yes "+signed(x.over):"—",x?"":"muted");}
+   const bo=p.best_over;cell(bo?label(bo.book)+" "+signed(bo.odds):"—",bo&&bo.book!=="draftkings"&&dec(bo.odds)>dec(p.dk.over)?"best":"");
+   cell("—","muted");cell("—","muted");
+   continue;
+  }
+  cell(fmtLine(p.dk.line));cell(signed(p.dk.over)+" / "+signed(p.dk.under));
+  for(const b of others){
+   const x=p.books[b];
+   if(!x){cell("—","muted");continue;}
+   const diff=x.line!==p.dk.line;
+   cell(fmtLine(x.line)+"  "+signed(x.over)+" / "+signed(x.under),diff?"alt":"",diff?"Different line than DraftKings":"");
+  }
+  const bo=p.best_over,bu=p.best_under;
+  cell(bo?label(bo.book)+" "+signed(bo.odds):"—",bo&&bo.book!=="draftkings"&&dec(bo.odds)>dec(p.dk.over)?"best":"");
+  cell(bu?label(bu.book)+" "+signed(bu.odds):"—",bu&&bu.book!=="draftkings"&&dec(bu.odds)>dec(p.dk.under)?"best":"");
+  let note="—",cls="muted";
+  if(p.flag){cls="flag";note=p.gap!=null&&Math.abs(p.gap)>=(board.gap_flag||0.04)
+   ?"Others lean "+p.flag+" "+(Math.abs(p.gap)*100).toFixed(1)+" pts"
+   :"Others' line "+(p.line_diff>0?"+":"")+p.line_diff+" ("+p.flag+")";}
+  else if(p.gap!=null){note=(p.gap>0?"+":"")+(p.gap*100).toFixed(1)+" pts";}
+  cell(note,cls,"Other books' no-vig Over probability minus DraftKings', at DraftKings' line");
+ }
+ if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=8+others.length;td.textContent=(board.props||[]).length?"No props match the current filters.":"No upcoming NFL props saved yet.";}
+ const caps=Object.values(board.captured_at||{}).sort();
+ $("status").textContent=rows.length+" of "+(board.props||[]).length+" props | "+(board.books||[]).map(label).join(", ")+
+  (caps.length?" | Latest capture: "+new Date(caps[caps.length-1]).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit"})+" CT":"");
+}
+
+async function load(){
+ try{
+  const res=await fetch("./nfl_board.json?t="+Date.now(),{cache:"no-store"});
+  if(!res.ok)throw Error("HTTP "+res.status);
+  board=await res.json();
+  const g=$("game");for(const x of board.games||[]){const o=add(g,"option",x.matchup+" — "+kickoff(x.commence_time));o.value=x.event_id;}
+  const m=$("market");for(const x of board.markets||[]){const o=add(m,"option",x.label);o.value=x.key;}
+  renderStudy();render();
+ }catch(e){
+  $("status").textContent="NFL lines not available yet ("+e.message+"). The first board appears after the next scheduled NFL pull.";
+ }
+}
+["search","game","market","view"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",()=>board&&render()));
+load();
+</script>
+</body>
+</html>
