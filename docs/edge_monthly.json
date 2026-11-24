@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T11:12:19.824558+00:00",
+  "generated_at": "2026-11-24T18:50:01.904213+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
@@ -2997,13 +2997,13 @@
   "preview_months": {
     "2026-11": {
       "summary": {
-        "picks": 3,
+        "picks": 1,
         "wins": 0,
         "losses": 0,
         "pushes": 0,
         "dnp": 0,
         "invalid": 0,
-        "pending": 3,
+        "pending": 1,
         "settled": 0,
         "win_rate": null,
         "roi": null,
@@ -3012,13 +3012,13 @@
       "days": [
         {
           "date": "2026-11-24",
-          "picks": 3,
+          "picks": 1,
           "wins": 0,
           "losses": 0,
           "pushes": 0,
           "dnp": 0,
           "invalid": 0,
-          "pending": 3,
+          "pending": 1,
           "settled": 0,
           "win_rate": null,
           "roi": null,
@@ -3029,52 +3029,18 @@
         {
           "date": "2026-11-24",
           "rank": 1,
-          "player": "Daniel Gafford",
-          "team": "Dallas Mavericks",
-          "opponent": "Denver Nuggets",
-          "market": "Assists",
-          "side": "Over",
-          "line": 1.5,
-          "odds": -118,
-          "edge_score": 60.1,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-24T11:12:19.583453+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-24",
-          "rank": 2,
-          "player": "Bilal Coulibaly",
-          "team": "Washington Wizards",
-          "opponent": "Boston Celtics",
-          "market": "Rebounds",
-          "side": "Over",
-          "line": 3.5,
-          "odds": -123,
-          "edge_score": 59.4,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-24T11:12:19.583453+00:00",
-          "official": false
-        },
-        {
-          "date": "2026-11-24",
-          "rank": 3,
-          "player": "AJ Dybantsa",
-          "team": "Washington Wizards",
-          "opponent": "Boston Celtics",
+          "player": "Franz Wagner",
+          "team": "Orlando Magic",
+          "opponent": "Detroit Pistons",
           "market": "Rebounds",
           "side": "Over",
           "line": 6.5,
-          "odds": -104,
-          "edge_score": 55.1,
+          "odds": -103,
+          "edge_score": 52.5,
           "result": "pending",
           "actual": null,
           "profit_units": 0,
-          "saved_at": "2026-11-24T11:12:19.583453+00:00",
+          "saved_at": "2026-11-24T18:50:01.577020+00:00",
           "official": false
         }
       ]
