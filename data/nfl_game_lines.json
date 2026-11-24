@@ -1,0 +1,2543 @@
+{
+ "games": {
+  "6b85fa01252581991e6a60a4cf4fa7eb": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -8.5,
+     "away_spread": 8.5,
+     "home_spread_odds": -111,
+     "away_spread_odds": -108,
+     "total": 47.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 28.0,
+     "away_implied": 19.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -8.5,
+     "away_spread": 8.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 48.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 28.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -8.5,
+     "away_spread": 8.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -110,
+     "total": 48.0,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 28.2,
+     "away_implied": 19.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -8.5,
+     "away_spread": 8.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -109,
+     "total": 47.5,
+     "over_odds": -120,
+     "under_odds": -115,
+     "home_implied": 28.0,
+     "away_implied": 19.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -8.5,
+     "away_spread": 8.5,
+     "home_spread_odds": -111,
+     "away_spread_odds": -108,
+     "total": 47.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 28.0,
+     "away_implied": 19.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -8.5,
+     "away_spread": 8.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 48.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 28.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -8.5,
+     "away_spread": 8.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -110,
+     "total": 48.0,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 28.2,
+     "away_implied": 19.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -8.5,
+     "away_spread": 8.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -109,
+     "total": 47.5,
+     "over_odds": -120,
+     "under_odds": -115,
+     "home_implied": 28.0,
+     "away_implied": 19.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Philadelphia Eagles @ Dallas Cowboys",
+   "home_team": "Dallas Cowboys",
+   "away_team": "Philadelphia Eagles",
+   "commence_time": "2026-11-26T21:30:00Z",
+   "game_date": "2026-11-26"
+  },
+  "9808f5201846887d9b39ce02e1a3d27f": {
+   "opening": {
+    "draftkings": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -106,
+     "away_spread_odds": -114,
+     "total": 55.5,
+     "over_odds": -104,
+     "under_odds": -115,
+     "home_implied": 26.5,
+     "away_implied": 29.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -112,
+     "total": 55.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 26.5,
+     "away_implied": 29.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -112,
+     "total": 55.0,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 26.2,
+     "away_implied": 28.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -114,
+     "total": 55.5,
+     "over_odds": -105,
+     "under_odds": -114,
+     "home_implied": 26.5,
+     "away_implied": 29.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -106,
+     "away_spread_odds": -114,
+     "total": 55.5,
+     "over_odds": -104,
+     "under_odds": -115,
+     "home_implied": 26.5,
+     "away_implied": 29.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -112,
+     "total": 55.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 26.5,
+     "away_implied": 29.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -112,
+     "total": 55.0,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 26.2,
+     "away_implied": 28.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -114,
+     "total": 55.5,
+     "over_odds": -105,
+     "under_odds": -114,
+     "home_implied": 26.5,
+     "away_implied": 29.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Chicago Bears @ Detroit Lions",
+   "home_team": "Detroit Lions",
+   "away_team": "Chicago Bears",
+   "commence_time": "2026-11-26T18:00:00Z",
+   "game_date": "2026-11-26"
+  },
+  "9c71c76286aa8e94bf0907ab5d29ca2e": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -109,
+     "away_spread_odds": -110,
+     "total": 44.5,
+     "over_odds": -103,
+     "under_odds": -116,
+     "home_implied": 23.5,
+     "away_implied": 21.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -112,
+     "away_spread_odds": -108,
+     "total": 44.5,
+     "over_odds": 100,
+     "under_odds": -120,
+     "home_implied": 23.5,
+     "away_implied": 21.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -110,
+     "total": 44.0,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 23.2,
+     "away_implied": 20.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -109,
+     "away_spread_odds": -110,
+     "total": 44.0,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 23.2,
+     "away_implied": 20.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -109,
+     "away_spread_odds": -110,
+     "total": 44.5,
+     "over_odds": -103,
+     "under_odds": -116,
+     "home_implied": 23.5,
+     "away_implied": 21.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -112,
+     "away_spread_odds": -108,
+     "total": 44.5,
+     "over_odds": 100,
+     "under_odds": -120,
+     "home_implied": 23.5,
+     "away_implied": 21.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -110,
+     "total": 44.0,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 23.2,
+     "away_implied": 20.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -109,
+     "away_spread_odds": -110,
+     "total": 44.0,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 23.2,
+     "away_implied": 20.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Green Bay Packers @ Los Angeles Rams",
+   "home_team": "Los Angeles Rams",
+   "away_team": "Green Bay Packers",
+   "commence_time": "2026-11-26T01:00:00Z",
+   "game_date": "2026-11-25"
+  },
+  "1576ac944306f4781949aca8963dcea4": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 47.5,
+     "over_odds": -107,
+     "under_odds": -112,
+     "home_implied": 25.2,
+     "away_implied": 22.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -120,
+     "away_spread_odds": 100,
+     "total": 47.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 25.0,
+     "away_implied": 22.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": 100,
+     "away_spread_odds": -118,
+     "total": 47.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 25.2,
+     "away_implied": 22.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -120,
+     "away_spread_odds": 101,
+     "total": 47.5,
+     "over_odds": -109,
+     "under_odds": -110,
+     "home_implied": 25.0,
+     "away_implied": 22.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 47.5,
+     "over_odds": -107,
+     "under_odds": -112,
+     "home_implied": 25.2,
+     "away_implied": 22.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -120,
+     "away_spread_odds": 100,
+     "total": 47.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 25.0,
+     "away_implied": 22.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": 100,
+     "away_spread_odds": -118,
+     "total": 47.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 25.2,
+     "away_implied": 22.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -120,
+     "away_spread_odds": 101,
+     "total": 47.5,
+     "over_odds": -109,
+     "under_odds": -110,
+     "home_implied": 25.0,
+     "away_implied": 22.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Kansas City Chiefs @ Buffalo Bills",
+   "home_team": "Buffalo Bills",
+   "away_team": "Kansas City Chiefs",
+   "commence_time": "2026-11-27T01:20:00Z",
+   "game_date": "2026-11-26"
+  },
+  "3df66cbbc7a353f008801a50c3ca3068": {
+   "opening": {
+    "draftkings": {
+     "home_spread": 3.0,
+     "away_spread": -3.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -104,
+     "total": 38.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 17.8,
+     "away_implied": 20.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 37.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 17.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 3.0,
+     "away_spread": -3.0,
+     "home_spread_odds": -118,
+     "away_spread_odds": -102,
+     "total": 37.5,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 17.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": 100,
+     "away_spread_odds": -119,
+     "total": 38.0,
+     "over_odds": -108,
+     "under_odds": -112,
+     "home_implied": 17.8,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": 3.0,
+     "away_spread": -3.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -104,
+     "total": 38.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 17.8,
+     "away_implied": 20.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 37.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 17.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 3.0,
+     "away_spread": -3.0,
+     "home_spread_odds": -118,
+     "away_spread_odds": -102,
+     "total": 37.5,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 17.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": 100,
+     "away_spread_odds": -119,
+     "total": 38.0,
+     "over_odds": -108,
+     "under_odds": -112,
+     "home_implied": 17.8,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Denver Broncos @ Pittsburgh Steelers",
+   "home_team": "Pittsburgh Steelers",
+   "away_team": "Denver Broncos",
+   "commence_time": "2026-11-27T20:00:00Z",
+   "game_date": "2026-11-27"
+  },
+  "c8743b715264baad041e7f5e765612fb": {
+   "opening": {
+    "draftkings": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -109,
+     "total": 42.5,
+     "over_odds": -104,
+     "under_odds": -115,
+     "home_implied": 17.5,
+     "away_implied": 25.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 41.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 17.0,
+     "away_implied": 24.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -112,
+     "away_spread_odds": -105,
+     "total": 42.0,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 17.2,
+     "away_implied": 24.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -116,
+     "away_spread_odds": -103,
+     "total": 41.5,
+     "over_odds": -112,
+     "under_odds": -108,
+     "home_implied": 17.0,
+     "away_implied": 24.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -109,
+     "total": 42.5,
+     "over_odds": -104,
+     "under_odds": -115,
+     "home_implied": 17.5,
+     "away_implied": 25.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 41.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 17.0,
+     "away_implied": 24.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -112,
+     "away_spread_odds": -105,
+     "total": 42.0,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 17.2,
+     "away_implied": 24.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -116,
+     "away_spread_odds": -103,
+     "total": 41.5,
+     "over_odds": -112,
+     "under_odds": -108,
+     "home_implied": 17.0,
+     "away_implied": 24.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Washington Commanders @ Arizona Cardinals",
+   "home_team": "Arizona Cardinals",
+   "away_team": "Washington Commanders",
+   "commence_time": "2026-11-29T21:25:00Z",
+   "game_date": "2026-11-29"
+  },
+  "7c8f68c12da100955f696d650b117277": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -9.5,
+     "away_spread": 9.5,
+     "home_spread_odds": -114,
+     "away_spread_odds": -105,
+     "total": 50.5,
+     "over_odds": -107,
+     "under_odds": -112,
+     "home_implied": 30.0,
+     "away_implied": 20.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -9.5,
+     "away_spread": 9.5,
+     "home_spread_odds": -120,
+     "away_spread_odds": 100,
+     "total": 50.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 30.0,
+     "away_implied": 20.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -9.5,
+     "away_spread": 9.5,
+     "home_spread_odds": -112,
+     "away_spread_odds": -105,
+     "total": 50.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 30.0,
+     "away_implied": 20.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -10.5,
+     "away_spread": 10.5,
+     "home_spread_odds": -111,
+     "away_spread_odds": -127,
+     "total": 50.5,
+     "over_odds": -109,
+     "under_odds": -110,
+     "home_implied": 30.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -9.5,
+     "away_spread": 9.5,
+     "home_spread_odds": -114,
+     "away_spread_odds": -105,
+     "total": 50.5,
+     "over_odds": -107,
+     "under_odds": -112,
+     "home_implied": 30.0,
+     "away_implied": 20.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -9.5,
+     "away_spread": 9.5,
+     "home_spread_odds": -120,
+     "away_spread_odds": 100,
+     "total": 50.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 30.0,
+     "away_implied": 20.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -9.5,
+     "away_spread": 9.5,
+     "home_spread_odds": -112,
+     "away_spread_odds": -105,
+     "total": 50.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 30.0,
+     "away_implied": 20.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -10.5,
+     "away_spread": 10.5,
+     "home_spread_odds": -111,
+     "away_spread_odds": -127,
+     "total": 50.5,
+     "over_odds": -109,
+     "under_odds": -110,
+     "home_implied": 30.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "New Orleans Saints @ Cincinnati Bengals",
+   "home_team": "Cincinnati Bengals",
+   "away_team": "New Orleans Saints",
+   "commence_time": "2026-11-29T18:01:00Z",
+   "game_date": "2026-11-29"
+  },
+  "ce98ee1864ade0b0271f24b8d64925f2": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -104,
+     "total": 46.5,
+     "over_odds": -110,
+     "under_odds": -109,
+     "home_implied": 26.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 46.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 26.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -118,
+     "away_spread_odds": -102,
+     "total": 46.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 26.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -109,
+     "total": 46.5,
+     "over_odds": -112,
+     "under_odds": -109,
+     "home_implied": 26.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -104,
+     "total": 46.5,
+     "over_odds": -110,
+     "under_odds": -109,
+     "home_implied": 26.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 46.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 26.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -118,
+     "away_spread_odds": -102,
+     "total": 46.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 26.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -109,
+     "total": 46.5,
+     "over_odds": -112,
+     "under_odds": -109,
+     "home_implied": 26.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Baltimore Ravens @ Houston Texans",
+   "home_team": "Houston Texans",
+   "away_team": "Baltimore Ravens",
+   "commence_time": "2026-11-29T18:00:00Z",
+   "game_date": "2026-11-29"
+  },
+  "a458acb049d04e63ee781943c3c1d363": {
+   "opening": {
+    "draftkings": {
+     "home_spread": 6.5,
+     "away_spread": -6.5,
+     "home_spread_odds": -104,
+     "away_spread_odds": -115,
+     "total": 41.5,
+     "over_odds": -110,
+     "under_odds": -109,
+     "home_implied": 17.5,
+     "away_implied": 24.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 6.5,
+     "away_spread": -6.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 42.5,
+     "over_odds": 100,
+     "under_odds": -120,
+     "home_implied": 18.0,
+     "away_implied": 24.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 6.5,
+     "away_spread": -6.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -112,
+     "total": 41.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 17.5,
+     "away_implied": 24.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 6.5,
+     "away_spread": -6.5,
+     "home_spread_odds": -106,
+     "away_spread_odds": -113,
+     "total": 46.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 20.0,
+     "away_implied": 26.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": 6.5,
+     "away_spread": -6.5,
+     "home_spread_odds": -104,
+     "away_spread_odds": -115,
+     "total": 41.5,
+     "over_odds": -110,
+     "under_odds": -109,
+     "home_implied": 17.5,
+     "away_implied": 24.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 6.5,
+     "away_spread": -6.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 42.5,
+     "over_odds": 100,
+     "under_odds": -120,
+     "home_implied": 18.0,
+     "away_implied": 24.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 6.5,
+     "away_spread": -6.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -112,
+     "total": 41.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 17.5,
+     "away_implied": 24.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 6.5,
+     "away_spread": -6.5,
+     "home_spread_odds": -106,
+     "away_spread_odds": -113,
+     "total": 46.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 20.0,
+     "away_implied": 26.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "New York Giants @ Indianapolis Colts",
+   "home_team": "Indianapolis Colts",
+   "away_team": "New York Giants",
+   "commence_time": "2026-11-29T18:00:00Z",
+   "game_date": "2026-11-29"
+  },
+  "0f4a22cbfdcbde08a8bc92da408ac5c4": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -104,
+     "away_spread_odds": -116,
+     "total": 47.5,
+     "over_odds": -114,
+     "under_odds": -105,
+     "home_implied": 31.0,
+     "away_implied": 16.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 47.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 31.0,
+     "away_implied": 16.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -110,
+     "total": 47.5,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 31.0,
+     "away_implied": 16.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -114,
+     "total": 47.5,
+     "over_odds": -112,
+     "under_odds": -108,
+     "home_implied": 31.0,
+     "away_implied": 16.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -104,
+     "away_spread_odds": -116,
+     "total": 47.5,
+     "over_odds": -114,
+     "under_odds": -105,
+     "home_implied": 31.0,
+     "away_implied": 16.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 47.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 31.0,
+     "away_implied": 16.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -110,
+     "total": 47.5,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 31.0,
+     "away_implied": 16.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -114,
+     "total": 47.5,
+     "over_odds": -112,
+     "under_odds": -108,
+     "home_implied": 31.0,
+     "away_implied": 16.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Tennessee Titans @ Jacksonville Jaguars",
+   "home_team": "Jacksonville Jaguars",
+   "away_team": "Tennessee Titans",
+   "commence_time": "2026-11-29T18:00:00Z",
+   "game_date": "2026-11-29"
+  },
+  "4cf5bae54a6c04de166a3fcbc60ff31e": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -1.5,
+     "away_spread": 1.5,
+     "home_spread_odds": 102,
+     "away_spread_odds": -122,
+     "total": 35.5,
+     "over_odds": -109,
+     "under_odds": -110,
+     "home_implied": 18.5,
+     "away_implied": 17.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -1.5,
+     "away_spread": 1.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 35.5,
+     "over_odds": -112,
+     "under_odds": -108,
+     "home_implied": 18.5,
+     "away_implied": 17.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -1.0,
+     "away_spread": 1.0,
+     "home_spread_odds": -105,
+     "away_spread_odds": -112,
+     "total": 35.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 18.2,
+     "away_implied": 17.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -1.5,
+     "away_spread": 1.5,
+     "home_spread_odds": -103,
+     "away_spread_odds": -116,
+     "total": 35.5,
+     "over_odds": -112,
+     "under_odds": -109,
+     "home_implied": 18.5,
+     "away_implied": 17.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -1.5,
+     "away_spread": 1.5,
+     "home_spread_odds": 102,
+     "away_spread_odds": -122,
+     "total": 35.5,
+     "over_odds": -109,
+     "under_odds": -110,
+     "home_implied": 18.5,
+     "away_implied": 17.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -1.5,
+     "away_spread": 1.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 35.5,
+     "over_odds": -112,
+     "under_odds": -108,
+     "home_implied": 18.5,
+     "away_implied": 17.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -1.0,
+     "away_spread": 1.0,
+     "home_spread_odds": -105,
+     "away_spread_odds": -112,
+     "total": 35.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 18.2,
+     "away_implied": 17.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -1.5,
+     "away_spread": 1.5,
+     "home_spread_odds": -103,
+     "away_spread_odds": -116,
+     "total": 35.5,
+     "over_odds": -112,
+     "under_odds": -109,
+     "home_implied": 18.5,
+     "away_implied": 17.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "New England Patriots @ Los Angeles Chargers",
+   "home_team": "Los Angeles Chargers",
+   "away_team": "New England Patriots",
+   "commence_time": "2026-11-29T21:05:00Z",
+   "game_date": "2026-11-29"
+  },
+  "5cebb2754b918538c94858f6a3382ac2": {
+   "opening": {
+    "draftkings": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": -103,
+     "away_spread_odds": -117,
+     "total": 40.5,
+     "over_odds": -115,
+     "under_odds": -104,
+     "home_implied": 18.5,
+     "away_implied": 22.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 40.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 18.5,
+     "away_implied": 22.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 4.0,
+     "away_spread": -4.0,
+     "home_spread_odds": -112,
+     "away_spread_odds": -105,
+     "total": 41.0,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 18.5,
+     "away_implied": 22.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -112,
+     "total": 41.0,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 18.8,
+     "away_implied": 22.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": -103,
+     "away_spread_odds": -117,
+     "total": 40.5,
+     "over_odds": -115,
+     "under_odds": -104,
+     "home_implied": 18.5,
+     "away_implied": 22.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 40.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 18.5,
+     "away_implied": 22.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": 4.0,
+     "away_spread": -4.0,
+     "home_spread_odds": -112,
+     "away_spread_odds": -105,
+     "total": 41.0,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 18.5,
+     "away_implied": 22.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -112,
+     "total": 41.0,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 18.8,
+     "away_implied": 22.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "New York Jets @ Miami Dolphins",
+   "home_team": "Miami Dolphins",
+   "away_team": "New York Jets",
+   "commence_time": "2026-11-29T18:00:00Z",
+   "game_date": "2026-11-29"
+  },
+  "bc430b48c0f9421d2d01acc16f09753d": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -7.0,
+     "away_spread": 7.0,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 42.5,
+     "over_odds": -104,
+     "under_odds": -115,
+     "home_implied": 24.8,
+     "away_implied": 17.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 42.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 24.5,
+     "away_implied": 18.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -7.0,
+     "away_spread": 7.0,
+     "home_spread_odds": -102,
+     "away_spread_odds": -115,
+     "total": 42.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 24.8,
+     "away_implied": 17.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -3.5,
+     "away_spread": 3.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 43.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 23.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -7.0,
+     "away_spread": 7.0,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 42.5,
+     "over_odds": -104,
+     "under_odds": -115,
+     "home_implied": 24.8,
+     "away_implied": 17.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -6.5,
+     "away_spread": 6.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 42.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 24.5,
+     "away_implied": 18.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -7.0,
+     "away_spread": 7.0,
+     "home_spread_odds": -102,
+     "away_spread_odds": -115,
+     "total": 42.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 24.8,
+     "away_implied": 17.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -3.5,
+     "away_spread": 3.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 43.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 23.5,
+     "away_implied": 20.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Atlanta Falcons @ Minnesota Vikings",
+   "home_team": "Minnesota Vikings",
+   "away_team": "Atlanta Falcons",
+   "commence_time": "2026-11-29T18:01:00Z",
+   "game_date": "2026-11-29"
+  },
+  "262d4bd2eb36f2ae78f313b415067418": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -120,
+     "away_spread_odds": 100,
+     "total": 46.5,
+     "over_odds": -107,
+     "under_odds": -112,
+     "home_implied": 24.8,
+     "away_implied": 21.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 45.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 24.2,
+     "away_implied": 21.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -118,
+     "away_spread_odds": -102,
+     "total": 45.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 24.2,
+     "away_implied": 21.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -3.5,
+     "away_spread": 3.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -132,
+     "total": 45.5,
+     "over_odds": -113,
+     "under_odds": -106,
+     "home_implied": 24.5,
+     "away_implied": 21.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -120,
+     "away_spread_odds": 100,
+     "total": 46.5,
+     "over_odds": -107,
+     "under_odds": -112,
+     "home_implied": 24.8,
+     "away_implied": 21.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 45.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 24.2,
+     "away_implied": 21.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -118,
+     "away_spread_odds": -102,
+     "total": 45.5,
+     "over_odds": -108,
+     "under_odds": -110,
+     "home_implied": 24.2,
+     "away_implied": 21.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -3.5,
+     "away_spread": 3.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -132,
+     "total": 45.5,
+     "over_odds": -113,
+     "under_odds": -106,
+     "home_implied": 24.5,
+     "away_implied": 21.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Seattle Seahawks @ San Francisco 49ers",
+   "home_team": "San Francisco 49ers",
+   "away_team": "Seattle Seahawks",
+   "commence_time": "2026-11-29T21:25:00Z",
+   "game_date": "2026-11-29"
+  },
+  "e597e091561bcddff13b9fe2929bd3a7": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -114,
+     "total": 41.5,
+     "over_odds": -103,
+     "under_odds": -117,
+     "home_implied": 23.0,
+     "away_implied": 18.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 41.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 23.0,
+     "away_implied": 18.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -108,
+     "total": 41.0,
+     "over_odds": -112,
+     "under_odds": -105,
+     "home_implied": 22.8,
+     "away_implied": 18.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -106,
+     "away_spread_odds": -113,
+     "total": 41.0,
+     "over_odds": -107,
+     "under_odds": -113,
+     "home_implied": 22.8,
+     "away_implied": 18.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -114,
+     "total": 41.5,
+     "over_odds": -103,
+     "under_odds": -117,
+     "home_implied": 23.0,
+     "away_implied": 18.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 41.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 23.0,
+     "away_implied": 18.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -108,
+     "total": 41.0,
+     "over_odds": -112,
+     "under_odds": -105,
+     "home_implied": 22.8,
+     "away_implied": 18.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -106,
+     "away_spread_odds": -113,
+     "total": 41.0,
+     "over_odds": -107,
+     "under_odds": -113,
+     "home_implied": 22.8,
+     "away_implied": 18.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Las Vegas Raiders @ Cleveland Browns",
+   "home_team": "Cleveland Browns",
+   "away_team": "Las Vegas Raiders",
+   "commence_time": "2026-11-30T01:20:00Z",
+   "game_date": "2026-11-29"
+  },
+  "47005d9657d55dd846cca14e2e9232da": {
+   "opening": {
+    "draftkings": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 43.5,
+     "over_odds": -110,
+     "under_odds": -109,
+     "home_implied": 23.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 43.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 23.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -102,
+     "away_spread_odds": -118,
+     "total": 43.5,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 23.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -130,
+     "away_spread_odds": -106,
+     "total": 43.5,
+     "over_odds": -113,
+     "under_odds": -106,
+     "home_implied": 23.0,
+     "away_implied": 20.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "draftkings": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 43.5,
+     "over_odds": -110,
+     "under_odds": -109,
+     "home_implied": 23.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "fanduel": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": 100,
+     "away_spread_odds": -120,
+     "total": 43.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 23.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "betmgm": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -102,
+     "away_spread_odds": -118,
+     "total": 43.5,
+     "over_odds": -110,
+     "under_odds": -108,
+     "home_implied": 23.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -130,
+     "away_spread_odds": -106,
+     "total": 43.5,
+     "over_odds": -113,
+     "under_odds": -106,
+     "home_implied": 23.0,
+     "away_implied": 20.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Carolina Panthers @ Tampa Bay Buccaneers",
+   "home_team": "Tampa Bay Buccaneers",
+   "away_team": "Carolina Panthers",
+   "commence_time": "2026-12-01T01:15:00Z",
+   "game_date": "2026-11-30"
+  },
+  "e5e87064559592b2849f9dfe59e00522": {
+   "opening": {
+    "fanduel": {
+     "home_spread": -1.5,
+     "away_spread": 1.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 45.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 23.5,
+     "away_implied": 22.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -5.0,
+     "away_spread": 5.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 47.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 26.2,
+     "away_implied": 21.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": -1.5,
+     "away_spread": 1.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 45.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 23.5,
+     "away_implied": 22.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -5.0,
+     "away_spread": 5.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 47.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 26.2,
+     "away_implied": 21.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Kansas City Chiefs @ Los Angeles Rams",
+   "home_team": "Los Angeles Rams",
+   "away_team": "Kansas City Chiefs",
+   "commence_time": "2026-12-04T01:16:00Z",
+   "game_date": "2026-12-03"
+  },
+  "8e3031556fb6972eeebe1e9044e1e196": {
+   "opening": {
+    "fanduel": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 36.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 17.0,
+     "away_implied": 19.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 43.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 18.0,
+     "away_implied": 25.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": 2.5,
+     "away_spread": -2.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 36.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 17.0,
+     "away_implied": 19.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 7.5,
+     "away_spread": -7.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 43.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 18.0,
+     "away_implied": 25.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Philadelphia Eagles @ Arizona Cardinals",
+   "home_team": "Arizona Cardinals",
+   "away_team": "Philadelphia Eagles",
+   "commence_time": "2026-12-06T21:06:00Z",
+   "game_date": "2026-12-06"
+  },
+  "7eccf5f2c10288c7c8e9d3a3a9bdd45e": {
+   "opening": {
+    "fanduel": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 49.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 23.0,
+     "away_implied": 26.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 3.0,
+     "away_spread": -3.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 46.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 21.8,
+     "away_implied": 24.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 49.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 23.0,
+     "away_implied": 26.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 3.0,
+     "away_spread": -3.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 46.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 21.8,
+     "away_implied": 24.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Detroit Lions @ Atlanta Falcons",
+   "home_team": "Atlanta Falcons",
+   "away_team": "Detroit Lions",
+   "commence_time": "2026-12-06T18:01:00Z",
+   "game_date": "2026-12-06"
+  },
+  "58dd719a354d53728fa850696f6dc9aa": {
+   "opening": {
+    "fanduel": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -112,
+     "total": 50.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 26.5,
+     "away_implied": 24.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -110,
+     "away_spread_odds": -120,
+     "total": 48.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 25.8,
+     "away_implied": 22.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": -2.5,
+     "away_spread": 2.5,
+     "home_spread_odds": -108,
+     "away_spread_odds": -112,
+     "total": 50.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 26.5,
+     "away_implied": 24.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -3.0,
+     "away_spread": 3.0,
+     "home_spread_odds": -110,
+     "away_spread_odds": -120,
+     "total": 48.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 25.8,
+     "away_implied": 22.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Jacksonville Jaguars @ Chicago Bears",
+   "home_team": "Chicago Bears",
+   "away_team": "Jacksonville Jaguars",
+   "commence_time": "2026-12-06T18:01:00Z",
+   "game_date": "2026-12-06"
+  },
+  "2bde5eed954eb116ef892e57f31309b2": {
+   "opening": {
+    "fanduel": {
+     "home_spread": 5.5,
+     "away_spread": -5.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 48.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 21.5,
+     "away_implied": 27.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 4.0,
+     "away_spread": -4.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 43.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 19.8,
+     "away_implied": 23.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": 5.5,
+     "away_spread": -5.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 48.5,
+     "over_odds": -105,
+     "under_odds": -115,
+     "home_implied": 21.5,
+     "away_implied": 27.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 4.0,
+     "away_spread": -4.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 43.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 19.8,
+     "away_implied": 23.8,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Cincinnati Bengals @ Cleveland Browns",
+   "home_team": "Cleveland Browns",
+   "away_team": "Cincinnati Bengals",
+   "commence_time": "2026-12-06T18:01:00Z",
+   "game_date": "2026-12-06"
+  },
+  "97211470b20b3342a3f72e0cdf5a68e6": {
+   "opening": {
+    "fanduel": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 38.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 26.5,
+     "away_implied": 12.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -9.5,
+     "away_spread": 9.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 41.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 25.5,
+     "away_implied": 16.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": -14.5,
+     "away_spread": 14.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 38.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 26.5,
+     "away_implied": 12.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -9.5,
+     "away_spread": 9.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 41.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 25.5,
+     "away_implied": 16.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Miami Dolphins @ Denver Broncos",
+   "home_team": "Denver Broncos",
+   "away_team": "Miami Dolphins",
+   "commence_time": "2026-12-06T21:06:00Z",
+   "game_date": "2026-12-06"
+  },
+  "acd5d3adb5940920a9528cd9653eda7f": {
+   "opening": {
+    "fanduel": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 42.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 23.5,
+     "away_implied": 19.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -3.5,
+     "away_spread": 3.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 41.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 22.5,
+     "away_implied": 19.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 42.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 23.5,
+     "away_implied": 19.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -3.5,
+     "away_spread": 3.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 41.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 22.5,
+     "away_implied": 19.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Carolina Panthers @ Minnesota Vikings",
+   "home_team": "Minnesota Vikings",
+   "away_team": "Carolina Panthers",
+   "commence_time": "2026-12-06T21:26:00Z",
+   "game_date": "2026-12-06"
+  },
+  "eaab0390ce88e78e4488f06677ffb009": {
+   "opening": {
+    "fanduel": {
+     "home_spread": 13.5,
+     "away_spread": -13.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 44.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 15.5,
+     "away_implied": 29.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 1.0,
+     "away_spread": -1.0,
+     "home_spread_odds": -110,
+     "away_spread_odds": -120,
+     "total": 49.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 24.2,
+     "away_implied": 25.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": 13.5,
+     "away_spread": -13.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 44.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 15.5,
+     "away_implied": 29.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 1.0,
+     "away_spread": -1.0,
+     "home_spread_odds": -110,
+     "away_spread_odds": -120,
+     "total": 49.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 24.2,
+     "away_implied": 25.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Buffalo Bills @ New England Patriots",
+   "home_team": "New England Patriots",
+   "away_team": "Buffalo Bills",
+   "commence_time": "2026-12-06T21:26:00Z",
+   "game_date": "2026-12-06"
+  },
+  "328669064bca71c4155550bd02ac88ec": {
+   "opening": {
+    "fanduel": {
+     "home_spread": 5.5,
+     "away_spread": -5.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 45.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 20.0,
+     "away_implied": 25.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 4.0,
+     "away_spread": -4.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 44.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 20.2,
+     "away_implied": 24.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": 5.5,
+     "away_spread": -5.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -105,
+     "total": 45.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 20.0,
+     "away_implied": 25.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 4.0,
+     "away_spread": -4.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 44.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 20.2,
+     "away_implied": 24.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Green Bay Packers @ New Orleans Saints",
+   "home_team": "New Orleans Saints",
+   "away_team": "Green Bay Packers",
+   "commence_time": "2026-12-06T18:01:00Z",
+   "game_date": "2026-12-06"
+  },
+  "e04d858c49a760ed8f59bf8a0c13a385": {
+   "opening": {
+    "fanduel": {
+     "home_spread": 5.5,
+     "away_spread": -5.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 47.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 21.0,
+     "away_implied": 26.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 3.0,
+     "away_spread": -3.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 48.0,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 22.5,
+     "away_implied": 25.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": 5.5,
+     "away_spread": -5.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 47.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 21.0,
+     "away_implied": 26.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 3.0,
+     "away_spread": -3.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 48.0,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 22.5,
+     "away_implied": 25.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "San Francisco 49ers @ New York Giants",
+   "home_team": "New York Giants",
+   "away_team": "San Francisco 49ers",
+   "commence_time": "2026-12-06T18:01:00Z",
+   "game_date": "2026-12-06"
+  },
+  "ffbae5bf2870648907e531a415e1868a": {
+   "opening": {
+    "fanduel": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 40.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 22.5,
+     "away_implied": 18.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 1.5,
+     "away_spread": -1.5,
+     "home_spread_odds": -120,
+     "away_spread_odds": -110,
+     "total": 46.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 22.5,
+     "away_implied": 24.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 40.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 22.5,
+     "away_implied": 18.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 1.5,
+     "away_spread": -1.5,
+     "home_spread_odds": -120,
+     "away_spread_odds": -110,
+     "total": 46.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 22.5,
+     "away_implied": 24.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Los Angeles Chargers @ Tampa Bay Buccaneers",
+   "home_team": "Tampa Bay Buccaneers",
+   "away_team": "Los Angeles Chargers",
+   "commence_time": "2026-12-06T18:01:00Z",
+   "game_date": "2026-12-06"
+  },
+  "0730448281149cde9264855cec1f96ef": {
+   "opening": {
+    "fanduel": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 46.5,
+     "over_odds": -120,
+     "under_odds": 100,
+     "home_implied": 21.5,
+     "away_implied": 25.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 1.5,
+     "away_spread": -1.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 45.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 22.0,
+     "away_implied": 23.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": 3.5,
+     "away_spread": -3.5,
+     "home_spread_odds": -105,
+     "away_spread_odds": -115,
+     "total": 46.5,
+     "over_odds": -120,
+     "under_odds": 100,
+     "home_implied": 21.5,
+     "away_implied": 25.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 1.5,
+     "away_spread": -1.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 45.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 22.0,
+     "away_implied": 23.5,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Washington Commanders @ Tennessee Titans",
+   "home_team": "Tennessee Titans",
+   "away_team": "Washington Commanders",
+   "commence_time": "2026-12-06T18:01:00Z",
+   "game_date": "2026-12-06"
+  },
+  "20651086720585d058276e2bd05e29d7": {
+   "opening": {
+    "fanduel": {
+     "home_spread": 1.5,
+     "away_spread": -1.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 44.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 21.5,
+     "away_implied": 23.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 1.0,
+     "away_spread": -1.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 39.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 19.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": 1.5,
+     "away_spread": -1.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 44.5,
+     "over_odds": -115,
+     "under_odds": -105,
+     "home_implied": 21.5,
+     "away_implied": 23.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": 1.0,
+     "away_spread": -1.0,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 39.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 19.2,
+     "away_implied": 20.2,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Houston Texans @ Pittsburgh Steelers",
+   "home_team": "Pittsburgh Steelers",
+   "away_team": "Houston Texans",
+   "commence_time": "2026-12-07T01:21:00Z",
+   "game_date": "2026-12-06"
+  },
+  "c15948a7858d278fd2c008a6084046fc": {
+   "opening": {
+    "fanduel": {
+     "home_spread": -5.5,
+     "away_spread": 5.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 51.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 28.5,
+     "away_implied": 23.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 48.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 26.5,
+     "away_implied": 22.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "latest": {
+    "fanduel": {
+     "home_spread": -5.5,
+     "away_spread": 5.5,
+     "home_spread_odds": -110,
+     "away_spread_odds": -110,
+     "total": 51.5,
+     "over_odds": -110,
+     "under_odds": -110,
+     "home_implied": 28.5,
+     "away_implied": 23.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    },
+    "caesars": {
+     "home_spread": -4.5,
+     "away_spread": 4.5,
+     "home_spread_odds": -115,
+     "away_spread_odds": -115,
+     "total": 48.5,
+     "over_odds": -115,
+     "under_odds": -115,
+     "home_implied": 26.5,
+     "away_implied": 22.0,
+     "captured_at": "2026-11-24T18:06:34+00:00"
+    }
+   },
+   "matchup": "Dallas Cowboys @ Seattle Seahawks",
+   "home_team": "Seattle Seahawks",
+   "away_team": "Dallas Cowboys",
+   "commence_time": "2026-12-08T01:16:00Z",
+   "game_date": "2026-12-07"
+  }
+ },
+ "updated_at": "2026-11-24T18:06:34+00:00"
+}
