@@ -1,7 +1,8 @@
 """NFL player-prop models — PAPER TRADING ONLY.
 
-This file holds model v1 and runs both v1 and v2 (nfl_model_v2.py) side by side:
-each locks and grades its own paper picks so the two can be compared.
+Only model v2 (nfl_model_v2.py) makes paper picks. This file still holds the
+v1 building blocks that v2 reuses (priors, shrinkage, distributions, grading),
+and v1's backtest is kept as a baseline in the logs.
 
 Model v1:
 
@@ -419,10 +420,9 @@ def main():
             market_p = fair_over(dk["over"], dk["under"])
 
         entry = {"status": status}
-        p1 = project(history, priors, season)
         p2 = data2.project(key, history, team, opp, live_order, season, T, S, out_keys,
                            data2.final.get(m, frozenset()))
-        for ver, proj, rat in ((MODEL_VERSION, p1, ratios), (v2.VERSION, p2, ratios2)):
+        for ver, proj, rat in ((v2.VERSION, p2, ratios2),):   # v1 retired from picks
             if not proj:
                 continue
             value = proj[m]
@@ -466,6 +466,10 @@ def main():
         print(f'Locked {ver} pick: {prop["player"]} {prop["market"]} {side} {prop["dk"]["line"]} '
               f'({odds:+d}, best {best_odds:+d}) edge {edge:.1%}')
 
+    # v1 is retired: drop its paper picks.
+    for pk in [k for k, p in picks["picks"].items() if p.get("model_version", MODEL_VERSION) != v2.VERSION]:
+        del picks["picks"][pk]
+
     # One pick per player per game per version on picks not yet started; keep the bigger edge.
     best_slot = {}
     for pk, p in list(picks["picks"].items()):
@@ -499,12 +503,12 @@ def main():
     all_picks = sorted(picks["picks"].values(), key=lambda p: (p["commence_time"], p["player"]))
     for p in all_picks:
         p.setdefault("model_version", MODEL_VERSION)
-    v1_picks = [p for p in all_picks if p["model_version"] == MODEL_VERSION]
+    v2_picks = [p for p in all_picks if p["model_version"] == v2.VERSION]
     payload = {
         "generated_at": now.isoformat(timespec="seconds"),
         "model_version": v2.VERSION,
-        "versions_order": [v2.VERSION, MODEL_VERSION],
-        "version_labels": {v2.VERSION: "Model v2", MODEL_VERSION: "Model v1"},
+        "versions_order": [v2.VERSION],
+        "version_labels": {v2.VERSION: "Model v2"},
         "rules": {"edge_min": EDGE_MIN, "edge_max": EDGE_MAX, "odds_min": ODDS_MIN, "odds_max": ODDS_MAX,
                   "max_picks_per_player": MAX_PICKS_PER_PLAYER, "top_per_game": TOP_PER_GAME},
         "backtest": bt,
@@ -512,8 +516,8 @@ def main():
         "injuries_updated": json.loads(INJURIES.read_text(encoding="utf-8")).get("updated_at") if INJURIES.exists() else None,
         "projections": projections,
         "records": version_records(all_picks),
-        "record": record(v1_picks),
-        "record_top": record([p for p in v1_picks if p.get("top")]),
+        "record": record(v2_picks),
+        "record_top": record([p for p in v2_picks if p.get("top")]),
         "paper_picks": all_picks[-800:],
     }
     OUTPUT.write_text(json.dumps(payload, separators=(",", ":")) + "\n", encoding="utf-8")
