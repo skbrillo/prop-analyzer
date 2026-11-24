@@ -48,8 +48,8 @@ tbody tr:hover{background:#1d3048}
 
 <div class="warn">Prices come from scheduled snapshots (Tue / Thu / Sat / Sun mornings and shortly before each kickoff), not live odds. Confirm the price at the book before betting.</div>
 
-<div class="head"><h2>NFL Model — Paper Trading Record</h2><span id="model-status" class="muted">Loading model...</span></div>
-<div class="controls"><select id="model-ver" aria-label="Model version"></select></div>
+<div class="head"><h2>NFL Model v2 — Paper Trading Record</h2><span id="model-status" class="muted">Loading model...</span></div>
+<div class="controls" style="display:none"><select id="model-ver" aria-label="Model version"></select></div>
 <div class="muted" style="margin-top:6px">All qualifying picks</div>
 <div class="cards" id="record"></div>
 <div class="muted">Top picks — the 2 biggest edges per game (what you would actually bet)</div>
@@ -210,12 +210,12 @@ function renderModel(){
  const b2=(model.backtest_v2||{}).markets||{};
  const nm={receptions:"Receptions",rec_yds:"Rec Yds",rush_yds:"Rush Yds",pass_yds:"Pass Yds",pass_tds:"Pass TD",anytime_td:"Anytime TD"};
  const comp={script:"game script",defense:"defense",injuries:"injuries",td_scaling:"TD scaling"};
- const v2parts=Object.entries(b2).map(([k,x])=>nm[k]+": v1 "+x.v1+" → v2 "+x.v2_final+(x.metric==="log_loss"?" (log loss)":"")+" ["+(x.kept.length?x.kept.map(c=>comp[c]).join(", "):"base only")+"]");
+ const v2parts=Object.entries(b2).map(([k,x])=>nm[k]+": "+x.v2_final+(x.metric==="log_loss"?" log loss":" avg error")+" ["+(x.kept.length?x.kept.map(c=>comp[c]).join(", "):"base model")+"]");
  const bt=model.backtest||{},parts=[];
  const names={receptions:"Receptions",rec_yds:"Rec Yds",rush_yds:"Rush Yds",pass_yds:"Pass Yds"};
  for(const [k,lab] of Object.entries(names)){const b=bt[k];if(b)parts.push(lab+": model error "+b.mae_model+" vs simple average "+b.mae_simple_average+" ("+b.games+" games)");}
  if(bt.anytime_td)parts.push("Anytime TD: predicted "+(100*bt.anytime_td.avg_predicted).toFixed(1)+"% vs actual "+(100*bt.anytime_td.actual_rate).toFixed(1)+"%");
- $("backtest").textContent=(v2parts.length?"v1 vs v2 backtest error on "+((model.backtest_v2||{}).test_season||"")+" games (lower is better; brackets = adjustments v2 kept because they helped): "+v2parts.join(" | ")+". ":"")+(parts.length?"v1 vs a simple average — "+parts.join(" | ")+".":"");
+ $("backtest").textContent=v2parts.length?"Backtest on "+((model.backtest_v2||{}).test_season||"")+" games, each projected only from earlier games (brackets = adjustments kept because they lowered error): "+v2parts.join(" | ")+".":"";
  $("model-status").textContent=verLabel(ver)+" | updated "+new Date(model.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT";
 }
 
