@@ -31,8 +31,12 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Download NFL box scores
+      - name: Download NFL box scores and pregame lines
         run: python update_nfl_stats.py
+
+      - name: Refresh NFL injury report
+        continue-on-error: true
+        run: python update_nfl_stats.py --injuries
 
       - name: Grade and re-project
         continue-on-error: true
@@ -44,7 +48,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          for path in data/nfl_game_logs.csv docs/nfl_board.json docs/nfl_model.json docs/nfl_paper_picks.json; do
+          for path in data/nfl_game_logs.csv data/nfl_game_context.csv data/nfl_injuries.json docs/nfl_board.json docs/nfl_model.json docs/nfl_paper_picks.json; do
             if [ -e "$path" ]; then git add "$path"; fi
           done
           if git diff --cached --quiet; then
