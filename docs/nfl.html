@@ -32,6 +32,12 @@ tbody tr:hover{background:#1d3048}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:10px 0}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:10px;font-size:11px;color:var(--muted)}
 .stat b{display:block;color:var(--text);font-size:21px;margin-top:4px}
+.gamecards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:9px;margin-top:10px}
+.gcard{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:10px}
+.gcard h3{margin:0 0 2px;font-size:14px}.gcard .when{color:var(--muted);font-size:11px;margin-bottom:6px}
+.gmetric{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #2b3a50;padding:6px 0;font-size:12px}
+.gmetric span{color:var(--muted)}.gmetric strong{text-align:right}
+.gother{color:var(--muted);font-size:10px;margin-top:4px;line-height:1.5}
 .gamehead td{background:var(--card);font-weight:700;color:var(--text);border-top:2px solid var(--border)}
 </style>
 </head>
@@ -55,6 +61,10 @@ tbody tr:hover{background:#1d3048}
 <div class="head"><h2>DraftKings vs the Market — Does DK Move Toward the Other Books?</h2></div>
 <div class="cards" id="study"></div>
 <div class="note" id="study-note">Builds up as opening and closing snapshots accumulate.</div>
+
+<div class="head"><h2>NFL Game Lines</h2><span id="lines-status" class="muted"></span></div>
+<div class="muted">DraftKings spread, total and implied team points. Arrows show movement since the first line we saved. Other books listed underneath.</div>
+<div id="gamelines" class="gamecards"></div>
 
 <div class="head"><h2>Line Shopping Board</h2><span id="status" class="muted">Loading...</span></div>
 <div class="controls">
@@ -91,6 +101,36 @@ const fmtLine=v=>{const n=Number(v);return Number.isFinite(n)?String(n):"--";};
 function kickoff(v){const d=new Date(v);if(isNaN(d))return String(v);
  return new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"2-digit"}).format(d)+" ET";}
 
+const TEAM_ABBR={"Arizona Cardinals":"ARI","Atlanta Falcons":"ATL","Baltimore Ravens":"BAL","Buffalo Bills":"BUF","Carolina Panthers":"CAR","Chicago Bears":"CHI","Cincinnati Bengals":"CIN","Cleveland Browns":"CLE","Dallas Cowboys":"DAL","Denver Broncos":"DEN","Detroit Lions":"DET","Green Bay Packers":"GB","Houston Texans":"HOU","Indianapolis Colts":"IND","Jacksonville Jaguars":"JAX","Kansas City Chiefs":"KC","Las Vegas Raiders":"LV","Los Angeles Chargers":"LAC","Los Angeles Rams":"LAR","Miami Dolphins":"MIA","Minnesota Vikings":"MIN","New England Patriots":"NE","New Orleans Saints":"NO","New York Giants":"NYG","New York Jets":"NYJ","Philadelphia Eagles":"PHI","Pittsburgh Steelers":"PIT","San Francisco 49ers":"SF","Seattle Seahawks":"SEA","Tampa Bay Buccaneers":"TB","Tennessee Titans":"TEN","Washington Commanders":"WAS"};
+const abbr=t=>TEAM_ABBR[t]||t||"--";
+const spreadText=v=>v==null?"--":v===0?"PK":(v>0?"+":"")+v;
+function moveText(open,now){
+ if(open==null||now==null||open===now)return "";
+ return " ("+(now>open?"↑":"↓")+" from "+spreadText(open)+")";
+}
+function renderLines(){
+ const grid=$("gamelines");grid.replaceChildren();
+ const games=(board.games||[]).filter(g=>g.lines&&Object.keys(g.lines).length);
+ for(const g of games){
+  const dk=g.lines.draftkings||Object.values(g.lines)[0],src=g.lines.draftkings?"DK":label(Object.keys(g.lines)[0]);
+  const op=(g.opening||{}).draftkings||{};
+  const card=add(grid,"div","","gcard");
+  add(card,"h3",abbr(g.away_team)+" @ "+abbr(g.home_team));
+  add(card,"div",kickoff(g.commence_time)+" | "+src,"when");
+  const row=(k,v,cls="")=>{const r=add(card,"div","","gmetric");add(r,"span",k);add(r,"strong",v,cls);};
+  const fav=dk.home_spread!=null&&dk.home_spread<0?"home":dk.away_spread!=null&&dk.away_spread<0?"away":null;
+  row(abbr(g.away_team)+" spread",spreadText(dk.away_spread)+(dk.away_spread_odds!=null?" ("+signed(dk.away_spread_odds)+")":"")+moveText(op.away_spread,dk.away_spread),fav==="away"?"green":"");
+  row(abbr(g.home_team)+" spread",spreadText(dk.home_spread)+(dk.home_spread_odds!=null?" ("+signed(dk.home_spread_odds)+")":"")+moveText(op.home_spread,dk.home_spread),fav==="home"?"green":"");
+  row("Total",(dk.total??"--")+(dk.over_odds!=null?"  O "+signed(dk.over_odds)+" / U "+signed(dk.under_odds):"")+moveText(op.total,dk.total),"yellow");
+  row(abbr(g.away_team)+" implied",dk.away_implied??"--");
+  row(abbr(g.home_team)+" implied",dk.home_implied??"--");
+  const others=Object.entries(g.lines).filter(([b])=>b!=="draftkings").map(([b,l])=>label(b)+": "+abbr(g.home_team)+" "+spreadText(l.home_spread)+", total "+(l.total??"--"));
+  if(others.length)add(card,"div",others.join(" | "),"gother");
+ }
+ if(!games.length)add(grid,"div","No NFL game lines saved yet. They're pulled with the Tue / Thu / Sat / Sun morning board.","muted");
+ const stamps=games.flatMap(g=>Object.values(g.lines).map(l=>l.captured_at)).filter(Boolean).sort();
+ $("lines-status").textContent=games.length+" games"+(stamps.length?" | Latest: "+new Date(stamps[stamps.length-1]).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT":"");
+}
 function renderStudy(){
  const box=$("study");box.replaceChildren();
  const s=board.movement_study||{},a=s.all||{n:0};
@@ -222,7 +262,7 @@ async function load(){
   const g=$("game");for(const x of board.games||[]){const o=add(g,"option",x.matchup+" — "+kickoff(x.commence_time));o.value=x.event_id;}
   const m=$("market");for(const x of board.markets||[]){const o=add(m,"option",x.label);o.value=x.key;}
   try{const mr=await fetch("./nfl_model.json?t="+Date.now(),{cache:"no-store"});if(mr.ok){model=await mr.json();renderModel();}else $("model-status").textContent="Model output not available yet.";}catch(e){$("model-status").textContent="Model output not available yet.";}
-  renderStudy();render();
+  renderLines();renderStudy();render();
  }catch(e){
   $("status").textContent="NFL lines not available yet ("+e.message+"). The first board appears after the next scheduled NFL pull.";
  }
