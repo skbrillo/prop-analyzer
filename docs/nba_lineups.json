@@ -1,172 +1,7 @@
 {
-  "generated_at": "2026-11-24T10:40:42.343524+00:00",
+  "generated_at": "2026-11-24T11:40:31.671286+00:00",
   "source": "RotoWire",
   "games": {
-    "401910030": {
-      "game_id": "401910030",
-      "game": "Oklahoma City Thunder at Miami Heat",
-      "tipoff": "2026-11-22T23:00:00+00:00",
-      "home": "MIA",
-      "away": "OKC",
-      "checked_at": "2026-11-23T05:55:14.416799+00:00",
-      "minutes_before_tipoff": -415.2,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Davion Mitchell",
-          "team": "MIA"
-        },
-        {
-          "name": "Klay Thompson",
-          "team": "MIA"
-        },
-        {
-          "name": "Pelle Larsson",
-          "team": "MIA"
-        },
-        {
-          "name": "Bobby Portis",
-          "team": "MIA"
-        },
-        {
-          "name": "Bam Adebayo",
-          "team": "MIA"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Ajay Mitchell",
-          "team": "OKC"
-        },
-        {
-          "name": "Jared McCain",
-          "team": "OKC"
-        },
-        {
-          "name": "Micah Peavy",
-          "team": "OKC"
-        },
-        {
-          "name": "Kenrich Williams",
-          "team": "OKC"
-        },
-        {
-          "name": "Isaiah Hartenstein",
-          "team": "OKC"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Giannis Antetokounmpo",
-          "team": "MIA",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Alex Caruso",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Shai Gilgeous-Alexander",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Chet Holmgren",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Aday Mara",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Thomas Sorber",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Nikola Topic",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Cason Wallace",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Williams",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jaylin Williams",
-          "team": "OKC",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Giannis Antetokounmpo",
-          "team": "MIA",
-          "status": "out"
-        },
-        {
-          "name": "Alex Caruso",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Shai Gilgeous-Alexander",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Chet Holmgren",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Aday Mara",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Thomas Sorber",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Nikola Topic",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Cason Wallace",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Williams",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jaylin Williams",
-          "team": "OKC",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401910031": {
       "game_id": "401910031",
       "game": "Orlando Magic at Washington Wizards",
@@ -1915,8 +1750,8 @@
       "tipoff": "2026-11-25T00:00:00+00:00",
       "home": "ORL",
       "away": "DET",
-      "checked_at": "2026-11-24T10:40:42.343524+00:00",
-      "minutes_before_tipoff": 799.3,
+      "checked_at": "2026-11-24T11:40:31.671286+00:00",
+      "minutes_before_tipoff": 739.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2060,8 +1895,8 @@
       "tipoff": "2026-11-25T01:00:00+00:00",
       "home": "WAS",
       "away": "BOS",
-      "checked_at": "2026-11-24T10:40:42.343524+00:00",
-      "minutes_before_tipoff": 859.3,
+      "checked_at": "2026-11-24T11:40:31.671286+00:00",
+      "minutes_before_tipoff": 799.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2175,8 +2010,8 @@
       "tipoff": "2026-11-25T03:00:00+00:00",
       "home": "DEN",
       "away": "DAL",
-      "checked_at": "2026-11-24T10:40:42.343524+00:00",
-      "minutes_before_tipoff": 979.3,
+      "checked_at": "2026-11-24T11:40:31.671286+00:00",
+      "minutes_before_tipoff": 919.5,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
