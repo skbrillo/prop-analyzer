@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T01:36:23.537029+00:00",
+  "generated_at": "2026-11-24T02:39:38.695582+00:00",
   "source": "RotoWire",
   "games": {
     "401910029": {
@@ -963,8 +963,8 @@
       "tipoff": "2026-11-24T00:00:00+00:00",
       "home": "CHA",
       "away": "MEM",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": -96.4,
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": -159.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1108,8 +1108,8 @@
       "tipoff": "2026-11-24T00:00:00+00:00",
       "home": "PHI",
       "away": "POR",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": -96.4,
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": -159.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1223,8 +1223,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "IND",
       "away": "OKC",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": -66.4,
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": -129.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1418,8 +1418,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "TOR",
       "away": "MIL",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": -66.4,
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": -129.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1502,8 +1502,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "MIN",
       "away": "BKN",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": -66.4,
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": -129.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1607,8 +1607,8 @@
       "tipoff": "2026-11-24T01:00:00+00:00",
       "home": "CHI",
       "away": "CLE",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": -36.4,
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": -99.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1712,8 +1712,8 @@
       "tipoff": "2026-11-24T01:00:00+00:00",
       "home": "NOP",
       "away": "PHX",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": -36.4,
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": -99.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1817,8 +1817,8 @@
       "tipoff": "2026-11-24T01:30:00+00:00",
       "home": "HOU",
       "away": "LAC",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": -6.4,
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": -69.6,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1901,14 +1901,12 @@
       "tipoff": "2026-11-24T03:00:00+00:00",
       "home": "LAL",
       "away": "UTA",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": 83.6,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": 20.4,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Luka Doncic",
           "team": "LAL"
@@ -1922,7 +1920,7 @@
           "team": "LAL"
         },
         {
-          "name": "Ziaire Williams",
+          "name": "Jake LaRavia",
           "team": "LAL"
         },
         {
@@ -1930,7 +1928,7 @@
           "team": "LAL"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Keyonte George",
           "team": "UTA"
@@ -1952,6 +1950,8 @@
           "team": "UTA"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Austin Reaves",
@@ -2016,14 +2016,12 @@
       "tipoff": "2026-11-24T03:00:00+00:00",
       "home": "SAC",
       "away": "SAS",
-      "checked_at": "2026-11-24T01:36:23.537029+00:00",
-      "minutes_before_tipoff": 83.6,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-24T02:39:38.695582+00:00",
+      "minutes_before_tipoff": 20.4,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Darius Acuff",
           "team": "SAC"
@@ -2045,17 +2043,9 @@
           "team": "SAC"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Stephon Castle",
-          "team": "SAS"
-        },
-        {
-          "name": "Julian Champagnie",
-          "team": "SAS"
-        },
-        {
-          "name": "Keldon Johnson",
           "team": "SAS"
         },
         {
@@ -2063,10 +2053,20 @@
           "team": "SAS"
         },
         {
+          "name": "Julian Champagnie",
+          "team": "SAS"
+        },
+        {
+          "name": "Harrison Barnes",
+          "team": "SAS"
+        },
+        {
           "name": "Luke Kornet",
           "team": "SAS"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Maxime Raynaud",
