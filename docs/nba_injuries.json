@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T01:56:02.463554+00:00",
+  "generated_at": "2026-11-24T02:45:01.065165+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 90,
+  "player_count": 92,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 90,
+  "players_with_team": 92,
   "players_without_team": 0,
   "status_counts": {
     "O": 85,
-    "T": 5
+    "T": 7
   },
   "players": [
     {
@@ -116,6 +116,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-23T15:22Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540731",
+      "name": "Ryan Kalkbrenner",
+      "team": "CHA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hip | day-to-day",
+      "date": "2026-11-24T02:14Z",
       "team_match": "feed"
     },
     {
@@ -369,6 +380,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-10-16T16:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540730",
+      "name": "Larry Nance Jr.",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Ankle | day-to-day",
+      "date": "2026-11-24T02:00Z",
       "team_match": "feed"
     },
     {
