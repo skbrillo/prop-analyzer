@@ -55,6 +55,16 @@ def read_rows(now):
     return rows
 
 
+def week_cutoff(now):
+    """End of the current NFL week: the next Tuesday 12:00 UTC (6 AM Central),
+    after Monday night's game. Games after this belong to next week."""
+    days = (1 - now.weekday()) % 7          # Tuesday = 1
+    cutoff = (now + timedelta(days=days)).replace(hour=12, minute=0, second=0, microsecond=0)
+    if cutoff <= now:
+        cutoff += timedelta(days=7)
+    return cutoff
+
+
 def decimal(american):
     a = float(american)
     return 1 + a / 100 if a > 0 else 1 + 100 / abs(a)
@@ -68,13 +78,14 @@ def line_gap_flag(market, diff):
 
 def build(now=None):
     now = now or datetime.now(timezone.utc)
+    cutoff = week_cutoff(now)
     rows = read_rows(now)
 
     # Latest capture per (event, player, market, book), upcoming games only.
     latest = {}
     for r in rows:
         tip, cap = parse_time(r["commence_time"]), parse_time(r["captured_at"])
-        if not tip or not cap or tip <= now or now - cap > timedelta(hours=MAX_AGE_HOURS):
+        if not tip or not cap or tip <= now or tip >= cutoff or now - cap > timedelta(hours=MAX_AGE_HOURS):
             continue
         key = (r["event_id"], player_key(r["player"]), r["market"], r["book"])
         cur = latest.get(key)
@@ -162,8 +173,8 @@ def build(now=None):
         saved_lines = {}
     for event, g in saved_lines.items():
         tip = parse_time(g.get("commence_time"))
-        if not tip or tip <= now:
-            continue
+        if not tip or tip <= now or tip >= cutoff:
+            continue   # finished, or next week's game
         game = games.setdefault(event, {"event_id": event, "matchup": g.get("matchup"),
                                         "commence_time": g.get("commence_time")})
         game.update({"home_team": g.get("home_team"), "away_team": g.get("away_team"),
@@ -171,6 +182,7 @@ def build(now=None):
 
     payload = {
         "generated_at": now.isoformat(timespec="seconds"),
+        "week_ends": cutoff.isoformat(timespec="seconds"),
         "books": sorted(books_seen, key=lambda b: (b != DK, b)),
         "book_labels": {b: BOOK_LABELS.get(b, b[:4].upper()) for b in books_seen},
         "captured_at": newest,
