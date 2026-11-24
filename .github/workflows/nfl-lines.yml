@@ -1,0 +1,86 @@
+name: NFL Prop Lines
+
+# Board pulls: Tue / Thu / Sat 10 AM and Sun 9 AM Central (3 credits each).
+# Closing check: every 10 minutes 10 AM - 11 PM Central. Free unless a game
+# kicks off within 30 minutes (max 4 paid pulls per day).
+
+on:
+  schedule:
+    - cron: "0 16 * * 2,4,6"
+    - cron: "0 15 * * 0"
+    - cron: "*/10 16-23,0-4 * * *"
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: "Snapshot mode"
+        required: true
+        type: choice
+        default: board
+        options:
+          - board
+          - closing
+
+permissions:
+  contents: write
+
+concurrency:
+  group: nfl-prop-lines
+  cancel-in-progress: false
+
+jobs:
+  capture:
+    runs-on: ubuntu-latest
+    env:
+      TZ: America/Chicago
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Choose mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "mode=${{ inputs.mode }}" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event.schedule }}" = "*/10 16-23,0-4 * * *" ]; then
+            echo "mode=closing" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=board" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Capture NFL props
+        env:
+          PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
+        run: python nfl_snapshot.py --${{ steps.mode.outputs.mode }}
+
+      - name: Build NFL board
+        continue-on-error: true
+        run: |
+          # Only rebuild when this run saved new prices.
+          if [ -n "$(git status --porcelain data/nfl_snapshots)" ]; then
+            python build_nfl_board.py
+          else
+            echo "No new NFL snapshot; board unchanged."
+          fi
+
+      - name: Save
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/nfl_snapshots/ || true
+          if [ -e docs/nfl_board.json ]; then git add docs/nfl_board.json; fi
+          if git diff --cached --quiet; then
+            echo "Nothing new to save."
+            exit 0
+          fi
+          git commit -m "Capture NFL prop lines"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin main && exit 0
+            sleep $((attempt * 10))
+          done
+          echo "::error::Could not push NFL snapshots after 3 attempts"
+          exit 1

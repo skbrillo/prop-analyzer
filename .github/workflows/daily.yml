@@ -111,6 +111,8 @@ jobs:
         env:
           PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
           MARKET_BOOKS: ${{ vars.MARKET_BOOKS }}
+          # Game lines only on the 4 PM and manual runs (saves credits).
+          FETCH_GAME_LINES: ${{ (steps.schedule.outputs.run_type == 'afternoon' || steps.schedule.outputs.run_type == 'manual') && '1' || '0' }}
         run: python update_odds.py
       - name: Build line-shopping board
         if: steps.schedule.outputs.run_predictions == 'true'
