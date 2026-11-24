@@ -42,6 +42,17 @@ API_BASE = "https://parlay-api.com/v1"
 SPORT = "basketball_nba"
 BOOKMAKER = "draftkings"
 
+# Other books are requested in the same props call (same credit cost) and saved
+# to data/market_snapshots for line shopping and closing-line value. The model
+# itself still uses DraftKings only. Override with the MARKET_BOOKS variable.
+SNAPSHOT_BOOKS = tuple(
+    b.strip().lower()
+    for b in (os.environ.get("MARKET_BOOKS") or "draftkings,fanduel,betmgm,caesars").split(",")
+    if b.strip()
+)
+if BOOKMAKER not in SNAPSHOT_BOOKS:
+    SNAPSHOT_BOOKS = (BOOKMAKER,) + SNAPSHOT_BOOKS
+
 EASTERN = ZoneInfo("America/New_York")
 
 PROP_MARKETS = (
@@ -821,6 +832,20 @@ def save_line_movement(rows):
     print("Line movement current entries (retained):", len(current))
     print("Line movement entries refreshed this run:", len(seen_this_run))
 
+def save_market_snapshot(all_props, slate):
+    """Save every book's lines for line shopping and CLV. Never fails the run."""
+    try:
+        import market_snapshot
+        rows, rejected = market_snapshot.to_rows(
+            all_props, slate, "model_run", datetime.now(timezone.utc)
+        )
+        if rows:
+            market_snapshot.append_rows(rows)
+        print("Market snapshot rows by book:", dict(Counter(r["book"] for r in rows)))
+    except Exception as exc:  # snapshot is optional; the model output is already saved
+        print("WARNING: market snapshot not saved:", exc)
+
+
 def main():
     api_key = os.environ.get(
         "PARLAY_API_KEY",
@@ -837,7 +862,8 @@ def main():
     print("NBA PROP ANALYZER — PARLAYAPI")
     print("=" * 55)
     print("Sport:", SPORT)
-    print("Bookmaker:", BOOKMAKER)
+    print("Bookmaker (model):", BOOKMAKER)
+    print("Books requested (snapshot):", ", ".join(SNAPSHOT_BOOKS))
     print(
         "Max credits per run:",
         MAX_CREDITS_PER_RUN,
@@ -991,6 +1017,7 @@ def main():
     offset = 0
     page_count = 0
     complete = False
+    request_books = ",".join(SNAPSHOT_BOOKS)
 
     while budget >= PROPS_REQUEST_COST:
         print(
@@ -1005,7 +1032,7 @@ def main():
                 "markets": ",".join(
                     PROP_MARKETS
                 ),
-                "bookmakers": BOOKMAKER,
+                "bookmakers": request_books,
                 "limit": PROPS_PAGE_LIMIT,
                 "offset": offset,
                 "maxAgeSec": MAX_ODDS_AGE_SECONDS,
@@ -1041,6 +1068,16 @@ def main():
         )
 
         print("Props pagination:", {k: usage.get(k) for k in ("has_more", "next_offset", "truncated", "degraded")})
+        if (usage["truncated"] or usage["degraded"]) and request_books != BOOKMAKER:
+            # A problem with another book's feed must never block the model.
+            # Retry with DraftKings only, exactly as before multi-book capture.
+            print("WARNING: multi-book board truncated/degraded; retrying DraftKings only:", usage["degraded"])
+            request_books = BOOKMAKER
+            all_props = []
+            offset = 0
+            # Allow exactly one extra props request for this rare retry.
+            budget += PROPS_REQUEST_COST
+            continue
         if usage["truncated"]:
             print(
                 "WARNING: ParlayAPI reports "
@@ -1170,6 +1207,7 @@ def main():
             print("Slate coverage:", details["matchup"], "| props:", coverage[details["matchup"]])
     save_rows(rows)
     save_line_movement(rows)
+    save_market_snapshot(all_props, slate)
 
     print("=" * 55)
     print("COLLECTION COMPLETE")
