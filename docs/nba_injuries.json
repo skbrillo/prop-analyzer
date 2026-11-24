@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T05:38:49.320849+00:00",
+  "generated_at": "2026-11-24T06:33:24.846206+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,8 +37,8 @@
   "players_with_team": 92,
   "players_without_team": 0,
   "status_counts": {
-    "O": 79,
-    "T": 13
+    "O": 76,
+    "T": 16
   },
   "players": [
     {
@@ -879,24 +879,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540725",
-      "name": "De'Aaron Fox",
+      "injury_record_id": "-61399",
+      "name": "Victor Wembanyama",
       "team": "SAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Lower Leg | out",
-      "date": "2026-11-24T01:24Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-24T06:06Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540724",
-      "name": "Victor Wembanyama",
+      "injury_record_id": "-61398",
+      "name": "De'Aaron Fox",
       "team": "SAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Back | out",
-      "date": "2026-11-24T01:24Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Lower Leg | day-to-day",
+      "date": "2026-11-24T06:06Z",
       "team_match": "feed"
     },
     {
@@ -967,13 +967,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540685",
+      "injury_record_id": "-61400",
       "name": "Jaxson Hayes",
       "team": "UTA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Not Specified | Knee | out",
-      "date": "2026-11-23T21:04Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Knee | day-to-day",
+      "date": "2026-11-24T06:07Z",
       "team_match": "feed"
     },
     {
