@@ -50,7 +50,7 @@ CLOSE_WINDOW_MIN = 25
 MIN_LEAD_MIN = 1
 
 # Credit guards (ParlayAPI bills per request; check x-requests-last in logs).
-MAX_CLOSING_REQUESTS_PER_DAY = 4
+MAX_CLOSING_REQUESTS_PER_DAY = 3
 MAX_CREDITS_PER_SNAPSHOT = 20
 MONTHLY_CREDIT_RESERVE = 150
 

@@ -81,6 +81,12 @@ MARKET_NAMES = {
 # Additional pages require a larger explicitly configured budget.
 
 MAX_CREDITS_PER_RUN = 5
+
+# Game lines (spreads/totals) only feed the dashboard's Game Lines panel; the
+# model does not use them. To save credits they are fetched only when
+# FETCH_GAME_LINES=1 (the 4 PM run and manual runs). Other runs reuse the
+# lines already saved in data/sample_odds.csv for the same games.
+FETCH_GAME_LINES = os.environ.get("FETCH_GAME_LINES", "1").strip() == "1"
 MONTHLY_CREDIT_RESERVE = 100
 
 PROPS_REQUEST_COST = 3
@@ -832,6 +838,25 @@ def save_line_movement(rows):
     print("Line movement current entries (retained):", len(current))
     print("Line movement entries refreshed this run:", len(seen_this_run))
 
+def saved_game_lines():
+    """Game lines from the previous sample_odds.csv, keyed by event ID."""
+    lines = {}
+    if not OUTPUT.exists():
+        return lines
+    try:
+        with OUTPUT.open(newline="", encoding="utf-8") as file:
+            for row in csv.DictReader(file):
+                event_id = row.get("event_id")
+                if not event_id or event_id in lines:
+                    continue
+                values = {k: number(row.get(k)) for k in empty_game_lines()}
+                if any(v is not None for v in values.values()):
+                    lines[event_id] = values
+    except (OSError, csv.Error) as exc:
+        print("WARNING: could not reuse saved game lines:", exc)
+    return lines
+
+
 def save_market_snapshot(all_props, slate):
     """Save every book's lines for line shopping and CLV. Never fails the run."""
     try:
@@ -947,10 +972,15 @@ def main():
 
     game_lines = {}
 
+    if not FETCH_GAME_LINES:
+        game_lines = saved_game_lines()
+        print("Game lines: skipped this run (FETCH_GAME_LINES=0); reusing saved lines for",
+              len(game_lines), "games.")
+
     # Game lines are optional.
     # Never spend the final props budget on them.
 
-    if budget >= (
+    if FETCH_GAME_LINES and budget >= (
         GAME_LINES_REQUEST_COST
         + PROPS_REQUEST_COST
     ):
