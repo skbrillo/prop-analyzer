@@ -41,9 +41,13 @@ tbody tr:hover{background:#1d3048}
 <div class="warn">Prices come from scheduled snapshots (Tue / Thu / Sat / Sun mornings and shortly before each kickoff), not live odds. Confirm the price at the book before betting.</div>
 
 <div class="head"><h2>NFL Model v1 — Paper Trading Record</h2><span id="model-status" class="muted">Loading model...</span></div>
+<div class="muted" style="margin-top:6px">All qualifying picks</div>
 <div class="cards" id="record"></div>
-<div class="tablewrap"><table><thead><tr><th>Kickoff</th><th>Player</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>Proj</th><th>Model %</th><th>Edge</th><th>Close</th><th>CLV</th><th>Actual</th><th>Result</th></tr></thead><tbody id="picks"></tbody></table></div>
-<div class="note" id="model-note">Paper picks: model vs DraftKings' no-vig price differs by 5–15 points, odds -130 to +130, max 2 per game, no Anytime TD. Locked the first time they qualify; graded from ESPN box scores. Not real bets — the point is to see whether the model beats the closing line before trusting it.</div>
+<div class="muted">Top picks — the 2 biggest edges per game (what you would actually bet)</div>
+<div class="cards" id="record-top"></div>
+<div class="controls"><select id="pick-view"><option value="">All paper picks</option><option value="top">Top picks only</option></select></div>
+<div class="tablewrap"><table><thead><tr><th>Top</th><th>Kickoff</th><th>Player</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>Proj</th><th>Model %</th><th>Edge</th><th>Close</th><th>CLV</th><th>Actual</th><th>Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="note" id="model-note">Paper picks: model vs DraftKings' no-vig price differs by 5–15 points, odds -130 to +130, no Anytime TD, at most one pick per player per game. ★ = top 2 edges in that game. Locked the first time they qualify; graded from ESPN box scores. Not real bets — the point is to see whether the model beats the closing line before trusting it.</div>
 <div class="note" id="backtest"></div>
 
 <div class="head"><h2>DraftKings vs the Market — Does DK Move Toward the Other Books?</h2></div>
@@ -110,21 +114,25 @@ function modelCells(cell,p){
  const side=m.edge_over>=0?(p.one_sided?"Yes":"Over"):(p.one_sided?"No":"Under"),e=Math.abs(m.edge_over)*100;
  cell(side+" +"+e.toFixed(1),e>=5&&!p.one_sided?"best":"muted",p.one_sided?"Vs DraftKings' price including vig":"Model minus DraftKings' no-vig probability");
 }
-function renderModel(){
- const r=model.record||{},box=$("record");box.replaceChildren();
+function recordCards(boxId,r){
+ r=r||{};const box=$(boxId);box.replaceChildren();
  for(const [k,v] of [["Paper picks",r.picks??0],["Record",(r.wins??0)+"-"+(r.losses??0)+(r.pushes?"-"+r.pushes:"")],["Win rate",r.win_rate==null?"--":r.win_rate+"%"],["Units",r.units==null?"--":(r.units>0?"+":"")+r.units+"u"],["Beat the close",r.beat_close_pct==null?"--":r.beat_close_pct+"% ("+r.clv_n+")"],["Avg CLV",r.avg_price_clv==null?"--":(r.avg_price_clv>0?"+":"")+r.avg_price_clv+"%"],["Pending",r.pending??0]]){const c=add(box,"div","","stat");c.append(k);add(c,"b",String(v));}
+}
+function renderModel(){
+ recordCards("record",model.record);recordCards("record-top",model.record_top);
  const body=$("picks");body.replaceChildren();
- const list=(model.paper_picks||[]).slice().sort((a,b)=>String(b.commence_time).localeCompare(String(a.commence_time)));
+ const onlyTop=$("pick-view").value==="top";
+ const list=(model.paper_picks||[]).filter(p=>!onlyTop||p.top).slice().sort((a,b)=>String(b.commence_time).localeCompare(String(a.commence_time)));
  for(const p of list){
   const tr=body.insertRow();const cell=(t,c="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;};
-  cell(kickoff(p.commence_time));cell(p.player,"player");cell(p.market_label);cell(p.side);cell(fmtLine(p.line));cell(signed(p.odds));
+  cell(p.top?"★":"",p.top?"best":"");cell(kickoff(p.commence_time));cell(p.player,"player");cell(p.market_label);cell(p.side);cell(fmtLine(p.line));cell(signed(p.odds));
   cell(String(p.projection));cell(pct(p.model_prob));cell("+"+(100*p.edge).toFixed(1));
   cell(p.close_line!=null?fmtLine(p.close_line)+(p.close_odds!=null?" "+signed(p.close_odds):""):"—");
   cell(p.price_clv!=null?(p.price_clv>0?"+":"")+(100*p.price_clv).toFixed(1)+"%":"—",p.price_clv>0?"best":p.price_clv<0?"flag":"");
   cell(p.actual!=null?String(p.actual):"—");
   const res=String(p.result||"pending");cell(res.toUpperCase(),res==="win"?"best":res==="loss"?"flag":"muted");
  }
- if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=13;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
+ if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=14;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
  const bt=model.backtest||{},parts=[];
  const names={receptions:"Receptions",rec_yds:"Rec Yds",rush_yds:"Rush Yds",pass_yds:"Pass Yds"};
  for(const [k,lab] of Object.entries(names)){const b=bt[k];if(b)parts.push(lab+": model error "+b.mae_model+" vs simple average "+b.mae_simple_average+" ("+b.games+" games)");}
@@ -200,6 +208,7 @@ async function load(){
   $("status").textContent="NFL lines not available yet ("+e.message+"). The first board appears after the next scheduled NFL pull.";
  }
 }
+$("pick-view").addEventListener("change",()=>model&&renderModel());
 ["search","game","market","view"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",()=>board&&render()));
 load();
 </script>
