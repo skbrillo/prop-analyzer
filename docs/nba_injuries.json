@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T02:45:01.065165+00:00",
+  "generated_at": "2026-11-24T03:39:23.377909+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 92,
+  "player_count": 93,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 92,
+  "players_with_team": 93,
   "players_without_team": 0,
   "status_counts": {
     "O": 85,
-    "T": 7
+    "T": 8
   },
   "players": [
     {
@@ -798,6 +798,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Achilles | out",
       "date": "2026-10-06T19:17Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540735",
+      "name": "Collin Gillespie",
+      "team": "PHX",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Undisclosed | day-to-day",
+      "date": "2026-11-24T02:48Z",
       "team_match": "feed"
     },
     {
