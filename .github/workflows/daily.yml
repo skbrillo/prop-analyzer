@@ -110,14 +110,12 @@ jobs:
         if: steps.schedule.outputs.run_predictions == 'true'
         env:
           PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
-        run: python update_odds.py
-      - name: Capture multi-book opening snapshot
-        if: steps.schedule.outputs.run_type == 'morning'
-        continue-on-error: true
-        env:
-          PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
           MARKET_BOOKS: ${{ vars.MARKET_BOOKS }}
-        run: python market_snapshot.py --open
+        run: python update_odds.py
+      - name: Build line-shopping board
+        if: steps.schedule.outputs.run_predictions == 'true'
+        continue-on-error: true
+        run: python build_market_board.py
       - name: Run prediction engine
         if: steps.schedule.outputs.run_predictions == 'true'
         run: python engine.py
@@ -173,7 +171,7 @@ jobs:
             docs/8910_history.json
           # New CLV files may not exist yet; add them separately so a missing
           # path never blocks the main commit.
-          for path in docs/clv_report.json docs/clv_picks.csv data/market_snapshots; do
+          for path in docs/clv_report.json docs/clv_picks.csv docs/market_board.json data/market_snapshots; do
             if [ -e "$path" ]; then git add -A -- "$path"; fi
           done
           if ! git diff --cached --quiet; then

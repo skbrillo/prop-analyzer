@@ -46,11 +46,22 @@ jobs:
           MARKET_BOOKS: ${{ vars.MARKET_BOOKS }}
         run: python market_snapshot.py --${{ inputs.mode || 'closing' }}
 
+      - name: Refresh line-shopping board
+        continue-on-error: true
+        run: |
+          # Only rebuild when this run actually saved new prices.
+          if [ -n "$(git status --porcelain data/market_snapshots)" ]; then
+            python build_market_board.py
+          else
+            echo "No new snapshot; board unchanged."
+          fi
+
       - name: Save snapshots
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/market_snapshots/ || true
+          if [ -e docs/market_board.json ]; then git add docs/market_board.json; fi
           if git diff --cached --quiet; then
             echo "No new snapshots."
             exit 0
