@@ -36,9 +36,15 @@ tbody tr:hover{background:#1d3048}
 <body>
 <main>
 <h1>NFL Prop Lines</h1>
-<div class="muted">DraftKings vs FanDuel, BetMGM and other books | Phase 1: line shopping and closing-line tracking (no model picks) | <a href="index.html">← NBA Edge Model</a></div>
+<div class="muted">DraftKings vs FanDuel, BetMGM and other books | Model v1 is PAPER TRADING only | <a href="index.html">← NBA Edge Model</a></div>
 
 <div class="warn">Prices come from scheduled snapshots (Tue / Thu / Sat / Sun mornings and shortly before each kickoff), not live odds. Confirm the price at the book before betting.</div>
+
+<div class="head"><h2>NFL Model v1 — Paper Trading Record</h2><span id="model-status" class="muted">Loading model...</span></div>
+<div class="cards" id="record"></div>
+<div class="tablewrap"><table><thead><tr><th>Kickoff</th><th>Player</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>Proj</th><th>Model %</th><th>Edge</th><th>Close</th><th>CLV</th><th>Actual</th><th>Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="note" id="model-note">Paper picks: model vs DraftKings' no-vig price differs by 5–15 points, odds -130 to +130, max 2 per game, no Anytime TD. Locked the first time they qualify; graded from ESPN box scores. Not real bets — the point is to see whether the model beats the closing line before trusting it.</div>
+<div class="note" id="backtest"></div>
 
 <div class="head"><h2>DraftKings vs the Market — Does DK Move Toward the Other Books?</h2></div>
 <div class="cards" id="study"></div>
@@ -71,6 +77,10 @@ const add=(p,tag,text,cls="")=>{const n=document.createElement(tag);n.textConten
 const signed=a=>{a=Number(a);return a>0?"+"+a:String(a);};
 const dec=a=>{a=Number(a);return a>0?1+a/100:1+100/Math.abs(a);};
 const label=b=>(board&&board.book_labels&&board.book_labels[b])||b;
+let model=null;
+function pkey(name){return String(name||"").toLowerCase().replace(/[^a-z0-9 ]/g,"").split(/\s+/).filter(x=>x&&!["jr","sr","ii","iii","iv","v"].includes(x)).join(" ");}
+function proj(p){return model&&model.projections?model.projections[p.event_id+"|"+pkey(p.player)+"|"+p.market]:null;}
+const pct=v=>v==null?"--":(100*v).toFixed(1)+"%";
 const fmtLine=v=>{const n=Number(v);return Number.isFinite(n)?String(n):"--";};
 function kickoff(v){const d=new Date(v);if(isNaN(d))return String(v);
  return new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"2-digit"}).format(d)+" ET";}
@@ -91,10 +101,42 @@ function renderStudy(){
   :"No open-and-close pairs yet. This fills in once props have a morning snapshot and a pre-kickoff snapshot.";
 }
 
+function modelCells(cell,p){
+ const m=proj(p);
+ if(!m){cell("—","muted");cell("—","muted");cell("—","muted");return;}
+ cell(String(m.projection),"","Usage: "+m.usage.targets+" tgt, "+m.usage.carries+" car, "+m.usage.pass_att+" att | "+m.games+" games");
+ cell(pct(m.p_over),"",p.one_sided?"Model chance of a TD":"Model chance of the Over at DraftKings' line");
+ if(m.edge_over==null){cell("—","muted");return;}
+ const side=m.edge_over>=0?(p.one_sided?"Yes":"Over"):(p.one_sided?"No":"Under"),e=Math.abs(m.edge_over)*100;
+ cell(side+" +"+e.toFixed(1),e>=5&&!p.one_sided?"best":"muted",p.one_sided?"Vs DraftKings' price including vig":"Model minus DraftKings' no-vig probability");
+}
+function renderModel(){
+ const r=model.record||{},box=$("record");box.replaceChildren();
+ for(const [k,v] of [["Paper picks",r.picks??0],["Record",(r.wins??0)+"-"+(r.losses??0)+(r.pushes?"-"+r.pushes:"")],["Win rate",r.win_rate==null?"--":r.win_rate+"%"],["Units",r.units==null?"--":(r.units>0?"+":"")+r.units+"u"],["Beat the close",r.beat_close_pct==null?"--":r.beat_close_pct+"% ("+r.clv_n+")"],["Avg CLV",r.avg_price_clv==null?"--":(r.avg_price_clv>0?"+":"")+r.avg_price_clv+"%"],["Pending",r.pending??0]]){const c=add(box,"div","","stat");c.append(k);add(c,"b",String(v));}
+ const body=$("picks");body.replaceChildren();
+ const list=(model.paper_picks||[]).slice().sort((a,b)=>String(b.commence_time).localeCompare(String(a.commence_time)));
+ for(const p of list){
+  const tr=body.insertRow();const cell=(t,c="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;};
+  cell(kickoff(p.commence_time));cell(p.player,"player");cell(p.market_label);cell(p.side);cell(fmtLine(p.line));cell(signed(p.odds));
+  cell(String(p.projection));cell(pct(p.model_prob));cell("+"+(100*p.edge).toFixed(1));
+  cell(p.close_line!=null?fmtLine(p.close_line)+(p.close_odds!=null?" "+signed(p.close_odds):""):"—");
+  cell(p.price_clv!=null?(p.price_clv>0?"+":"")+(100*p.price_clv).toFixed(1)+"%":"—",p.price_clv>0?"best":p.price_clv<0?"flag":"");
+  cell(p.actual!=null?String(p.actual):"—");
+  const res=String(p.result||"pending");cell(res.toUpperCase(),res==="win"?"best":res==="loss"?"flag":"muted");
+ }
+ if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=13;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
+ const bt=model.backtest||{},parts=[];
+ const names={receptions:"Receptions",rec_yds:"Rec Yds",rush_yds:"Rush Yds",pass_yds:"Pass Yds"};
+ for(const [k,lab] of Object.entries(names)){const b=bt[k];if(b)parts.push(lab+": model error "+b.mae_model+" vs simple average "+b.mae_simple_average+" ("+b.games+" games)");}
+ if(bt.anytime_td)parts.push("Anytime TD: predicted "+(100*bt.anytime_td.avg_predicted).toFixed(1)+"% vs actual "+(100*bt.anytime_td.actual_rate).toFixed(1)+"%");
+ $("backtest").textContent=parts.length?"Backtest on saved games (each game projected from earlier games only) — "+parts.join(" | ")+". Lower error is better.":"";
+ $("model-status").textContent=(model.model_version||"")+" | updated "+new Date(model.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT";
+}
+
 function render(){
  const others=(board.books||[]).filter(b=>b!=="draftkings");
  const head=$("headrow");head.replaceChildren();
- ["Kickoff","Player","Market","DK Line","DK O / U",...others.map(label),"Best Over / Yes","Best Under","Books vs DK"].forEach(t=>add(head,"th",t));
+ ["Kickoff","Player","Market","DK Line","DK O / U","Proj","Model Over","Model Edge",...others.map(label),"Best Over / Yes","Best Under","Books vs DK"].forEach(t=>add(head,"th",t));
  const q=$("search").value.trim().toLowerCase(),game=$("game").value,market=$("market").value,view=$("view").value;
  const rows=(board.props||[]).filter(p=>{
   if(q&&!(p.player+" "+p.matchup).toLowerCase().includes(q))return false;
@@ -111,18 +153,18 @@ function render(){
  const body=$("rows");body.replaceChildren();
  let last=null;
  for(const p of rows){
-  if(p.event_id!==last){last=p.event_id;const g=body.insertRow();g.className="gamehead";const td=g.insertCell();td.colSpan=8+others.length;td.textContent=p.matchup+" — "+kickoff(p.commence_time);}
+  if(p.event_id!==last){last=p.event_id;const g=body.insertRow();g.className="gamehead";const td=g.insertCell();td.colSpan=11+others.length;td.textContent=p.matchup+" — "+kickoff(p.commence_time);}
   const tr=body.insertRow();
   const cell=(t,c="",title="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;if(title)td.title=title;return td;};
   cell(kickoff(p.commence_time));cell(p.player,"player");cell(p.market_label);
   if(p.one_sided){
-   cell("—");cell("Yes "+signed(p.dk.over));
+   cell("—");cell("Yes "+signed(p.dk.over));modelCells(cell,p);
    for(const b of others){const x=p.books[b];cell(x?"Yes "+signed(x.over):"—",x?"":"muted");}
    const bo=p.best_over;cell(bo?label(bo.book)+" "+signed(bo.odds):"—",bo&&bo.book!=="draftkings"&&dec(bo.odds)>dec(p.dk.over)?"best":"");
    cell("—","muted");cell("—","muted");
    continue;
   }
-  cell(fmtLine(p.dk.line));cell(signed(p.dk.over)+" / "+signed(p.dk.under));
+  cell(fmtLine(p.dk.line));cell(signed(p.dk.over)+" / "+signed(p.dk.under));modelCells(cell,p);
   for(const b of others){
    const x=p.books[b];
    if(!x){cell("—","muted");continue;}
@@ -139,7 +181,7 @@ function render(){
   else if(p.gap!=null){note=(p.gap>0?"+":"")+(p.gap*100).toFixed(1)+" pts";}
   cell(note,cls,"Other books' no-vig Over probability minus DraftKings', at DraftKings' line");
  }
- if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=8+others.length;td.textContent=(board.props||[]).length?"No props match the current filters.":"No upcoming NFL props saved yet.";}
+ if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=11+others.length;td.textContent=(board.props||[]).length?"No props match the current filters.":"No upcoming NFL props saved yet.";}
  const caps=Object.values(board.captured_at||{}).sort();
  $("status").textContent=rows.length+" of "+(board.props||[]).length+" props | "+(board.books||[]).map(label).join(", ")+
   (caps.length?" | Latest capture: "+new Date(caps[caps.length-1]).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit"})+" CT":"");
@@ -152,6 +194,7 @@ async function load(){
   board=await res.json();
   const g=$("game");for(const x of board.games||[]){const o=add(g,"option",x.matchup+" — "+kickoff(x.commence_time));o.value=x.event_id;}
   const m=$("market");for(const x of board.markets||[]){const o=add(m,"option",x.label);o.value=x.key;}
+  try{const mr=await fetch("./nfl_model.json?t="+Date.now(),{cache:"no-store"});if(mr.ok){model=await mr.json();renderModel();}else $("model-status").textContent="Model output not available yet.";}catch(e){$("model-status").textContent="Model output not available yet.";}
   renderStudy();render();
  }catch(e){
   $("status").textContent="NFL lines not available yet ("+e.message+"). The first board appears after the next scheduled NFL pull.";
