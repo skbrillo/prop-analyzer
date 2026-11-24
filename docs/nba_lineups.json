@@ -1,122 +1,7 @@
 {
-  "generated_at": "2026-11-24T08:28:39.778996+00:00",
+  "generated_at": "2026-11-24T09:44:13.754235+00:00",
   "source": "RotoWire",
   "games": {
-    "401910029": {
-      "game_id": "401910029",
-      "game": "Detroit Pistons at Atlanta Hawks",
-      "tipoff": "2026-11-22T20:30:00+00:00",
-      "home": "ATL",
-      "away": "DET",
-      "checked_at": "2026-11-23T05:55:14.416799+00:00",
-      "minutes_before_tipoff": -565.2,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Kingston Flemings",
-          "team": "ATL"
-        },
-        {
-          "name": "Nickeil Alexander-Walker",
-          "team": "ATL"
-        },
-        {
-          "name": "Dyson Daniels",
-          "team": "ATL"
-        },
-        {
-          "name": "Jalen Johnson",
-          "team": "ATL"
-        },
-        {
-          "name": "Onyeka Okongwu",
-          "team": "ATL"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Cade Cunningham",
-          "team": "DET"
-        },
-        {
-          "name": "Daniss Jenkins",
-          "team": "DET"
-        },
-        {
-          "name": "Kevin Huerter",
-          "team": "DET"
-        },
-        {
-          "name": "Ausar Thompson",
-          "team": "DET"
-        },
-        {
-          "name": "John Collins",
-          "team": "DET"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Mouhamed Gueye",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "CJ McCollum",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Asa Newell",
-          "team": "ATL",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Taurean Prince",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Duncan Robinson",
-          "team": "DET",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Mouhamed Gueye",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "CJ McCollum",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Asa Newell",
-          "team": "ATL",
-          "status": "out"
-        },
-        {
-          "name": "Taurean Prince",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Duncan Robinson",
-          "team": "DET",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401910030": {
       "game_id": "401910030",
       "game": "Oklahoma City Thunder at Miami Heat",
@@ -2030,8 +1915,8 @@
       "tipoff": "2026-11-25T00:00:00+00:00",
       "home": "ORL",
       "away": "DET",
-      "checked_at": "2026-11-24T08:28:39.778996+00:00",
-      "minutes_before_tipoff": 931.3,
+      "checked_at": "2026-11-24T09:44:13.754235+00:00",
+      "minutes_before_tipoff": 855.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2175,8 +2060,8 @@
       "tipoff": "2026-11-25T01:00:00+00:00",
       "home": "WAS",
       "away": "BOS",
-      "checked_at": "2026-11-24T08:28:39.778996+00:00",
-      "minutes_before_tipoff": 991.3,
+      "checked_at": "2026-11-24T09:44:13.754235+00:00",
+      "minutes_before_tipoff": 915.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2290,8 +2175,8 @@
       "tipoff": "2026-11-25T03:00:00+00:00",
       "home": "DEN",
       "away": "DAL",
-      "checked_at": "2026-11-24T08:28:39.778996+00:00",
-      "minutes_before_tipoff": 1111.3,
+      "checked_at": "2026-11-24T09:44:13.754235+00:00",
+      "minutes_before_tipoff": 1035.8,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
