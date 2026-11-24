@@ -26,8 +26,10 @@ th,td{padding:8px 6px;border-bottom:1px solid #2b3a50;text-align:left;white-spac
 th{background:var(--card);color:var(--muted);position:sticky;top:0}
 tbody tr:hover{background:#1d3048}
 .player{font-weight:700}
+.green{color:var(--green)}.red{color:var(--red)}.yellow{color:var(--yellow)}.bold{font-weight:700}
+.stat b.green{color:var(--green)}.stat b.red{color:var(--red)}.stat b.yellow{color:var(--yellow)}
 .flag{color:var(--yellow);font-weight:700}.alt{color:var(--yellow)}.best{color:var(--green);font-weight:700}
-.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:8px;margin:10px 0}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:10px 0}
 .stat{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:10px;font-size:11px;color:var(--muted)}
 .stat b{display:block;color:var(--text);font-size:21px;margin-top:4px}
 .gamehead td{background:var(--card);font-weight:700;color:var(--text);border-top:2px solid var(--border)}
@@ -46,7 +48,7 @@ tbody tr:hover{background:#1d3048}
 <div class="muted">Top picks — the 2 biggest edges per game (what you would actually bet)</div>
 <div class="cards" id="record-top"></div>
 <div class="controls"><select id="pick-view"><option value="">All paper picks</option><option value="top">Top picks only</option></select></div>
-<div class="tablewrap"><table><thead><tr><th>Top</th><th>Kickoff</th><th>Player</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th>Proj</th><th>Model %</th><th>Edge</th><th>Close</th><th>CLV</th><th>Actual</th><th>Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="tablewrap"><table><thead><tr><th>Top</th><th>Kickoff</th><th>Player</th><th>Market</th><th>Side</th><th>Line</th><th>Odds</th><th title="Average projection. For yards, a typical game lands below the average, so an Under can be the pick even when this is above the line.">Proj (avg)</th><th>Model %</th><th>Edge</th><th>Close</th><th>CLV</th><th>Actual</th><th>Result</th></tr></thead><tbody id="picks"></tbody></table></div>
 <div class="note" id="model-note">Paper picks: model vs DraftKings' no-vig price differs by 5–15 points, odds -130 to +130, no Anytime TD, at most one pick per player per game. ★ = top 2 edges in that game. Locked the first time they qualify; graded from ESPN box scores. Not real bets — the point is to see whether the model beats the closing line before trusting it.</div>
 <div class="note" id="backtest"></div>
 
@@ -116,7 +118,18 @@ function modelCells(cell,p){
 }
 function recordCards(boxId,r){
  r=r||{};const box=$(boxId);box.replaceChildren();
- for(const [k,v] of [["Paper picks",r.picks??0],["Record",(r.wins??0)+"-"+(r.losses??0)+(r.pushes?"-"+r.pushes:"")],["Win rate",r.win_rate==null?"--":r.win_rate+"%"],["Units",r.units==null?"--":(r.units>0?"+":"")+r.units+"u"],["Beat the close",r.beat_close_pct==null?"--":r.beat_close_pct+"% ("+r.clv_n+")"],["Avg CLV",r.avg_price_clv==null?"--":(r.avg_price_clv>0?"+":"")+r.avg_price_clv+"%"],["Pending",r.pending??0]]){const c=add(box,"div","","stat");c.append(k);add(c,"b",String(v));}
+ const tone=v=>v==null||v===0?"":v>0?"green":"red";
+ const items=[
+  ["Paper picks",r.picks??0,""],
+  ["Wins",r.wins??0,r.wins?"green":""],
+  ["Losses",r.losses??0,r.losses?"red":""],
+  ["Win rate",r.win_rate==null?"--":r.win_rate+"%",r.win_rate==null?"":r.win_rate>=52.4?"green":"red"],
+  ["Units",r.units==null?"--":(r.units>0?"+":"")+r.units+"u",tone(r.units)],
+  ["Beat the close",r.beat_close_pct==null?"--":r.beat_close_pct+"% ("+r.clv_n+")",r.beat_close_pct==null?"":r.beat_close_pct>=50?"green":"red"],
+  ["Avg CLV",r.avg_price_clv==null?"--":(r.avg_price_clv>0?"+":"")+r.avg_price_clv+"%",tone(r.avg_price_clv)],
+  ["Pending",r.pending??0,r.pending?"yellow":""]
+ ];
+ for(const [k,v,cls] of items){const c=add(box,"div","","stat");c.append(k);add(c,"b",String(v),cls);}
 }
 function renderModel(){
  recordCards("record",model.record);recordCards("record-top",model.record_top);
@@ -125,12 +138,18 @@ function renderModel(){
  const list=(model.paper_picks||[]).filter(p=>!onlyTop||p.top).slice().sort((a,b)=>String(b.commence_time).localeCompare(String(a.commence_time)));
  for(const p of list){
   const tr=body.insertRow();const cell=(t,c="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;};
-  cell(p.top?"★":"",p.top?"best":"");cell(kickoff(p.commence_time));cell(p.player,"player");cell(p.market_label);cell(p.side);cell(fmtLine(p.line));cell(signed(p.odds));
-  cell(String(p.projection));cell(pct(p.model_prob));cell("+"+(100*p.edge).toFixed(1));
-  cell(p.close_line!=null?fmtLine(p.close_line)+(p.close_odds!=null?" "+signed(p.close_odds):""):"—");
-  cell(p.price_clv!=null?(p.price_clv>0?"+":"")+(100*p.price_clv).toFixed(1)+"%":"—",p.price_clv>0?"best":p.price_clv<0?"flag":"");
-  cell(p.actual!=null?String(p.actual):"—");
-  const res=String(p.result||"pending");cell(res.toUpperCase(),res==="win"?"best":res==="loss"?"flag":"muted");
+  const res=String(p.result||"pending");
+  const over=p.side==="Over";
+  cell(p.top?"★":"",p.top?"yellow bold":"");cell(kickoff(p.commence_time));cell(p.player,"player");cell(p.market_label);
+  cell(p.side,over?"green bold":"yellow bold");
+  cell(fmtLine(p.line));cell(signed(p.odds),Number(p.odds)>0?"green":"");
+  cell(String(p.projection));
+  cell(pct(p.model_prob));cell("+"+(100*p.edge).toFixed(1),"green bold");
+  cell(p.close_line!=null?fmtLine(p.close_line)+(p.close_odds!=null?" "+signed(p.close_odds):""):"—",p.close_line==null?"muted":"");
+  cell(p.price_clv!=null?(p.price_clv>0?"+":"")+(100*p.price_clv).toFixed(1)+"%":"—",p.price_clv==null?"muted":p.price_clv>0?"green bold":p.price_clv<0?"red bold":"");
+  const beat=p.actual==null?null:(over?p.actual>p.line:p.actual<p.line);
+  cell(p.actual!=null?String(p.actual):"—",beat==null?"muted":beat?"green":"red");
+  cell(res==="void"?"VOID":res.toUpperCase(),res==="win"?"green bold":res==="loss"?"red bold":res==="push"?"muted":"yellow bold");
  }
  if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=14;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
  const bt=model.backtest||{},parts=[];
