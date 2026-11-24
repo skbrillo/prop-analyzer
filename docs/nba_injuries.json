@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T04:42:46.801021+00:00",
+  "generated_at": "2026-11-24T05:38:49.320849+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,8 +37,8 @@
   "players_with_team": 92,
   "players_without_team": 0,
   "status_counts": {
-    "O": 83,
-    "T": 9
+    "O": 79,
+    "T": 13
   },
   "players": [
     {
@@ -384,6 +384,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61397",
+      "name": "Aaron Nesmith",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Foot | day-to-day",
+      "date": "2026-11-24T04:40Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61396",
+      "name": "T.J. McConnell",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hamstring | day-to-day",
+      "date": "2026-11-24T04:40Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540730",
       "name": "Larry Nance Jr.",
       "team": "IND",
@@ -391,28 +413,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Ankle | day-to-day",
       "date": "2026-11-24T02:00Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540663",
-      "name": "T.J. McConnell",
-      "team": "IND",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Hamstring | out",
-      "date": "2026-11-23T18:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540662",
-      "name": "Aaron Nesmith",
-      "team": "IND",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Foot | out",
-      "date": "2026-11-23T18:22Z",
       "team_match": "feed"
     },
     {
@@ -648,13 +648,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540679",
+      "injury_record_id": "-61395",
       "name": "Jaylin Williams",
       "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Spasms | Back | out",
-      "date": "2026-11-23T19:09Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Spasms | Back | day-to-day",
+      "date": "2026-11-24T04:36Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61394",
+      "name": "Aday Mara",
+      "team": "OKC",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Lower Leg | day-to-day",
+      "date": "2026-11-24T04:36Z",
       "team_match": "feed"
     },
     {
@@ -666,17 +677,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hip | out",
       "date": "2026-11-23T18:49Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540673",
-      "name": "Aday Mara",
-      "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Lower Leg | out",
-      "date": "2026-11-23T18:45Z",
       "team_match": "feed"
     },
     {
