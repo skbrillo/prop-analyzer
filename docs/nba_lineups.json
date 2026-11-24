@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T05:49:35.737208+00:00",
+  "generated_at": "2026-11-24T06:54:55.129763+00:00",
   "source": "RotoWire",
   "games": {
     "401910029": {
@@ -2022,6 +2022,66 @@
           "status": "out"
         }
       ],
+      "source": "RotoWire"
+    },
+    "401909314": {
+      "game_id": "401909314",
+      "game": "Detroit Pistons at Orlando Magic",
+      "tipoff": "2026-11-25T00:00:00+00:00",
+      "home": "ORL",
+      "away": "DET",
+      "checked_at": "2026-11-24T06:54:55.129763+00:00",
+      "minutes_before_tipoff": 1025.1,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401909315": {
+      "game_id": "401909315",
+      "game": "Boston Celtics at Washington Wizards",
+      "tipoff": "2026-11-25T01:00:00+00:00",
+      "home": "WAS",
+      "away": "BOS",
+      "checked_at": "2026-11-24T06:54:55.129763+00:00",
+      "minutes_before_tipoff": 1085.1,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401909316": {
+      "game_id": "401909316",
+      "game": "Dallas Mavericks at Denver Nuggets",
+      "tipoff": "2026-11-25T03:00:00+00:00",
+      "home": "DEN",
+      "away": "DAL",
+      "checked_at": "2026-11-24T06:54:55.129763+00:00",
+      "minutes_before_tipoff": 1205.1,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
       "source": "RotoWire"
     }
   }
