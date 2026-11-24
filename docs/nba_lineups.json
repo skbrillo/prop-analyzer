@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T00:11:41.738665+00:00",
+  "generated_at": "2026-11-24T01:36:23.537029+00:00",
   "source": "RotoWire",
   "games": {
     "401910029": {
@@ -963,8 +963,8 @@
       "tipoff": "2026-11-24T00:00:00+00:00",
       "home": "CHA",
       "away": "MEM",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": -11.7,
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": -96.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1108,8 +1108,8 @@
       "tipoff": "2026-11-24T00:00:00+00:00",
       "home": "PHI",
       "away": "POR",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": -11.7,
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": -96.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1223,8 +1223,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "IND",
       "away": "OKC",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": 18.3,
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": -66.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1418,8 +1418,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "TOR",
       "away": "MIL",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": 18.3,
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": -66.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1502,8 +1502,8 @@
       "tipoff": "2026-11-24T00:30:00+00:00",
       "home": "MIN",
       "away": "BKN",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": 18.3,
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": -66.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1607,14 +1607,12 @@
       "tipoff": "2026-11-24T01:00:00+00:00",
       "home": "CHI",
       "away": "CLE",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": 48.3,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": -36.4,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Josh Giddey",
           "team": "CHI"
@@ -1636,7 +1634,7 @@
           "team": "CHI"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "James Harden",
           "team": "CLE"
@@ -1646,7 +1644,7 @@
           "team": "CLE"
         },
         {
-          "name": "Jaylon Tyson",
+          "name": "Sam Merrill",
           "team": "CLE"
         },
         {
@@ -1658,6 +1656,8 @@
           "team": "CLE"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Norman Powell",
@@ -1712,14 +1712,12 @@
       "tipoff": "2026-11-24T01:00:00+00:00",
       "home": "NOP",
       "away": "PHX",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": 48.3,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": -36.4,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Jeremiah Fears",
           "team": "NOP"
@@ -1729,7 +1727,7 @@
           "team": "NOP"
         },
         {
-          "name": "Saddiq Bey",
+          "name": "Trey Murphy",
           "team": "NOP"
         },
         {
@@ -1741,7 +1739,7 @@
           "team": "NOP"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Devin Booker",
           "team": "PHX"
@@ -1763,6 +1761,8 @@
           "team": "PHX"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Bennedict Mathurin",
@@ -1817,12 +1817,33 @@
       "tipoff": "2026-11-24T01:30:00+00:00",
       "home": "HOU",
       "away": "LAC",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": 78.3,
-      "status": "unverified",
-      "home_status": "unverified",
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": -6.4,
+      "status": "confirmed",
+      "home_status": "confirmed",
       "away_status": "confirmed",
-      "home_starters": [],
+      "home_starters": [
+        {
+          "name": "Fred VanVleet",
+          "team": "HOU"
+        },
+        {
+          "name": "Amen Thompson",
+          "team": "HOU"
+        },
+        {
+          "name": "Kevin Durant",
+          "team": "HOU"
+        },
+        {
+          "name": "Jabari Smith",
+          "team": "HOU"
+        },
+        {
+          "name": "Alperen Sengun",
+          "team": "HOU"
+        }
+      ],
       "away_starters": [
         {
           "name": "Darius Garland",
@@ -1845,28 +1866,7 @@
           "team": "LAC"
         }
       ],
-      "home_projected": [
-        {
-          "name": "Fred VanVleet",
-          "team": "HOU"
-        },
-        {
-          "name": "Amen Thompson",
-          "team": "HOU"
-        },
-        {
-          "name": "Kevin Durant",
-          "team": "HOU"
-        },
-        {
-          "name": "Jabari Smith",
-          "team": "HOU"
-        },
-        {
-          "name": "Alperen Sengun",
-          "team": "HOU"
-        }
-      ],
+      "home_projected": [],
       "away_projected": [],
       "home_out": [],
       "away_out": [
@@ -1901,8 +1901,8 @@
       "tipoff": "2026-11-24T03:00:00+00:00",
       "home": "LAL",
       "away": "UTA",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": 168.3,
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": 83.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2016,8 +2016,8 @@
       "tipoff": "2026-11-24T03:00:00+00:00",
       "home": "SAC",
       "away": "SAS",
-      "checked_at": "2026-11-24T00:11:41.738665+00:00",
-      "minutes_before_tipoff": 168.3,
+      "checked_at": "2026-11-24T01:36:23.537029+00:00",
+      "minutes_before_tipoff": 83.6,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -2047,10 +2047,6 @@
       ],
       "away_projected": [
         {
-          "name": "De'Aaron Fox",
-          "team": "SAS"
-        },
-        {
           "name": "Stephon Castle",
           "team": "SAS"
         },
@@ -2059,11 +2055,15 @@
           "team": "SAS"
         },
         {
+          "name": "Keldon Johnson",
+          "team": "SAS"
+        },
+        {
           "name": "Devin Vassell",
           "team": "SAS"
         },
         {
-          "name": "Victor Wembanyama",
+          "name": "Luke Kornet",
           "team": "SAS"
         }
       ],
@@ -2076,6 +2076,11 @@
       ],
       "away_out": [
         {
+          "name": "De'Aaron Fox",
+          "team": "SAS",
+          "status": "out"
+        },
+        {
           "name": "Dylan Harper",
           "team": "SAS",
           "status": "out"
@@ -2087,6 +2092,11 @@
         },
         {
           "name": "Jayden Quaintance",
+          "team": "SAS",
+          "status": "out"
+        },
+        {
+          "name": "Victor Wembanyama",
           "team": "SAS",
           "status": "out"
         }
@@ -2098,6 +2108,11 @@
           "status": "out"
         },
         {
+          "name": "De'Aaron Fox",
+          "team": "SAS",
+          "status": "out"
+        },
+        {
           "name": "Dylan Harper",
           "team": "SAS",
           "status": "out"
@@ -2109,6 +2124,11 @@
         },
         {
           "name": "Jayden Quaintance",
+          "team": "SAS",
+          "status": "out"
+        },
+        {
+          "name": "Victor Wembanyama",
           "team": "SAS",
           "status": "out"
         }
