@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-24T21:19:32.673159+00:00",
+  "generated_at": "2026-11-24T22:20:57.421222+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 93,
+  "player_count": 95,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 93,
+  "players_with_team": 95,
   "players_without_team": 0,
   "status_counts": {
-    "O": 75,
-    "T": 18
+    "O": 76,
+    "T": 19
   },
   "players": [
     {
@@ -538,13 +538,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540849",
+      "injury_record_id": "540863",
       "name": "Giannis Antetokounmpo",
       "team": "MIA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Groin | day-to-day",
-      "date": "2026-11-24T18:56Z",
+      "date": "2026-11-24T22:07Z",
       "team_match": "feed"
     },
     {
@@ -615,35 +615,57 @@
     },
     {
       "id": "",
-      "injury_record_id": "540848",
+      "injury_record_id": "540862",
+      "name": "Miles McBride",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Groin | day-to-day",
+      "date": "2026-11-24T21:56Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540861",
       "name": "Jordan Clarkson",
       "team": "NYK",
       "status": "O",
       "raw_status": "Out",
       "reason": "Plantar Fasciitis | Foot | out",
-      "date": "2026-11-24T18:48Z",
+      "date": "2026-11-24T21:56Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540847",
+      "injury_record_id": "540860",
+      "name": "Josh Hart",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Shoulder | day-to-day",
+      "date": "2026-11-24T21:54Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540859",
       "name": "OG Anunoby",
       "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Calf | day-to-day",
-      "date": "2026-11-24T18:42Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Calf | out",
+      "date": "2026-11-24T21:53Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540846",
-      "name": "Miles McBride",
+      "injury_record_id": "540858",
+      "name": "Karl-Anthony Towns",
       "team": "NYK",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Abdomen | day-to-day",
-      "date": "2026-11-24T18:40Z",
+      "reason": "Knee | day-to-day",
+      "date": "2026-11-24T21:50Z",
       "team_match": "feed"
     },
     {
@@ -934,6 +956,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540857",
+      "name": "Kawhi Leonard",
+      "team": "TOR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Inflammation | Knee | out",
+      "date": "2026-11-24T21:15Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540523",
       "name": "Nate Bittle",
       "team": "TOR",
@@ -941,17 +974,6 @@
       "raw_status": "Out",
       "reason": "Fracture | Foot | out",
       "date": "2026-11-22T21:13Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540189",
-      "name": "Kawhi Leonard",
-      "team": "TOR",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Inflammation | Knee | out",
-      "date": "2026-11-20T20:42Z",
       "team_match": "feed"
     },
     {
