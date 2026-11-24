@@ -1,23 +1,37 @@
 {
-  "generated_at": "2026-11-24T18:50:01.904213+00:00",
+  "generated_at": "2026-11-24T22:58:42.890588+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
     "2026-11": {
       "summary": {
-        "picks": 105,
+        "picks": 109,
         "wins": 51,
         "losses": 53,
         "pushes": 0,
         "dnp": 1,
         "invalid": 0,
-        "pending": 0,
+        "pending": 4,
         "settled": 104,
         "win_rate": 49.04,
         "roi": -5.44,
         "profit_units": -5.655
       },
       "days": [
+        {
+          "date": "2026-11-24",
+          "picks": 4,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 4,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        },
         {
           "date": "2026-11-23",
           "picks": 5,
@@ -1853,6 +1867,70 @@
           "actual": 6.0,
           "profit_units": 1.21,
           "saved_at": "2026-11-23T22:52:37.006935+00:00"
+        },
+        {
+          "date": "2026-11-24",
+          "rank": 1,
+          "player": "Sam Hauser",
+          "team": "Boston Celtics",
+          "opponent": "Washington Wizards",
+          "market": "Points",
+          "side": "Over",
+          "line": 6.5,
+          "odds": -114,
+          "edge_score": 80.9,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-24T22:58:42.678541+00:00"
+        },
+        {
+          "date": "2026-11-24",
+          "rank": 2,
+          "player": "Bilal Coulibaly",
+          "team": "Washington Wizards",
+          "opponent": "Boston Celtics",
+          "market": "Rebounds",
+          "side": "Over",
+          "line": 3.5,
+          "odds": -104,
+          "edge_score": 70.4,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-24T22:58:42.678541+00:00"
+        },
+        {
+          "date": "2026-11-24",
+          "rank": 3,
+          "player": "Neemias Queta",
+          "team": "Boston Celtics",
+          "opponent": "Washington Wizards",
+          "market": "Assists",
+          "side": "Over",
+          "line": 2.5,
+          "odds": 139,
+          "edge_score": 48.9,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-24T22:58:42.678541+00:00"
+        },
+        {
+          "date": "2026-11-24",
+          "rank": 4,
+          "player": "Kyshawn George",
+          "team": "Washington Wizards",
+          "opponent": "Boston Celtics",
+          "market": "Points",
+          "side": "Over",
+          "line": 14.5,
+          "odds": -107,
+          "edge_score": 47.7,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-24T22:58:42.678541+00:00"
         }
       ]
     }
@@ -2994,58 +3072,7 @@
       ]
     }
   },
-  "preview_months": {
-    "2026-11": {
-      "summary": {
-        "picks": 1,
-        "wins": 0,
-        "losses": 0,
-        "pushes": 0,
-        "dnp": 0,
-        "invalid": 0,
-        "pending": 1,
-        "settled": 0,
-        "win_rate": null,
-        "roi": null,
-        "profit_units": 0
-      },
-      "days": [
-        {
-          "date": "2026-11-24",
-          "picks": 1,
-          "wins": 0,
-          "losses": 0,
-          "pushes": 0,
-          "dnp": 0,
-          "invalid": 0,
-          "pending": 1,
-          "settled": 0,
-          "win_rate": null,
-          "roi": null,
-          "profit_units": 0
-        }
-      ],
-      "picks": [
-        {
-          "date": "2026-11-24",
-          "rank": 1,
-          "player": "Franz Wagner",
-          "team": "Orlando Magic",
-          "opponent": "Detroit Pistons",
-          "market": "Rebounds",
-          "side": "Over",
-          "line": 6.5,
-          "odds": -103,
-          "edge_score": 52.5,
-          "result": "pending",
-          "actual": null,
-          "profit_units": 0,
-          "saved_at": "2026-11-24T18:50:01.577020+00:00",
-          "official": false
-        }
-      ]
-    }
-  },
+  "preview_months": {},
   "archive_audit": [
     {
       "date": "2026-11-11",
@@ -3113,6 +3140,11 @@
       "date": "2026-11-23",
       "classification": "official",
       "count": 5
+    },
+    {
+      "date": "2026-11-24",
+      "classification": "official",
+      "count": 4
     }
   ],
   "validation_errors": 0

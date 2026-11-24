@@ -3587,7 +3587,42 @@
       "team_recovered_from_logs": false,
       "verified_team": null,
       "verified_opponent": null
+    },
+    "2026-11-24|samhauser|points": {
+      "prediction_id": "a6cb913e2426dd9be0e21811",
+      "saved_at": "2026-11-24T22:58:41.891388+00:00",
+      "game_date": "2026-11-24",
+      "event_id": "2ee99ffcdd379b9c0a47279e5e82f067",
+      "game_time": "2026-11-25T01:10:00+00:00",
+      "matchup": "Boston Celtics @ Washington Wizards",
+      "player": "Sam Hauser",
+      "team": "BOS",
+      "opponent": "WAS",
+      "market": "Points",
+      "side": "Over",
+      "line": "6.5",
+      "odds": "-114",
+      "projection": "9.38",
+      "probability": "0.6309",
+      "model_ev": "0.1842",
+      "last10": "9",
+      "model_version": "v7-live-injury-screen-experimental",
+      "bucket": 9,
+      "locked_at": "2026-11-24T22:58:42.609904+00:00",
+      "status": "pending",
+      "actual": null,
+      "actual_minutes": null,
+      "outcome": null,
+      "profit": null,
+      "stake": null,
+      "reason": "Waiting for game completion buffer",
+      "diagnostic_category": "waiting",
+      "diagnostic_teams_found": [],
+      "diagnostic_match_count": 0,
+      "team_recovered_from_logs": false,
+      "verified_team": null,
+      "verified_opponent": null
     }
   },
-  "updated_at": "2026-11-24T18:50:01.481263+00:00"
+  "updated_at": "2026-11-24T22:58:42.609904+00:00"
 }
