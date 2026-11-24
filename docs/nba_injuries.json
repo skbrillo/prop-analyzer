@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-23T23:55:08.900673+00:00",
+  "generated_at": "2026-11-24T00:37:49.913936+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 94,
+  "player_count": 93,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -12,7 +12,6 @@
     "CHI",
     "CLE",
     "DAL",
-    "DEN",
     "DET",
     "GSW",
     "IND",
@@ -34,11 +33,11 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 28,
-  "players_with_team": 94,
+  "teams_count": 27,
+  "players_with_team": 93,
   "players_without_team": 0,
   "status_counts": {
-    "O": 85,
+    "O": 84,
     "T": 9
   },
   "players": [
@@ -271,17 +270,6 @@
       "raw_status": "Out",
       "reason": "Inflammation | Heel | out",
       "date": "2026-11-17T22:42Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "534858",
-      "name": "Julian Strawther",
-      "team": "DEN",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Knee | out",
-      "date": "2026-10-17T00:52Z",
       "team_match": "feed"
     },
     {
