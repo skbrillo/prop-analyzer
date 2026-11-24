@@ -29,8 +29,13 @@ odds -130 to +130, not Anytime TD, and at most one pick per player per game
 (the bigger edge) so one player's game is never counted twice. Every qualifying
 pick is logged (the model's full record). The two biggest edges in each game are
 also marked "top" - the version you would actually bet - with its own record.
-A pick locks the first time it qualifies and is graded after the game, with
-closing-line value.
+Best price: every book's line and price is checked (DraftKings, FanDuel, BetMGM,
+Caesars). At each book the model's chance at that book's line must beat the
+book's no-vig price by 5-15 points; the qualifying offer with the highest
+expected value is taken. The pick is graded at that book's line and odds, and
+its closing-line value is measured against that book's closing price. The same
+pick at DraftKings' own line and price is graded too, for comparison.
+A pick locks the first time it qualifies.
 
 Reads   data/nfl_game_logs.csv, docs/nfl_board.json, data/nfl_snapshots/
 Writes  docs/nfl_model.json, docs/nfl_paper_picks.json
@@ -279,6 +284,15 @@ def grade(picks, all_games):
         odds = p["odds"]
         p["profit_units"] = 0.0 if p["result"] == "push" else (
             (odds / 100 if odds > 0 else 100 / -odds) if p["result"] == "win" else -1.0)
+        # Reference: the same pick taken at DraftKings' own line and price.
+        dk_line, dk_odds = p.get("dk_line"), p.get("dk_odds")
+        if dk_line is not None and dk_odds is not None:
+            if actual == dk_line:
+                p["dk_result"] = "push"
+            else:
+                won = actual > dk_line if p["side"] == "Over" else actual < dk_line
+                p["dk_result"] = "win" if won else "loss"
+            p["dk_profit_units"] = round(profit(p["dk_result"], dk_odds), 4)
 
 
 def attach_clv(picks):
@@ -290,11 +304,22 @@ def attach_clv(picks):
         snaps = index.get((p["event_id"], p["player_key"], p["market"]))
         if not snaps:
             continue
-        info = clv_report.pick_clv({"commence_time": p["commence_time"], "side": p["side"],
-                                    "line": p["line"], "odds": p["odds"]}, snaps)
-        for k in ("close_line", "close_odds", "price_clv", "line_clv", "sharp_clv"):
-            if info.get(k) is not None:
-                p[k] = info[k]
+        tip = parse_time(p["commence_time"])
+        ts, rows = clv_report.snapshot_before(snaps, tip, max_minutes=clv_report.CLOSE_MAX_MIN)
+        if not rows:
+            continue
+        book = p.get("book", "draftkings")
+        # Closing price at the same book and line the pick was taken at; else DraftKings.
+        for src in (book, "draftkings"):
+            same = [r for r in rows if r["book"] == src and r["line"] == p["line"] and fair_over(r["over_odds"], r["under_odds"])]
+            if same:
+                r = same[0]
+                fair = fair_over(r["over_odds"], r["under_odds"])
+                close_p = fair if p["side"] == "Over" else 1 - fair
+                p["close_book"], p["close_line"] = src, r["line"]
+                p["close_odds"] = int(float(r["over_odds"] if p["side"] == "Over" else r["under_odds"]))
+                p["price_clv"] = round(close_p - implied(p["odds"]), 4)
+                break
 
 
 def record(picks):
@@ -359,9 +384,11 @@ def version_records(all_picks):
     out = {}
     for ver in sorted({p.get("model_version", MODEL_VERSION) for p in all_picks}):
         mine = [p for p in all_picks if p.get("model_version", MODEL_VERSION) == ver]
-        best = [{**p, "profit_units": p.get("profit_units_best", p.get("profit_units", 0))} for p in mine]
+        dk_only = [{**p, "result": p.get("dk_result", p.get("result")),
+                    "profit_units": p.get("dk_profit_units", p.get("profit_units", 0))}
+                   for p in mine if p.get("dk_line") is not None]
         out[ver] = {"record": record(mine), "record_top": record([p for p in mine if p.get("top")]),
-                    "record_best_price": record(best)}
+                    "record_dk_only": record(dk_only)}
     return out
 
 
@@ -435,36 +462,52 @@ def main():
             }
             if m not in PICK_MARKETS or not market_p or status.lower() in OUT_STATUSES:
                 continue
-            for side, edge, odds in (("Over", p_over - market_p, dk["over"]),
-                                     ("Under", market_p - p_over, dk["under"])):
-                if EDGE_MIN <= edge <= EDGE_MAX and ODDS_MIN <= odds <= ODDS_MAX:
-                    best = prop.get("best_over" if side == "Over" else "best_under") or {}
-                    candidates.append((edge, ver, prop, key, side, odds,
-                                       p_over if side == "Over" else 1 - p_over, entry[ver]["projection"], best))
+            # Shop every book: at each book's line, the model's chance vs that book's
+            # no-vig price must clear the edge rules; take the offer with the best
+            # expected value (model chance x payout).
+            best_offer = None
+            for book, bl in (prop.get("books") or {}).items():
+                fair = fair_over(bl.get("over"), bl.get("under"))
+                if not fair:
+                    continue
+                pb = prob_over(m, value, bl["line"], rat)
+                for side, model_p, fair_p, odds in (("Over", pb, fair, bl["over"]),
+                                                    ("Under", 1 - pb, 1 - fair, bl["under"])):
+                    edge = model_p - fair_p
+                    if not (EDGE_MIN <= edge <= EDGE_MAX and ODDS_MIN <= odds <= ODDS_MAX):
+                        continue
+                    ev = model_p * (1 + (odds / 100 if odds > 0 else 100 / -odds)) - 1
+                    if best_offer is None or ev > best_offer["ev"]:
+                        best_offer = {"ev": ev, "edge": edge, "book": book, "line": bl["line"],
+                                      "side": side, "odds": odds, "model_p": model_p}
+            if best_offer:
+                o = best_offer
+                dk_odds = (dk["over"] if o["side"] == "Over" else dk["under"])
+                candidates.append((o["edge"], ver, prop, key, o, dk["line"], dk_odds, entry[ver]["projection"]))
         projections[f'{prop["event_id"]}|{key}|{m}'] = entry
 
     # Lock new paper picks per version: biggest edges first, one per player per game, never re-lock.
     per_player = defaultdict(int)
     for p in picks["picks"].values():
         per_player[(p.get("model_version", MODEL_VERSION), p["event_id"], p["player_key"])] += 1
-    for edge, ver, prop, key, side, odds, model_p, proj_value, best in sorted(candidates, key=lambda c: -c[0]):
+    for edge, ver, prop, key, o, dk_line, dk_odds, proj_value in sorted(candidates, key=lambda c: -c[0]):
         pk = pick_key(ver, prop["event_id"], key, prop["market"])
         slot = (ver, prop["event_id"], key)
         if pk in picks["picks"] or per_player[slot] >= MAX_PICKS_PER_PLAYER:
             continue
         per_player[slot] += 1
-        best_odds = best.get("odds") if best.get("odds") is not None else odds
         picks["picks"][pk] = {
             "locked_at": now.isoformat(timespec="seconds"), "event_id": prop["event_id"],
             "matchup": prop["matchup"], "commence_time": prop["commence_time"],
             "player": prop["player"], "player_key": key, "market": prop["market"],
-            "market_label": prop.get("market_label", prop["market"]), "side": side,
-            "line": prop["dk"]["line"], "odds": odds, "best_book": best.get("book", "draftkings"),
-            "best_odds": best_odds, "model_prob": round(model_p, 3), "edge": round(edge, 3),
+            "market_label": prop.get("market_label", prop["market"]), "side": o["side"],
+            "book": o["book"], "line": o["line"], "odds": o["odds"],
+            "dk_line": dk_line, "dk_odds": dk_odds,
+            "model_prob": round(o["model_p"], 3), "edge": round(o["edge"], 3), "ev": round(o["ev"], 3),
             "projection": proj_value, "model_version": ver, "result": "pending",
         }
-        print(f'Locked {ver} pick: {prop["player"]} {prop["market"]} {side} {prop["dk"]["line"]} '
-              f'({odds:+d}, best {best_odds:+d}) edge {edge:.1%}')
+        print(f'Locked {ver} pick: {prop["player"]} {prop["market"]} {o["side"]} {o["line"]} '
+              f'({o["odds"]:+d} at {o["book"]}; DK {dk_line} {dk_odds:+d}) edge {edge:.1%} EV {o["ev"]:+.1%}')
 
     # v1 is retired: drop its paper picks.
     for pk in [k for k, p in picks["picks"].items() if p.get("model_version", MODEL_VERSION) != v2.VERSION]:
@@ -492,10 +535,16 @@ def main():
         for rank, p in enumerate(sorted(group, key=lambda x: -x["edge"])):
             p["top"] = rank < TOP_PER_GAME
 
-    grade(picks, all_games)
+    # Picks locked before best-price shopping: move them to the best price that was
+    # recorded at DraftKings' line, and keep DraftKings' price as the reference.
     for p in picks["picks"].values():
-        if p.get("result") in ("win", "loss", "push"):
-            p["profit_units_best"] = round(profit(p["result"], p.get("best_odds", p["odds"])), 4)
+        if "book" not in p:
+            p["dk_line"], p["dk_odds"] = p["line"], p["odds"]
+            p["book"] = p.pop("best_book", "draftkings")
+            p["odds"] = p.pop("best_odds", p["odds"])
+            p.pop("profit_units_best", None)
+
+    grade(picks, all_games)
     attach_clv(picks)
     picks["updated_at"] = now.isoformat(timespec="seconds")
     PICKS.write_text(json.dumps(picks, indent=1) + "\n", encoding="utf-8")
