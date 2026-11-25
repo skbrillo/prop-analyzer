@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T10:11:36.724953+00:00",
+  "generated_at": "2026-11-25T10:52:01.922877+00:00",
   "official_start_date": "2026-11-13",
   "methodology": "Only validated immutable 4 PM Central pregame locks count as official.",
   "months": {
@@ -3072,7 +3072,92 @@
       ]
     }
   },
-  "preview_months": {},
+  "preview_months": {
+    "2026-11": {
+      "summary": {
+        "picks": 3,
+        "wins": 0,
+        "losses": 0,
+        "pushes": 0,
+        "dnp": 0,
+        "invalid": 0,
+        "pending": 3,
+        "settled": 0,
+        "win_rate": null,
+        "roi": null,
+        "profit_units": 0
+      },
+      "days": [
+        {
+          "date": "2026-11-25",
+          "picks": 3,
+          "wins": 0,
+          "losses": 0,
+          "pushes": 0,
+          "dnp": 0,
+          "invalid": 0,
+          "pending": 3,
+          "settled": 0,
+          "win_rate": null,
+          "roi": null,
+          "profit_units": 0
+        }
+      ],
+      "picks": [
+        {
+          "date": "2026-11-25",
+          "rank": 1,
+          "player": "Miles Bridges",
+          "team": "Phoenix Suns",
+          "opponent": "Houston Rockets",
+          "market": "Assists",
+          "side": "Over",
+          "line": 2.5,
+          "odds": -108,
+          "edge_score": 64.1,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-25T10:52:01.634127+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-25",
+          "rank": 2,
+          "player": "Brandin Podziemski",
+          "team": "Golden State Warriors",
+          "opponent": "Sacramento Kings",
+          "market": "Points",
+          "side": "Under",
+          "line": 18.5,
+          "odds": -119,
+          "edge_score": 63.5,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-25T10:52:01.634127+00:00",
+          "official": false
+        },
+        {
+          "date": "2026-11-25",
+          "rank": 3,
+          "player": "Day'Ron Sharpe",
+          "team": "Brooklyn Nets",
+          "opponent": "Milwaukee Bucks",
+          "market": "Assists",
+          "side": "Over",
+          "line": 3.5,
+          "odds": -118,
+          "edge_score": 50.3,
+          "result": "pending",
+          "actual": null,
+          "profit_units": 0,
+          "saved_at": "2026-11-25T10:52:01.634127+00:00",
+          "official": false
+        }
+      ]
+    }
+  },
   "archive_audit": [
     {
       "date": "2026-11-11",
