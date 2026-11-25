@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T18:44:17+00:00",
+  "generated_at": "2026-11-25T21:12:32+00:00",
   "settings": {
     "close_max_minutes": 60,
     "sharp_books": [
@@ -10,24 +10,24 @@
     ]
   },
   "coverage": {
-    "picks": 280,
-    "picks_with_close": 8,
-    "picks_with_price_clv": 3,
-    "picks_with_sharp_clv": 3
+    "picks": 282,
+    "picks_with_close": 10,
+    "picks_with_price_clv": 5,
+    "picks_with_sharp_clv": 5
   },
   "by_system": [
     {
       "group": "8910",
-      "picks": 3,
-      "with_close": 3,
-      "price_clv_n": 0,
-      "avg_price_clv_pct": null,
-      "beat_close_pct": null,
-      "sharp_clv_n": 1,
-      "avg_sharp_clv_pct": -4.64,
-      "line_moved_for_pct": 50.0,
-      "line_moved_against_pct": 50.0,
-      "avg_line_clv": 0.5
+      "picks": 5,
+      "with_close": 5,
+      "price_clv_n": 2,
+      "avg_price_clv_pct": -0.63,
+      "beat_close_pct": 50.0,
+      "sharp_clv_n": 3,
+      "avg_sharp_clv_pct": -0.94,
+      "line_moved_for_pct": 25.0,
+      "line_moved_against_pct": 25.0,
+      "avg_line_clv": 0.25
     },
     {
       "group": "edge",
@@ -46,16 +46,16 @@
   "by_system_market_side": [
     {
       "group": "8910 | points Over",
-      "picks": 2,
-      "with_close": 2,
-      "price_clv_n": 0,
-      "avg_price_clv_pct": null,
-      "beat_close_pct": null,
-      "sharp_clv_n": 1,
-      "avg_sharp_clv_pct": -4.64,
-      "line_moved_for_pct": 50.0,
-      "line_moved_against_pct": 50.0,
-      "avg_line_clv": 0.5
+      "picks": 3,
+      "with_close": 3,
+      "price_clv_n": 1,
+      "avg_price_clv_pct": -2.79,
+      "beat_close_pct": 0.0,
+      "sharp_clv_n": 2,
+      "avg_sharp_clv_pct": -2.99,
+      "line_moved_for_pct": 33.3,
+      "line_moved_against_pct": 33.3,
+      "avg_line_clv": 0.33
     },
     {
       "group": "8910 | points Under",
@@ -69,6 +69,19 @@
       "line_moved_for_pct": null,
       "line_moved_against_pct": null,
       "avg_line_clv": null
+    },
+    {
+      "group": "8910 | rebounds Under",
+      "picks": 1,
+      "with_close": 1,
+      "price_clv_n": 1,
+      "avg_price_clv_pct": 1.53,
+      "beat_close_pct": 100.0,
+      "sharp_clv_n": 1,
+      "avg_sharp_clv_pct": 3.18,
+      "line_moved_for_pct": 0.0,
+      "line_moved_against_pct": 0.0,
+      "avg_line_clv": 0.0
     },
     {
       "group": "edge | assists Over",
@@ -126,16 +139,16 @@
   "by_system_price": [
     {
       "group": "8910 | minus",
-      "picks": 3,
-      "with_close": 3,
-      "price_clv_n": 0,
-      "avg_price_clv_pct": null,
-      "beat_close_pct": null,
-      "sharp_clv_n": 1,
-      "avg_sharp_clv_pct": -4.64,
-      "line_moved_for_pct": 50.0,
-      "line_moved_against_pct": 50.0,
-      "avg_line_clv": 0.5
+      "picks": 5,
+      "with_close": 5,
+      "price_clv_n": 2,
+      "avg_price_clv_pct": -0.63,
+      "beat_close_pct": 50.0,
+      "sharp_clv_n": 3,
+      "avg_sharp_clv_pct": -0.94,
+      "line_moved_for_pct": 25.0,
+      "line_moved_against_pct": 25.0,
+      "avg_line_clv": 0.25
     },
     {
       "group": "edge | minus",
