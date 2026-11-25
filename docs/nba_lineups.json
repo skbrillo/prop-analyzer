@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T01:54:53.076120+00:00",
+  "generated_at": "2026-11-25T02:54:23.554801+00:00",
   "source": "RotoWire",
   "games": {
     "401910036": {
@@ -1075,8 +1075,8 @@
       "tipoff": "2026-11-25T00:00:00+00:00",
       "home": "ORL",
       "away": "DET",
-      "checked_at": "2026-11-25T01:54:53.076120+00:00",
-      "minutes_before_tipoff": -114.9,
+      "checked_at": "2026-11-25T02:54:23.554801+00:00",
+      "minutes_before_tipoff": -174.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1230,8 +1230,8 @@
       "tipoff": "2026-11-25T01:00:00+00:00",
       "home": "WAS",
       "away": "BOS",
-      "checked_at": "2026-11-25T01:54:53.076120+00:00",
-      "minutes_before_tipoff": -54.9,
+      "checked_at": "2026-11-25T02:54:23.554801+00:00",
+      "minutes_before_tipoff": -114.4,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1345,14 +1345,12 @@
       "tipoff": "2026-11-25T03:00:00+00:00",
       "home": "DEN",
       "away": "DAL",
-      "checked_at": "2026-11-25T01:54:53.076120+00:00",
-      "minutes_before_tipoff": 65.1,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-25T02:54:23.554801+00:00",
+      "minutes_before_tipoff": 5.6,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Jamal Murray",
           "team": "DEN"
@@ -1374,7 +1372,7 @@
           "team": "DEN"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Kyrie Irving",
           "team": "DAL"
@@ -1388,7 +1386,7 @@
           "team": "DAL"
         },
         {
-          "name": "P.J. Washington",
+          "name": "Zaccharie Risacher",
           "team": "DAL"
         },
         {
@@ -1396,6 +1394,8 @@
           "team": "DAL"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [],
       "away_out": [
         {
