@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T20:17:50.845043+00:00",
+  "generated_at": "2026-11-25T21:22:09.508502+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -18,7 +18,6 @@
     "LAC",
     "LAL",
     "MEM",
-    "MIA",
     "MIN",
     "NOP",
     "NYK",
@@ -33,7 +32,7 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 27,
+  "teams_count": 26,
   "players_with_team": 95,
   "players_without_team": 0,
   "status_counts": {
@@ -472,13 +471,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540726",
+      "injury_record_id": "540977",
       "name": "Austin Reaves",
       "team": "LAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
-      "date": "2026-11-24T01:31Z",
+      "date": "2026-11-25T20:33Z",
       "team_match": "feed"
     },
     {
@@ -534,17 +533,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-11-07T17:24Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540863",
-      "name": "Giannis Antetokounmpo",
-      "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Groin | day-to-day",
-      "date": "2026-11-24T22:07Z",
       "team_match": "feed"
     },
     {
@@ -813,13 +801,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61424",
+      "injury_record_id": "540975",
       "name": "Joel Embiid",
       "team": "PHI",
       "status": "O",
       "raw_status": "Out",
       "reason": "Illness | out",
-      "date": "2026-11-25T20:05Z",
+      "date": "2026-11-25T20:07Z",
       "team_match": "feed"
     },
     {
@@ -886,6 +874,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-08-24T20:23Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540978",
+      "name": "Zach LaVine",
+      "team": "SAC",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Knee | day-to-day",
+      "date": "2026-11-25T20:49Z",
       "team_match": "feed"
     },
     {
