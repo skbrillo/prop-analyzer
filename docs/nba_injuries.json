@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T01:19:31.251459+00:00",
+  "generated_at": "2026-11-25T02:31:35.779059+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -901,24 +901,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61399",
-      "name": "Victor Wembanyama",
-      "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-24T06:06Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61398",
+      "injury_record_id": "540881",
       "name": "De'Aaron Fox",
       "team": "SAS",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-24T06:06Z",
+      "date": "2026-11-25T01:27Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540880",
+      "name": "Victor Wembanyama",
+      "team": "SAS",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-25T01:23Z",
       "team_match": "feed"
     },
     {
