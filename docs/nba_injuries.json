@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T19:23:25.674275+00:00",
+  "generated_at": "2026-11-25T20:17:50.845043+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,8 +37,8 @@
   "players_with_team": 95,
   "players_without_team": 0,
   "status_counts": {
-    "O": 79,
-    "T": 16
+    "O": 80,
+    "T": 15
   },
   "players": [
     {
@@ -813,13 +813,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540864",
+      "injury_record_id": "-61424",
       "name": "Joel Embiid",
       "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-24T22:09Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Illness | out",
+      "date": "2026-11-25T20:05Z",
       "team_match": "feed"
     },
     {
