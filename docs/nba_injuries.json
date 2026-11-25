@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-25T02:31:35.779059+00:00",
+  "generated_at": "2026-11-25T03:38:16.138072+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 94,
+  "player_count": 93,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 94,
+  "players_with_team": 93,
   "players_without_team": 0,
   "status_counts": {
     "O": 78,
-    "T": 16
+    "T": 15
   },
   "players": [
     {
@@ -237,17 +237,6 @@
       "raw_status": "Out",
       "reason": "Groin | out",
       "date": "2026-11-23T23:25Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540703",
-      "name": "P.J. Washington",
-      "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-23T23:21Z",
       "team_match": "feed"
     },
     {
