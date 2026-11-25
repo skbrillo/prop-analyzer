@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T23:29:55.016197+00:00",
+  "generated_at": "2026-11-25T00:26:05.436692+00:00",
   "source": "RotoWire",
   "games": {
     "401910036": {
@@ -1075,14 +1075,12 @@
       "tipoff": "2026-11-25T00:00:00+00:00",
       "home": "ORL",
       "away": "DET",
-      "checked_at": "2026-11-24T23:29:55.016197+00:00",
-      "minutes_before_tipoff": 30.1,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-25T00:26:05.436692+00:00",
+      "minutes_before_tipoff": -26.1,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Jalen Suggs",
           "team": "ORL"
@@ -1104,13 +1102,13 @@
           "team": "ORL"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
-          "name": "Cade Cunningham",
+          "name": "Daniss Jenkins",
           "team": "DET"
         },
         {
-          "name": "Daniss Jenkins",
+          "name": "Isaiah Joe",
           "team": "DET"
         },
         {
@@ -1126,6 +1124,8 @@
           "team": "DET"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Paolo Banchero",
@@ -1149,6 +1149,11 @@
         }
       ],
       "away_out": [
+        {
+          "name": "Cade Cunningham",
+          "team": "DET",
+          "status": "out"
+        },
         {
           "name": "Jalen Duren",
           "team": "DET",
@@ -1192,6 +1197,11 @@
           "status": "out"
         },
         {
+          "name": "Cade Cunningham",
+          "team": "DET",
+          "status": "out"
+        },
+        {
           "name": "Jalen Duren",
           "team": "DET",
           "status": "out"
@@ -1220,8 +1230,8 @@
       "tipoff": "2026-11-25T01:00:00+00:00",
       "home": "WAS",
       "away": "BOS",
-      "checked_at": "2026-11-24T23:29:55.016197+00:00",
-      "minutes_before_tipoff": 90.1,
+      "checked_at": "2026-11-25T00:26:05.436692+00:00",
+      "minutes_before_tipoff": 33.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1335,8 +1345,8 @@
       "tipoff": "2026-11-25T03:00:00+00:00",
       "home": "DEN",
       "away": "DAL",
-      "checked_at": "2026-11-24T23:29:55.016197+00:00",
-      "minutes_before_tipoff": 210.1,
+      "checked_at": "2026-11-25T00:26:05.436692+00:00",
+      "minutes_before_tipoff": 153.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
