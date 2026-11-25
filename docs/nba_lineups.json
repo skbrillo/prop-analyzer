@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-25T00:26:05.436692+00:00",
+  "generated_at": "2026-11-25T01:54:53.076120+00:00",
   "source": "RotoWire",
   "games": {
     "401910036": {
@@ -1075,8 +1075,8 @@
       "tipoff": "2026-11-25T00:00:00+00:00",
       "home": "ORL",
       "away": "DET",
-      "checked_at": "2026-11-25T00:26:05.436692+00:00",
-      "minutes_before_tipoff": -26.1,
+      "checked_at": "2026-11-25T01:54:53.076120+00:00",
+      "minutes_before_tipoff": -114.9,
       "status": "confirmed",
       "home_status": "confirmed",
       "away_status": "confirmed",
@@ -1230,14 +1230,12 @@
       "tipoff": "2026-11-25T01:00:00+00:00",
       "home": "WAS",
       "away": "BOS",
-      "checked_at": "2026-11-25T00:26:05.436692+00:00",
-      "minutes_before_tipoff": 33.9,
-      "status": "unverified",
-      "home_status": "unverified",
-      "away_status": "unverified",
-      "home_starters": [],
-      "away_starters": [],
-      "home_projected": [
+      "checked_at": "2026-11-25T01:54:53.076120+00:00",
+      "minutes_before_tipoff": -54.9,
+      "status": "confirmed",
+      "home_status": "confirmed",
+      "away_status": "confirmed",
+      "home_starters": [
         {
           "name": "Trae Young",
           "team": "WAS"
@@ -1259,13 +1257,13 @@
           "team": "WAS"
         }
       ],
-      "away_projected": [
+      "away_starters": [
         {
           "name": "Derrick White",
           "team": "BOS"
         },
         {
-          "name": "Jordan Walsh",
+          "name": "Sam Hauser",
           "team": "BOS"
         },
         {
@@ -1281,6 +1279,8 @@
           "team": "BOS"
         }
       ],
+      "home_projected": [],
+      "away_projected": [],
       "home_out": [
         {
           "name": "Reece Beekman",
@@ -1345,8 +1345,8 @@
       "tipoff": "2026-11-25T03:00:00+00:00",
       "home": "DEN",
       "away": "DAL",
-      "checked_at": "2026-11-25T00:26:05.436692+00:00",
-      "minutes_before_tipoff": 153.9,
+      "checked_at": "2026-11-25T01:54:53.076120+00:00",
+      "minutes_before_tipoff": 65.1,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
