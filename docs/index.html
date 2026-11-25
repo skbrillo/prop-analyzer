@@ -454,6 +454,21 @@ tbody tr:hover{background:#1d3048}
  </div>
 </section>
 
+<section class="section" id="points-under">
+ <div class="head"><h2>Points Under</h2><span id="pu-status" class="muted">Loading...</span></div>
+ <div class="muted">Every NBA points prop, every day, bet to the Under at the best price any book offers. No model, no edge, no filters.</div>
+ <div class="stats" id="pu-cards" style="grid-template-columns:repeat(auto-fit,minmax(130px,1fr))"></div>
+ <div class="tablewrap"><table id="pu-table">
+  <thead><tr><th>Date</th><th>Props</th><th>Wins</th><th>Losses</th><th>Push</th><th>Void</th><th>Pending</th><th>Win Rate</th><th>Units (Best Price)</th><th>Units (DK Price)</th><th>Prices</th></tr></thead>
+  <tbody id="pu-rows"></tbody>
+ </table></div>
+ <div class="note">
+  Line = DraftKings' main line from the last capture before tipoff; price = the best Under price any book (DK, FanDuel, BetMGM, Caesars) offers at that same line.
+  Days before 11/24, and props without a multi-book capture, use DraftKings' price ("DK only"). One unit per bet; a player who didn't play is a void.
+  Break-even at -110 is 52.4%. Click a date to see every prop.
+ </div>
+</section>
+
 <div class="footer">
  Data: ESPN and DraftKings via ParlayAPI.
  <p>Model: <span id="model-version">Experimental</span></p>
@@ -2173,7 +2188,59 @@ async function loadBoard(){
 }
 ["board-search","board-game","board-market","board-view"].forEach(id=>$(id).addEventListener(id==="board-search"?"input":"change",renderBoard));
 
+/* POINTS UNDER (docs/points_unders.json, built by build_points_unders.py) */
+let pointsUnder=null,puOpen=null;
+function puUnits(v){return v==null?"--":(v>0?"+":"")+Number(v).toFixed(2)+"u";}
+function puTone(v){return v==null||v===0?"":v>0?"green":"red";}
+function renderPointsUnder(){
+ const d=pointsUnder;if(!d)return;
+ const t=d.totals||{},a=t.all_days||{},adk=t.all_days_dk||{},b=t.best_price_days||{},bdk=t.best_price_days_dk||{};
+ const cards=$("pu-cards");cards.replaceChildren();
+ for(const [k,v,cls] of [
+  ["Record",(a.wins??0)+"-"+(a.losses??0),""],
+  ["Win Rate",a.win_rate==null?"--":a.win_rate+"%",a.win_rate==null?"":a.win_rate>=52.4?"green":"red"],
+  ["Units",puUnits(a.units),puTone(a.units)],
+  ["ROI",a.roi==null?"--":(a.roi>0?"+":"")+a.roi+"%",puTone(a.roi)],
+  ["Best-Price Days",(b.wins??0)+"-"+(b.losses??0)+" | "+puUnits(b.units),puTone(b.units)],
+  ["Same Bets at DK Price",puUnits(bdk.units),puTone(bdk.units)]
+ ]){const c=addText(cards,"div","","stat");c.append(k);addText(c,"b",String(v),cls);}
+ const body=$("pu-rows");body.replaceChildren();
+ for(const day of d.days||[]){
+  const tr=document.createElement("tr");tr.style.cursor="pointer";
+  const cell=(v,cls="")=>addText(tr,"td",String(v),cls);
+  cell((puOpen===day.date?"▾ ":"▸ ")+day.date);cell(day.props);
+  cell(day.best.wins,day.best.wins?"green":"");cell(day.best.losses,day.best.losses?"red":"");
+  cell(day.pushes);cell(day.voids,"muted");cell(day.pending,day.pending?"pending":"");
+  cell(day.best.win_rate==null?"--":day.best.win_rate+"%",day.best.win_rate==null?"":day.best.win_rate>=52.4?"green":"red");
+  cell(puUnits(day.best.units),puTone(day.best.units));cell(puUnits(day.dk.units),puTone(day.dk.units));
+  cell(day.source==="best"?"Best price ("+day.best_price_props+" of "+day.props+")":"DK only","muted");
+  tr.addEventListener("click",()=>{puOpen=puOpen===day.date?null:day.date;renderPointsUnder();});
+  body.appendChild(tr);
+  if(puOpen===day.date){
+   const r=body.insertRow(),td=r.insertCell();td.colSpan=11;
+   const wrap=addText(td,"div","","tablewrap"),tbl=document.createElement("table");wrap.appendChild(tbl);
+   const hr=tbl.createTHead().insertRow();["Player","Game","Line","Book","Under Odds","DK Odds","Actual","Result","Units"].forEach(h=>addText(hr,"th",h));
+   const tb=tbl.createTBody();
+   for(const x of day.bets){
+    const br=tb.insertRow();const c=(v,cls="")=>{const q=br.insertCell();q.textContent=v;if(cls)q.className=cls;};
+    c(x.player,"player");c(x.matchup||"--");c(number(x.line));
+    c((d.book_labels||{})[x.book]||x.book,x.book&&x.book!=="draftkings"?"green":"");
+    c(american(x.odds));c(x.dk_odds==null?"--":american(x.dk_odds),"muted");
+    c(x.actual==null?"--":String(x.actual),x.actual==null?"muted":x.actual<x.line?"green":"red");
+    c(String(x.result||"").toUpperCase(),x.result==="win"?"win":x.result==="loss"?"loss":x.result==="pending"?"pending":"muted");
+    c(x.units==null?"--":puUnits(x.units),puTone(x.units));
+   }
+  }
+ }
+ $("pu-status").textContent=(t.bets||0)+" props since "+(t.first_date||"--")+" | updated "+new Date(d.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit"})+" CT";
+}
+async function loadPointsUnder(){
+ try{pointsUnder=await fetchJson("points_unders.json");renderPointsUnder();}
+ catch(e){$("pu-status").textContent="Points Under not available yet ("+e.message+").";}
+}
+
 function refreshAll(){
+ loadPointsUnder();
  loadBoard();
  load8910();
  loadData();
