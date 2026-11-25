@@ -112,7 +112,7 @@ jobs:
           PARLAY_API_KEY: ${{ secrets.PARLAY_API_KEY }}
           MARKET_BOOKS: ${{ vars.MARKET_BOOKS }}
           # Game lines only on the 4 PM and manual runs (saves credits).
-          FETCH_GAME_LINES: ${{ (steps.schedule.outputs.run_type == 'afternoon' || steps.schedule.outputs.run_type == 'manual') && '1' || '0' }}
+          FETCH_GAME_LINES: ${{ (steps.schedule.outputs.run_type == 'morning' || steps.schedule.outputs.run_type == 'afternoon' || steps.schedule.outputs.run_type == 'manual') && '1' || '0' }}
         run: python update_odds.py
       - name: Build line-shopping board
         if: steps.schedule.outputs.run_predictions == 'true'
@@ -142,6 +142,10 @@ jobs:
       - name: Update Top 25 monthly performance
         if: steps.schedule.outputs.run_predictions == 'true' || steps.schedule.outputs.run_grading == 'true'
         run: python edge_monthly_tracker.py
+      - name: Points Under report
+        if: steps.schedule.outputs.run_predictions == 'true' || steps.schedule.outputs.run_grading == 'true'
+        continue-on-error: true
+        run: python build_points_unders.py
       - name: Closing line value report
         if: steps.schedule.outputs.run_predictions == 'true' || steps.schedule.outputs.run_grading == 'true'
         continue-on-error: true
@@ -173,7 +177,7 @@ jobs:
             docs/8910_history.json
           # New CLV files may not exist yet; add them separately so a missing
           # path never blocks the main commit.
-          for path in docs/clv_report.json docs/clv_picks.csv docs/market_board.json data/market_snapshots; do
+          for path in docs/clv_report.json docs/clv_picks.csv docs/market_board.json docs/points_unders.json data/market_snapshots; do
             if [ -e "$path" ]; then git add -A -- "$path"; fi
           done
           if ! git diff --cached --quiet; then
