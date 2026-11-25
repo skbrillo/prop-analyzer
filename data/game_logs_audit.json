@@ -1,9 +1,9 @@
 {
-  "generated_at_utc": "2026-11-24T22:58:39.541564+00:00",
+  "generated_at_utc": "2026-11-25T10:11:35.178210+00:00",
   "regular_season_only": true,
-  "games_validated": 258,
-  "accepted_rows": 5755,
-  "explicit_dnp_rows": 1071,
+  "games_validated": 261,
+  "accepted_rows": 5825,
+  "explicit_dnp_rows": 1079,
   "rejection_counts": {
     "non_regular_season_game": 67,
     "invalid_stats_or_minutes": 18
@@ -2589,6 +2589,36 @@
       ],
       "player_logs": 25,
       "explicit_dnps": 1
+    },
+    {
+      "date": "2026-11-24",
+      "game_id": "401909314",
+      "teams": [
+        "ORL",
+        "DET"
+      ],
+      "player_logs": 21,
+      "explicit_dnps": 3
+    },
+    {
+      "date": "2026-11-24",
+      "game_id": "401909315",
+      "teams": [
+        "WSH",
+        "BOS"
+      ],
+      "player_logs": 24,
+      "explicit_dnps": 2
+    },
+    {
+      "date": "2026-11-24",
+      "game_id": "401909316",
+      "teams": [
+        "DEN",
+        "DAL"
+      ],
+      "player_logs": 25,
+      "explicit_dnps": 3
     }
   ],
   "status": "accepted"

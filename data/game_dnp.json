@@ -1,5 +1,5 @@
 {
-  "generated_at_utc": "2026-11-24T22:58:39.541564+00:00",
+  "generated_at_utc": "2026-11-25T10:11:35.178210+00:00",
   "records": [
     {
       "date": "2026-10-20",
@@ -12851,6 +12851,102 @@
       "game_id": "401910045",
       "opponent": "San Antonio Spurs",
       "opponent_abbr": "SA",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-24",
+      "player": "Tolu Smith",
+      "player_id": "4397882",
+      "team": "Detroit Pistons",
+      "team_abbr": "DET",
+      "team_id": "8",
+      "game_id": "401909314",
+      "opponent": "Orlando Magic",
+      "opponent_abbr": "ORL",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-24",
+      "player": "Cade Cunningham",
+      "player_id": "4432166",
+      "team": "Detroit Pistons",
+      "team_abbr": "DET",
+      "team_id": "8",
+      "game_id": "401909314",
+      "opponent": "Orlando Magic",
+      "opponent_abbr": "ORL",
+      "reason": "RIGHT KNEE SORENESS"
+    },
+    {
+      "date": "2026-11-24",
+      "player": "Nikola Vucevic",
+      "player_id": "6478",
+      "team": "Orlando Magic",
+      "team_abbr": "ORL",
+      "team_id": "19",
+      "game_id": "401909314",
+      "opponent": "Detroit Pistons",
+      "opponent_abbr": "DET",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-24",
+      "player": "Anthony Gill",
+      "player_id": "2581184",
+      "team": "Washington Wizards",
+      "team_abbr": "WSH",
+      "team_id": "27",
+      "game_id": "401909315",
+      "opponent": "Boston Celtics",
+      "opponent_abbr": "BOS",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-24",
+      "player": "Mike Conley",
+      "player_id": "3195",
+      "team": "Boston Celtics",
+      "team_abbr": "BOS",
+      "team_id": "2",
+      "game_id": "401909315",
+      "opponent": "Washington Wizards",
+      "opponent_abbr": "WSH",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-24",
+      "player": "Marcus Sasser",
+      "player_id": "4432107",
+      "team": "Dallas Mavericks",
+      "team_abbr": "DAL",
+      "team_id": "6",
+      "game_id": "401909316",
+      "opponent": "Denver Nuggets",
+      "opponent_abbr": "DEN",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-24",
+      "player": "Julian Strawther",
+      "player_id": "4432181",
+      "team": "Denver Nuggets",
+      "team_abbr": "DEN",
+      "team_id": "7",
+      "game_id": "401909316",
+      "opponent": "Dallas Mavericks",
+      "opponent_abbr": "DAL",
+      "reason": "COACH'S DECISION"
+    },
+    {
+      "date": "2026-11-24",
+      "player": "Jett Howard",
+      "player_id": "5105806",
+      "team": "Dallas Mavericks",
+      "team_abbr": "DAL",
+      "team_id": "6",
+      "game_id": "401909316",
+      "opponent": "Denver Nuggets",
+      "opponent_abbr": "DEN",
       "reason": "COACH'S DECISION"
     }
   ]

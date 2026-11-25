@@ -3539,19 +3539,21 @@
       "model_version": "v7-live-injury-screen-experimental",
       "bucket": 8,
       "locked_at": "2026-11-24T11:12:19.500862+00:00",
-      "status": "pending",
-      "actual": null,
-      "actual_minutes": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion buffer",
-      "diagnostic_category": "waiting",
-      "diagnostic_teams_found": [],
-      "diagnostic_match_count": 0,
+      "status": "graded",
+      "actual": 2.0,
+      "actual_minutes": 28.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": "",
+      "diagnostic_category": "graded",
+      "diagnostic_teams_found": [
+        "ORL"
+      ],
+      "diagnostic_match_count": 1,
       "team_recovered_from_logs": false,
-      "verified_team": null,
-      "verified_opponent": null
+      "verified_team": "ORL",
+      "verified_opponent": "DET"
     },
     "2026-11-24|anthonydavis|points": {
       "prediction_id": "542f176fc1af575aeeb65a55",
@@ -3574,19 +3576,21 @@
       "model_version": "v7-live-injury-screen-experimental",
       "bucket": 8,
       "locked_at": "2026-11-24T18:50:01.481263+00:00",
-      "status": "pending",
-      "actual": null,
-      "actual_minutes": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion buffer",
-      "diagnostic_category": "waiting",
-      "diagnostic_teams_found": [],
-      "diagnostic_match_count": 0,
+      "status": "graded",
+      "actual": 33.0,
+      "actual_minutes": 37.0,
+      "outcome": "win",
+      "profit": 90.09,
+      "stake": 100.0,
+      "reason": "",
+      "diagnostic_category": "graded",
+      "diagnostic_teams_found": [
+        "WAS"
+      ],
+      "diagnostic_match_count": 1,
       "team_recovered_from_logs": false,
-      "verified_team": null,
-      "verified_opponent": null
+      "verified_team": "WAS",
+      "verified_opponent": "BOS"
     },
     "2026-11-24|samhauser|points": {
       "prediction_id": "a6cb913e2426dd9be0e21811",
@@ -3609,20 +3613,22 @@
       "model_version": "v7-live-injury-screen-experimental",
       "bucket": 9,
       "locked_at": "2026-11-24T22:58:42.609904+00:00",
-      "status": "pending",
-      "actual": null,
-      "actual_minutes": null,
-      "outcome": null,
-      "profit": null,
-      "stake": null,
-      "reason": "Waiting for game completion buffer",
-      "diagnostic_category": "waiting",
-      "diagnostic_teams_found": [],
-      "diagnostic_match_count": 0,
+      "status": "graded",
+      "actual": 4.0,
+      "actual_minutes": 22.0,
+      "outcome": "loss",
+      "profit": -100.0,
+      "stake": 100.0,
+      "reason": "",
+      "diagnostic_category": "graded",
+      "diagnostic_teams_found": [
+        "BOS"
+      ],
+      "diagnostic_match_count": 1,
       "team_recovered_from_logs": false,
-      "verified_team": null,
-      "verified_opponent": null
+      "verified_team": "BOS",
+      "verified_opponent": "WAS"
     }
   },
-  "updated_at": "2026-11-24T22:58:42.609904+00:00"
+  "updated_at": "2026-11-25T10:11:36.246105+00:00"
 }
