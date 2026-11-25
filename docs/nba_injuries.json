@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-24T23:15:40.368440+00:00",
+  "generated_at": "2026-11-25T00:08:35.868757+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,8 +37,8 @@
   "players_with_team": 95,
   "players_without_team": 0,
   "status_counts": {
-    "O": 76,
-    "T": 19
+    "O": 78,
+    "T": 17
   },
   "players": [
     {
@@ -285,6 +285,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "540876",
+      "name": "Cade Cunningham",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Knee | out",
+      "date": "2026-11-24T23:36Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540845",
       "name": "Ebuka Okorie",
       "team": "DET",
@@ -329,13 +340,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540688",
-      "name": "Cade Cunningham",
-      "team": "DET",
+      "injury_record_id": "540872",
+      "name": "Yaxel Lendeborg",
+      "team": "GSW",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-23T22:07Z",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-24T23:20Z",
       "team_match": "feed"
     },
     {
@@ -670,35 +681,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61395",
-      "name": "Jaylin Williams",
-      "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Spasms | Back | day-to-day",
-      "date": "2026-11-24T04:36Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61394",
-      "name": "Aday Mara",
-      "team": "OKC",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-24T04:36Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540675",
+      "injury_record_id": "540875",
       "name": "Nikola Topic",
       "team": "OKC",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Hip | out",
-      "date": "2026-11-23T18:49Z",
+      "date": "2026-11-24T23:29Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540874",
+      "name": "Jaylin Williams",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Spasms | Back | out",
+      "date": "2026-11-24T23:24Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540871",
+      "name": "Aday Mara",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Lower Leg | out",
+      "date": "2026-11-24T23:19Z",
       "team_match": "feed"
     },
     {
@@ -710,17 +721,6 @@
       "raw_status": "Out",
       "reason": "Fracture | Leg | out",
       "date": "2026-11-23T18:43Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540667",
-      "name": "Alex Caruso",
-      "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Hip | out",
-      "date": "2026-11-23T18:38Z",
       "team_match": "feed"
     },
     {
