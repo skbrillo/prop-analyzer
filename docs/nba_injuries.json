@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-25T17:37:26.991262+00:00",
+  "generated_at": "2026-11-25T18:25:19.042338+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 94,
+  "player_count": 95,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 94,
+  "players_with_team": 95,
   "players_without_team": 0,
   "status_counts": {
-    "O": 78,
-    "T": 16
+    "O": 80,
+    "T": 15
   },
   "players": [
     {
@@ -120,13 +120,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540868",
+      "injury_record_id": "540950",
       "name": "Ryan Kalkbrenner",
       "team": "CHA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-24T22:33Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-25T17:41Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540949",
+      "name": "Grayson Allen",
+      "team": "CHA",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Concussion | out",
+      "date": "2026-11-25T17:39Z",
       "team_match": "feed"
     },
     {
@@ -149,17 +160,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Undisclosed | day-to-day",
       "date": "2026-11-24T22:30Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540865",
-      "name": "Grayson Allen",
-      "team": "CHA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Concussion | out",
-      "date": "2026-11-24T22:29Z",
       "team_match": "feed"
     },
     {
@@ -626,13 +626,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "540862",
-      "name": "Miles McBride",
+      "injury_record_id": "540957",
+      "name": "Josh Hart",
       "team": "NYK",
       "status": "T",
       "raw_status": "Day-To-Day",
-      "reason": "Soreness | Groin | day-to-day",
-      "date": "2026-11-24T21:56Z",
+      "reason": "Sprain | Shoulder | day-to-day",
+      "date": "2026-11-25T17:57Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540956",
+      "name": "Miles McBride",
+      "team": "NYK",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Groin | out",
+      "date": "2026-11-25T17:57Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540954",
+      "name": "Karl-Anthony Towns",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Inflammation | Knee | day-to-day",
+      "date": "2026-11-25T17:54Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540953",
+      "name": "Jalen Brunson",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-25T17:53Z",
       "team_match": "feed"
     },
     {
@@ -648,17 +681,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540860",
-      "name": "Josh Hart",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Shoulder | day-to-day",
-      "date": "2026-11-24T21:54Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540859",
       "name": "OG Anunoby",
       "team": "NYK",
@@ -666,17 +688,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Calf | out",
       "date": "2026-11-24T21:53Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540858",
-      "name": "Karl-Anthony Towns",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Knee | day-to-day",
-      "date": "2026-11-24T21:50Z",
       "team_match": "feed"
     },
     {
