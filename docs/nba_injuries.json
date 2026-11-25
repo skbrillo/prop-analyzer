@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-25T15:47:58.372521+00:00",
+  "generated_at": "2026-11-25T16:52:17.785274+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 93,
+  "player_count": 94,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 93,
+  "players_with_team": 94,
   "players_without_team": 0,
   "status_counts": {
     "O": 78,
-    "T": 15
+    "T": 16
   },
   "players": [
     {
@@ -582,6 +582,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61417",
+      "name": "Julian Reese",
+      "team": "NOP",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Knee | day-to-day",
+      "date": "2026-11-25T16:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540348",
       "name": "Trendon Watford",
       "team": "NOP",
@@ -868,13 +879,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540887",
+      "injury_record_id": "540931",
       "name": "Maxime Raynaud",
       "team": "SAC",
       "status": "O",
       "raw_status": "Out",
       "reason": "Dislocated | Knee | out",
-      "date": "2026-11-25T04:21Z",
+      "date": "2026-11-25T16:25Z",
       "team_match": "feed"
     },
     {
