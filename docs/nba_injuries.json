@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T04:42:49.297676+00:00",
+  "generated_at": "2026-11-26T05:38:45.526352+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -36,8 +36,8 @@
   "players_with_team": 93,
   "players_without_team": 0,
   "status_counts": {
-    "O": 82,
-    "T": 11
+    "O": 79,
+    "T": 14
   },
   "players": [
     {
@@ -130,13 +130,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540950",
+      "injury_record_id": "-61448",
       "name": "Ryan Kalkbrenner",
       "team": "CHA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Hip | out",
-      "date": "2026-11-25T17:41Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hip | day-to-day",
+      "date": "2026-11-26T05:30Z",
       "team_match": "feed"
     },
     {
@@ -174,13 +174,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540984",
+      "injury_record_id": "-61447",
       "name": "Jalen Smith",
       "team": "CHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Illness | out",
-      "date": "2026-11-25T22:07Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-26T05:29Z",
       "team_match": "feed"
     },
     {
@@ -614,6 +614,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61449",
+      "name": "Miles McBride",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Groin | day-to-day",
+      "date": "2026-11-26T05:31Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541011",
       "name": "Andre Drummond",
       "team": "NYK",
@@ -632,17 +643,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Calf | out",
       "date": "2026-11-25T23:19Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540956",
-      "name": "Miles McBride",
-      "team": "NYK",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Groin | out",
-      "date": "2026-11-25T17:57Z",
       "team_match": "feed"
     },
     {
