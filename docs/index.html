@@ -383,7 +383,7 @@ tbody tr:hover{background:#1d3048}
 </section>
 
 <section class="monthly-panel" id="tracker8910">
- <div class="monthly-head"><h2>8910 — Performance Tracker</h2><div class="tabs" id="period8910" aria-label="8910 reporting period"><button type="button" data-period="today" class="active" aria-pressed="true">Today</button><button type="button" data-period="yesterday" aria-pressed="false">Yesterday</button><button type="button" data-period="month" aria-pressed="false">This Month</button><button type="button" data-period="all" aria-pressed="false">All History</button></div></div>
+ <div class="monthly-head"><h2>8910 — Performance Tracker</h2><div class="tabs" id="period8910" aria-label="8910 reporting period"><button type="button" data-period="today" aria-pressed="false">Today</button><button type="button" data-period="yesterday" aria-pressed="false">Yesterday</button><button type="button" data-period="month" aria-pressed="false">This Month</button><button type="button" data-period="all" class="active" aria-pressed="true">All History</button></div></div>
  <div class="monthly-stats" id="stats8910" style="grid-template-columns:repeat(auto-fit,minmax(145px,1fr))"></div>
  <div class="muted" id="status8910">Loading 8910...</div>
  <h3>Market &amp; Side Performance Breakdown</h3>
@@ -2034,7 +2034,7 @@ function downloadEdge(){
 
 let archive8910=[];
 let updated8910='';
-let period8910='today';
+let period8910='all';
 function render8910MarketBreakdown(rows){
  const body=$('market8910-rows');body.replaceChildren();
  const groups=[['All Overs',null,'Over'],['All Unders',null,'Under']];
