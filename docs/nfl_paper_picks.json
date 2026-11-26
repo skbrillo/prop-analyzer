@@ -16,11 +16,15 @@
    "edge": 0.149,
    "projection": 1.4,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "loss",
    "top": true,
    "dk_line": 1.5,
    "dk_odds": 113,
-   "book": "betmgm"
+   "book": "betmgm",
+   "actual": 2.0,
+   "profit_units": -1.0,
+   "dk_result": "loss",
+   "dk_profit_units": -1.0
   },
   "nfl-v2-volume-script-defense-injuries|9c71c76286aa8e94bf0907ab5d29ca2e|marshawn lloyd|rush_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -38,7 +42,7 @@
    "edge": 0.147,
    "projection": 20.0,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "loss",
    "top": true,
    "dk_line": 11.5,
    "dk_odds": -112,
@@ -46,7 +50,11 @@
    "close_book": "draftkings",
    "close_line": 11.5,
    "close_odds": -113,
-   "price_clv": -0.0262
+   "price_clv": -0.0262,
+   "actual": 10.0,
+   "profit_units": -1.0,
+   "dk_result": "loss",
+   "dk_profit_units": -1.0
   },
   "nfl-v2-volume-script-defense-injuries|262d4bd2eb36f2ae78f313b415067418|aj barner|receptions": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -284,7 +292,7 @@
    "edge": 0.129,
    "projection": 2.6,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "win",
    "top": false,
    "dk_line": 2.5,
    "dk_odds": 123,
@@ -292,7 +300,11 @@
    "close_book": "draftkings",
    "close_line": 2.5,
    "close_odds": 106,
-   "price_clv": 0.0088
+   "price_clv": 0.0088,
+   "actual": 2.0,
+   "profit_units": 1.23,
+   "dk_result": "win",
+   "dk_profit_units": 1.23
   },
   "nfl-v2-volume-script-defense-injuries|9808f5201846887d9b39ce02e1a3d27f|sam roush|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -332,7 +344,7 @@
    "edge": 0.126,
    "projection": 1.92,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "loss",
    "top": false,
    "dk_line": 1.5,
    "dk_odds": 112,
@@ -340,7 +352,11 @@
    "close_book": "betmgm",
    "close_line": 1.5,
    "close_odds": 115,
-   "price_clv": -0.0316
+   "price_clv": -0.0316,
+   "actual": 0.0,
+   "profit_units": -1.0,
+   "dk_result": "loss",
+   "dk_profit_units": -1.0
   },
   "nfl-v2-volume-script-defense-injuries|3df66cbbc7a353f008801a50c3ca3068|bo nix|rush_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -424,11 +440,15 @@
    "edge": 0.117,
    "projection": 18.4,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "win",
    "top": false,
    "dk_line": 19.5,
    "dk_odds": -112,
-   "book": "draftkings"
+   "book": "draftkings",
+   "actual": 3.0,
+   "profit_units": 0.8928571428571429,
+   "dk_result": "win",
+   "dk_profit_units": 0.8929
   },
   "nfl-v2-volume-script-defense-injuries|262d4bd2eb36f2ae78f313b415067418|christian mccaffrey|rush_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -732,11 +752,15 @@
    "edge": 0.098,
    "projection": 31.6,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "win",
    "top": false,
    "dk_line": 32.5,
    "dk_odds": -112,
-   "book": "draftkings"
+   "book": "draftkings",
+   "actual": 13.0,
+   "profit_units": 0.8928571428571429,
+   "dk_result": "win",
+   "dk_profit_units": 0.8929
   },
   "nfl-v2-volume-script-defense-injuries|262d4bd2eb36f2ae78f313b415067418|deebo samuel|rush_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -842,7 +866,7 @@
    "edge": 0.094,
    "projection": 5.6,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "win",
    "top": false,
    "dk_line": 5.5,
    "dk_odds": 101,
@@ -850,7 +874,11 @@
    "close_book": "draftkings",
    "close_line": 5.5,
    "close_odds": -110,
-   "price_clv": -0.0037
+   "price_clv": -0.0037,
+   "actual": 1.0,
+   "profit_units": 1.01,
+   "dk_result": "win",
+   "dk_profit_units": 1.01
   },
   "nfl-v2-volume-script-defense-injuries|9c71c76286aa8e94bf0907ab5d29ca2e|davis allen|receptions": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -868,7 +896,7 @@
    "edge": 0.092,
    "projection": 1.4,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "loss",
    "top": false,
    "dk_line": 1.5,
    "dk_odds": -111,
@@ -876,7 +904,11 @@
    "close_book": "draftkings",
    "close_line": 1.5,
    "close_odds": -119,
-   "price_clv": -0.0136
+   "price_clv": -0.0136,
+   "actual": 2.0,
+   "profit_units": -1.0,
+   "dk_result": "loss",
+   "dk_profit_units": -1.0
   },
   "nfl-v2-volume-script-defense-injuries|9c71c76286aa8e94bf0907ab5d29ca2e|tucker kraft|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -894,11 +926,15 @@
    "edge": 0.092,
    "projection": 40.0,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "win",
    "top": false,
    "dk_line": 40.5,
    "dk_odds": -114,
-   "book": "draftkings"
+   "book": "draftkings",
+   "actual": 24.0,
+   "profit_units": 0.8771929824561403,
+   "dk_result": "win",
+   "dk_profit_units": 0.8772
   },
   "nfl-v2-volume-script-defense-injuries|1576ac944306f4781949aca8963dcea4|james cook|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -1004,11 +1040,15 @@
    "edge": 0.08,
    "projection": 74.7,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "win",
    "top": false,
    "dk_line": 73.5,
    "dk_odds": -114,
-   "book": "draftkings"
+   "book": "draftkings",
+   "actual": 65.0,
+   "profit_units": 0.8771929824561403,
+   "dk_result": "win",
+   "dk_profit_units": 0.8772
   },
   "nfl-v2-volume-script-defense-injuries|9808f5201846887d9b39ce02e1a3d27f|rome odunze|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -1048,11 +1088,15 @@
    "edge": 0.078,
    "projection": 54.4,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "win",
    "top": false,
    "dk_line": 54.5,
    "dk_odds": -115,
-   "book": "fanduel"
+   "book": "fanduel",
+   "actual": 46.0,
+   "profit_units": 0.8771929824561403,
+   "dk_result": "win",
+   "dk_profit_units": 0.8696
   },
   "nfl-v2-volume-script-defense-injuries|9808f5201846887d9b39ce02e1a3d27f|dandre swift|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -1356,11 +1400,15 @@
    "edge": 0.055,
    "projection": 31.4,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "win",
    "top": false,
    "dk_line": 28.5,
    "dk_odds": -109,
-   "book": "draftkings"
+   "book": "draftkings",
+   "actual": 14.0,
+   "profit_units": 0.9174311926605505,
+   "dk_result": "win",
+   "dk_profit_units": 0.9174
   },
   "nfl-v2-volume-script-defense-injuries|6b85fa01252581991e6a60a4cf4fa7eb|devonta smith|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -1885,12 +1933,16 @@
    "ev": 0.153,
    "projection": 6.7,
    "model_version": "nfl-v2-volume-script-defense-injuries",
-   "result": "pending",
+   "result": "loss",
    "top": false,
    "close_book": "betmgm",
    "close_line": 7.5,
    "close_odds": -125,
-   "price_clv": -0.0353
+   "price_clv": -0.0353,
+   "actual": 22.0,
+   "profit_units": -1.0,
+   "dk_result": "loss",
+   "dk_profit_units": -1.0
   },
   "nfl-v2-volume-script-defense-injuries|6b85fa01252581991e6a60a4cf4fa7eb|saquon barkley|receptions": {
    "locked_at": "2026-11-26T00:42:57+00:00",
@@ -3294,7 +3346,53 @@
    "model_version": "nfl-v2-volume-script-defense-injuries",
    "result": "pending",
    "top": false
+  },
+  "nfl-v2-volume-script-defense-injuries|7c8f68c12da100955f696d650b117277|tyler shough|pass_yds": {
+   "locked_at": "2026-11-26T12:42:17+00:00",
+   "event_id": "7c8f68c12da100955f696d650b117277",
+   "matchup": "New Orleans Saints @ Cincinnati Bengals",
+   "commence_time": "2026-11-29T18:00:00Z",
+   "player": "Tyler Shough",
+   "player_key": "tyler shough",
+   "market": "pass_yds",
+   "market_label": "Pass Yds",
+   "side": "Over",
+   "book": "betmgm",
+   "line": 239.5,
+   "odds": -115,
+   "dk_line": 243.5,
+   "dk_odds": -112,
+   "model_prob": 0.551,
+   "edge": 0.051,
+   "ev": 0.03,
+   "projection": 249.9,
+   "model_version": "nfl-v2-volume-script-defense-injuries",
+   "result": "pending",
+   "top": false
+  },
+  "nfl-v2-volume-script-defense-injuries|ce98ee1864ade0b0271f24b8d64925f2|nico collins|receptions": {
+   "locked_at": "2026-11-26T12:42:17+00:00",
+   "event_id": "ce98ee1864ade0b0271f24b8d64925f2",
+   "matchup": "Baltimore Ravens @ Houston Texans",
+   "commence_time": "2026-11-29T18:00:00Z",
+   "player": "Nico Collins",
+   "player_key": "nico collins",
+   "market": "receptions",
+   "market_label": "Receptions",
+   "side": "Under",
+   "book": "draftkings",
+   "line": 4.5,
+   "odds": 100,
+   "dk_line": 4.5,
+   "dk_odds": 100,
+   "model_prob": 0.522,
+   "edge": 0.05,
+   "ev": 0.044,
+   "projection": 4.9,
+   "model_version": "nfl-v2-volume-script-defense-injuries",
+   "result": "pending",
+   "top": false
   }
  },
- "updated_at": "2026-11-26T00:42:57+00:00"
+ "updated_at": "2026-11-26T12:42:17+00:00"
 }
