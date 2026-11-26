@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-26T23:13:46+00:00",
+ "updated_at": "2026-11-26T23:27:04+00:00",
  "teams": {
   "Dallas Cowboys": "DAL",
   "Philadelphia Eagles": "PHI",
@@ -467,14 +467,19 @@
   ],
   "DEN": [
    {
-    "player": "Tyler Badie",
-    "player_id": "4362748",
+    "player": "Sai'vion Jones",
+    "player_id": "4603189",
     "status": "Injured Reserve"
    },
    {
-    "player": "Sai'vion Jones",
-    "player_id": "4603189",
-    "status": "Out"
+    "player": "Caleb Lohner",
+    "player_id": "4432208",
+    "status": "Injured Reserve"
+   },
+   {
+    "player": "Tyler Badie",
+    "player_id": "4362748",
+    "status": "Questionable"
    },
    {
     "player": "Taylor Rapp",
@@ -487,19 +492,19 @@
     "status": "Suspension"
    },
    {
-    "player": "Jonah Elliss",
-    "player_id": "4687592",
+    "player": "Sai'vion Jones",
+    "player_id": "4603189",
+    "status": "Injured Reserve"
+   },
+   {
+    "player": "Caleb Lohner",
+    "player_id": "4432208",
     "status": "Injured Reserve"
    },
    {
     "player": "Tyler Badie",
     "player_id": "4362748",
-    "status": "Injured Reserve"
-   },
-   {
-    "player": "Sai'vion Jones",
-    "player_id": "4603189",
-    "status": "Out"
+    "status": "Questionable"
    },
    {
     "player": "Taylor Rapp",
@@ -510,11 +515,6 @@
     "player": "J.K. Dobbins",
     "player_id": "4241985",
     "status": "Suspension"
-   },
-   {
-    "player": "Jonah Elliss",
-    "player_id": "4687592",
-    "status": "Injured Reserve"
    }
   ],
   "CIN": [
@@ -650,6 +650,11 @@
   ],
   "NYG": [
    {
+    "player": "Abdul Carter",
+    "player_id": "4725996",
+    "status": "Questionable"
+   },
+   {
     "player": "Isaiah Likely",
     "player_id": "4361050",
     "status": "Questionable"
@@ -657,11 +662,6 @@
    {
     "player": "Dru Phillips",
     "player_id": "4431321",
-    "status": "Questionable"
-   },
-   {
-    "player": "Abdul Carter",
-    "player_id": "4725996",
     "status": "Questionable"
    },
    {
@@ -675,6 +675,11 @@
     "status": "Questionable"
    },
    {
+    "player": "Abdul Carter",
+    "player_id": "4725996",
+    "status": "Questionable"
+   },
+   {
     "player": "Isaiah Likely",
     "player_id": "4361050",
     "status": "Questionable"
@@ -682,11 +687,6 @@
    {
     "player": "Dru Phillips",
     "player_id": "4431321",
-    "status": "Questionable"
-   },
-   {
-    "player": "Abdul Carter",
-    "player_id": "4725996",
     "status": "Questionable"
    },
    {
@@ -1041,6 +1041,11 @@
   ],
   "BAL": [
    {
+    "player": "Jaylinn Hawkins",
+    "player_id": "3858276",
+    "status": "Questionable"
+   },
+   {
     "player": "Derrick Henry",
     "player_id": "3043078",
     "status": "Questionable"
@@ -1053,11 +1058,6 @@
    {
     "player": "Chidobe Awuzie",
     "player_id": "3052101",
-    "status": "Questionable"
-   },
-   {
-    "player": "Jaylinn Hawkins",
-    "player_id": "3858276",
     "status": "Questionable"
    },
    {
