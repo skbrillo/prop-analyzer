@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-25T23:15:22.205761+00:00",
+  "generated_at": "2026-11-26T00:10:43.826706+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 93,
+  "player_count": 92,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -33,11 +33,11 @@
     "WAS"
   ],
   "teams_count": 26,
-  "players_with_team": 93,
+  "players_with_team": 92,
   "players_without_team": 0,
   "status_counts": {
-    "O": 82,
-    "T": 11
+    "O": 83,
+    "T": 9
   },
   "players": [
     {
@@ -603,13 +603,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540957",
-      "name": "Josh Hart",
+      "injury_record_id": "540990",
+      "name": "OG Anunoby",
       "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Shoulder | day-to-day",
-      "date": "2026-11-25T17:57Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Calf | out",
+      "date": "2026-11-25T23:19Z",
       "team_match": "feed"
     },
     {
@@ -625,17 +625,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "540954",
-      "name": "Karl-Anthony Towns",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "day-to-day",
-      "date": "2026-11-25T17:54Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "540861",
       "name": "Jordan Clarkson",
       "team": "NYK",
@@ -643,17 +632,6 @@
       "raw_status": "Out",
       "reason": "Plantar Fasciitis | Foot | out",
       "date": "2026-11-24T21:56Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540859",
-      "name": "OG Anunoby",
-      "team": "NYK",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Calf | out",
-      "date": "2026-11-24T21:53Z",
       "team_match": "feed"
     },
     {
@@ -775,6 +753,17 @@
       "raw_status": "Out",
       "reason": "Sprain | Ankle | out",
       "date": "2026-10-24T16:47Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "540991",
+      "name": "Jaylen Brown",
+      "team": "PHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-25T23:30Z",
       "team_match": "feed"
     },
     {
