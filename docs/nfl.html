@@ -50,13 +50,9 @@ tbody tr:hover{background:#1d3048}
 
 <div class="head"><h2>NFL Model v2 — Paper Trading Record</h2><span id="model-status" class="muted">Loading model...</span></div>
 <div class="controls" style="display:none"><select id="model-ver" aria-label="Model version"></select></div>
-<div class="muted" style="margin-top:6px">All qualifying picks</div>
 <div class="cards" id="record"></div>
-<div class="muted">Top picks — the 2 biggest edges per game (what you would actually bet)</div>
-<div class="cards" id="record-top"></div>
-<div class="controls"><select id="pick-view"><option value="">All paper picks</option><option value="top">Top picks only</option></select></div>
-<div class="tablewrap"><table><thead><tr><th>Top</th><th>Kickoff</th><th>Player</th><th>Market</th><th>Side</th><th title="Book with the best price when the pick locked">Book</th><th>Line</th><th>Odds</th><th title="DraftKings' line and price for the same pick">DK</th><th title="Average projection. For yards, a typical game lands below the average, so an Under can be the pick even when this is above the line.">Proj (avg)</th><th>Model %</th><th>Edge</th><th>Close</th><th>CLV</th><th>Actual</th><th>Result</th></tr></thead><tbody id="picks"></tbody></table></div>
-<div class="note" id="model-note">Paper picks are taken at the best price across DraftKings, FanDuel, BetMGM and Caesars: at each book's own line the model must beat that book's no-vig price by 5–15 points (odds -130 to +130), and the offer with the best expected value is taken. Wins, losses, units and closing-line value are all at that book's line and odds. No Anytime TD; at most one pick per player per game. ★ = top 2 edges in that game. Locked the first time they qualify; graded from ESPN box scores. Not real bets — the point is to see whether the model beats the closing line before trusting it.</div>
+<div class="tablewrap"><table><thead><tr><th>Kickoff</th><th>Player</th><th>Market</th><th>Side</th><th title="Book with the best price when the pick locked">Book</th><th>Line</th><th>Odds</th><th title="DraftKings' line and price for the same pick">DK</th><th title="Average projection. For yards, a typical game lands below the average, so an Under can be the pick even when this is above the line.">Proj (avg)</th><th>Model %</th><th>Edge</th><th>Close</th><th>CLV</th><th>Actual</th><th>Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="note" id="model-note">Paper picks are taken at the best price across DraftKings, FanDuel, BetMGM and Caesars: at each book's own line the model must beat that book's no-vig price by 5–15 points (odds -130 to +130), and the offer with the best expected value is taken. Wins, losses, units and closing-line value are all at that book's line and odds. No Anytime TD; at most one pick per player per game. Locked the first time they qualify; graded from ESPN box scores. Not real bets — the point is to see whether the model beats the closing line before trusting it.</div>
 <div class="note" id="backtest"></div>
 
 <div class="head"><h2>DraftKings vs the Market — Does DK Move Toward the Other Books?</h2></div>
@@ -185,15 +181,14 @@ function recordCards(boxId,r,best){
 }
 function renderModel(){
  const recs=(model.records||{})[ver]||{record:model.record,record_top:model.record_top};
- recordCards("record",recs.record,recs.record_dk_only);recordCards("record-top",recs.record_top);
+ recordCards("record",recs.record,recs.record_dk_only);
  const body=$("picks");body.replaceChildren();
- const onlyTop=$("pick-view").value==="top";
- const list=(model.paper_picks||[]).filter(p=>(p.model_version||"")===ver||(!p.model_version&&ver===(model.versions_order||[]).slice(-1)[0])).filter(p=>!onlyTop||p.top).slice().sort((a,b)=>String(b.commence_time).localeCompare(String(a.commence_time)));
+ const list=(model.paper_picks||[]).filter(p=>(p.model_version||"")===ver||(!p.model_version&&ver===(model.versions_order||[]).slice(-1)[0])).slice().sort((a,b)=>String(b.commence_time).localeCompare(String(a.commence_time)));
  for(const p of list){
   const tr=body.insertRow();const cell=(t,c="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;};
   const res=String(p.result||"pending");
   const over=p.side==="Over";
-  cell(p.top?"★":"",p.top?"yellow bold":"");cell(kickoff(p.commence_time));cell(p.player,"player");cell(p.market_label);
+  cell(kickoff(p.commence_time));cell(p.player,"player");cell(p.market_label);
   cell(p.side,over?"green bold":"yellow bold");
   cell(label(p.book||"draftkings"),p.book&&p.book!=="draftkings"?"green bold":"");
   cell(fmtLine(p.line));cell(signed(p.odds),Number(p.odds)>0?"green":"");
@@ -206,7 +201,7 @@ function renderModel(){
   cell(p.actual!=null?String(p.actual):"—",beat==null?"muted":beat?"green":"red");
   cell(res==="void"?"VOID":res.toUpperCase(),res==="win"?"green bold":res==="loss"?"red bold":res==="push"?"muted":"yellow bold");
  }
- if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=16;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
+ if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=15;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
  const b2=(model.backtest_v2||{}).markets||{};
  const nm={receptions:"Receptions",rec_yds:"Rec Yds",rush_yds:"Rush Yds",pass_yds:"Pass Yds",pass_tds:"Pass TD",anytime_td:"Anytime TD"};
  const comp={script:"game script",defense:"defense",injuries:"injuries",td_scaling:"TD scaling"};
@@ -292,7 +287,6 @@ async function load(){
   $("status").textContent="NFL lines not available yet ("+e.message+"). The first board appears after the next scheduled NFL pull.";
  }
 }
-$("pick-view").addEventListener("change",()=>model&&renderModel());
 $("model-ver").addEventListener("change",e=>{ver=e.target.value;if(model){renderModel();render();}});
 ["search","game","market","view"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",()=>board&&render()));
 load();
