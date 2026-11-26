@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-26T01:20:50.697465+00:00",
+  "generated_at": "2026-11-26T02:30:20.747375+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 92,
+  "player_count": 89,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -33,11 +33,11 @@
     "WAS"
   ],
   "teams_count": 26,
-  "players_with_team": 92,
+  "players_with_team": 89,
   "players_without_team": 0,
   "status_counts": {
     "O": 81,
-    "T": 11
+    "T": 8
   },
   "players": [
     {
@@ -317,35 +317,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540872",
-      "name": "Yaxel Lendeborg",
-      "team": "GSW",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-24T23:20Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540856",
-      "name": "Brandon Williams",
-      "team": "GSW",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Hamstring | out",
-      "date": "2026-11-24T20:58Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "538781",
+      "injury_record_id": "540998",
       "name": "Stephen Curry",
       "team": "GSW",
       "status": "O",
       "raw_status": "Out",
       "reason": "Abdomen | out",
-      "date": "2026-11-12T17:03Z",
+      "date": "2026-11-26T01:36Z",
       "team_match": "feed"
     },
     {
@@ -878,24 +856,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540881",
+      "injury_record_id": "541000",
       "name": "De'Aaron Fox",
       "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-25T01:27Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540880",
-      "name": "Victor Wembanyama",
-      "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Back | day-to-day",
-      "date": "2026-11-25T01:23Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Lower Leg | out",
+      "date": "2026-11-26T02:20Z",
       "team_match": "feed"
     },
     {
