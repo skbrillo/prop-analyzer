@@ -51,7 +51,8 @@ tbody tr:hover{background:#1d3048}
 <div class="head"><h2>NFL Model v2 — Paper Trading Record</h2><span id="model-status" class="muted">Loading model...</span></div>
 <div class="controls" style="display:none"><select id="model-ver" aria-label="Model version"></select></div>
 <div class="cards" id="record"></div>
-<div class="tablewrap"><table><thead><tr><th>Kickoff</th><th>Player</th><th>Market</th><th>Side</th><th title="Book with the best price when the pick locked">Book</th><th>Line</th><th>Odds</th><th title="DraftKings' line and price for the same pick">DK</th><th title="Average projection. For yards, a typical game lands below the average, so an Under can be the pick even when this is above the line.">Proj (avg)</th><th>Model %</th><th>Edge</th><th>Close</th><th>CLV</th><th>Actual</th><th>Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="projection" title="Average projection. For yards, a typical game lands below the average, so an Under can be the pick even when this is above the line.">Proj (avg)</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="note">Click any column heading to sort; click again to reverse.</div>
 <div class="note" id="model-note">Paper picks are taken at the best price across DraftKings, FanDuel, BetMGM and Caesars: at each book's own line the model must beat that book's no-vig price by 5–15 points (odds -130 to +130), and the offer with the best expected value is taken. Wins, losses, units and closing-line value are all at that book's line and odds. No Anytime TD; at most one pick per player per game. Locked the first time they qualify; graded from ESPN box scores. Not real bets — the point is to see whether the model beats the closing line before trusting it.</div>
 <div class="note" id="backtest"></div>
 
@@ -163,6 +164,19 @@ function modelCells(cell,p){
  const side=m.edge_over>=0?(p.one_sided?"Yes":"Over"):(p.one_sided?"No":"Under"),e=Math.abs(m.edge_over)*100;
  cell(side+" +"+e.toFixed(1),e>=5&&!p.one_sided?"best":"muted",p.one_sided?"Vs DraftKings' price including vig":"Model minus DraftKings' no-vig probability");
 }
+// Paper-picks sorting: default kickoff order; numbers sort high-to-low first.
+let pickSort={key:"commence_time",asc:true};
+const NUMERIC_KEYS=new Set(["line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
+function pickSorter(){
+ const {key,asc}=pickSort,dir=asc?1:-1;
+ return (a,b)=>{
+  let x=a[key],y=b[key];
+  if(x==null&&y==null)return String(a.commence_time).localeCompare(String(b.commence_time));
+  if(x==null)return 1;if(y==null)return -1;
+  const c=NUMERIC_KEYS.has(key)?Number(x)-Number(y):String(x).localeCompare(String(y));
+  return c*dir||String(a.commence_time).localeCompare(String(b.commence_time))||String(a.player).localeCompare(String(b.player));
+ };
+}
 function recordCards(boxId,r,best){
  r=r||{};const box=$(boxId);box.replaceChildren();
  const tone=v=>v==null||v===0?"":v>0?"green":"red";
@@ -183,7 +197,10 @@ function renderModel(){
  const recs=(model.records||{})[ver]||{record:model.record,record_top:model.record_top};
  recordCards("record",recs.record,recs.record_dk_only);
  const body=$("picks");body.replaceChildren();
- const list=(model.paper_picks||[]).filter(p=>(p.model_version||"")===ver||(!p.model_version&&ver===(model.versions_order||[]).slice(-1)[0])).slice().sort((a,b)=>String(a.commence_time).localeCompare(String(b.commence_time))||String(a.player).localeCompare(String(b.player)));
+ const list=(model.paper_picks||[]).filter(p=>(p.model_version||"")===ver||(!p.model_version&&ver===(model.versions_order||[]).slice(-1)[0])).slice().sort(pickSorter());
+ document.querySelectorAll("#picks-head th[data-key]").forEach(th=>{
+  th.textContent=th.textContent.replace(/ [▲▼]$/,"")+(th.dataset.key===pickSort.key?(pickSort.asc?" ▲":" ▼"):"");
+ });
  for(const p of list){
   const tr=body.insertRow();const cell=(t,c="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;};
   const res=String(p.result||"pending");
@@ -287,6 +304,14 @@ async function load(){
   $("status").textContent="NFL lines not available yet ("+e.message+"). The first board appears after the next scheduled NFL pull.";
  }
 }
+document.querySelectorAll("#picks-head th[data-key]").forEach(th=>{
+ th.style.cursor="pointer";
+ th.addEventListener("click",()=>{
+  const k=th.dataset.key;
+  pickSort=pickSort.key===k?{key:k,asc:!pickSort.asc}:{key:k,asc:!NUMERIC_KEYS.has(k)};
+  if(model)renderModel();
+ });
+});
 $("model-ver").addEventListener("change",e=>{ver=e.target.value;if(model){renderModel();render();}});
 ["search","game","market","view"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",()=>board&&render()));
 load();
