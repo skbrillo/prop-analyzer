@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T05:38:45.526352+00:00",
+  "generated_at": "2026-11-26T06:35:01.797207+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -36,8 +36,8 @@
   "players_with_team": 93,
   "players_without_team": 0,
   "status_counts": {
-    "O": 79,
-    "T": 14
+    "O": 77,
+    "T": 16
   },
   "players": [
     {
@@ -867,13 +867,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540986",
+      "injury_record_id": "-61450",
       "name": "Zach LaVine",
       "team": "SAC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Knee | out",
-      "date": "2026-11-25T22:40Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Knee | day-to-day",
+      "date": "2026-11-26T05:33Z",
       "team_match": "feed"
     },
     {
@@ -900,13 +900,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541000",
+      "injury_record_id": "-61451",
       "name": "De'Aaron Fox",
       "team": "SAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Lower Leg | out",
-      "date": "2026-11-26T02:20Z",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Lower Leg | day-to-day",
+      "date": "2026-11-26T06:01Z",
       "team_match": "feed"
     },
     {
