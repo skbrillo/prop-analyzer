@@ -248,7 +248,7 @@ function renderModel(){
  if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=16;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
  const b2=(model.backtest_v2||{}).markets||{};
  const nm={receptions:"Receptions",rec_yds:"Rec Yds",rush_yds:"Rush Yds",pass_yds:"Pass Yds",pass_tds:"Pass TD",anytime_td:"Anytime TD"};
- const comp={script:"game script",defense:"defense",injuries:"injuries",td_scaling:"TD scaling"};
+ const comp={script:"game script",defense:"defense",injuries:"injuries",td_scaling:"TD scaling",game_total:"game total"};
  const v2parts=Object.entries(b2).map(([k,x])=>nm[k]+": "+x.v2_final+(x.metric==="log_loss"?" log loss":" avg error")+" ["+(x.kept.length?x.kept.map(c=>comp[c]).join(", "):"base model")+"]");
  const bt=model.backtest||{},parts=[];
  const names={receptions:"Receptions",rec_yds:"Rec Yds",rush_yds:"Rush Yds",pass_yds:"Pass Yds"};
