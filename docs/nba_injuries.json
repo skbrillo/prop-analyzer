@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T22:24:56.233286+00:00",
+  "generated_at": "2026-11-26T23:20:22.512543+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -37,19 +37,19 @@
   "players_with_team": 97,
   "players_without_team": 0,
   "status_counts": {
-    "O": 78,
-    "T": 19
+    "O": 79,
+    "T": 18
   },
   "players": [
     {
       "id": "",
-      "injury_record_id": "540374",
+      "injury_record_id": "541118",
       "name": "Jock Landale",
       "team": "ATL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Inflammation | Hip | out",
-      "date": "2026-11-21T22:12Z",
+      "date": "2026-11-26T22:44Z",
       "team_match": "feed"
     },
     {
@@ -274,13 +274,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61458",
+      "injury_record_id": "541114",
+      "name": "Duncan Robinson",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Quadriceps | out",
+      "date": "2026-11-26T22:26Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541113",
       "name": "Cade Cunningham",
       "team": "DET",
       "status": "O",
       "raw_status": "Out",
       "reason": "Knee | out",
-      "date": "2026-11-26T22:20Z",
+      "date": "2026-11-26T22:25Z",
       "team_match": "feed"
     },
     {
@@ -314,17 +325,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-11-24T18:33Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540843",
-      "name": "Duncan Robinson",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Quadriceps | out",
-      "date": "2026-11-24T18:30Z",
       "team_match": "feed"
     },
     {
@@ -373,13 +373,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "540855",
+      "injury_record_id": "541117",
+      "name": "Larry Nance Jr.",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Ankle | day-to-day",
+      "date": "2026-11-26T22:43Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541116",
+      "name": "Aaron Nesmith",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Foot | day-to-day",
+      "date": "2026-11-26T22:31Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541115",
       "name": "T.J. McConnell",
       "team": "IND",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Hamstring | day-to-day",
-      "date": "2026-11-24T19:43Z",
+      "date": "2026-11-26T22:29Z",
       "team_match": "feed"
     },
     {
@@ -391,28 +413,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-24T19:41Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61397",
-      "name": "Aaron Nesmith",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Foot | day-to-day",
-      "date": "2026-11-24T04:40Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540730",
-      "name": "Larry Nance Jr.",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-24T02:00Z",
       "team_match": "feed"
     },
     {
@@ -813,24 +813,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61436",
+      "injury_record_id": "541112",
       "name": "Joel Embiid",
       "team": "PHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-26T01:06Z",
+      "date": "2026-11-26T22:16Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "-61435",
+      "injury_record_id": "541111",
       "name": "Jaylen Brown",
       "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-26T01:06Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-26T22:13Z",
       "team_match": "feed"
     },
     {
