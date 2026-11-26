@@ -1989,7 +1989,11 @@
    "projection": 1.3,
    "model_version": "nfl-v2-volume-script-defense-injuries",
    "result": "pending",
-   "top": true
+   "top": true,
+   "close_book": "fanduel",
+   "close_line": 1.5,
+   "close_odds": -160,
+   "price_clv": 0.0099
   },
   "nfl-v2-volume-script-defense-injuries|bc430b48c0f9421d2d01acc16f09753d|michael penix|pass_yds": {
    "locked_at": "2026-11-26T00:42:57+00:00",
@@ -2518,7 +2522,11 @@
    "projection": 1.7,
    "model_version": "nfl-v2-volume-script-defense-injuries",
    "result": "pending",
-   "top": false
+   "top": false,
+   "close_book": "fanduel",
+   "close_line": 1.5,
+   "close_odds": 128,
+   "price_clv": -0.0291
   },
   "nfl-v2-volume-script-defense-injuries|3df66cbbc7a353f008801a50c3ca3068|marvin mims|rush_yds": {
    "locked_at": "2026-11-26T00:42:57+00:00",
@@ -2679,7 +2687,11 @@
    "projection": 3.9,
    "model_version": "nfl-v2-volume-script-defense-injuries",
    "result": "pending",
-   "top": false
+   "top": false,
+   "close_book": "betmgm",
+   "close_line": 3.5,
+   "close_odds": 125,
+   "price_clv": -0.0183
   },
   "nfl-v2-volume-script-defense-injuries|bc430b48c0f9421d2d01acc16f09753d|jordan mason|rush_yds": {
    "locked_at": "2026-11-26T00:42:57+00:00",
@@ -3976,7 +3988,57 @@
    "close_line": 1.5,
    "close_odds": 116,
    "price_clv": -0.0261
+  },
+  "nfl-v2-volume-script-defense-injuries|6b85fa01252581991e6a60a4cf4fa7eb|will shipley|rec_yds": {
+   "locked_at": "2026-11-26T21:27:15+00:00",
+   "event_id": "6b85fa01252581991e6a60a4cf4fa7eb",
+   "matchup": "Philadelphia Eagles @ Dallas Cowboys",
+   "commence_time": "2026-11-26T21:30:00Z",
+   "player": "Will Shipley",
+   "player_key": "will shipley",
+   "market": "rec_yds",
+   "market_label": "Rec Yds",
+   "side": "Over",
+   "book": "betmgm",
+   "line": 4.5,
+   "odds": -120,
+   "dk_line": 6.5,
+   "dk_odds": -105,
+   "model_prob": 0.603,
+   "edge": 0.093,
+   "ev": 0.106,
+   "projection": 7.4,
+   "model_version": "nfl-v2-volume-script-defense-injuries",
+   "result": "pending",
+   "top": false,
+   "close_book": "betmgm",
+   "close_line": 4.5,
+   "close_odds": -120,
+   "price_clv": -0.0353
+  },
+  "nfl-v2-volume-script-defense-injuries|7c8f68c12da100955f696d650b117277|chris olave|rec_yds": {
+   "locked_at": "2026-11-26T21:27:15+00:00",
+   "event_id": "7c8f68c12da100955f696d650b117277",
+   "matchup": "New Orleans Saints @ Cincinnati Bengals",
+   "commence_time": "2026-11-29T18:00:00Z",
+   "player": "Chris Olave",
+   "player_key": "chris olave",
+   "market": "rec_yds",
+   "market_label": "Rec Yds",
+   "side": "Under",
+   "book": "betmgm",
+   "line": 73.5,
+   "odds": -115,
+   "dk_line": 68.5,
+   "dk_odds": -114,
+   "model_prob": 0.551,
+   "edge": 0.051,
+   "ev": 0.031,
+   "projection": 80.5,
+   "model_version": "nfl-v2-volume-script-defense-injuries",
+   "result": "pending",
+   "top": false
   }
  },
- "updated_at": "2026-11-26T17:44:31+00:00"
+ "updated_at": "2026-11-26T21:27:15+00:00"
 }

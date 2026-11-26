@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-26T17:44:23+00:00",
+ "updated_at": "2026-11-26T21:27:06+00:00",
  "teams": {
   "Detroit Lions": "DET",
   "Chicago Bears": "CHI",
@@ -265,28 +265,8 @@
   ],
   "CHI": [
    {
-    "player": "Case Keenum",
-    "player_id": "15168",
-    "status": "Out"
-   },
-   {
-    "player": "Isaac Yiadom",
-    "player_id": "3122797",
-    "status": "Out"
-   },
-   {
-    "player": "Jayden Loving",
-    "player_id": "4877376",
-    "status": "Out"
-   },
-   {
-    "player": "Jordan McFadden",
-    "player_id": "4360319",
-    "status": "Out"
-   },
-   {
-    "player": "Elijah Hicks",
-    "player_id": "4242402",
+    "player": "Colston Loveland",
+    "player_id": "4723086",
     "status": "Out"
    },
    {
@@ -310,35 +290,45 @@
     "status": "Out"
    },
    {
-    "player": "Elijah Hicks",
-    "player_id": "4242402",
+    "player": "Colston Loveland",
+    "player_id": "4723086",
+    "status": "Out"
+   },
+   {
+    "player": "Case Keenum",
+    "player_id": "15168",
+    "status": "Out"
+   },
+   {
+    "player": "Isaac Yiadom",
+    "player_id": "3122797",
+    "status": "Out"
+   },
+   {
+    "player": "Jayden Loving",
+    "player_id": "4877376",
+    "status": "Out"
+   },
+   {
+    "player": "Jordan McFadden",
+    "player_id": "4360319",
     "status": "Out"
    }
   ],
   "DAL": [
    {
-    "player": "Devin Moore",
-    "player_id": "4702577",
-    "status": "Injured Reserve"
-   },
-   {
-    "player": "P.J. Locke",
-    "player_id": "3929850",
-    "status": "Out"
-   },
-   {
-    "player": "Jonathan Mingo",
-    "player_id": "4426485",
-    "status": "Out"
-   },
-   {
-    "player": "Jalen Thompson",
-    "player_id": "4043089",
-    "status": "Questionable"
-   },
-   {
     "player": "Jake Ferguson",
     "player_id": "4242355",
+    "status": "Out"
+   },
+   {
+    "player": "Tyler Booker",
+    "player_id": "4685263",
+    "status": "Out"
+   },
+   {
+    "player": "Jonathan Bullard",
+    "player_id": "2980097",
     "status": "Out"
    },
    {
@@ -347,76 +337,86 @@
     "status": "Injured Reserve"
    },
    {
-    "player": "P.J. Locke",
-    "player_id": "3929850",
+    "player": "Jaishawn Barham",
+    "player_id": "4685266",
     "status": "Out"
-   },
-   {
-    "player": "Jonathan Mingo",
-    "player_id": "4426485",
-    "status": "Out"
-   },
-   {
-    "player": "Jalen Thompson",
-    "player_id": "4043089",
-    "status": "Questionable"
    },
    {
     "player": "Jake Ferguson",
     "player_id": "4242355",
+    "status": "Out"
+   },
+   {
+    "player": "Tyler Booker",
+    "player_id": "4685263",
+    "status": "Out"
+   },
+   {
+    "player": "Jonathan Bullard",
+    "player_id": "2980097",
+    "status": "Out"
+   },
+   {
+    "player": "Devin Moore",
+    "player_id": "4702577",
+    "status": "Injured Reserve"
+   },
+   {
+    "player": "Jaishawn Barham",
+    "player_id": "4685266",
     "status": "Out"
    }
   ],
   "PHI": [
    {
+    "player": "Cole Payton",
+    "player_id": "4879250",
+    "status": "Out"
+   },
+   {
+    "player": "Grant Calcaterra",
+    "player_id": "4241374",
+    "status": "Out"
+   },
+   {
+    "player": "Ajani Cornelius",
+    "player_id": "4696203",
+    "status": "Out"
+   },
+   {
+    "player": "AJ Epenesa",
+    "player_id": "4240585",
+    "status": "Out"
+   },
+   {
     "player": "Arnold Ebiketie",
     "player_id": "4257591",
     "status": "Out"
    },
    {
-    "player": "Jonathan Jones",
-    "player_id": "2971027",
+    "player": "Cole Payton",
+    "player_id": "4879250",
     "status": "Out"
    },
    {
-    "player": "Zack Baun",
-    "player_id": "3917657",
-    "status": "Injured Reserve"
+    "player": "Grant Calcaterra",
+    "player_id": "4241374",
+    "status": "Out"
    },
    {
-    "player": "Dontayvion Wicks",
-    "player_id": "4428850",
-    "status": "Injured Reserve"
+    "player": "Ajani Cornelius",
+    "player_id": "4696203",
+    "status": "Out"
    },
    {
-    "player": "Jalen Hurts",
-    "player_id": "4040715",
-    "status": "Injured Reserve"
+    "player": "AJ Epenesa",
+    "player_id": "4240585",
+    "status": "Out"
    },
    {
     "player": "Arnold Ebiketie",
     "player_id": "4257591",
     "status": "Out"
-   },
-   {
-    "player": "Jonathan Jones",
-    "player_id": "2971027",
-    "status": "Out"
-   },
-   {
-    "player": "Zack Baun",
-    "player_id": "3917657",
-    "status": "Injured Reserve"
-   },
-   {
-    "player": "Dontayvion Wicks",
-    "player_id": "4428850",
-    "status": "Injured Reserve"
-   },
-   {
-    "player": "Jalen Hurts",
-    "player_id": "4040715",
-    "status": "Injured Reserve"
    }
   ],
   "BUF": [
@@ -525,13 +525,13 @@
   ],
   "PIT": [
    {
-    "player": "DeShon Elliott",
-    "player_id": "3929846",
-    "status": "Questionable"
+    "player": "Alex Highsmith",
+    "player_id": "4037333",
+    "status": "Out"
    },
    {
-    "player": "Michael Pittman Jr.",
-    "player_id": "4035687",
+    "player": "Ben Skowronek",
+    "player_id": "4035656",
     "status": "Injured Reserve"
    },
    {
@@ -545,18 +545,18 @@
     "status": "Injured Reserve"
    },
    {
-    "player": "Nick Herbig",
-    "player_id": "4429164",
-    "status": "Questionable"
+    "player": "Mason McCormick",
+    "player_id": "4368304",
+    "status": "Injured Reserve"
    },
    {
-    "player": "DeShon Elliott",
-    "player_id": "3929846",
-    "status": "Questionable"
+    "player": "Alex Highsmith",
+    "player_id": "4037333",
+    "status": "Out"
    },
    {
-    "player": "Michael Pittman Jr.",
-    "player_id": "4035687",
+    "player": "Ben Skowronek",
+    "player_id": "4035656",
     "status": "Injured Reserve"
    },
    {
@@ -570,9 +570,9 @@
     "status": "Injured Reserve"
    },
    {
-    "player": "Nick Herbig",
-    "player_id": "4429164",
-    "status": "Questionable"
+    "player": "Mason McCormick",
+    "player_id": "4368304",
+    "status": "Injured Reserve"
    }
   ],
   "DEN": [
@@ -681,26 +681,6 @@
   ],
   "NO": [
    {
-    "player": "Martin Emerson Jr.",
-    "player_id": "4429568",
-    "status": "Questionable"
-   },
-   {
-    "player": "Pete Werner",
-    "player_id": "4241993",
-    "status": "Questionable"
-   },
-   {
-    "player": "Asim Richards",
-    "player_id": "4430379",
-    "status": "Questionable"
-   },
-   {
-    "player": "David Edwards",
-    "player_id": "3917660",
-    "status": "Questionable"
-   },
-   {
     "player": "Juwan Johnson",
     "player_id": "3929645",
     "status": "Questionable"
@@ -728,6 +708,26 @@
    {
     "player": "Juwan Johnson",
     "player_id": "3929645",
+    "status": "Questionable"
+   },
+   {
+    "player": "Martin Emerson Jr.",
+    "player_id": "4429568",
+    "status": "Questionable"
+   },
+   {
+    "player": "Pete Werner",
+    "player_id": "4241993",
+    "status": "Questionable"
+   },
+   {
+    "player": "Asim Richards",
+    "player_id": "4430379",
+    "status": "Questionable"
+   },
+   {
+    "player": "David Edwards",
+    "player_id": "3917660",
     "status": "Questionable"
    }
   ],
@@ -748,17 +748,22 @@
     "status": "Questionable"
    },
    {
-    "player": "Drew Ogletree",
-    "player_id": "4722908",
-    "status": "Questionable"
-   },
-   {
     "player": "Alec Pierce",
     "player_id": "4360078",
     "status": "Injured Reserve"
+   },
+   {
+    "player": "Bernhard Raimann",
+    "player_id": "4362580",
+    "status": "Questionable"
    }
   ],
   "NYG": [
+   {
+    "player": "Isaiah Likely",
+    "player_id": "4361050",
+    "status": "Questionable"
+   },
    {
     "player": "Dru Phillips",
     "player_id": "4431321",
@@ -772,11 +777,6 @@
    {
     "player": "Arvell Reese",
     "player_id": "4950400",
-    "status": "Questionable"
-   },
-   {
-    "player": "Isaiah Likely",
-    "player_id": "4361050",
     "status": "Questionable"
    },
    {
@@ -785,6 +785,11 @@
     "status": "Questionable"
    },
    {
+    "player": "Isaiah Likely",
+    "player_id": "4361050",
+    "status": "Questionable"
+   },
+   {
     "player": "Dru Phillips",
     "player_id": "4431321",
     "status": "Questionable"
@@ -797,11 +802,6 @@
    {
     "player": "Arvell Reese",
     "player_id": "4950400",
-    "status": "Questionable"
-   },
-   {
-    "player": "Isaiah Likely",
-    "player_id": "4361050",
     "status": "Questionable"
    },
    {
@@ -864,6 +864,11 @@
   ],
   "NYJ": [
    {
+    "player": "Omar Cooper Jr.",
+    "player_id": "4723820",
+    "status": "Questionable"
+   },
+   {
     "player": "David Onyemata",
     "player_id": "4002046",
     "status": "Injured Reserve"
@@ -879,11 +884,6 @@
     "status": "Injured Reserve"
    },
    {
-    "player": "Isaiah Williams",
-    "player_id": "4569371",
-    "status": "Questionable"
-   },
-   {
     "player": "Joseph Ossai",
     "player_id": "4362094",
     "status": "Questionable"
@@ -891,29 +891,14 @@
   ],
   "MIN": [
    {
-    "player": "Isaiah Rodgers",
-    "player_id": "4044540",
+    "player": "Kyler Murray",
+    "player_id": "3917315",
     "status": "Questionable"
    },
    {
-    "player": "Harrison Smith",
-    "player_id": "14945",
-    "status": "Questionable"
-   },
-   {
-    "player": "Jalen Redmond",
-    "player_id": "4360277",
-    "status": "Questionable"
-   },
-   {
-    "player": "Christian Darrisaw",
-    "player_id": "4361985",
-    "status": "Questionable"
-   },
-   {
-    "player": "Myles Price",
-    "player_id": "4430656",
-    "status": "Questionable"
+    "player": "Jordan Addison",
+    "player_id": "4429205",
+    "status": "Doubtful"
    },
    {
     "player": "Isaiah Rodgers",
@@ -931,25 +916,35 @@
     "status": "Questionable"
    },
    {
-    "player": "Christian Darrisaw",
-    "player_id": "4361985",
+    "player": "Kyler Murray",
+    "player_id": "3917315",
     "status": "Questionable"
    },
    {
-    "player": "Myles Price",
-    "player_id": "4430656",
+    "player": "Jordan Addison",
+    "player_id": "4429205",
+    "status": "Doubtful"
+   },
+   {
+    "player": "Isaiah Rodgers",
+    "player_id": "4044540",
+    "status": "Questionable"
+   },
+   {
+    "player": "Harrison Smith",
+    "player_id": "14945",
+    "status": "Questionable"
+   },
+   {
+    "player": "Jalen Redmond",
+    "player_id": "4360277",
     "status": "Questionable"
    }
   ],
   "ATL": [
    {
-    "player": "James Pearce Jr.",
-    "player_id": "5081394",
-    "status": "Questionable"
-   },
-   {
-    "player": "Zachariah Branch",
-    "player_id": "4870612",
+    "player": "Kendal Daniels",
+    "player_id": "4595343",
     "status": "Questionable"
    },
    {
@@ -958,18 +953,13 @@
     "status": "Questionable"
    },
    {
-    "player": "DeMarcco Hellams",
-    "player_id": "4567111",
+    "player": "Za'Darius Smith",
+    "player_id": "3043168",
     "status": "Questionable"
    },
    {
-    "player": "Matthew Bergeron",
-    "player_id": "4568510",
-    "status": "Questionable"
-   },
-   {
-    "player": "James Pearce Jr.",
-    "player_id": "5081394",
+    "player": "Cameron Thomas",
+    "player_id": "4361510",
     "status": "Questionable"
    },
    {
@@ -978,31 +968,46 @@
     "status": "Questionable"
    },
    {
+    "player": "Kendal Daniels",
+    "player_id": "4595343",
+    "status": "Questionable"
+   },
+   {
     "player": "Jahan Dotson",
     "player_id": "4361409",
     "status": "Questionable"
    },
    {
-    "player": "DeMarcco Hellams",
-    "player_id": "4567111",
+    "player": "Za'Darius Smith",
+    "player_id": "3043168",
     "status": "Questionable"
    },
    {
-    "player": "Matthew Bergeron",
-    "player_id": "4568510",
+    "player": "Cameron Thomas",
+    "player_id": "4361510",
+    "status": "Questionable"
+   },
+   {
+    "player": "Zachariah Branch",
+    "player_id": "4870612",
     "status": "Questionable"
    }
   ],
   "JAX": [
    {
-    "player": "Patrick Mekari",
-    "player_id": "3863820",
-    "status": "Injured Reserve"
-   },
-   {
     "player": "Bhayshul Tuten",
     "player_id": "4882093",
     "status": "Questionable"
+   },
+   {
+    "player": "Parker Washington",
+    "player_id": "4432620",
+    "status": "Questionable"
+   },
+   {
+    "player": "Patrick Mekari",
+    "player_id": "3863820",
+    "status": "Injured Reserve"
    },
    {
     "player": "Jakobi Meyers",
@@ -1015,19 +1020,19 @@
     "status": "Questionable"
    },
    {
-    "player": "Jonah Monheim",
-    "player_id": "4430481",
+    "player": "Bhayshul Tuten",
+    "player_id": "4882093",
+    "status": "Questionable"
+   },
+   {
+    "player": "Parker Washington",
+    "player_id": "4432620",
     "status": "Questionable"
    },
    {
     "player": "Patrick Mekari",
     "player_id": "3863820",
     "status": "Injured Reserve"
-   },
-   {
-    "player": "Bhayshul Tuten",
-    "player_id": "4882093",
-    "status": "Questionable"
    },
    {
     "player": "Jakobi Meyers",
@@ -1037,23 +1042,18 @@
    {
     "player": "Cole Van Lanen",
     "player_id": "4035791",
-    "status": "Questionable"
-   },
-   {
-    "player": "Jonah Monheim",
-    "player_id": "4430481",
     "status": "Questionable"
    }
   ],
   "TEN": [
    {
-    "player": "Cor'Dale Flott",
-    "player_id": "4429607",
+    "player": "Dorian Mausi",
+    "player_id": "4573318",
     "status": "Questionable"
    },
    {
-    "player": "John Franklin-Myers",
-    "player_id": "3120464",
+    "player": "Cor'Dale Flott",
+    "player_id": "4429607",
     "status": "Questionable"
    },
    {
@@ -1072,13 +1072,13 @@
     "status": "Injured Reserve"
    },
    {
-    "player": "Cor'Dale Flott",
-    "player_id": "4429607",
+    "player": "Dorian Mausi",
+    "player_id": "4573318",
     "status": "Questionable"
    },
    {
-    "player": "John Franklin-Myers",
-    "player_id": "3120464",
+    "player": "Cor'Dale Flott",
+    "player_id": "4429607",
     "status": "Questionable"
    },
    {
@@ -1178,29 +1178,14 @@
   ],
   "LAC": [
    {
-    "player": "Akheem Mesidor",
-    "player_id": "4429190",
+    "player": "Justin Herbert",
+    "player_id": "4038941",
     "status": "Questionable"
    },
    {
-    "player": "Tuli Tuipulotu",
-    "player_id": "4431442",
-    "status": "Questionable"
-   },
-   {
-    "player": "Brenen Thompson",
-    "player_id": "4685553",
-    "status": "Questionable"
-   },
-   {
-    "player": "Dalvin Tomlinson",
-    "player_id": "2979860",
-    "status": "Questionable"
-   },
-   {
-    "player": "Tarheeb Still",
-    "player_id": "4432571",
-    "status": "Questionable"
+    "player": "Deane Leonard",
+    "player_id": "4690171",
+    "status": "Injured Reserve"
    },
    {
     "player": "Akheem Mesidor",
@@ -1218,38 +1203,33 @@
     "status": "Questionable"
    },
    {
-    "player": "Dalvin Tomlinson",
-    "player_id": "2979860",
+    "player": "Justin Herbert",
+    "player_id": "4038941",
     "status": "Questionable"
    },
    {
-    "player": "Tarheeb Still",
-    "player_id": "4432571",
+    "player": "Deane Leonard",
+    "player_id": "4690171",
+    "status": "Injured Reserve"
+   },
+   {
+    "player": "Akheem Mesidor",
+    "player_id": "4429190",
+    "status": "Questionable"
+   },
+   {
+    "player": "Tuli Tuipulotu",
+    "player_id": "4431442",
+    "status": "Questionable"
+   },
+   {
+    "player": "Brenen Thompson",
+    "player_id": "4685553",
     "status": "Questionable"
    }
   ],
   "NE": [
    {
-    "player": "Walter Rouse",
-    "player_id": "4428394",
-    "status": "Questionable"
-   },
-   {
-    "player": "Carlton Davis III",
-    "player_id": "3916923",
-    "status": "Questionable"
-   },
-   {
-    "player": "Reggie Gilliam",
-    "player_id": "4039505",
-    "status": "Questionable"
-   },
-   {
-    "player": "Romeo Doubs",
-    "player_id": "4361432",
-    "status": "Injured Reserve"
-   },
-   {
     "player": "A.J. Brown",
     "player_id": "4047646",
     "status": "Doubtful"
@@ -1278,13 +1258,38 @@
     "player": "A.J. Brown",
     "player_id": "4047646",
     "status": "Doubtful"
+   },
+   {
+    "player": "Walter Rouse",
+    "player_id": "4428394",
+    "status": "Questionable"
+   },
+   {
+    "player": "Carlton Davis III",
+    "player_id": "3916923",
+    "status": "Questionable"
+   },
+   {
+    "player": "Reggie Gilliam",
+    "player_id": "4039505",
+    "status": "Questionable"
+   },
+   {
+    "player": "Romeo Doubs",
+    "player_id": "4361432",
+    "status": "Injured Reserve"
    }
   ],
   "ARI": [
    {
-    "player": "Jeremiyah Love",
-    "player_id": "4870808",
-    "status": "Injured Reserve"
+    "player": "Karson Sharar",
+    "player_id": "4709695",
+    "status": "Questionable"
+   },
+   {
+    "player": "Hunter Long",
+    "player_id": "4239944",
+    "status": "Questionable"
    },
    {
     "player": "Carson Beck",
@@ -1292,24 +1297,24 @@
     "status": "Questionable"
    },
    {
+    "player": "Jeremiyah Love",
+    "player_id": "4870808",
+    "status": "Injured Reserve"
+   },
+   {
     "player": "Jon Gaines II",
     "player_id": "4367199",
     "status": "Questionable"
    },
    {
-    "player": "Cody Simon",
-    "player_id": "4429071",
+    "player": "Karson Sharar",
+    "player_id": "4709695",
     "status": "Questionable"
    },
    {
-    "player": "Zachary Carter",
-    "player_id": "4240619",
-    "status": "Injured Reserve"
-   },
-   {
-    "player": "Jeremiyah Love",
-    "player_id": "4870808",
-    "status": "Injured Reserve"
+    "player": "Hunter Long",
+    "player_id": "4239944",
+    "status": "Questionable"
    },
    {
     "player": "Carson Beck",
@@ -1317,23 +1322,23 @@
     "status": "Questionable"
    },
    {
+    "player": "Jeremiyah Love",
+    "player_id": "4870808",
+    "status": "Injured Reserve"
+   },
+   {
     "player": "Jon Gaines II",
     "player_id": "4367199",
     "status": "Questionable"
-   },
-   {
-    "player": "Cody Simon",
-    "player_id": "4429071",
-    "status": "Questionable"
-   },
-   {
-    "player": "Zachary Carter",
-    "player_id": "4240619",
-    "status": "Injured Reserve"
    }
   ],
   "WSH": [
    {
+    "player": "Treylon Burks",
+    "player_id": "4567156",
+    "status": "Questionable"
+   },
+   {
     "player": "Amik Robertson",
     "player_id": "4239694",
     "status": "Questionable"
@@ -1341,16 +1346,6 @@
    {
     "player": "Charles Omenihu",
     "player_id": "3929865",
-    "status": "Questionable"
-   },
-   {
-    "player": "Treylon Burks",
-    "player_id": "4567156",
-    "status": "Questionable"
-   },
-   {
-    "player": "Stefon Diggs",
-    "player_id": "2976212",
     "status": "Questionable"
    },
    {
@@ -1359,6 +1354,16 @@
     "status": "Injured Reserve"
    },
    {
+    "player": "Dyami Brown",
+    "player_id": "4361577",
+    "status": "Injured Reserve"
+   },
+   {
+    "player": "Treylon Burks",
+    "player_id": "4567156",
+    "status": "Questionable"
+   },
+   {
     "player": "Amik Robertson",
     "player_id": "4239694",
     "status": "Questionable"
@@ -1369,18 +1374,13 @@
     "status": "Questionable"
    },
    {
-    "player": "Treylon Burks",
-    "player_id": "4567156",
-    "status": "Questionable"
-   },
-   {
-    "player": "Stefon Diggs",
-    "player_id": "2976212",
-    "status": "Questionable"
-   },
-   {
     "player": "Laremy Tunsil",
     "player_id": "3051890",
+    "status": "Injured Reserve"
+   },
+   {
+    "player": "Dyami Brown",
+    "player_id": "4361577",
     "status": "Injured Reserve"
    }
   ],
@@ -1542,6 +1542,11 @@
   ],
   "LV": [
    {
+    "player": "Brock Bowers",
+    "player_id": "4432665",
+    "status": "Questionable"
+   },
+   {
     "player": "Tonka Hemingway",
     "player_id": "4429109",
     "status": "Questionable"
@@ -1555,11 +1560,6 @@
     "player": "Patrick Johnson",
     "player_id": "4243916",
     "status": "Injured Reserve"
-   },
-   {
-    "player": "Brock Bowers",
-    "player_id": "4432665",
-    "status": "Questionable"
    },
    {
     "player": "Tim Keenan III",
