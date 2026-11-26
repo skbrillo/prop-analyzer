@@ -514,7 +514,11 @@
    "top": false,
    "dk_line": 9.5,
    "dk_odds": -109,
-   "book": "draftkings"
+   "book": "draftkings",
+   "close_book": "draftkings",
+   "close_line": 9.5,
+   "close_odds": -110,
+   "price_clv": -0.0257
   },
   "nfl-v2-volume-script-defense-injuries|9808f5201846887d9b39ce02e1a3d27f|jameson williams|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -536,7 +540,11 @@
    "top": false,
    "dk_line": 56.5,
    "dk_odds": -113,
-   "book": "draftkings"
+   "book": "draftkings",
+   "close_book": "draftkings",
+   "close_line": 56.5,
+   "close_odds": -110,
+   "price_clv": -0.0347
   },
   "nfl-v2-volume-script-defense-injuries|9808f5201846887d9b39ce02e1a3d27f|luther burden|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -690,7 +698,11 @@
    "top": false,
    "dk_line": 36.5,
    "dk_odds": -111,
-   "book": "draftkings"
+   "book": "draftkings",
+   "close_book": "draftkings",
+   "close_line": 36.5,
+   "close_odds": -109,
+   "price_clv": -0.0324
   },
   "nfl-v2-volume-script-defense-injuries|9808f5201846887d9b39ce02e1a3d27f|jared goff|pass_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -1118,7 +1130,11 @@
    "top": false,
    "dk_line": 15.5,
    "dk_odds": -113,
-   "book": "draftkings"
+   "book": "draftkings",
+   "close_book": "draftkings",
+   "close_line": 15.5,
+   "close_odds": -111,
+   "price_clv": -0.0326
   },
   "nfl-v2-volume-script-defense-injuries|1576ac944306f4781949aca8963dcea4|josh downs|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -1612,7 +1628,11 @@
    "projection": 6.5,
    "model_version": "nfl-v2-volume-script-defense-injuries",
    "result": "pending",
-   "top": true
+   "top": true,
+   "close_book": "fanduel",
+   "close_line": 6.5,
+   "close_odds": 118,
+   "price_clv": -0.0305
   },
   "nfl-v2-volume-script-defense-injuries|bc430b48c0f9421d2d01acc16f09753d|aaron jones|rec_yds": {
    "locked_at": "2026-11-26T00:42:57+00:00",
@@ -2080,7 +2100,7 @@
    "projection": 2.4,
    "model_version": "nfl-v2-volume-script-defense-injuries",
    "result": "pending",
-   "top": true
+   "top": false
   },
   "nfl-v2-volume-script-defense-injuries|ce98ee1864ade0b0271f24b8d64925f2|zay flowers|rec_yds": {
    "locked_at": "2026-11-26T00:42:57+00:00",
@@ -2977,7 +2997,11 @@
    "projection": 2.6,
    "model_version": "nfl-v2-volume-script-defense-injuries",
    "result": "pending",
-   "top": false
+   "top": false,
+   "close_book": "fanduel",
+   "close_line": 2.5,
+   "close_odds": 100,
+   "price_clv": -0.0323
   },
   "nfl-v2-volume-script-defense-injuries|3df66cbbc7a353f008801a50c3ca3068|pat bryant|receptions": {
    "locked_at": "2026-11-26T00:42:57+00:00",
@@ -3852,7 +3876,76 @@
    "model_version": "nfl-v2-volume-script-defense-injuries",
    "result": "pending",
    "top": false
+  },
+  "nfl-v2-volume-script-defense-injuries|0f4a22cbfdcbde08a8bc92da408ac5c4|xavier restrepo|rec_yds": {
+   "locked_at": "2026-11-26T17:02:39+00:00",
+   "event_id": "0f4a22cbfdcbde08a8bc92da408ac5c4",
+   "matchup": "Tennessee Titans @ Jacksonville Jaguars",
+   "commence_time": "2026-11-29T18:00:00Z",
+   "player": "Xavier Restrepo",
+   "player_key": "xavier restrepo",
+   "market": "rec_yds",
+   "market_label": "Rec Yds",
+   "side": "Over",
+   "book": "fanduel",
+   "line": 9.5,
+   "odds": -114,
+   "dk_line": 8.5,
+   "dk_odds": -116,
+   "model_prob": 0.624,
+   "edge": 0.124,
+   "ev": 0.171,
+   "projection": 16.7,
+   "model_version": "nfl-v2-volume-script-defense-injuries",
+   "result": "pending",
+   "top": true
+  },
+  "nfl-v2-volume-script-defense-injuries|1576ac944306f4781949aca8963dcea4|khalil shakir|receptions": {
+   "locked_at": "2026-11-26T17:02:39+00:00",
+   "event_id": "1576ac944306f4781949aca8963dcea4",
+   "matchup": "Kansas City Chiefs @ Buffalo Bills",
+   "commence_time": "2026-11-27T01:20:00Z",
+   "player": "Khalil Shakir",
+   "player_key": "khalil shakir",
+   "market": "receptions",
+   "market_label": "Receptions",
+   "side": "Over",
+   "book": "fanduel",
+   "line": 3.5,
+   "odds": 104,
+   "dk_line": 3.5,
+   "dk_odds": -108,
+   "model_prob": 0.512,
+   "edge": 0.054,
+   "ev": 0.044,
+   "projection": 4.0,
+   "model_version": "nfl-v2-volume-script-defense-injuries",
+   "result": "pending",
+   "top": false
+  },
+  "nfl-v2-volume-script-defense-injuries|1576ac944306f4781949aca8963dcea4|rashee rice|receptions": {
+   "locked_at": "2026-11-26T17:02:39+00:00",
+   "event_id": "1576ac944306f4781949aca8963dcea4",
+   "matchup": "Kansas City Chiefs @ Buffalo Bills",
+   "commence_time": "2026-11-27T01:20:00Z",
+   "player": "Rashee Rice",
+   "player_key": "rashee rice",
+   "market": "receptions",
+   "market_label": "Receptions",
+   "side": "Over",
+   "book": "fanduel",
+   "line": 4.5,
+   "odds": 106,
+   "dk_line": 4.5,
+   "dk_odds": 101,
+   "model_prob": 0.506,
+   "edge": 0.051,
+   "ev": 0.042,
+   "projection": 5.1,
+   "model_version": "nfl-v2-volume-script-defense-injuries",
+   "result": "pending",
+   "top": false
   }
  },
- "updated_at": "2026-11-26T14:26:49+00:00"
+ "updated_at": "2026-11-26T17:02:39+00:00"
 }

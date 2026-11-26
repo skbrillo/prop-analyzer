@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-26T14:26:40+00:00",
+ "updated_at": "2026-11-26T17:02:30+00:00",
  "teams": {
   "Detroit Lions": "DET",
   "Chicago Bears": "CHI",
@@ -213,9 +213,14 @@
  "injuries": {
   "DET": [
    {
-    "player": "Skyler Gill-Howard",
-    "player_id": "5103940",
-    "status": "Injured Reserve"
+    "player": "DJ Wonnum",
+    "player_id": "4038849",
+    "status": "Out"
+   },
+   {
+    "player": "Chuck Clark",
+    "player_id": "3045463",
+    "status": "Out"
    },
    {
     "player": "Ennis Rakestraw Jr.",
@@ -223,24 +228,24 @@
     "status": "Out"
    },
    {
-    "player": "Chuck Clark",
-    "player_id": "3045463",
-    "status": "Questionable"
+    "player": "Tyrus Wheat",
+    "player_id": "4689333",
+    "status": "Out"
+   },
+   {
+    "player": "Keith Abney II",
+    "player_id": "5093004",
+    "status": "Out"
    },
    {
     "player": "DJ Wonnum",
     "player_id": "4038849",
-    "status": "Questionable"
+    "status": "Out"
    },
    {
-    "player": "Cade Mays",
-    "player_id": "4361788",
-    "status": "Injured Reserve"
-   },
-   {
-    "player": "Skyler Gill-Howard",
-    "player_id": "5103940",
-    "status": "Injured Reserve"
+    "player": "Chuck Clark",
+    "player_id": "3045463",
+    "status": "Out"
    },
    {
     "player": "Ennis Rakestraw Jr.",
@@ -248,40 +253,35 @@
     "status": "Out"
    },
    {
-    "player": "Chuck Clark",
-    "player_id": "3045463",
-    "status": "Questionable"
+    "player": "Tyrus Wheat",
+    "player_id": "4689333",
+    "status": "Out"
    },
    {
-    "player": "DJ Wonnum",
-    "player_id": "4038849",
-    "status": "Questionable"
-   },
-   {
-    "player": "Cade Mays",
-    "player_id": "4361788",
-    "status": "Injured Reserve"
+    "player": "Keith Abney II",
+    "player_id": "5093004",
+    "status": "Out"
    }
   ],
   "CHI": [
    {
-    "player": "D'Marco Jackson",
-    "player_id": "4241007",
-    "status": "Questionable"
-   },
-   {
-    "player": "Tyrique Stevenson Sr.",
-    "player_id": "4426374",
-    "status": "Questionable"
-   },
-   {
-    "player": "Kyler Gordon",
-    "player_id": "4361093",
+    "player": "Isaac Yiadom",
+    "player_id": "3122797",
     "status": "Out"
    },
    {
-    "player": "Roschon Johnson",
-    "player_id": "4426386",
+    "player": "Case Keenum",
+    "player_id": "15168",
+    "status": "Out"
+   },
+   {
+    "player": "Jayden Loving",
+    "player_id": "4877376",
+    "status": "Out"
+   },
+   {
+    "player": "Jordan McFadden",
+    "player_id": "4360319",
     "status": "Out"
    },
    {
@@ -290,23 +290,23 @@
     "status": "Out"
    },
    {
-    "player": "D'Marco Jackson",
-    "player_id": "4241007",
-    "status": "Questionable"
-   },
-   {
-    "player": "Tyrique Stevenson Sr.",
-    "player_id": "4426374",
-    "status": "Questionable"
-   },
-   {
-    "player": "Kyler Gordon",
-    "player_id": "4361093",
+    "player": "Isaac Yiadom",
+    "player_id": "3122797",
     "status": "Out"
    },
    {
-    "player": "Roschon Johnson",
-    "player_id": "4426386",
+    "player": "Case Keenum",
+    "player_id": "15168",
+    "status": "Out"
+   },
+   {
+    "player": "Jayden Loving",
+    "player_id": "4877376",
+    "status": "Out"
+   },
+   {
+    "player": "Jordan McFadden",
+    "player_id": "4360319",
     "status": "Out"
    },
    {
