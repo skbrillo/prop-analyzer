@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-26T20:32:08.291554+00:00",
+  "generated_at": "2026-11-26T21:29:06.811496+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 94,
+  "player_count": 97,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -18,6 +18,7 @@
     "LAC",
     "LAL",
     "MEM",
+    "MIA",
     "MIN",
     "NOP",
     "NYK",
@@ -32,12 +33,12 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 26,
-  "players_with_team": 94,
+  "teams_count": 27,
+  "players_with_team": 97,
   "players_without_team": 0,
   "status_counts": {
     "O": 77,
-    "T": 17
+    "T": 20
   },
   "players": [
     {
@@ -526,6 +527,28 @@
     },
     {
       "id": "",
+      "injury_record_id": "541102",
+      "name": "Giannis Antetokounmpo",
+      "team": "MIA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Groin | day-to-day",
+      "date": "2026-11-26T21:15Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61454",
+      "name": "Andrew Wiggins",
+      "team": "MIA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Sprain | Ankle | day-to-day",
+      "date": "2026-11-26T21:08Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541010",
       "name": "LaMelo Ball",
       "team": "MIN",
@@ -951,6 +974,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-10-05T21:43Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541103",
+      "name": "Alijah Martin",
+      "team": "TOR",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Knee | day-to-day",
+      "date": "2026-11-26T21:18Z",
       "team_match": "feed"
     },
     {
