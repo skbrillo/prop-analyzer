@@ -12,6 +12,9 @@ What v2 adds over v1:
     injuries         teammates listed Out/Doubtful have their targets and carries
                      redistributed to the players who are left (50%).
     td_scaling       touchdown chances scale with implied team points.
+    game_total       yards and catches scale with the game total (shootouts run
+                     above players' usual numbers, low totals below). The slope
+                     per market is fitted on last season's games, then tested.
 
 Each component is tested in a walk-forward backtest on the current season (every
 game projected only from earlier games, using ESPN's historical pregame spreads
@@ -32,7 +35,9 @@ ROOT = Path(__file__).resolve().parent
 CONTEXT = ROOT / "data" / "nfl_game_context.csv"
 
 VERSION = "nfl-v2-volume-script-defense-injuries"
-COMPONENTS = ("script", "defense", "injuries", "td_scaling")
+COMPONENTS = ("script", "defense", "injuries", "td_scaling", "game_total")
+TOTAL_MARKETS = ("receptions", "rec_yds", "pass_yds", "rush_yds")
+TOTAL_CAP = 0.15        # game_total moves a projection at most +/-15%
 # Usage decay per share type (tuned on this season's backtest, coarse grid):
 # receiving roles are stable, rushing/QB roles change faster.
 SHARE_DECAY = {"tgt": 0.92, "car": 0.72, "pass": 0.72}
@@ -133,6 +138,8 @@ class Data:
         implied = [(c["total"] - c["home_spread"]) / 2 for c in self.context.values()] + \
                   [(c["total"] + c["home_spread"]) / 2 for c in self.context.values()]
         self.avg_points = mean(implied) if implied else 22.5
+        self.avg_total = mean(c["total"] for c in self.context.values()) if self.context else 45.0
+        self.total_k = {m: 0.0 for m in TOTAL_MARKETS}
         self.coef = {"pass_T": 0.0, "pass_S": 0.0, "rush_T": 0.0, "rush_S": 0.0}
         self._cache = {}
 
@@ -280,9 +287,14 @@ class Data:
         td_scale = 1.0
         if "td_scaling" in flags and T is not None:
             td_scale = min(1.5, max(0.6, T / self.avg_points))
+        gt = {m: 1.0 for m in TOTAL_MARKETS}
+        if "game_total" in flags and T is not None:
+            d_total = (2 * T + S) - self.avg_total      # 2T + S is the game total for either side
+            gt = {m: min(1 + TOTAL_CAP, max(1 - TOTAL_CAP, 1 + self.total_k[m] * d_total)) for m in TOTAL_MARKETS}
         return {
-            "receptions": targets * catch, "rec_yds": targets * ypt, "rush_yds": carries * ypc,
-            "pass_yds": attempts * ypa, "pass_tds": attempts * ptd * td_scale,
+            "receptions": targets * catch * gt["receptions"], "rec_yds": targets * ypt * gt["rec_yds"],
+            "rush_yds": carries * ypc * gt["rush_yds"],
+            "pass_yds": attempts * ypa * gt["pass_yds"], "pass_tds": attempts * ptd * td_scale,
             "anytime_td": (carries * rtd + targets * ctd) * td_scale,
             "usage": {"targets": round(targets, 2), "carries": round(carries, 2), "pass_att": round(attempts, 1),
                       "team_pass": round(pass_vol, 1), "team_rush": round(rush_vol, 1)},
@@ -312,6 +324,35 @@ class Data:
                      "rush_T": float(br[1]), "rush_S": float(br[2])}
         return len(X)
 
+    def fit_total(self, before_season):
+        """Per market: (actual / projection - 1) ~ game total minus average, on
+        games before the test season. The slope is the game_total effect."""
+        X, ys = [], {m: [] for m in TOTAL_MARKETS}
+        rows_used = {m: [] for m in TOTAL_MARKETS}
+        for key, rows in self.players.items():
+            for i in range(v1.MIN_GAMES, len(rows)):
+                row = rows[i]
+                if int(row["season"]) >= before_season:
+                    continue
+                order, season, T, S, out = self.game_inputs(row)
+                if T is None:
+                    continue
+                pr = self.project(key, rows[:i], row["team"], row["opponent"], order, season, T, S, out,
+                                  frozenset({"script", "defense", "injuries"}))
+                if not pr:
+                    continue
+                d = (2 * T + S) - self.avg_total
+                for m in TOTAL_MARKETS:
+                    if pr[m] >= v1.MIN_PROJ.get(m, 0.5):
+                        ratio = min(3.0, f(row[v1.ACTUAL[m]]) / pr[m])   # cap blowups
+                        rows_used[m].append(([1.0, d], ratio - 1))
+        n = {}
+        for m, data in rows_used.items():
+            n[m] = len(data)
+            if len(data) >= 100:
+                self.total_k[m] = float(least_squares([x for x, _ in data], [y for _, y in data])[1])
+        return n
+
     def game_inputs(self, row):
         order, season = order_of(row), int(row["season"])
         T, S = self.team_context(row["game_id"], row["team"])
@@ -325,6 +366,7 @@ class Data:
         from itertools import combinations
         test_season = self.season
         n_fit = self.fit_script(test_season)
+        n_total = self.fit_total(test_season)
         subsets = [frozenset(c) for n in range(len(COMPONENTS) + 1) for c in combinations(COMPONENTS, n)]
         err = {sub: defaultdict(list) for sub in subsets}
         err_v1 = defaultdict(list)
@@ -367,6 +409,8 @@ class Data:
         final = {}
         summary = {"test_season": test_season, "script_fit_games": n_fit,
                    "script_coef": {k: round(v, 3) for k, v in self.coef.items()},
+                   "total_coef": {k: round(v, 4) for k, v in self.total_k.items()},
+                   "total_fit_rows": n_total, "avg_total": round(self.avg_total, 1),
                    "games_with_lines": with_context, "markets": {}}
         full = frozenset(COMPONENTS)
         for m in MARKETS:
