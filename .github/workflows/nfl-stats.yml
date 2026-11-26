@@ -1,13 +1,13 @@
 name: NFL Stats and Model Grading
 
 # Downloads NFL box scores from ESPN (free, no API credits), then re-runs the
-# model to grade finished paper picks. Runs at 4 AM Central the morning after
-# game days (Sun night, Mon, Tue after Monday night, Fri after Thursday night).
+# model to grade finished paper picks. Runs every morning at 4 AM Central
+# (free; only new games are downloaded).
 # The first run fetches two seasons and takes a few minutes.
 
 on:
   schedule:
-    - cron: "0 10 * * 0,1,2,5"
+    - cron: "0 10 * * *"
   workflow_dispatch:
 
 permissions:
