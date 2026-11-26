@@ -4,8 +4,8 @@
     "closed_events": []
   },
   "_credits": {
-    "remaining": 643,
-    "at": "2026-11-26T17:02:25+00:00"
+    "remaining": 638,
+    "at": "2026-11-26T17:44:19+00:00"
   },
   "2026-11-25": {
     "closing_requests": 1,
@@ -14,7 +14,9 @@
     ]
   },
   "2026-11-26": {
-    "closing_requests": 0,
-    "closed_events": []
+    "closing_requests": 1,
+    "closed_events": [
+      "9808f5201846887d9b39ce02e1a3d27f"
+    ]
   }
 }

@@ -326,7 +326,11 @@
    "top": false,
    "dk_line": 7.5,
    "dk_odds": -107,
-   "book": "draftkings"
+   "book": "draftkings",
+   "close_book": "draftkings",
+   "close_line": 7.5,
+   "close_odds": -109,
+   "price_clv": -0.0242
   },
   "nfl-v2-volume-script-defense-injuries|9c71c76286aa8e94bf0907ab5d29ca2e|matthew stafford|pass_tds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -517,8 +521,8 @@
    "book": "draftkings",
    "close_book": "draftkings",
    "close_line": 9.5,
-   "close_odds": -110,
-   "price_clv": -0.0257
+   "close_odds": -114,
+   "price_clv": -0.0173
   },
   "nfl-v2-volume-script-defense-injuries|9808f5201846887d9b39ce02e1a3d27f|jameson williams|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -1133,8 +1137,8 @@
    "book": "draftkings",
    "close_book": "draftkings",
    "close_line": 15.5,
-   "close_odds": -111,
-   "price_clv": -0.0326
+   "close_odds": -108,
+   "price_clv": -0.0389
   },
   "nfl-v2-volume-script-defense-injuries|1576ac944306f4781949aca8963dcea4|josh downs|rec_yds": {
    "locked_at": "2026-11-24T18:51:03+00:00",
@@ -3945,7 +3949,34 @@
    "model_version": "nfl-v2-volume-script-defense-injuries",
    "result": "pending",
    "top": false
+  },
+  "nfl-v2-volume-script-defense-injuries|9808f5201846887d9b39ce02e1a3d27f|isaac teslaa|receptions": {
+   "locked_at": "2026-11-26T17:44:31+00:00",
+   "event_id": "9808f5201846887d9b39ce02e1a3d27f",
+   "matchup": "Chicago Bears @ Detroit Lions",
+   "commence_time": "2026-11-26T18:00:00Z",
+   "player": "Isaac TeSlaa",
+   "player_key": "isaac teslaa",
+   "market": "receptions",
+   "market_label": "Receptions",
+   "side": "Over",
+   "book": "draftkings",
+   "line": 1.5,
+   "odds": 116,
+   "dk_line": 1.5,
+   "dk_odds": 116,
+   "model_prob": 0.487,
+   "edge": 0.05,
+   "ev": 0.052,
+   "projection": 1.6,
+   "model_version": "nfl-v2-volume-script-defense-injuries",
+   "result": "pending",
+   "top": false,
+   "close_book": "draftkings",
+   "close_line": 1.5,
+   "close_odds": 116,
+   "price_clv": -0.0261
   }
  },
- "updated_at": "2026-11-26T17:02:39+00:00"
+ "updated_at": "2026-11-26T17:44:31+00:00"
 }
