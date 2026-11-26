@@ -183,7 +183,7 @@ function renderModel(){
  const recs=(model.records||{})[ver]||{record:model.record,record_top:model.record_top};
  recordCards("record",recs.record,recs.record_dk_only);
  const body=$("picks");body.replaceChildren();
- const list=(model.paper_picks||[]).filter(p=>(p.model_version||"")===ver||(!p.model_version&&ver===(model.versions_order||[]).slice(-1)[0])).slice().sort((a,b)=>String(b.commence_time).localeCompare(String(a.commence_time)));
+ const list=(model.paper_picks||[]).filter(p=>(p.model_version||"")===ver||(!p.model_version&&ver===(model.versions_order||[]).slice(-1)[0])).slice().sort((a,b)=>String(a.commence_time).localeCompare(String(b.commence_time))||String(a.player).localeCompare(String(b.player)));
  for(const p of list){
   const tr=body.insertRow();const cell=(t,c="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;};
   const res=String(p.result||"pending");
