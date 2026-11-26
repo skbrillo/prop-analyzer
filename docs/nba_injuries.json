@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-26T14:45:57.657731+00:00",
+  "generated_at": "2026-11-26T15:47:17.699686+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -273,6 +273,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541045",
+      "name": "Jalen Duren",
+      "team": "DET",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-26T15:31Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "-61423",
       "name": "Cade Cunningham",
       "team": "DET",
@@ -313,17 +324,6 @@
       "raw_status": "Out",
       "reason": "Strain | Quadriceps | out",
       "date": "2026-11-24T18:30Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540842",
-      "name": "Jalen Duren",
-      "team": "DET",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Hamstring | out",
-      "date": "2026-11-24T18:27Z",
       "team_match": "feed"
     },
     {
