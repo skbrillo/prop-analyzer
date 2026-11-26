@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-26T02:30:20.747375+00:00",
+  "generated_at": "2026-11-26T03:36:29.237021+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 89,
+  "player_count": 93,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -33,11 +33,11 @@
     "WAS"
   ],
   "teams_count": 26,
-  "players_with_team": 89,
+  "players_with_team": 93,
   "players_without_team": 0,
   "status_counts": {
-    "O": 81,
-    "T": 8
+    "O": 82,
+    "T": 11
   },
   "players": [
     {
@@ -104,6 +104,17 @@
       "raw_status": "Out",
       "reason": "Illness | out",
       "date": "2026-11-23T21:09Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541006",
+      "name": "Moritz Wagner",
+      "team": "BKN",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Knee | out",
+      "date": "2026-11-26T02:48Z",
       "team_match": "feed"
     },
     {
@@ -449,6 +460,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541005",
+      "name": "Zach Edey",
+      "team": "MEM",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Ankle | day-to-day",
+      "date": "2026-11-26T02:48Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "540870",
       "name": "Scotty Pippen Jr.",
       "team": "MEM",
@@ -500,6 +522,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-11-07T17:24Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541007",
+      "name": "LaMelo Ball",
+      "team": "MIN",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Ankle | day-to-day",
+      "date": "2026-11-26T03:08Z",
       "team_match": "feed"
     },
     {
@@ -577,6 +610,17 @@
       "raw_status": "Out",
       "reason": "Ankle | out",
       "date": "2026-11-13T20:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541003",
+      "name": "Andre Drummond",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Head | day-to-day",
+      "date": "2026-11-26T02:31Z",
       "team_match": "feed"
     },
     {
