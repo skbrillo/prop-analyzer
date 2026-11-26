@@ -73,6 +73,7 @@ PRIOR = {"catch": 25, "ypt": 40, "ypc": 60, "ypa": 150, "pass_td": 250, "rush_td
 EDGE_MIN, EDGE_MAX = 0.05, 0.15
 ODDS_MIN, ODDS_MAX = -130, 130
 MAX_PICKS_PER_PLAYER = 1   # per game; keeps the bigger edge
+MAX_PICKS_PER_GAME = 6     # biggest edges only, so one game can't swing the record
 TOP_PER_GAME = 2           # "top picks" record: biggest edges in each game
 PICK_MARKETS = {"pass_yds", "pass_tds", "rush_yds", "receptions", "rec_yds"}
 EMPIRICAL = {"pass_yds", "rush_yds", "receptions", "rec_yds"}
@@ -487,15 +488,18 @@ def main():
         projections[f'{prop["event_id"]}|{key}|{m}'] = entry
 
     # Lock new paper picks per version: biggest edges first, one per player per game, never re-lock.
-    per_player = defaultdict(int)
+    per_player, per_game = defaultdict(int), defaultdict(int)
     for p in picks["picks"].values():
         per_player[(p.get("model_version", MODEL_VERSION), p["event_id"], p["player_key"])] += 1
+        per_game[(p.get("model_version", MODEL_VERSION), p["event_id"])] += 1
     for edge, ver, prop, key, o, dk_line, dk_odds, proj_value in sorted(candidates, key=lambda c: -c[0]):
         pk = pick_key(ver, prop["event_id"], key, prop["market"])
         slot = (ver, prop["event_id"], key)
-        if pk in picks["picks"] or per_player[slot] >= MAX_PICKS_PER_PLAYER:
+        game = (ver, prop["event_id"])
+        if pk in picks["picks"] or per_player[slot] >= MAX_PICKS_PER_PLAYER or per_game[game] >= MAX_PICKS_PER_GAME:
             continue
         per_player[slot] += 1
+        per_game[game] += 1
         picks["picks"][pk] = {
             "locked_at": now.isoformat(timespec="seconds"), "event_id": prop["event_id"],
             "matchup": prop["matchup"], "commence_time": prop["commence_time"],
@@ -526,6 +530,18 @@ def main():
             best_slot[k] = keep
         else:
             best_slot[k] = pk
+
+    # At most MAX_PICKS_PER_GAME per game on games not yet started; keep the biggest edges.
+    # Games already under way or graded keep every pick they had.
+    pending_by_game = defaultdict(list)
+    for pk, p in picks["picks"].items():
+        tip = parse_time(p["commence_time"])
+        if tip and tip > now and p.get("result") in (None, "pending"):
+            pending_by_game[(p.get("model_version", MODEL_VERSION), p["event_id"])].append(pk)
+    for game, pks in pending_by_game.items():
+        for pk in sorted(pks, key=lambda k: -picks["picks"][k]["edge"])[MAX_PICKS_PER_GAME:]:
+            p = picks["picks"].pop(pk)
+            print(f'Dropped (over {MAX_PICKS_PER_GAME} per game): {p["player"]} {p["market"]} {p["side"]} edge {p["edge"]:.1%}')
 
     # "Top" picks: biggest edges in each game, per version (edges are known at lock time).
     by_game = defaultdict(list)
@@ -559,7 +575,7 @@ def main():
         "versions_order": [v2.VERSION],
         "version_labels": {v2.VERSION: "Model v2"},
         "rules": {"edge_min": EDGE_MIN, "edge_max": EDGE_MAX, "odds_min": ODDS_MIN, "odds_max": ODDS_MAX,
-                  "max_picks_per_player": MAX_PICKS_PER_PLAYER, "top_per_game": TOP_PER_GAME},
+                  "max_picks_per_player": MAX_PICKS_PER_PLAYER, "max_picks_per_game": MAX_PICKS_PER_GAME, "top_per_game": TOP_PER_GAME},
         "backtest": bt,
         "backtest_v2": bt2,
         "injuries_updated": json.loads(INJURIES.read_text(encoding="utf-8")).get("updated_at") if INJURIES.exists() else None,
