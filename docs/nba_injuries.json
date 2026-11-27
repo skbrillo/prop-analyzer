@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-27T19:26:30.505609+00:00",
+  "generated_at": "2026-11-27T20:20:29.288987+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 103,
+  "player_count": 102,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -16,7 +16,6 @@
     "GSW",
     "IND",
     "LAC",
-    "LAL",
     "MEM",
     "MIA",
     "MIL",
@@ -34,11 +33,11 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 28,
-  "players_with_team": 103,
+  "teams_count": 27,
+  "players_with_team": 102,
   "players_without_team": 0,
   "status_counts": {
-    "O": 84,
+    "O": 83,
     "T": 19
   },
   "players": [
@@ -469,17 +468,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Shoulder | out",
       "date": "2026-08-26T20:04Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541120",
-      "name": "Austin Reaves",
-      "team": "LAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "out",
-      "date": "2026-11-26T23:21Z",
       "team_match": "feed"
     },
     {
