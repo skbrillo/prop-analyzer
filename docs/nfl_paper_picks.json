@@ -26,7 +26,8 @@
    "def_rank": 21,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "CAR"
   },
   "nfl-hitrate|a458acb049d04e63ee781943c3c1d363|deion burks|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -54,7 +55,8 @@
    "def_rank": 2,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NYG"
   },
   "nfl-hitrate|ce98ee1864ade0b0271f24b8d64925f2|kayshon boutte|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -82,7 +84,8 @@
    "def_rank": 13,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "BAL"
   },
   "nfl-hitrate|4cf5bae54a6c04de166a3fcbc60ff31e|hunter henry|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -110,7 +113,8 @@
    "def_rank": 21,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "LAC"
   },
   "nfl-hitrate|bc430b48c0f9421d2d01acc16f09753d|michael penix|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -138,7 +142,8 @@
    "def_rank": 2,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "MIN"
   },
   "nfl-hitrate|7c8f68c12da100955f696d650b117277|chase brown|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -166,7 +171,8 @@
    "def_rank": 29,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NO"
   },
   "nfl-hitrate|5cebb2754b918538c94858f6a3382ac2|mason taylor|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -194,7 +200,8 @@
    "def_rank": 11,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "MIA"
   },
   "nfl-hitrate|262d4bd2eb36f2ae78f313b415067418|brock purdy|pass_tds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -222,7 +229,8 @@
    "def_rank": 3,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "SEA"
   },
   "nfl-hitrate|47005d9657d55dd846cca14e2e9232da|baker mayfield|pass_tds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -250,7 +258,8 @@
    "def_rank": 19,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "CAR"
   },
   "nfl-hitrate|262d4bd2eb36f2ae78f313b415067418|jordan watkins|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -278,7 +287,8 @@
    "def_rank": 1,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "SEA"
   },
   "nfl-hitrate|262d4bd2eb36f2ae78f313b415067418|sam darnold|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -306,7 +316,8 @@
    "def_rank": 4,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "SF"
   },
   "nfl-hitrate|262d4bd2eb36f2ae78f313b415067418|tory horton|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -334,7 +345,8 @@
    "def_rank": 7,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "SF"
   },
   "nfl-hitrate|4cf5bae54a6c04de166a3fcbc60ff31e|mack hollins|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -362,7 +374,8 @@
    "def_rank": 16,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "LAC"
   },
   "nfl-hitrate|5cebb2754b918538c94858f6a3382ac2|jaylen wright|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -390,7 +403,8 @@
    "def_rank": 26,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NYJ"
   },
   "nfl-hitrate|ce98ee1864ade0b0271f24b8d64925f2|derrick henry|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -418,7 +432,8 @@
    "def_rank": 26,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "HOU"
   },
   "nfl-hitrate|47005d9657d55dd846cca14e2e9232da|bucky irving|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -446,7 +461,8 @@
    "def_rank": 21,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "CAR"
   },
   "nfl-hitrate|0f4a22cbfdcbde08a8bc92da408ac5c4|brian thomas|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -474,7 +490,8 @@
    "def_rank": 32,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "TEN"
   },
   "nfl-hitrate|262d4bd2eb36f2ae78f313b415067418|deebo samuel|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -502,7 +519,8 @@
    "def_rank": 2,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "SEA"
   },
   "nfl-hitrate|3df66cbbc7a353f008801a50c3ca3068|bo nix|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -530,7 +548,8 @@
    "def_rank": 5,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "PIT"
   },
   "nfl-hitrate|bc430b48c0f9421d2d01acc16f09753d|aaron jones|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -558,7 +577,8 @@
    "def_rank": 28,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "ATL"
   },
   "nfl-hitrate|a458acb049d04e63ee781943c3c1d363|jonathan taylor|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -586,7 +606,8 @@
    "def_rank": 12,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NYG"
   },
   "nfl-hitrate|262d4bd2eb36f2ae78f313b415067418|christian mccaffrey|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -614,7 +635,8 @@
    "def_rank": 24,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "SEA"
   },
   "nfl-hitrate|bc430b48c0f9421d2d01acc16f09753d|justin jefferson|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -642,7 +664,8 @@
    "def_rank": 29,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "ATL"
   },
   "nfl-hitrate|4cf5bae54a6c04de166a3fcbc60ff31e|omarion hampton|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -670,7 +693,8 @@
    "def_rank": 14,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NE"
   },
   "nfl-hitrate|c8743b715264baad041e7f5e765612fb|antonio williams|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -698,7 +722,8 @@
    "def_rank": 6,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "ARI"
   },
   "nfl-hitrate|ce98ee1864ade0b0271f24b8d64925f2|david montgomery|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -726,7 +751,8 @@
    "def_rank": 12,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "BAL"
   },
   "nfl-hitrate|bc430b48c0f9421d2d01acc16f09753d|jauan jennings|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -754,7 +780,8 @@
    "def_rank": 32,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "ATL"
   },
   "nfl-hitrate|0f4a22cbfdcbde08a8bc92da408ac5c4|gunnar helm|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -782,7 +809,8 @@
    "def_rank": 16,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "JAX"
   },
   "nfl-hitrate|0f4a22cbfdcbde08a8bc92da408ac5c4|tony pollard|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -810,7 +838,8 @@
    "def_rank": 30,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "JAX"
   },
   "nfl-hitrate|a458acb049d04e63ee781943c3c1d363|laquon treadwell|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -838,7 +867,8 @@
    "def_rank": 2,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NYG"
   },
   "nfl-hitrate|4cf5bae54a6c04de166a3fcbc60ff31e|rhamondre stevenson|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -866,7 +896,8 @@
    "def_rank": 9,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "LAC"
   },
   "nfl-hitrate|c8743b715264baad041e7f5e765612fb|jayden daniels|pass_tds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -894,7 +925,8 @@
    "def_rank": 30,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "ARI"
   },
   "nfl-hitrate|e597e091561bcddff13b9fe2929bd3a7|deshaun watson|pass_tds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -922,7 +954,8 @@
    "def_rank": 29,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "LV"
   },
   "nfl-hitrate|4cf5bae54a6c04de166a3fcbc60ff31e|eli raridon|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -950,7 +983,8 @@
    "def_rank": 16,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "LAC"
   },
   "nfl-hitrate|ce98ee1864ade0b0271f24b8d64925f2|nico collins|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -978,7 +1012,8 @@
    "def_rank": 5,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "BAL"
   },
   "nfl-hitrate|7c8f68c12da100955f696d650b117277|joe burrow|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1006,7 +1041,8 @@
    "def_rank": 24,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NO"
   },
   "nfl-hitrate|3df66cbbc7a353f008801a50c3ca3068|jaylen waddle|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1034,7 +1070,8 @@
    "def_rank": 18,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "PIT"
   },
   "nfl-hitrate|0f4a22cbfdcbde08a8bc92da408ac5c4|trevor lawrence|pass_tds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1062,7 +1099,8 @@
    "def_rank": 24,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "TEN"
   },
   "nfl-hitrate|a458acb049d04e63ee781943c3c1d363|tyler warren|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1090,7 +1128,8 @@
    "def_rank": 2,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NYG"
   },
   "nfl-hitrate|47005d9657d55dd846cca14e2e9232da|chuba hubbard|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1118,7 +1157,8 @@
    "def_rank": 14,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "TB"
   },
   "nfl-hitrate|47005d9657d55dd846cca14e2e9232da|cade otton|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1146,7 +1186,8 @@
    "def_rank": 9,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "CAR"
   },
   "nfl-hitrate|ce98ee1864ade0b0271f24b8d64925f2|marvin harrison|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1174,7 +1215,8 @@
    "def_rank": 13,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "BAL"
   },
   "nfl-hitrate|c8743b715264baad041e7f5e765612fb|tyler allgeier|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1202,7 +1244,8 @@
    "def_rank": 2,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "WSH"
   },
   "nfl-hitrate|a458acb049d04e63ee781943c3c1d363|jj mccarthy|pass_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1230,7 +1273,8 @@
    "def_rank": 7,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "IND"
   },
   "nfl-hitrate|bc430b48c0f9421d2d01acc16f09753d|bijan robinson|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1258,7 +1302,8 @@
    "def_rank": 21,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "MIN"
   },
   "nfl-hitrate|ce98ee1864ade0b0271f24b8d64925f2|cj stroud|pass_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1286,7 +1331,8 @@
    "def_rank": 9,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "BAL"
   },
   "nfl-hitrate|a458acb049d04e63ee781943c3c1d363|darnell mooney|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1314,7 +1360,8 @@
    "def_rank": 1,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "IND"
   },
   "nfl-hitrate|5cebb2754b918538c94858f6a3382ac2|geno smith|pass_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1342,7 +1389,8 @@
    "def_rank": 3,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "MIA"
   },
   "nfl-hitrate|0f4a22cbfdcbde08a8bc92da408ac5c4|parker washington|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1370,7 +1418,8 @@
    "def_rank": 32,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "TEN"
   },
   "nfl-hitrate|4cf5bae54a6c04de166a3fcbc60ff31e|kimani vidal|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1398,7 +1447,8 @@
    "def_rank": 14,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NE"
   },
   "nfl-hitrate|e597e091561bcddff13b9fe2929bd3a7|quinshon judkins|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1426,7 +1476,8 @@
    "def_rank": 30,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "LV"
   },
   "nfl-hitrate|e597e091561bcddff13b9fe2929bd3a7|kc concepcion|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1454,7 +1505,8 @@
    "def_rank": 28,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "LV"
   },
   "nfl-hitrate|c8743b715264baad041e7f5e765612fb|jacory croskeymerritt|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1482,7 +1534,8 @@
    "def_rank": 23,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "ARI"
   },
   "nfl-hitrate|bc430b48c0f9421d2d01acc16f09753d|jordan mason|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1510,7 +1563,8 @@
    "def_rank": 28,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "ATL"
   },
   "nfl-hitrate|0f4a22cbfdcbde08a8bc92da408ac5c4|brenton strange|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1538,7 +1592,8 @@
    "def_rank": 32,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "TEN"
   },
   "nfl-hitrate|47005d9657d55dd846cca14e2e9232da|tetairoa mcmillan|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1566,7 +1621,8 @@
    "def_rank": 6,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "TB"
   },
   "nfl-hitrate|5cebb2754b918538c94858f6a3382ac2|breece hall|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1594,7 +1650,8 @@
    "def_rank": 10,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "MIA"
   },
   "nfl-hitrate|5cebb2754b918538c94858f6a3382ac2|chris bell|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1622,7 +1679,8 @@
    "def_rank": 4,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NYJ"
   },
   "nfl-hitrate|5cebb2754b918538c94858f6a3382ac2|kenyon sadiq|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1650,7 +1708,8 @@
    "def_rank": 11,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "MIA"
   },
   "nfl-hitrate|e597e091561bcddff13b9fe2929bd3a7|mike washington|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1678,7 +1737,8 @@
    "def_rank": 32,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "CLE"
   },
   "nfl-hitrate|e597e091561bcddff13b9fe2929bd3a7|ashton jeanty|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1706,7 +1766,8 @@
    "def_rank": 32,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "CLE"
   },
   "nfl-hitrate|7c8f68c12da100955f696d650b117277|tee higgins|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1734,7 +1795,8 @@
    "def_rank": 19,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "NO"
   },
   "nfl-hitrate|7c8f68c12da100955f696d650b117277|travis etienne|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1762,7 +1824,8 @@
    "def_rank": 13,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "CIN"
   },
   "nfl-hitrate|e597e091561bcddff13b9fe2929bd3a7|dylan sampson|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1790,7 +1853,8 @@
    "def_rank": 1,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "LV"
   },
   "nfl-hitrate|3df66cbbc7a353f008801a50c3ca3068|evan engram|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1818,7 +1882,8 @@
    "def_rank": 20,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "PIT"
   },
   "nfl-hitrate|7c8f68c12da100955f696d650b117277|tyler shough|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1846,7 +1911,8 @@
    "def_rank": 32,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "CIN"
   },
   "nfl-hitrate|c8743b715264baad041e7f5e765612fb|stefon diggs|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1874,7 +1940,8 @@
    "def_rank": 12,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "ARI"
   },
   "nfl-hitrate|3df66cbbc7a353f008801a50c3ca3068|rico dowdle|rush_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1902,7 +1969,8 @@
    "def_rank": 18,
    "def_of": 32,
    "model_version": "nfl-hitrate",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "DEN"
   },
   "nfl-market|3df66cbbc7a353f008801a50c3ca3068|jaylen waddle|receptions": {
    "locked_at": "2026-11-27T02:33:30+00:00",
@@ -1930,8 +1998,9 @@
    "def_rank": 18,
    "def_of": 32,
    "model_version": "nfl-market",
-   "result": "pending"
+   "result": "pending",
+   "opponent": "PIT"
   }
  },
- "updated_at": "2026-11-27T04:07:54+00:00"
+ "updated_at": "2026-11-27T04:20:49+00:00"
 }
