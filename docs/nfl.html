@@ -143,7 +143,7 @@ function muDetail(mu){
  const t=(sd)=>{const x=mu[sd+"_team"]||{};return x.record?mu[sd]+": "+x.record+", ATS "+x.ats+", O/U "+x.ou+" | scores "+x.pts_for+" (#"+x.pts_for_rank+"), allows "+x.pts_against+" (#"+x.pts_against_rank+") | defense vs pass #"+x.def_pass_rank+", vs run #"+x.def_rush_rank:mu[sd]+": no team stats yet";};
  return "Total "+mu.total+(mu.total_rank?" (#"+mu.total_rank+" of "+mu.total_of+" this week)":"")+"\n"+t("away")+"\n"+t("home");
 }
-const TEAM_COLS=[["team","Team"],["record","W-L"],["ats","ATS"],["ou","O/U"],["pts_for","Pts/G"],["pts_against","Pts allowed/G"],
+const TEAM_COLS=[["team","Team"],["record","W-L"],["ats","ATS"],["ats_home","ATS home"],["ats_away","ATS away"],["ou","O/U"],["ou_home","O/U home"],["ou_away","O/U away"],["pts_for","Pts/G"],["pts_against","Pts allowed/G"],
  ["off_yds","Off yds/G"],["off_pass","Off pass/G"],["off_rush","Off rush/G"],["def_yds","Def yds/G"],["def_pass","Def pass/G"],["def_rush","Def rush/G"]];
 const RANKED_COLS=new Set(["pts_for","pts_against","off_yds","off_pass","off_rush","def_yds","def_pass","def_rush"]);
 let teamSort={key:"pts_for",asc:false};
@@ -152,7 +152,7 @@ function renderTeams(){
  head.replaceChildren();body.replaceChildren();
  for(const [k,lab] of TEAM_COLS){const th=add(head,"th",lab+(teamSort.key===k?(teamSort.asc?" ▲":" ▼"):""));th.style.cursor="pointer";
   th.onclick=()=>{teamSort=teamSort.key===k?{key:k,asc:!teamSort.asc}:{key:k,asc:k==="team"||k.startsWith("def_")||k==="pts_against"};renderTeams();};}
- const sortVal=(t,k)=>k==="team"?t.team:k==="record"||k==="ats"||k==="ou"?Number((t[k]||"0").split("-")[0])/Math.max(1,(t[k]||"0-0").split("-").slice(0,2).reduce((a,b)=>a+Number(b),0)):t[k];
+ const sortVal=(t,k)=>k==="team"?t.team:["record","ats","ou","ats_home","ats_away","ou_home","ou_away"].includes(k)?Number((t[k]||"0").split("-")[0])/Math.max(1,(t[k]||"0-0").split("-").slice(0,2).reduce((a,b)=>a+Number(b),0)):t[k];
  const rows=Object.entries(model.teams).map(([team,t])=>({team,...t}));
  rows.sort((a,b)=>{const x=sortVal(a,teamSort.key),y=sortVal(b,teamSort.key);if(x==null)return 1;if(y==null)return -1;
   const c=typeof x==="string"?x.localeCompare(y):x-y;return teamSort.asc?c:-c;});
@@ -184,7 +184,8 @@ function renderLines(){
     if(mu.total_rank)row("Total rank","#"+mu.total_rank+" of "+mu.total_of+" this week",mu.total_rank<=3?"yellow":"");
     for(const sd of ["away","home"]){const t=mu[sd+"_team"]||{};if(!t.record)continue;
      row(mu[sd]+" off / def","Pts "+t.pts_for+" (#"+t.pts_for_rank+") / allowed "+t.pts_against+" (#"+t.pts_against_rank+")");
-     row(mu[sd]+" W-L · ATS · O/U",t.record+" · "+t.ats+" · "+t.ou);}
+     row(mu[sd]+" W-L · ATS · O/U",t.record+" · "+t.ats+" · "+t.ou);
+     row(mu[sd]+(sd==="home"?" at home":" on road")+" (W-L · ATS · O/U)",sd==="home"?t.home_record+" · "+t.ats_home+" · "+t.ou_home:t.away_record+" · "+t.ats_away+" · "+t.ou_away);}
    }}
   const box=add(card,"div","","gother");let first=true;
   for(const [b,l] of Object.entries(g.lines)){
