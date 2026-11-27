@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T16:42:43.890543+00:00",
+  "generated_at": "2026-11-27T17:34:48.588856+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -98,13 +98,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541100",
+      "injury_record_id": "541160",
       "name": "Mitchell Robinson",
       "team": "BOS",
       "status": "O",
       "raw_status": "Out",
       "reason": "Illness | out",
-      "date": "2026-11-26T19:00Z",
+      "date": "2026-11-27T17:31Z",
       "team_match": "feed"
     },
     {
@@ -549,17 +549,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61454",
-      "name": "Andrew Wiggins",
-      "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Sprain | Ankle | day-to-day",
-      "date": "2026-11-26T21:08Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "541119",
       "name": "LaMelo Ball",
       "team": "MIN",
@@ -644,6 +633,17 @@
       "raw_status": "Out",
       "reason": "Ankle | out",
       "date": "2026-11-13T20:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541153",
+      "name": "Karl-Anthony Towns",
+      "team": "NYK",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Bruise | Abdomen | day-to-day",
+      "date": "2026-11-27T16:51Z",
       "team_match": "feed"
     },
     {
@@ -1033,13 +1033,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61463",
+      "injury_record_id": "541151",
       "name": "Mo Bamba",
       "team": "UTA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-27T16:28Z",
+      "date": "2026-11-27T16:41Z",
       "team_match": "feed"
     },
     {
