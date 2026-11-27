@@ -288,6 +288,19 @@ def recent_values(history, market):
     return [f(r[ACTUAL[market]]) for r in reversed(rows)]   # most recent first
 
 
+def target_trend(history):
+    """Targets in his last 5 games vs his last 15, and his share of team targets."""
+    last5, last15 = history[-5:], history[-LOOKBACK:]
+    t5 = [int(f(r["targets"])) for r in reversed(last5)]           # most recent first
+    team5 = sum(f(r["team_targets"]) for r in last5)
+    return {
+        "tgt_l5": round(mean(t5), 1) if t5 else None,
+        "tgt_l5_list": t5,
+        "tgt_l15": round(mean(f(r["targets"]) for r in last15), 1) if last15 else None,
+        "tgt_share_l5": round(sum(t5) / team5, 3) if team5 else None,
+    }
+
+
 def hits(values, line):
     return sum(v > line for v in values), len(values)
 
@@ -401,6 +414,8 @@ def main():
             "def_rank": d.get("rank") if d else None, "def_of": d.get("of") if d else None,
             "def_games": d["n"] if d else 0, "opponent": opp, "role": rl,
         }
+        if m in ("receptions", "rec_yds"):
+            context.update(target_trend(history))
         entry = {"status": status, **context}
         fair = fair_over(dk["over"], dk["under"])
         projections[f'{prop["event_id"]}|{key}|{m}'] = entry
@@ -453,6 +468,8 @@ def main():
             "projection": ctx["median_l15"], "avg_l15": ctx["avg_l15"],
             "hits_l10": f"{h10}/{n10}", "hits_l15": f"{h}/{n}",   # times OVER this pick's line
             "def_delta": ctx["def_delta"], "def_rank": ctx["def_rank"], "def_of": ctx["def_of"],
+            "tgt_l5": ctx.get("tgt_l5"), "tgt_l5_list": ctx.get("tgt_l5_list"),
+            "tgt_l15": ctx.get("tgt_l15"), "tgt_share_l5": ctx.get("tgt_share_l5"),
             "model_version": ver, "result": "pending",
         }
         print(f'Locked {LABELS[ver]}: {prop["player"]} {prop["market"]} {o["side"]} {o["line"]} '
