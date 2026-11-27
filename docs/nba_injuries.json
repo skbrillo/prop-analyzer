@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-27T18:26:50.264244+00:00",
+  "generated_at": "2026-11-27T19:26:30.505609+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 100,
+  "player_count": 103,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -35,10 +35,10 @@
     "WAS"
   ],
   "teams_count": 28,
-  "players_with_team": 100,
+  "players_with_team": 103,
   "players_without_team": 0,
   "status_counts": {
-    "O": 81,
+    "O": 84,
     "T": 19
   },
   "players": [
@@ -176,13 +176,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61447",
+      "injury_record_id": "541172",
+      "name": "Noa Essengue",
+      "team": "CHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Thumb | day-to-day",
+      "date": "2026-11-27T19:06Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541168",
       "name": "Jalen Smith",
       "team": "CHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-26T05:29Z",
+      "date": "2026-11-27T18:36Z",
       "team_match": "feed"
     },
     {
@@ -227,6 +238,17 @@
       "raw_status": "Out",
       "reason": "Sprain | Toe | out",
       "date": "2026-11-16T22:06Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541173",
+      "name": "Kyrie Irving",
+      "team": "DAL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Not Specified | Knee | day-to-day",
+      "date": "2026-11-27T19:07Z",
       "team_match": "feed"
     },
     {
@@ -456,7 +478,7 @@
       "team": "LAL",
       "status": "O",
       "raw_status": "Out",
-      "reason": "Bruise | Heel | out",
+      "reason": "out",
       "date": "2026-11-26T23:21Z",
       "team_match": "feed"
     },
@@ -561,13 +583,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541161",
+      "injury_record_id": "541171",
       "name": "LaMelo Ball",
       "team": "MIN",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Ankle | day-to-day",
-      "date": "2026-11-27T17:49Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Ankle | out",
+      "date": "2026-11-27T18:52Z",
       "team_match": "feed"
     },
     {
@@ -649,6 +671,39 @@
     },
     {
       "id": "",
+      "injury_record_id": "541167",
+      "name": "Miles McBride",
+      "team": "NYK",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Groin | out",
+      "date": "2026-11-27T18:21Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541166",
+      "name": "OG Anunoby",
+      "team": "NYK",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Calf | out",
+      "date": "2026-11-27T18:20Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541165",
+      "name": "Jordan Clarkson",
+      "team": "NYK",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Plantar Fasciitis | Foot | out",
+      "date": "2026-11-27T18:19Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541153",
       "name": "Karl-Anthony Towns",
       "team": "NYK",
@@ -667,39 +722,6 @@
       "raw_status": "Out",
       "reason": "Not Specified | Concussion | out",
       "date": "2026-11-27T15:36Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541110",
-      "name": "Miles McBride",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Groin | day-to-day",
-      "date": "2026-11-26T22:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541109",
-      "name": "Jordan Clarkson",
-      "team": "NYK",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Plantar Fasciitis | Foot | out",
-      "date": "2026-11-26T22:03Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541108",
-      "name": "OG Anunoby",
-      "team": "NYK",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Calf | out",
-      "date": "2026-11-26T21:57Z",
       "team_match": "feed"
     },
     {
@@ -880,6 +902,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541169",
+      "name": "Damian Lillard",
+      "team": "POR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Calf | out",
+      "date": "2026-11-27T18:38Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541133",
       "name": "Chris Youngblood",
       "team": "POR",
@@ -957,13 +990,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541124",
+      "injury_record_id": "541170",
       "name": "Dylan Harper",
       "team": "SAS",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Hip | out",
-      "date": "2026-11-26T23:41Z",
+      "date": "2026-11-27T18:51Z",
       "team_match": "feed"
     },
     {
