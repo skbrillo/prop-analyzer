@@ -52,7 +52,7 @@ tbody tr:hover{background:#1d3048}
 <div class="tablewrap"><table><thead><tr><th>Model</th><th>Picks</th><th>W-L</th><th>Win rate</th><th>Units</th><th>Beat the close</th><th>Avg CLV</th><th>Pending</th></tr></thead><tbody id="compare"></tbody></table></div>
 <div class="controls"><select id="model-ver" aria-label="Model version"></select></div>
 <div class="cards" id="record"></div>
-<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="game_total" title="Game total (DraftKings) and its rank among this week's games, 1 = highest. Hover for both teams' offense / defense ranks and over-under records.">Total</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="hits_l15" title="Times he went OVER this line in his last 15 games">Over L15</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="game_total" title="Game total (DraftKings) and its rank among this week's games, 1 = highest. Hover for both teams' offense / defense ranks and over-under records.">Total</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="hits_l15" title="Times he went OVER this line in his last 15 games">Over L15</th><th data-key="tgt_l5" title="Receiving props: average targets in his last 5 games, his share of the team's targets, and ↑ / ↓ when that is 1+ target above / below his last-15 average. Hover for the game-by-game list.">Tgt L5</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
 <div class="note">Click any column heading to sort; click again to reverse.</div>
 <div class="note" id="model-note"><b>Hit Rate model:</b> how often the player went over this line in his last 15 games, with each game adjusted for how his role does against this defense, blended with the book's no-vig price (the price counts as 10 games). Picks need a 5+ point edge over the book's no-vig price. No passing/receiving Overs in games flagged for wind. <b>Market Value model:</b> no player model — where 3+ books post the same line, a pick is a price that beats the other books' average no-vig price by 1+ point. Both: best price across DraftKings, FanDuel, BetMGM and Caesars, odds -130 to +130, one pick per player and at most six per game, no Anytime TD, locked the first time they qualify, graded from ESPN box scores. Not real bets — the test is which model beats the closing line.</div>
 <div class="note" id="backtest"></div>
@@ -227,7 +227,7 @@ function modelCells(cell,p){
 }
 // Paper-picks sorting: default kickoff order; numbers sort high-to-low first.
 let pickSort={key:"commence_time",asc:true};
-const NUMERIC_KEYS=new Set(["game_total","def_delta","wx_wind","line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
+const NUMERIC_KEYS=new Set(["tgt_l5","game_total","def_delta","wx_wind","line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
 function pickSorter(){
  const {key,asc}=pickSort,dir=asc?1:-1;
  return (a,b)=>{
@@ -273,7 +273,8 @@ function renderModel(){
  recordCards("record",recs.record,recs.record_dk_only);
  const body=$("picks");body.replaceChildren();
  for(const p of model.paper_picks||[]){const w=weather[p.event_id];p.wx_wind=w&&w.roof==="outdoor"&&w.wind_mph!=null?w.wind_mph:null;
-  const mu=(model.matchups||{})[p.event_id];p.game_total=mu&&mu.total!=null?mu.total:null;}
+  const mu=(model.matchups||{})[p.event_id];p.game_total=mu&&mu.total!=null?mu.total:null;
+  if(p.tgt_l5==null){const cx=entry(p);if(cx&&cx.tgt_l5!=null)p.tgt_l5=cx.tgt_l5;}}
  const list=(model.paper_picks||[]).filter(p=>(p.model_version||"")===ver||(!p.model_version&&ver===(model.versions_order||[]).slice(-1)[0])).slice().sort(pickSorter());
  document.querySelectorAll("#picks-head th[data-key]").forEach(th=>{
   th.textContent=th.textContent.replace(/ [▲▼]$/,"")+(th.dataset.key===pickSort.key?(pickSort.asc?" ▲":" ▼"):"");
@@ -293,6 +294,12 @@ function renderModel(){
   cell(fmtLine(p.line));cell(signed(p.odds),Number(p.odds)>0?"green":"");
   cell(p.dk_line!=null?fmtLine(p.dk_line)+" "+signed(p.dk_odds):"—","muted");
   cell(p.hits_l10||"—");cell(p.hits_l15||"—");
+  {const cx=entry(p)||{},t5=p.tgt_l5??cx.tgt_l5,t15=p.tgt_l15??cx.tgt_l15,sh=p.tgt_share_l5??cx.tgt_share_l5,lst=p.tgt_l5_list||cx.tgt_l5_list;
+   p.tgt_l5=t5;const td=tr.insertCell();
+   if(t5==null){td.textContent="—";td.className="muted";}
+   else{const d=t15!=null?t5-t15:0,arrow=d>=1?" ↑":d<=-1?" ↓":"";
+    td.textContent=t5+(sh!=null?" ("+Math.round(100*sh)+"%)":"")+arrow;td.className=arrow===" ↑"?"green":arrow===" ↓"?"red":"";
+    td.title="Last 5 games (newest first): "+(lst||[]).join(", ")+" targets | last-15 average "+t15+(sh!=null?" | "+(100*sh).toFixed(1)+"% of team targets in last 5":"");}}
   cell(p.def_delta==null?"—":(p.def_delta>0?"+":"")+p.def_delta+(p.def_rank?" ("+p.def_rank+"/"+p.def_of+")":""),p.def_delta==null?"muted":p.def_delta>0?"green":p.def_delta<0?"red":"");
   cell(pct(p.model_prob));cell("+"+(100*p.edge).toFixed(1),"green bold");
   cell(p.close_line!=null?fmtLine(p.close_line)+(p.close_odds!=null?" "+signed(p.close_odds):""):"—",p.close_line==null?"muted":"");
@@ -301,7 +308,7 @@ function renderModel(){
   cell(p.actual!=null?String(p.actual):"—",beat==null?"muted":beat?"green":"red");
   cell(res==="void"?"VOID":res.toUpperCase(),res==="win"?"green bold":res==="loss"?"red bold":res==="push"?"muted":"yellow bold");
  }
- if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=19;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
+ if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=20;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
  renderCompare();
  $("backtest").textContent="Started over on Nov 26, 2026: earlier model picks were deleted, both models count from 0-0.";
  $("model-status").textContent=verLabel(ver)+" | updated "+new Date(model.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT";
