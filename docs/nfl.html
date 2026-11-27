@@ -26,6 +26,7 @@ th,td{padding:8px 6px;border-bottom:1px solid #2b3a50;text-align:left;white-spac
 th{background:var(--card);color:var(--muted);position:sticky;top:0}
 tbody tr:hover{background:#1d3048}
 .player{font-weight:700}
+.opp{font-weight:400;color:var(--muted,#8a94a6);font-size:.85em;white-space:nowrap}
 .green{color:var(--green)}.red{color:var(--red)}.yellow{color:var(--yellow)}.bold{font-weight:700}
 .stat b.green{color:var(--green)}.stat b.red{color:var(--red)}.stat b.yellow{color:var(--yellow)}
 .flag{color:var(--yellow);font-weight:700}.alt{color:var(--yellow)}.best{color:var(--green);font-weight:700}
@@ -137,6 +138,12 @@ function wxDetail(w){
  }
  if(w.forecast_at)bits.push("forecast "+new Date(w.forecast_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT");
  return bits.filter(Boolean).join(" | ");
+}
+// "vs ATL" at home, "@ ATL" on the road.
+function oppTag(p){
+ const opp=p.opponent||(entry(p)||{}).opponent;if(!opp)return "";
+ const mu=model&&(model.matchups||{})[p.event_id];
+ return (mu&&mu.home===opp?"@ ":"vs ")+opp;
 }
 function muDetail(mu){
  if(!mu)return "No game line saved for this game.";
@@ -289,7 +296,8 @@ function renderModel(){
   {const mu=(model.matchups||{})[p.event_id],td=tr.insertCell();
    td.textContent=mu&&mu.total!=null?mu.total+(mu.total_rank?" (#"+mu.total_rank+")":""):"—";
    td.className=!mu||mu.total==null?"muted":mu.total_rank&&mu.total_rank<=3?"yellow bold":"";td.title=muDetail(mu);}
-  cell(p.player,"player");cell(p.market_label);
+  {const td=tr.insertCell();td.textContent=p.player;td.className="player";const o=oppTag(p);if(o)add(td,"span"," "+o,"opp");}
+  cell(p.market_label);
   cell(p.side,over?"green bold":"yellow bold");
   cell(label(p.book||"draftkings"),p.book&&p.book!=="draftkings"?"green bold":"");
   cell(fmtLine(p.line));cell(signed(p.odds),Number(p.odds)>0?"green":"");
@@ -339,7 +347,7 @@ function render(){
   const tr=body.insertRow();
   const cell=(t,c="",title="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;if(title)td.title=title;return td;};
   cell(kickoff(p.commence_time));
-  {const td=cell(p.player,"player");const e=entry(p);const st=e&&e.status;
+  {const td=cell(p.player,"player");const e=entry(p);const st=e&&e.status;const o=oppTag(p);if(o)add(td,"span"," "+o,"opp");
    if(st){const c=st.toLowerCase().startsWith("q")?"yellow":"red";const b=add(td,"span"," "+st.charAt(0).toUpperCase(),c+" bold");b.title=st+" (ESPN injury report)";}}
   cell(p.market_label);
   if(p.one_sided){
