@@ -1,422 +1,7 @@
 {
-  "generated_at": "2026-11-27T11:29:59.512176+00:00",
+  "generated_at": "2026-11-27T12:36:02.182275+00:00",
   "source": "RotoWire",
   "games": {
-    "401909318": {
-      "game_id": "401909318",
-      "game": "Chicago Bulls at Charlotte Hornets",
-      "tipoff": "2026-11-26T00:00:00+00:00",
-      "home": "CHA",
-      "away": "CHI",
-      "checked_at": "2026-11-26T05:12:23.068066+00:00",
-      "minutes_before_tipoff": -312.4,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Coby White",
-          "team": "CHA"
-        },
-        {
-          "name": "Brandon Miller",
-          "team": "CHA"
-        },
-        {
-          "name": "Sion James",
-          "team": "CHA"
-        },
-        {
-          "name": "Naz Reid",
-          "team": "CHA"
-        },
-        {
-          "name": "Moussa Diabate",
-          "team": "CHA"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Josh Giddey",
-          "team": "CHI"
-        },
-        {
-          "name": "Buddy Hield",
-          "team": "CHI"
-        },
-        {
-          "name": "Isaac Okoro",
-          "team": "CHI"
-        },
-        {
-          "name": "Matas Buzelis",
-          "team": "CHI"
-        },
-        {
-          "name": "Nic Claxton",
-          "team": "CHI"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Grayson Allen",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Ryan Kalkbrenner",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Kon Knueppel",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Dennis Schroder",
-          "team": "CHA",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Norman Powell",
-          "team": "CHI",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Smith",
-          "team": "CHI",
-          "status": "out"
-        },
-        {
-          "name": "Caleb Wilson",
-          "team": "CHI",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Grayson Allen",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Ryan Kalkbrenner",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Kon Knueppel",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Dennis Schroder",
-          "team": "CHA",
-          "status": "out"
-        },
-        {
-          "name": "Norman Powell",
-          "team": "CHI",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Smith",
-          "team": "CHI",
-          "status": "out"
-        },
-        {
-          "name": "Caleb Wilson",
-          "team": "CHI",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401909319": {
-      "game_id": "401909319",
-      "game": "Cleveland Cavaliers at New York Knicks",
-      "tipoff": "2026-11-26T00:30:00+00:00",
-      "home": "NYK",
-      "away": "CLE",
-      "checked_at": "2026-11-26T05:12:23.068066+00:00",
-      "minutes_before_tipoff": -282.4,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Jalen Brunson",
-          "team": "NYK"
-        },
-        {
-          "name": "Landry Shamet",
-          "team": "NYK"
-        },
-        {
-          "name": "Mikal Bridges",
-          "team": "NYK"
-        },
-        {
-          "name": "Josh Hart",
-          "team": "NYK"
-        },
-        {
-          "name": "Karl-Anthony Towns",
-          "team": "NYK"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "James Harden",
-          "team": "CLE"
-        },
-        {
-          "name": "Donovan Mitchell",
-          "team": "CLE"
-        },
-        {
-          "name": "Sam Merrill",
-          "team": "CLE"
-        },
-        {
-          "name": "Peyton Watson",
-          "team": "CLE"
-        },
-        {
-          "name": "Jarrett Allen",
-          "team": "CLE"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "OG Anunoby",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Jordan Clarkson",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Miles McBride",
-          "team": "NYK",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Evan Mobley",
-          "team": "CLE",
-          "status": "out"
-        },
-        {
-          "name": "Nae'Qwan Tomlin",
-          "team": "CLE",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "OG Anunoby",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Jordan Clarkson",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Miles McBride",
-          "team": "NYK",
-          "status": "out"
-        },
-        {
-          "name": "Evan Mobley",
-          "team": "CLE",
-          "status": "out"
-        },
-        {
-          "name": "Nae'Qwan Tomlin",
-          "team": "CLE",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401909320": {
-      "game_id": "401909320",
-      "game": "Minnesota Timberwolves at Oklahoma City Thunder",
-      "tipoff": "2026-11-26T00:30:00+00:00",
-      "home": "OKC",
-      "away": "MIN",
-      "checked_at": "2026-11-26T05:12:23.068066+00:00",
-      "minutes_before_tipoff": -282.4,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Shai Gilgeous-Alexander",
-          "team": "OKC"
-        },
-        {
-          "name": "Bennett Stirtz",
-          "team": "OKC"
-        },
-        {
-          "name": "Ajay Mitchell",
-          "team": "OKC"
-        },
-        {
-          "name": "Micah Peavy",
-          "team": "OKC"
-        },
-        {
-          "name": "Isaiah Hartenstein",
-          "team": "OKC"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "LaMelo Ball",
-          "team": "MIN"
-        },
-        {
-          "name": "Ayo Dosunmu",
-          "team": "MIN"
-        },
-        {
-          "name": "Jonathan Kuminga",
-          "team": "MIN"
-        },
-        {
-          "name": "Jaden McDaniels",
-          "team": "MIN"
-        },
-        {
-          "name": "Rudy Gobert",
-          "team": "MIN"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Chet Holmgren",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Aday Mara",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Thomas Sorber",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Nikola Topic",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Cason Wallace",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Williams",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jaylin Williams",
-          "team": "OKC",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Jaylen Clark",
-          "team": "MIN",
-          "status": "out"
-        },
-        {
-          "name": "Donte DiVincenzo",
-          "team": "MIN",
-          "status": "out"
-        },
-        {
-          "name": "Anthony Edwards",
-          "team": "MIN",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Chet Holmgren",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Aday Mara",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Thomas Sorber",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Nikola Topic",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Cason Wallace",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Williams",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jaylin Williams",
-          "team": "OKC",
-          "status": "out"
-        },
-        {
-          "name": "Jaylen Clark",
-          "team": "MIN",
-          "status": "out"
-        },
-        {
-          "name": "Donte DiVincenzo",
-          "team": "MIN",
-          "status": "out"
-        },
-        {
-          "name": "Anthony Edwards",
-          "team": "MIN",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909321": {
       "game_id": "401909321",
       "game": "LA Clippers at Memphis Grizzlies",
@@ -976,8 +561,8 @@
       "tipoff": "2026-11-28T00:00:00+00:00",
       "home": "NYK",
       "away": "MIA",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 750.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 684.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1038,8 +623,8 @@
       "tipoff": "2026-11-28T00:30:00+00:00",
       "home": "DET",
       "away": "MIL",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 780.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 714.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1152,8 +737,8 @@
       "tipoff": "2026-11-28T00:30:00+00:00",
       "home": "IND",
       "away": "PHI",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 780.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 714.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1257,8 +842,8 @@
       "tipoff": "2026-11-28T00:30:00+00:00",
       "home": "TOR",
       "away": "BKN",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 780.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 714.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1362,8 +947,8 @@
       "tipoff": "2026-11-28T01:00:00+00:00",
       "home": "BOS",
       "away": "ATL",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 810.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 744.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1466,8 +1051,8 @@
       "tipoff": "2026-11-28T01:30:00+00:00",
       "home": "MIN",
       "away": "MEM",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 840.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 774.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1601,8 +1186,8 @@
       "tipoff": "2026-11-28T02:00:00+00:00",
       "home": "PHX",
       "away": "DAL",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 870.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 804.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1716,8 +1301,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "SAS",
       "away": "LAL",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 900.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 834.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1800,8 +1385,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "UTA",
       "away": "DEN",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 900.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 834.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1884,8 +1469,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "LAC",
       "away": "NOP",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 900.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 834.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1979,8 +1564,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "POR",
       "away": "GSW",
-      "checked_at": "2026-11-27T11:29:59.512176+00:00",
-      "minutes_before_tipoff": 900.0,
+      "checked_at": "2026-11-27T12:36:02.182275+00:00",
+      "minutes_before_tipoff": 834.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
