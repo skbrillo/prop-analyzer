@@ -1,381 +1,7 @@
 {
-  "generated_at": "2026-11-26T07:50:32.812550+00:00",
+  "generated_at": "2026-11-27T08:10:08.227217+00:00",
   "source": "RotoWire",
   "games": {
-    "401909314": {
-      "game_id": "401909314",
-      "game": "Detroit Pistons at Orlando Magic",
-      "tipoff": "2026-11-25T00:00:00+00:00",
-      "home": "ORL",
-      "away": "DET",
-      "checked_at": "2026-11-25T05:10:18.230592+00:00",
-      "minutes_before_tipoff": -310.3,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Jalen Suggs",
-          "team": "ORL"
-        },
-        {
-          "name": "Anthony Black",
-          "team": "ORL"
-        },
-        {
-          "name": "Desmond Bane",
-          "team": "ORL"
-        },
-        {
-          "name": "Franz Wagner",
-          "team": "ORL"
-        },
-        {
-          "name": "Wendell Carter",
-          "team": "ORL"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Daniss Jenkins",
-          "team": "DET"
-        },
-        {
-          "name": "Isaiah Joe",
-          "team": "DET"
-        },
-        {
-          "name": "Kevin Huerter",
-          "team": "DET"
-        },
-        {
-          "name": "Ausar Thompson",
-          "team": "DET"
-        },
-        {
-          "name": "John Collins",
-          "team": "DET"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Paolo Banchero",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Jonathan Isaac",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Izaiyah Nelson",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Noah Penda",
-          "team": "ORL",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Cade Cunningham",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Duren",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Ebuka Okorie",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Taurean Prince",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Duncan Robinson",
-          "team": "DET",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Paolo Banchero",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Jonathan Isaac",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Izaiyah Nelson",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Noah Penda",
-          "team": "ORL",
-          "status": "out"
-        },
-        {
-          "name": "Cade Cunningham",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Jalen Duren",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Ebuka Okorie",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Taurean Prince",
-          "team": "DET",
-          "status": "out"
-        },
-        {
-          "name": "Duncan Robinson",
-          "team": "DET",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401909315": {
-      "game_id": "401909315",
-      "game": "Boston Celtics at Washington Wizards",
-      "tipoff": "2026-11-25T01:00:00+00:00",
-      "home": "WAS",
-      "away": "BOS",
-      "checked_at": "2026-11-25T05:10:18.230592+00:00",
-      "minutes_before_tipoff": -250.3,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Trae Young",
-          "team": "WAS"
-        },
-        {
-          "name": "Kyshawn George",
-          "team": "WAS"
-        },
-        {
-          "name": "AJ Dybantsa",
-          "team": "WAS"
-        },
-        {
-          "name": "Anthony Davis",
-          "team": "WAS"
-        },
-        {
-          "name": "Alex Sarr",
-          "team": "WAS"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Derrick White",
-          "team": "BOS"
-        },
-        {
-          "name": "Sam Hauser",
-          "team": "BOS"
-        },
-        {
-          "name": "Jayson Tatum",
-          "team": "BOS"
-        },
-        {
-          "name": "Paul George",
-          "team": "BOS"
-        },
-        {
-          "name": "Neemias Queta",
-          "team": "BOS"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [
-        {
-          "name": "Reece Beekman",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Justin Champagnie",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Tristan Vukcevic",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Jamir Watkins",
-          "team": "WAS",
-          "status": "out"
-        }
-      ],
-      "away_out": [
-        {
-          "name": "Mitchell Robinson",
-          "team": "BOS",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Reece Beekman",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Justin Champagnie",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Tristan Vukcevic",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Jamir Watkins",
-          "team": "WAS",
-          "status": "out"
-        },
-        {
-          "name": "Mitchell Robinson",
-          "team": "BOS",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
-    "401909316": {
-      "game_id": "401909316",
-      "game": "Dallas Mavericks at Denver Nuggets",
-      "tipoff": "2026-11-25T03:00:00+00:00",
-      "home": "DEN",
-      "away": "DAL",
-      "checked_at": "2026-11-25T05:10:18.230592+00:00",
-      "minutes_before_tipoff": -130.3,
-      "status": "confirmed",
-      "home_status": "confirmed",
-      "away_status": "confirmed",
-      "home_starters": [
-        {
-          "name": "Jamal Murray",
-          "team": "DEN"
-        },
-        {
-          "name": "Christian Braun",
-          "team": "DEN"
-        },
-        {
-          "name": "Cameron Johnson",
-          "team": "DEN"
-        },
-        {
-          "name": "Aaron Gordon",
-          "team": "DEN"
-        },
-        {
-          "name": "Nikola Jokic",
-          "team": "DEN"
-        }
-      ],
-      "away_starters": [
-        {
-          "name": "Kyrie Irving",
-          "team": "DAL"
-        },
-        {
-          "name": "Caleb Martin",
-          "team": "DAL"
-        },
-        {
-          "name": "Cooper Flagg",
-          "team": "DAL"
-        },
-        {
-          "name": "Zaccharie Risacher",
-          "team": "DAL"
-        },
-        {
-          "name": "Daniel Gafford",
-          "team": "DAL"
-        }
-      ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [],
-      "away_out": [
-        {
-          "name": "Tarik Biberovic",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Sergio de Larrea",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Tobi Lawal",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Dereck Lively",
-          "team": "DAL",
-          "status": "out"
-        }
-      ],
-      "out_players": [
-        {
-          "name": "Tarik Biberovic",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Sergio de Larrea",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Tobi Lawal",
-          "team": "DAL",
-          "status": "out"
-        },
-        {
-          "name": "Dereck Lively",
-          "team": "DAL",
-          "status": "out"
-        }
-      ],
-      "source": "RotoWire"
-    },
     "401909317": {
       "game_id": "401909317",
       "game": "Miami Heat at Philadelphia 76ers",
@@ -1401,6 +1027,1154 @@
         {
           "name": "Jayden Quaintance",
           "team": "SAS",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909326": {
+      "game_id": "401909326",
+      "game": "Miami Heat at New York Knicks",
+      "tipoff": "2026-11-28T00:00:00+00:00",
+      "home": "NYK",
+      "away": "MIA",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 949.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Jalen Brunson",
+          "team": "NYK"
+        },
+        {
+          "name": "Mikal Bridges",
+          "team": "NYK"
+        },
+        {
+          "name": "Landry Shamet",
+          "team": "NYK"
+        },
+        {
+          "name": "Josh Hart",
+          "team": "NYK"
+        },
+        {
+          "name": "Karl-Anthony Towns",
+          "team": "NYK"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Davion Mitchell",
+          "team": "MIA"
+        },
+        {
+          "name": "Klay Thompson",
+          "team": "MIA"
+        },
+        {
+          "name": "Pelle Larsson",
+          "team": "MIA"
+        },
+        {
+          "name": "Giannis Antetokounmpo",
+          "team": "MIA"
+        },
+        {
+          "name": "Bam Adebayo",
+          "team": "MIA"
+        }
+      ],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401909327": {
+      "game_id": "401909327",
+      "game": "Milwaukee Bucks at Detroit Pistons",
+      "tipoff": "2026-11-28T00:30:00+00:00",
+      "home": "DET",
+      "away": "MIL",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 979.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Daniss Jenkins",
+          "team": "DET"
+        },
+        {
+          "name": "Isaiah Joe",
+          "team": "DET"
+        },
+        {
+          "name": "Kevin Huerter",
+          "team": "DET"
+        },
+        {
+          "name": "Ausar Thompson",
+          "team": "DET"
+        },
+        {
+          "name": "John Collins",
+          "team": "DET"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Ryan Rollins",
+          "team": "MIL"
+        },
+        {
+          "name": "Tyler Herro",
+          "team": "MIL"
+        },
+        {
+          "name": "Jaime Jaquez",
+          "team": "MIL"
+        },
+        {
+          "name": "Kyle Kuzma",
+          "team": "MIL"
+        },
+        {
+          "name": "Myles Turner",
+          "team": "MIL"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "Cade Cunningham",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Jalen Duren",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Ebuka Okorie",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Taurean Prince",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Duncan Robinson",
+          "team": "DET",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Cade Cunningham",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Jalen Duren",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Ebuka Okorie",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Taurean Prince",
+          "team": "DET",
+          "status": "out"
+        },
+        {
+          "name": "Duncan Robinson",
+          "team": "DET",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909328": {
+      "game_id": "401909328",
+      "game": "Philadelphia 76ers at Indiana Pacers",
+      "tipoff": "2026-11-28T00:30:00+00:00",
+      "home": "IND",
+      "away": "PHI",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 979.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Andrew Nembhard",
+          "team": "IND"
+        },
+        {
+          "name": "Kelly Oubre",
+          "team": "IND"
+        },
+        {
+          "name": "Aaron Nesmith",
+          "team": "IND"
+        },
+        {
+          "name": "Pascal Siakam",
+          "team": "IND"
+        },
+        {
+          "name": "Ivica Zubac",
+          "team": "IND"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Tyrese Maxey",
+          "team": "PHI"
+        },
+        {
+          "name": "VJ Edgecombe",
+          "team": "PHI"
+        },
+        {
+          "name": "Dean Wade",
+          "team": "PHI"
+        },
+        {
+          "name": "LeBron James",
+          "team": "PHI"
+        },
+        {
+          "name": "Joel Embiid",
+          "team": "PHI"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "Johnny Furphy",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Tyrese Haliburton",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Ben Sheppard",
+          "team": "IND",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Jaylen Brown",
+          "team": "PHI",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Johnny Furphy",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Tyrese Haliburton",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Ben Sheppard",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Jaylen Brown",
+          "team": "PHI",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909329": {
+      "game_id": "401909329",
+      "game": "Brooklyn Nets at Toronto Raptors",
+      "tipoff": "2026-11-28T00:30:00+00:00",
+      "home": "TOR",
+      "away": "BKN",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 979.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Immanuel Quickley",
+          "team": "TOR"
+        },
+        {
+          "name": "Ja'Kobe Walter",
+          "team": "TOR"
+        },
+        {
+          "name": "Allen Graves",
+          "team": "TOR"
+        },
+        {
+          "name": "Scottie Barnes",
+          "team": "TOR"
+        },
+        {
+          "name": "Collin Murray-Boyles",
+          "team": "TOR"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Egor Demin",
+          "team": "BKN"
+        },
+        {
+          "name": "Michael Porter",
+          "team": "BKN"
+        },
+        {
+          "name": "Danny Wolf",
+          "team": "BKN"
+        },
+        {
+          "name": "Julius Randle",
+          "team": "BKN"
+        },
+        {
+          "name": "Day'Ron Sharpe",
+          "team": "BKN"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "RJ Barrett",
+          "team": "TOR",
+          "status": "out"
+        },
+        {
+          "name": "Kawhi Leonard",
+          "team": "TOR",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Nolan Traore",
+          "team": "BKN",
+          "status": "out"
+        },
+        {
+          "name": "Moritz Wagner",
+          "team": "BKN",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "RJ Barrett",
+          "team": "TOR",
+          "status": "out"
+        },
+        {
+          "name": "Kawhi Leonard",
+          "team": "TOR",
+          "status": "out"
+        },
+        {
+          "name": "Nolan Traore",
+          "team": "BKN",
+          "status": "out"
+        },
+        {
+          "name": "Moritz Wagner",
+          "team": "BKN",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909330": {
+      "game_id": "401909330",
+      "game": "Atlanta Hawks at Boston Celtics",
+      "tipoff": "2026-11-28T01:00:00+00:00",
+      "home": "BOS",
+      "away": "ATL",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 1009.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Derrick White",
+          "team": "BOS"
+        },
+        {
+          "name": "Jordan Walsh",
+          "team": "BOS"
+        },
+        {
+          "name": "Jayson Tatum",
+          "team": "BOS"
+        },
+        {
+          "name": "Paul George",
+          "team": "BOS"
+        },
+        {
+          "name": "Neemias Queta",
+          "team": "BOS"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Kingston Flemings",
+          "team": "ATL"
+        },
+        {
+          "name": "Nickeil Alexander-Walker",
+          "team": "ATL"
+        },
+        {
+          "name": "Dyson Daniels",
+          "team": "ATL"
+        },
+        {
+          "name": "Jalen Johnson",
+          "team": "ATL"
+        },
+        {
+          "name": "Onyeka Okongwu",
+          "team": "ATL"
+        }
+      ],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Mouhamed Gueye",
+          "team": "ATL",
+          "status": "out"
+        },
+        {
+          "name": "Jock Landale",
+          "team": "ATL",
+          "status": "out"
+        },
+        {
+          "name": "CJ McCollum",
+          "team": "ATL",
+          "status": "out"
+        },
+        {
+          "name": "Asa Newell",
+          "team": "ATL",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Mouhamed Gueye",
+          "team": "ATL",
+          "status": "out"
+        },
+        {
+          "name": "Jock Landale",
+          "team": "ATL",
+          "status": "out"
+        },
+        {
+          "name": "CJ McCollum",
+          "team": "ATL",
+          "status": "out"
+        },
+        {
+          "name": "Asa Newell",
+          "team": "ATL",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909331": {
+      "game_id": "401909331",
+      "game": "Memphis Grizzlies at Minnesota Timberwolves",
+      "tipoff": "2026-11-28T01:30:00+00:00",
+      "home": "MIN",
+      "away": "MEM",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 1039.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "LaMelo Ball",
+          "team": "MIN"
+        },
+        {
+          "name": "Ayo Dosunmu",
+          "team": "MIN"
+        },
+        {
+          "name": "Jonathan Kuminga",
+          "team": "MIN"
+        },
+        {
+          "name": "Jaden McDaniels",
+          "team": "MIN"
+        },
+        {
+          "name": "Rudy Gobert",
+          "team": "MIN"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Ty Jerome",
+          "team": "MEM"
+        },
+        {
+          "name": "Cedric Coward",
+          "team": "MEM"
+        },
+        {
+          "name": "Jaylen Wells",
+          "team": "MEM"
+        },
+        {
+          "name": "Jahmai Mashack",
+          "team": "MEM"
+        },
+        {
+          "name": "Zach Edey",
+          "team": "MEM"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "Jaylen Clark",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Donte DiVincenzo",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Anthony Edwards",
+          "team": "MIN",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Cameron Boozer",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Jerami Grant",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "GG Jackson",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Scotty Pippen",
+          "team": "MEM",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Jaylen Clark",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Donte DiVincenzo",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Anthony Edwards",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
+          "name": "Cameron Boozer",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Jerami Grant",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "GG Jackson",
+          "team": "MEM",
+          "status": "out"
+        },
+        {
+          "name": "Scotty Pippen",
+          "team": "MEM",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909332": {
+      "game_id": "401909332",
+      "game": "Dallas Mavericks at Phoenix Suns",
+      "tipoff": "2026-11-28T02:00:00+00:00",
+      "home": "PHX",
+      "away": "DAL",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 1069.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Devin Booker",
+          "team": "PHX"
+        },
+        {
+          "name": "Jalen Green",
+          "team": "PHX"
+        },
+        {
+          "name": "Dillon Brooks",
+          "team": "PHX"
+        },
+        {
+          "name": "Miles Bridges",
+          "team": "PHX"
+        },
+        {
+          "name": "Oso Ighodaro",
+          "team": "PHX"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Kyrie Irving",
+          "team": "DAL"
+        },
+        {
+          "name": "Caleb Martin",
+          "team": "DAL"
+        },
+        {
+          "name": "Cooper Flagg",
+          "team": "DAL"
+        },
+        {
+          "name": "P.J. Washington",
+          "team": "DAL"
+        },
+        {
+          "name": "Daniel Gafford",
+          "team": "DAL"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "Mark Williams",
+          "team": "PHX",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Tarik Biberovic",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Sergio de Larrea",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Tobi Lawal",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Dereck Lively",
+          "team": "DAL",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Mark Williams",
+          "team": "PHX",
+          "status": "out"
+        },
+        {
+          "name": "Tarik Biberovic",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Sergio de Larrea",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Tobi Lawal",
+          "team": "DAL",
+          "status": "out"
+        },
+        {
+          "name": "Dereck Lively",
+          "team": "DAL",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909333": {
+      "game_id": "401909333",
+      "game": "Los Angeles Lakers at San Antonio Spurs",
+      "tipoff": "2026-11-28T02:30:00+00:00",
+      "home": "SAS",
+      "away": "LAL",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 1099.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "De'Aaron Fox",
+          "team": "SAS"
+        },
+        {
+          "name": "Stephon Castle",
+          "team": "SAS"
+        },
+        {
+          "name": "Julian Champagnie",
+          "team": "SAS"
+        },
+        {
+          "name": "Devin Vassell",
+          "team": "SAS"
+        },
+        {
+          "name": "Victor Wembanyama",
+          "team": "SAS"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Luka Doncic",
+          "team": "LAL"
+        },
+        {
+          "name": "Austin Reaves",
+          "team": "LAL"
+        },
+        {
+          "name": "Matisse Thybulle",
+          "team": "LAL"
+        },
+        {
+          "name": "Ziaire Williams",
+          "team": "LAL"
+        },
+        {
+          "name": "Walker Kessler",
+          "team": "LAL"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "Tobias Harris",
+          "team": "SAS",
+          "status": "out"
+        },
+        {
+          "name": "Jayden Quaintance",
+          "team": "SAS",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Tobias Harris",
+          "team": "SAS",
+          "status": "out"
+        },
+        {
+          "name": "Jayden Quaintance",
+          "team": "SAS",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909334": {
+      "game_id": "401909334",
+      "game": "Denver Nuggets at Utah Jazz",
+      "tipoff": "2026-11-28T02:30:00+00:00",
+      "home": "UTA",
+      "away": "DEN",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 1099.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Keyonte George",
+          "team": "UTA"
+        },
+        {
+          "name": "Darryn Peterson",
+          "team": "UTA"
+        },
+        {
+          "name": "Josh Green",
+          "team": "UTA"
+        },
+        {
+          "name": "Ace Bailey",
+          "team": "UTA"
+        },
+        {
+          "name": "Jaxson Hayes",
+          "team": "UTA"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Jamal Murray",
+          "team": "DEN"
+        },
+        {
+          "name": "Christian Braun",
+          "team": "DEN"
+        },
+        {
+          "name": "Cameron Johnson",
+          "team": "DEN"
+        },
+        {
+          "name": "Aaron Gordon",
+          "team": "DEN"
+        },
+        {
+          "name": "Nikola Jokic",
+          "team": "DEN"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "Jaren Jackson",
+          "team": "UTA",
+          "status": "out"
+        },
+        {
+          "name": "Lauri Markkanen",
+          "team": "UTA",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Jaren Jackson",
+          "team": "UTA",
+          "status": "out"
+        },
+        {
+          "name": "Lauri Markkanen",
+          "team": "UTA",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909335": {
+      "game_id": "401909335",
+      "game": "New Orleans Pelicans at LA Clippers",
+      "tipoff": "2026-11-28T02:30:00+00:00",
+      "home": "LAC",
+      "away": "NOP",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 1099.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Darius Garland",
+          "team": "LAC"
+        },
+        {
+          "name": "Brandon Ingram",
+          "team": "LAC"
+        },
+        {
+          "name": "Max Strus",
+          "team": "LAC"
+        },
+        {
+          "name": "Rui Hachimura",
+          "team": "LAC"
+        },
+        {
+          "name": "Brook Lopez",
+          "team": "LAC"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Jeremiah Fears",
+          "team": "NOP"
+        },
+        {
+          "name": "Herbert Jones",
+          "team": "NOP"
+        },
+        {
+          "name": "Saddiq Bey",
+          "team": "NOP"
+        },
+        {
+          "name": "Zion Williamson",
+          "team": "NOP"
+        },
+        {
+          "name": "Yves Missi",
+          "team": "NOP"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "Bradley Beal",
+          "team": "LAC",
+          "status": "out"
+        },
+        {
+          "name": "Jordan Miller",
+          "team": "LAC",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Dejounte Murray",
+          "team": "NOP",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Bradley Beal",
+          "team": "LAC",
+          "status": "out"
+        },
+        {
+          "name": "Jordan Miller",
+          "team": "LAC",
+          "status": "out"
+        },
+        {
+          "name": "Dejounte Murray",
+          "team": "NOP",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401909336": {
+      "game_id": "401909336",
+      "game": "Golden State Warriors at Portland Trail Blazers",
+      "tipoff": "2026-11-28T02:30:00+00:00",
+      "home": "POR",
+      "away": "GSW",
+      "checked_at": "2026-11-27T08:10:08.227217+00:00",
+      "minutes_before_tipoff": 1099.9,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Damian Lillard",
+          "team": "POR"
+        },
+        {
+          "name": "Sidy Cissoko",
+          "team": "POR"
+        },
+        {
+          "name": "Toumani Camara",
+          "team": "POR"
+        },
+        {
+          "name": "Deni Avdija",
+          "team": "POR"
+        },
+        {
+          "name": "Donovan Clingan",
+          "team": "POR"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "De'Anthony Melton",
+          "team": "GSW"
+        },
+        {
+          "name": "Brandin Podziemski",
+          "team": "GSW"
+        },
+        {
+          "name": "Yaxel Lendeborg",
+          "team": "GSW"
+        },
+        {
+          "name": "Draymond Green",
+          "team": "GSW"
+        },
+        {
+          "name": "Charles Bassey",
+          "team": "GSW"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "Vit Krejci",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Ja Morant",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Shaedon Sharpe",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Chris Youngblood",
+          "team": "POR",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Jimmy Butler",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Stephen Curry",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Moses Moody",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Kristaps Porzingis",
+          "team": "GSW",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Vit Krejci",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Ja Morant",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Shaedon Sharpe",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Chris Youngblood",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Jimmy Butler",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Stephen Curry",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Moses Moody",
+          "team": "GSW",
+          "status": "out"
+        },
+        {
+          "name": "Kristaps Porzingis",
+          "team": "GSW",
           "status": "out"
         }
       ],
