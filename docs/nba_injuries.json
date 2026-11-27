@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T00:17:41.117063+00:00",
+  "generated_at": "2026-11-27T01:48:45.991880+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
@@ -373,6 +373,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541132",
+      "name": "Kelly Oubre Jr.",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Hand | day-to-day",
+      "date": "2026-11-27T00:42Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541117",
       "name": "Larry Nance Jr.",
       "team": "IND",
@@ -380,17 +391,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Ankle | day-to-day",
       "date": "2026-11-26T22:43Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541116",
-      "name": "Aaron Nesmith",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Foot | day-to-day",
-      "date": "2026-11-26T22:31Z",
       "team_match": "feed"
     },
     {
@@ -868,13 +868,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540202",
+      "injury_record_id": "541133",
       "name": "Chris Youngblood",
       "team": "POR",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
-      "date": "2026-11-20T22:18Z",
+      "date": "2026-11-27T00:56Z",
       "team_match": "feed"
     },
     {
