@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-27T21:19:35.497121+00:00",
+  "generated_at": "2026-11-27T22:20:00.706676+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 102,
+  "player_count": 105,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -14,6 +14,7 @@
     "DAL",
     "DET",
     "GSW",
+    "HOU",
     "IND",
     "LAC",
     "MEM",
@@ -33,12 +34,12 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 27,
-  "players_with_team": 102,
+  "teams_count": 28,
+  "players_with_team": 105,
   "players_without_team": 0,
   "status_counts": {
-    "O": 83,
-    "T": 19
+    "O": 84,
+    "T": 21
   },
   "players": [
     {
@@ -131,13 +132,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61448",
+      "injury_record_id": "541177",
       "name": "Ryan Kalkbrenner",
       "team": "CHA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-26T05:30Z",
+      "date": "2026-11-27T22:04Z",
       "team_match": "feed"
     },
     {
@@ -391,6 +392,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-10-16T16:11Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541178",
+      "name": "Steven Adams",
+      "team": "HOU",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Knee | day-to-day",
+      "date": "2026-11-27T22:06Z",
       "team_match": "feed"
     },
     {
@@ -787,6 +799,28 @@
       "raw_status": "Out",
       "reason": "Knee | out",
       "date": "2026-10-31T01:02Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541176",
+      "name": "Kevin Porter Jr.",
+      "team": "ORL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Injury Related | out",
+      "date": "2026-11-27T21:08Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541175",
+      "name": "Anthony Black",
+      "team": "ORL",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Back | day-to-day",
+      "date": "2026-11-27T21:05Z",
       "team_match": "feed"
     },
     {
