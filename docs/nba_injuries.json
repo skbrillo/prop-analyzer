@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-27T22:20:00.706676+00:00",
+  "generated_at": "2026-11-27T23:16:12.324133+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 105,
+  "player_count": 102,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -18,7 +18,6 @@
     "IND",
     "LAC",
     "MEM",
-    "MIA",
     "MIL",
     "MIN",
     "NOP",
@@ -34,12 +33,12 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 28,
-  "players_with_team": 105,
+  "teams_count": 27,
+  "players_with_team": 102,
   "players_without_team": 0,
   "status_counts": {
-    "O": 84,
-    "T": 21
+    "O": 85,
+    "T": 17
   },
   "players": [
     {
@@ -132,6 +131,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541179",
+      "name": "Grayson Allen",
+      "team": "CHA",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Concussion | out",
+      "date": "2026-11-27T22:17Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541177",
       "name": "Ryan Kalkbrenner",
       "team": "CHA",
@@ -139,17 +149,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Hip | day-to-day",
       "date": "2026-11-27T22:04Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540949",
-      "name": "Grayson Allen",
-      "team": "CHA",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Concussion | out",
-      "date": "2026-11-25T17:39Z",
       "team_match": "feed"
     },
     {
@@ -407,6 +406,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541181",
+      "name": "T.J. McConnell",
+      "team": "IND",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-27T23:02Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541164",
       "name": "Larry Nance Jr.",
       "team": "IND",
@@ -425,28 +435,6 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-27T16:20Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541132",
-      "name": "Kelly Oubre Jr.",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hand | day-to-day",
-      "date": "2026-11-27T00:42Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541115",
-      "name": "T.J. McConnell",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Hamstring | day-to-day",
-      "date": "2026-11-26T22:29Z",
       "team_match": "feed"
     },
     {
@@ -557,17 +545,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-11-07T17:24Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541102",
-      "name": "Giannis Antetokounmpo",
-      "team": "MIA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Groin | day-to-day",
-      "date": "2026-11-26T21:15Z",
       "team_match": "feed"
     },
     {
@@ -1052,17 +1029,6 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-10-05T21:43Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541103",
-      "name": "Alijah Martin",
-      "team": "TOR",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Knee | day-to-day",
-      "date": "2026-11-26T21:18Z",
       "team_match": "feed"
     },
     {
