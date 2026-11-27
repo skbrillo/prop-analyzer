@@ -52,7 +52,7 @@ tbody tr:hover{background:#1d3048}
 <div class="tablewrap"><table><thead><tr><th>Model</th><th>Picks</th><th>W-L</th><th>Win rate</th><th>Units</th><th>Beat the close</th><th>Avg CLV</th><th>Pending</th></tr></thead><tbody id="compare"></tbody></table></div>
 <div class="controls"><select id="model-ver" aria-label="Model version"></select></div>
 <div class="cards" id="record"></div>
-<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="hits_l15" title="Times he went OVER this line in his last 15 games">Over L15</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="game_total" title="Game total (DraftKings) and its rank among this week's games, 1 = highest. Hover for both teams' offense / defense ranks and over-under records.">Total</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="hits_l15" title="Times he went OVER this line in his last 15 games">Over L15</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
 <div class="note">Click any column heading to sort; click again to reverse.</div>
 <div class="note" id="model-note"><b>Hit Rate model:</b> how often the player went over this line in his last 15 games, with each game adjusted for how his role does against this defense, blended with the book's no-vig price (the price counts as 10 games). Picks need a 5+ point edge over the book's no-vig price. No passing/receiving Overs in games flagged for wind. <b>Market Value model:</b> no player model — where 3+ books post the same line, a pick is a price that beats the other books' average no-vig price by 1+ point. Both: best price across DraftKings, FanDuel, BetMGM and Caesars, odds -130 to +130, one pick per player and at most six per game, no Anytime TD, locked the first time they qualify, graded from ESPN box scores. Not real bets — the test is which model beats the closing line.</div>
 <div class="note" id="backtest"></div>
@@ -64,6 +64,10 @@ tbody tr:hover{background:#1d3048}
 <div class="head"><h2>NFL Game Lines</h2><span id="lines-status" class="muted"></span></div>
 <div class="muted">DraftKings spread, total and implied team points. Arrows show movement since the first line we saved. Other books listed underneath.</div>
 <div id="gamelines" class="gamecards"></div>
+
+<div class="head"><h2>NFL Team Stats</h2><span class="muted">Regular season, from ESPN box scores and pregame lines | click a heading to sort | rank 1 = best</span></div>
+<div class="tablewrap"><table><thead><tr id="teams-head"></tr></thead><tbody id="teams-body"></tbody></table></div>
+<div class="note">Yards are gross (passing yards before sacks), so they run a little higher than sites that net out sack yards. ATS and O/U use ESPN's pregame DraftKings spread and total.</div>
 
 <div class="head"><h2>Line Shopping Board</h2><span id="status" class="muted">Loading...</span></div>
 <div class="controls">
@@ -134,6 +138,30 @@ function wxDetail(w){
  if(w.forecast_at)bits.push("forecast "+new Date(w.forecast_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT");
  return bits.filter(Boolean).join(" | ");
 }
+function muDetail(mu){
+ if(!mu)return "No game line saved for this game.";
+ const t=(sd)=>{const x=mu[sd+"_team"]||{};return x.record?mu[sd]+": "+x.record+", ATS "+x.ats+", O/U "+x.ou+" | scores "+x.pts_for+" (#"+x.pts_for_rank+"), allows "+x.pts_against+" (#"+x.pts_against_rank+") | defense vs pass #"+x.def_pass_rank+", vs run #"+x.def_rush_rank:mu[sd]+": no team stats yet";};
+ return "Total "+mu.total+(mu.total_rank?" (#"+mu.total_rank+" of "+mu.total_of+" this week)":"")+"\n"+t("away")+"\n"+t("home");
+}
+const TEAM_COLS=[["team","Team"],["record","W-L"],["ats","ATS"],["ou","O/U"],["pts_for","Pts/G"],["pts_against","Pts allowed/G"],
+ ["off_yds","Off yds/G"],["off_pass","Off pass/G"],["off_rush","Off rush/G"],["def_yds","Def yds/G"],["def_pass","Def pass/G"],["def_rush","Def rush/G"]];
+const RANKED_COLS=new Set(["pts_for","pts_against","off_yds","off_pass","off_rush","def_yds","def_pass","def_rush"]);
+let teamSort={key:"pts_for",asc:false};
+function renderTeams(){
+ const head=$("teams-head"),body=$("teams-body");if(!head||!model||!model.teams)return;
+ head.replaceChildren();body.replaceChildren();
+ for(const [k,lab] of TEAM_COLS){const th=add(head,"th",lab+(teamSort.key===k?(teamSort.asc?" ▲":" ▼"):""));th.style.cursor="pointer";
+  th.onclick=()=>{teamSort=teamSort.key===k?{key:k,asc:!teamSort.asc}:{key:k,asc:k==="team"||k.startsWith("def_")||k==="pts_against"};renderTeams();};}
+ const sortVal=(t,k)=>k==="team"?t.team:k==="record"||k==="ats"||k==="ou"?Number((t[k]||"0").split("-")[0])/Math.max(1,(t[k]||"0-0").split("-").slice(0,2).reduce((a,b)=>a+Number(b),0)):t[k];
+ const rows=Object.entries(model.teams).map(([team,t])=>({team,...t}));
+ rows.sort((a,b)=>{const x=sortVal(a,teamSort.key),y=sortVal(b,teamSort.key);if(x==null)return 1;if(y==null)return -1;
+  const c=typeof x==="string"?x.localeCompare(y):x-y;return teamSort.asc?c:-c;});
+ for(const t of rows){const tr=body.insertRow();
+  for(const [k] of TEAM_COLS){const td=tr.insertCell();const v=t[k];
+   td.textContent=v==null?"—":String(v)+(RANKED_COLS.has(k)&&t[k+"_rank"]?" (#"+t[k+"_rank"]+")":"");
+   if(k==="team")td.className="bold";
+   else if(RANKED_COLS.has(k)&&t[k+"_rank"])td.className=t[k+"_rank"]<=5?"green":t[k+"_rank"]>=28?"red":"";}}
+}
 function renderLines(){
  const grid=$("gamelines");grid.replaceChildren();
  const games=(board.games||[]).filter(g=>g.lines&&Object.keys(g.lines).length).sort((a,b)=>String(a.commence_time).localeCompare(String(b.commence_time)));
@@ -151,6 +179,13 @@ function renderLines(){
   row(abbr(g.away_team)+" implied",dk.away_implied??"--");
   row(abbr(g.home_team)+" implied",dk.home_implied??"--");
   {const w=weather[g.event_id];if(w){row("Weather",wxShort(w,true),wxClass(w));card.lastChild.title=wxDetail(w);}}
+  {const mu=model&&(model.matchups||{})[g.event_id];
+   if(mu){
+    if(mu.total_rank)row("Total rank","#"+mu.total_rank+" of "+mu.total_of+" this week",mu.total_rank<=3?"yellow":"");
+    for(const sd of ["away","home"]){const t=mu[sd+"_team"]||{};if(!t.record)continue;
+     row(mu[sd]+" off / def","Pts "+t.pts_for+" (#"+t.pts_for_rank+") / allowed "+t.pts_against+" (#"+t.pts_against_rank+")");
+     row(mu[sd]+" W-L · ATS · O/U",t.record+" · "+t.ats+" · "+t.ou);}
+   }}
   const box=add(card,"div","","gother");let first=true;
   for(const [b,l] of Object.entries(g.lines)){
    if(b===(g.lines.draftkings?"draftkings":Object.keys(g.lines)[0]))continue;
@@ -192,7 +227,7 @@ function modelCells(cell,p){
 }
 // Paper-picks sorting: default kickoff order; numbers sort high-to-low first.
 let pickSort={key:"commence_time",asc:true};
-const NUMERIC_KEYS=new Set(["def_delta","wx_wind","line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
+const NUMERIC_KEYS=new Set(["game_total","def_delta","wx_wind","line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
 function pickSorter(){
  const {key,asc}=pickSort,dir=asc?1:-1;
  return (a,b)=>{
@@ -237,7 +272,8 @@ function renderModel(){
  const recs=(model.records||{})[ver]||{record:model.record,record_top:model.record_top};
  recordCards("record",recs.record,recs.record_dk_only);
  const body=$("picks");body.replaceChildren();
- for(const p of model.paper_picks||[]){const w=weather[p.event_id];p.wx_wind=w&&w.roof==="outdoor"&&w.wind_mph!=null?w.wind_mph:null;}
+ for(const p of model.paper_picks||[]){const w=weather[p.event_id];p.wx_wind=w&&w.roof==="outdoor"&&w.wind_mph!=null?w.wind_mph:null;
+  const mu=(model.matchups||{})[p.event_id];p.game_total=mu&&mu.total!=null?mu.total:null;}
  const list=(model.paper_picks||[]).filter(p=>(p.model_version||"")===ver||(!p.model_version&&ver===(model.versions_order||[]).slice(-1)[0])).slice().sort(pickSorter());
  document.querySelectorAll("#picks-head th[data-key]").forEach(th=>{
   th.textContent=th.textContent.replace(/ [▲▼]$/,"")+(th.dataset.key===pickSort.key?(pickSort.asc?" ▲":" ▼"):"");
@@ -248,6 +284,9 @@ function renderModel(){
   const over=p.side==="Over";
   cell(kickoff(p.commence_time));
   {const w=weather[p.event_id],td=tr.insertCell();td.textContent=wxShort(w);td.className=wxClass(w);td.title=wxDetail(w);}
+  {const mu=(model.matchups||{})[p.event_id],td=tr.insertCell();
+   td.textContent=mu&&mu.total!=null?mu.total+(mu.total_rank?" (#"+mu.total_rank+")":""):"—";
+   td.className=!mu||mu.total==null?"muted":mu.total_rank&&mu.total_rank<=3?"yellow bold":"";td.title=muDetail(mu);}
   cell(p.player,"player");cell(p.market_label);
   cell(p.side,over?"green bold":"yellow bold");
   cell(label(p.book||"draftkings"),p.book&&p.book!=="draftkings"?"green bold":"");
@@ -262,7 +301,7 @@ function renderModel(){
   cell(p.actual!=null?String(p.actual):"—",beat==null?"muted":beat?"green":"red");
   cell(res==="void"?"VOID":res.toUpperCase(),res==="win"?"green bold":res==="loss"?"red bold":res==="push"?"muted":"yellow bold");
  }
- if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=18;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
+ if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=19;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
  renderCompare();
  $("backtest").textContent="Started over on Nov 26, 2026: earlier model picks were deleted, both models count from 0-0.";
  $("model-status").textContent=verLabel(ver)+" | updated "+new Date(model.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT";
@@ -337,7 +376,7 @@ async function load(){
    const vs=model.versions_order||[model.model_version];ver=vs[0];const sel=$("model-ver");
    for(const v of vs){const o=add(sel,"option",verLabel(v));o.value=v;}
    renderModel();}else $("model-status").textContent="Model output not available yet.";}catch(e){$("model-status").textContent="Model output not available yet.";}
-  renderLines();renderStudy();render();
+  renderLines();renderStudy();renderTeams();render();
  }catch(e){
   $("status").textContent="NFL lines not available yet ("+e.message+"). The first board appears after the next scheduled NFL pull.";
  }
