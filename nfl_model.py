@@ -283,9 +283,23 @@ def defense_table(all_games, season):
 
 # ---------------------------------------------------------------- per-prop context
 
-def recent_values(history, market):
-    rows = history[-LOOKBACK:]
-    return [f(r[ACTUAL[market]]) for r in reversed(rows)]   # most recent first
+QB_START_ATT = 10            # a QB game counts only if he threw 10+ passes (started / played it out)
+
+
+def player_role(history):
+    """QB if he has thrown 10+ passes in at least two games; otherwise usage decides."""
+    if sum(f(r["pass_att"]) >= QB_START_ATT for r in history[-2 * LOOKBACK:]) >= 2:
+        return "qb"
+    return role(history)
+
+
+def recent_values(history, market, rl=None):
+    """Last 15 games, most recent first. For QBs only games he really played
+    (10+ passes), so a backup's mop-up games don't count against a new starter."""
+    rows = history
+    if rl == "qb":
+        rows = [r for r in history if f(r["pass_att"]) >= QB_START_ATT]
+    return [f(r[ACTUAL[market]]) for r in reversed(rows[-LOOKBACK:])]
 
 
 def target_trend(history):
@@ -384,6 +398,7 @@ def main():
         del picks["picks"][pk]
 
     projections, candidates = {}, []
+    on_board, hit_ok = set(), set()      # props still posted / still eligible for the Hit Rate model
     for prop in board.get("props", []):
         key = player_key(prop["player"])
         history = all_games.get(key)
@@ -398,8 +413,8 @@ def main():
         if opp is None:
             continue   # player's latest team is not in this game (trade / bad match)
         status = injury_status.get((team, key), "")
-        rl = role(history)
-        values = recent_values(history, m)
+        rl = player_role(history)
+        values = recent_values(history, m, rl)
         d = defense.get((opp, rl, m)) if m in ROLE_MARKETS[rl] else None
         delta = d["adj"] if d else 0.0
         last_game = datetime.fromisoformat(history[-1]["date"]).replace(tzinfo=timezone.utc)
@@ -433,7 +448,9 @@ def main():
         out = status.lower() in OUT_STATUSES
         fresh = (now - last_game).days <= STALE_DAYS
         # Only markets that fit his role (no receiver rushing yards, no RB passing).
+        on_board.add((prop["event_id"], key, m))
         if not out and fresh and len(values) >= MIN_HISTORY and m in ROLE_MARKETS[rl]:
+            hit_ok.add((prop["event_id"], key, m))
             o = hitrate_offer(prop, values, delta, windy)
             if o:
                 candidates.append((HIT, o, prop, key, context))
@@ -453,7 +470,7 @@ def main():
         per_player[slot] += 1
         per_game[game] += 1
         dk = prop["dk"]
-        vals = recent_values(all_games[key], prop["market"])
+        vals = recent_values(all_games[key], prop["market"], ctx["role"])
         h, n = hits(vals, o["line"])
         h10, n10 = hits(vals[:10], o["line"])
         picks["picks"][pk] = {
@@ -480,6 +497,11 @@ def main():
     for pk, p in list(picks["picks"].items()):
         tip = parse_time(p["commence_time"])
         if not tip or tip <= now or p.get("result") not in (None, "pending"):
+            continue
+        slot = (p["event_id"], p["player_key"], p["market"])
+        if board.get("props") and (slot not in on_board or (p["model_version"] == HIT and slot not in hit_ok)):
+            picks["picks"].pop(pk)   # books pulled the prop (released / ruled out) or it no longer qualifies
+            print(f'Dropped (no longer posted or eligible): {p["player"]} {p["market"]} {p["side"]} {p["line"]}')
             continue
         if (p["model_version"] == HIT and p["side"] == "Over" and p["market"] in WIND_NO_OVER_MARKETS
                 and p["event_id"] in windy):
