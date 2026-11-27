@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T18:08:05.734503+00:00",
+  "generated_at": "2026-11-27T19:12:41.770238+00:00",
   "source": "RotoWire",
   "games": {
     "401909326": {
@@ -8,8 +8,8 @@
       "tipoff": "2026-11-28T00:00:00+00:00",
       "home": "NYK",
       "away": "MIA",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 351.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 287.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -61,7 +61,22 @@
       ],
       "home_out": [
         {
+          "name": "OG Anunoby",
+          "team": "NYK",
+          "status": "out"
+        },
+        {
+          "name": "Jordan Clarkson",
+          "team": "NYK",
+          "status": "out"
+        },
+        {
           "name": "Andre Drummond",
+          "team": "NYK",
+          "status": "out"
+        },
+        {
+          "name": "Miles McBride",
           "team": "NYK",
           "status": "out"
         }
@@ -69,7 +84,22 @@
       "away_out": [],
       "out_players": [
         {
+          "name": "OG Anunoby",
+          "team": "NYK",
+          "status": "out"
+        },
+        {
+          "name": "Jordan Clarkson",
+          "team": "NYK",
+          "status": "out"
+        },
+        {
           "name": "Andre Drummond",
+          "team": "NYK",
+          "status": "out"
+        },
+        {
+          "name": "Miles McBride",
           "team": "NYK",
           "status": "out"
         }
@@ -82,8 +112,8 @@
       "tipoff": "2026-11-28T00:30:00+00:00",
       "home": "DET",
       "away": "MIL",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 381.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 317.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -207,8 +237,8 @@
       "tipoff": "2026-11-28T00:30:00+00:00",
       "home": "IND",
       "away": "PHI",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 381.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 317.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -312,8 +342,8 @@
       "tipoff": "2026-11-28T00:30:00+00:00",
       "home": "TOR",
       "away": "BKN",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 381.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 317.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -417,8 +447,8 @@
       "tipoff": "2026-11-28T01:00:00+00:00",
       "home": "BOS",
       "away": "ATL",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 411.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 347.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -532,8 +562,8 @@
       "tipoff": "2026-11-28T01:30:00+00:00",
       "home": "MIN",
       "away": "MEM",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 441.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 377.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -541,11 +571,11 @@
       "away_starters": [],
       "home_projected": [
         {
-          "name": "LaMelo Ball",
+          "name": "Ayo Dosunmu",
           "team": "MIN"
         },
         {
-          "name": "Ayo Dosunmu",
+          "name": "Terrence Shannon",
           "team": "MIN"
         },
         {
@@ -585,6 +615,11 @@
       ],
       "home_out": [
         {
+          "name": "LaMelo Ball",
+          "team": "MIN",
+          "status": "out"
+        },
+        {
           "name": "Jaylen Clark",
           "team": "MIN",
           "status": "out"
@@ -623,6 +658,11 @@
         }
       ],
       "out_players": [
+        {
+          "name": "LaMelo Ball",
+          "team": "MIN",
+          "status": "out"
+        },
         {
           "name": "Jaylen Clark",
           "team": "MIN",
@@ -667,8 +707,8 @@
       "tipoff": "2026-11-28T02:00:00+00:00",
       "home": "PHX",
       "away": "DAL",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 471.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 407.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -782,8 +822,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "SAS",
       "away": "LAL",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 501.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 437.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -866,8 +906,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "UTA",
       "away": "DEN",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 501.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 437.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -950,8 +990,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "LAC",
       "away": "NOP",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 501.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 437.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1045,8 +1085,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "POR",
       "away": "GSW",
-      "checked_at": "2026-11-27T18:08:05.734503+00:00",
-      "minutes_before_tipoff": 501.9,
+      "checked_at": "2026-11-27T19:12:41.770238+00:00",
+      "minutes_before_tipoff": 437.3,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1054,7 +1094,7 @@
       "away_starters": [],
       "home_projected": [
         {
-          "name": "Damian Lillard",
+          "name": "Jrue Holiday",
           "team": "POR"
         },
         {
@@ -1103,6 +1143,11 @@
           "status": "out"
         },
         {
+          "name": "Damian Lillard",
+          "team": "POR",
+          "status": "out"
+        },
+        {
           "name": "Ja Morant",
           "team": "POR",
           "status": "out"
@@ -1143,6 +1188,11 @@
       "out_players": [
         {
           "name": "Vit Krejci",
+          "team": "POR",
+          "status": "out"
+        },
+        {
+          "name": "Damian Lillard",
           "team": "POR",
           "status": "out"
         },
