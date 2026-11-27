@@ -48,12 +48,13 @@ tbody tr:hover{background:#1d3048}
 
 <div class="warn">Prices come from scheduled snapshots (Tue / Thu / Sat / Sun mornings and shortly before each kickoff), not live odds. Confirm the price at the book before betting.</div>
 
-<div class="head"><h2>NFL Model v2 — Paper Trading Record</h2><span id="model-status" class="muted">Loading model...</span></div>
-<div class="controls" style="display:none"><select id="model-ver" aria-label="Model version"></select></div>
+<div class="head"><h2>NFL Models — Paper Trading, Two Models Compared</h2><span id="model-status" class="muted">Loading model...</span></div>
+<div class="tablewrap"><table><thead><tr><th>Model</th><th>Picks</th><th>W-L</th><th>Win rate</th><th>Units</th><th>Beat the close</th><th>Avg CLV</th><th>Pending</th></tr></thead><tbody id="compare"></tbody></table></div>
+<div class="controls"><select id="model-ver" aria-label="Model version"></select></div>
 <div class="cards" id="record"></div>
-<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="projection" title="Average projection. For yards, a typical game lands below the average, so an Under can be the pick even when this is above the line.">Proj (avg)</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="hits_l15" title="Times he went OVER this line in his last 15 games">Over L15</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
 <div class="note">Click any column heading to sort; click again to reverse.</div>
-<div class="note" id="model-note">Paper picks are taken at the best price across DraftKings, FanDuel, BetMGM and Caesars: at each book's own line the model must beat that book's no-vig price by 5–15 points (odds -130 to +130), and the offer with the best expected value is taken. Wins, losses, units and closing-line value are all at that book's line and odds. No Anytime TD; at most one pick per player per game. Locked the first time they qualify; graded from ESPN box scores. Not real bets — the point is to see whether the model beats the closing line before trusting it.</div>
+<div class="note" id="model-note"><b>Hit Rate model:</b> how often the player went over this line in his last 15 games, with each game adjusted for how his role does against this defense, blended with the book's no-vig price (the price counts as 10 games). Picks need a 5+ point edge over the book's no-vig price. No passing/receiving Overs in games flagged for wind. <b>Market Value model:</b> no player model — where 3+ books post the same line, a pick is a price that beats the other books' average no-vig price by 1+ point. Both: best price across DraftKings, FanDuel, BetMGM and Caesars, odds -130 to +130, one pick per player and at most six per game, no Anytime TD, locked the first time they qualify, graded from ESPN box scores. Not real bets — the test is which model beats the closing line.</div>
 <div class="note" id="backtest"></div>
 
 <div class="head"><h2>DraftKings vs the Market — Does DK Move Toward the Other Books?</h2></div>
@@ -181,8 +182,9 @@ function renderStudy(){
 
 function modelCells(cell,p){
  const m=proj(p);
- if(!m){cell("—","muted");cell("—","muted");cell("—","muted");return;}
- cell(String(m.projection),"","Usage: "+m.usage.targets+" tgt, "+m.usage.carries+" car, "+m.usage.pass_att+" att | "+m.games+" games");
+ if(!m){const e=entry(p);cell(e&&e.hits_l15?(e.hits_l10+" · "+e.hits_l15):"—","muted");cell("—","muted");cell("—","muted");return;}
+ const cx=entry(p)||{};
+ cell((cx.hits_l10||"—")+" · "+(cx.hits_l15||"—"),"","Times over DraftKings' line in last 10 · last 15 games | avg "+cx.avg_l15+", median "+cx.median_l15+(cx.def_delta!=null?" | vs this D "+(cx.def_delta>0?"+":"")+cx.def_delta+" ("+cx.def_rank+"/"+cx.def_of+")":""));
  cell(pct(m.p_over),"",p.one_sided?"Model chance of a TD":"Model chance of the Over at DraftKings' line");
  if(m.edge_over==null){cell("—","muted");return;}
  const side=m.edge_over>=0?(p.one_sided?"Yes":"Over"):(p.one_sided?"No":"Under"),e=Math.abs(m.edge_over)*100;
@@ -190,7 +192,7 @@ function modelCells(cell,p){
 }
 // Paper-picks sorting: default kickoff order; numbers sort high-to-low first.
 let pickSort={key:"commence_time",asc:true};
-const NUMERIC_KEYS=new Set(["wx_wind","line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
+const NUMERIC_KEYS=new Set(["def_delta","wx_wind","line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
 function pickSorter(){
  const {key,asc}=pickSort,dir=asc?1:-1;
  return (a,b)=>{
@@ -217,6 +219,20 @@ function recordCards(boxId,r,best){
  if(best&&best.units!=null&&(best.wins||best.losses))items.splice(5,0,["Units if DraftKings only",(best.units>0?"+":"")+best.units+"u",tone(best.units)]);
  for(const [k,v,cls] of items){const c=add(box,"div","","stat");c.append(k);add(c,"b",String(v),cls);}
 }
+function renderCompare(){
+ const body=$("compare");body.replaceChildren();
+ for(const v of model.versions_order||[]){
+  const r=((model.records||{})[v]||{}).record||{};const tr=body.insertRow();
+  const c=(t,cls="")=>{const td=tr.insertCell();td.textContent=t;if(cls)td.className=cls;};
+  const tone=x=>x==null||x===0?"":x>0?"green":"red";
+  c(verLabel(v),"bold");c(String(r.picks??0));c((r.wins??0)+"-"+(r.losses??0));
+  c(r.win_rate==null?"--":r.win_rate+"%",r.win_rate==null?"":r.win_rate>=52.4?"green":"red");
+  c(r.units==null?"--":(r.units>0?"+":"")+r.units+"u",tone(r.units));
+  c(r.beat_close_pct==null?"--":r.beat_close_pct+"% ("+r.clv_n+")",r.beat_close_pct==null?"":r.beat_close_pct>=50?"green":"red");
+  c(r.avg_price_clv==null?"--":(r.avg_price_clv>0?"+":"")+r.avg_price_clv+"%",tone(r.avg_price_clv));
+  c(String(r.pending??0),r.pending?"yellow":"");
+ }
+}
 function renderModel(){
  const recs=(model.records||{})[ver]||{record:model.record,record_top:model.record_top};
  recordCards("record",recs.record,recs.record_dk_only);
@@ -237,7 +253,8 @@ function renderModel(){
   cell(label(p.book||"draftkings"),p.book&&p.book!=="draftkings"?"green bold":"");
   cell(fmtLine(p.line));cell(signed(p.odds),Number(p.odds)>0?"green":"");
   cell(p.dk_line!=null?fmtLine(p.dk_line)+" "+signed(p.dk_odds):"—","muted");
-  cell(String(p.projection));
+  cell(p.hits_l10||"—");cell(p.hits_l15||"—");
+  cell(p.def_delta==null?"—":(p.def_delta>0?"+":"")+p.def_delta+(p.def_rank?" ("+p.def_rank+"/"+p.def_of+")":""),p.def_delta==null?"muted":p.def_delta>0?"green":p.def_delta<0?"red":"");
   cell(pct(p.model_prob));cell("+"+(100*p.edge).toFixed(1),"green bold");
   cell(p.close_line!=null?fmtLine(p.close_line)+(p.close_odds!=null?" "+signed(p.close_odds):""):"—",p.close_line==null?"muted":"");
   cell(p.price_clv!=null?(p.price_clv>0?"+":"")+(100*p.price_clv).toFixed(1)+"%":"—",p.price_clv==null?"muted":p.price_clv>0?"green bold":p.price_clv<0?"red bold":"");
@@ -245,23 +262,16 @@ function renderModel(){
   cell(p.actual!=null?String(p.actual):"—",beat==null?"muted":beat?"green":"red");
   cell(res==="void"?"VOID":res.toUpperCase(),res==="win"?"green bold":res==="loss"?"red bold":res==="push"?"muted":"yellow bold");
  }
- if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=16;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
- const b2=(model.backtest_v2||{}).markets||{};
- const nm={receptions:"Receptions",rec_yds:"Rec Yds",rush_yds:"Rush Yds",pass_yds:"Pass Yds",pass_tds:"Pass TD",anytime_td:"Anytime TD"};
- const comp={script:"game script",defense:"defense",injuries:"injuries",td_scaling:"TD scaling",game_total:"game total"};
- const v2parts=Object.entries(b2).map(([k,x])=>nm[k]+": "+x.v2_final+(x.metric==="log_loss"?" log loss":" avg error")+" ["+(x.kept.length?x.kept.map(c=>comp[c]).join(", "):"base model")+"]");
- const bt=model.backtest||{},parts=[];
- const names={receptions:"Receptions",rec_yds:"Rec Yds",rush_yds:"Rush Yds",pass_yds:"Pass Yds"};
- for(const [k,lab] of Object.entries(names)){const b=bt[k];if(b)parts.push(lab+": model error "+b.mae_model+" vs simple average "+b.mae_simple_average+" ("+b.games+" games)");}
- if(bt.anytime_td)parts.push("Anytime TD: predicted "+(100*bt.anytime_td.avg_predicted).toFixed(1)+"% vs actual "+(100*bt.anytime_td.actual_rate).toFixed(1)+"%");
- $("backtest").textContent=v2parts.length?"Backtest on "+((model.backtest_v2||{}).test_season||"")+" games, each projected only from earlier games (brackets = adjustments kept because they lowered error): "+v2parts.join(" | ")+".":"";
+ if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=18;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
+ renderCompare();
+ $("backtest").textContent="Started over on Nov 26, 2026: earlier model picks were deleted, both models count from 0-0.";
  $("model-status").textContent=verLabel(ver)+" | updated "+new Date(model.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT";
 }
 
 function render(){
  const others=(board.books||[]).filter(b=>b!=="draftkings");
  const head=$("headrow");head.replaceChildren();
- ["Kickoff","Player","Market","DK Line","DK O / U","Proj","Model Over","Model Edge",...others.map(label),"Best Over / Yes","Best Under","Books vs DK"].forEach(t=>add(head,"th",t));
+ ["Kickoff","Player","Market","DK Line","DK O / U","Over L10 · L15","Model Over","Model Edge",...others.map(label),"Best Over / Yes","Best Under","Books vs DK"].forEach(t=>add(head,"th",t));
  const q=$("search").value.trim().toLowerCase(),game=$("game").value,market=$("market").value,view=$("view").value;
  const rows=(board.props||[]).filter(p=>{
   if(q&&!(p.player+" "+p.matchup).toLowerCase().includes(q))return false;
