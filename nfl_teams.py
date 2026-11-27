@@ -67,15 +67,21 @@ def team_table(season):
             s["games"] += 1
             s["pf_sum"] += pf
             s["pa_sum"] += pa
-            s["w" if pf > pa else "l" if pf < pa else "t"] += 1
+            res = "w" if pf > pa else "l" if pf < pa else "t"
+            s[res] += 1
+            s[("home_" if home_side else "away_") + res] += 1
             spread, total = num(g.get("home_spread")), num(g.get("total"))
             if spread is not None:
                 team_spread = spread if home_side else -spread
                 cover = pf - pa + team_spread
-                s["ats_w" if cover > 0 else "ats_l" if cover < 0 else "ats_p"] += 1
+                res = "w" if cover > 0 else "l" if cover < 0 else "p"
+                s["ats_" + res] += 1
+                s[("ats_home_" if home_side else "ats_away_") + res] += 1
             if total is not None:
                 pts = hs + as_
-                s["ou_o" if pts > total else "ou_u" if pts < total else "ou_p"] += 1
+                res = "o" if pts > total else "u" if pts < total else "p"
+                s["ou_" + res] += 1
+                s[("ou_home_" if home_side else "ou_away_") + res] += 1
 
     out = {}
     for team, s in t.items():
@@ -86,6 +92,12 @@ def team_table(season):
             "record": _record(int(s["w"]), int(s["l"]), int(s["t"])),
             "ats": _record(int(s["ats_w"]), int(s["ats_l"]), int(s["ats_p"])),
             "ou": _record(int(s["ou_o"]), int(s["ou_u"]), int(s["ou_p"])),
+            "home_record": _record(int(s["home_w"]), int(s["home_l"]), int(s["home_t"])),
+            "away_record": _record(int(s["away_w"]), int(s["away_l"]), int(s["away_t"])),
+            "ats_home": _record(int(s["ats_home_w"]), int(s["ats_home_l"]), int(s["ats_home_p"])),
+            "ats_away": _record(int(s["ats_away_w"]), int(s["ats_away_l"]), int(s["ats_away_p"])),
+            "ou_home": _record(int(s["ou_home_o"]), int(s["ou_home_u"]), int(s["ou_home_p"])),
+            "ou_away": _record(int(s["ou_away_o"]), int(s["ou_away_u"]), int(s["ou_away_p"])),
             "ats_pct": round(100 * s["ats_w"] / ats_n, 1) if ats_n else None,
             "over_pct": round(100 * s["ou_o"] / ou_n, 1) if ou_n else None,
             "pts_for": round(s["pf_sum"] / gp, 1) if gp else None,
@@ -104,8 +116,8 @@ def team_table(season):
         vals = sorted((v[stat], k) for k, v in out.items() if v.get(stat) is not None)
         if high_good:
             vals.reverse()
-        for rank, (_, k) in enumerate(vals, 1):
-            out[k][stat + "_rank"] = rank
+        for i, (v, k) in enumerate(vals):
+            out[k][stat + "_rank"] = 1 + sum(1 for w, _ in vals if (w > v if high_good else w < v))  # ties share a rank
     return out
 
 
@@ -122,13 +134,14 @@ def matchups(board, teams, abbr_of):
                                "home_spread": gl.get("home_spread"), "commence_time": g.get("commence_time")}
     ranked = sorted((r["total"], eid) for eid, r in rows.items() if r["total"] is not None)
     ranked.reverse()
-    for rank, (_, eid) in enumerate(ranked, 1):
-        rows[eid]["total_rank"] = rank
+    for total, eid in ranked:
+        rows[eid]["total_rank"] = 1 + sum(1 for t, _ in ranked if t > total)   # ties share a rank
         rows[eid]["total_of"] = len(ranked)
     for r in rows.values():
         for side in ("home", "away"):
             tm = teams.get(r[side]) or {}
             r[side + "_team"] = {k: tm.get(k) for k in (
-                "record", "ats", "ou", "pts_for", "pts_for_rank", "pts_against", "pts_against_rank",
+                "record", "ats", "ou", "home_record", "away_record", "ats_home", "ats_away", "ou_home", "ou_away",
+                "pts_for", "pts_for_rank", "pts_against", "pts_against_rank",
                 "off_yds_rank", "def_yds_rank", "def_pass_rank", "def_rush_rank")}
     return rows
