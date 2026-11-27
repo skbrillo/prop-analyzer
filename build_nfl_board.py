@@ -94,6 +94,14 @@ def build(now=None):
         elif r["captured_at"] == cur[0]:
             cur[1].append(r)
 
+    # A prop a book no longer posts (player released, benched, ruled out) keeps its
+    # last price in old snapshots. Drop it when that book's newest capture for the
+    # same game no longer includes it.
+    event_newest = {}
+    for (event, pkey, market, book), (cap, rs) in latest.items():
+        event_newest[(event, book)] = max(event_newest.get((event, book), ""), cap)
+    latest = {k: v for k, v in latest.items() if v[0] >= event_newest[(k[0], k[3])]}
+
     grouped = defaultdict(dict)
     newest = {}
     for (event, pkey, market, book), (cap, rs) in latest.items():
