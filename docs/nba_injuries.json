@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-27T15:37:14.694042+00:00",
+  "generated_at": "2026-11-27T16:42:43.890543+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 98,
+  "player_count": 99,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,10 +34,10 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 98,
+  "players_with_team": 99,
   "players_without_team": 0,
   "status_counts": {
-    "O": 79,
+    "O": 80,
     "T": 19
   },
   "players": [
@@ -373,6 +373,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541148",
+      "name": "Tyrese Haliburton",
+      "team": "IND",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-27T16:20Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541132",
       "name": "Kelly Oubre Jr.",
       "team": "IND",
@@ -402,17 +413,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Hamstring | day-to-day",
       "date": "2026-11-26T22:29Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540853",
-      "name": "Tyrese Haliburton",
-      "team": "IND",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Hamstring | out",
-      "date": "2026-11-24T19:41Z",
       "team_match": "feed"
     },
     {
@@ -648,6 +648,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541142",
+      "name": "Andre Drummond",
+      "team": "NYK",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Concussion | out",
+      "date": "2026-11-27T15:36Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541110",
       "name": "Miles McBride",
       "team": "NYK",
@@ -677,17 +688,6 @@
       "raw_status": "Out",
       "reason": "Soreness | Calf | out",
       "date": "2026-11-26T21:57Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541107",
-      "name": "Andre Drummond",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Head | day-to-day",
-      "date": "2026-11-26T21:51Z",
       "team_match": "feed"
     },
     {
@@ -824,13 +824,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541112",
+      "injury_record_id": "541150",
       "name": "Joel Embiid",
       "team": "PHI",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
-      "date": "2026-11-26T22:16Z",
+      "date": "2026-11-27T16:32Z",
       "team_match": "feed"
     },
     {
@@ -1029,6 +1029,17 @@
       "raw_status": "Out",
       "reason": "Strain | Hamstring | out",
       "date": "2026-11-19T21:13Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61463",
+      "name": "Mo Bamba",
+      "team": "UTA",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Illness | day-to-day",
+      "date": "2026-11-27T16:28Z",
       "team_match": "feed"
     },
     {
