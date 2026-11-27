@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-26T23:20:22.512543+00:00",
+  "generated_at": "2026-11-27T00:17:41.117063+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 97,
+  "player_count": 98,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 97,
+  "players_with_team": 98,
   "players_without_team": 0,
   "status_counts": {
     "O": 79,
-    "T": 18
+    "T": 19
   },
   "players": [
     {
@@ -230,46 +230,46 @@
     },
     {
       "id": "",
-      "injury_record_id": "540706",
+      "injury_record_id": "541128",
       "name": "Tobi Lawal",
       "team": "DAL",
       "status": "O",
       "raw_status": "Out",
-      "reason": "Groin | out",
-      "date": "2026-11-23T23:25Z",
+      "reason": "Strain | Groin | out",
+      "date": "2026-11-27T00:01Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540185",
-      "name": "Dereck Lively II",
-      "team": "DAL",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Surgery | Foot | out",
-      "date": "2026-11-20T19:31Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "539649",
+      "injury_record_id": "541127",
       "name": "Sergio de Larrea",
       "team": "DAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Knee | out",
-      "date": "2026-11-17T22:53Z",
+      "date": "2026-11-26T23:59Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "539645",
+      "injury_record_id": "541126",
+      "name": "Dereck Lively II",
+      "team": "DAL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Surgery | Foot | out",
+      "date": "2026-11-26T23:56Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541125",
       "name": "Tarik Biberovic",
       "team": "DAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Inflammation | Heel | out",
-      "date": "2026-11-17T22:42Z",
+      "date": "2026-11-26T23:53Z",
       "team_match": "feed"
     },
     {
@@ -450,24 +450,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "540977",
+      "injury_record_id": "541120",
       "name": "Austin Reaves",
       "team": "LAL",
       "status": "O",
       "raw_status": "Out",
       "reason": "Bruise | Heel | out",
-      "date": "2026-11-25T20:33Z",
+      "date": "2026-11-26T23:21Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "541012",
+      "injury_record_id": "541122",
+      "name": "Isaiah Stewart",
+      "team": "MEM",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Hip | day-to-day",
+      "date": "2026-11-26T23:27Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541121",
       "name": "Zach Edey",
       "team": "MEM",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-26T03:43Z",
+      "date": "2026-11-26T23:24Z",
       "team_match": "feed"
     },
     {
@@ -549,13 +560,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541010",
+      "injury_record_id": "541119",
       "name": "LaMelo Ball",
       "team": "MIN",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Ankle | day-to-day",
-      "date": "2026-11-26T03:37Z",
+      "date": "2026-11-26T23:14Z",
       "team_match": "feed"
     },
     {
@@ -934,24 +945,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61451",
+      "injury_record_id": "541124",
+      "name": "Dylan Harper",
+      "team": "SAS",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hip | out",
+      "date": "2026-11-26T23:41Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541123",
       "name": "De'Aaron Fox",
       "team": "SAS",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-26T06:01Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540037",
-      "name": "Dylan Harper",
-      "team": "SAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Soreness | Hip | out",
-      "date": "2026-11-19T20:07Z",
+      "date": "2026-11-26T23:35Z",
       "team_match": "feed"
     },
     {
@@ -1022,24 +1033,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "-61400",
+      "injury_record_id": "541130",
       "name": "Jaxson Hayes",
       "team": "UTA",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Not Specified | Knee | day-to-day",
-      "date": "2026-11-24T06:07Z",
+      "date": "2026-11-27T00:11Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "540206",
+      "injury_record_id": "541129",
       "name": "Jusuf Nurkic",
       "team": "UTA",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Foot | out",
-      "date": "2026-11-20T22:40Z",
+      "date": "2026-11-27T00:08Z",
       "team_match": "feed"
     },
     {
