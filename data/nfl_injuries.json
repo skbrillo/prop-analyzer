@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T03:08:01+00:00",
+ "updated_at": "2026-11-27T03:42:45+00:00",
  "teams": {
   "Buffalo Bills": "BUF",
   "Kansas City Chiefs": "KC",
@@ -253,29 +253,9 @@
   ],
   "KC": [
    {
-    "player": "Garrett Nussmeier",
-    "player_id": "4567747",
-    "status": "Out"
-   },
-   {
-    "player": "Diego Pounds",
-    "player_id": "4602984",
-    "status": "Out"
-   },
-   {
-    "player": "Melvin Smith Jr.",
-    "player_id": "5278708",
-    "status": "Out"
-   },
-   {
-    "player": "Kenneth Walker III",
-    "player_id": "4567048",
-    "status": "Out"
-   },
-   {
-    "player": "Marcus Harris",
-    "player_id": "4573152",
-    "status": "Out"
+    "player": "Jalen Royals",
+    "player_id": "5082630",
+    "status": "Questionable"
    },
    {
     "player": "Garrett Nussmeier",
@@ -298,8 +278,28 @@
     "status": "Out"
    },
    {
-    "player": "Marcus Harris",
-    "player_id": "4573152",
+    "player": "Jalen Royals",
+    "player_id": "5082630",
+    "status": "Questionable"
+   },
+   {
+    "player": "Garrett Nussmeier",
+    "player_id": "4567747",
+    "status": "Out"
+   },
+   {
+    "player": "Diego Pounds",
+    "player_id": "4602984",
+    "status": "Out"
+   },
+   {
+    "player": "Melvin Smith Jr.",
+    "player_id": "5278708",
+    "status": "Out"
+   },
+   {
+    "player": "Kenneth Walker III",
+    "player_id": "4567048",
     "status": "Out"
    }
   ],
