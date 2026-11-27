@@ -1,16 +1,16 @@
 {
- "updated_at": "2026-11-27T04:20:39+00:00",
+ "updated_at": "2026-11-27T10:52:24+00:00",
  "teams": {
-  "Buffalo Bills": "BUF",
-  "Kansas City Chiefs": "KC",
+  "Pittsburgh Steelers": "PIT",
+  "Denver Broncos": "DEN",
+  "Los Angeles Rams": "LAR",
+  "Green Bay Packers": "GB",
   "Detroit Lions": "DET",
   "Chicago Bears": "CHI",
   "Dallas Cowboys": "DAL",
   "Philadelphia Eagles": "PHI",
-  "Los Angeles Rams": "LAR",
-  "Green Bay Packers": "GB",
-  "Pittsburgh Steelers": "PIT",
-  "Denver Broncos": "DEN",
+  "Buffalo Bills": "BUF",
+  "Kansas City Chiefs": "KC",
   "Cincinnati Bengals": "CIN",
   "New Orleans Saints": "NO",
   "Indianapolis Colts": "IND",
@@ -35,12 +35,6 @@
   "Carolina Panthers": "CAR"
  },
  "games": [
-  {
-   "espn_id": "401873082",
-   "home": "BUF",
-   "away": "KC",
-   "commence_time": "2026-11-27T01:20Z"
-  },
   {
    "espn_id": "401873083",
    "home": "PIT",
@@ -199,110 +193,6 @@
   }
  ],
  "injuries": {
-  "BUF": [
-   {
-    "player": "Christian Benford",
-    "player_id": "4379778",
-    "status": "Out"
-   },
-   {
-    "player": "Jalon Kilgore",
-    "player_id": "5076951",
-    "status": "Out"
-   },
-   {
-    "player": "Jude Bowry",
-    "player_id": "4869533",
-    "status": "Out"
-   },
-   {
-    "player": "Mike Danna",
-    "player_id": "3915487",
-    "status": "Out"
-   },
-   {
-    "player": "Greg Gaines",
-    "player_id": "3127294",
-    "status": "Out"
-   },
-   {
-    "player": "Christian Benford",
-    "player_id": "4379778",
-    "status": "Out"
-   },
-   {
-    "player": "Jalon Kilgore",
-    "player_id": "5076951",
-    "status": "Out"
-   },
-   {
-    "player": "Jude Bowry",
-    "player_id": "4869533",
-    "status": "Out"
-   },
-   {
-    "player": "Mike Danna",
-    "player_id": "3915487",
-    "status": "Out"
-   },
-   {
-    "player": "Greg Gaines",
-    "player_id": "3127294",
-    "status": "Out"
-   }
-  ],
-  "KC": [
-   {
-    "player": "Jalen Royals",
-    "player_id": "5082630",
-    "status": "Out"
-   },
-   {
-    "player": "Garrett Nussmeier",
-    "player_id": "4567747",
-    "status": "Out"
-   },
-   {
-    "player": "Diego Pounds",
-    "player_id": "4602984",
-    "status": "Out"
-   },
-   {
-    "player": "Melvin Smith Jr.",
-    "player_id": "5278708",
-    "status": "Out"
-   },
-   {
-    "player": "Kenneth Walker III",
-    "player_id": "4567048",
-    "status": "Out"
-   },
-   {
-    "player": "Jalen Royals",
-    "player_id": "5082630",
-    "status": "Out"
-   },
-   {
-    "player": "Garrett Nussmeier",
-    "player_id": "4567747",
-    "status": "Out"
-   },
-   {
-    "player": "Diego Pounds",
-    "player_id": "4602984",
-    "status": "Out"
-   },
-   {
-    "player": "Melvin Smith Jr.",
-    "player_id": "5278708",
-    "status": "Out"
-   },
-   {
-    "player": "Kenneth Walker III",
-    "player_id": "4567048",
-    "status": "Out"
-   }
-  ],
   "PIT": [
    {
     "player": "Cole Holcomb",
@@ -1478,6 +1368,33 @@
     "status": "Out"
    }
   ],
+  "KC": [
+   {
+    "player": "Trey Smith",
+    "player_id": "4242459",
+    "status": "Questionable"
+   },
+   {
+    "player": "Jalen Royals",
+    "player_id": "5082630",
+    "status": "Questionable"
+   },
+   {
+    "player": "Garrett Nussmeier",
+    "player_id": "4567747",
+    "status": "Out"
+   },
+   {
+    "player": "Diego Pounds",
+    "player_id": "4602984",
+    "status": "Out"
+   },
+   {
+    "player": "Melvin Smith Jr.",
+    "player_id": "5278708",
+    "status": "Out"
+   }
+  ],
   "DET": [
    {
     "player": "DJ Wonnum",
@@ -1584,6 +1501,33 @@
     "player": "Saquon Barkley",
     "player_id": "3929630",
     "status": "Questionable"
+   }
+  ],
+  "BUF": [
+   {
+    "player": "Christian Benford",
+    "player_id": "4379778",
+    "status": "Out"
+   },
+   {
+    "player": "Jalon Kilgore",
+    "player_id": "5076951",
+    "status": "Out"
+   },
+   {
+    "player": "Jude Bowry",
+    "player_id": "4869533",
+    "status": "Out"
+   },
+   {
+    "player": "Mike Danna",
+    "player_id": "3915487",
+    "status": "Out"
+   },
+   {
+    "player": "Greg Gaines",
+    "player_id": "3127294",
+    "status": "Out"
    }
   ],
   "DAL": [
