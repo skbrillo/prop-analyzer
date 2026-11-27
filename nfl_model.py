@@ -35,6 +35,7 @@ from statistics import mean, median
 from zoneinfo import ZoneInfo
 
 import clv_report
+import nfl_teams
 from build_market_board import fair_over, parse_time
 from build_nfl_board import read_rows as read_snapshot_rows
 from nfl_snapshot import player_key
@@ -480,6 +481,7 @@ def main():
 
     all_picks = sorted(picks["picks"].values(), key=lambda p: (p["commence_time"], p["player"]))
     records = version_records(all_picks)
+    teams = nfl_teams.team_table(season)
     payload = {
         "generated_at": now.isoformat(timespec="seconds"),
         "model_version": HIT,
@@ -492,6 +494,8 @@ def main():
                   "max_picks_per_game": MAX_PICKS_PER_GAME, "wind_no_over_markets": sorted(WIND_NO_OVER_MARKETS)},
         "injuries_updated": json.loads(INJURIES.read_text(encoding="utf-8")).get("updated_at") if INJURIES.exists() else None,
         "projections": projections,
+        "teams": teams,
+        "matchups": nfl_teams.matchups(board, teams, abbr_of),
         "records": records,
         "record": records[HIT]["record"],
         "paper_picks": all_picks[-1500:],
