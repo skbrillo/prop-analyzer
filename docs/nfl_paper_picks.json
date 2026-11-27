@@ -812,34 +812,6 @@
    "model_version": "nfl-hitrate",
    "result": "pending"
   },
-  "nfl-hitrate|3df66cbbc7a353f008801a50c3ca3068|mason rudolph|rush_yds": {
-   "locked_at": "2026-11-27T02:33:30+00:00",
-   "event_id": "3df66cbbc7a353f008801a50c3ca3068",
-   "matchup": "Denver Broncos @ Pittsburgh Steelers",
-   "commence_time": "2026-11-27T20:00:00Z",
-   "player": "Mason Rudolph",
-   "player_key": "mason rudolph",
-   "market": "rush_yds",
-   "market_label": "Rush Yds",
-   "side": "Under",
-   "book": "draftkings",
-   "line": 6.5,
-   "odds": -120,
-   "dk_line": 6.5,
-   "dk_odds": -120,
-   "model_prob": 0.64,
-   "edge": 0.124,
-   "ev": 0.173,
-   "projection": 0.0,
-   "avg_l15": 1.8,
-   "hits_l10": "2/9",
-   "hits_l15": "2/9",
-   "def_delta": 2.6,
-   "def_rank": 18,
-   "def_of": 32,
-   "model_version": "nfl-hitrate",
-   "result": "pending"
-  },
   "nfl-hitrate|a458acb049d04e63ee781943c3c1d363|laquon treadwell|rec_yds": {
    "locked_at": "2026-11-27T02:33:30+00:00",
    "event_id": "a458acb049d04e63ee781943c3c1d363",
@@ -1961,5 +1933,5 @@
    "result": "pending"
   }
  },
- "updated_at": "2026-11-27T03:55:41+00:00"
+ "updated_at": "2026-11-27T04:07:54+00:00"
 }
