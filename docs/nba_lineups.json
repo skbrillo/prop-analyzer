@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T17:13:21.250575+00:00",
+  "generated_at": "2026-11-27T18:08:05.734503+00:00",
   "source": "RotoWire",
   "games": {
     "401909326": {
@@ -8,8 +8,8 @@
       "tipoff": "2026-11-28T00:00:00+00:00",
       "home": "NYK",
       "away": "MIA",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 406.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 351.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -82,8 +82,8 @@
       "tipoff": "2026-11-28T00:30:00+00:00",
       "home": "DET",
       "away": "MIL",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 436.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 381.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -160,7 +160,13 @@
           "status": "out"
         }
       ],
-      "away_out": [],
+      "away_out": [
+        {
+          "name": "Kasparas Jakucionis",
+          "team": "MIL",
+          "status": "out"
+        }
+      ],
       "out_players": [
         {
           "name": "Cade Cunningham",
@@ -186,6 +192,11 @@
           "name": "Duncan Robinson",
           "team": "DET",
           "status": "out"
+        },
+        {
+          "name": "Kasparas Jakucionis",
+          "team": "MIL",
+          "status": "out"
         }
       ],
       "source": "RotoWire"
@@ -196,8 +207,8 @@
       "tipoff": "2026-11-28T00:30:00+00:00",
       "home": "IND",
       "away": "PHI",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 436.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 381.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -301,8 +312,8 @@
       "tipoff": "2026-11-28T00:30:00+00:00",
       "home": "TOR",
       "away": "BKN",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 436.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 381.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -406,8 +417,8 @@
       "tipoff": "2026-11-28T01:00:00+00:00",
       "home": "BOS",
       "away": "ATL",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 466.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 411.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -457,7 +468,13 @@
           "team": "ATL"
         }
       ],
-      "home_out": [],
+      "home_out": [
+        {
+          "name": "Mitchell Robinson",
+          "team": "BOS",
+          "status": "out"
+        }
+      ],
       "away_out": [
         {
           "name": "Mouhamed Gueye",
@@ -481,6 +498,11 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Mitchell Robinson",
+          "team": "BOS",
+          "status": "out"
+        },
         {
           "name": "Mouhamed Gueye",
           "team": "ATL",
@@ -510,8 +532,8 @@
       "tipoff": "2026-11-28T01:30:00+00:00",
       "home": "MIN",
       "away": "MEM",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 496.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 441.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -645,8 +667,8 @@
       "tipoff": "2026-11-28T02:00:00+00:00",
       "home": "PHX",
       "away": "DAL",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 526.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 471.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -760,8 +782,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "SAS",
       "away": "LAL",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 556.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 501.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -844,8 +866,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "UTA",
       "away": "DEN",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 556.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 501.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -928,8 +950,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "LAC",
       "away": "NOP",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 556.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 501.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
@@ -1023,8 +1045,8 @@
       "tipoff": "2026-11-28T02:30:00+00:00",
       "home": "POR",
       "away": "GSW",
-      "checked_at": "2026-11-27T17:13:21.250575+00:00",
-      "minutes_before_tipoff": 556.6,
+      "checked_at": "2026-11-27T18:08:05.734503+00:00",
+      "minutes_before_tipoff": 501.9,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
