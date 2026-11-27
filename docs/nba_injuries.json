@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-27T17:34:48.588856+00:00",
+  "generated_at": "2026-11-27T18:26:50.264244+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 99,
+  "player_count": 100,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -19,6 +19,7 @@
     "LAL",
     "MEM",
     "MIA",
+    "MIL",
     "MIN",
     "NOP",
     "NYK",
@@ -33,11 +34,11 @@
     "UTA",
     "WAS"
   ],
-  "teams_count": 27,
-  "players_with_team": 99,
+  "teams_count": 28,
+  "players_with_team": 100,
   "players_without_team": 0,
   "status_counts": {
-    "O": 80,
+    "O": 81,
     "T": 19
   },
   "players": [
@@ -373,6 +374,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541164",
+      "name": "Larry Nance Jr.",
+      "team": "IND",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "Soreness | Ankle | day-to-day",
+      "date": "2026-11-27T18:07Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541148",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -391,17 +403,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Hand | day-to-day",
       "date": "2026-11-27T00:42Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541117",
-      "name": "Larry Nance Jr.",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-26T22:43Z",
       "team_match": "feed"
     },
     {
@@ -549,13 +550,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "541119",
+      "injury_record_id": "541162",
+      "name": "Kasparas Jakucionis",
+      "team": "MIL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Ankle | out",
+      "date": "2026-11-27T17:58Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541161",
       "name": "LaMelo Ball",
       "team": "MIN",
       "status": "T",
       "raw_status": "Day-To-Day",
       "reason": "Ankle | day-to-day",
-      "date": "2026-11-26T23:14Z",
+      "date": "2026-11-27T17:49Z",
       "team_match": "feed"
     },
     {
