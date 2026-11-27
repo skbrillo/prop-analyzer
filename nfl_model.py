@@ -485,6 +485,7 @@ def main():
             "projection": ctx["median_l15"], "avg_l15": ctx["avg_l15"],
             "hits_l10": f"{h10}/{n10}", "hits_l15": f"{h}/{n}",   # times OVER this pick's line
             "def_delta": ctx["def_delta"], "def_rank": ctx["def_rank"], "def_of": ctx["def_of"],
+            "opponent": ctx["opponent"],
             "tgt_l5": ctx.get("tgt_l5"), "tgt_l5_list": ctx.get("tgt_l5_list"),
             "tgt_l15": ctx.get("tgt_l15"), "tgt_share_l5": ctx.get("tgt_share_l5"),
             "model_version": ver, "result": "pending",
@@ -512,6 +513,16 @@ def main():
     for pks in pending_by_game.values():
         for pk in sorted(pks, key=lambda k: -picks["picks"][k]["edge"])[MAX_PICKS_PER_GAME:]:
             picks["picks"].pop(pk)
+
+    # Older picks saved before "opponent" was stored: fill it from the player's team.
+    for p in picks["picks"].values():
+        if p.get("opponent") or p["player_key"] not in all_games:
+            continue
+        team = all_games[p["player_key"]][-1]["team"]
+        away_name, _, home_name = p["matchup"].partition(" @ ")
+        home, away = abbr_of.get(home_name, home_name), abbr_of.get(away_name, away_name)
+        if team in (home, away):
+            p["opponent"] = away if team == home else home
 
     grade(picks, all_games)
     attach_clv(picks)
