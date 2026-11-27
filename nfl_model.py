@@ -1,50 +1,33 @@
-"""NFL player-prop models — PAPER TRADING ONLY.
+"""NFL player-prop models — PAPER TRADING ONLY. Two models, compared side by side.
 
-Only model v2 (nfl_model_v2.py) makes paper picks. This file still holds the
-v1 building blocks that v2 reuses (priors, shrinkage, distributions, grading),
-and v1's backtest is kept as a baseline in the logs.
+Hit Rate model ("nfl-hitrate")
+    For each prop, how often the player cleared this exact line in his last 15
+    games, after adjusting each game for the defense he faces now:
+        defense adjustment = how players in his role (QB / RB / receiver) do
+        against this opponent this season, compared with their own normal,
+        shrunk toward zero when the opponent has few games.
+    The hit rate is then blended with the book's no-vig price (worth 10 games),
+    so it has to disagree with the market clearly before it counts:
+        chance = (adjusted hits + 10 x market chance) / (games + 10)
+    Pick when the chance beats a book's no-vig price by 5+ points.
+    Weather rule: in games flagged for wind, no Overs on passing / receiving.
 
-Model v1:
+Market Value model ("nfl-market")
+    No player model at all. Where at least three books post the same line, the
+    other books' average no-vig price is the "fair" price. Pick when one book's
+    price beats that fair price by 1+ point (a stale or off-market price).
 
-Projects each DraftKings prop on the NFL board from usage and efficiency:
-    receptions   = targets/game x catch rate
-    receiving yd = targets/game x yards per target
-    rushing yd   = carries/game x yards per carry
-    passing yd   = attempts/game x yards per attempt
-    passing TD   = attempts/game x TD rate                 (Poisson)
-    anytime TD   = carries x rush-TD rate + targets x rec-TD rate  (Poisson)
+Both: odds -130 to +130, best price, one pick per player per game, at most six
+per game (biggest edges), Anytime TD excluded, locked the first time they
+qualify, graded from ESPN box scores, closing-line value tracked.
 
-Recent games count more (decay 0.85 per game; last season at half weight), and
-efficiency is shrunk toward the league average for the player's role so a few
-big games do not dominate.
-
-Probabilities for yards and receptions do NOT assume a bell curve. A walk-forward
-backtest over all saved games records actual / projected for every player-game;
-P(over) is the share of those historical ratios that would clear the line. That
-captures the long right tail of NFL yardage (median below average).
-
-Paper picks: a prop qualifies when the model differs from DraftKings' no-vig
-price by 5 to 15 points (bigger gaps usually mean the model is missing news),
-odds -130 to +130, not Anytime TD, and at most one pick per player per game
-(the bigger edge) so one player's game is never counted twice. Every qualifying
-pick is logged (the model's full record). The two biggest edges in each game are
-also marked "top" - the version you would actually bet - with its own record.
-Best price: every book's line and price is checked (DraftKings, FanDuel, BetMGM,
-Caesars). At each book the model's chance at that book's line must beat the
-book's no-vig price by 5-15 points; the qualifying offer with the highest
-expected value is taken. The pick is graded at that book's line and odds, and
-its closing-line value is measured against that book's closing price. The same
-pick at DraftKings' own line and price is graded too, for comparison.
-A pick locks the first time it qualifies.
-
-Reads   data/nfl_game_logs.csv, docs/nfl_board.json, data/nfl_snapshots/
+Reads   data/nfl_game_logs.csv, docs/nfl_board.json, data/nfl_snapshots/,
+        data/nfl_injuries.json, docs/nfl_weather.json
 Writes  docs/nfl_model.json, docs/nfl_paper_picks.json
 """
 
-import bisect
 import csv
 import json
-import math
 from collections import defaultdict
 from datetime import datetime, timezone
 from pathlib import Path
@@ -61,23 +44,39 @@ LOGS = ROOT / "data" / "nfl_game_logs.csv"
 BOARD = ROOT / "docs" / "nfl_board.json"
 OUTPUT = ROOT / "docs" / "nfl_model.json"
 PICKS = ROOT / "docs" / "nfl_paper_picks.json"
+WEATHER_FILE = ROOT / "docs" / "nfl_weather.json"
 ET = ZoneInfo("America/New_York")
-MODEL_VERSION = "nfl-v1-usage-empirical"
 
-DECAY = 0.85
-LAST_SEASON_WEIGHT = 0.5
-MIN_GAMES = 3
-# Shrinkage strength, in "attempts" of league-average evidence.
-PRIOR = {"catch": 25, "ypt": 40, "ypc": 60, "ypa": 150, "pass_td": 250, "rush_td": 120, "rec_td": 120}
+HIT = "nfl-hitrate"
+MKT = "nfl-market"
+VERSIONS = (HIT, MKT)
+LABELS = {HIT: "Hit Rate model", MKT: "Market Value model"}
+MODEL_VERSION = HIT          # default for old helper code
 
-EDGE_MIN, EDGE_MAX = 0.05, 0.15
-ODDS_MIN, ODDS_MAX = -130, 130
-MAX_PICKS_PER_PLAYER = 1   # per game; keeps the bigger edge
-MAX_PICKS_PER_GAME = 6     # biggest edges only, so one game can't swing the record
-TOP_PER_GAME = 2           # "top picks" record: biggest edges in each game
 PICK_MARKETS = {"pass_yds", "pass_tds", "rush_yds", "receptions", "rec_yds"}
-EMPIRICAL = {"pass_yds", "rush_yds", "receptions", "rec_yds"}
+ACTUAL = {"receptions": "rec", "rec_yds": "rec_yds", "rush_yds": "rush_yds", "pass_yds": "pass_yds",
+          "pass_tds": "pass_td"}
+ROLE_MARKETS = {"qb": ("pass_yds", "pass_tds", "rush_yds"),
+                "rb": ("rush_yds", "receptions", "rec_yds"),
+                "rec": ("receptions", "rec_yds")}
 
+# Hit Rate model
+LOOKBACK = 15
+MIN_HISTORY = 8              # games in the lookback before the model will pick
+STALE_DAYS = 70              # last game longer ago than this = skip (long injury)
+MARKET_WEIGHT = 10           # the book's price counts as this many games
+DEF_SHRINK = 8               # defense adjustment x n / (n + 8)
+DEF_MIN_NORM_GAMES = 4
+HIT_EDGE_MIN, HIT_EDGE_MAX = 0.05, 0.20
+WIND_NO_OVER_MARKETS = {"pass_yds", "rec_yds", "receptions"}
+
+# Market Value model
+MKT_MIN_OTHER_BOOKS = 2
+MKT_EDGE_MIN, MKT_EDGE_MAX = 0.01, 0.10
+
+ODDS_MIN, ODDS_MAX = -130, 130
+MAX_PICKS_PER_PLAYER = 1
+MAX_PICKS_PER_GAME = 6
 
 def f(x):
     try:
@@ -89,15 +88,6 @@ def f(x):
 def implied(american):
     return clv_report.implied(american)
 
-
-def poisson_over(lam, line):
-    """P(X > line) for Poisson(lam); line is x.5."""
-    k_max = int(math.floor(line))
-    cdf = sum(math.exp(-lam) * lam ** k / math.factorial(k) for k in range(k_max + 1))
-    return max(0.0, min(1.0, 1 - cdf))
-
-
-# ---------------------------------------------------------------- data
 
 def load_logs():
     if not LOGS.exists():
@@ -121,136 +111,6 @@ def role(history):
         return "qb"
     return "rb" if ra > tg else "rec"
 
-
-def league_priors(all_games):
-    """League-average efficiency by role, from every saved game."""
-    sums = defaultdict(lambda: defaultdict(float))
-    for rows in all_games.values():
-        if len(rows) < 2:
-            continue
-        rl = role(rows)
-        for r in rows:
-            s = sums[rl]
-            for c in ("targets", "rec", "rec_yds", "rec_td", "rush_att", "rush_yds", "rush_td",
-                      "pass_att", "pass_yds", "pass_td"):
-                s[c] += f(r[c])
-    priors = {}
-    for rl, s in sums.items():
-        priors[rl] = {
-            "catch": s["rec"] / s["targets"] if s["targets"] else 0.65,
-            "ypt": s["rec_yds"] / s["targets"] if s["targets"] else 7.0,
-            "rec_td": s["rec_td"] / s["targets"] if s["targets"] else 0.04,
-            "ypc": s["rush_yds"] / s["rush_att"] if s["rush_att"] else 4.2,
-            "rush_td": s["rush_td"] / s["rush_att"] if s["rush_att"] else 0.03,
-            "ypa": s["pass_yds"] / s["pass_att"] if s["pass_att"] else 6.8,
-            "pass_td": s["pass_td"] / s["pass_att"] if s["pass_att"] else 0.045,
-        }
-    default = {"catch": 0.65, "ypt": 7.4, "rec_td": 0.045, "ypc": 4.3, "rush_td": 0.03, "ypa": 6.8, "pass_td": 0.045}
-    for rl in ("qb", "rb", "rec"):
-        priors.setdefault(rl, default)
-    return priors
-
-
-# ---------------------------------------------------------------- projection
-
-def project(history, priors, current_season):
-    """Projection for the next game from prior games only."""
-    if len(history) < MIN_GAMES:
-        return None
-    recent = list(reversed(history))[:17]
-    w = []
-    for i, r in enumerate(recent):
-        wt = DECAY ** i
-        if int(r["season"]) < current_season:
-            wt *= LAST_SEASON_WEIGHT
-        w.append(wt)
-    W = sum(w)
-
-    def wavg(col):
-        return sum(wt * f(r[col]) for wt, r in zip(w, recent)) / W
-
-    def wsum(col):
-        return sum(wt * f(r[col]) for wt, r in zip(w, recent))
-
-    p = priors[role(history)]
-
-    def shrink(num_col, den_col, key):
-        return (wsum(num_col) + PRIOR[key] * p[key]) / (wsum(den_col) + PRIOR[key])
-
-    tg, ra, pa = wavg("targets"), wavg("rush_att"), wavg("pass_att")
-    catch = shrink("rec", "targets", "catch")
-    ypt = shrink("rec_yds", "targets", "ypt")
-    ypc = shrink("rush_yds", "rush_att", "ypc")
-    ypa = shrink("pass_yds", "pass_att", "ypa")
-    ptd = shrink("pass_td", "pass_att", "pass_td")
-    rtd = shrink("rush_td", "rush_att", "rush_td")
-    ctd = shrink("rec_td", "targets", "rec_td")
-    return {
-        "receptions": tg * catch,
-        "rec_yds": tg * ypt,
-        "rush_yds": ra * ypc,
-        "pass_yds": pa * ypa,
-        "pass_tds": pa * ptd,
-        "anytime_td": ra * rtd + tg * ctd,
-        "usage": {"targets": round(tg, 2), "carries": round(ra, 2), "pass_att": round(pa, 1)},
-        "games": len(history),
-    }
-
-
-ACTUAL = {"receptions": "rec", "rec_yds": "rec_yds", "rush_yds": "rush_yds", "pass_yds": "pass_yds",
-          "pass_tds": "pass_td"}
-MIN_PROJ = {"receptions": 1.0, "rec_yds": 10.0, "rush_yds": 10.0, "pass_yds": 100.0}
-
-
-def backtest(all_games, priors):
-    """Walk-forward: project each game from earlier games only."""
-    ratios = defaultdict(list)
-    errors = defaultdict(list)
-    naive = defaultdict(list)
-    td_pred, td_hit = [], []
-    for rows in all_games.values():
-        for i in range(MIN_GAMES, len(rows)):
-            hist, game = rows[:i], rows[i]
-            proj = project(hist, priors, int(game["season"]))
-            if not proj:
-                continue
-            for m in EMPIRICAL:
-                pr, act = proj[m], f(game[ACTUAL[m]])
-                if pr >= MIN_PROJ[m]:
-                    ratios[m].append(act / pr)
-                    errors[m].append(abs(act - pr))
-                    naive[m].append(abs(act - mean(f(r[ACTUAL[m]]) for r in hist)))
-            lam = proj["anytime_td"]
-            if lam > 0.05:
-                td_pred.append(1 - math.exp(-lam))
-                td_hit.append(1 if f(game["rush_td"]) + f(game["rec_td"]) > 0 else 0)
-    summary = {}
-    for m in EMPIRICAL:
-        if errors[m]:
-            summary[m] = {
-                "games": len(errors[m]),
-                "mae_model": round(mean(errors[m]), 2),
-                "mae_simple_average": round(mean(naive[m]), 2),
-                "median_actual_over_projection": round(median(ratios[m]), 3),
-            }
-    if td_pred:
-        summary["anytime_td"] = {"games": len(td_pred), "avg_predicted": round(mean(td_pred), 3),
-                                 "actual_rate": round(mean(td_hit), 3)}
-    for m in ratios:
-        ratios[m].sort()
-    return ratios, summary
-
-
-def prob_over(market, proj_value, line, ratios):
-    if market in EMPIRICAL and ratios.get(market):
-        r = ratios[market]
-        # P(proj * ratio > line) = share of ratios above line / proj
-        threshold = line / proj_value if proj_value > 0 else float("inf")
-        return 1 - bisect.bisect_right(r, threshold) / len(r)
-    return poisson_over(proj_value, line)
-
-
-# ---------------------------------------------------------------- picks
 
 def load_picks():
     try:
@@ -339,7 +199,25 @@ def record(picks):
     }
 
 
-# ---------------------------------------------------------------- main
+def load_injuries():
+    try:
+        data = json.loads(INJURIES.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}, {}
+    status = {}
+    for team, items in (data.get("injuries") or {}).items():
+        for i in items:
+            status[(team, player_key(i["player"]))] = i["status"]
+    return status, data.get("teams") or {}
+
+
+def profit(result, odds):
+    if result == "push":
+        return 0.0
+    if result == "win":
+        return odds / 100 if odds > 0 else 100 / -odds
+    return -1.0
+
 
 INJURIES = ROOT / "data" / "nfl_injuries.json"
 OUT_STATUSES = {"out", "doubtful", "injured reserve", "ir", "suspension", "physically unable to perform"}
@@ -356,209 +234,244 @@ TEAM_ABBR = {
 }
 
 
-def load_injuries():
+def payout(odds):
+    return odds / 100 if odds > 0 else 100 / -odds
+
+
+def windy_events():
     try:
-        data = json.loads(INJURIES.read_text(encoding="utf-8"))
+        games = json.loads(WEATHER_FILE.read_text(encoding="utf-8")).get("games", {})
     except (OSError, ValueError):
-        return {}, {}
-    status = {}
-    for team, items in (data.get("injuries") or {}).items():
-        for i in items:
-            status[(team, player_key(i["player"]))] = i["status"]
-    return status, data.get("teams") or {}
+        return set()
+    return {eid for eid, g in games.items() if "Wind" in (g.get("flags") or [])}
 
 
-def pick_key(version, event_id, pkey, market):
-    base = f"{event_id}|{pkey}|{market}"
-    return base if version == MODEL_VERSION else f"{version}|{base}"
+# ---------------------------------------------------------------- defense
+
+def defense_table(all_games, season):
+    """(opponent, role, market) -> adjustment: how players in that role did against
+    this opponent this season compared with their own normal (their other games)."""
+    deltas = defaultdict(list)
+    for rows in all_games.values():
+        if len(rows) < DEF_MIN_NORM_GAMES + 1:
+            continue
+        rl = role(rows)
+        for m in ROLE_MARKETS[rl]:
+            col = ACTUAL[m]
+            vals = [f(r[col]) for r in rows]
+            total = sum(vals)
+            for i, r in enumerate(rows):
+                if int(r["season"]) != season or int(r["season_type"]) != 2:
+                    continue
+                norm = (total - vals[i]) / (len(vals) - 1)
+                deltas[(r["opponent"], rl, m)].append(vals[i] - norm)
+    table = {}
+    for k, d in deltas.items():
+        n = len(d)
+        table[k] = {"adj": mean(d) * n / (n + DEF_SHRINK), "raw": mean(d), "n": n}
+    # Rank 1 = toughest (allows least vs normal) ... 32 = easiest.
+    groups = defaultdict(list)
+    for (opp, rl, m), v in table.items():
+        groups[(rl, m)].append((v["raw"], opp))
+    for (rl, m), items in groups.items():
+        for rank, (_, opp) in enumerate(sorted(items), 1):
+            table[(opp, rl, m)]["rank"] = rank
+            table[(opp, rl, m)]["of"] = len(items)
+    return table
 
 
-def profit(result, odds):
-    if result == "push":
-        return 0.0
-    if result == "win":
-        return odds / 100 if odds > 0 else 100 / -odds
-    return -1.0
+# ---------------------------------------------------------------- per-prop context
+
+def recent_values(history, market):
+    rows = history[-LOOKBACK:]
+    return [f(r[ACTUAL[market]]) for r in reversed(rows)]   # most recent first
+
+
+def hits(values, line):
+    return sum(v > line for v in values), len(values)
+
+
+def hit_chance(values, delta, line, fair):
+    """Defense-adjusted hit rate blended with the book's no-vig chance (Over side)."""
+    h = sum(v + delta > line for v in values)
+    return (h + MARKET_WEIGHT * fair) / (len(values) + MARKET_WEIGHT)
+
+
+def offer_ok(edge, odds, lo, hi):
+    return lo <= edge <= hi and ODDS_MIN <= odds <= ODDS_MAX
+
+
+def hitrate_offer(prop, values, delta, windy):
+    best = None
+    for book, bl in (prop.get("books") or {}).items():
+        fair = fair_over(bl.get("over"), bl.get("under"))
+        if not fair:
+            continue
+        p = hit_chance(values, delta, bl["line"], fair)
+        for side, mp, fp, odds in (("Over", p, fair, bl["over"]), ("Under", 1 - p, 1 - fair, bl["under"])):
+            if side == "Over" and prop["market"] in WIND_NO_OVER_MARKETS and prop["event_id"] in windy:
+                continue
+            edge = mp - fp
+            if not offer_ok(edge, odds, HIT_EDGE_MIN, HIT_EDGE_MAX):
+                continue
+            ev = mp * (1 + payout(odds)) - 1
+            if best is None or ev > best["ev"]:
+                best = {"book": book, "line": bl["line"], "side": side, "odds": odds,
+                        "model_p": mp, "edge": edge, "ev": ev}
+    return best
+
+
+def market_offer(prop):
+    books = {b: bl for b, bl in (prop.get("books") or {}).items() if fair_over(bl.get("over"), bl.get("under"))}
+    best = None
+    for book, bl in books.items():
+        others = [fair_over(o["over"], o["under"]) for b, o in books.items() if b != book and o["line"] == bl["line"]]
+        if len(others) < MKT_MIN_OTHER_BOOKS:
+            continue
+        fair = mean(others)
+        for side, fp, odds in (("Over", fair, bl["over"]), ("Under", 1 - fair, bl["under"])):
+            edge = fp - implied(odds)
+            if not offer_ok(edge, odds, MKT_EDGE_MIN, MKT_EDGE_MAX):
+                continue
+            ev = fp * (1 + payout(odds)) - 1
+            if best is None or ev > best["ev"]:
+                best = {"book": book, "line": bl["line"], "side": side, "odds": odds,
+                        "model_p": fair, "edge": edge, "ev": ev, "books_compared": len(others)}
+    return best
 
 
 def version_records(all_picks):
     out = {}
-    for ver in sorted({p.get("model_version", MODEL_VERSION) for p in all_picks}):
-        mine = [p for p in all_picks if p.get("model_version", MODEL_VERSION) == ver]
+    for ver in VERSIONS:
+        mine = [p for p in all_picks if p.get("model_version") == ver]
         dk_only = [{**p, "result": p.get("dk_result", p.get("result")),
                     "profit_units": p.get("dk_profit_units", p.get("profit_units", 0))}
                    for p in mine if p.get("dk_line") is not None]
-        out[ver] = {"record": record(mine), "record_top": record([p for p in mine if p.get("top")]),
-                    "record_dk_only": record(dk_only)}
+        out[ver] = {"record": record(mine), "record_dk_only": record(dk_only)}
     return out
 
 
 def main():
-    import nfl_model_v2 as v2
     now = datetime.now(timezone.utc)
     all_games = load_logs()
     if not all_games:
         print("No NFL game logs yet (run update_nfl_stats.py). Nothing to do.")
         return 0
     season = max(int(r["season"]) for rows in all_games.values() for r in rows)
-    priors = league_priors(all_games)
-    ratios, bt = backtest(all_games, priors)
-    print("Backtest v1:", json.dumps(bt))
-
-    data2 = v2.Data(all_games)
-    bt2 = data2.backtest()
-    ratios2 = data2.residual_ratios()
-    print("Backtest v2:", json.dumps(bt2))
-
+    defense = defense_table(all_games, season)
     injury_status, espn_teams = load_injuries()
     abbr_of = {**TEAM_ABBR, **espn_teams}
+    windy = windy_events()
 
     board = json.loads(BOARD.read_text(encoding="utf-8")) if BOARD.exists() else {"props": []}
-    games = {g["event_id"]: g for g in board.get("games", [])}
     picks = load_picks()
+    # Start over: only the two current models keep picks.
+    for pk in [k for k, p in picks["picks"].items() if p.get("model_version") not in VERSIONS]:
+        del picks["picks"][pk]
+
     projections, candidates = {}, []
-    live_order = (9999, 9, 99)
     for prop in board.get("props", []):
         key = player_key(prop["player"])
         history = all_games.get(key)
         tip = parse_time(prop["commence_time"])
-        if not history or not tip or tip <= now:
-            continue
         m, dk = prop["market"], prop["dk"]
+        if not history or not tip or tip <= now or m not in PICK_MARKETS or prop.get("one_sided"):
+            continue
         team = history[-1]["team"]
         away_name, _, home_name = prop["matchup"].partition(" @ ")
         home, away = abbr_of.get(home_name, home_name), abbr_of.get(away_name, away_name)
         opp = away if team == home else home if team == away else None
-        status = injury_status.get((team, key), "")
         if opp is None:
             continue   # player's latest team is not in this game (trade / bad match)
-
-        # Game context from the saved DraftKings game line (else another book).
-        T = S = None
-        lines = (games.get(prop["event_id"]) or {}).get("lines") or {}
-        gl = lines.get("draftkings") or next(iter(lines.values()), None)
-        if gl and gl.get("total") is not None and gl.get("home_spread") is not None:
-            hs = gl["home_spread"]
-            T, S = ((gl["total"] - hs) / 2, hs) if team == home else ((gl["total"] + hs) / 2, -hs)
-        out_keys = {k for (t, k), st in injury_status.items() if t == team and st.lower() in OUT_STATUSES}
-
-        if m == "anytime_td":
-            market_p = implied(dk["over"])          # includes vig: one-sided price
-        else:
-            market_p = fair_over(dk["over"], dk["under"])
-
-        entry = {"status": status}
-        p2 = data2.project(key, history, team, opp, live_order, season, T, S, out_keys,
-                           data2.final.get(m, frozenset()))
-        for ver, proj, rat in ((v2.VERSION, p2, ratios2),):   # v1 retired from picks
-            if not proj:
-                continue
-            value = proj[m]
-            p_over = 1 - math.exp(-value) if m == "anytime_td" else prob_over(m, value, dk["line"], rat)
-            entry[ver] = {
-                "projection": round(value, 2 if m in ("pass_tds", "anytime_td") else 1),
-                "p_over": round(p_over, 3), "market_over": round(market_p, 3) if market_p else None,
-                "edge_over": round(p_over - market_p, 3) if market_p else None,
-                "usage": proj["usage"], "games": proj["games"],
-            }
-            if m not in PICK_MARKETS or not market_p or status.lower() in OUT_STATUSES:
-                continue
-            # Shop every book: at each book's line, the model's chance vs that book's
-            # no-vig price must clear the edge rules; take the offer with the best
-            # expected value (model chance x payout).
-            best_offer = None
-            for book, bl in (prop.get("books") or {}).items():
-                fair = fair_over(bl.get("over"), bl.get("under"))
-                if not fair:
-                    continue
-                pb = prob_over(m, value, bl["line"], rat)
-                for side, model_p, fair_p, odds in (("Over", pb, fair, bl["over"]),
-                                                    ("Under", 1 - pb, 1 - fair, bl["under"])):
-                    edge = model_p - fair_p
-                    if not (EDGE_MIN <= edge <= EDGE_MAX and ODDS_MIN <= odds <= ODDS_MAX):
-                        continue
-                    ev = model_p * (1 + (odds / 100 if odds > 0 else 100 / -odds)) - 1
-                    if best_offer is None or ev > best_offer["ev"]:
-                        best_offer = {"ev": ev, "edge": edge, "book": book, "line": bl["line"],
-                                      "side": side, "odds": odds, "model_p": model_p}
-            if best_offer:
-                o = best_offer
-                dk_odds = (dk["over"] if o["side"] == "Over" else dk["under"])
-                candidates.append((o["edge"], ver, prop, key, o, dk["line"], dk_odds, entry[ver]["projection"]))
+        status = injury_status.get((team, key), "")
+        rl = role(history)
+        values = recent_values(history, m)
+        d = defense.get((opp, rl, m)) if m in ROLE_MARKETS[rl] else None
+        delta = d["adj"] if d else 0.0
+        last_game = datetime.fromisoformat(history[-1]["date"]).replace(tzinfo=timezone.utc)
+        h10, n10 = hits(values[:10], dk["line"])
+        h15, n15 = hits(values, dk["line"])
+        context = {
+            "hits_l10": f"{h10}/{n10}", "hits_l15": f"{h15}/{n15}",
+            "hit_rate_l15": round(h15 / n15, 3) if n15 else None,
+            "avg_l15": round(mean(values), 1) if values else None,
+            "median_l15": round(median(values), 1) if values else None,
+            "def_delta": round(delta, 1 if m != "pass_tds" else 2) if d else None,
+            "def_rank": d.get("rank") if d else None, "def_of": d.get("of") if d else None,
+            "def_games": d["n"] if d else 0, "opponent": opp, "role": rl,
+        }
+        entry = {"status": status, **context}
+        fair = fair_over(dk["over"], dk["under"])
         projections[f'{prop["event_id"]}|{key}|{m}'] = entry
+        if not fair:
+            continue
+        p_hit = hit_chance(values, delta, dk["line"], fair) if values else None
+        if p_hit is not None:
+            entry[HIT] = {"projection": context["median_l15"], "p_over": round(p_hit, 3),
+                          "market_over": round(fair, 3), "edge_over": round(p_hit - fair, 3), "games": len(values)}
+        mo = market_offer(prop)
+        if mo:
+            entry[MKT] = {"projection": None, "p_over": round(mo["model_p"], 3), "market_over": round(fair, 3),
+                          "edge_over": round(mo["model_p"] - fair, 3), "games": mo["books_compared"]}
 
-    # Lock new paper picks per version: biggest edges first, one per player per game, never re-lock.
+        out = status.lower() in OUT_STATUSES
+        fresh = (now - last_game).days <= STALE_DAYS
+        # Only markets that fit his role (no receiver rushing yards, no RB passing).
+        if not out and fresh and len(values) >= MIN_HISTORY and m in ROLE_MARKETS[rl]:
+            o = hitrate_offer(prop, values, delta, windy)
+            if o:
+                candidates.append((HIT, o, prop, key, context))
+        if not out and mo:
+            candidates.append((MKT, mo, prop, key, context))
+
+    # Lock new picks: biggest edges first; one per player per game; six per game.
     per_player, per_game = defaultdict(int), defaultdict(int)
     for p in picks["picks"].values():
-        per_player[(p.get("model_version", MODEL_VERSION), p["event_id"], p["player_key"])] += 1
-        per_game[(p.get("model_version", MODEL_VERSION), p["event_id"])] += 1
-    for edge, ver, prop, key, o, dk_line, dk_odds, proj_value in sorted(candidates, key=lambda c: -c[0]):
-        pk = pick_key(ver, prop["event_id"], key, prop["market"])
-        slot = (ver, prop["event_id"], key)
-        game = (ver, prop["event_id"])
+        per_player[(p["model_version"], p["event_id"], p["player_key"])] += 1
+        per_game[(p["model_version"], p["event_id"])] += 1
+    for ver, o, prop, key, ctx in sorted(candidates, key=lambda c: -c[1]["edge"]):
+        pk = f'{ver}|{prop["event_id"]}|{key}|{prop["market"]}'
+        slot, game = (ver, prop["event_id"], key), (ver, prop["event_id"])
         if pk in picks["picks"] or per_player[slot] >= MAX_PICKS_PER_PLAYER or per_game[game] >= MAX_PICKS_PER_GAME:
             continue
         per_player[slot] += 1
         per_game[game] += 1
+        dk = prop["dk"]
+        vals = recent_values(all_games[key], prop["market"])
+        h, n = hits(vals, o["line"])
+        h10, n10 = hits(vals[:10], o["line"])
         picks["picks"][pk] = {
             "locked_at": now.isoformat(timespec="seconds"), "event_id": prop["event_id"],
             "matchup": prop["matchup"], "commence_time": prop["commence_time"],
             "player": prop["player"], "player_key": key, "market": prop["market"],
             "market_label": prop.get("market_label", prop["market"]), "side": o["side"],
             "book": o["book"], "line": o["line"], "odds": o["odds"],
-            "dk_line": dk_line, "dk_odds": dk_odds,
-            "model_prob": round(o["model_p"], 3), "edge": round(o["edge"], 3), "ev": round(o["ev"], 3),
-            "projection": proj_value, "model_version": ver, "result": "pending",
+            "dk_line": dk["line"], "dk_odds": dk["over"] if o["side"] == "Over" else dk["under"],
+            "model_prob": round(o["model_p"] if o["side"] == "Over" or ver == HIT else 1 - o["model_p"], 3),
+            "edge": round(o["edge"], 3), "ev": round(o["ev"], 3),
+            "projection": ctx["median_l15"], "avg_l15": ctx["avg_l15"],
+            "hits_l10": f"{h10}/{n10}", "hits_l15": f"{h}/{n}",   # times OVER this pick's line
+            "def_delta": ctx["def_delta"], "def_rank": ctx["def_rank"], "def_of": ctx["def_of"],
+            "model_version": ver, "result": "pending",
         }
-        print(f'Locked {ver} pick: {prop["player"]} {prop["market"]} {o["side"]} {o["line"]} '
-              f'({o["odds"]:+d} at {o["book"]}; DK {dk_line} {dk_odds:+d}) edge {edge:.1%} EV {o["ev"]:+.1%}')
+        print(f'Locked {LABELS[ver]}: {prop["player"]} {prop["market"]} {o["side"]} {o["line"]} '
+              f'({o["odds"]:+d} {o["book"]}) edge {o["edge"]:.1%} | L15 {h}/{n} at this line | D {ctx["def_delta"]}')
 
-    # v1 is retired: drop its paper picks.
-    for pk in [k for k, p in picks["picks"].items() if p.get("model_version", MODEL_VERSION) != v2.VERSION]:
-        del picks["picks"][pk]
-
-    # One pick per player per game per version on picks not yet started; keep the bigger edge.
-    best_slot = {}
+    # Pre-kickoff clean-up: wind rule (Hit Rate model) and six per game.
+    pending_by_game = defaultdict(list)
     for pk, p in list(picks["picks"].items()):
         tip = parse_time(p["commence_time"])
         if not tip or tip <= now or p.get("result") not in (None, "pending"):
             continue
-        k = (p.get("model_version", MODEL_VERSION), p["event_id"], p["player_key"])
-        if k in best_slot:
-            keep, drop = (pk, best_slot[k]) if p["edge"] > picks["picks"][best_slot[k]]["edge"] else (best_slot[k], pk)
-            del picks["picks"][drop]
-            best_slot[k] = keep
-        else:
-            best_slot[k] = pk
-
-    # At most MAX_PICKS_PER_GAME per game on games not yet started; keep the biggest edges.
-    # Games already under way or graded keep every pick they had.
-    pending_by_game = defaultdict(list)
-    for pk, p in picks["picks"].items():
-        tip = parse_time(p["commence_time"])
-        if tip and tip > now and p.get("result") in (None, "pending"):
-            pending_by_game[(p.get("model_version", MODEL_VERSION), p["event_id"])].append(pk)
-    for game, pks in pending_by_game.items():
+        if (p["model_version"] == HIT and p["side"] == "Over" and p["market"] in WIND_NO_OVER_MARKETS
+                and p["event_id"] in windy):
+            picks["picks"].pop(pk)
+            print(f'Dropped (wind): {p["player"]} {p["market"]} Over {p["line"]}')
+            continue
+        pending_by_game[(p["model_version"], p["event_id"])].append(pk)
+    for pks in pending_by_game.values():
         for pk in sorted(pks, key=lambda k: -picks["picks"][k]["edge"])[MAX_PICKS_PER_GAME:]:
-            p = picks["picks"].pop(pk)
-            print(f'Dropped (over {MAX_PICKS_PER_GAME} per game): {p["player"]} {p["market"]} {p["side"]} edge {p["edge"]:.1%}')
-
-    # "Top" picks: biggest edges in each game, per version (edges are known at lock time).
-    by_game = defaultdict(list)
-    for p in picks["picks"].values():
-        by_game[(p.get("model_version", MODEL_VERSION), p["event_id"])].append(p)
-    for group in by_game.values():
-        for rank, p in enumerate(sorted(group, key=lambda x: -x["edge"])):
-            p["top"] = rank < TOP_PER_GAME
-
-    # Picks locked before best-price shopping: move them to the best price that was
-    # recorded at DraftKings' line, and keep DraftKings' price as the reference.
-    for p in picks["picks"].values():
-        if "book" not in p:
-            p["dk_line"], p["dk_odds"] = p["line"], p["odds"]
-            p["book"] = p.pop("best_book", "draftkings")
-            p["odds"] = p.pop("best_odds", p["odds"])
-            p.pop("profit_units_best", None)
+            picks["picks"].pop(pk)
 
     grade(picks, all_games)
     attach_clv(picks)
@@ -566,29 +479,27 @@ def main():
     PICKS.write_text(json.dumps(picks, indent=1) + "\n", encoding="utf-8")
 
     all_picks = sorted(picks["picks"].values(), key=lambda p: (p["commence_time"], p["player"]))
-    for p in all_picks:
-        p.setdefault("model_version", MODEL_VERSION)
-    v2_picks = [p for p in all_picks if p["model_version"] == v2.VERSION]
+    records = version_records(all_picks)
     payload = {
         "generated_at": now.isoformat(timespec="seconds"),
-        "model_version": v2.VERSION,
-        "versions_order": [v2.VERSION],
-        "version_labels": {v2.VERSION: "Model v2"},
-        "rules": {"edge_min": EDGE_MIN, "edge_max": EDGE_MAX, "odds_min": ODDS_MIN, "odds_max": ODDS_MAX,
-                  "max_picks_per_player": MAX_PICKS_PER_PLAYER, "max_picks_per_game": MAX_PICKS_PER_GAME, "top_per_game": TOP_PER_GAME},
-        "backtest": bt,
-        "backtest_v2": bt2,
+        "model_version": HIT,
+        "versions_order": list(VERSIONS),
+        "version_labels": LABELS,
+        "rules": {"hit_edge_min": HIT_EDGE_MIN, "hit_edge_max": HIT_EDGE_MAX, "market_weight_games": MARKET_WEIGHT,
+                  "lookback": LOOKBACK, "min_history": MIN_HISTORY, "def_shrink": DEF_SHRINK,
+                  "mkt_edge_min": MKT_EDGE_MIN, "mkt_edge_max": MKT_EDGE_MAX, "mkt_min_other_books": MKT_MIN_OTHER_BOOKS,
+                  "odds_min": ODDS_MIN, "odds_max": ODDS_MAX, "max_picks_per_player": MAX_PICKS_PER_PLAYER,
+                  "max_picks_per_game": MAX_PICKS_PER_GAME, "wind_no_over_markets": sorted(WIND_NO_OVER_MARKETS)},
         "injuries_updated": json.loads(INJURIES.read_text(encoding="utf-8")).get("updated_at") if INJURIES.exists() else None,
         "projections": projections,
-        "records": version_records(all_picks),
-        "record": record(v2_picks),
-        "record_top": record([p for p in v2_picks if p.get("top")]),
-        "paper_picks": all_picks[-800:],
+        "records": records,
+        "record": records[HIT]["record"],
+        "paper_picks": all_picks[-1500:],
     }
     OUTPUT.write_text(json.dumps(payload, separators=(",", ":")) + "\n", encoding="utf-8")
-    print(f"Projected {len(projections)} props | paper picks total {len(all_picks)}")
-    for ver, rec in payload["records"].items():
-        print(f"  {ver}: {json.dumps(rec['record'])}")
+    print(f"Props checked {len(projections)} | paper picks total {len(all_picks)}")
+    for ver, rec in records.items():
+        print(f"  {LABELS[ver]}: {json.dumps(rec['record'])}")
     return 0
 
 
