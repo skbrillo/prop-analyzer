@@ -1,5 +1,5 @@
 {
- "updated_at": "2026-11-27T02:33:21+00:00",
+ "updated_at": "2026-11-27T03:08:01+00:00",
  "teams": {
   "Buffalo Bills": "BUF",
   "Kansas City Chiefs": "KC",
@@ -357,9 +357,9 @@
   ],
   "DEN": [
    {
-    "player": "Tyler Badie",
-    "player_id": "4362748",
-    "status": "Questionable"
+    "player": "Sai'vion Jones",
+    "player_id": "4603189",
+    "status": "Injured Reserve"
    },
    {
     "player": "Caleb Lohner",
@@ -367,9 +367,9 @@
     "status": "Injured Reserve"
    },
    {
-    "player": "Sai'vion Jones",
-    "player_id": "4603189",
-    "status": "Injured Reserve"
+    "player": "Tyler Badie",
+    "player_id": "4362748",
+    "status": "Questionable"
    },
    {
     "player": "Taylor Rapp",
@@ -382,9 +382,9 @@
     "status": "Suspension"
    },
    {
-    "player": "Tyler Badie",
-    "player_id": "4362748",
-    "status": "Questionable"
+    "player": "Sai'vion Jones",
+    "player_id": "4603189",
+    "status": "Injured Reserve"
    },
    {
     "player": "Caleb Lohner",
@@ -392,9 +392,9 @@
     "status": "Injured Reserve"
    },
    {
-    "player": "Sai'vion Jones",
-    "player_id": "4603189",
-    "status": "Injured Reserve"
+    "player": "Tyler Badie",
+    "player_id": "4362748",
+    "status": "Questionable"
    },
    {
     "player": "Taylor Rapp",
@@ -1218,28 +1218,8 @@
   ],
   "SEA": [
    {
-    "player": "Drew Lock",
-    "player_id": "3924327",
-    "status": "Questionable"
-   },
-   {
-    "player": "Uchenna Nwosu",
-    "player_id": "3120358",
-    "status": "Questionable"
-   },
-   {
-    "player": "Patrick O'Connell",
-    "player_id": "4364623",
-    "status": "Questionable"
-   },
-   {
-    "player": "Jaxon Smith-Njigba",
-    "player_id": "4430878",
-    "status": "Questionable"
-   },
-   {
-    "player": "Ernest Jones IV",
-    "player_id": "4362851",
+    "player": "Anthony Bradford",
+    "player_id": "4429211",
     "status": "Questionable"
    },
    {
@@ -1263,8 +1243,28 @@
     "status": "Questionable"
    },
    {
-    "player": "Ernest Jones IV",
-    "player_id": "4362851",
+    "player": "Anthony Bradford",
+    "player_id": "4429211",
+    "status": "Questionable"
+   },
+   {
+    "player": "Drew Lock",
+    "player_id": "3924327",
+    "status": "Questionable"
+   },
+   {
+    "player": "Uchenna Nwosu",
+    "player_id": "3120358",
+    "status": "Questionable"
+   },
+   {
+    "player": "Patrick O'Connell",
+    "player_id": "4364623",
+    "status": "Questionable"
+   },
+   {
+    "player": "Jaxon Smith-Njigba",
+    "player_id": "4430878",
     "status": "Questionable"
    }
   ],
@@ -1561,6 +1561,16 @@
   ],
   "PHI": [
    {
+    "player": "DeVonta Smith",
+    "player_id": "4241478",
+    "status": "Questionable"
+   },
+   {
+    "player": "Dallas Goedert",
+    "player_id": "3121023",
+    "status": "Questionable"
+   },
+   {
     "player": "Gabe Hall",
     "player_id": "4429731",
     "status": "Questionable"
@@ -1571,18 +1581,8 @@
     "status": "Out"
    },
    {
-    "player": "Dallas Goedert",
-    "player_id": "3121023",
-    "status": "Questionable"
-   },
-   {
     "player": "Saquon Barkley",
     "player_id": "3929630",
-    "status": "Questionable"
-   },
-   {
-    "player": "Cooper DeJean",
-    "player_id": "4682618",
     "status": "Questionable"
    }
   ],
