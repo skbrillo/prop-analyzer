@@ -1,29 +1,32 @@
-"""NFL player-prop models — PAPER TRADING ONLY. Two models, compared side by side.
+"""NFL receiver model — PAPER TRADING ONLY. Wide receivers and tight ends,
+receptions and receiving yards. A Market Value model runs alongside as a check.
 
-Hit Rate model ("nfl-hitrate")
-    For each prop, how often the player cleared this exact line in his last 15
-    games, after adjusting each game for the defense he faces now:
-        defense adjustment = how players in his role (QB / RB / receiver) do
-        against this opponent this season, compared with their own normal,
-        shrunk toward zero when the opponent has few games.
-    The hit rate is then blended with the book's no-vig price (worth 10 games),
-    so it has to disagree with the market clearly before it counts:
-        chance = (adjusted hits + 10 x market chance) / (games + 10)
-    Pick when the chance beats a book's no-vig price by 5+ points.
-    Weather rule: in games flagged for wind, no Overs on passing / receiving.
+Receiver model ("nfl-receiver")
+    1. Hit rate: how often he cleared this exact line in his last 10 games
+       (the last 5 count double).
+    2. Role trend: projected targets = 60% his last 5 games + 40% his last 10,
+       plus targets left behind by injured teammates (receivers with 12%+ of the
+       team's targets ruled Out). Past games are scaled by projected / usual
+       targets (within 0.75x-1.35x), so a growing or shrinking role counts.
+    3. Defense by tier: a team's No. 1 wide receiver (22%+ target share, 6+
+       targets a game) is judged by how No. 1 receivers do against this defense vs
+       their normal, other wide receivers by other wide receivers, and tight ends
+       by tight ends. Positions come from data/nfl_positions.csv (FantasyPros snap
+       counts); running backs and QBs are never picked. Shrunk for small samples.
+    4. Blend with the book's no-vig price (worth 10 games):
+           chance = (adjusted hits + 10 x market chance) / (games + 10)
+       Pick when it beats a book's no-vig price by 5+ points.
+    Guards: 4+ projected targets; no Overs in games flagged for wind; no picks for a team whose QB for
+    this game (the one the books post passing props for) is not the QB he has
+    been catching passes from.
 
 Market Value model ("nfl-market")
-    No player model at all. Where at least three books post the same line, the
-    other books' average no-vig price is the "fair" price. Pick when one book's
-    price beats that fair price by 1+ point (a stale or off-market price).
+    No player model. Where 3+ books post the same line, the other books' average
+    no-vig price is "fair"; pick a price that beats it by 1+ point.
 
-Both: odds -130 to +130, best price, one pick per player per game, at most six
-per game (biggest edges), Anytime TD excluded, locked the first time they
-qualify, graded from ESPN box scores, closing-line value tracked.
-
-Reads   data/nfl_game_logs.csv, docs/nfl_board.json, data/nfl_snapshots/,
-        data/nfl_injuries.json, docs/nfl_weather.json
-Writes  docs/nfl_model.json, docs/nfl_paper_picks.json
+Both: receptions and receiving yards only, odds -130 to +130, best price, one
+pick per player and at most six per game, locked the first time they qualify,
+graded from ESPN box scores, closing-line value tracked.
 """
 
 import csv
@@ -46,15 +49,22 @@ BOARD = ROOT / "docs" / "nfl_board.json"
 OUTPUT = ROOT / "docs" / "nfl_model.json"
 PICKS = ROOT / "docs" / "nfl_paper_picks.json"
 WEATHER_FILE = ROOT / "docs" / "nfl_weather.json"
+POSITIONS_FILE = ROOT / "data" / "nfl_positions.csv"   # player, team, pos (from FantasyPros snap counts)
 ET = ZoneInfo("America/New_York")
 
-HIT = "nfl-hitrate"
+HIT = "nfl-receiver"
 MKT = "nfl-market"
 VERSIONS = (HIT, MKT)
-LABELS = {HIT: "Hit Rate model", MKT: "Market Value model"}
+LABELS = {HIT: "Receiver model", MKT: "Market Value model"}
 MODEL_VERSION = HIT          # default for old helper code
 
-PICK_MARKETS = {"pass_yds", "pass_tds", "rush_yds", "receptions", "rec_yds"}
+PICK_MARKETS = {"receptions", "rec_yds"}
+ALPHA_SHARE, ALPHA_TARGETS = 0.22, 6.0   # No. 1 receiver: share of team targets / targets a game
+TIER_SHRINK = 10                         # tier adjustment x n / (n + 10)
+SCALE_MIN, SCALE_MAX = 0.75, 1.35        # role-trend scaling of past games
+VACATED_MIN_SHARE = 0.12                 # injured teammate must have had this share to count
+MIN_PROJ_TARGETS = 4.0                   # skip fringe receivers (too few targets to trust a hit rate)
+VACATED_TO_RECEIVERS = 0.75              # part of the vacated targets that goes to WR/TE (rest to RBs)
 ACTUAL = {"receptions": "rec", "rec_yds": "rec_yds", "rush_yds": "rush_yds", "pass_yds": "pass_yds",
           "pass_tds": "pass_td"}
 ROLE_MARKETS = {"qb": ("pass_yds", "pass_tds", "rush_yds"),
@@ -62,8 +72,9 @@ ROLE_MARKETS = {"qb": ("pass_yds", "pass_tds", "rush_yds"),
                 "rec": ("receptions", "rec_yds")}
 
 # Hit Rate model
-LOOKBACK = 15
-MIN_HISTORY = 8              # games in the lookback before the model will pick
+LOOKBACK = 10
+RECENT = 5                   # the last 5 games count double
+MIN_HISTORY = 7              # games in the lookback before the model will pick
 STALE_DAYS = 70              # last game longer ago than this = skip (long injury)
 MARKET_WEIGHT = 10           # the book's price counts as this many games
 DEF_SHRINK = 8               # defense adjustment x n / (n + 8)
@@ -249,38 +260,6 @@ def windy_events():
 
 # ---------------------------------------------------------------- defense
 
-def defense_table(all_games, season):
-    """(opponent, role, market) -> adjustment: how players in that role did against
-    this opponent this season compared with their own normal (their other games)."""
-    deltas = defaultdict(list)
-    for rows in all_games.values():
-        if len(rows) < DEF_MIN_NORM_GAMES + 1:
-            continue
-        rl = role(rows)
-        for m in ROLE_MARKETS[rl]:
-            col = ACTUAL[m]
-            vals = [f(r[col]) for r in rows]
-            total = sum(vals)
-            for i, r in enumerate(rows):
-                if int(r["season"]) != season or int(r["season_type"]) != 2:
-                    continue
-                norm = (total - vals[i]) / (len(vals) - 1)
-                deltas[(r["opponent"], rl, m)].append(vals[i] - norm)
-    table = {}
-    for k, d in deltas.items():
-        n = len(d)
-        table[k] = {"adj": mean(d) * n / (n + DEF_SHRINK), "raw": mean(d), "n": n}
-    # Rank 1 = toughest (allows least vs normal) ... 32 = easiest.
-    groups = defaultdict(list)
-    for (opp, rl, m), v in table.items():
-        groups[(rl, m)].append((v["raw"], opp))
-    for (rl, m), items in groups.items():
-        for rank, (_, opp) in enumerate(sorted(items), 1):
-            table[(opp, rl, m)]["rank"] = rank
-            table[(opp, rl, m)]["of"] = len(items)
-    return table
-
-
 # ---------------------------------------------------------------- per-prop context
 
 QB_START_ATT = 10            # a QB game counts only if he threw 10+ passes (started / played it out)
@@ -303,14 +282,14 @@ def recent_values(history, market, rl=None):
 
 
 def target_trend(history):
-    """Targets in his last 5 games vs his last 15, and his share of team targets."""
-    last5, last15 = history[-5:], history[-LOOKBACK:]
+    """Targets in his last 5 games vs his last 10, and his share of team targets."""
+    last5, last10 = history[-RECENT:], history[-LOOKBACK:]
     t5 = [int(f(r["targets"])) for r in reversed(last5)]           # most recent first
     team5 = sum(f(r["team_targets"]) for r in last5)
     return {
         "tgt_l5": round(mean(t5), 1) if t5 else None,
         "tgt_l5_list": t5,
-        "tgt_l15": round(mean(f(r["targets"]) for r in last15), 1) if last15 else None,
+        "tgt_l10": round(mean(f(r["targets"]) for r in last10), 1) if last10 else None,
         "tgt_share_l5": round(sum(t5) / team5, 3) if team5 else None,
     }
 
@@ -319,23 +298,25 @@ def hits(values, line):
     return sum(v > line for v in values), len(values)
 
 
-def hit_chance(values, delta, line, fair):
-    """Defense-adjusted hit rate blended with the book's no-vig chance (Over side)."""
-    h = sum(v + delta > line for v in values)
-    return (h + MARKET_WEIGHT * fair) / (len(values) + MARKET_WEIGHT)
+def hit_chance(values, delta, line, fair, scale=1.0):
+    """Role- and defense-adjusted hit rate over the last 10 games (last 5 count double),
+    blended with the book's no-vig chance (Over side). values are most recent first."""
+    w = [2 if i < RECENT else 1 for i in range(len(values))]
+    h = sum(wi for wi, v in zip(w, values) if v * scale + delta > line)
+    return (h + MARKET_WEIGHT * fair) / (sum(w) + MARKET_WEIGHT)
 
 
 def offer_ok(edge, odds, lo, hi):
     return lo <= edge <= hi and ODDS_MIN <= odds <= ODDS_MAX
 
 
-def hitrate_offer(prop, values, delta, windy):
+def hitrate_offer(prop, values, delta, windy, scale=1.0):
     best = None
     for book, bl in (prop.get("books") or {}).items():
         fair = fair_over(bl.get("over"), bl.get("under"))
         if not fair:
             continue
-        p = hit_chance(values, delta, bl["line"], fair)
+        p = hit_chance(values, delta, bl["line"], fair, scale)
         for side, mp, fp, odds in (("Over", p, fair, bl["over"]), ("Under", 1 - p, 1 - fair, bl["under"])):
             if side == "Over" and prop["market"] in WIND_NO_OVER_MARKETS and prop["event_id"] in windy:
                 continue
@@ -379,6 +360,107 @@ def version_records(all_picks):
     return out
 
 
+def load_positions():
+    try:
+        return {player_key(r["player"]): r["pos"].upper() for r in csv.DictReader(POSITIONS_FILE.open(encoding="utf-8"))}
+    except OSError:
+        return {}
+
+
+POSITIONS = load_positions()
+
+
+def position(key, rows):
+    """Real position from the positions file; otherwise guessed from usage."""
+    pos = POSITIONS.get(key)
+    if pos:
+        return pos
+    r = role(rows)
+    return {"qb": "QB", "rb": "RB"}.get(r, "WR")
+
+
+def tier_of(key, rows, alpha):
+    """Defense tier: No. 1 wide receivers, other wide receivers, tight ends."""
+    pos = position(key, rows)
+    if pos == "TE":
+        return "te"
+    return "wr1" if key in alpha else "wr"
+
+
+def receiver_context(all_games, season):
+    """Per team: receivers (WR/TE) with their share of team targets this season;
+    the set of No. 1 receivers; each team's latest starting QB."""
+    team_rx, alpha, qb_last = defaultdict(list), set(), {}
+    latest_qb_game = {}
+    for key, rows in all_games.items():
+        cur = [r for r in rows if int(r["season"]) == season and int(r["season_type"]) == 2]
+        for r in cur:
+            if f(r["pass_att"]) >= QB_START_ATT:
+                t = r["team"]
+                if r["date"] > latest_qb_game.get(t, ""):
+                    latest_qb_game[t], qb_last[t] = r["date"], key
+        if len(cur) < 3 or position(key, rows) not in ("WR", "TE"):
+            continue
+        team = rows[-1]["team"]
+        mine = [r for r in cur if r["team"] == team]
+        if not mine:
+            continue
+        tg = sum(f(r["targets"]) for r in mine)
+        team_tg = sum(f(r["team_targets"]) for r in mine)
+        share = tg / team_tg if team_tg else 0
+        per_game = tg / len(mine)
+        last5 = [f(r["targets"]) for r in rows[-5:]]
+        team_rx[team].append({"key": key, "share": share, "tgt_l5": mean(last5)})
+        if share >= ALPHA_SHARE and per_game >= ALPHA_TARGETS and position(key, rows) == "WR":
+            alpha.add(key)
+    return team_rx, alpha, qb_last
+
+
+def defense_tiers(all_games, season, alpha):
+    """(opponent, tier, market) -> how No. 1 wide receivers ("wr1"), other wide
+    receivers ("wr") or tight ends ("te") did against this defense this season vs
+    their own normal."""
+    deltas = defaultdict(list)
+    for key, rows in all_games.items():
+        if len(rows) < DEF_MIN_NORM_GAMES + 1 or position(key, rows) not in ("WR", "TE"):
+            continue
+        tier = tier_of(key, rows, alpha)
+        for m in PICK_MARKETS:
+            vals = [f(r[ACTUAL[m]]) for r in rows]
+            total = sum(vals)
+            for i, r in enumerate(rows):
+                if int(r["season"]) != season or int(r["season_type"]) != 2:
+                    continue
+                deltas[(r["opponent"], tier, m)].append(vals[i] - (total - vals[i]) / (len(vals) - 1))
+    table = {}
+    for k, d in deltas.items():
+        n = len(d)
+        table[k] = {"adj": mean(d) * n / (n + TIER_SHRINK), "raw": mean(d), "n": n}
+    groups = defaultdict(list)
+    for (opp, tier, m), v in table.items():
+        groups[(tier, m)].append((v["raw"], opp))
+    for (tier, m), items in groups.items():
+        for rank, (_, opp) in enumerate(sorted(items), 1):
+            table[(opp, tier, m)].update(rank=rank, of=len(items))
+    return table
+
+
+def vacated_targets(team, key, team_rx, injury_status):
+    """Targets a game left by teammates ruled Out, and this player's expected cut."""
+    rx = team_rx.get(team, [])
+    out = [r for r in rx if r["key"] != key and r["share"] >= VACATED_MIN_SHARE
+           and injury_status.get((team, r["key"]), "").lower() in OUT_STATUSES]
+    if not out:
+        return 0.0, []
+    vacated = sum(r["tgt_l5"] for r in out) * VACATED_TO_RECEIVERS
+    remaining = [r for r in rx if r not in out and injury_status.get((team, r["key"]), "").lower() not in OUT_STATUSES]
+    me = next((r for r in remaining if r["key"] == key), None)
+    total = sum(r["share"] for r in remaining)
+    if not me or not total:
+        return 0.0, [r["key"] for r in out]
+    return vacated * me["share"] / total, [r["key"] for r in out]
+
+
 def main():
     now = datetime.now(timezone.utc)
     all_games = load_logs()
@@ -386,8 +468,9 @@ def main():
         print("No NFL game logs yet (run update_nfl_stats.py). Nothing to do.")
         return 0
     season = max(int(r["season"]) for rows in all_games.values() for r in rows)
-    defense = defense_table(all_games, season)
     injury_status, espn_teams = load_injuries()
+    team_rx, alpha, qb_last = receiver_context(all_games, season)
+    defense = defense_tiers(all_games, season, alpha)
     abbr_of = {**TEAM_ABBR, **espn_teams}
     windy = windy_events()
 
@@ -396,6 +479,14 @@ def main():
     # Start over: only the two current models keep picks.
     for pk in [k for k, p in picks["picks"].items() if p.get("model_version") not in VERSIONS]:
         del picks["picks"][pk]
+
+    # Which QB the books post passing props for in each game, by team.
+    board_qbs = defaultdict(set)
+    for prop in board.get("props", []):
+        if prop["market"] == "pass_yds":
+            k = player_key(prop["player"])
+            if k in all_games:
+                board_qbs[(prop["event_id"], all_games[k][-1]["team"])].add(k)
 
     projections, candidates = {}, []
     on_board, hit_ok = set(), set()      # props still posted / still eligible for the Hit Rate model
@@ -415,30 +506,42 @@ def main():
         status = injury_status.get((team, key), "")
         rl = player_role(history)
         values = recent_values(history, m, rl)
-        d = defense.get((opp, rl, m)) if m in ROLE_MARKETS[rl] else None
+        pos = position(key, history)
+        tier = tier_of(key, history, alpha)
+        d = defense.get((opp, tier, m)) if pos in ("WR", "TE") else None
         delta = d["adj"] if d else 0.0
+        tt = target_trend(history)
+        bonus, out_mates = vacated_targets(team, key, team_rx, injury_status)
+        proj_tgt = None
+        scale = 1.0
+        if tt["tgt_l5"] is not None and tt["tgt_l10"]:
+            proj_tgt = 0.6 * tt["tgt_l5"] + 0.4 * tt["tgt_l10"] + bonus
+            scale = min(SCALE_MAX, max(SCALE_MIN, proj_tgt / tt["tgt_l10"]))
+        qbs = board_qbs.get((prop["event_id"], team))
+        qb_change = bool(qbs) and qb_last.get(team) not in qbs
         last_game = datetime.fromisoformat(history[-1]["date"]).replace(tzinfo=timezone.utc)
-        h10, n10 = hits(values[:10], dk["line"])
-        h15, n15 = hits(values, dk["line"])
+        h5, n5 = hits(values[:RECENT], dk["line"])
+        h10, n10 = hits(values, dk["line"])
         context = {
-            "hits_l10": f"{h10}/{n10}", "hits_l15": f"{h15}/{n15}",
-            "hit_rate_l15": round(h15 / n15, 3) if n15 else None,
-            "avg_l15": round(mean(values), 1) if values else None,
-            "median_l15": round(median(values), 1) if values else None,
+            "hits_l5": f"{h5}/{n5}", "hits_l10": f"{h10}/{n10}",
+            "hit_rate_l10": round(h10 / n10, 3) if n10 else None,
+            "avg_l10": round(mean(values), 1) if values else None,
+            "median_l10": round(median(values), 1) if values else None,
             "def_delta": round(delta, 1 if m != "pass_tds" else 2) if d else None,
             "def_rank": d.get("rank") if d else None, "def_of": d.get("of") if d else None,
-            "def_games": d["n"] if d else 0, "opponent": opp, "role": rl,
+            "def_games": d["n"] if d else 0, "opponent": opp, "role": rl, "pos": pos, "def_tier": tier,
+            "proj_tgt": round(proj_tgt, 1) if proj_tgt is not None else None, "role_scale": round(scale, 2),
+            "vacated_tgt": round(bonus, 1), "out_teammates": out_mates, "qb_change": qb_change,
         }
-        if m in ("receptions", "rec_yds"):
-            context.update(target_trend(history))
+        context.update(tt)
         entry = {"status": status, **context}
         fair = fair_over(dk["over"], dk["under"])
         projections[f'{prop["event_id"]}|{key}|{m}'] = entry
         if not fair:
             continue
-        p_hit = hit_chance(values, delta, dk["line"], fair) if values else None
+        p_hit = hit_chance(values, delta, dk["line"], fair, scale) if values else None
         if p_hit is not None:
-            entry[HIT] = {"projection": context["median_l15"], "p_over": round(p_hit, 3),
+            entry[HIT] = {"projection": context["median_l10"], "p_over": round(p_hit, 3),
                           "market_over": round(fair, 3), "edge_over": round(p_hit - fair, 3), "games": len(values)}
         mo = market_offer(prop)
         if mo:
@@ -449,9 +552,10 @@ def main():
         fresh = (now - last_game).days <= STALE_DAYS
         # Only markets that fit his role (no receiver rushing yards, no RB passing).
         on_board.add((prop["event_id"], key, m))
-        if not out and fresh and len(values) >= MIN_HISTORY and m in ROLE_MARKETS[rl]:
+        if not out and fresh and len(values) >= MIN_HISTORY and pos in ("WR", "TE") and not qb_change \
+                and (proj_tgt or 0) >= MIN_PROJ_TARGETS:
             hit_ok.add((prop["event_id"], key, m))
-            o = hitrate_offer(prop, values, delta, windy)
+            o = hitrate_offer(prop, values, delta, windy, scale)
             if o:
                 candidates.append((HIT, o, prop, key, context))
         if not out and mo:
@@ -472,7 +576,7 @@ def main():
         dk = prop["dk"]
         vals = recent_values(all_games[key], prop["market"], ctx["role"])
         h, n = hits(vals, o["line"])
-        h10, n10 = hits(vals[:10], o["line"])
+        h5, n5 = hits(vals[:RECENT], o["line"])
         picks["picks"][pk] = {
             "locked_at": now.isoformat(timespec="seconds"), "event_id": prop["event_id"],
             "matchup": prop["matchup"], "commence_time": prop["commence_time"],
@@ -482,12 +586,13 @@ def main():
             "dk_line": dk["line"], "dk_odds": dk["over"] if o["side"] == "Over" else dk["under"],
             "model_prob": round(o["model_p"] if o["side"] == "Over" or ver == HIT else 1 - o["model_p"], 3),
             "edge": round(o["edge"], 3), "ev": round(o["ev"], 3),
-            "projection": ctx["median_l15"], "avg_l15": ctx["avg_l15"],
-            "hits_l10": f"{h10}/{n10}", "hits_l15": f"{h}/{n}",   # times OVER this pick's line
+            "projection": ctx["median_l10"], "avg_l10": ctx["avg_l10"],
+            "hits_l5": f"{h5}/{n5}", "hits_l10": f"{h}/{n}",   # times OVER this pick's line
             "def_delta": ctx["def_delta"], "def_rank": ctx["def_rank"], "def_of": ctx["def_of"],
-            "opponent": ctx["opponent"],
+            "opponent": ctx["opponent"], "pos": ctx["pos"], "def_tier": ctx["def_tier"], "proj_tgt": ctx["proj_tgt"],
+            "role_scale": ctx["role_scale"], "vacated_tgt": ctx["vacated_tgt"],
             "tgt_l5": ctx.get("tgt_l5"), "tgt_l5_list": ctx.get("tgt_l5_list"),
-            "tgt_l15": ctx.get("tgt_l15"), "tgt_share_l5": ctx.get("tgt_share_l5"),
+            "tgt_l10": ctx.get("tgt_l10"), "tgt_share_l5": ctx.get("tgt_share_l5"),
             "model_version": ver, "result": "pending",
         }
         print(f'Locked {LABELS[ver]}: {prop["player"]} {prop["market"]} {o["side"]} {o["line"]} '
@@ -541,7 +646,10 @@ def main():
                   "lookback": LOOKBACK, "min_history": MIN_HISTORY, "def_shrink": DEF_SHRINK,
                   "mkt_edge_min": MKT_EDGE_MIN, "mkt_edge_max": MKT_EDGE_MAX, "mkt_min_other_books": MKT_MIN_OTHER_BOOKS,
                   "odds_min": ODDS_MIN, "odds_max": ODDS_MAX, "max_picks_per_player": MAX_PICKS_PER_PLAYER,
-                  "max_picks_per_game": MAX_PICKS_PER_GAME, "wind_no_over_markets": sorted(WIND_NO_OVER_MARKETS)},
+                  "max_picks_per_game": MAX_PICKS_PER_GAME, "wind_no_over_markets": sorted(WIND_NO_OVER_MARKETS),
+                  "markets": sorted(PICK_MARKETS), "alpha_share": ALPHA_SHARE, "alpha_targets": ALPHA_TARGETS,
+                  "tier_shrink": TIER_SHRINK, "role_scale": [SCALE_MIN, SCALE_MAX],
+                  "vacated_min_share": VACATED_MIN_SHARE, "min_proj_targets": MIN_PROJ_TARGETS, "vacated_to_receivers": VACATED_TO_RECEIVERS},
         "injuries_updated": json.loads(INJURIES.read_text(encoding="utf-8")).get("updated_at") if INJURIES.exists() else None,
         "projections": projections,
         "teams": teams,
