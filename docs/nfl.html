@@ -54,9 +54,20 @@ tbody tr:hover{background:#1d3048}
 <div class="tablewrap"><table><thead><tr><th>Model</th><th>Picks</th><th>W-L</th><th>Win rate</th><th>Units</th><th>Beat the close</th><th>Avg CLV</th><th>Pending</th></tr></thead><tbody id="compare"></tbody></table></div>
 <div class="controls"><select id="model-ver" aria-label="Model version"></select></div>
 <div class="cards" id="record"></div>
-<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="game_total" title="Game total (DraftKings) and its rank among this week's games, 1 = highest. Hover for both teams' offense / defense ranks and over-under records.">Total</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l5" title="Times he went OVER this line in his last 5 games (these count double in the model)">Over L5</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="tgt_l5" title="Receiving props: average targets in his last 5 games, his share of the team's targets, and ↑ / ↓ when that is 1+ target above / below his last-10 average. Hover for the game-by-game list.">Tgt L5</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="game_total" title="Game total (DraftKings) and its rank among this week's games, 1 = highest. Hover for both teams' offense / defense ranks and over-under records.">Total</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l5" title="Times he went OVER this line in his last 5 games (these count double in the model)">Over L5</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="tgt_l5" title="Receiving props: average targets in his last 5 games, his share of the team's targets, and ↑ / ↓ when that is 1+ target above / below his last-10 average. Hover for the game-by-game list.">Tgt L5</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="fp_proj" title="FantasyPros weekly projection. In brackets: the projection after correcting FantasyPros' usual gap to the books' lines (their yardage projections run about 20% above the lines). Counts as 5 games in the model.">FP Proj</th><th data-key="matchup_scale" title="Coverage / blitz matchup from Rotobot and Sharp Football: how his production per play vs man, zone and the blitz fits how often this defense plays man and blitzes. Held to ±8%. Only the top-50 WRs in the Rotobot export have splits; — = no data.">Cov / Blitz</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
 <div class="note">Click any column heading to sort; click again to reverse.</div>
-<div class="note" id="model-note"><b>Receiver model</b> (wide receivers and tight ends, receptions and receiving yards): how often he cleared this line in his last 10 games (the last 5 count double), with each game scaled for his current role (projected targets = 60% last 5 games + 40% last 10, plus targets left by teammates ruled Out) and shifted by the defense — a team's No. 1 receiver is judged by how No. 1 receivers do against this defense, other wide receivers by other wide receivers, and tight ends by tight ends. Blended with the book's no-vig price (worth 10 games); picks need a 5+ point edge. Skipped: fewer than 4 projected targets, Overs in windy games, and teams starting a different QB than the one he's been catching passes from. Best price across DraftKings, FanDuel, BetMGM and Caesars, odds -130 to +130, one pick per player, at most six per game. Not real bets — the test is beating the closing line.</div>
+<div class="note" id="model-note"><b>How the picks are made</b> — wide receivers and tight ends, receptions and receiving yards only.
+<ol style="margin:6px 0 4px 18px;padding:0;line-height:1.55">
+<li><b>Hit rate:</b> how often he went over this line in his last 10 games. The last 5 count double.</li>
+<li><b>Role:</b> each past game is scaled to his current role. Projected targets = 60% his last 5 games + 40% his last 10, plus targets left by teammates ruled Out (split by the team's real WR / TE target share).</li>
+<li><b>Defense:</b> shifted by how players like him do against this defense — No. 1 receivers vs No. 1 receivers, other wide receivers vs other wide receivers, tight ends vs tight ends.</li>
+<li><b>Coverage &amp; blitz matchup:</b> his production per play vs man, zone and the blitz (Rotobot), weighted by how often this defense plays man and blitzes (Sharp Football). Up to ±8%; top-50 WRs only.</li>
+<li><b>FantasyPros projection:</b> counts as 5 more games, after correcting FantasyPros' usual gap to the books' lines.</li>
+<li><b>Market:</b> blended with the book's no-vig price, which counts as 10 games.</li>
+<li><b>Pick:</b> needs a 5+ point edge over the book. Best price across DraftKings, FanDuel, BetMGM and Caesars, odds −130 to +130, one pick per player, at most six per game.</li>
+</ol>
+<b>Skipped:</b> fewer than 4 projected targets, Overs in windy games, and teams starting a different QB than the one he's been catching passes from. FantasyPros / Rotobot / Sharp data switches off if the files are more than 9 days old.
+<br>Not real bets — the test is beating the closing line.</div>
 <div class="note" id="backtest"></div>
 
 <div class="head"><h2>NFL Receiver Data</h2><span id="rd-status" class="muted">Loading...</span></div>
@@ -222,7 +233,7 @@ function modelCells(cell,p){
 }
 // Paper-picks sorting: default kickoff order; numbers sort high-to-low first.
 let pickSort={key:"commence_time",asc:true};
-const NUMERIC_KEYS=new Set(["tgt_l5","game_total","def_delta","wx_wind","line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
+const NUMERIC_KEYS=new Set(["fp_proj","matchup_scale","tgt_l5","game_total","def_delta","wx_wind","line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
 function pickSorter(){
  const {key,asc}=pickSort,dir=asc?1:-1;
  return (a,b)=>{
@@ -302,6 +313,14 @@ function renderModel(){
    const td=tr.insertCell();td.textContent=dd==null?"—":(dd>0?"+":"")+dd+(tier==="wr1"?" vs #1s":tier==="te"?" vs TEs":"")+(rk?" ("+rk+"/"+of+")":"");
    td.className=dd==null?"muted":dd>0?"green":dd<0?"red":"";
    td.title=tier==="wr1"?"He is his team's No. 1 receiver: how No. 1 receivers do against this defense vs their normal (1 = toughest).":tier==="te"?"How tight ends do against this defense vs their normal (1 = toughest).":"How other wide receivers do against this defense vs their normal (1 = toughest).";}
+  {const cx=entry(p)||{},fp=p.fp_proj??cx.fp_proj,fa=p.fp_adj??cx.fp_adj,td=tr.insertCell();p.fp_proj=fp;
+   if(fp==null){td.textContent="—";td.className="muted";}
+   else{td.textContent=fp+(fa!=null&&fa!==fp?" ("+fa+")":"");const v=fa??fp,ln=p.line;
+    td.className=ln==null?"":(v>ln)===over?"green":"red";td.title="FantasyPros "+fp+(fa!=null&&fa!==fp?", adjusted "+fa:"")+" vs line "+ln+" — "+((v>ln)===over?"backs":"against")+" this "+p.side;}}
+  {const cx=entry(p)||{},ms=p.matchup_scale??cx.matchup_scale,note=p.matchup_note||cx.matchup_note,td=tr.insertCell();p.matchup_scale=ms;
+   if(ms==null||!note){td.textContent="—";td.className="muted";}
+   else{const d=Math.round((ms-1)*1000)/10;td.textContent=(d>0?"+":"")+d+"%";
+    td.className=Math.abs(d)<1?"muted":(d>0)===over?"green":"red";td.title=note;}}
   cell(pct(p.model_prob));cell("+"+(100*p.edge).toFixed(1),"green bold");
   cell(p.close_line!=null?fmtLine(p.close_line)+(p.close_odds!=null?" "+signed(p.close_odds):""):"—",p.close_line==null?"muted":"");
   cell(p.price_clv!=null?(p.price_clv>0?"+":"")+(100*p.price_clv).toFixed(1)+"%":"—",p.price_clv==null?"muted":p.price_clv>0?"green bold":p.price_clv<0?"red bold":"");
@@ -309,9 +328,9 @@ function renderModel(){
   cell(p.actual!=null?String(p.actual):"—",beat==null?"muted":beat?"green":"red");
   cell(res==="void"?"VOID":res.toUpperCase(),res==="win"?"green bold":res==="loss"?"red bold":res==="push"?"muted":"yellow bold");
  }
- if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=20;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
+ if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=22;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
  renderCompare();
- $("backtest").textContent="Receiver model started Nov 27, 2026 (earlier picks deleted).";
+ {const o=model.outside||{};$("backtest").textContent="Receiver model started Nov 27, 2026 (earlier picks deleted). FantasyPros / Rotobot / Sharp data added Nov 28."+(o.as_of?" Outside files dated "+o.as_of+" — "+(o.on?"in use.":"OFF (older than 9 days; upload this week's files)."):"");}
  $("model-status").textContent=verLabel(ver)+" | updated "+new Date(model.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT";
 }
 
