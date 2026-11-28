@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T06:47:01.206597+00:00",
+  "generated_at": "2026-11-28T08:02:00.669008+00:00",
   "source": "RotoWire",
   "games": {
     "401909326": {
@@ -1350,18 +1350,153 @@
       "tipoff": "2026-11-28T22:00:00+00:00",
       "home": "WAS",
       "away": "ORL",
-      "checked_at": "2026-11-28T06:47:01.206597+00:00",
-      "minutes_before_tipoff": 913.0,
+      "checked_at": "2026-11-28T08:02:00.669008+00:00",
+      "minutes_before_tipoff": 838.0,
       "status": "unverified",
       "home_status": "unverified",
       "away_status": "unverified",
       "home_starters": [],
       "away_starters": [],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [],
-      "away_out": [],
-      "out_players": [],
+      "home_projected": [
+        {
+          "name": "Trae Young",
+          "team": "WAS"
+        },
+        {
+          "name": "Kyshawn George",
+          "team": "WAS"
+        },
+        {
+          "name": "AJ Dybantsa",
+          "team": "WAS"
+        },
+        {
+          "name": "Anthony Davis",
+          "team": "WAS"
+        },
+        {
+          "name": "Alex Sarr",
+          "team": "WAS"
+        }
+      ],
+      "away_projected": [
+        {
+          "name": "Jalen Suggs",
+          "team": "ORL"
+        },
+        {
+          "name": "Anthony Black",
+          "team": "ORL"
+        },
+        {
+          "name": "Desmond Bane",
+          "team": "ORL"
+        },
+        {
+          "name": "Franz Wagner",
+          "team": "ORL"
+        },
+        {
+          "name": "Wendell Carter",
+          "team": "ORL"
+        }
+      ],
+      "home_out": [
+        {
+          "name": "Reece Beekman",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Justin Champagnie",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Tristan Vukcevic",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Jamir Watkins",
+          "team": "WAS",
+          "status": "out"
+        }
+      ],
+      "away_out": [
+        {
+          "name": "Paolo Banchero",
+          "team": "ORL",
+          "status": "out"
+        },
+        {
+          "name": "Jonathan Isaac",
+          "team": "ORL",
+          "status": "out"
+        },
+        {
+          "name": "Izaiyah Nelson",
+          "team": "ORL",
+          "status": "out"
+        },
+        {
+          "name": "Noah Penda",
+          "team": "ORL",
+          "status": "out"
+        },
+        {
+          "name": "Kevin Porter",
+          "team": "ORL",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Reece Beekman",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Justin Champagnie",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Tristan Vukcevic",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Jamir Watkins",
+          "team": "WAS",
+          "status": "out"
+        },
+        {
+          "name": "Paolo Banchero",
+          "team": "ORL",
+          "status": "out"
+        },
+        {
+          "name": "Jonathan Isaac",
+          "team": "ORL",
+          "status": "out"
+        },
+        {
+          "name": "Izaiyah Nelson",
+          "team": "ORL",
+          "status": "out"
+        },
+        {
+          "name": "Noah Penda",
+          "team": "ORL",
+          "status": "out"
+        },
+        {
+          "name": "Kevin Porter",
+          "team": "ORL",
+          "status": "out"
+        }
+      ],
       "source": "RotoWire"
     },
     "401910047": {
@@ -1370,13 +1505,36 @@
       "tipoff": "2026-11-28T23:00:00+00:00",
       "home": "CHA",
       "away": "BKN",
-      "checked_at": "2026-11-28T06:47:01.206597+00:00",
-      "minutes_before_tipoff": 973.0,
+      "checked_at": "2026-11-28T08:02:00.669008+00:00",
+      "minutes_before_tipoff": 898.0,
       "status": "unverified",
       "home_status": "unverified",
-      "away_status": "confirmed",
+      "away_status": "unverified",
       "home_starters": [],
-      "away_starters": [
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Coby White",
+          "team": "CHA"
+        },
+        {
+          "name": "Grayson Allen",
+          "team": "CHA"
+        },
+        {
+          "name": "Brandon Miller",
+          "team": "CHA"
+        },
+        {
+          "name": "Naz Reid",
+          "team": "CHA"
+        },
+        {
+          "name": "Moussa Diabate",
+          "team": "CHA"
+        }
+      ],
+      "away_projected": [
         {
           "name": "Mikel Brown",
           "team": "BKN"
@@ -1398,9 +1556,18 @@
           "team": "BKN"
         }
       ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [],
+      "home_out": [
+        {
+          "name": "Kon Knueppel",
+          "team": "CHA",
+          "status": "out"
+        },
+        {
+          "name": "Dennis Schroder",
+          "team": "CHA",
+          "status": "out"
+        }
+      ],
       "away_out": [
         {
           "name": "Nolan Traore",
@@ -1414,6 +1581,16 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Kon Knueppel",
+          "team": "CHA",
+          "status": "out"
+        },
+        {
+          "name": "Dennis Schroder",
+          "team": "CHA",
+          "status": "out"
+        },
         {
           "name": "Nolan Traore",
           "team": "BKN",
@@ -1433,13 +1610,36 @@
       "tipoff": "2026-11-29T01:00:00+00:00",
       "home": "CHI",
       "away": "IND",
-      "checked_at": "2026-11-28T06:47:01.206597+00:00",
-      "minutes_before_tipoff": 1093.0,
+      "checked_at": "2026-11-28T08:02:00.669008+00:00",
+      "minutes_before_tipoff": 1018.0,
       "status": "unverified",
       "home_status": "unverified",
-      "away_status": "confirmed",
+      "away_status": "unverified",
       "home_starters": [],
-      "away_starters": [
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Josh Giddey",
+          "team": "CHI"
+        },
+        {
+          "name": "Buddy Hield",
+          "team": "CHI"
+        },
+        {
+          "name": "Isaac Okoro",
+          "team": "CHI"
+        },
+        {
+          "name": "Matas Buzelis",
+          "team": "CHI"
+        },
+        {
+          "name": "Jalen Smith",
+          "team": "CHI"
+        }
+      ],
+      "away_projected": [
         {
           "name": "Andrew Nembhard",
           "team": "IND"
@@ -1461,9 +1661,18 @@
           "team": "IND"
         }
       ],
-      "home_projected": [],
-      "away_projected": [],
-      "home_out": [],
+      "home_out": [
+        {
+          "name": "Norman Powell",
+          "team": "CHI",
+          "status": "out"
+        },
+        {
+          "name": "Caleb Wilson",
+          "team": "CHI",
+          "status": "out"
+        }
+      ],
       "away_out": [
         {
           "name": "Johnny Furphy",
@@ -1487,6 +1696,16 @@
         }
       ],
       "out_players": [
+        {
+          "name": "Norman Powell",
+          "team": "CHI",
+          "status": "out"
+        },
+        {
+          "name": "Caleb Wilson",
+          "team": "CHI",
+          "status": "out"
+        },
         {
           "name": "Johnny Furphy",
           "team": "IND",
@@ -1516,12 +1735,14 @@
       "tipoff": "2026-11-29T01:00:00+00:00",
       "home": "MIL",
       "away": "OKC",
-      "checked_at": "2026-11-28T06:47:01.206597+00:00",
-      "minutes_before_tipoff": 1093.0,
+      "checked_at": "2026-11-28T08:02:00.669008+00:00",
+      "minutes_before_tipoff": 1018.0,
       "status": "unverified",
-      "home_status": "confirmed",
+      "home_status": "unverified",
       "away_status": "unverified",
-      "home_starters": [
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [
         {
           "name": "Ryan Rollins",
           "team": "MIL"
@@ -1543,9 +1764,28 @@
           "team": "MIL"
         }
       ],
-      "away_starters": [],
-      "home_projected": [],
-      "away_projected": [],
+      "away_projected": [
+        {
+          "name": "Shai Gilgeous-Alexander",
+          "team": "OKC"
+        },
+        {
+          "name": "Bennett Stirtz",
+          "team": "OKC"
+        },
+        {
+          "name": "Ajay Mitchell",
+          "team": "OKC"
+        },
+        {
+          "name": "Micah Peavy",
+          "team": "OKC"
+        },
+        {
+          "name": "Isaiah Hartenstein",
+          "team": "OKC"
+        }
+      ],
       "home_out": [
         {
           "name": "Kasparas Jakucionis",
@@ -1553,11 +1793,82 @@
           "status": "out"
         }
       ],
-      "away_out": [],
+      "away_out": [
+        {
+          "name": "Chet Holmgren",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Aday Mara",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Thomas Sorber",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Nikola Topic",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Cason Wallace",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Jalen Williams",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Jaylin Williams",
+          "team": "OKC",
+          "status": "out"
+        }
+      ],
       "out_players": [
         {
           "name": "Kasparas Jakucionis",
           "team": "MIL",
+          "status": "out"
+        },
+        {
+          "name": "Chet Holmgren",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Aday Mara",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Thomas Sorber",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Nikola Topic",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Cason Wallace",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Jalen Williams",
+          "team": "OKC",
+          "status": "out"
+        },
+        {
+          "name": "Jaylin Williams",
+          "team": "OKC",
           "status": "out"
         }
       ],
@@ -1569,13 +1880,36 @@
       "tipoff": "2026-11-29T01:30:00+00:00",
       "home": "HOU",
       "away": "PHI",
-      "checked_at": "2026-11-28T06:47:01.206597+00:00",
-      "minutes_before_tipoff": 1123.0,
+      "checked_at": "2026-11-28T08:02:00.669008+00:00",
+      "minutes_before_tipoff": 1048.0,
       "status": "unverified",
       "home_status": "unverified",
-      "away_status": "confirmed",
+      "away_status": "unverified",
       "home_starters": [],
-      "away_starters": [
+      "away_starters": [],
+      "home_projected": [
+        {
+          "name": "Fred VanVleet",
+          "team": "HOU"
+        },
+        {
+          "name": "Amen Thompson",
+          "team": "HOU"
+        },
+        {
+          "name": "Kevin Durant",
+          "team": "HOU"
+        },
+        {
+          "name": "Jabari Smith",
+          "team": "HOU"
+        },
+        {
+          "name": "Alperen Sengun",
+          "team": "HOU"
+        }
+      ],
+      "away_projected": [
         {
           "name": "Tyrese Maxey",
           "team": "PHI"
@@ -1585,7 +1919,7 @@
           "team": "PHI"
         },
         {
-          "name": "LeBron James",
+          "name": "Kentavious Caldwell-Pope",
           "team": "PHI"
         },
         {
@@ -1593,12 +1927,10 @@
           "team": "PHI"
         },
         {
-          "name": "Joel Embiid",
+          "name": "Jabari Walker",
           "team": "PHI"
         }
       ],
-      "home_projected": [],
-      "away_projected": [],
       "home_out": [],
       "away_out": [
         {
