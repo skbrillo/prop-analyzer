@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-28T00:11:13.735321+00:00",
+  "generated_at": "2026-11-28T01:20:16.406713+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 101,
+  "player_count": 99,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 101,
+  "players_with_team": 99,
   "players_without_team": 0,
   "status_counts": {
-    "O": 86,
-    "T": 15
+    "O": 88,
+    "T": 11
   },
   "players": [
     {
@@ -241,13 +241,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541173",
+      "injury_record_id": "541197",
       "name": "Kyrie Irving",
       "team": "DAL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Knee | day-to-day",
-      "date": "2026-11-27T19:07Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Not Specified | Knee | out",
+      "date": "2026-11-28T00:30Z",
       "team_match": "feed"
     },
     {
@@ -351,13 +351,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "540998",
+      "injury_record_id": "541201",
       "name": "Stephen Curry",
       "team": "GSW",
       "status": "O",
       "raw_status": "Out",
       "reason": "Abdomen | out",
-      "date": "2026-11-26T01:36Z",
+      "date": "2026-11-28T00:47Z",
       "team_match": "feed"
     },
     {
@@ -461,24 +461,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541122",
+      "injury_record_id": "541196",
       "name": "Isaiah Stewart",
       "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Hip | day-to-day",
-      "date": "2026-11-26T23:27Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541121",
-      "name": "Zach Edey",
-      "team": "MEM",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-26T23:24Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Hip | out",
+      "date": "2026-11-28T00:26Z",
       "team_match": "feed"
     },
     {
@@ -853,17 +842,6 @@
       "raw_status": "Out",
       "reason": "Hamstring | out",
       "date": "2026-11-27T23:15Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541150",
-      "name": "Joel Embiid",
-      "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "day-to-day",
-      "date": "2026-11-27T16:32Z",
       "team_match": "feed"
     },
     {
