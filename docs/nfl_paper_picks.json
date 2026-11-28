@@ -1451,7 +1451,51 @@
    "tgt_share_l5": 0.254,
    "model_version": "nfl-receiver",
    "result": "pending"
+  },
+  "nfl-receiver|262d4bd2eb36f2ae78f313b415067418|george kittle|rec_yds": {
+   "locked_at": "2026-11-28T10:47:25+00:00",
+   "event_id": "262d4bd2eb36f2ae78f313b415067418",
+   "matchup": "Seattle Seahawks @ San Francisco 49ers",
+   "commence_time": "2026-11-29T21:25:00Z",
+   "player": "George Kittle",
+   "player_key": "george kittle",
+   "market": "rec_yds",
+   "market_label": "Rec Yds",
+   "side": "Over",
+   "book": "draftkings",
+   "line": 47.5,
+   "odds": -112,
+   "dk_line": 47.5,
+   "dk_odds": -112,
+   "model_prob": 0.64,
+   "edge": 0.14,
+   "ev": 0.211,
+   "projection": 69.5,
+   "avg_l10": 59.1,
+   "hits_l5": "4/5",
+   "hits_l10": "7/10",
+   "def_delta": -6.9,
+   "def_rank": 1,
+   "def_of": 32,
+   "opponent": "SEA",
+   "pos": "TE",
+   "def_tier": "te",
+   "proj_tgt": 7.0,
+   "role_scale": 1.08,
+   "vacated_tgt": 0.0,
+   "tgt_l5": 7.4,
+   "tgt_l5_list": [
+    3,
+    9,
+    7,
+    10,
+    8
+   ],
+   "tgt_l10": 6.5,
+   "tgt_share_l5": 0.255,
+   "model_version": "nfl-receiver",
+   "result": "pending"
   }
  },
- "updated_at": "2026-11-28T03:23:19+00:00"
+ "updated_at": "2026-11-28T10:47:25+00:00"
 }
