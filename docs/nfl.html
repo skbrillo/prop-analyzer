@@ -49,13 +49,13 @@ tbody tr:hover{background:#1d3048}
 
 <div class="warn">Prices come from scheduled snapshots (Tue / Thu / Sat / Sun mornings and shortly before each kickoff), not live odds. Confirm the price at the book before betting.</div>
 
-<div class="head"><h2>NFL Models — Paper Trading, Two Models Compared</h2><span id="model-status" class="muted">Loading model...</span></div>
+<div class="head"><h2>NFL Receiver Model — Paper Trading (WR &amp; TE)</h2><span id="model-status" class="muted">Loading model...</span></div>
 <div class="tablewrap"><table><thead><tr><th>Model</th><th>Picks</th><th>W-L</th><th>Win rate</th><th>Units</th><th>Beat the close</th><th>Avg CLV</th><th>Pending</th></tr></thead><tbody id="compare"></tbody></table></div>
 <div class="controls"><select id="model-ver" aria-label="Model version"></select></div>
 <div class="cards" id="record"></div>
-<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="game_total" title="Game total (DraftKings) and its rank among this week's games, 1 = highest. Hover for both teams' offense / defense ranks and over-under records.">Total</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="hits_l15" title="Times he went OVER this line in his last 15 games">Over L15</th><th data-key="tgt_l5" title="Receiving props: average targets in his last 5 games, his share of the team's targets, and ↑ / ↓ when that is 1+ target above / below his last-15 average. Hover for the game-by-game list.">Tgt L5</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="game_total" title="Game total (DraftKings) and its rank among this week's games, 1 = highest. Hover for both teams' offense / defense ranks and over-under records.">Total</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l5" title="Times he went OVER this line in his last 5 games (these count double in the model)">Over L5</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="tgt_l5" title="Receiving props: average targets in his last 5 games, his share of the team's targets, and ↑ / ↓ when that is 1+ target above / below his last-10 average. Hover for the game-by-game list.">Tgt L5</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
 <div class="note">Click any column heading to sort; click again to reverse.</div>
-<div class="note" id="model-note"><b>Hit Rate model:</b> how often the player went over this line in his last 15 games, with each game adjusted for how his role does against this defense, blended with the book's no-vig price (the price counts as 10 games). Picks need a 5+ point edge over the book's no-vig price. No passing/receiving Overs in games flagged for wind. <b>Market Value model:</b> no player model — where 3+ books post the same line, a pick is a price that beats the other books' average no-vig price by 1+ point. Both: best price across DraftKings, FanDuel, BetMGM and Caesars, odds -130 to +130, one pick per player and at most six per game, no Anytime TD, locked the first time they qualify, graded from ESPN box scores. Not real bets — the test is which model beats the closing line.</div>
+<div class="note" id="model-note"><b>Receiver model</b> (wide receivers and tight ends, receptions and receiving yards): how often he cleared this line in his last 10 games (the last 5 count double), with each game scaled for his current role (projected targets = 60% last 5 games + 40% last 10, plus targets left by teammates ruled Out) and shifted by the defense — a team's No. 1 receiver is judged by how No. 1 receivers do against this defense, other wide receivers by other wide receivers, and tight ends by tight ends. Blended with the book's no-vig price (worth 10 games); picks need a 5+ point edge. Skipped: fewer than 4 projected targets, Overs in windy games, and teams starting a different QB than the one he's been catching passes from. <b>Market Value model</b>: no player model — a price that beats the other books' average no-vig price on the same line by 1+ point. Both: best price across DraftKings, FanDuel, BetMGM and Caesars, odds -130 to +130, one pick per player, at most six per game. Not real bets — the test is beating the closing line.</div>
 <div class="note" id="backtest"></div>
 
 <div class="head"><h2>DraftKings vs the Market — Does DK Move Toward the Other Books?</h2></div>
@@ -225,9 +225,9 @@ function renderStudy(){
 
 function modelCells(cell,p){
  const m=proj(p);
- if(!m){const e=entry(p);cell(e&&e.hits_l15?(e.hits_l10+" · "+e.hits_l15):"—","muted");cell("—","muted");cell("—","muted");return;}
+ if(!m){const e=entry(p);cell(e&&e.hits_l10?(e.hits_l5+" · "+e.hits_l10):"—","muted");cell("—","muted");cell("—","muted");return;}
  const cx=entry(p)||{};
- cell((cx.hits_l10||"—")+" · "+(cx.hits_l15||"—"),"","Times over DraftKings' line in last 10 · last 15 games | avg "+cx.avg_l15+", median "+cx.median_l15+(cx.def_delta!=null?" | vs this D "+(cx.def_delta>0?"+":"")+cx.def_delta+" ("+cx.def_rank+"/"+cx.def_of+")":""));
+ cell((cx.hits_l5||"—")+" · "+(cx.hits_l10||"—"),"","Times over DraftKings' line in last 5 · last 10 games | avg "+cx.avg_l10+", median "+cx.median_l10+(cx.def_delta!=null?" | vs this D "+(cx.def_delta>0?"+":"")+cx.def_delta+" ("+cx.def_rank+"/"+cx.def_of+")":""));
  cell(pct(m.p_over),"",p.one_sided?"Model chance of a TD":"Model chance of the Over at DraftKings' line");
  if(m.edge_over==null){cell("—","muted");return;}
  const side=m.edge_over>=0?(p.one_sided?"Yes":"Over"):(p.one_sided?"No":"Under"),e=Math.abs(m.edge_over)*100;
@@ -302,14 +302,19 @@ function renderModel(){
   cell(label(p.book||"draftkings"),p.book&&p.book!=="draftkings"?"green bold":"");
   cell(fmtLine(p.line));cell(signed(p.odds),Number(p.odds)>0?"green":"");
   cell(p.dk_line!=null?fmtLine(p.dk_line)+" "+signed(p.dk_odds):"—","muted");
-  cell(p.hits_l10||"—");cell(p.hits_l15||"—");
-  {const cx=entry(p)||{},t5=p.tgt_l5??cx.tgt_l5,t15=p.tgt_l15??cx.tgt_l15,sh=p.tgt_share_l5??cx.tgt_share_l5,lst=p.tgt_l5_list||cx.tgt_l5_list;
+  cell(p.hits_l5||"—");cell(p.hits_l10||"—");
+  {const cx=entry(p)||{},t5=p.tgt_l5??cx.tgt_l5,t15=p.tgt_l10??cx.tgt_l10,sh=p.tgt_share_l5??cx.tgt_share_l5,lst=p.tgt_l5_list||cx.tgt_l5_list;
    p.tgt_l5=t5;const td=tr.insertCell();
    if(t5==null){td.textContent="—";td.className="muted";}
    else{const d=t15!=null?t5-t15:0,arrow=d>=1?" ↑":d<=-1?" ↓":"";
     td.textContent=t5+(sh!=null?" ("+Math.round(100*sh)+"%)":"")+arrow;td.className=arrow===" ↑"?"green":arrow===" ↓"?"red":"";
-    td.title="Last 5 games (newest first): "+(lst||[]).join(", ")+" targets | last-15 average "+t15+(sh!=null?" | "+(100*sh).toFixed(1)+"% of team targets in last 5":"");}}
-  cell(p.def_delta==null?"—":(p.def_delta>0?"+":"")+p.def_delta+(p.def_rank?" ("+p.def_rank+"/"+p.def_of+")":""),p.def_delta==null?"muted":p.def_delta>0?"green":p.def_delta<0?"red":"");
+    const pt=p.proj_tgt??cx.proj_tgt,vac=p.vacated_tgt??cx.vacated_tgt,om=cx.out_teammates||[];
+    td.title="Last 5 games (newest first): "+(lst||[]).join(", ")+" targets | last-10 average "+t15+(sh!=null?" | "+(100*sh).toFixed(1)+"% of team targets in last 5":"")+(pt!=null?" | projected "+pt+" targets":"")+(vac?" (incl. +"+vac+" from teammates out"+(om.length?": "+om.join(", "):"")+")":"");
+    if(vac)td.textContent+=" +";}}
+  {const cx=entry(p)||{},dd=p.def_delta??cx.def_delta,rk=p.def_rank??cx.def_rank,of=p.def_of??cx.def_of,tier=p.def_tier||cx.def_tier;
+   const td=tr.insertCell();td.textContent=dd==null?"—":(dd>0?"+":"")+dd+(tier==="wr1"?" vs #1s":tier==="te"?" vs TEs":"")+(rk?" ("+rk+"/"+of+")":"");
+   td.className=dd==null?"muted":dd>0?"green":dd<0?"red":"";
+   td.title=tier==="wr1"?"He is his team's No. 1 receiver: how No. 1 receivers do against this defense vs their normal (1 = toughest).":tier==="te"?"How tight ends do against this defense vs their normal (1 = toughest).":"How other wide receivers do against this defense vs their normal (1 = toughest).";}
   cell(pct(p.model_prob));cell("+"+(100*p.edge).toFixed(1),"green bold");
   cell(p.close_line!=null?fmtLine(p.close_line)+(p.close_odds!=null?" "+signed(p.close_odds):""):"—",p.close_line==null?"muted":"");
   cell(p.price_clv!=null?(p.price_clv>0?"+":"")+(100*p.price_clv).toFixed(1)+"%":"—",p.price_clv==null?"muted":p.price_clv>0?"green bold":p.price_clv<0?"red bold":"");
@@ -319,14 +324,14 @@ function renderModel(){
  }
  if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=20;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
  renderCompare();
- $("backtest").textContent="Started over on Nov 26, 2026: earlier model picks were deleted, both models count from 0-0.";
+ $("backtest").textContent="Receiver model started Nov 27, 2026 (earlier picks deleted). Market Value model counting since Nov 26.";
  $("model-status").textContent=verLabel(ver)+" | updated "+new Date(model.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT";
 }
 
 function render(){
  const others=(board.books||[]).filter(b=>b!=="draftkings");
  const head=$("headrow");head.replaceChildren();
- ["Kickoff","Player","Market","DK Line","DK O / U","Over L10 · L15","Model Over","Model Edge",...others.map(label),"Best Over / Yes","Best Under","Books vs DK"].forEach(t=>add(head,"th",t));
+ ["Kickoff","Player","Market","DK Line","DK O / U","Over L5 · L10","Model Over","Model Edge",...others.map(label),"Best Over / Yes","Best Under","Books vs DK"].forEach(t=>add(head,"th",t));
  const q=$("search").value.trim().toLowerCase(),game=$("game").value,market=$("market").value,view=$("view").value;
  const rows=(board.props||[]).filter(p=>{
   if(q&&!(p.player+" "+p.matchup).toLowerCase().includes(q))return false;
