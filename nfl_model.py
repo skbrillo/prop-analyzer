@@ -1,5 +1,5 @@
 """NFL receiver model — PAPER TRADING ONLY. Wide receivers and tight ends,
-receptions and receiving yards. A Market Value model runs alongside as a check.
+receptions and receiving yards.
 
 Receiver model ("nfl-receiver")
     1. Hit rate: how often he cleared this exact line in his last 10 games
@@ -20,11 +20,7 @@ Receiver model ("nfl-receiver")
     this game (the one the books post passing props for) is not the QB he has
     been catching passes from.
 
-Market Value model ("nfl-market")
-    No player model. Where 3+ books post the same line, the other books' average
-    no-vig price is "fair"; pick a price that beats it by 1+ point.
-
-Both: receptions and receiving yards only, odds -130 to +130, best price, one
+Rules: receptions and receiving yards only, odds -130 to +130, best price, one
 pick per player and at most six per game, locked the first time they qualify,
 graded from ESPN box scores, closing-line value tracked.
 """
@@ -53,9 +49,8 @@ POSITIONS_FILE = ROOT / "data" / "nfl_positions.csv"   # player, team, pos (from
 ET = ZoneInfo("America/New_York")
 
 HIT = "nfl-receiver"
-MKT = "nfl-market"
-VERSIONS = (HIT, MKT)
-LABELS = {HIT: "Receiver model", MKT: "Market Value model"}
+VERSIONS = (HIT,)
+LABELS = {HIT: "Receiver model"}
 MODEL_VERSION = HIT          # default for old helper code
 
 PICK_MARKETS = {"receptions", "rec_yds"}
@@ -81,10 +76,6 @@ DEF_SHRINK = 8               # defense adjustment x n / (n + 8)
 DEF_MIN_NORM_GAMES = 4
 HIT_EDGE_MIN, HIT_EDGE_MAX = 0.05, 0.20
 WIND_NO_OVER_MARKETS = {"pass_yds", "rec_yds", "receptions"}
-
-# Market Value model
-MKT_MIN_OTHER_BOOKS = 2
-MKT_EDGE_MIN, MKT_EDGE_MAX = 0.01, 0.10
 
 ODDS_MIN, ODDS_MAX = -130, 130
 MAX_PICKS_PER_PLAYER = 1
@@ -330,25 +321,6 @@ def hitrate_offer(prop, values, delta, windy, scale=1.0):
     return best
 
 
-def market_offer(prop):
-    books = {b: bl for b, bl in (prop.get("books") or {}).items() if fair_over(bl.get("over"), bl.get("under"))}
-    best = None
-    for book, bl in books.items():
-        others = [fair_over(o["over"], o["under"]) for b, o in books.items() if b != book and o["line"] == bl["line"]]
-        if len(others) < MKT_MIN_OTHER_BOOKS:
-            continue
-        fair = mean(others)
-        for side, fp, odds in (("Over", fair, bl["over"]), ("Under", 1 - fair, bl["under"])):
-            edge = fp - implied(odds)
-            if not offer_ok(edge, odds, MKT_EDGE_MIN, MKT_EDGE_MAX):
-                continue
-            ev = fp * (1 + payout(odds)) - 1
-            if best is None or ev > best["ev"]:
-                best = {"book": book, "line": bl["line"], "side": side, "odds": odds,
-                        "model_p": fair, "edge": edge, "ev": ev, "books_compared": len(others)}
-    return best
-
-
 def version_records(all_picks):
     out = {}
     for ver in VERSIONS:
@@ -476,7 +448,7 @@ def main():
 
     board = json.loads(BOARD.read_text(encoding="utf-8")) if BOARD.exists() else {"props": []}
     picks = load_picks()
-    # Start over: only the two current models keep picks.
+    # Only the current model keeps picks.
     for pk in [k for k, p in picks["picks"].items() if p.get("model_version") not in VERSIONS]:
         del picks["picks"][pk]
 
@@ -543,10 +515,6 @@ def main():
         if p_hit is not None:
             entry[HIT] = {"projection": context["median_l10"], "p_over": round(p_hit, 3),
                           "market_over": round(fair, 3), "edge_over": round(p_hit - fair, 3), "games": len(values)}
-        mo = market_offer(prop)
-        if mo:
-            entry[MKT] = {"projection": None, "p_over": round(mo["model_p"], 3), "market_over": round(fair, 3),
-                          "edge_over": round(mo["model_p"] - fair, 3), "games": mo["books_compared"]}
 
         out = status.lower() in OUT_STATUSES
         fresh = (now - last_game).days <= STALE_DAYS
@@ -558,8 +526,6 @@ def main():
             o = hitrate_offer(prop, values, delta, windy, scale)
             if o:
                 candidates.append((HIT, o, prop, key, context))
-        if not out and mo:
-            candidates.append((MKT, mo, prop, key, context))
 
     # Lock new picks: biggest edges first; one per player per game; six per game.
     per_player, per_game = defaultdict(int), defaultdict(int)
@@ -644,7 +610,6 @@ def main():
         "version_labels": LABELS,
         "rules": {"hit_edge_min": HIT_EDGE_MIN, "hit_edge_max": HIT_EDGE_MAX, "market_weight_games": MARKET_WEIGHT,
                   "lookback": LOOKBACK, "min_history": MIN_HISTORY, "def_shrink": DEF_SHRINK,
-                  "mkt_edge_min": MKT_EDGE_MIN, "mkt_edge_max": MKT_EDGE_MAX, "mkt_min_other_books": MKT_MIN_OTHER_BOOKS,
                   "odds_min": ODDS_MIN, "odds_max": ODDS_MAX, "max_picks_per_player": MAX_PICKS_PER_PLAYER,
                   "max_picks_per_game": MAX_PICKS_PER_GAME, "wind_no_over_markets": sorted(WIND_NO_OVER_MARKETS),
                   "markets": sorted(PICK_MARKETS), "alpha_share": ALPHA_SHARE, "alpha_targets": ALPHA_TARGETS,
