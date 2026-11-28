@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-27T23:16:12.324133+00:00",
+  "generated_at": "2026-11-28T00:11:13.735321+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 102,
+  "player_count": 101,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 102,
+  "players_with_team": 101,
   "players_without_team": 0,
   "status_counts": {
-    "O": 85,
-    "T": 17
+    "O": 86,
+    "T": 15
   },
   "players": [
     {
@@ -417,17 +417,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "541164",
-      "name": "Larry Nance Jr.",
-      "team": "IND",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Ankle | day-to-day",
-      "date": "2026-11-27T18:07Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "541148",
       "name": "Tyrese Haliburton",
       "team": "IND",
@@ -681,17 +670,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "541153",
-      "name": "Karl-Anthony Towns",
-      "team": "NYK",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Abdomen | day-to-day",
-      "date": "2026-11-27T16:51Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "541142",
       "name": "Andre Drummond",
       "team": "NYK",
@@ -703,13 +681,24 @@
     },
     {
       "id": "",
-      "injury_record_id": "540875",
+      "injury_record_id": "541189",
       "name": "Nikola Topic",
       "team": "OKC",
       "status": "O",
       "raw_status": "Out",
       "reason": "Strain | Hip | out",
-      "date": "2026-11-24T23:29Z",
+      "date": "2026-11-27T23:49Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541184",
+      "name": "Aday Mara",
+      "team": "OKC",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Lower Leg | out",
+      "date": "2026-11-27T23:10Z",
       "team_match": "feed"
     },
     {
@@ -721,17 +710,6 @@
       "raw_status": "Out",
       "reason": "Spasms | Back | out",
       "date": "2026-11-24T23:24Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540871",
-      "name": "Aday Mara",
-      "team": "OKC",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Bruise | Lower Leg | out",
-      "date": "2026-11-24T23:19Z",
       "team_match": "feed"
     },
     {
@@ -857,24 +835,35 @@
     },
     {
       "id": "",
-      "injury_record_id": "541150",
-      "name": "Joel Embiid",
+      "injury_record_id": "-61483",
+      "name": "Dean Wade",
       "team": "PHI",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-27T16:32Z",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Hamstring | out",
+      "date": "2026-11-27T23:33Z",
       "team_match": "feed"
     },
     {
       "id": "",
-      "injury_record_id": "541111",
+      "injury_record_id": "541185",
       "name": "Jaylen Brown",
       "team": "PHI",
       "status": "O",
       "raw_status": "Out",
       "reason": "Hamstring | out",
-      "date": "2026-11-26T22:13Z",
+      "date": "2026-11-27T23:15Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541150",
+      "name": "Joel Embiid",
+      "team": "PHI",
+      "status": "T",
+      "raw_status": "Day-To-Day",
+      "reason": "day-to-day",
+      "date": "2026-11-27T16:32Z",
       "team_match": "feed"
     },
     {
