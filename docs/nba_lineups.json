@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-28T05:44:03.065295+00:00",
+  "generated_at": "2026-11-28T06:47:01.206597+00:00",
   "source": "RotoWire",
   "games": {
     "401909326": {
@@ -1339,6 +1339,308 @@
         {
           "name": "Gui Santos",
           "team": "GSW",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910046": {
+      "game_id": "401910046",
+      "game": "Orlando Magic at Washington Wizards",
+      "tipoff": "2026-11-28T22:00:00+00:00",
+      "home": "WAS",
+      "away": "ORL",
+      "checked_at": "2026-11-28T06:47:01.206597+00:00",
+      "minutes_before_tipoff": 913.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "unverified",
+      "home_starters": [],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [],
+      "out_players": [],
+      "source": "RotoWire"
+    },
+    "401910047": {
+      "game_id": "401910047",
+      "game": "Brooklyn Nets at Charlotte Hornets",
+      "tipoff": "2026-11-28T23:00:00+00:00",
+      "home": "CHA",
+      "away": "BKN",
+      "checked_at": "2026-11-28T06:47:01.206597+00:00",
+      "minutes_before_tipoff": 973.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Mikel Brown",
+          "team": "BKN"
+        },
+        {
+          "name": "Michael Porter",
+          "team": "BKN"
+        },
+        {
+          "name": "Danny Wolf",
+          "team": "BKN"
+        },
+        {
+          "name": "Julius Randle",
+          "team": "BKN"
+        },
+        {
+          "name": "Day'Ron Sharpe",
+          "team": "BKN"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Nolan Traore",
+          "team": "BKN",
+          "status": "out"
+        },
+        {
+          "name": "Moritz Wagner",
+          "team": "BKN",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Nolan Traore",
+          "team": "BKN",
+          "status": "out"
+        },
+        {
+          "name": "Moritz Wagner",
+          "team": "BKN",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910048": {
+      "game_id": "401910048",
+      "game": "Indiana Pacers at Chicago Bulls",
+      "tipoff": "2026-11-29T01:00:00+00:00",
+      "home": "CHI",
+      "away": "IND",
+      "checked_at": "2026-11-28T06:47:01.206597+00:00",
+      "minutes_before_tipoff": 1093.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Andrew Nembhard",
+          "team": "IND"
+        },
+        {
+          "name": "Kelly Oubre",
+          "team": "IND"
+        },
+        {
+          "name": "Aaron Nesmith",
+          "team": "IND"
+        },
+        {
+          "name": "Pascal Siakam",
+          "team": "IND"
+        },
+        {
+          "name": "Ivica Zubac",
+          "team": "IND"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Johnny Furphy",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Tyrese Haliburton",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "T.J. McConnell",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Ben Sheppard",
+          "team": "IND",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Johnny Furphy",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Tyrese Haliburton",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "T.J. McConnell",
+          "team": "IND",
+          "status": "out"
+        },
+        {
+          "name": "Ben Sheppard",
+          "team": "IND",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910049": {
+      "game_id": "401910049",
+      "game": "Oklahoma City Thunder at Milwaukee Bucks",
+      "tipoff": "2026-11-29T01:00:00+00:00",
+      "home": "MIL",
+      "away": "OKC",
+      "checked_at": "2026-11-28T06:47:01.206597+00:00",
+      "minutes_before_tipoff": 1093.0,
+      "status": "unverified",
+      "home_status": "confirmed",
+      "away_status": "unverified",
+      "home_starters": [
+        {
+          "name": "Ryan Rollins",
+          "team": "MIL"
+        },
+        {
+          "name": "Tyler Herro",
+          "team": "MIL"
+        },
+        {
+          "name": "Jaime Jaquez",
+          "team": "MIL"
+        },
+        {
+          "name": "Kyle Kuzma",
+          "team": "MIL"
+        },
+        {
+          "name": "Myles Turner",
+          "team": "MIL"
+        }
+      ],
+      "away_starters": [],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [
+        {
+          "name": "Kasparas Jakucionis",
+          "team": "MIL",
+          "status": "out"
+        }
+      ],
+      "away_out": [],
+      "out_players": [
+        {
+          "name": "Kasparas Jakucionis",
+          "team": "MIL",
+          "status": "out"
+        }
+      ],
+      "source": "RotoWire"
+    },
+    "401910050": {
+      "game_id": "401910050",
+      "game": "Philadelphia 76ers at Houston Rockets",
+      "tipoff": "2026-11-29T01:30:00+00:00",
+      "home": "HOU",
+      "away": "PHI",
+      "checked_at": "2026-11-28T06:47:01.206597+00:00",
+      "minutes_before_tipoff": 1123.0,
+      "status": "unverified",
+      "home_status": "unverified",
+      "away_status": "confirmed",
+      "home_starters": [],
+      "away_starters": [
+        {
+          "name": "Tyrese Maxey",
+          "team": "PHI"
+        },
+        {
+          "name": "VJ Edgecombe",
+          "team": "PHI"
+        },
+        {
+          "name": "LeBron James",
+          "team": "PHI"
+        },
+        {
+          "name": "Dominick Barlow",
+          "team": "PHI"
+        },
+        {
+          "name": "Joel Embiid",
+          "team": "PHI"
+        }
+      ],
+      "home_projected": [],
+      "away_projected": [],
+      "home_out": [],
+      "away_out": [
+        {
+          "name": "Jaylen Brown",
+          "team": "PHI",
+          "status": "out"
+        },
+        {
+          "name": "Joel Embiid",
+          "team": "PHI",
+          "status": "out"
+        },
+        {
+          "name": "LeBron James",
+          "team": "PHI",
+          "status": "out"
+        },
+        {
+          "name": "Dean Wade",
+          "team": "PHI",
+          "status": "out"
+        }
+      ],
+      "out_players": [
+        {
+          "name": "Jaylen Brown",
+          "team": "PHI",
+          "status": "out"
+        },
+        {
+          "name": "Joel Embiid",
+          "team": "PHI",
+          "status": "out"
+        },
+        {
+          "name": "LeBron James",
+          "team": "PHI",
+          "status": "out"
+        },
+        {
+          "name": "Dean Wade",
+          "team": "PHI",
           "status": "out"
         }
       ],
