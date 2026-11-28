@@ -1,0 +1,431 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NFL Prop Lines — DraftKings vs Other Books</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#0b1220;--card:#172338;--border:#293a52;--text:#e8edf6;--muted:#a6b5c9;--green:#75e3a5;--red:#f2a7a7;--yellow:#f8c477}
+body{margin:0;background:var(--bg);color:var(--text);font:13px system-ui,Arial,sans-serif}
+main{width:100%;padding:12px}
+h1{font-size:27px;margin:0 0 3px}
+h2{font-size:18px;margin:0}
+a{color:var(--green)}
+.muted,.note{color:var(--muted);line-height:1.5}
+.note{font-size:11px;margin-top:8px}
+.warn{background:#332c19;color:#ffda8c;padding:9px 12px;border-radius:8px;margin:10px 0;font-size:11px}
+.head{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin:14px 0 6px}
+.controls{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0}
+input,select{background:#18273d;color:white;border:1px solid #41516b;border-radius:6px;padding:8px;font:inherit}
+input{flex:1;min-width:150px}
+.controls select{max-width:240px}
+.tablewrap{width:100%;overflow-x:auto;border:1px solid var(--border);border-radius:8px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:8px 6px;border-bottom:1px solid #2b3a50;text-align:left;white-space:nowrap;font-size:11px}
+th{background:var(--card);color:var(--muted);position:sticky;top:0}
+tbody tr:hover{background:#1d3048}
+.player{font-weight:700}
+.opp{font-weight:400;color:var(--muted,#8a94a6);font-size:.85em;white-space:nowrap}
+.green{color:var(--green)}.red{color:var(--red)}.yellow{color:var(--yellow)}.bold{font-weight:700}
+.stat b.green{color:var(--green)}.stat b.red{color:var(--red)}.stat b.yellow{color:var(--yellow)}
+.flag{color:var(--yellow);font-weight:700}.alt{color:var(--yellow)}.best{color:var(--green);font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:8px;margin:10px 0}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:10px;font-size:11px;color:var(--muted)}
+.stat b{display:block;color:var(--text);font-size:21px;margin-top:4px}
+.gamecards{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:9px;margin-top:10px}
+.gcard{background:var(--card);border:1px solid var(--border);border-radius:9px;padding:10px}
+.gcard h3{margin:0 0 2px;font-size:14px}.gcard .when{color:var(--muted);font-size:11px;margin-bottom:6px}
+.gmetric{display:flex;justify-content:space-between;gap:8px;border-top:1px solid #2b3a50;padding:6px 0;font-size:12px}
+.gmetric span{color:var(--muted)}.gmetric strong{text-align:right}
+.gother{color:var(--muted);font-size:10px;margin-top:4px;line-height:1.5}
+.gamehead td{background:var(--card);font-weight:700;color:var(--text);border-top:2px solid var(--border)}
+.rdtab{background:#18273d;color:var(--muted);border:1px solid #41516b;border-radius:6px;padding:8px 12px;margin-right:6px;font:inherit;cursor:pointer}.rdtab.on{background:#2a4466;color:white;border-color:#6b88b0}
+</style>
+</head>
+<body>
+<main>
+<h1>NFL Prop Lines</h1>
+<div class="muted">DraftKings vs FanDuel, BetMGM and other books | Models are PAPER TRADING only | <a href="index.html">← NBA Edge Model</a></div>
+
+<div class="warn">Prices come from scheduled snapshots (Tue / Thu / Sat / Sun mornings and shortly before each kickoff), not live odds. Confirm the price at the book before betting.</div>
+
+<div class="head"><h2>NFL Receiver Model — Paper Trading (WR &amp; TE)</h2><span id="model-status" class="muted">Loading model...</span></div>
+<div class="tablewrap"><table><thead><tr><th>Model</th><th>Picks</th><th>W-L</th><th>Win rate</th><th>Units</th><th>Beat the close</th><th>Avg CLV</th><th>Pending</th></tr></thead><tbody id="compare"></tbody></table></div>
+<div class="controls"><select id="model-ver" aria-label="Model version"></select></div>
+<div class="cards" id="record"></div>
+<div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="game_total" title="Game total (DraftKings) and its rank among this week's games, 1 = highest. Hover for both teams' offense / defense ranks and over-under records.">Total</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l5" title="Times he went OVER this line in his last 5 games (these count double in the model)">Over L5</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="tgt_l5" title="Receiving props: average targets in his last 5 games, his share of the team's targets, and ↑ / ↓ when that is 1+ target above / below his last-10 average. Hover for the game-by-game list.">Tgt L5</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
+<div class="note">Click any column heading to sort; click again to reverse.</div>
+<div class="note" id="model-note"><b>Receiver model</b> (wide receivers and tight ends, receptions and receiving yards): how often he cleared this line in his last 10 games (the last 5 count double), with each game scaled for his current role (projected targets = 60% last 5 games + 40% last 10, plus targets left by teammates ruled Out) and shifted by the defense — a team's No. 1 receiver is judged by how No. 1 receivers do against this defense, other wide receivers by other wide receivers, and tight ends by tight ends. Blended with the book's no-vig price (worth 10 games); picks need a 5+ point edge. Skipped: fewer than 4 projected targets, Overs in windy games, and teams starting a different QB than the one he's been catching passes from. Best price across DraftKings, FanDuel, BetMGM and Caesars, odds -130 to +130, one pick per player, at most six per game. Not real bets — the test is beating the closing line.</div>
+<div class="note" id="backtest"></div>
+
+<div class="head"><h2>NFL Game Lines</h2><span id="lines-status" class="muted"></span></div>
+<div class="muted">DraftKings spread, total and implied team points. Arrows show movement since the first line we saved. Other books listed underneath.</div>
+<div id="gamelines" class="gamecards"></div>
+
+<div class="head"><h2>NFL Team Stats</h2><span class="muted">Regular season, from ESPN box scores and pregame lines | click a heading to sort | rank 1 = best</span></div>
+<div class="tablewrap"><table><thead><tr id="teams-head"></tr></thead><tbody id="teams-body"></tbody></table></div>
+<div class="note">Yards are gross (passing yards before sacks), so they run a little higher than sites that net out sack yards. ATS and O/U use ESPN's pregame DraftKings spread and total.</div>
+
+<div class="head"><h2>NFL Receiver Data</h2><span id="rd-status" class="muted">Loading...</span></div>
+<div class="controls"><span id="rd-tabs"></span><input id="rd-search" placeholder="Search player or team"><select id="rd-pos" aria-label="Position"><option value="">WR + TE</option><option value="WR">WR only</option><option value="TE">TE only</option></select></div>
+<div class="tablewrap" style="max-height:560px;overflow:auto"><table><thead><tr id="rd-head"></tr></thead><tbody id="rd-body"></tbody></table></div>
+<div class="note" id="rd-note"></div>
+
+<div class="head"><h2>Line Shopping Board</h2><span id="status" class="muted">Loading...</span></div>
+<div class="controls">
+ <input id="search" type="search" placeholder="Search player or game">
+ <select id="game"><option value="">All Games</option></select>
+ <select id="market"><option value="">All Markets</option></select>
+ <select id="view">
+  <option value="">All Props</option>
+  <option value="flagged">DraftKings Out of Line</option>
+  <option value="better">Better Price Than DraftKings</option>
+ </select>
+</div>
+<div class="tablewrap"><table><thead><tr id="headrow"></tr></thead><tbody id="rows"></tbody></table></div>
+<div class="note">
+ Each book shows its main line and Over / Under price (Anytime TD shows the "Yes" price only). Yellow = a different line than DraftKings.
+ Best Over / Best Under compare prices at DraftKings' line. "Books vs DK" flags props where the other books' no-vig price is 4+ points from DraftKings at the same line,
+ or their line differs by 2+ yards (0.5 for receptions and touchdowns).
+</div>
+</main>
+
+<script>
+"use strict";
+const $=id=>document.getElementById(id);
+let board=null;
+const add=(p,tag,text,cls="")=>{const n=document.createElement(tag);n.textContent=text;if(cls)n.className=cls;p.appendChild(n);return n;};
+const signed=a=>{a=Number(a);return a>0?"+"+a:String(a);};
+const dec=a=>{a=Number(a);return a>0?1+a/100:1+100/Math.abs(a);};
+const BOOK_ABBR={draftkings:"DK",fanduel:"FD",betmgm:"MGM",caesars:"CZR",pinnacle:"PIN"};
+const label=b=>(board&&board.book_labels&&board.book_labels[b])||BOOK_ABBR[b]||b;
+let model=null;
+function pkey(name){return String(name||"").toLowerCase().replace(/[^a-z0-9 ]/g,"").split(/\s+/).filter(x=>x&&!["jr","sr","ii","iii","iv","v"].includes(x)).join(" ");}
+let ver=null;
+function entry(p){return model&&model.projections?model.projections[p.event_id+"|"+pkey(p.player)+"|"+p.market]:null;}
+function proj(p){const e=entry(p);if(!e)return null;if(e.projection!=null)return e;return e[ver]||null;}
+const verLabel=v=>(model&&model.version_labels&&model.version_labels[v])||v;
+const pct=v=>v==null?"--":(100*v).toFixed(1)+"%";
+const fmtLine=v=>{const n=Number(v);return Number.isFinite(n)?String(n):"--";};
+function kickoff(v){const d=new Date(v);if(isNaN(d))return String(v);
+ return new Intl.DateTimeFormat("en-US",{timeZone:"America/New_York",weekday:"short",hour:"numeric",minute:"2-digit"}).format(d)+" ET";}
+
+const TEAM_ABBR={"Arizona Cardinals":"ARI","Atlanta Falcons":"ATL","Baltimore Ravens":"BAL","Buffalo Bills":"BUF","Carolina Panthers":"CAR","Chicago Bears":"CHI","Cincinnati Bengals":"CIN","Cleveland Browns":"CLE","Dallas Cowboys":"DAL","Denver Broncos":"DEN","Detroit Lions":"DET","Green Bay Packers":"GB","Houston Texans":"HOU","Indianapolis Colts":"IND","Jacksonville Jaguars":"JAX","Kansas City Chiefs":"KC","Las Vegas Raiders":"LV","Los Angeles Chargers":"LAC","Los Angeles Rams":"LAR","Miami Dolphins":"MIA","Minnesota Vikings":"MIN","New England Patriots":"NE","New Orleans Saints":"NO","New York Giants":"NYG","New York Jets":"NYJ","Philadelphia Eagles":"PHI","Pittsburgh Steelers":"PIT","San Francisco 49ers":"SF","Seattle Seahawks":"SEA","Tampa Bay Buccaneers":"TB","Tennessee Titans":"TEN","Washington Commanders":"WAS"};
+const abbr=t=>TEAM_ABBR[t]||t||"--";
+const spreadText=v=>v==null?"--":v===0?"PK":(v>0?"+":"")+v;
+function moveText(open,now){
+ if(open==null||now==null||open===now)return "";
+ return " ("+(now>open?"↑":"↓")+" from "+spreadText(open)+")";
+}
+// Kickoff weather (docs/nfl_weather.json, from Open-Meteo)
+let weather={};
+function wxShort(w,long=false){
+ if(!w)return "—";
+ if(w.roof==="dome")return "Indoors";
+ if(w.temp_f==null&&w.wind_mph==null)return w.roof==="retractable"?"Roof":"—";
+ let t=(w.temp_f!=null?w.temp_f+"°":"")+(w.wind_mph!=null?" "+w.wind_mph+" mph":"");
+ if(long&&w.gust_mph!=null)t+=" (gusts "+w.gust_mph+")";
+ if(long&&w.condition)t+=" · "+w.condition;
+ if(w.roof==="retractable")return "Roof"+(long?" (outside: "+t.trim()+")":"");
+ const f=w.flags||[];
+ return (f.length?"⚠ ":"")+t.trim()+(!long&&f.length?" "+f.join(", "):"");
+}
+const wxClass=w=>w&&w.roof==="outdoor"&&(w.flags||[]).length?"yellow bold":(!w||w.roof!=="outdoor"?"muted":"");
+function wxDetail(w){
+ if(!w)return "No forecast saved for this game.";
+ const bits=[w.stadium||"",w.roof==="dome"?"indoors":w.roof==="retractable"?"retractable roof (usually closed in bad weather)":"open air"];
+ if(w.roof!=="dome"&&w.temp_f!=null){
+  bits.push(w.condition||"",w.temp_f+"°F","wind "+w.wind_mph+" mph, gusts "+w.gust_mph+" mph","precip chance "+w.precip_chance+"%"+(w.precip_in?" ("+w.precip_in+" in)":""));
+ }
+ if(w.forecast_at)bits.push("forecast "+new Date(w.forecast_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT");
+ return bits.filter(Boolean).join(" | ");
+}
+// "vs ATL" at home, "@ ATL" on the road.
+function oppTag(p){
+ const opp=p.opponent||(entry(p)||{}).opponent;if(!opp)return "";
+ const mu=model&&(model.matchups||{})[p.event_id];
+ return (mu&&mu.home===opp?"@ ":"vs ")+opp;
+}
+function muDetail(mu){
+ if(!mu)return "No game line saved for this game.";
+ const t=(sd)=>{const x=mu[sd+"_team"]||{};return x.record?mu[sd]+": "+x.record+", ATS "+x.ats+", O/U "+x.ou+" | scores "+x.pts_for+" (#"+x.pts_for_rank+"), allows "+x.pts_against+" (#"+x.pts_against_rank+") | defense vs pass #"+x.def_pass_rank+", vs run #"+x.def_rush_rank:mu[sd]+": no team stats yet";};
+ return "Total "+mu.total+(mu.total_rank?" (#"+mu.total_rank+" of "+mu.total_of+" this week)":"")+"\n"+t("away")+"\n"+t("home");
+}
+const TEAM_COLS=[["team","Team"],["record","W-L"],["ats","ATS"],["ats_home","ATS home"],["ats_away","ATS away"],["ou","O/U"],["ou_home","O/U home"],["ou_away","O/U away"],["pts_for","Pts/G"],["pts_against","Pts allowed/G"],
+ ["off_yds","Off yds/G"],["off_pass","Off pass/G"],["off_rush","Off rush/G"],["def_yds","Def yds/G"],["def_pass","Def pass/G"],["def_rush","Def rush/G"]];
+const RANKED_COLS=new Set(["pts_for","pts_against","off_yds","off_pass","off_rush","def_yds","def_pass","def_rush"]);
+let teamSort={key:"pts_for",asc:false};
+function renderTeams(){
+ const head=$("teams-head"),body=$("teams-body");if(!head||!model||!model.teams)return;
+ head.replaceChildren();body.replaceChildren();
+ for(const [k,lab] of TEAM_COLS){const th=add(head,"th",lab+(teamSort.key===k?(teamSort.asc?" ▲":" ▼"):""));th.style.cursor="pointer";
+  th.onclick=()=>{teamSort=teamSort.key===k?{key:k,asc:!teamSort.asc}:{key:k,asc:k==="team"||k.startsWith("def_")||k==="pts_against"};renderTeams();};}
+ const sortVal=(t,k)=>k==="team"?t.team:["record","ats","ou","ats_home","ats_away","ou_home","ou_away"].includes(k)?Number((t[k]||"0").split("-")[0])/Math.max(1,(t[k]||"0-0").split("-").slice(0,2).reduce((a,b)=>a+Number(b),0)):t[k];
+ const rows=Object.entries(model.teams).map(([team,t])=>({team,...t}));
+ rows.sort((a,b)=>{const x=sortVal(a,teamSort.key),y=sortVal(b,teamSort.key);if(x==null)return 1;if(y==null)return -1;
+  const c=typeof x==="string"?x.localeCompare(y):x-y;return teamSort.asc?c:-c;});
+ for(const t of rows){const tr=body.insertRow();
+  for(const [k] of TEAM_COLS){const td=tr.insertCell();const v=t[k];
+   td.textContent=v==null?"—":String(v)+(RANKED_COLS.has(k)&&t[k+"_rank"]?" (#"+t[k+"_rank"]+")":"");
+   if(k==="team")td.className="bold";
+   else if(RANKED_COLS.has(k)&&t[k+"_rank"])td.className=t[k+"_rank"]<=5?"green":t[k+"_rank"]>=28?"red":"";}}
+}
+function renderLines(){
+ const grid=$("gamelines");grid.replaceChildren();
+ const games=(board.games||[]).filter(g=>g.lines&&Object.keys(g.lines).length).sort((a,b)=>String(a.commence_time).localeCompare(String(b.commence_time)));
+ for(const g of games){
+  const dk=g.lines.draftkings||Object.values(g.lines)[0],src=g.lines.draftkings?"DK":label(Object.keys(g.lines)[0]);
+  const op=(g.opening||{}).draftkings||{};
+  const card=add(grid,"div","","gcard");
+  add(card,"h3",abbr(g.away_team)+" @ "+abbr(g.home_team));
+  add(card,"div",kickoff(g.commence_time)+" | "+src,"when");
+  const row=(k,v,cls="")=>{const r=add(card,"div","","gmetric");add(r,"span",k);add(r,"strong",v,cls);};
+  const fav=dk.home_spread!=null&&dk.home_spread<0?"home":dk.away_spread!=null&&dk.away_spread<0?"away":null;
+  row(abbr(g.away_team)+" spread",spreadText(dk.away_spread)+(dk.away_spread_odds!=null?" ("+signed(dk.away_spread_odds)+")":"")+moveText(op.away_spread,dk.away_spread),fav==="away"?"green":"");
+  row(abbr(g.home_team)+" spread",spreadText(dk.home_spread)+(dk.home_spread_odds!=null?" ("+signed(dk.home_spread_odds)+")":"")+moveText(op.home_spread,dk.home_spread),fav==="home"?"green":"");
+  row("Total",(dk.total??"--")+(dk.over_odds!=null?"  O "+signed(dk.over_odds)+" / U "+signed(dk.under_odds):"")+moveText(op.total,dk.total),"yellow");
+  row(abbr(g.away_team)+" implied",dk.away_implied??"--");
+  row(abbr(g.home_team)+" implied",dk.home_implied??"--");
+  {const w=weather[g.event_id];if(w){row("Weather",wxShort(w,true),wxClass(w));card.lastChild.title=wxDetail(w);}}
+  {const mu=model&&(model.matchups||{})[g.event_id];
+   if(mu){
+    if(mu.total_rank)row("Total rank","#"+mu.total_rank+" of "+mu.total_of+" this week",mu.total_rank<=3?"yellow":"");
+    for(const sd of ["away","home"]){const t=mu[sd+"_team"]||{};if(!t.record)continue;
+     row(mu[sd]+" off / def","Pts "+t.pts_for+" (#"+t.pts_for_rank+") / allowed "+t.pts_against+" (#"+t.pts_against_rank+")");
+     row(mu[sd]+" W-L · ATS · O/U",t.record+" · "+t.ats+" · "+t.ou);
+     row(mu[sd]+(sd==="home"?" at home":" on road")+" (W-L · ATS · O/U)",sd==="home"?t.home_record+" · "+t.ats_home+" · "+t.ou_home:t.away_record+" · "+t.ats_away+" · "+t.ou_away);}
+   }}
+  const box=add(card,"div","","gother");let first=true;
+  for(const [b,l] of Object.entries(g.lines)){
+   if(b===(g.lines.draftkings?"draftkings":Object.keys(g.lines)[0]))continue;
+   const off=(l.home_spread!=null&&dk.home_spread!=null&&Math.abs(l.home_spread-dk.home_spread)>=3)||(l.total!=null&&dk.total!=null&&Math.abs(l.total-dk.total)>=3);
+   if(!first)box.append(" | ");first=false;
+   const sp=add(box,"span",label(b)+": "+abbr(g.home_team)+" "+spreadText(l.home_spread)+", total "+(l.total??"--")+(off?" ⚠":""),off?"yellow":"");
+   if(off)sp.title="3+ points away from "+src+" — likely a stale or bad line from this book";
+  }
+ }
+ if(!games.length)add(grid,"div","No NFL game lines saved yet. They're pulled with the Tue / Thu / Sat / Sun morning board.","muted");
+ const stamps=games.flatMap(g=>Object.values(g.lines).map(l=>l.captured_at)).filter(Boolean).sort();
+ $("lines-status").textContent=games.length+" games this week"+(stamps.length?" | Latest: "+new Date(stamps[stamps.length-1]).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT":"");
+}
+function modelCells(cell,p){
+ const m=proj(p);
+ if(!m){const e=entry(p);cell(e&&e.hits_l10?(e.hits_l5+" · "+e.hits_l10):"—","muted");cell("—","muted");cell("—","muted");return;}
+ const cx=entry(p)||{};
+ cell((cx.hits_l5||"—")+" · "+(cx.hits_l10||"—"),"","Times over DraftKings' line in last 5 · last 10 games | avg "+cx.avg_l10+", median "+cx.median_l10+(cx.def_delta!=null?" | vs this D "+(cx.def_delta>0?"+":"")+cx.def_delta+" ("+cx.def_rank+"/"+cx.def_of+")":""));
+ cell(pct(m.p_over),"",p.one_sided?"Model chance of a TD":"Model chance of the Over at DraftKings' line");
+ if(m.edge_over==null){cell("—","muted");return;}
+ const side=m.edge_over>=0?(p.one_sided?"Yes":"Over"):(p.one_sided?"No":"Under"),e=Math.abs(m.edge_over)*100;
+ cell(side+" +"+e.toFixed(1),e>=5&&!p.one_sided?"best":"muted",p.one_sided?"Vs DraftKings' price including vig":"Model minus DraftKings' no-vig probability");
+}
+// Paper-picks sorting: default kickoff order; numbers sort high-to-low first.
+let pickSort={key:"commence_time",asc:true};
+const NUMERIC_KEYS=new Set(["tgt_l5","game_total","def_delta","wx_wind","line","odds","dk_odds","projection","model_prob","edge","close_odds","price_clv","actual"]);
+function pickSorter(){
+ const {key,asc}=pickSort,dir=asc?1:-1;
+ return (a,b)=>{
+  let x=a[key],y=b[key];
+  if(x==null&&y==null)return String(a.commence_time).localeCompare(String(b.commence_time));
+  if(x==null)return 1;if(y==null)return -1;
+  const c=NUMERIC_KEYS.has(key)?Number(x)-Number(y):String(x).localeCompare(String(y));
+  return c*dir||String(a.commence_time).localeCompare(String(b.commence_time))||String(a.player).localeCompare(String(b.player));
+ };
+}
+function recordCards(boxId,r,best){
+ r=r||{};const box=$(boxId);box.replaceChildren();
+ const tone=v=>v==null||v===0?"":v>0?"green":"red";
+ const items=[
+  ["Paper picks",r.picks??0,""],
+  ["Wins",r.wins??0,r.wins?"green":""],
+  ["Losses",r.losses??0,r.losses?"red":""],
+  ["Win rate",r.win_rate==null?"--":r.win_rate+"%",r.win_rate==null?"":r.win_rate>=52.4?"green":"red"],
+  ["Units",r.units==null?"--":(r.units>0?"+":"")+r.units+"u",tone(r.units)],
+  ["Beat the close",r.beat_close_pct==null?"--":r.beat_close_pct+"% ("+r.clv_n+")",r.beat_close_pct==null?"":r.beat_close_pct>=50?"green":"red"],
+  ["Avg CLV",r.avg_price_clv==null?"--":(r.avg_price_clv>0?"+":"")+r.avg_price_clv+"%",tone(r.avg_price_clv)],
+  ["Pending",r.pending??0,r.pending?"yellow":""]
+ ];
+ if(best&&best.units!=null&&(best.wins||best.losses))items.splice(5,0,["Units if DraftKings only",(best.units>0?"+":"")+best.units+"u",tone(best.units)]);
+ for(const [k,v,cls] of items){const c=add(box,"div","","stat");c.append(k);add(c,"b",String(v),cls);}
+}
+function renderCompare(){
+ const body=$("compare");body.replaceChildren();
+ for(const v of model.versions_order||[]){
+  const r=((model.records||{})[v]||{}).record||{};const tr=body.insertRow();
+  const c=(t,cls="")=>{const td=tr.insertCell();td.textContent=t;if(cls)td.className=cls;};
+  const tone=x=>x==null||x===0?"":x>0?"green":"red";
+  c(verLabel(v),"bold");c(String(r.picks??0));c((r.wins??0)+"-"+(r.losses??0));
+  c(r.win_rate==null?"--":r.win_rate+"%",r.win_rate==null?"":r.win_rate>=52.4?"green":"red");
+  c(r.units==null?"--":(r.units>0?"+":"")+r.units+"u",tone(r.units));
+  c(r.beat_close_pct==null?"--":r.beat_close_pct+"% ("+r.clv_n+")",r.beat_close_pct==null?"":r.beat_close_pct>=50?"green":"red");
+  c(r.avg_price_clv==null?"--":(r.avg_price_clv>0?"+":"")+r.avg_price_clv+"%",tone(r.avg_price_clv));
+  c(String(r.pending??0),r.pending?"yellow":"");
+ }
+}
+function renderModel(){
+ const recs=(model.records||{})[ver]||{record:model.record,record_top:model.record_top};
+ recordCards("record",recs.record,recs.record_dk_only);
+ const body=$("picks");body.replaceChildren();
+ for(const p of model.paper_picks||[]){const w=weather[p.event_id];p.wx_wind=w&&w.roof==="outdoor"&&w.wind_mph!=null?w.wind_mph:null;
+  const mu=(model.matchups||{})[p.event_id];p.game_total=mu&&mu.total!=null?mu.total:null;
+  if(p.tgt_l5==null){const cx=entry(p);if(cx&&cx.tgt_l5!=null)p.tgt_l5=cx.tgt_l5;}}
+ const list=(model.paper_picks||[]).filter(p=>(p.model_version||"")===ver||(!p.model_version&&ver===(model.versions_order||[]).slice(-1)[0])).slice().sort(pickSorter());
+ document.querySelectorAll("#picks-head th[data-key]").forEach(th=>{
+  th.textContent=th.textContent.replace(/ [▲▼]$/,"")+(th.dataset.key===pickSort.key?(pickSort.asc?" ▲":" ▼"):"");
+ });
+ for(const p of list){
+  const tr=body.insertRow();const cell=(t,c="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;};
+  const res=String(p.result||"pending");
+  const over=p.side==="Over";
+  cell(kickoff(p.commence_time));
+  {const w=weather[p.event_id],td=tr.insertCell();td.textContent=wxShort(w);td.className=wxClass(w);td.title=wxDetail(w);}
+  {const mu=(model.matchups||{})[p.event_id],td=tr.insertCell();
+   td.textContent=mu&&mu.total!=null?mu.total+(mu.total_rank?" (#"+mu.total_rank+")":""):"—";
+   td.className=!mu||mu.total==null?"muted":mu.total_rank&&mu.total_rank<=3?"yellow bold":"";td.title=muDetail(mu);}
+  {const td=tr.insertCell();td.textContent=p.player;td.className="player";const o=oppTag(p);if(o)add(td,"span"," "+o,"opp");}
+  cell(p.market_label);
+  cell(p.side,over?"green bold":"yellow bold");
+  cell(label(p.book||"draftkings"),p.book&&p.book!=="draftkings"?"green bold":"");
+  cell(fmtLine(p.line));cell(signed(p.odds),Number(p.odds)>0?"green":"");
+  cell(p.dk_line!=null?fmtLine(p.dk_line)+" "+signed(p.dk_odds):"—","muted");
+  cell(p.hits_l5||"—");cell(p.hits_l10||"—");
+  {const cx=entry(p)||{},t5=p.tgt_l5??cx.tgt_l5,t15=p.tgt_l10??cx.tgt_l10,sh=p.tgt_share_l5??cx.tgt_share_l5,lst=p.tgt_l5_list||cx.tgt_l5_list;
+   p.tgt_l5=t5;const td=tr.insertCell();
+   if(t5==null){td.textContent="—";td.className="muted";}
+   else{const d=t15!=null?t5-t15:0,arrow=d>=1?" ↑":d<=-1?" ↓":"";
+    td.textContent=t5+(sh!=null?" ("+Math.round(100*sh)+"%)":"")+arrow;td.className=arrow===" ↑"?"green":arrow===" ↓"?"red":"";
+    const pt=p.proj_tgt??cx.proj_tgt,vac=p.vacated_tgt??cx.vacated_tgt,om=cx.out_teammates||[];
+    td.title="Last 5 games (newest first): "+(lst||[]).join(", ")+" targets | last-10 average "+t15+(sh!=null?" | "+(100*sh).toFixed(1)+"% of team targets in last 5":"")+(pt!=null?" | projected "+pt+" targets":"")+(vac?" (incl. +"+vac+" from teammates out"+(om.length?": "+om.join(", "):"")+")":"");
+    if(vac)td.textContent+=" +";}}
+  {const cx=entry(p)||{},dd=p.def_delta??cx.def_delta,rk=p.def_rank??cx.def_rank,of=p.def_of??cx.def_of,tier=p.def_tier||cx.def_tier;
+   const td=tr.insertCell();td.textContent=dd==null?"—":(dd>0?"+":"")+dd+(tier==="wr1"?" vs #1s":tier==="te"?" vs TEs":"")+(rk?" ("+rk+"/"+of+")":"");
+   td.className=dd==null?"muted":dd>0?"green":dd<0?"red":"";
+   td.title=tier==="wr1"?"He is his team's No. 1 receiver: how No. 1 receivers do against this defense vs their normal (1 = toughest).":tier==="te"?"How tight ends do against this defense vs their normal (1 = toughest).":"How other wide receivers do against this defense vs their normal (1 = toughest).";}
+  cell(pct(p.model_prob));cell("+"+(100*p.edge).toFixed(1),"green bold");
+  cell(p.close_line!=null?fmtLine(p.close_line)+(p.close_odds!=null?" "+signed(p.close_odds):""):"—",p.close_line==null?"muted":"");
+  cell(p.price_clv!=null?(p.price_clv>0?"+":"")+(100*p.price_clv).toFixed(1)+"%":"—",p.price_clv==null?"muted":p.price_clv>0?"green bold":p.price_clv<0?"red bold":"");
+  const beat=p.actual==null?null:(over?p.actual>p.line:p.actual<p.line);
+  cell(p.actual!=null?String(p.actual):"—",beat==null?"muted":beat?"green":"red");
+  cell(res==="void"?"VOID":res.toUpperCase(),res==="win"?"green bold":res==="loss"?"red bold":res==="push"?"muted":"yellow bold");
+ }
+ if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=20;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
+ renderCompare();
+ $("backtest").textContent="Receiver model started Nov 27, 2026 (earlier picks deleted).";
+ $("model-status").textContent=verLabel(ver)+" | updated "+new Date(model.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT";
+}
+
+function render(){
+ const others=(board.books||[]).filter(b=>b!=="draftkings");
+ const head=$("headrow");head.replaceChildren();
+ ["Kickoff","Player","Market","DK Line","DK O / U","Over L5 · L10","Model Over","Model Edge",...others.map(label),"Best Over / Yes","Best Under","Books vs DK"].forEach(t=>add(head,"th",t));
+ const q=$("search").value.trim().toLowerCase(),game=$("game").value,market=$("market").value,view=$("view").value;
+ const rows=(board.props||[]).filter(p=>{
+  if(q&&!(p.player+" "+p.matchup).toLowerCase().includes(q))return false;
+  if(game&&p.event_id!==game)return false;
+  if(market&&p.market!==market)return false;
+  if(view==="flagged"&&!p.flag)return false;
+  if(view==="better"){
+   const bo=p.best_over&&p.best_over.book!=="draftkings"&&dec(p.best_over.odds)>dec(p.dk.over);
+   const bu=p.best_under&&p.best_under.book!=="draftkings"&&dec(p.best_under.odds)>dec(p.dk.under);
+   if(!bo&&!bu)return false;
+  }
+  return true;
+ });
+ const body=$("rows");body.replaceChildren();
+ let last=null;
+ for(const p of rows){
+  if(p.event_id!==last){last=p.event_id;const g=body.insertRow();g.className="gamehead";const td=g.insertCell();td.colSpan=11+others.length;td.textContent=p.matchup+" — "+kickoff(p.commence_time);}
+  const tr=body.insertRow();
+  const cell=(t,c="",title="")=>{const td=tr.insertCell();td.textContent=t;if(c)td.className=c;if(title)td.title=title;return td;};
+  cell(kickoff(p.commence_time));
+  {const td=cell(p.player,"player");const e=entry(p);const st=e&&e.status;const o=oppTag(p);if(o)add(td,"span"," "+o,"opp");
+   if(st){const c=st.toLowerCase().startsWith("q")?"yellow":"red";const b=add(td,"span"," "+st.charAt(0).toUpperCase(),c+" bold");b.title=st+" (ESPN injury report)";}}
+  cell(p.market_label);
+  if(p.one_sided){
+   cell("—");cell("Yes "+signed(p.dk.over));modelCells(cell,p);
+   for(const b of others){const x=p.books[b];cell(x?"Yes "+signed(x.over):"—",x?"":"muted");}
+   const bo=p.best_over;cell(bo?label(bo.book)+" "+signed(bo.odds):"—",bo&&bo.book!=="draftkings"&&dec(bo.odds)>dec(p.dk.over)?"best":"");
+   cell("—","muted");cell("—","muted");
+   continue;
+  }
+  cell(fmtLine(p.dk.line));cell(signed(p.dk.over)+" / "+signed(p.dk.under));modelCells(cell,p);
+  for(const b of others){
+   const x=p.books[b];
+   if(!x){cell("—","muted");continue;}
+   const diff=x.line!==p.dk.line;
+   cell(fmtLine(x.line)+"  "+signed(x.over)+" / "+signed(x.under),diff?"alt":"",diff?"Different line than DraftKings":"");
+  }
+  const bo=p.best_over,bu=p.best_under;
+  cell(bo?label(bo.book)+" "+signed(bo.odds):"—",bo&&bo.book!=="draftkings"&&dec(bo.odds)>dec(p.dk.over)?"best":"");
+  cell(bu?label(bu.book)+" "+signed(bu.odds):"—",bu&&bu.book!=="draftkings"&&dec(bu.odds)>dec(p.dk.under)?"best":"");
+  let note="—",cls="muted";
+  if(p.flag){cls="flag";note=p.gap!=null&&Math.abs(p.gap)>=(board.gap_flag||0.04)
+   ?"Others lean "+p.flag+" "+(Math.abs(p.gap)*100).toFixed(1)+" pts"
+   :"Others' line "+(p.line_diff>0?"+":"")+p.line_diff+" ("+p.flag+")";}
+  else if(p.gap!=null){note=(p.gap>0?"+":"")+(p.gap*100).toFixed(1)+" pts";}
+  cell(note,cls,"Other books' no-vig Over probability minus DraftKings', at DraftKings' line");
+ }
+ if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=11+others.length;td.textContent=(board.props||[]).length?"No props match the current filters.":"No upcoming NFL props saved yet.";}
+ const caps=Object.values(board.captured_at||{}).sort();
+ $("status").textContent=rows.length+" of "+(board.props||[]).length+" props | "+(board.books||[]).map(label).join(", ")+
+  (caps.length?" | Latest capture: "+new Date(caps[caps.length-1]).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit"})+" CT":"");
+}
+
+async function load(){
+ try{
+  const res=await fetch("./nfl_board.json?t="+Date.now(),{cache:"no-store"});
+  if(!res.ok)throw Error("HTTP "+res.status);
+  board=await res.json();
+  const g=$("game");for(const x of board.games||[]){const o=add(g,"option",x.matchup+" — "+kickoff(x.commence_time));o.value=x.event_id;}
+  const m=$("market");for(const x of board.markets||[]){const o=add(m,"option",x.label);o.value=x.key;}
+  try{const wr=await fetch("./nfl_weather.json?t="+Date.now(),{cache:"no-store"});if(wr.ok)weather=(await wr.json()).games||{};}catch(e){}
+  try{const mr=await fetch("./nfl_model.json?t="+Date.now(),{cache:"no-store"});if(mr.ok){model=await mr.json();
+   const vs=model.versions_order||[model.model_version];ver=vs[0];const sel=$("model-ver");
+   for(const v of vs){const o=add(sel,"option",verLabel(v));o.value=v;}
+   sel.parentElement.style.display=vs.length>1?"":"none";
+   renderModel();}else $("model-status").textContent="Model output not available yet.";}catch(e){$("model-status").textContent="Model output not available yet.";}
+  renderLines();renderTeams();render();
+ }catch(e){
+  $("status").textContent="NFL lines not available yet ("+e.message+"). The first board appears after the next scheduled NFL pull.";
+ }
+}
+document.querySelectorAll("#picks-head th[data-key]").forEach(th=>{
+ th.style.cursor="pointer";
+ th.addEventListener("click",()=>{
+  const k=th.dataset.key;
+  pickSort=pickSort.key===k?{key:k,asc:!pickSort.asc}:{key:k,asc:!NUMERIC_KEYS.has(k)};
+  if(model)renderModel();
+ });
+});
+$("model-ver").addEventListener("change",e=>{ver=e.target.value;if(model){renderModel();render();}});
+["search","game","market","view"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",()=>board&&render()));
+load();
+</script>
+<script>
+(()=>{
+ const g=id=>document.getElementById(id);let D=null,tab=0,sort={i:null,asc:false};
+ const fmt=(v,isPct)=>v==null||v===""?"—":isPct?(v*100).toFixed(1)+"%":typeof v==="number"?(Number.isInteger(v)?String(v):String(Math.round(v*100)/100)):String(v);
+ function draw(){
+  const t=D.tabs[tab],pct=new Set(t.pcts),q=g("rd-search").value.trim().toLowerCase(),pos=g("rd-pos").value;
+  const pi=t.cols.indexOf("Pos");g("rd-pos").style.display=pi>=0?"":"none";
+  g("rd-tabs").querySelectorAll("button").forEach((b,i)=>b.className="rdtab"+(i===tab?" on":""));
+  const head=g("rd-head");head.replaceChildren();
+  t.cols.forEach((c,i)=>{const th=document.createElement("th");th.textContent=c+(sort.i===i?(sort.asc?" ▲":" ▼"):"");th.style.cursor="pointer";
+   th.onclick=()=>{sort=sort.i===i?{i,asc:!sort.asc}:{i,asc:typeof t.rows[0][i]==="string"};draw();};head.append(th);});
+  let rows=t.rows.filter(r=>(!q||r.some(v=>typeof v==="string"&&v.toLowerCase().includes(q)))&&(!pos||pi<0||r[pi]===pos));
+  if(sort.i!=null)rows=rows.slice().sort((a,b)=>{const x=a[sort.i],y=b[sort.i];if(x==null)return 1;if(y==null)return -1;
+   const c=typeof x==="string"?x.localeCompare(y):x-y;return sort.asc?c:-c;});
+  const body=g("rd-body");body.replaceChildren();
+  for(const r of rows){const tr=body.insertRow();r.forEach((v,i)=>{const td=tr.insertCell();td.textContent=fmt(v,pct.has(t.cols[i]));if(i===0)td.className="bold";});}
+  g("rd-status").textContent=rows.length+" rows | "+D.title+" | snapshot, not auto-updated";
+  const src=(D.sources||[]).find(x=>x[0]===t.name);g("rd-note").textContent=src?"Source: "+src[1]+". "+(src[2]||""):"";
+ }
+ fetch("./nfl_receiver_data.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(d=>{D=d;
+  for(const t of D.tabs)t.pcts=t.pct||[];
+  D.tabs.forEach((t,i)=>{const b=document.createElement("button");b.textContent=t.name;b.onclick=()=>{tab=i;sort={i:null,asc:false};draw();};g("rd-tabs").append(b);});
+  g("rd-search").oninput=draw;g("rd-pos").onchange=draw;draw();
+ }).catch(()=>{g("rd-status").textContent="Receiver data not available.";});
+})();
+</script>
+</body>
+</html>
