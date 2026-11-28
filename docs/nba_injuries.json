@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-28T03:19:13.686367+00:00",
+  "generated_at": "2026-11-28T04:25:09.983176+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 95,
+  "player_count": 96,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,10 +34,10 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 95,
+  "players_with_team": 96,
   "players_without_team": 0,
   "status_counts": {
-    "O": 88,
+    "O": 89,
     "T": 7
   },
   "players": [
@@ -347,6 +347,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-11-24T18:33Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "-61498",
+      "name": "Gui Santos",
+      "team": "GSW",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Knee | out",
+      "date": "2026-11-28T04:20Z",
       "team_match": "feed"
     },
     {
