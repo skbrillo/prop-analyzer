@@ -545,10 +545,12 @@ def main():
         del picks["picks"][pk]
     age = outside_age_days(picks, now)
     use_outside = age is not None and age <= OUTSIDE_MAX_AGE_DAYS
-    # Re-pick games not yet played once the outside data is in use (picks locked without it).
+    # Re-pick games not yet played once the outside data is in use (picks locked without it),
+    # and again whenever new outside files are uploaded.
     for pk, p in list(picks["picks"].items()):
         tip = parse_time(p["commence_time"])
-        if use_outside and p.get("model_rev", 1) < MODEL_REV and p.get("result") in (None, "pending") and tip and tip > now:
+        stale = p.get("model_rev", 1) < MODEL_REV or p.get("outside_hash") != OUTSIDE["hash"]
+        if use_outside and stale and p.get("result") in (None, "pending") and tip and tip > now:
             del picks["picks"][pk]
             print(f'Re-picking (model updated): {p["player"]} {p["market"]} {p["side"]} {p["line"]}')
     lg_man, lg_blitz = league_rates() if use_outside else (None, None)
@@ -673,7 +675,8 @@ def main():
             "tgt_l10": ctx.get("tgt_l10"), "tgt_share_l5": ctx.get("tgt_share_l5"),
             "fp_proj": ctx.get("fp_proj"), "fp_adj": ctx.get("fp_adj"),
             "matchup_scale": ctx.get("matchup_scale"), "matchup_note": ctx.get("matchup_note"),
-            "model_version": ver, "model_rev": MODEL_REV if use_outside else MODEL_REV - 1, "result": "pending",
+            "model_version": ver, "model_rev": MODEL_REV if use_outside else MODEL_REV - 1,
+            "outside_hash": OUTSIDE["hash"] if use_outside else None, "result": "pending",
         }
         print(f'Locked {LABELS[ver]}: {prop["player"]} {prop["market"]} {o["side"]} {o["line"]} '
               f'({o["odds"]:+d} {o["book"]}) edge {o["edge"]:.1%} | L15 {h}/{n} at this line | D {ctx["def_delta"]}')

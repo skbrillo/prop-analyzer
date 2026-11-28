@@ -7,7 +7,8 @@ load() on every run; nothing here needs to run on its own.
         *Projections_WR*.csv, *Projections_TE*.csv     weekly receptions / yards projections
         *Target_Distribution*.csv                     team WR / TE / RB target split
         *Snap_Count*.csv                              positions (WR / TE / RB)
-    Rotobot WR stats (select the table on the page, copy, paste into a .txt file):
+    Rotobot WR / TE stats (select the table on the page, copy, paste into a .txt file;
+    more files for the same filter are merged, e.g. rotobot_te_man.txt, rotobot_man_2.txt):
         rotobot_all.txt      no filter
         rotobot_man.txt      Defensive Shell = Cover 0 + Cover 1 + Two Man
         rotobot_zone.txt     Defensive Shell = Cover 2 + 3 + 4 + 6 + 9
@@ -60,12 +61,17 @@ def read_csv(path):
         return list(csv.reader(fh))
 
 
-def rotobot(name):
-    """Rotobot WR table pasted as text: name line, 'Team·#N' line, then a tab row.
-    Returns {player_key: {"tgt", "yds", "plays"}}."""
-    path = RAW / name
-    if not path.exists():
-        return {}
+def rotobot(split):
+    """Rotobot tables pasted as text: name line, 'Team·#N' line, then a tab row.
+    Merges every file for this split (rotobot_all.txt, rotobot_te_all.txt,
+    rotobot_all_2.txt, ...). Returns {player_key: {"tgt", "yds", "plays"}}."""
+    out = {}
+    for path in sorted(RAW.glob(f"rotobot*{split}*.txt")):
+        out.update(rotobot_file(path))
+    return out
+
+
+def rotobot_file(path):
     lines = path.read_text(encoding="utf-8").replace("\r", "").split("\n")
     out = {}
     for i, line in enumerate(lines):
@@ -123,8 +129,7 @@ def load():
                 continue
             rec.setdefault(player_key(r[0]), {})["fp"] = {"receptions": num(r[2]), "rec_yds": num(r[3]), "pos": pos}
 
-    base, man, zone, blitz = (rotobot(f) for f in ("rotobot_all.txt", "rotobot_man.txt",
-                                                    "rotobot_zone.txt", "rotobot_blitz.txt"))
+    base, man, zone, blitz = (rotobot(f) for f in ("all", "man", "zone", "blitz"))
     for k, b in base.items():
         sp = {"all": b}
         if k in man:
