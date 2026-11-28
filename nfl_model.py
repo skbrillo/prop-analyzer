@@ -94,7 +94,7 @@ MAX_PICKS_PER_PLAYER = 1
 MAX_PICKS_PER_GAME = 6
 
 # Outside data (FantasyPros / Rotobot / Sharp)
-MODEL_REV = 2                # pending picks locked by an older revision are re-picked
+MODEL_REV = 3                # pending picks locked by an older revision are re-picked (only once outside data is on)
 OUTSIDE_MAX_AGE_DAYS = 9     # outside files older than this are ignored
 FP_WEIGHT = 5                # the FantasyPros projection counts as this many games
 MATCHUP_PRIOR_PLAYS = 100    # split reliability = plays / (plays + 100)
@@ -543,14 +543,14 @@ def main():
     # Only the current model keeps picks.
     for pk in [k for k, p in picks["picks"].items() if p.get("model_version") not in VERSIONS]:
         del picks["picks"][pk]
-    # Re-pick games not yet played when the model changes.
-    for pk, p in list(picks["picks"].items()):
-        tip = parse_time(p["commence_time"])
-        if p.get("model_rev", 1) < MODEL_REV and p.get("result") in (None, "pending") and tip and tip > now:
-            del picks["picks"][pk]
-            print(f'Re-picking (model updated): {p["player"]} {p["market"]} {p["side"]} {p["line"]}')
     age = outside_age_days(picks, now)
     use_outside = age is not None and age <= OUTSIDE_MAX_AGE_DAYS
+    # Re-pick games not yet played once the outside data is in use (picks locked without it).
+    for pk, p in list(picks["picks"].items()):
+        tip = parse_time(p["commence_time"])
+        if use_outside and p.get("model_rev", 1) < MODEL_REV and p.get("result") in (None, "pending") and tip and tip > now:
+            del picks["picks"][pk]
+            print(f'Re-picking (model updated): {p["player"]} {p["market"]} {p["side"]} {p["line"]}')
     lg_man, lg_blitz = league_rates() if use_outside else (None, None)
     fp_cal = fp_calibration(board) if use_outside else {}
     print(f"Outside data: {'ON' if use_outside else 'OFF'} (files {age} days old) | FP calibration {fp_cal}")
@@ -673,7 +673,7 @@ def main():
             "tgt_l10": ctx.get("tgt_l10"), "tgt_share_l5": ctx.get("tgt_share_l5"),
             "fp_proj": ctx.get("fp_proj"), "fp_adj": ctx.get("fp_adj"),
             "matchup_scale": ctx.get("matchup_scale"), "matchup_note": ctx.get("matchup_note"),
-            "model_version": ver, "model_rev": MODEL_REV, "result": "pending",
+            "model_version": ver, "model_rev": MODEL_REV if use_outside else MODEL_REV - 1, "result": "pending",
         }
         print(f'Locked {LABELS[ver]}: {prop["player"]} {prop["market"]} {o["side"]} {o["line"]} '
               f'({o["odds"]:+d} {o["book"]}) edge {o["edge"]:.1%} | L15 {h}/{n} at this line | D {ctx["def_delta"]}')
