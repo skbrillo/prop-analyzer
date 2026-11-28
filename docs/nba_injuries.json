@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-28T02:27:13.154472+00:00",
+  "generated_at": "2026-11-28T03:19:13.686367+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 94,
+  "player_count": 95,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,10 +34,10 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 94,
+  "players_with_team": 95,
   "players_without_team": 0,
   "status_counts": {
-    "O": 87,
+    "O": 88,
     "T": 7
   },
   "players": [
@@ -963,6 +963,17 @@
       "raw_status": "Out",
       "reason": "Surgery | Knee | out",
       "date": "2026-10-05T21:43Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
+      "injury_record_id": "541219",
+      "name": "Ja'Kobe Walter",
+      "team": "TOR",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Bruise | Quadriceps | out",
+      "date": "2026-11-28T02:34Z",
       "team_match": "feed"
     },
     {
