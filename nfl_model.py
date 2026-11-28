@@ -16,6 +16,17 @@ Receiver model ("nfl-receiver")
     4. Blend with the book's no-vig price (worth 10 games):
            chance = (adjusted hits + 10 x market chance) / (games + 10)
        Pick when it beats a book's no-vig price by 5+ points.
+    5. Outside data (data/nfl_outside/raw, refreshed weekly; switched off if
+       older than 9 days):
+       - Coverage / blitz matchup: his Rotobot yards (or targets) per play vs
+         man, zone and the blitz, weighted by how often this defense plays man
+         and blitzes (Sharp Football) vs the league average. Shrunk for small
+         samples and held to +/-8%. Multiplies his past games like the role scale.
+       - FantasyPros projection: his past games re-centred on the FP projection
+         (after correcting FP's usual gap to the books' lines) count as 5 more
+         games in the blend.
+       - Target distribution: vacated targets go to WR/TE by the team's real
+         WR + TE share instead of a flat 75%.
     Guards: 4+ projected targets; no Overs in games flagged for wind; no picks for a team whose QB for
     this game (the one the books post passing props for) is not the QB he has
     been catching passes from.
@@ -33,6 +44,7 @@ from pathlib import Path
 from statistics import mean, median
 from zoneinfo import ZoneInfo
 
+import build_nfl_outside
 import clv_report
 import nfl_teams
 from build_market_board import fair_over, parse_time
@@ -80,6 +92,14 @@ WIND_NO_OVER_MARKETS = {"pass_yds", "rec_yds", "receptions"}
 ODDS_MIN, ODDS_MAX = -130, 130
 MAX_PICKS_PER_PLAYER = 1
 MAX_PICKS_PER_GAME = 6
+
+# Outside data (FantasyPros / Rotobot / Sharp)
+MODEL_REV = 2                # pending picks locked by an older revision are re-picked
+OUTSIDE_MAX_AGE_DAYS = 9     # outside files older than this are ignored
+FP_WEIGHT = 5                # the FantasyPros projection counts as this many games
+MATCHUP_PRIOR_PLAYS = 100    # split reliability = plays / (plays + 100)
+MATCHUP_MIN, MATCHUP_MAX = 0.92, 1.08
+OUTSIDE = build_nfl_outside.load()
 
 def f(x):
     try:
@@ -289,25 +309,30 @@ def hits(values, line):
     return sum(v > line for v in values), len(values)
 
 
-def hit_chance(values, delta, line, fair, scale=1.0):
+def hit_chance(values, delta, line, fair, scale=1.0, fp_vals=None):
     """Role- and defense-adjusted hit rate over the last 10 games (last 5 count double),
-    blended with the book's no-vig chance (Over side). values are most recent first."""
+    plus the FantasyPros projection (worth FP_WEIGHT games), blended with the book's
+    no-vig chance (Over side). values are most recent first."""
     w = [2 if i < RECENT else 1 for i in range(len(values))]
     h = sum(wi for wi, v in zip(w, values) if v * scale + delta > line)
-    return (h + MARKET_WEIGHT * fair) / (sum(w) + MARKET_WEIGHT)
+    n = sum(w)
+    if fp_vals:
+        h += FP_WEIGHT * sum(v > line for v in fp_vals) / len(fp_vals)
+        n += FP_WEIGHT
+    return (h + MARKET_WEIGHT * fair) / (n + MARKET_WEIGHT)
 
 
 def offer_ok(edge, odds, lo, hi):
     return lo <= edge <= hi and ODDS_MIN <= odds <= ODDS_MAX
 
 
-def hitrate_offer(prop, values, delta, windy, scale=1.0):
+def hitrate_offer(prop, values, delta, windy, scale=1.0, fp_vals=None):
     best = None
     for book, bl in (prop.get("books") or {}).items():
         fair = fair_over(bl.get("over"), bl.get("under"))
         if not fair:
             continue
-        p = hit_chance(values, delta, bl["line"], fair, scale)
+        p = hit_chance(values, delta, bl["line"], fair, scale, fp_vals)
         for side, mp, fp, odds in (("Over", p, fair, bl["over"]), ("Under", 1 - p, 1 - fair, bl["under"])):
             if side == "Over" and prop["market"] in WIND_NO_OVER_MARKETS and prop["event_id"] in windy:
                 continue
@@ -344,7 +369,7 @@ POSITIONS = load_positions()
 
 def position(key, rows):
     """Real position from the positions file; otherwise guessed from usage."""
-    pos = POSITIONS.get(key)
+    pos = POSITIONS.get(key) or OUTSIDE["positions"].get(key)
     if pos:
         return pos
     r = role(rows)
@@ -417,20 +442,87 @@ def defense_tiers(all_games, season, alpha):
     return table
 
 
-def vacated_targets(team, key, team_rx, injury_status):
+def vacated_targets(team, key, team_rx, injury_status, use_outside=False):
     """Targets a game left by teammates ruled Out, and this player's expected cut."""
     rx = team_rx.get(team, [])
     out = [r for r in rx if r["key"] != key and r["share"] >= VACATED_MIN_SHARE
            and injury_status.get((team, r["key"]), "").lower() in OUT_STATUSES]
     if not out:
         return 0.0, []
-    vacated = sum(r["tgt_l5"] for r in out) * VACATED_TO_RECEIVERS
+    share = VACATED_TO_RECEIVERS
+    t = OUTSIDE["targets"].get(team) if use_outside else None
+    if t:
+        share = t["wr"] + t["te"]
+    vacated = sum(r["tgt_l5"] for r in out) * share
     remaining = [r for r in rx if r not in out and injury_status.get((team, r["key"]), "").lower() not in OUT_STATUSES]
     me = next((r for r in remaining if r["key"] == key), None)
     total = sum(r["share"] for r in remaining)
     if not me or not total:
         return 0.0, [r["key"] for r in out]
     return vacated * me["share"] / total, [r["key"] for r in out]
+
+
+def outside_age_days(picks, now):
+    """Days since the outside files last changed (tracked in the picks file)."""
+    meta = picks.get("outside") or {}
+    if OUTSIDE["hash"] is None:
+        return None
+    if meta.get("hash") != OUTSIDE["hash"]:
+        meta = {"hash": OUTSIDE["hash"], "as_of": now.date().isoformat()}
+        picks["outside"] = meta
+    return (now.date() - datetime.fromisoformat(meta["as_of"]).date()).days
+
+
+def league_rates():
+    d = [x for x in OUTSIDE["defenses"].values() if x.get("man") is not None and x.get("zone")]
+    man = mean(x["man"] / (x["man"] + x["zone"]) for x in d) if d else None
+    b = [x["blitz"] for x in OUTSIDE["defenses"].values() if x.get("blitz") is not None]
+    return man, (mean(b) if b else None)
+
+
+def matchup_scale(key, market, opp, lg_man, lg_blitz):
+    """His per-play production vs man / zone and blitz / no blitz, weighted by this
+    defense's mix vs the league's. Returns (scale, note)."""
+    sp = (OUTSIDE["receivers"].get(key) or {}).get("splits") or {}
+    dfn = OUTSIDE["defenses"].get(opp) or {}
+    what = "yds" if market == "rec_yds" else "tgt"
+    rate = lambda s: s[what] / s["plays"] if s and s.get("plays") else None
+    raw, plays, parts = 1.0, [], []
+    if lg_man is not None and dfn.get("man") is not None and dfn.get("zone") and rate(sp.get("man")) is not None \
+            and rate(sp.get("zone")) is not None:
+        rm, rz = rate(sp["man"]), rate(sp["zone"])
+        mo = dfn["man"] / (dfn["man"] + dfn["zone"])
+        avg = lg_man * rm + (1 - lg_man) * rz
+        if avg > 0:
+            raw *= (mo * rm + (1 - mo) * rz) / avg
+            plays += [sp["man"]["plays"], sp["zone"]["plays"]]
+            parts.append(f"{what}/play vs man {rm:.2f}, zone {rz:.2f}; {opp} man {dfn['man']:.0%}")
+    if lg_blitz is not None and dfn.get("blitz") is not None and rate(sp.get("blitz")) is not None \
+            and rate(sp.get("no_blitz")) is not None:
+        rb, rn = rate(sp["blitz"]), rate(sp["no_blitz"])
+        avg = lg_blitz * rb + (1 - lg_blitz) * rn
+        if avg > 0:
+            raw *= (dfn["blitz"] * rb + (1 - dfn["blitz"]) * rn) / avg
+            plays += [sp["blitz"]["plays"], sp["no_blitz"]["plays"]]
+            parts.append(f"vs blitz {rb:.2f}, no blitz {rn:.2f}; {opp} blitz {dfn['blitz']:.0%}")
+    if not plays:
+        return 1.0, None
+    k = min(plays) / (min(plays) + MATCHUP_PRIOR_PLAYS)
+    scale = min(MATCHUP_MAX, max(MATCHUP_MIN, 1 + k * (raw - 1)))
+    return scale, " | ".join(parts)
+
+
+def fp_calibration(board):
+    """FantasyPros projections run above the books' lines (yards especially).
+    Median FP projection / DraftKings line per market, from this week's board."""
+    ratios = defaultdict(list)
+    for prop in board.get("props", []):
+        m = prop["market"]
+        fp = ((OUTSIDE["receivers"].get(player_key(prop["player"])) or {}).get("fp") or {}).get(m)
+        line = (prop.get("dk") or {}).get("line")
+        if m in PICK_MARKETS and fp and line:
+            ratios[m].append(fp / line)
+    return {m: median(v) for m, v in ratios.items() if len(v) >= 20}
 
 
 def main():
@@ -451,6 +543,17 @@ def main():
     # Only the current model keeps picks.
     for pk in [k for k, p in picks["picks"].items() if p.get("model_version") not in VERSIONS]:
         del picks["picks"][pk]
+    # Re-pick games not yet played when the model changes.
+    for pk, p in list(picks["picks"].items()):
+        tip = parse_time(p["commence_time"])
+        if p.get("model_rev", 1) < MODEL_REV and p.get("result") in (None, "pending") and tip and tip > now:
+            del picks["picks"][pk]
+            print(f'Re-picking (model updated): {p["player"]} {p["market"]} {p["side"]} {p["line"]}')
+    age = outside_age_days(picks, now)
+    use_outside = age is not None and age <= OUTSIDE_MAX_AGE_DAYS
+    lg_man, lg_blitz = league_rates() if use_outside else (None, None)
+    fp_cal = fp_calibration(board) if use_outside else {}
+    print(f"Outside data: {'ON' if use_outside else 'OFF'} (files {age} days old) | FP calibration {fp_cal}")
 
     # Which QB the books post passing props for in each game, by team.
     board_qbs = defaultdict(set)
@@ -483,12 +586,19 @@ def main():
         d = defense.get((opp, tier, m)) if pos in ("WR", "TE") else None
         delta = d["adj"] if d else 0.0
         tt = target_trend(history)
-        bonus, out_mates = vacated_targets(team, key, team_rx, injury_status)
+        bonus, out_mates = vacated_targets(team, key, team_rx, injury_status, use_outside)
         proj_tgt = None
         scale = 1.0
         if tt["tgt_l5"] is not None and tt["tgt_l10"]:
             proj_tgt = 0.6 * tt["tgt_l5"] + 0.4 * tt["tgt_l10"] + bonus
             scale = min(SCALE_MAX, max(SCALE_MIN, proj_tgt / tt["tgt_l10"]))
+        mscale, mnote = (matchup_scale(key, m, opp, lg_man, lg_blitz) if use_outside and pos in ("WR", "TE")
+                         else (1.0, None))
+        fp_raw = ((OUTSIDE["receivers"].get(key) or {}).get("fp") or {}).get(m) if use_outside else None
+        fp_vals = None
+        if fp_raw and fp_cal.get(m) and values and mean(values) > 0:
+            centre = fp_raw / fp_cal[m]
+            fp_vals = [v * centre / mean(values) for v in values]
         qbs = board_qbs.get((prop["event_id"], team))
         qb_change = bool(qbs) and qb_last.get(team) not in qbs
         last_game = datetime.fromisoformat(history[-1]["date"]).replace(tzinfo=timezone.utc)
@@ -504,6 +614,8 @@ def main():
             "def_games": d["n"] if d else 0, "opponent": opp, "role": rl, "pos": pos, "def_tier": tier,
             "proj_tgt": round(proj_tgt, 1) if proj_tgt is not None else None, "role_scale": round(scale, 2),
             "vacated_tgt": round(bonus, 1), "out_teammates": out_mates, "qb_change": qb_change,
+            "fp_proj": fp_raw, "fp_adj": round(fp_raw / fp_cal[m], 1) if fp_raw and fp_cal.get(m) else None,
+            "matchup_scale": round(mscale, 3), "matchup_note": mnote,
         }
         context.update(tt)
         entry = {"status": status, **context}
@@ -511,7 +623,7 @@ def main():
         projections[f'{prop["event_id"]}|{key}|{m}'] = entry
         if not fair:
             continue
-        p_hit = hit_chance(values, delta, dk["line"], fair, scale) if values else None
+        p_hit = hit_chance(values, delta, dk["line"], fair, scale * mscale, fp_vals) if values else None
         if p_hit is not None:
             entry[HIT] = {"projection": context["median_l10"], "p_over": round(p_hit, 3),
                           "market_over": round(fair, 3), "edge_over": round(p_hit - fair, 3), "games": len(values)}
@@ -523,7 +635,7 @@ def main():
         if not out and fresh and len(values) >= MIN_HISTORY and pos in ("WR", "TE") and not qb_change \
                 and (proj_tgt or 0) >= MIN_PROJ_TARGETS:
             hit_ok.add((prop["event_id"], key, m))
-            o = hitrate_offer(prop, values, delta, windy, scale)
+            o = hitrate_offer(prop, values, delta, windy, scale * mscale, fp_vals)
             if o:
                 candidates.append((HIT, o, prop, key, context))
 
@@ -559,7 +671,9 @@ def main():
             "role_scale": ctx["role_scale"], "vacated_tgt": ctx["vacated_tgt"],
             "tgt_l5": ctx.get("tgt_l5"), "tgt_l5_list": ctx.get("tgt_l5_list"),
             "tgt_l10": ctx.get("tgt_l10"), "tgt_share_l5": ctx.get("tgt_share_l5"),
-            "model_version": ver, "result": "pending",
+            "fp_proj": ctx.get("fp_proj"), "fp_adj": ctx.get("fp_adj"),
+            "matchup_scale": ctx.get("matchup_scale"), "matchup_note": ctx.get("matchup_note"),
+            "model_version": ver, "model_rev": MODEL_REV, "result": "pending",
         }
         print(f'Locked {LABELS[ver]}: {prop["player"]} {prop["market"]} {o["side"]} {o["line"]} '
               f'({o["odds"]:+d} {o["book"]}) edge {o["edge"]:.1%} | L15 {h}/{n} at this line | D {ctx["def_delta"]}')
@@ -615,6 +729,8 @@ def main():
                   "markets": sorted(PICK_MARKETS), "alpha_share": ALPHA_SHARE, "alpha_targets": ALPHA_TARGETS,
                   "tier_shrink": TIER_SHRINK, "role_scale": [SCALE_MIN, SCALE_MAX],
                   "vacated_min_share": VACATED_MIN_SHARE, "min_proj_targets": MIN_PROJ_TARGETS, "vacated_to_receivers": VACATED_TO_RECEIVERS},
+        "outside": {"on": use_outside, "age_days": age, "as_of": (picks.get("outside") or {}).get("as_of"),
+                    "fp_calibration": fp_cal, "fp_weight": FP_WEIGHT, "matchup_range": [MATCHUP_MIN, MATCHUP_MAX]},
         "injuries_updated": json.loads(INJURIES.read_text(encoding="utf-8")).get("updated_at") if INJURIES.exists() else None,
         "projections": projections,
         "teams": teams,
