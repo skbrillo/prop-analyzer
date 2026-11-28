@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-27T22:58:09+00:00",
+  "generated_at": "2026-11-28T09:47:24+00:00",
   "settings": {
     "close_max_minutes": 60,
     "sharp_books": [
@@ -11,87 +11,100 @@
   },
   "coverage": {
     "picks": 325,
-    "picks_with_close": 30,
-    "picks_with_price_clv": 22,
-    "picks_with_sharp_clv": 25
+    "picks_with_close": 40,
+    "picks_with_price_clv": 29,
+    "picks_with_sharp_clv": 34
   },
   "by_system": [
     {
       "group": "8910",
-      "picks": 16,
-      "with_close": 16,
-      "price_clv_n": 12,
-      "avg_price_clv_pct": -2.45,
-      "beat_close_pct": 8.3,
-      "sharp_clv_n": 14,
-      "avg_sharp_clv_pct": -2.07,
-      "line_moved_for_pct": 13.3,
-      "line_moved_against_pct": 6.7,
-      "avg_line_clv": 0.13
+      "picks": 23,
+      "with_close": 23,
+      "price_clv_n": 16,
+      "avg_price_clv_pct": -1.99,
+      "beat_close_pct": 18.8,
+      "sharp_clv_n": 20,
+      "avg_sharp_clv_pct": -1.31,
+      "line_moved_for_pct": 18.2,
+      "line_moved_against_pct": 9.1,
+      "avg_line_clv": 0.09
     },
     {
       "group": "edge",
-      "picks": 14,
-      "with_close": 14,
-      "price_clv_n": 10,
-      "avg_price_clv_pct": -2.98,
+      "picks": 17,
+      "with_close": 17,
+      "price_clv_n": 13,
+      "avg_price_clv_pct": -3.02,
       "beat_close_pct": 0.0,
-      "sharp_clv_n": 11,
-      "avg_sharp_clv_pct": -2.6,
-      "line_moved_for_pct": 21.4,
-      "line_moved_against_pct": 7.1,
-      "avg_line_clv": 0.07
+      "sharp_clv_n": 14,
+      "avg_sharp_clv_pct": -2.47,
+      "line_moved_for_pct": 17.6,
+      "line_moved_against_pct": 5.9,
+      "avg_line_clv": 0.06
     }
   ],
   "by_system_market_side": [
     {
       "group": "8910 | assists Over",
+      "picks": 3,
+      "with_close": 3,
+      "price_clv_n": 2,
+      "avg_price_clv_pct": -5.38,
+      "beat_close_pct": 0.0,
+      "sharp_clv_n": 3,
+      "avg_sharp_clv_pct": -0.96,
+      "line_moved_for_pct": 33.3,
+      "line_moved_against_pct": 0.0,
+      "avg_line_clv": 0.33
+    },
+    {
+      "group": "8910 | assists Under",
       "picks": 1,
       "with_close": 1,
       "price_clv_n": 1,
-      "avg_price_clv_pct": -5.05,
-      "beat_close_pct": 0.0,
+      "avg_price_clv_pct": 3.29,
+      "beat_close_pct": 100.0,
       "sharp_clv_n": 1,
-      "avg_sharp_clv_pct": -3.83,
+      "avg_sharp_clv_pct": 1.83,
       "line_moved_for_pct": 0.0,
       "line_moved_against_pct": 0.0,
       "avg_line_clv": 0.0
     },
     {
       "group": "8910 | points Over",
-      "picks": 6,
-      "with_close": 6,
+      "picks": 7,
+      "with_close": 7,
       "price_clv_n": 4,
       "avg_price_clv_pct": -3.86,
       "beat_close_pct": 0.0,
       "sharp_clv_n": 5,
       "avg_sharp_clv_pct": -3.5,
-      "line_moved_for_pct": 16.7,
-      "line_moved_against_pct": 16.7,
-      "avg_line_clv": 0.17
+      "line_moved_for_pct": 14.3,
+      "line_moved_against_pct": 28.6,
+      "avg_line_clv": -0.14
     },
     {
       "group": "8910 | points Under",
-      "picks": 6,
-      "with_close": 6,
+      "picks": 7,
+      "with_close": 7,
       "price_clv_n": 4,
       "avg_price_clv_pct": -2.21,
       "beat_close_pct": 0.0,
-      "sharp_clv_n": 5,
-      "avg_sharp_clv_pct": -1.53,
-      "line_moved_for_pct": 20.0,
+      "sharp_clv_n": 6,
+      "avg_sharp_clv_pct": -1.21,
+      "line_moved_for_pct": 33.3,
       "line_moved_against_pct": 0.0,
-      "avg_line_clv": 0.2
+      "avg_line_clv": 0.33
     },
     {
       "group": "8910 | rebounds Under",
-      "picks": 3,
-      "with_close": 3,
-      "price_clv_n": 3,
+      "picks": 5,
+      "with_close": 5,
+      "price_clv_n": 5,
       "avg_price_clv_pct": -0.03,
-      "beat_close_pct": 33.3,
-      "sharp_clv_n": 3,
-      "avg_sharp_clv_pct": 0.02,
+      "beat_close_pct": 40.0,
+      "sharp_clv_n": 5,
+      "avg_sharp_clv_pct": -0.1,
       "line_moved_for_pct": 0.0,
       "line_moved_against_pct": 0.0,
       "avg_line_clv": 0.0
@@ -110,17 +123,30 @@
       "avg_line_clv": 0.0
     },
     {
-      "group": "edge | points Over",
-      "picks": 4,
-      "with_close": 4,
-      "price_clv_n": 2,
-      "avg_price_clv_pct": -2.33,
+      "group": "edge | assists Under",
+      "picks": 1,
+      "with_close": 1,
+      "price_clv_n": 1,
+      "avg_price_clv_pct": -4.51,
       "beat_close_pct": 0.0,
-      "sharp_clv_n": 3,
-      "avg_sharp_clv_pct": -3.27,
-      "line_moved_for_pct": 50.0,
+      "sharp_clv_n": 1,
+      "avg_sharp_clv_pct": -0.43,
+      "line_moved_for_pct": 0.0,
       "line_moved_against_pct": 0.0,
-      "avg_line_clv": 0.75
+      "avg_line_clv": 0.0
+    },
+    {
+      "group": "edge | points Over",
+      "picks": 6,
+      "with_close": 6,
+      "price_clv_n": 4,
+      "avg_price_clv_pct": -2.41,
+      "beat_close_pct": 0.0,
+      "sharp_clv_n": 5,
+      "avg_sharp_clv_pct": -3.08,
+      "line_moved_for_pct": 33.3,
+      "line_moved_against_pct": 0.0,
+      "avg_line_clv": 0.5
     },
     {
       "group": "edge | points Under",
@@ -152,39 +178,52 @@
   "by_system_price": [
     {
       "group": "8910 | minus",
-      "picks": 16,
-      "with_close": 16,
-      "price_clv_n": 12,
-      "avg_price_clv_pct": -2.45,
-      "beat_close_pct": 8.3,
-      "sharp_clv_n": 14,
-      "avg_sharp_clv_pct": -2.07,
-      "line_moved_for_pct": 13.3,
-      "line_moved_against_pct": 6.7,
-      "avg_line_clv": 0.13
+      "picks": 20,
+      "with_close": 20,
+      "price_clv_n": 13,
+      "avg_price_clv_pct": -2.36,
+      "beat_close_pct": 7.7,
+      "sharp_clv_n": 17,
+      "avg_sharp_clv_pct": -1.47,
+      "line_moved_for_pct": 21.1,
+      "line_moved_against_pct": 10.5,
+      "avg_line_clv": 0.11
     },
     {
-      "group": "edge | minus",
-      "picks": 11,
-      "with_close": 11,
-      "price_clv_n": 7,
-      "avg_price_clv_pct": -2.96,
-      "beat_close_pct": 0.0,
-      "sharp_clv_n": 9,
-      "avg_sharp_clv_pct": -2.94,
-      "line_moved_for_pct": 27.3,
-      "line_moved_against_pct": 9.1,
-      "avg_line_clv": 0.09
-    },
-    {
-      "group": "edge | plus",
+      "group": "8910 | plus",
       "picks": 3,
       "with_close": 3,
       "price_clv_n": 3,
-      "avg_price_clv_pct": -3.03,
+      "avg_price_clv_pct": -0.4,
+      "beat_close_pct": 66.7,
+      "sharp_clv_n": 3,
+      "avg_sharp_clv_pct": -0.43,
+      "line_moved_for_pct": 0.0,
+      "line_moved_against_pct": 0.0,
+      "avg_line_clv": 0.0
+    },
+    {
+      "group": "edge | minus",
+      "picks": 13,
+      "with_close": 13,
+      "price_clv_n": 9,
+      "avg_price_clv_pct": -2.86,
       "beat_close_pct": 0.0,
-      "sharp_clv_n": 2,
-      "avg_sharp_clv_pct": -1.08,
+      "sharp_clv_n": 11,
+      "avg_sharp_clv_pct": -2.91,
+      "line_moved_for_pct": 23.1,
+      "line_moved_against_pct": 7.7,
+      "avg_line_clv": 0.08
+    },
+    {
+      "group": "edge | plus",
+      "picks": 4,
+      "with_close": 4,
+      "price_clv_n": 4,
+      "avg_price_clv_pct": -3.4,
+      "beat_close_pct": 0.0,
+      "sharp_clv_n": 3,
+      "avg_sharp_clv_pct": -0.86,
       "line_moved_for_pct": 0.0,
       "line_moved_against_pct": 0.0,
       "avg_line_clv": 0.0
@@ -193,37 +232,37 @@
   "movement_study": {
     "definition": "Props with a DraftKings open (>= 120 min before tip) and close (<= 60 min). Signal = sharp no-vig differs from DK by >= 3% at the same line, or sharp main line differs by >= 0.5 points.",
     "all": {
-      "n": 5,
-      "dk_moved_toward_sharp_pct": 80.0,
-      "dk_moved_away_pct": 20.0,
-      "dk_no_move_pct": 0.0,
-      "follow_sharp_clv_n": 3,
-      "follow_sharp_avg_clv_pct": -2.37
+      "n": 11,
+      "dk_moved_toward_sharp_pct": 54.5,
+      "dk_moved_away_pct": 27.3,
+      "dk_no_move_pct": 18.2,
+      "follow_sharp_clv_n": 7,
+      "follow_sharp_avg_clv_pct": -3.63
     },
     "by_market": {
       "assists": {
-        "n": 2,
-        "dk_moved_toward_sharp_pct": 100.0,
+        "n": 3,
+        "dk_moved_toward_sharp_pct": 66.7,
         "dk_moved_away_pct": 0.0,
-        "dk_no_move_pct": 0.0,
-        "follow_sharp_clv_n": 2,
-        "follow_sharp_avg_clv_pct": -0.78
+        "dk_no_move_pct": 33.3,
+        "follow_sharp_clv_n": 3,
+        "follow_sharp_avg_clv_pct": -1.89
       },
       "points": {
-        "n": 1,
-        "dk_moved_toward_sharp_pct": 100.0,
-        "dk_moved_away_pct": 0.0,
-        "dk_no_move_pct": 0.0,
-        "follow_sharp_clv_n": 0,
-        "follow_sharp_avg_clv_pct": null
+        "n": 4,
+        "dk_moved_toward_sharp_pct": 50.0,
+        "dk_moved_away_pct": 25.0,
+        "dk_no_move_pct": 25.0,
+        "follow_sharp_clv_n": 2,
+        "follow_sharp_avg_clv_pct": -4.32
       },
       "rebounds": {
-        "n": 2,
+        "n": 4,
         "dk_moved_toward_sharp_pct": 50.0,
         "dk_moved_away_pct": 50.0,
         "dk_no_move_pct": 0.0,
-        "follow_sharp_clv_n": 1,
-        "follow_sharp_avg_clv_pct": -5.56
+        "follow_sharp_clv_n": 2,
+        "follow_sharp_avg_clv_pct": -5.54
       }
     },
     "by_signal_type": {
@@ -236,12 +275,12 @@
         "follow_sharp_avg_clv_pct": 1.34
       },
       "line": {
-        "n": 4,
-        "dk_moved_toward_sharp_pct": 75.0,
-        "dk_moved_away_pct": 25.0,
-        "dk_no_move_pct": 0.0,
-        "follow_sharp_clv_n": 2,
-        "follow_sharp_avg_clv_pct": -4.23
+        "n": 10,
+        "dk_moved_toward_sharp_pct": 50.0,
+        "dk_moved_away_pct": 30.0,
+        "dk_no_move_pct": 20.0,
+        "follow_sharp_clv_n": 6,
+        "follow_sharp_avg_clv_pct": -4.45
       }
     }
   }
