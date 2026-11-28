@@ -40,6 +40,7 @@ tbody tr:hover{background:#1d3048}
 .gmetric span{color:var(--muted)}.gmetric strong{text-align:right}
 .gother{color:var(--muted);font-size:10px;margin-top:4px;line-height:1.5}
 .gamehead td{background:var(--card);font-weight:700;color:var(--text);border-top:2px solid var(--border)}
+.rdtab{background:#18273d;color:var(--muted);border:1px solid #41516b;border-radius:6px;padding:8px 12px;margin-right:6px;font:inherit;cursor:pointer}.rdtab.on{background:#2a4466;color:white;border-color:#6b88b0}
 </style>
 </head>
 <body>
@@ -55,7 +56,7 @@ tbody tr:hover{background:#1d3048}
 <div class="cards" id="record"></div>
 <div class="tablewrap"><table><thead id="picks-head"><tr><th data-key="commence_time">Kickoff</th><th data-key="wx_wind" title="Kickoff forecast at the stadium: temperature and strongest wind. ⚠ = wind 15+ mph (or gusts 25+), rain/snow likely, or 25°F or colder. Sorts by wind.">Weather</th><th data-key="game_total" title="Game total (DraftKings) and its rank among this week's games, 1 = highest. Hover for both teams' offense / defense ranks and over-under records.">Total</th><th data-key="player">Player</th><th data-key="market_label">Market</th><th data-key="side">Side</th><th data-key="book" title="Book with the best price when the pick locked">Book</th><th data-key="line">Line</th><th data-key="odds">Odds</th><th data-key="dk_odds" title="DraftKings' line and price for the same pick">DK</th><th data-key="hits_l5" title="Times he went OVER this line in his last 5 games (these count double in the model)">Over L5</th><th data-key="hits_l10" title="Times he went OVER this line in his last 10 games">Over L10</th><th data-key="tgt_l5" title="Receiving props: average targets in his last 5 games, his share of the team's targets, and ↑ / ↓ when that is 1+ target above / below his last-10 average. Hover for the game-by-game list.">Tgt L5</th><th data-key="def_delta" title="How players in his role (QB / RB / receiver) do against this defense this season vs their own normal, shrunk for small samples. Rank: 1 = toughest defense, 32 = easiest.">Vs D</th><th data-key="model_prob">Model %</th><th data-key="edge">Edge</th><th data-key="close_odds">Close</th><th data-key="price_clv">CLV</th><th data-key="actual">Actual</th><th data-key="result">Result</th></tr></thead><tbody id="picks"></tbody></table></div>
 <div class="note">Click any column heading to sort; click again to reverse.</div>
-<div class="note" id="model-note"><b>Receiver model</b> (wide receivers and tight ends, receptions and receiving yards): how often he cleared this line in his last 10 games (the last 5 count double), with each game scaled for his current role (projected targets = 60% last 5 games + 40% last 10, plus targets left by teammates ruled Out) and shifted by the defense — a team's No. 1 receiver is judged by how No. 1 receivers do against this defense, other wide receivers by other wide receivers, and tight ends by tight ends. Blended with the book's no-vig price (worth 10 games); picks need a 5+ point edge. Skipped: fewer than 4 projected targets, Overs in windy games, and teams starting a different QB than the one he's been catching passes from. <b>Market Value model</b>: no player model — a price that beats the other books' average no-vig price on the same line by 1+ point. Both: best price across DraftKings, FanDuel, BetMGM and Caesars, odds -130 to +130, one pick per player, at most six per game. Not real bets — the test is beating the closing line.</div>
+<div class="note" id="model-note"><b>Receiver model</b> (wide receivers and tight ends, receptions and receiving yards): how often he cleared this line in his last 10 games (the last 5 count double), with each game scaled for his current role (projected targets = 60% last 5 games + 40% last 10, plus targets left by teammates ruled Out) and shifted by the defense — a team's No. 1 receiver is judged by how No. 1 receivers do against this defense, other wide receivers by other wide receivers, and tight ends by tight ends. Blended with the book's no-vig price (worth 10 games); picks need a 5+ point edge. Skipped: fewer than 4 projected targets, Overs in windy games, and teams starting a different QB than the one he's been catching passes from. Best price across DraftKings, FanDuel, BetMGM and Caesars, odds -130 to +130, one pick per player, at most six per game. Not real bets — the test is beating the closing line.</div>
 <div class="note" id="backtest"></div>
 
 <div class="head"><h2>NFL Game Lines</h2><span id="lines-status" class="muted"></span></div>
@@ -66,11 +67,16 @@ tbody tr:hover{background:#1d3048}
 <div class="tablewrap"><table><thead><tr id="teams-head"></tr></thead><tbody id="teams-body"></tbody></table></div>
 <div class="note">Yards are gross (passing yards before sacks), so they run a little higher than sites that net out sack yards. ATS and O/U use ESPN's pregame DraftKings spread and total.</div>
 
-<div class="head"><h2>Line Shopping Board</h2><span id="status" class="muted">Loading...</span></div>
+<div class="head"><h2>NFL Receiver Data</h2><span id="rd-status" class="muted">Loading...</span></div>
+<div class="controls"><span id="rd-tabs"></span><input id="rd-search" placeholder="Search player or team"><select id="rd-pos" aria-label="Position"><option value="">WR + TE</option><option value="WR">WR only</option><option value="TE">TE only</option></select></div>
+<div class="tablewrap" style="max-height:560px;overflow:auto"><table><thead><tr id="rd-head"></tr></thead><tbody id="rd-body"></tbody></table></div>
+<div class="note" id="rd-note"></div>
+
+<div class="head"><h2>Line Shopping Board — WR &amp; TE Receiving Props</h2><span id="status" class="muted">Loading...</span></div>
 <div class="controls">
  <input id="search" type="search" placeholder="Search player or game">
  <select id="game"><option value="">All Games</option></select>
- <select id="market"><option value="">All Markets</option></select>
+ <select id="market"><option value="">Receptions + Rec Yds</option></select>
  <select id="view">
   <option value="">All Props</option>
   <option value="flagged">DraftKings Out of Line</option>
@@ -79,9 +85,9 @@ tbody tr:hover{background:#1d3048}
 </div>
 <div class="tablewrap"><table><thead><tr id="headrow"></tr></thead><tbody id="rows"></tbody></table></div>
 <div class="note">
- Each book shows its main line and Over / Under price (Anytime TD shows the "Yes" price only). Yellow = a different line than DraftKings.
+ Each book shows its main line and Over / Under price. Yellow = a different line than DraftKings.
  Best Over / Best Under compare prices at DraftKings' line. "Books vs DK" flags props where the other books' no-vig price is 4+ points from DraftKings at the same line,
- or their line differs by 2+ yards (0.5 for receptions and touchdowns).
+ or their line differs by 2+ yards (0.5 for receptions). Only wide receivers and tight ends are shown.
 </div>
 </main>
 
@@ -304,16 +310,19 @@ function renderModel(){
  }
  if(!list.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=20;td.textContent="No paper picks yet. They appear once props are posted and the model finds a qualifying edge.";}
  renderCompare();
- $("backtest").textContent="Receiver model started Nov 27, 2026 (earlier picks deleted). Market Value model counting since Nov 26.";
+ $("backtest").textContent="Receiver model started Nov 27, 2026 (earlier picks deleted).";
  $("model-status").textContent=verLabel(ver)+" | updated "+new Date(model.generated_at).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",hour:"numeric",minute:"2-digit"})+" CT";
 }
 
+const RX_MARKETS=new Set(["receptions","rec_yds"]);
+function isRx(p){if(!RX_MARKETS.has(p.market))return false;if(!model||!model.projections)return true;const e=entry(p);return !!e&&(e.pos==="WR"||e.pos==="TE");}
 function render(){
  const others=(board.books||[]).filter(b=>b!=="draftkings");
  const head=$("headrow");head.replaceChildren();
  ["Kickoff","Player","Market","DK Line","DK O / U","Over L5 · L10","Model Over","Model Edge",...others.map(label),"Best Over / Yes","Best Under","Books vs DK"].forEach(t=>add(head,"th",t));
  const q=$("search").value.trim().toLowerCase(),game=$("game").value,market=$("market").value,view=$("view").value;
- const rows=(board.props||[]).filter(p=>{
+ const rxProps=(board.props||[]).filter(isRx);
+ const rows=rxProps.filter(p=>{
   if(q&&!(p.player+" "+p.matchup).toLowerCase().includes(q))return false;
   if(game&&p.event_id!==game)return false;
   if(market&&p.market!==market)return false;
@@ -359,9 +368,9 @@ function render(){
   else if(p.gap!=null){note=(p.gap>0?"+":"")+(p.gap*100).toFixed(1)+" pts";}
   cell(note,cls,"Other books' no-vig Over probability minus DraftKings', at DraftKings' line");
  }
- if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=11+others.length;td.textContent=(board.props||[]).length?"No props match the current filters.":"No upcoming NFL props saved yet.";}
+ if(!rows.length){const tr=body.insertRow();const td=tr.insertCell();td.colSpan=11+others.length;td.textContent=rxProps.length?"No props match the current filters.":"No upcoming NFL props saved yet.";}
  const caps=Object.values(board.captured_at||{}).sort();
- $("status").textContent=rows.length+" of "+(board.props||[]).length+" props | "+(board.books||[]).map(label).join(", ")+
+ $("status").textContent=rows.length+" of "+rxProps.length+" WR / TE receiving props | "+(board.books||[]).map(label).join(", ")+
   (caps.length?" | Latest capture: "+new Date(caps[caps.length-1]).toLocaleString("en-US",{timeZone:"America/Chicago",weekday:"short",month:"numeric",day:"numeric",hour:"numeric",minute:"2-digit"})+" CT":"");
 }
 
@@ -371,11 +380,12 @@ async function load(){
   if(!res.ok)throw Error("HTTP "+res.status);
   board=await res.json();
   const g=$("game");for(const x of board.games||[]){const o=add(g,"option",x.matchup+" — "+kickoff(x.commence_time));o.value=x.event_id;}
-  const m=$("market");for(const x of board.markets||[]){const o=add(m,"option",x.label);o.value=x.key;}
+  const m=$("market");for(const x of (board.markets||[]).filter(x=>RX_MARKETS.has(x.key))){const o=add(m,"option",x.label);o.value=x.key;}
   try{const wr=await fetch("./nfl_weather.json?t="+Date.now(),{cache:"no-store"});if(wr.ok)weather=(await wr.json()).games||{};}catch(e){}
   try{const mr=await fetch("./nfl_model.json?t="+Date.now(),{cache:"no-store"});if(mr.ok){model=await mr.json();
    const vs=model.versions_order||[model.model_version];ver=vs[0];const sel=$("model-ver");
    for(const v of vs){const o=add(sel,"option",verLabel(v));o.value=v;}
+   sel.parentElement.style.display=vs.length>1?"":"none";
    renderModel();}else $("model-status").textContent="Model output not available yet.";}catch(e){$("model-status").textContent="Model output not available yet.";}
   renderLines();renderTeams();render();
  }catch(e){
@@ -393,6 +403,32 @@ document.querySelectorAll("#picks-head th[data-key]").forEach(th=>{
 $("model-ver").addEventListener("change",e=>{ver=e.target.value;if(model){renderModel();render();}});
 ["search","game","market","view"].forEach(id=>$(id).addEventListener(id==="search"?"input":"change",()=>board&&render()));
 load();
+</script>
+<script>
+(()=>{
+ const g=id=>document.getElementById(id);let D=null,tab=0,sort={i:null,asc:false};
+ const fmt=(v,isPct)=>v==null||v===""?"—":isPct?(v*100).toFixed(1)+"%":typeof v==="number"?(Number.isInteger(v)?String(v):String(Math.round(v*100)/100)):String(v);
+ function draw(){
+  const t=D.tabs[tab],pct=new Set(t.pcts),q=g("rd-search").value.trim().toLowerCase(),pos=g("rd-pos").value;
+  const pi=t.cols.indexOf("Pos");g("rd-pos").style.display=pi>=0?"":"none";
+  g("rd-tabs").querySelectorAll("button").forEach((b,i)=>b.className="rdtab"+(i===tab?" on":""));
+  const head=g("rd-head");head.replaceChildren();
+  t.cols.forEach((c,i)=>{const th=document.createElement("th");th.textContent=c+(sort.i===i?(sort.asc?" ▲":" ▼"):"");th.style.cursor="pointer";
+   th.onclick=()=>{sort=sort.i===i?{i,asc:!sort.asc}:{i,asc:typeof t.rows[0][i]==="string"};draw();};head.append(th);});
+  let rows=t.rows.filter(r=>(!q||r.some(v=>typeof v==="string"&&v.toLowerCase().includes(q)))&&(!pos||pi<0||r[pi]===pos));
+  if(sort.i!=null)rows=rows.slice().sort((a,b)=>{const x=a[sort.i],y=b[sort.i];if(x==null)return 1;if(y==null)return -1;
+   const c=typeof x==="string"?x.localeCompare(y):x-y;return sort.asc?c:-c;});
+  const body=g("rd-body");body.replaceChildren();
+  for(const r of rows){const tr=body.insertRow();r.forEach((v,i)=>{const td=tr.insertCell();td.textContent=fmt(v,pct.has(t.cols[i]));if(i===0)td.className="bold";});}
+  g("rd-status").textContent=rows.length+" rows | "+D.title+" | snapshot, not auto-updated";
+  const src=(D.sources||[]).find(x=>x[0]===t.name);g("rd-note").textContent=src?"Source: "+src[1]+". "+(src[2]||""):"";
+ }
+ fetch("./nfl_receiver_data.json?t="+Date.now(),{cache:"no-store"}).then(r=>r.json()).then(d=>{D=d;
+  for(const t of D.tabs)t.pcts=t.pct||[];
+  D.tabs.forEach((t,i)=>{const b=document.createElement("button");b.textContent=t.name;b.onclick=()=>{tab=i;sort={i:null,asc:false};draw();};g("rd-tabs").append(b);});
+  g("rd-search").oninput=draw;g("rd-pos").onchange=draw;draw();
+ }).catch(()=>{g("rd-status").textContent="Receiver data not available.";});
+})();
 </script>
 </body>
 </html>
