@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-11-28T01:20:16.406713+00:00",
+  "generated_at": "2026-11-28T02:27:13.154472+00:00",
   "source": "ESPN",
   "source_url": "https://site.api.espn.com/apis/site/v2/sports/basketball/nba/injuries",
   "status": "ok",
-  "player_count": 99,
+  "player_count": 94,
   "teams_reported": [
     "ATL",
     "BKN",
@@ -34,11 +34,11 @@
     "WAS"
   ],
   "teams_count": 27,
-  "players_with_team": 99,
+  "players_with_team": 94,
   "players_without_team": 0,
   "status_counts": {
-    "O": 88,
-    "T": 11
+    "O": 87,
+    "T": 7
   },
   "players": [
     {
@@ -175,6 +175,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "541211",
+      "name": "Norman Powell",
+      "team": "CHI",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Strain | Hamstring | out",
+      "date": "2026-11-28T01:54Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541172",
       "name": "Noa Essengue",
       "team": "CHI",
@@ -193,17 +204,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Illness | day-to-day",
       "date": "2026-11-27T18:36Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "540448",
-      "name": "Norman Powell",
-      "team": "CHI",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Hamstring | out",
-      "date": "2026-11-22T15:25Z",
       "team_match": "feed"
     },
     {
@@ -582,24 +582,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541105",
-      "name": "Trendon Watford",
-      "team": "NOP",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Sprain | Ankle | out",
-      "date": "2026-11-26T21:22Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541104",
+      "injury_record_id": "541204",
       "name": "Bennedict Mathurin",
       "team": "NOP",
       "status": "O",
       "raw_status": "Out",
       "reason": "Plantar Fasciitis | Foot | out",
-      "date": "2026-11-26T21:21Z",
+      "date": "2026-11-28T01:22Z",
       "team_match": "feed"
     },
     {
@@ -747,6 +736,17 @@
     },
     {
       "id": "",
+      "injury_record_id": "-61495",
+      "name": "Colin Castleton",
+      "team": "ORL",
+      "status": "O",
+      "raw_status": "Out",
+      "reason": "Soreness | Calf | out",
+      "date": "2026-11-28T01:53Z",
+      "team_match": "feed"
+    },
+    {
+      "id": "",
       "injury_record_id": "541176",
       "name": "Kevin Porter Jr.",
       "team": "ORL",
@@ -765,17 +765,6 @@
       "raw_status": "Day-To-Day",
       "reason": "Back | day-to-day",
       "date": "2026-11-27T21:05Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "-61453",
-      "name": "Colin Castleton",
-      "team": "ORL",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Soreness | Calf | day-to-day",
-      "date": "2026-11-26T16:10Z",
       "team_match": "feed"
     },
     {
@@ -956,28 +945,6 @@
     },
     {
       "id": "",
-      "injury_record_id": "541170",
-      "name": "Dylan Harper",
-      "team": "SAS",
-      "status": "O",
-      "raw_status": "Out",
-      "reason": "Strain | Hip | out",
-      "date": "2026-11-27T18:51Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541123",
-      "name": "De'Aaron Fox",
-      "team": "SAS",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Bruise | Lower Leg | day-to-day",
-      "date": "2026-11-26T23:35Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
       "injury_record_id": "539444",
       "name": "Tobias Harris",
       "team": "SAS",
@@ -1033,35 +1000,13 @@
     },
     {
       "id": "",
-      "injury_record_id": "541151",
+      "injury_record_id": "541206",
       "name": "Mo Bamba",
-      "team": "UTA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Illness | day-to-day",
-      "date": "2026-11-27T16:41Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541130",
-      "name": "Jaxson Hayes",
-      "team": "UTA",
-      "status": "T",
-      "raw_status": "Day-To-Day",
-      "reason": "Not Specified | Knee | day-to-day",
-      "date": "2026-11-27T00:11Z",
-      "team_match": "feed"
-    },
-    {
-      "id": "",
-      "injury_record_id": "541129",
-      "name": "Jusuf Nurkic",
       "team": "UTA",
       "status": "O",
       "raw_status": "Out",
-      "reason": "Strain | Foot | out",
-      "date": "2026-11-27T00:08Z",
+      "reason": "Illness | out",
+      "date": "2026-11-28T01:37Z",
       "team_match": "feed"
     },
     {
